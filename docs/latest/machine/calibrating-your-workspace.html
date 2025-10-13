@@ -2823,10 +2823,10 @@
 <h1 id="calibrating-your-workspace">Calibrating Your Workspace<a class="headerlink" href="#calibrating-your-workspace" title="Permanent link">¶</a></h1>
 <p>Ensure your laser cuts accurately to the dimensions you design.</p>
 <h2 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link">¶</a></h2>
-<p>Verify and calibrate your laser's dimensional accuracy so that a 100mm square in RayForge cuts as a true 100mm square on your material.</p>
+<p>Verify and calibrate your laser's dimensional accuracy so that a 100mm square in Rayforge cuts as a true 100mm square on your material.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
 <ul>
-<li>RayForge installed and connected to your laser</li>
+<li>Rayforge installed and connected to your laser</li>
 <li>Machine homed and ready</li>
 <li>Test material (cardboard, plywood, or acrylic scrap)</li>
 <li>Ruler or calipers (digital calipers preferred for accuracy)</li>
@@ -2839,9 +2839,9 @@
 <li>Dimensions will be consistently off (e.g., 100mm design cuts as 98mm or 102mm)</li>
 <li>Assembly projects will fail</li>
 </ul>
-<p><strong>Calibration ensures:</strong> 1mm in RayForge = 1mm on your material</p>
+<p><strong>Calibration ensures:</strong> 1mm in Rayforge = 1mm on your material</p>
 <h2 id="step-1-check-current-machine-configuration">Step 1: Check Current Machine Configuration<a class="headerlink" href="#step-1-check-current-machine-configuration" title="Permanent link">¶</a></h2>
-<p>First, verify your machine dimensions are configured correctly in RayForge.</p>
+<p>First, verify your machine dimensions are configured correctly in Rayforge.</p>
 <p><strong>Open machine settings:</strong></p>
 <ol>
 <li>Navigate to <strong>Settings &gt; Machine &gt; Profile</strong></li>
@@ -2858,7 +2858,7 @@
 <p>Create a simple test pattern with known dimensions.</p>
 <p><strong>Design the test:</strong></p>
 <ol>
-<li>Create a new project in RayForge</li>
+<li>Create a new project in Rayforge</li>
 <li>Add a <strong>square</strong> workpiece:</li>
 <li>Width: 100mm</li>
 <li>Height: 100mm</li>
@@ -2900,7 +2900,7 @@
 <p>Before cutting, verify the job will run in the correct location.</p>
 <p><strong>Frame the job:</strong></p>
 <ol>
-<li>In RayForge, click <strong>Frame Job</strong> (or use keyboard shortcut)</li>
+<li>In Rayforge, click <strong>Frame Job</strong> (or use keyboard shortcut)</li>
 <li>Laser head will trace the outline of the job boundary</li>
 <li>Verify:</li>
 <li>Position is correct on your material</li>
@@ -2918,7 +2918,7 @@
 </ul>
 <p><strong>Run the job:</strong></p>
 <ol>
-<li>Click <strong>Start Job</strong> in RayForge</li>
+<li>Click <strong>Start Job</strong> in Rayforge</li>
 <li>Monitor the cut closely</li>
 <li>Wait for completion</li>
 <li>Allow material to cool before removing</li>
@@ -3022,7 +3022,7 @@ Measured: 101.2mm</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>New Y steps/mm = 80.00 * (100 / 101.2) = 79.05
 </span></code></pre></div>
 <h3 id="read-current-settings">Read Current Settings<a class="headerlink" href="#read-current-settings" title="Permanent link">¶</a></h3>
-<p><strong>In RayForge console:</strong></p>
+<p><strong>In Rayforge console:</strong></p>
 <ol>
 <li>Open <strong>Console</strong> tab</li>
 <li>Send command: <code>$$</code> (two dollar signs)</li>
@@ -3037,7 +3037,7 @@ Measured: 101.2mm</p>
 </span></code></pre></div>
 <h3 id="update-settings">Update Settings<a class="headerlink" href="#update-settings" title="Permanent link">¶</a></h3>
 <p><strong>Send new values:</strong></p>
-<p>In the RayForge console:</p>
+<p>In the Rayforge console:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$100=81.22
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>$101=79.05
 </span></code></pre></div>
@@ -3091,7 +3091,7 @@ Measured: 101.2mm</p>
 <p><strong>Kerf is NOT a calibration issue:</strong></p>
 <ul>
 <li>Kerf makes parts slightly smaller than designed</li>
-<li>Kerf is compensated in RayForge settings (see Overscan &amp; Kerf)</li>
+<li>Kerf is compensated in Rayforge settings (see Overscan &amp; Kerf)</li>
 </ul>
 <p><strong>Calibration corrects:</strong></p>
 <ul>
@@ -3117,7 +3117,7 @@ Measured: 101.2mm</p>
 <p><strong>Possible causes:</strong></p>
 <ul>
 <li>Wrong firmware settings</li>
-<li>Wrong machine profile in RayForge</li>
+<li>Wrong machine profile in Rayforge</li>
 <li>Mechanical issue (loose pulley, belt)</li>
 </ul>
 <p><strong>Solutions:</strong></p>

@@ -3393,7 +3393,7 @@
   
 
 <h1 id="multi-laser-setup">Multi-Laser Setup<a class="headerlink" href="#multi-laser-setup" title="Permanent link">¶</a></h1>
-<p>Some laser machines have multiple laser modules (e.g., a diode laser and a CO tube, or multiple diodes at different wavelengths). RayForge supports multi-laser setups through tool selection and head configuration.</p>
+<p>Some laser machines have multiple laser modules (e.g., a diode laser and a CO tube, or multiple diodes at different wavelengths). Rayforge supports multi-laser setups through tool selection and head configuration.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
 <p>Multi-laser systems allow:</p>
 <ul>
@@ -3402,7 +3402,7 @@
 <li><strong>Varied power levels</strong>: Low-power engraving head + high-power cutting head</li>
 <li><strong>Specialized applications</strong>: UV for special materials, fiber for metals</li>
 </ul>
-<p>RayForge handles multi-laser machines through:</p>
+<p>Rayforge handles multi-laser machines through:</p>
 <ul>
 <li><strong>Laser head configuration</strong>: Define each laser's properties</li>
 <li><strong>Tool selection</strong>: Switch between lasers via G-code commands</li>
@@ -3555,7 +3555,7 @@ alt: "Single laser head configuration dialog"
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nt">spot_size_mm</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.08</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.08</span><span class="p p-Indicator">]</span>
 </span></code></pre></div><p></p>
 <h2 id="tool-selection-in-g-code">Tool Selection in G-code<a class="headerlink" href="#tool-selection-in-g-code" title="Permanent link">¶</a></h2>
-<p>RayForge automatically generates tool change commands when switching between laser heads.</p>
+<p>Rayforge automatically generates tool change commands when switching between laser heads.</p>
 <h3 id="tool-change-command">Tool Change Command<a class="headerlink" href="#tool-change-command" title="Permanent link">¶</a></h3>
 <p><strong>G-code:</strong>
 </p><div class="language-gcode highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>T&lt;number&gt;      ; Select tool
@@ -3565,7 +3565,7 @@ alt: "Single laser head configuration dialog"
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">T</span><span class="m">1</span><span class="w">             </span><span class="c">; Select second laser (tool 1)</span>
 </span></code></pre></div><p></p>
 <h3 id="automatic-tool-selection">Automatic Tool Selection<a class="headerlink" href="#automatic-tool-selection" title="Permanent link">¶</a></h3>
-<p>When you assign operations to different laser heads, RayForge:</p>
+<p>When you assign operations to different laser heads, Rayforge:</p>
 <ol>
 <li>Groups operations by tool number</li>
 <li>Inserts tool change commands between groups</li>
@@ -3632,7 +3632,7 @@ alt: "Laser head selector in operation settings"
 - Specific wavelengths for different metals</p>
 <h3 id="default-head-assignment">Default Head Assignment<a class="headerlink" href="#default-head-assignment" title="Permanent link">¶</a></h3>
 <p>When adding operations:
-- RayForge uses primary head (T0) by default
+- Rayforge uses primary head (T0) by default
 - Change in operation settings if needed
 - Settings persist for similar operations</p>
 <h2 id="controller-requirements">Controller Requirements<a class="headerlink" href="#controller-requirements" title="Permanent link">¶</a></h2>
@@ -3676,7 +3676,7 @@ alt: "Laser head selector in operation settings"
 <p><strong>Physical offset:</strong>
 - Measure distance between laser focal points
 - Account for X/Y offset in designs
-- Or use RayForge's future "head offset" feature</p>
+- Or use Rayforge's future "head offset" feature</p>
 <p><strong>Z-axis (focus) offset:</strong>
 - Different lasers may have different focal lengths
 - Adjust Z height when changing tools
@@ -3725,7 +3725,7 @@ alt: "Multi-laser alignment test pattern"
 1. Import design with logo and outline
 2. Create raster operation for logo  Assign to Tool 0 (diode)
 3. Create contour operation for outline  Assign to Tool 1 (CO)
-4. RayForge generates:
+4. Rayforge generates:
    </p><div class="language-gcode highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">T</span><span class="m">0</span><span class="w">                </span><span class="c">; Select diode</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c">; ... raster engraving commands</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">T</span><span class="m">1</span><span class="w">                </span><span class="c">; Select CO</span>
@@ -3813,7 +3813,7 @@ alt: "Multi-laser alignment test pattern"
 </span></code></pre></div><p></p>
 <p>Check your controller documentation for macro support and syntax.</p>
 <h2 id="future-enhancements">Future Enhancements<a class="headerlink" href="#future-enhancements" title="Permanent link">¶</a></h2>
-<p>RayForge may add in future versions:</p>
+<p>Rayforge may add in future versions:</p>
 <ul>
 <li><strong>Head offset configuration</strong>: Define X/Y offset between laser focal points</li>
 <li><strong>Auto Z-adjustment</strong>: Automatic Z movement for different focal lengths</li>

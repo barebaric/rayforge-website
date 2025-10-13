@@ -2825,10 +2825,10 @@
 <p>Holding tabs solve these problems by keeping the piece attached until you're ready to remove it.</p>
 <hr>
 <h2 id="how-holding-tabs-work">How Holding Tabs Work<a class="headerlink" href="#how-holding-tabs-work" title="Permanent link">¶</a></h2>
-<p>RayForge implements tabs by creating <strong>small gaps in the cut path</strong>:</p>
+<p>Rayforge implements tabs by creating <strong>small gaps in the cut path</strong>:</p>
 <ol>
 <li>You mark positions along the cut path where tabs should be</li>
-<li>During G-code generation, RayForge interrupts the cut at each tab</li>
+<li>During G-code generation, Rayforge interrupts the cut at each tab</li>
 <li>The laser lifts (or turns off), skips the tab width, then resumes cutting</li>
 <li>After the job completes, you manually break or cut the tabs to free the piece</li>
 </ol>
@@ -3154,7 +3154,7 @@
 </ul>
 <hr>
 <h2 id="advanced-tab-direction">Advanced: Tab Direction<a class="headerlink" href="#advanced-tab-direction" title="Permanent link">¶</a></h2>
-<p>RayForge calculates the <strong>outward normal</strong> for each tab to determine the safe direction:</p>
+<p>Rayforge calculates the <strong>outward normal</strong> for each tab to determine the safe direction:</p>
 <ul>
 <li>Used for advanced toolpath strategies</li>
 <li>Ensures tabs point outward from the part</li>

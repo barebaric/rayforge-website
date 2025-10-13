@@ -3177,7 +3177,7 @@
   
 
 <h1 id="device-configuration">Device Configuration<a class="headerlink" href="#device-configuration" title="Permanent link">¶</a></h1>
-<p>Device configuration determines how RayForge communicates with your laser cutter hardware. Choosing the correct driver and connection settings is essential for reliable operation.</p>
+<p>Device configuration determines how Rayforge communicates with your laser cutter hardware. Choosing the correct driver and connection settings is essential for reliable operation.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
 <p>Device configuration includes:</p>
 <ul>
@@ -3210,7 +3210,7 @@ alt: "Device configuration dialog"
 <!-- ![Device configuration dialog](../images/UI-Device-Config.png) -->
 
 <h2 id="available-drivers">Available Drivers<a class="headerlink" href="#available-drivers" title="Permanent link">¶</a></h2>
-<p>RayForge supports multiple communication methods to connect to different controller types.</p>
+<p>Rayforge supports multiple communication methods to connect to different controller types.</p>
 <h3 id="grbl-serial">GRBL (Serial)<a class="headerlink" href="#grbl-serial" title="Permanent link">¶</a></h3>
 <p><strong>Best for:</strong>
 - USB-connected laser cutters
@@ -3324,14 +3324,14 @@ Log out and back in for changes to take effect.<p></p>
 - No USB cable required
 - Can control from any computer on network
 - Multiple clients can monitor status
-- WebUI and RayForge can run simultaneously</p>
+- WebUI and Rayforge can run simultaneously</p>
 <p><strong>Disadvantages:</strong>
 - Network latency may affect responsiveness
 - Requires WiFi-capable controller
 - More complex troubleshooting if connectivity issues</p>
 <h3 id="no-device-simulator">No Device (Simulator)<a class="headerlink" href="#no-device-simulator" title="Permanent link">¶</a></h3>
 <p><strong>Best for:</strong>
-- Testing RayForge without hardware
+- Testing Rayforge without hardware
 - Designing jobs offline
 - Training and demonstrations
 - Developing G-code workflows</p>
@@ -3343,7 +3343,7 @@ Log out and back in for changes to take effect.<p></p>
 <p><strong>Use cases:</strong>
 - Preview G-code output
 - Test operation sequences
-- Learn RayForge interface
+- Learn Rayforge interface
 - Design projects away from machine</p>
 <div class="admonition tip">
 <p class="admonition-title">Testing Without Risk</p>
@@ -3457,7 +3457,7 @@ Log out and back in for changes to take effect.<p></p>
 <p>After configuring driver settings:</p>
 <ol>
 <li>Click "Test Connection" button</li>
-<li>RayForge attempts to connect to device</li>
+<li>Rayforge attempts to connect to device</li>
 <li>Success: Green indicator, "Connected" status</li>
 <li>Failure: Error message with diagnostic info</li>
 </ol>
@@ -3572,7 +3572,7 @@ alt: "Successful connection test dialog"
 <p><strong>Firewall issues:</strong>
 - Ensure ports 80 and 81 are open
 - Disable firewall temporarily to test
-- Add firewall exception for RayForge</p>
+- Add firewall exception for Rayforge</p>
 <h2 id="g-code-precision">G-code Precision<a class="headerlink" href="#g-code-precision" title="Permanent link">¶</a></h2>
 <p><strong>Setting:</strong> Number of decimal places for coordinates</p>
 <p><strong>Values:</strong>
@@ -3590,7 +3590,7 @@ alt: "Successful connection test dialog"
 - Performance: Larger files = longer transfer time</p>
 <p>Most machines have 0.01mm resolution, making precision=3 optimal.</p>
 <h2 id="driver-development">Driver Development<a class="headerlink" href="#driver-development" title="Permanent link">¶</a></h2>
-<p>RayForge's driver system is extensible. If your controller isn't supported:</p>
+<p>Rayforge's driver system is extensible. If your controller isn't supported:</p>
 <p><strong>Options:</strong>
 1. Use generic GRBL driver (often works for GRBL-based controllers)
 2. Request driver support (GitHub issues)

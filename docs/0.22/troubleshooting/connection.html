@@ -3009,7 +3009,7 @@
   
 
 <h1 id="connection-issues">Connection Issues<a class="headerlink" href="#connection-issues" title="Permanent link">¶</a></h1>
-<p>This page helps you diagnose and resolve problems connecting RayForge to your laser machine via serial connection.</p>
+<p>This page helps you diagnose and resolve problems connecting Rayforge to your laser machine via serial connection.</p>
 <h2 id="quick-diagnosis">Quick Diagnosis<a class="headerlink" href="#quick-diagnosis" title="Permanent link">¶</a></h2>
 <h3 id="symptoms">Symptoms<a class="headerlink" href="#symptoms" title="Permanent link">¶</a></h3>
 <p>Common connection problems include:</p>
@@ -3080,18 +3080,18 @@
 <p>See the <a href="snap-permissions.html">Snap Permissions</a> guide for more details.</p>
 <p><strong>On Windows:</strong></p>
 <p>Close any other applications that might be using the serial port (including:
-- Previous instances of RayForge
+- Previous instances of Rayforge
 - Serial monitor tools
 - Other laser software
 - Arduino IDE or similar tools</p>
 <h3 id="wrong-serial-port-selected">Wrong Serial Port Selected<a class="headerlink" href="#wrong-serial-port-selected" title="Permanent link">¶</a></h3>
-<p><strong>Problem:</strong> RayForge connects but the machine doesn't respond.</p>
+<p><strong>Problem:</strong> Rayforge connects but the machine doesn't respond.</p>
 <p><strong>Diagnosis:</strong></p>
 <p>You might have selected the wrong port, especially if you have multiple USB devices connected.</p>
 <p><strong>Solution:</strong></p>
 <ol>
 <li>Disconnect all other USB serial devices</li>
-<li>Note which ports are available in RayForge</li>
+<li>Note which ports are available in Rayforge</li>
 <li>Plug in your laser controller</li>
 <li>Refresh the port list - the new port is your laser</li>
 <li>On Linux, laser controllers typically appear as:</li>
@@ -3102,7 +3102,7 @@
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Hardware Serial Ports</p>
-<p>RayForge will warn you if you select <code>/dev/ttyS*</code> ports on Linux, as these are typically not USB-based GRBL devices. USB serial ports use <code>/dev/ttyUSB*</code> or <code>/dev/ttyACM*</code>.</p>
+<p>Rayforge will warn you if you select <code>/dev/ttyS*</code> ports on Linux, as these are typically not USB-based GRBL devices. USB serial ports use <code>/dev/ttyUSB*</code> or <code>/dev/ttyACM*</code>.</p>
 </div>
 <h3 id="incorrect-baud-rate">Incorrect Baud Rate<a class="headerlink" href="#incorrect-baud-rate" title="Permanent link">¶</a></h3>
 <p><strong>Problem:</strong> Connection establishes but commands don't work or produce garbled responses.</p>
@@ -3113,9 +3113,9 @@
 <li><strong>9600</strong> (older GRBL versions)</li>
 <li><strong>250000</strong> (less common, some custom firmware)</li>
 </ul>
-<p>Try different baud rates in RayForge's device settings. The most common is <strong>115200</strong>.</p>
+<p>Try different baud rates in Rayforge's device settings. The most common is <strong>115200</strong>.</p>
 <h3 id="connection-keeps-dropping">Connection Keeps Dropping<a class="headerlink" href="#connection-keeps-dropping" title="Permanent link">¶</a></h3>
-<p><strong>Problem:</strong> RayForge connects successfully but keeps disconnecting and reconnecting.</p>
+<p><strong>Problem:</strong> Rayforge connects successfully but keeps disconnecting and reconnecting.</p>
 <p><strong>Possible Causes:</strong></p>
 <ol>
 <li><strong>Flaky USB cable</strong> - Replace with a known-good cable (preferably short, &lt;2m)</li>
@@ -3149,7 +3149,7 @@
 <p>If there's no response, double-check baud rate and port selection.</p>
 <hr>
 <h2 id="connection-status-messages">Connection Status Messages<a class="headerlink" href="#connection-status-messages" title="Permanent link">¶</a></h2>
-<p>RayForge shows different connection states:</p>
+<p>Rayforge shows different connection states:</p>
 <table>
 <thead>
 <tr>
@@ -3219,9 +3219,9 @@
 <li>Or clear alarms (<code>$X</code>) if needed</li>
 </ol>
 <h3 id="using-debug-logs">Using Debug Logs<a class="headerlink" href="#using-debug-logs" title="Permanent link">¶</a></h3>
-<p>RayForge includes detailed debug logging for connection issues.</p>
+<p>Rayforge includes detailed debug logging for connection issues.</p>
 <p>To enable verbose logging:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Run RayForge from terminal with debug logging</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Run Rayforge from terminal with debug logging</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nv">RAYFORGE_LOG_LEVEL</span><span class="o">=</span>DEBUG<span class="w"> </span>rayforge
 </span></code></pre></div>
 <p>Check the logs for:
@@ -3258,7 +3258,7 @@
 </div>
 </div>
 <h3 id="firmware-compatibility">Firmware Compatibility<a class="headerlink" href="#firmware-compatibility" title="Permanent link">¶</a></h3>
-<p>RayForge is designed for GRBL-compatible firmware. Ensure your controller runs:</p>
+<p>Rayforge is designed for GRBL-compatible firmware. Ensure your controller runs:</p>
 <ul>
 <li><strong>GRBL 1.1</strong> (most common, recommended)</li>
 <li><strong>GRBL 0.9</strong> (older, may have limited features)</li>
@@ -3304,7 +3304,7 @@
 <li><strong>Check the GitHub issues</strong> - Someone may have reported the same problem</li>
 <li><strong>Create a detailed issue report</strong> with:</li>
 <li>Operating system and version</li>
-<li>RayForge version (Snap/Flatpak/AppImage/source)</li>
+<li>Rayforge version (Snap/Flatpak/AppImage/source)</li>
 <li>Controller board model and firmware version</li>
 <li>USB chipset (check Device Manager on Windows or <code>lsusb</code> on Linux)</li>
 <li>Full error messages and debug logs</li>

@@ -2890,9 +2890,9 @@
   
 
 <h1 id="coordinate-systems-and-origins">Coordinate Systems and Origins<a class="headerlink" href="#coordinate-systems-and-origins" title="Permanent link">¶</a></h1>
-<p>Understanding how RayForge handles coordinate systems is essential for positioning your work correctly and avoiding common mistakes.</p>
+<p>Understanding how Rayforge handles coordinate systems is essential for positioning your work correctly and avoiding common mistakes.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
-<p>RayForge uses multiple coordinate systems and origin points to manage positioning. This can seem confusing at first, but each serves a specific purpose.</p>
+<p>Rayforge uses multiple coordinate systems and origin points to manage positioning. This can seem confusing at first, but each serves a specific purpose.</p>
 <p><strong>Key concepts:</strong></p>
 <ul>
 <li><strong>Canvas coordinates</strong> - Where you design (screen space)</li>
@@ -2917,7 +2917,7 @@
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  v  elements here
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  Y
 </span></code></pre></div><p></p>
-<p>Canvas coordinates are what you see and interact with in the RayForge interface.</p>
+<p>Canvas coordinates are what you see and interact with in the Rayforge interface.</p>
 <hr>
 <h3 id="machine-coordinates">Machine Coordinates<a class="headerlink" href="#machine-coordinates" title="Permanent link">¶</a></h3>
 <p><strong>What it is:</strong> The physical coordinate system of your laser machine.</p>
@@ -2971,7 +2971,7 @@
 - Makes it easy to reposition or repeat jobs</p>
 <p><strong>Setting job origin:</strong></p>
 <ol>
-<li><strong>Design your work</strong> in RayForge</li>
+<li><strong>Design your work</strong> in Rayforge</li>
 <li><strong>Position the job</strong> on the canvas</li>
 <li><strong>Set the origin mode</strong> (absolute, current position, etc.)</li>
 <li><strong>Frame the job</strong> to verify position on the machine</li>
@@ -3013,7 +3013,7 @@
 <p><strong>Example:</strong></p>
 <p>If you import an SVG logo:
 - The logo has its own internal coordinate system
-- RayForge places it on the canvas
+- Rayforge places it on the canvas
 - You can move/rotate/scale it
 - The logo's local coordinates remain consistent</p>
 <hr>
@@ -3025,7 +3025,7 @@
 <li><strong>Set machine origin</strong> to top-left (if not already)</li>
 <li><strong>Set job origin mode</strong> to "Absolute"</li>
 <li><strong>Position your job</strong> at canvas coordinates (50, 100)</li>
-<li><strong>Export G-code</strong> - RayForge generates commands like:
+<li><strong>Export G-code</strong> - Rayforge generates commands like:
    <div class="language-gcode highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">G0 </span><span class="k">X</span><span class="m">50</span><span class="w"> </span><span class="k">Y</span><span class="m">100</span><span class="w">   </span><span class="c">; Move to job start position</span>
 </span></code></pre></div></li>
 </ol>
@@ -3048,7 +3048,7 @@
 <p><strong>Scenario:</strong> You need to cut 10 identical parts in a grid.</p>
 <p><strong>Solution:</strong></p>
 <ol>
-<li><strong>Design one part</strong> in RayForge</li>
+<li><strong>Design one part</strong> in Rayforge</li>
 <li><strong>Duplicate the workpiece</strong> 10 times</li>
 <li><strong>Arrange in a grid</strong> using alignment tools</li>
 <li><strong>Set job origin</strong> to absolute mode</li>
@@ -3061,7 +3061,7 @@
 <p><strong>Problem:</strong> Job appears in wrong location, possibly off the bed.</p>
 <p><strong>Cause:</strong> Machine origin configuration doesn't match actual machine.</p>
 <p><strong>Example:</strong>
-- RayForge configured for top-left origin
+- Rayforge configured for top-left origin
 - Machine actually has bottom-left origin
 - Y-coordinates are inverted</p>
 <p><strong>Solution:</strong></p>
@@ -3083,7 +3083,7 @@
   <div class="language-gcode highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">G0 </span><span class="k">X</span><span class="m">10</span><span class="w"> </span><span class="k">Y</span><span class="m">10</span><span class="w">  </span><span class="c">; Move 10mm right, 10mm down from current position</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">G0 </span><span class="k">X</span><span class="m">20</span><span class="w"> </span><span class="k">Y</span><span class="m">20</span><span class="w">  </span><span class="c">; Move another 20mm right, 20mm down</span>
 </span></code></pre></div><p></p>
-<p><strong>RayForge default:</strong> G90 (absolute mode) for predictable positioning.</p>
+<p><strong>Rayforge default:</strong> G90 (absolute mode) for predictable positioning.</p>
 <p><strong>Solution:</strong> Check generated G-code preamble - should include <code>G90</code> command.</p>
 <hr>
 <h3 id="mistake-3-job-exceeds-machine-bounds">Mistake 3: Job Exceeds Machine Bounds<a class="headerlink" href="#mistake-3-job-exceeds-machine-bounds" title="Permanent link">¶</a></h3>
@@ -3097,7 +3097,7 @@
 <p><strong>Prevention:</strong></p>
 <ol>
 <li>Configure correct work area in <strong>Settings &gt; Machine &gt; Profile</strong></li>
-<li>RayForge will warn if job exceeds bounds</li>
+<li>Rayforge will warn if job exceeds bounds</li>
 <li>Use <strong>Frame Job</strong> feature to verify before cutting</li>
 </ol>
 <hr>
@@ -3125,7 +3125,7 @@
 - Original position: (10, 20)
 - Move by: (5, -3)
 - New position: (15, 17)</p>
-<p><strong>In RayForge:</strong> Drag workpieces to move them, or use arrow keys for precise nudging.</p>
+<p><strong>In Rayforge:</strong> Drag workpieces to move them, or use arrow keys for precise nudging.</p>
 <hr>
 <h3 id="rotation">Rotation<a class="headerlink" href="#rotation" title="Permanent link">¶</a></h3>
 <p><strong>What happens:</strong> Workpiece coordinates rotate around a center point.</p>
@@ -3133,9 +3133,9 @@
 - Square at (50, 50), size 20x20
 - Rotate 45 degrees around center
 - Corners move to new positions</p>
-<p><strong>In RayForge:</strong> Select workpiece and use rotation handles or transform tools.</p>
+<p><strong>In Rayforge:</strong> Select workpiece and use rotation handles or transform tools.</p>
 <p><strong>G-code impact:</strong>
-- RayForge pre-computes rotated coordinates
+- Rayforge pre-computes rotated coordinates
 - G-code contains final absolute positions (no rotation commands)</p>
 <hr>
 <h3 id="scaling">Scaling<a class="headerlink" href="#scaling" title="Permanent link">¶</a></h3>
@@ -3144,7 +3144,7 @@
 - Original size: 50mm x 50mm
 - Scale by 2x
 - New size: 100mm x 100mm</p>
-<p><strong>In RayForge:</strong> Select workpiece and use scale handles or specify dimensions.</p>
+<p><strong>In Rayforge:</strong> Select workpiece and use scale handles or specify dimensions.</p>
 <hr>
 <h2 id="advanced-topics">Advanced Topics<a class="headerlink" href="#advanced-topics" title="Permanent link">¶</a></h2>
 <h3 id="work-coordinate-systems-g54-g59">Work Coordinate Systems (G54-G59)<a class="headerlink" href="#work-coordinate-systems-g54-g59" title="Permanent link">¶</a></h3>
@@ -3158,7 +3158,7 @@
 - Set up multiple fixture positions on the bed
 - Switch between them with G-code commands
 - Run same job at different locations</p>
-<p><strong>RayForge support:</strong> Limited. Primarily uses G54 (default). Advanced users can inject other coordinate systems via macros.</p>
+<p><strong>Rayforge support:</strong> Limited. Primarily uses G54 (default). Advanced users can inject other coordinate systems via macros.</p>
 <hr>
 <h3 id="coordinate-offsets">Coordinate Offsets<a class="headerlink" href="#coordinate-offsets" title="Permanent link">¶</a></h3>
 <p><strong>What they are:</strong> Temporary shifts in the coordinate system.</p>
@@ -3166,7 +3166,7 @@
 - <strong>G92</strong> - Set current position to specified coordinates (offset)
   </p><div class="language-gcode highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">G92 </span><span class="k">X</span><span class="m">0</span><span class="w"> </span><span class="k">Y</span><span class="m">0</span><span class="w">  </span><span class="c">; Define current position as (0,0)</span>
 </span></code></pre></div><p></p>
-<p><strong>Caution:</strong> Offsets can be confusing and lead to positioning errors. RayForge avoids them in favor of explicit absolute positioning.</p>
+<p><strong>Caution:</strong> Offsets can be confusing and lead to positioning errors. Rayforge avoids them in favor of explicit absolute positioning.</p>
 <hr>
 <h3 id="homing-and-machine-coordinates">Homing and Machine Coordinates<a class="headerlink" href="#homing-and-machine-coordinates" title="Permanent link">¶</a></h3>
 <p><strong>Homing ($H in GRBL):</strong>
@@ -3194,7 +3194,7 @@
 <li><strong>Set job origin</strong> to absolute</li>
 <li><strong>Frame and run</strong></li>
 </ol>
-<p><strong>Shortcut:</strong> RayForge has alignment tools - select logo and use "Align Center" commands.</p>
+<p><strong>Shortcut:</strong> Rayforge has alignment tools - select logo and use "Align Center" commands.</p>
 <hr>
 <h3 id="workflow-2-aligning-to-material">Workflow 2: Aligning to Material<a class="headerlink" href="#workflow-2-aligning-to-material" title="Permanent link">¶</a></h3>
 <p><strong>Goal:</strong> Align design to a pre-cut piece of material.</p>
@@ -3208,7 +3208,7 @@
 </ol>
 <p><strong>Alternative (camera-based):</strong>
 1. <strong>Use camera</strong> to see material
-2. <strong>Align design</strong> visually in RayForge
+2. <strong>Align design</strong> visually in Rayforge
 3. <strong>Set job origin</strong> based on camera reference
 4. <strong>Run job</strong></p>
 <hr>

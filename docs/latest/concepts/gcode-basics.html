@@ -2516,7 +2516,7 @@
         <li class="md-nav__item">
   <a href="#how-rayforge-generates-g-code" class="md-nav__link">
     <span class="md-ellipsis">
-      How RayForge Generates G-code
+      How Rayforge Generates G-code
     </span>
   </a>
   
@@ -2732,11 +2732,11 @@
         <li class="md-nav__item">
   <a href="#rayforge-g-code-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      RayForge G-code Structure
+      Rayforge G-code Structure
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="RayForge G-code Structure">
+    <nav class="md-nav" aria-label="Rayforge G-code Structure">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2995,7 +2995,7 @@
   
 
 <h1 id="g-code-basics">G-code Basics<a class="headerlink" href="#g-code-basics" title="Permanent link">¶</a></h1>
-<p>Understanding G-code helps you troubleshoot issues, optimize performance, and customize RayForge output for your specific machine.</p>
+<p>Understanding G-code helps you troubleshoot issues, optimize performance, and customize Rayforge output for your specific machine.</p>
 <h2 id="what-is-g-code">What is G-code?<a class="headerlink" href="#what-is-g-code" title="Permanent link">¶</a></h2>
 <p><strong>G-code</strong> is a standardized programming language for CNC machines (including laser cutters). It tells the machine exactly where to move, how fast to move, and what to do (laser on/off, power level, etc.).</p>
 <p><strong>Key points:</strong></p>
@@ -3014,8 +3014,8 @@
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">M5 </span><span class="w">              </span><span class="c">; Turn laser off</span>
 </span></code></pre></div><p></p>
 <hr>
-<h2 id="how-rayforge-generates-g-code">How RayForge Generates G-code<a class="headerlink" href="#how-rayforge-generates-g-code" title="Permanent link">¶</a></h2>
-<p>RayForge converts your designs into G-code through a multi-step process:</p>
+<h2 id="how-rayforge-generates-g-code">How Rayforge Generates G-code<a class="headerlink" href="#how-rayforge-generates-g-code" title="Permanent link">¶</a></h2>
+<p>Rayforge converts your designs into G-code through a multi-step process:</p>
 <p><strong>Generation pipeline:</strong></p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Design (Workpieces + Layers)
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>         |
@@ -3031,7 +3031,7 @@
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>         v
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>Output File (.gcode)
 </span></code></pre></div>
-<p><strong>What RayForge does:</strong></p>
+<p><strong>What Rayforge does:</strong></p>
 <ol>
 <li><strong>Analyzes your design</strong> - Extracts geometry from workpieces</li>
 <li><strong>Applies operations</strong> - Determines cut/engrave paths</li>
@@ -3118,7 +3118,7 @@
 <p><strong>Example:</strong>
 </p><div class="language-gcode highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">G0 </span><span class="k">X</span><span class="m">100</span><span class="w"> </span><span class="k">Y</span><span class="m">50</span><span class="w">  </span><span class="c">; Move quickly to (100, 50)</span>
 </span></code></pre></div><p></p>
-<p><strong>When RayForge uses it:</strong>
+<p><strong>When Rayforge uses it:</strong>
 - Moving between cut paths
 - Returning to origin
 - Positioning before cutting</p>
@@ -3129,7 +3129,7 @@
 <p><strong>Example:</strong>
 </p><div class="language-gcode highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">G1 </span><span class="k">X</span><span class="m">100</span><span class="w"> </span><span class="k">Y</span><span class="m">50</span><span class="w"> </span><span class="k">F</span><span class="m">2000</span><span class="w">  </span><span class="c">; Move to (100, 50) at 2000 mm/min</span>
 </span></code></pre></div><p></p>
-<p><strong>When RayForge uses it:</strong>
+<p><strong>When Rayforge uses it:</strong>
 - Cutting straight lines
 - Engraving raster lines
 - Any controlled movement with laser on</p>
@@ -3145,7 +3145,7 @@
 <p><strong>Example:</strong>
 </p><div class="language-gcode highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">G2 </span><span class="k">X</span><span class="m">50</span><span class="w"> </span><span class="k">Y</span><span class="m">50</span><span class="w"> </span><span class="k">I</span><span class="m">10</span><span class="w"> </span><span class="k">J</span><span class="m">0</span><span class="w"> </span><span class="k">F</span><span class="m">1500</span><span class="w">  </span><span class="c">; Clockwise arc to (50,50), center offset (10,0)</span>
 </span></code></pre></div><p></p>
-<p><strong>When RayForge uses it:</strong>
+<p><strong>When Rayforge uses it:</strong>
 - Cutting circles and curves
 - Rounded corners
 - Optimized smooth curves</p>
@@ -3164,7 +3164,7 @@
 <h4 id="g21-g20-units">G21 / G20 - Units<a class="headerlink" href="#g21-g20-units" title="Permanent link">¶</a></h4>
 <p><strong>Purpose:</strong> Set measurement units</p>
 <ul>
-<li><strong>G21</strong> - Millimeters (RayForge default)</li>
+<li><strong>G21</strong> - Millimeters (Rayforge default)</li>
 <li><strong>G20</strong> - Inches</li>
 </ul>
 <p><strong>Example:</strong>
@@ -3186,7 +3186,7 @@
 </span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="nb">G0 </span><span class="k">X</span><span class="m">10</span><span class="w">     </span><span class="c">; Move 10mm in +X direction</span>
 </span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nb">G0 </span><span class="k">X</span><span class="m">10</span><span class="w">     </span><span class="c">; Move another 10mm in +X direction (now at X=30 total)</span>
 </span></code></pre></div><p></p>
-<p><strong>RayForge default:</strong> G90 (absolute mode)</p>
+<p><strong>Rayforge default:</strong> G90 (absolute mode)</p>
 <hr>
 <h3 id="machine-commands-m-codes">Machine Commands (M-codes)<a class="headerlink" href="#machine-commands-m-codes" title="Permanent link">¶</a></h3>
 <h4 id="m3-m4-spindlelaser-on">M3 / M4 - Spindle/Laser On<a class="headerlink" href="#m3-m4-spindlelaser-on" title="Permanent link">¶</a></h4>
@@ -3199,7 +3199,7 @@
 <p><strong>Example:</strong>
 </p><div class="language-gcode highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">M4 </span><span class="k">S</span><span class="m">500</span><span class="w">  </span><span class="c">; Laser on at power 500 (50% for 0-1000 range)</span>
 </span></code></pre></div><p></p>
-<p><strong>RayForge uses:</strong> M4 for predictable laser power</p>
+<p><strong>Rayforge uses:</strong> M4 for predictable laser power</p>
 <hr>
 <h4 id="m5-spindlelaser-off">M5 - Spindle/Laser Off<a class="headerlink" href="#m5-spindlelaser-off" title="Permanent link">¶</a></h4>
 <p><strong>Purpose:</strong> Turn laser off</p>
@@ -3207,7 +3207,7 @@
 <p><strong>Example:</strong>
 </p><div class="language-gcode highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">M5 </span><span class="w"> </span><span class="c">; Laser off</span>
 </span></code></pre></div><p></p>
-<p><strong>When RayForge uses it:</strong>
+<p><strong>When Rayforge uses it:</strong>
 - End of each cut path
 - Between operations
 - End of job (safety)</p>
@@ -3246,11 +3246,11 @@
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nb">G1 </span><span class="k">X</span><span class="m">30</span><span class="w"> </span><span class="k">F</span><span class="m">1500</span><span class="w">   </span><span class="c">; Change speed to 1500</span>
 </span></code></pre></div><p></p>
 <hr>
-<h2 id="rayforge-g-code-structure">RayForge G-code Structure<a class="headerlink" href="#rayforge-g-code-structure" title="Permanent link">¶</a></h2>
+<h2 id="rayforge-g-code-structure">Rayforge G-code Structure<a class="headerlink" href="#rayforge-g-code-structure" title="Permanent link">¶</a></h2>
 <h3 id="typical-file-structure">Typical File Structure<a class="headerlink" href="#typical-file-structure" title="Permanent link">¶</a></h3>
 <p><strong>Complete example:</strong></p>
 <div class="language-gcode highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c">; ==========================================</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="c">; Generated by RayForge</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="c">; Generated by Rayforge</span>
 </span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="c">; Job: test-project</span>
 </span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c">; Date: 2025-10-03 15:30:00</span>
 </span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="c">; ==========================================</span>
@@ -3296,7 +3296,7 @@
 <h3 id="components-explained">Components Explained<a class="headerlink" href="#components-explained" title="Permanent link">¶</a></h3>
 <h4 id="1-header-comments">1. Header Comments<a class="headerlink" href="#1-header-comments" title="Permanent link">¶</a></h4>
 <div class="language-gcode highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c">; ==========================================</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="c">; Generated by RayForge</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="c">; Generated by Rayforge</span>
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="c">; Job: test-project</span>
 </span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c">; Date: 2025-10-03 15:30:00</span>
 </span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="c">; ==========================================</span>
@@ -3366,14 +3366,14 @@
 </span></code></pre></div><p></p>
 </li>
 <li>
-<p><strong>Insert custom commands</strong> not supported by RayForge UI</p>
+<p><strong>Insert custom commands</strong> not supported by Rayforge UI</p>
 </li>
 </ol>
 <hr>
 <h3 id="bad-reasons-to-edit">Bad Reasons to Edit<a class="headerlink" href="#bad-reasons-to-edit" title="Permanent link">¶</a></h3>
 <ol>
-<li><strong>Complex changes</strong> - Re-design in RayForge instead</li>
-<li><strong>Changing toolpaths</strong> - Error-prone, use RayForge operations</li>
+<li><strong>Complex changes</strong> - Re-design in Rayforge instead</li>
+<li><strong>Changing toolpaths</strong> - Error-prone, use Rayforge operations</li>
 <li><strong>Major restructuring</strong> - Better to regenerate from source</li>
 </ol>
 <hr>
@@ -3419,7 +3419,7 @@
 <p><strong>Use case:</strong>
 - Multiple fixture positions on bed
 - Switch between jobs without re-homing</p>
-<p><strong>RayForge support:</strong> Limited; primarily uses G54.</p>
+<p><strong>Rayforge support:</strong> Limited; primarily uses G54.</p>
 <hr>
 <h3 id="offsets-g92">Offsets (G92)<a class="headerlink" href="#offsets-g92" title="Permanent link">¶</a></h3>
 <p><strong>Purpose:</strong> Temporarily redefine coordinate zero.</p>
@@ -3431,7 +3431,7 @@
 - Can cause confusion
 - Easy to forget offsets are active
 - <strong>Clear with:</strong> <code>G92.1</code> (GRBL)</p>
-<p><strong>RayForge:</strong> Avoids offsets, uses absolute positioning instead.</p>
+<p><strong>Rayforge:</strong> Avoids offsets, uses absolute positioning instead.</p>
 <hr>
 <h2 id="troubleshooting-g-code-issues">Troubleshooting G-code Issues<a class="headerlink" href="#troubleshooting-g-code-issues" title="Permanent link">¶</a></h2>
 <h3 id="commands-rejected-by-machine">Commands Rejected by Machine<a class="headerlink" href="#commands-rejected-by-machine" title="Permanent link">¶</a></h3>
@@ -3444,7 +3444,7 @@
 </ol>
 <p><strong>Solutions:</strong></p>
 <ul>
-<li>Use correct dialect in RayForge settings</li>
+<li>Use correct dialect in Rayforge settings</li>
 <li>Validate G-code with online checker (NCViewer, CAMotics)</li>
 <li>Update firmware if needed</li>
 </ul>

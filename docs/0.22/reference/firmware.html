@@ -3261,9 +3261,9 @@
   
 
 <h1 id="firmware-compatibility">Firmware Compatibility<a class="headerlink" href="#firmware-compatibility" title="Permanent link">¶</a></h1>
-<p>This page documents firmware compatibility for laser controllers used with RayForge.</p>
+<p>This page documents firmware compatibility for laser controllers used with Rayforge.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
-<p>RayForge is designed primarily for <strong>GRBL-based controllers</strong> but has experimental support for other firmware types.</p>
+<p>Rayforge is designed primarily for <strong>GRBL-based controllers</strong> but has experimental support for other firmware types.</p>
 <h3 id="compatibility-matrix">Compatibility Matrix<a class="headerlink" href="#compatibility-matrix" title="Permanent link">¶</a></h3>
 <table>
 <thead>
@@ -3328,7 +3328,7 @@
 <h3 id="grbl-11-recommended">GRBL 1.1 (Recommended)<a class="headerlink" href="#grbl-11-recommended" title="Permanent link">¶</a></h3>
 <p><strong>What is GRBL 1.1?</strong></p>
 <p>GRBL 1.1 is the most common firmware for hobby CNC and laser machines. Released in 2017, it's stable, well-documented, and widely supported.</p>
-<p><strong>Features supported by RayForge:</strong></p>
+<p><strong>Features supported by Rayforge:</strong></p>
 <ul>
 <li> Serial communication (USB)</li>
 <li> Real-time status reporting</li>
@@ -3391,20 +3391,20 @@
 <li>More I/O pins</li>
 <li>Enhanced laser support</li>
 </ul>
-<p><strong>Compatibility with RayForge:</strong></p>
+<p><strong>Compatibility with Rayforge:</strong></p>
 <ul>
 <li> <strong>Fully compatible</strong> - grblHAL maintains GRBL 1.1 protocol</li>
 <li> All GRBL features work</li>
-<li> Additional features (networking, SD) not yet supported by RayForge</li>
+<li> Additional features (networking, SD) not yet supported by Rayforge</li>
 <li> Status reporting identical to GRBL</li>
 </ul>
 <p><strong>Using grblHAL:</strong></p>
 <ol>
-<li>Select "GRBL Serial" driver in RayForge</li>
+<li>Select "GRBL Serial" driver in Rayforge</li>
 <li>Connect via USB serial (just like GRBL)</li>
 <li>All features work as documented for GRBL</li>
 </ol>
-<p><strong>Future:</strong> RayForge may add support for grblHAL-specific features (networking, etc.)</p>
+<p><strong>Future:</strong> Rayforge may add support for grblHAL-specific features (networking, etc.)</p>
 <hr>
 <h2 id="smoothieware">Smoothieware<a class="headerlink" href="#smoothieware" title="Permanent link">¶</a></h2>
 <p><strong>Status:</strong>  Experimental
@@ -3439,7 +3439,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Using Smoothieware with RayForge:</strong></p>
+<p><strong>Using Smoothieware with Rayforge:</strong></p>
 <ol>
 <li><strong>Select Smoothieware dialect</strong> in machine settings</li>
 <li><strong>Test with low power</strong> first</li>
@@ -3480,7 +3480,7 @@
 <li> Settings commands different</li>
 <li> Air assist (M8/M9) may not work</li>
 </ul>
-<p><strong>Using Marlin with RayForge:</strong></p>
+<p><strong>Using Marlin with Rayforge:</strong></p>
 <ol>
 <li><strong>Select Marlin dialect</strong> in machine settings</li>
 <li><strong>Configure Marlin</strong> for laser use</li>
@@ -3496,7 +3496,7 @@
 <li>Laser mode (M4) for constant power</li>
 <li>Better status reporting</li>
 <li>More reliable</li>
-<li>Better RayForge support</li>
+<li>Better Rayforge support</li>
 </ul>
 <p><strong>How to upgrade:</strong></p>
 <ol>
@@ -3554,7 +3554,7 @@
 <tr>
 <th>Board</th>
 <th>Typical Firmware</th>
-<th>RayForge Support</th>
+<th>Rayforge Support</th>
 </tr>
 </thead>
 <tbody>
@@ -3596,7 +3596,7 @@
 </tbody>
 </table>
 <h3 id="recommended-controllers">Recommended Controllers<a class="headerlink" href="#recommended-controllers" title="Permanent link">¶</a></h3>
-<p>For best RayForge compatibility:</p>
+<p>For best Rayforge compatibility:</p>
 <ol>
 <li><strong>Arduino Nano + CNC Shield</strong> (GRBL 1.1)</li>
 <li>Cheap (~$10-20)</li>
@@ -3705,7 +3705,7 @@
 <li>Linux: <code>/dev/ttyUSB0</code> or <code>/dev/ttyACM0</code></li>
 <li>Windows: COM3, COM4, etc.</li>
 <li>
-<p>Correct port selected in RayForge</p>
+<p>Correct port selected in Rayforge</p>
 </li>
 <li>
 <p><strong>Test with terminal:</strong></p>
@@ -3740,7 +3740,7 @@
 <p><strong>Solution:</strong></p>
 <ol>
 <li>Query firmware version: <code>$I</code></li>
-<li>Compare with RayForge expectations</li>
+<li>Compare with Rayforge expectations</li>
 <li>Upgrade or select correct dialect</li>
 </ol>
 <hr>

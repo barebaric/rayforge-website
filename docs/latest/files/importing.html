@@ -2902,7 +2902,7 @@
   
 
 <h1 id="importing-files">Importing Files<a class="headerlink" href="#importing-files" title="Permanent link">¶</a></h1>
-<p>RayForge supports importing various file formats, both vector and raster. This page explains how to import files and optimize them for best results.</p>
+<p>Rayforge supports importing various file formats, both vector and raster. This page explains how to import files and optimize them for best results.</p>
 <h2 id="supported-file-formats">Supported File Formats<a class="headerlink" href="#supported-file-formats" title="Permanent link">¶</a></h2>
 <h3 id="vector-formats">Vector Formats<a class="headerlink" href="#vector-formats" title="Permanent link">¶</a></h3>
 <table>
@@ -2983,11 +2983,11 @@
 <h3 id="method-2-drag-and-drop">Method 2: Drag and Drop<a class="headerlink" href="#method-2-drag-and-drop" title="Permanent link">¶</a></h3>
 <ol>
 <li><strong>Drag file</strong> from your file manager</li>
-<li><strong>Drop onto</strong> the RayForge canvas</li>
+<li><strong>Drop onto</strong> the Rayforge canvas</li>
 <li><strong>Import proceeds</strong> as above</li>
 </ol>
 <h3 id="method-3-command-line">Method 3: Command Line<a class="headerlink" href="#method-3-command-line" title="Permanent link">¶</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Open RayForge with a file</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Open Rayforge with a file</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>rayforge<span class="w"> </span>myfile.svg
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Multiple files</span>
@@ -2997,11 +2997,11 @@
 <h2 id="svg-import">SVG Import<a class="headerlink" href="#svg-import" title="Permanent link">¶</a></h2>
 <p>SVG (Scalable Vector Graphics) is the <strong>recommended format</strong> for vector designs.</p>
 <h3 id="import-options">Import Options<a class="headerlink" href="#import-options" title="Permanent link">¶</a></h3>
-<p>When importing SVG, RayForge offers two methods:</p>
+<p>When importing SVG, Rayforge offers two methods:</p>
 <h4 id="1-import-vectors-directly-recommended">1. Import Vectors Directly (Recommended)<a class="headerlink" href="#1-import-vectors-directly-recommended" title="Permanent link">¶</a></h4>
 <p><strong>How it works:</strong></p>
 <ul>
-<li>Parses SVG and converts paths directly to RayForge geometry</li>
+<li>Parses SVG and converts paths directly to Rayforge geometry</li>
 <li>High-fidelity preservation of curves and shapes</li>
 <li>Maintains exact vector data</li>
 </ul>
@@ -3099,7 +3099,7 @@
 <p><strong>Check document units:</strong></p>
 </li>
 <li>Set to mm or inches as appropriate</li>
-<li>RayForge uses mm internally</li>
+<li>Rayforge uses mm internally</li>
 </ol>
 <p><strong>Common SVG features that may not import:</strong></p>
 <ul>
@@ -3113,7 +3113,7 @@
 <h2 id="dxf-import">DXF Import<a class="headerlink" href="#dxf-import" title="Permanent link">¶</a></h2>
 <p>DXF (Drawing Exchange Format) is common for CAD software.</p>
 <h3 id="dxf-versions">DXF Versions<a class="headerlink" href="#dxf-versions" title="Permanent link">¶</a></h3>
-<p>RayForge supports standard DXF formats:</p>
+<p>Rayforge supports standard DXF formats:</p>
 <ul>
 <li><strong>R12/LT2</strong> (recommended) - Best compatibility</li>
 <li><strong>R13, R14</strong> - Good support</li>
@@ -3140,7 +3140,7 @@
 <p>Verify drawing units (mm vs inches)</p>
 </li>
 <li>
-<p>RayForge assumes mm by default</p>
+<p>Rayforge assumes mm by default</p>
 </li>
 <li>
 <p><strong>Flatten layers:</strong></p>
@@ -3167,7 +3167,7 @@
 <h2 id="pdf-import">PDF Import<a class="headerlink" href="#pdf-import" title="Permanent link">¶</a></h2>
 <p>PDF files can contain vector graphics, raster images, or both.</p>
 <h3 id="how-pdf-import-works">How PDF Import Works<a class="headerlink" href="#how-pdf-import-works" title="Permanent link">¶</a></h3>
-<p>RayForge <strong>renders the PDF</strong> to an image, then <strong>traces</strong> it to create vectors.</p>
+<p>Rayforge <strong>renders the PDF</strong> to an image, then <strong>traces</strong> it to create vectors.</p>
 <p><strong>Process:</strong></p>
 <ol>
 <li>PDF rendered at specified DPI (default 300)</li>
@@ -3213,7 +3213,7 @@
 <h3 id="tracing-process">Tracing Process<a class="headerlink" href="#tracing-process" title="Permanent link">¶</a></h3>
 <p><strong>How it works:</strong></p>
 <ol>
-<li><strong>Image loaded</strong> into RayForge</li>
+<li><strong>Image loaded</strong> into Rayforge</li>
 <li><strong>Tracing algorithm</strong> detects edges and shapes</li>
 <li><strong>Vector paths created</strong> from the traced edges</li>
 <li><strong>Paths added</strong> to the document as workpieces</li>
@@ -3322,7 +3322,7 @@
 <hr>
 <h2 id="import-troubleshooting">Import Troubleshooting<a class="headerlink" href="#import-troubleshooting" title="Permanent link">¶</a></h2>
 <h3 id="file-wont-import">File Won't Import<a class="headerlink" href="#file-wont-import" title="Permanent link">¶</a></h3>
-<p><strong>Problem:</strong> RayForge doesn't recognize or can't open the file.</p>
+<p><strong>Problem:</strong> Rayforge doesn't recognize or can't open the file.</p>
 <p><strong>Solutions:</strong></p>
 <ol>
 <li><strong>Check file format</strong> - Ensure it's a supported type</li>

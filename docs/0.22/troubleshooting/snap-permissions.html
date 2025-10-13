@@ -2540,7 +2540,7 @@
           <li class="md-nav__item">
   <a href="#why-this-matters-for-rayforge" class="md-nav__link">
     <span class="md-ellipsis">
-      Why This Matters for RayForge
+      Why This Matters for Rayforge
     </span>
   </a>
   
@@ -3095,7 +3095,7 @@
           <li class="md-nav__item">
   <a href="#why-this-matters-for-rayforge" class="md-nav__link">
     <span class="md-ellipsis">
-      Why This Matters for RayForge
+      Why This Matters for Rayforge
     </span>
   </a>
   
@@ -3213,11 +3213,11 @@
   
 
 <h1 id="snap-permissions-linux">Snap Permissions (Linux)<a class="headerlink" href="#snap-permissions-linux" title="Permanent link">¶</a></h1>
-<p>This page explains how to configure permissions for RayForge when installed as a Snap package on Linux.</p>
+<p>This page explains how to configure permissions for Rayforge when installed as a Snap package on Linux.</p>
 <h2 id="what-are-snap-permissions">What are Snap Permissions?<a class="headerlink" href="#what-are-snap-permissions" title="Permanent link">¶</a></h2>
 <p>Snaps are containerized applications that run in a sandbox for security. By default, they have limited access to system resources. To use certain features (like serial ports for laser controllers), you must explicitly grant permissions.</p>
 <h2 id="required-permissions">Required Permissions<a class="headerlink" href="#required-permissions" title="Permanent link">¶</a></h2>
-<p>RayForge needs these Snap interfaces connected for full functionality:</p>
+<p>Rayforge needs these Snap interfaces connected for full functionality:</p>
 <table>
 <thead>
 <tr>
@@ -3251,9 +3251,9 @@
 </table>
 <hr>
 <h2 id="granting-serial-port-access">Granting Serial Port Access<a class="headerlink" href="#granting-serial-port-access" title="Permanent link">¶</a></h2>
-<p><strong>This is the most important permission for RayForge.</strong></p>
+<p><strong>This is the most important permission for Rayforge.</strong></p>
 <h3 id="check-current-permissions">Check Current Permissions<a class="headerlink" href="#check-current-permissions" title="Permanent link">¶</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># View all connections for RayForge</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># View all connections for Rayforge</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>snap<span class="w"> </span>connections<span class="w"> </span>rayforge
 </span></code></pre></div>
 <p>Look for the <code>serial-port</code> interface. If it shows "disconnected" or "-", you need to connect it.</p>
@@ -3289,9 +3289,9 @@
 <p>Plug it back in</p>
 </li>
 <li>
-<p><strong>Restart RayForge:</strong></p>
+<p><strong>Restart Rayforge:</strong></p>
 </li>
-<li>Close RayForge completely</li>
+<li>Close Rayforge completely</li>
 <li>
 <p>Relaunch from the application menu or:
      </p><div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>snap<span class="w"> </span>run<span class="w"> </span>rayforge
@@ -3300,7 +3300,7 @@
 <li>
 <p><strong>Check that the port appears:</strong></p>
 </li>
-<li>Open RayForge  Settings  Machine</li>
+<li>Open Rayforge  Settings  Machine</li>
 <li>Look for serial ports in the dropdown</li>
 <li>
 <p>Should see <code>/dev/ttyUSB0</code>, <code>/dev/ttyACM0</code>, or similar</p>
@@ -3386,7 +3386,7 @@
 </span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="c1"># Install dependencies using pixi</span>
 </span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>pixi<span class="w"> </span>install
 </span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
-</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="c1"># Run RayForge</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="c1"># Run Rayforge</span>
 </span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>pixi<span class="w"> </span>run<span class="w"> </span>rayforge
 </span></code></pre></div>
 <p><strong>Benefits:</strong>
@@ -3399,7 +3399,7 @@
 - More dependencies to manage
 - No automatic updates</p>
 <p><strong>Option 2: Use Flatpak (if available)</strong></p>
-<p>Flatpak has similar sandboxing but sometimes with different permission models. Check if RayForge offers a Flatpak package.</p>
+<p>Flatpak has similar sandboxing but sometimes with different permission models. Check if Rayforge offers a Flatpak package.</p>
 <hr>
 <h2 id="snap-permission-best-practices">Snap Permission Best Practices<a class="headerlink" href="#snap-permission-best-practices" title="Permanent link">¶</a></h2>
 <h3 id="only-connect-what-you-need">Only Connect What You Need<a class="headerlink" href="#only-connect-what-you-need" title="Permanent link">¶</a></h3>
@@ -3430,8 +3430,8 @@
 - Removable media
 - System files
 - Other users' home directories</p>
-<h3 id="why-this-matters-for-rayforge">Why This Matters for RayForge<a class="headerlink" href="#why-this-matters-for-rayforge" title="Permanent link">¶</a></h3>
-<p>RayForge needs:</p>
+<h3 id="why-this-matters-for-rayforge">Why This Matters for Rayforge<a class="headerlink" href="#why-this-matters-for-rayforge" title="Permanent link">¶</a></h3>
+<p>Rayforge needs:</p>
 <ol>
 <li><strong>Home directory access</strong> (auto-granted)</li>
 <li>To save project files</li>
@@ -3462,7 +3462,7 @@
 </span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="nb">exec</span><span class="w"> </span>rayforge
 </span></code></pre></div>
 <h3 id="check-snap-logs">Check Snap Logs<a class="headerlink" href="#check-snap-logs" title="Permanent link">¶</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># View RayForge logs</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># View Rayforge logs</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>snap<span class="w"> </span>logs<span class="w"> </span>rayforge
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
 </span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1"># Follow logs in real-time</span>
@@ -3489,7 +3489,7 @@
 <p><strong>Try a serial port test:</strong>
    </p><div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># If you have screen or minicom installed</span>
 </span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>sudo<span class="w"> </span>snap<span class="w"> </span>connect<span class="w"> </span>rayforge:serial-port
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="c1"># Then test in RayForge</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="c1"># Then test in Rayforge</span>
 </span></code></pre></div><p></p>
 </li>
 <li>
@@ -3519,10 +3519,10 @@
 </span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="c1"># Check current connections</span>
 </span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>snap<span class="w"> </span>connections<span class="w"> </span>rayforge
 </span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>
-</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="c1"># View RayForge logs</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="c1"># View Rayforge logs</span>
 </span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>snap<span class="w"> </span>logs<span class="w"> </span>rayforge
 </span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>
-</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="c1"># Refresh/update RayForge</span>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="c1"># Refresh/update Rayforge</span>
 </span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>sudo<span class="w"> </span>snap<span class="w"> </span>refresh<span class="w"> </span>rayforge
 </span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>
 </span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="c1"># Remove and reinstall (last resort)</span>
