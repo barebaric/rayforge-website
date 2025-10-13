@@ -2968,13 +2968,13 @@
 </table>
 <div class="admonition note">
 <p class="admonition-title">Raster Import</p>
-<p>All raster images are <strong>traced</strong> to create vector paths that can be used for laser operations. The quality depends on the tracing configuration.</p>
 </div>
+<p>All raster images are <strong>traced</strong> to create vector paths that can be used for laser operations. The quality depends on the tracing configuration.</p>
 <hr>
 <h2 id="importing-files_1">Importing Files<a class="headerlink" href="#importing-files_1" title="Permanent link">¶</a></h2>
 <h3 id="method-1-file-menu">Method 1: File Menu<a class="headerlink" href="#method-1-file-menu" title="Permanent link">¶</a></h3>
 <ol>
-<li><strong>File  Import</strong> (or Ctrl+I)</li>
+<li><strong>File Import</strong> (or Ctrl+I)</li>
 <li><strong>Select your file</strong> from the file picker</li>
 <li><strong>For SVG:</strong> Choose import method (see below)</li>
 <li><strong>For rasters:</strong> Files are automatically traced</li>
@@ -2999,71 +2999,99 @@
 <h3 id="import-options">Import Options<a class="headerlink" href="#import-options" title="Permanent link">¶</a></h3>
 <p>When importing SVG, RayForge offers two methods:</p>
 <h4 id="1-import-vectors-directly-recommended">1. Import Vectors Directly (Recommended)<a class="headerlink" href="#1-import-vectors-directly-recommended" title="Permanent link">¶</a></h4>
-<p><strong>How it works:</strong>
-- Parses SVG and converts paths directly to RayForge geometry
-- High-fidelity preservation of curves and shapes
-- Maintains exact vector data</p>
-<p><strong>Pros:</strong>
-- Best quality and precision
-- Editable paths
-- Small file size</p>
-<p><strong>Cons:</strong>
-- Some advanced SVG features not supported
-- Complex SVGs may have issues</p>
-<p><strong>Use for:</strong>
-- Clean vector designs from Inkscape, Illustrator
-- Simple to moderate complexity
-- Designs without advanced SVG features</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Parses SVG and converts paths directly to RayForge geometry</li>
+<li>High-fidelity preservation of curves and shapes</li>
+<li>Maintains exact vector data</li>
+</ul>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Best quality and precision</li>
+<li>Editable paths</li>
+<li>Small file size</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Some advanced SVG features not supported</li>
+<li>Complex SVGs may have issues</li>
+</ul>
+<p><strong>Use for:</strong></p>
+<ul>
+<li>Clean vector designs from Inkscape, Illustrator</li>
+<li>Simple to moderate complexity</li>
+<li>Designs without advanced SVG features</li>
+</ul>
 <h4 id="2-trace-bitmap">2. Trace Bitmap<a class="headerlink" href="#2-trace-bitmap" title="Permanent link">¶</a></h4>
-<p><strong>How it works:</strong>
-- Renders SVG to a raster image first
-- Traces the rendered image to create vectors
-- More compatible but less precise</p>
-<p><strong>Pros:</strong>
-- Handles complex SVG features
-- Robust fallback method
-- Supports effects and filters</p>
-<p><strong>Cons:</strong>
-- Quality loss from rasterization
-- Larger file sizes
-- Not as precise</p>
-<p><strong>Use for:</strong>
-- SVGs that fail direct import
-- SVGs with effects, filters, gradients
-- When direct import produces errors</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Renders SVG to a raster image first</li>
+<li>Traces the rendered image to create vectors</li>
+<li>More compatible but less precise</li>
+</ul>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Handles complex SVG features</li>
+<li>Robust fallback method</li>
+<li>Supports effects and filters</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Quality loss from rasterization</li>
+<li>Larger file sizes</li>
+<li>Not as precise</li>
+</ul>
+<p><strong>Use for:</strong></p>
+<ul>
+<li>SVGs that fail direct import</li>
+<li>SVGs with effects, filters, gradients</li>
+<li>When direct import produces errors</li>
+</ul>
 <h3 id="svg-best-practices">SVG Best Practices<a class="headerlink" href="#svg-best-practices" title="Permanent link">¶</a></h3>
 <p><strong>Prepare your SVG for best results:</strong></p>
 <ol>
-<li><strong>Convert text to paths:</strong></li>
-<li>Inkscape: <code>Path  Object to Path</code></li>
+<li>
+<p><strong>Convert text to paths:</strong></p>
+</li>
+<li>
+<p>Inkscape: <code>Path  Object to Path</code></p>
+</li>
 <li>
 <p>Illustrator: <code>Type  Create Outlines</code></p>
 </li>
 <li>
 <p><strong>Simplify complex paths:</strong></p>
 </li>
-<li>Inkscape: <code>Path  Simplify</code> (Ctrl+L)</li>
+<li>
+<p>Inkscape: <code>Path  Simplify</code> (Ctrl+L)</p>
+</li>
 <li>
 <p>Remove unnecessary nodes</p>
 </li>
 <li>
 <p><strong>Ungroup nested groups:</strong></p>
 </li>
-<li>Flatten hierarchy where possible</li>
+<li>
+<p>Flatten hierarchy where possible</p>
+</li>
 <li>
 <p><code>Object  Ungroup</code> (Ctrl+Shift+G)</p>
 </li>
 <li>
 <p><strong>Remove hidden elements:</strong></p>
 </li>
-<li>Delete guides, grids, construction lines</li>
+<li>
+<p>Delete guides, grids, construction lines</p>
+</li>
 <li>
 <p>Remove invisible/transparent objects</p>
 </li>
 <li>
 <p><strong>Save as Plain SVG:</strong></p>
 </li>
-<li>Inkscape: "Plain SVG" or "Optimized SVG"</li>
+<li>
+<p>Inkscape: "Plain SVG" or "Optimized SVG"</p>
+</li>
 <li>
 <p>Not "Inkscape SVG" (has extra metadata)</p>
 </li>
@@ -3095,8 +3123,12 @@
 <h3 id="dxf-import-tips">DXF Import Tips<a class="headerlink" href="#dxf-import-tips" title="Permanent link">¶</a></h3>
 <p><strong>Before exporting from CAD:</strong></p>
 <ol>
-<li><strong>Simplify the drawing:</strong></li>
-<li>Remove unnecessary layers</li>
+<li>
+<p><strong>Simplify the drawing:</strong></p>
+</li>
+<li>
+<p>Remove unnecessary layers</p>
+</li>
 <li>Delete dimensions and annotations</li>
 <li>
 <p>Remove 3D objects (use 2D projection)</p>
@@ -3104,14 +3136,18 @@
 <li>
 <p><strong>Check units:</strong></p>
 </li>
-<li>Verify drawing units (mm vs inches)</li>
+<li>
+<p>Verify drawing units (mm vs inches)</p>
+</li>
 <li>
 <p>RayForge assumes mm by default</p>
 </li>
 <li>
 <p><strong>Flatten layers:</strong></p>
 </li>
-<li>Consider exporting only relevant layers</li>
+<li>
+<p>Consider exporting only relevant layers</p>
+</li>
 <li>
 <p>Hide or delete construction layers</p>
 </li>
@@ -3132,26 +3168,36 @@
 <p>PDF files can contain vector graphics, raster images, or both.</p>
 <h3 id="how-pdf-import-works">How PDF Import Works<a class="headerlink" href="#how-pdf-import-works" title="Permanent link">¶</a></h3>
 <p>RayForge <strong>renders the PDF</strong> to an image, then <strong>traces</strong> it to create vectors.</p>
-<p><strong>Process:</strong>
-1. PDF rendered at specified DPI (default 300)
-2. Rendered image traced using vectorization
-3. Resulting paths added to document</p>
-<p><strong>Limitations:</strong>
-- Text is rasterized (not editable as paths)
-- Vector quality depends on rendering DPI
-- Multi-page PDFs: only first page imported</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li>PDF rendered at specified DPI (default 300)</li>
+<li>Rendered image traced using vectorization</li>
+<li>Resulting paths added to document</li>
+</ol>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li>Text is rasterized (not editable as paths)</li>
+<li>Vector quality depends on rendering DPI</li>
+<li>Multi-page PDFs: only first page imported</li>
+</ul>
 <h3 id="pdf-import-tips">PDF Import Tips<a class="headerlink" href="#pdf-import-tips" title="Permanent link">¶</a></h3>
 <p><strong>Best results:</strong></p>
 <ol>
-<li><strong>Use vector PDFs:</strong></li>
-<li>PDFs created from vector software (Illustrator, Inkscape)</li>
+<li>
+<p><strong>Use vector PDFs:</strong></p>
+</li>
+<li>
+<p>PDFs created from vector software (Illustrator, Inkscape)</p>
+</li>
 <li>
 <p>Not scanned documents or embedded images</p>
 </li>
 <li>
 <p><strong>Export SVG instead if possible:</strong></p>
 </li>
-<li>Most design software can export SVG directly</li>
+<li>
+<p>Most design software can export SVG directly</p>
+</li>
 <li>
 <p>SVG will have better quality than PDF import</p>
 </li>
@@ -3209,29 +3255,39 @@
 <h3 id="preparing-images-for-tracing">Preparing Images for Tracing<a class="headerlink" href="#preparing-images-for-tracing" title="Permanent link">¶</a></h3>
 <p><strong>For best results:</strong></p>
 <ol>
-<li><strong>High contrast:</strong></li>
-<li>Adjust brightness/contrast in image editor</li>
+<li>
+<p><strong>High contrast:</strong></p>
+</li>
+<li>
+<p>Adjust brightness/contrast in image editor</p>
+</li>
 <li>
 <p>Clear distinction between foreground and background</p>
 </li>
 <li>
 <p><strong>Clean background:</strong></p>
 </li>
-<li>Remove noise and artifacts</li>
+<li>
+<p>Remove noise and artifacts</p>
+</li>
 <li>
 <p>Solid white or transparent background</p>
 </li>
 <li>
 <p><strong>Appropriate resolution:</strong></p>
 </li>
-<li>300-500 DPI for photos</li>
+<li>
+<p>300-500 DPI for photos</p>
+</li>
 <li>
 <p>Too high = slow tracing, too low = poor quality</p>
 </li>
 <li>
 <p><strong>Crop to content:</strong></p>
 </li>
-<li>Remove unnecessary borders</li>
+<li>
+<p>Remove unnecessary borders</p>
+</li>
 <li>
 <p>Focus on the area to be engraved/cut</p>
 </li>
@@ -3241,22 +3297,28 @@
 <li>For cutting: pure B&amp;W</li>
 <li>For engraving: grayscale is fine</li>
 </ol>
-<p><strong>Image editing tools:</strong>
-- GIMP (free)
-- Photoshop
-- Krita (free)
-- Paint.NET (free, Windows)</p>
+<p><strong>Image editing tools:</strong></p>
+<ul>
+<li>GIMP (free)</li>
+<li>Photoshop</li>
+<li>Krita (free)</li>
+<li>Paint.NET (free, Windows)</li>
+</ul>
 <h3 id="trace-quality">Trace Quality<a class="headerlink" href="#trace-quality" title="Permanent link">¶</a></h3>
-<p><strong>Good trace candidates:</strong>
-- Logos with clear edges
-- High-contrast images
-- Line art and drawings
-- Text (though better as vector)</p>
-<p><strong>Poor trace candidates:</strong>
-- Low-resolution images
-- Photos with soft edges
-- Images with gradients
-- Very detailed or complex photos</p>
+<p><strong>Good trace candidates:</strong></p>
+<ul>
+<li>Logos with clear edges</li>
+<li>High-contrast images</li>
+<li>Line art and drawings</li>
+<li>Text (though better as vector)</li>
+</ul>
+<p><strong>Poor trace candidates:</strong></p>
+<ul>
+<li>Low-resolution images</li>
+<li>Photos with soft edges</li>
+<li>Images with gradients</li>
+<li>Very detailed or complex photos</li>
+</ul>
 <hr>
 <h2 id="import-troubleshooting">Import Troubleshooting<a class="headerlink" href="#import-troubleshooting" title="Permanent link">¶</a></h2>
 <h3 id="file-wont-import">File Won't Import<a class="headerlink" href="#file-wont-import" title="Permanent link">¶</a></h3>
@@ -3264,7 +3326,7 @@
 <p><strong>Solutions:</strong></p>
 <ol>
 <li><strong>Check file format</strong> - Ensure it's a supported type</li>
-<li><strong>Try different format</strong> - Convert SVG  DXF or vice versa</li>
+<li><strong>Try different format</strong> - Convert SVG DXF or vice versa</li>
 <li><strong>Re-export from source</strong> - Original software may have export issues</li>
 <li><strong>Check file corruption</strong> - Open in another application first</li>
 <li><strong>Simplify the file</strong> - Remove complex features and retry</li>
@@ -3328,15 +3390,19 @@
 <hr>
 <h2 id="file-organization-tips">File Organization Tips<a class="headerlink" href="#file-organization-tips" title="Permanent link">¶</a></h2>
 <h3 id="naming-conventions">Naming Conventions<a class="headerlink" href="#naming-conventions" title="Permanent link">¶</a></h3>
-<p><strong>Good file names:</strong>
-- <code>logo-engrave.svg</code>
-- <code>box-cuts-3mm-ply.dxf</code>
-- <code>photo-portrait-150x200.png</code></p>
-<p><strong>Include:</strong>
-- Project name
-- Operation type (cut, engrave)
-- Material/thickness if relevant
-- Dimensions</p>
+<p><strong>Good file names:</strong></p>
+<ul>
+<li><code>logo-engrave.svg</code></li>
+<li><code>box-cuts-3mm-ply.dxf</code></li>
+<li><code>photo-portrait-150x200.png</code></li>
+</ul>
+<p><strong>Include:</strong></p>
+<ul>
+<li>Project name</li>
+<li>Operation type (cut, engrave)</li>
+<li>Material/thickness if relevant</li>
+<li>Dimensions</li>
+</ul>
 <h3 id="file-preparation-checklist">File Preparation Checklist<a class="headerlink" href="#file-preparation-checklist" title="Permanent link">¶</a></h3>
 <p>Before importing:</p>
 <ul class="task-list">
@@ -3349,15 +3415,19 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Exported with compatible settings</li>
 </ul>
 <h3 id="design-software-recommendations">Design Software Recommendations<a class="headerlink" href="#design-software-recommendations" title="Permanent link">¶</a></h3>
-<p><strong>Vector design:</strong>
-- <strong>Inkscape</strong> (free, excellent SVG support)
-- <strong>Adobe Illustrator</strong> (professional, paid)
-- <strong>Affinity Designer</strong> (affordable alternative)
-- <strong>LibreCAD</strong> (free, for DXF/CAD work)</p>
-<p><strong>Raster editing:</strong>
-- <strong>GIMP</strong> (free, powerful)
-- <strong>Photoshop</strong> (professional, paid)
-- <strong>Krita</strong> (free, good for digital art)</p>
+<p><strong>Vector design:</strong></p>
+<ul>
+<li><strong>Inkscape</strong> (free, excellent SVG support)</li>
+<li><strong>Adobe Illustrator</strong> (professional, paid)</li>
+<li><strong>Affinity Designer</strong> (affordable alternative)</li>
+<li><strong>LibreCAD</strong> (free, for DXF/CAD work)</li>
+</ul>
+<p><strong>Raster editing:</strong></p>
+<ul>
+<li><strong>GIMP</strong> (free, powerful)</li>
+<li><strong>Photoshop</strong> (professional, paid)</li>
+<li><strong>Krita</strong> (free, good for digital art)</li>
+</ul>
 <hr>
 <h2 id="related-pages">Related Pages<a class="headerlink" href="#related-pages" title="Permanent link">¶</a></h2>
 <ul>
