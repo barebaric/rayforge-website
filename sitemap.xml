@@ -49,6 +49,38 @@
          <lastmod>2025-10-13</lastmod>
     </url>
     <url>
+         <loc>https://rayforge.org/docs/0.22/developer/architecture.html</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
+         <loc>https://rayforge.org/docs/0.22/developer/docmodel.html</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
+         <loc>https://rayforge.org/docs/0.22/developer/driver.html</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
+         <loc>https://rayforge.org/docs/0.22/developer/pipeline.html</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
+         <loc>https://rayforge.org/docs/0.22/developer/tasker.html</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
+         <loc>https://rayforge.org/docs/0.22/developer/getting-started/getting-the-code.html</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
+         <loc>https://rayforge.org/docs/0.22/developer/getting-started/setup.html</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
+         <loc>https://rayforge.org/docs/0.22/developer/getting-started/submitting-changes.html</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
          <loc>https://rayforge.org/docs/0.22/features/index.html</loc>
          <lastmod>2025-10-13</lastmod>
     </url>
@@ -201,6 +233,10 @@
          <lastmod>2025-10-13</lastmod>
     </url>
     <url>
+         <loc>https://rayforge.org/docs/0.22/troubleshooting/debug.html</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
          <loc>https://rayforge.org/docs/0.22/troubleshooting/performance.html</loc>
          <lastmod>2025-10-13</lastmod>
     </url>
@@ -254,6 +290,38 @@
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/concepts/understanding-operations.html</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
+         <loc>https://rayforge.org/docs/latest/developer/architecture.html</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
+         <loc>https://rayforge.org/docs/latest/developer/docmodel.html</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
+         <loc>https://rayforge.org/docs/latest/developer/driver.html</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
+         <loc>https://rayforge.org/docs/latest/developer/pipeline.html</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
+         <loc>https://rayforge.org/docs/latest/developer/tasker.html</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
+         <loc>https://rayforge.org/docs/latest/developer/getting-started/getting-the-code.html</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
+         <loc>https://rayforge.org/docs/latest/developer/getting-started/setup.html</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
+         <loc>https://rayforge.org/docs/latest/developer/getting-started/submitting-changes.html</loc>
          <lastmod>2025-10-13</lastmod>
     </url>
     <url>
@@ -406,6 +474,10 @@
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/troubleshooting/connection.html</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
+         <loc>https://rayforge.org/docs/latest/troubleshooting/debug.html</loc>
          <lastmod>2025-10-13</lastmod>
     </url>
     <url>
