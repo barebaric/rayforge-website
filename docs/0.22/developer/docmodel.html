@@ -3177,7 +3177,7 @@ groups). This allows complex, nested structures to be treated uniformly.</p>
 <li><strong>Reactivity:</strong> The model uses a signal/slot system (<code>blinker</code>). When an
   item is changed, it emits a signal. Parent items listen to their
   children's signals and "bubble them up" the tree. This allows
-  high-level components like the <code>OpsGenerator</code> to listen for any
+  high-level components like the <code>Pipeline</code> to listen for any
   change in the document by connecting to a single signal on the root
   <code>Doc</code> object. The system tracks both content changes and transform
   changes separately for efficient updates.</li>

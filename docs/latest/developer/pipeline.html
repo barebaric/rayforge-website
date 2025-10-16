@@ -3030,8 +3030,8 @@ visualization and manufacturing.</p>
         Input("Input&lt;br/&gt;Document")
     end
 
-    subgraph "2. Generator Pipeline"
-        subgraph "2a. StepRunner"
+    subgraph "2. Pipeline"
+        subgraph "2a. WorkpieceGenerator"
             direction LR
             A(Single WorkPiece + Step Config);
             A --&gt; B(Modifiers&lt;br/&gt;&lt;i&gt;e.g., ToGrayscale&lt;/i&gt;);
@@ -3039,33 +3039,46 @@ visualization and manufacturing.</p>
             C -- "Creates Artifact" --&gt; D("Toolpaths&lt;br/&gt;&lt;i&gt;Ops + Metadata&lt;/i&gt;");
             D --&gt; E(Transformers&lt;br/&gt;&lt;i&gt;e.g., Tabs,&lt;br/&gt;Smooth&lt;/i&gt;);
             E -- "Modifies Ops in-place" --&gt; F(Vertex Encoder);
-            F -- "Creates render data" --&gt; G("Final Cached Artifact&lt;br/&gt;&lt;i&gt;e.g. Ops, Vertices, Textures&lt;/i&gt;");
+            F -- "Creates render data" --&gt; G("WorkPieceArtifact&lt;br/&gt;&lt;i&gt;Local Ops, Vertices, Textures&lt;/i&gt;");
         end
 
-        subgraph "2b. JobRunner (Assembles the final job)"
+        subgraph "2b. StepGenerator"
             direction LR
-            J("Multiple cached Artifacts&lt;br/&gt;&lt;i&gt;(from StepRunner)&lt;/i&gt;");
-            J --&gt; K(Assemble &amp; Transform&lt;br/&gt;&lt;i&gt;Applies position, scale, rotation&lt;/i&gt;);
-            K --&gt; L(Per-Step Transformers&lt;br/&gt;&lt;i&gt;e.g., Multi-Pass, Optimize&lt;/i&gt;);
-            L --&gt; M(G-code Encoder);
-            M --&gt; N(&lt;b&gt;Final G-code&lt;/b&gt;);
+            H("Multiple WorkPieceArtifacts");
+            H --&gt; I(Assemble &amp; Transform&lt;br/&gt;&lt;i&gt;Applies position, rotation&lt;/i&gt;);
+            I --&gt; J(Per-Step Transformers&lt;br/&gt;&lt;i&gt;e.g., Multi-Pass, Optimize&lt;/i&gt;);
+            J -- "Creates render bundle" --&gt; K("StepArtifact&lt;br/&gt;&lt;i&gt;World-space Vertices &amp; Textures&lt;/i&gt;")
+        end
+
+        subgraph "2c. JobGenerator"
+            direction LR
+            L("Multiple StepArtifacts");
+            L --&gt; M(Assemble Ops &amp; Encode);
+            M --&gt; N("JobArtifact&lt;br/&gt;&lt;i&gt;Final Ops, Vertices, G-code, Time&lt;/i&gt;");
         end
     end
 
     subgraph "3. Consumers"
-        Vis("Canvas Visualization (UI)")
+        Vis2D("2D Canvas (UI)")
+        Vis3D("3D Canvas (UI)")
+        Simulator("Simulator (UI)")
         File("G-code File (for Machine)")
     end
 
     Input --&gt; A;
-    G -.-&gt; J;
-    G --&gt; Vis;
+    G --&gt; H;
+    G --&gt; Vis2D;
+    K --&gt; L;
+    K --&gt; Vis3D;
+    N --&gt; Simulator;
     N --&gt; File;
 
     classDef io fill:#f9f,stroke:#333,stroke-width:2px;
     classDef output fill:#bbf,stroke:#333,stroke-width:2px,max-width:500px;
-    class Input,Vis,File io;
-    class A,D,G,J,N output</code></pre>
+    classDef highlight fill:#dfd,stroke:#333,stroke-width:2px;
+    class Input,Vis2D,Vis3D,Simulator,File io;
+    class A,D,G,H,K,L,N output;
+    class I,J,M highlight</code></pre>
 <h1 id="detailed-breakdown-of-the-sequence"><strong>Detailed Breakdown of the Sequence</strong><a class="headerlink" href="#detailed-breakdown-of-the-sequence" title="Permanent link">¶</a></h1>
 <h2 id="1-input"><strong>1. Input</strong><a class="headerlink" href="#1-input" title="Permanent link">¶</a></h2>
 <p>The process begins with the <strong>Input</strong>, which is the <code>Doc Model</code>. This is the
@@ -3077,66 +3090,83 @@ complete representation of the user's project, containing:</p>
   (e.g., a "Contour" cut or a "Raster" engrave), including settings like
   power and speed.</li>
 </ul>
-<h2 id="2-the-generator"><strong>2. The Generator</strong><a class="headerlink" href="#2-the-generator" title="Permanent link">¶</a></h2>
-<p>The <code>Generator</code> is the core processing engine that runs in the background.
-It takes the <code>Doc Model</code> as its input and orchestrates two distinct but
-related processes: the <code>StepRunner</code> and the <code>JobRunner</code>.</p>
-<h3 id="2a-steprunner-per-item-processing"><strong>2a. StepRunner: Per-Item Processing</strong><a class="headerlink" href="#2a-steprunner-per-item-processing" title="Permanent link">¶</a></h3>
-<p>The <code>StepRunner</code> processes each <code>(WorkPiece, Step)</code> combination individually
-to create a cached, reusable result. This allows for fast updates when only
-a single item changes. Its internal sequence is:</p>
+<h2 id="2-the-pipeline"><strong>2. The Pipeline</strong><a class="headerlink" href="#2-the-pipeline" title="Permanent link">¶</a></h2>
+<p>The <code>Pipeline</code> is the core processing engine that runs in the background.
+It takes the <code>Doc Model</code> as its input and orchestrates a series of distinct
+<code>PipelineStage</code>s.</p>
+<h3 id="2a-workpiecegeneratorstage-per-item-processing"><strong>2a. WorkpieceGeneratorStage: Per-Item Processing</strong><a class="headerlink" href="#2a-workpiecegeneratorstage-per-item-processing" title="Permanent link">¶</a></h3>
+<p>This stage processes each <code>(WorkPiece, Step)</code> combination individually to
+create a cached <code>WorkPieceArtifact</code>. This artifact contains toolpaths in the
+<strong>local coordinate system</strong> of the workpiece. Its internal sequence is:</p>
 <ol>
 <li><strong>Modifiers:</strong> (Optional) If the input is a raster image, modifiers
     perform initial image conditioning, such as converting it to grayscale.</li>
-<li><strong>Producer:</strong> This is the primary generation step. A <code>Producer</code> (like
-    <code>EdgeTracer</code> or <code>Rasterizer</code>) analyzes the input and creates an
-    <code>Artifact</code>. This initial artifact contains the raw toolpaths (<code>Ops</code>)
-    and metadata describing the result (e.g., if it's scalable).</li>
+<li><strong>Producer:</strong> A <code>Producer</code> (like <code>EdgeTracer</code> or <code>Rasterizer</code>) analyzes
+    the input and creates the raw toolpaths (<code>Ops</code>) and metadata.</li>
 <li><strong>Per-Workpiece Transformers:</strong> The newly generated <code>Ops</code> are passed
-    through transformers that are specific to that individual workpiece,
-    such as adding holding <code>Tabs</code> or <code>Smooth</code>ing the geometry.</li>
-<li><strong>Vertex Encoder:</strong> Finally, the processed <code>Ops</code> are encoded into
-    GPU-friendly formats for display. This generates <code>Vertex Data</code> (for
-    lines and paths) and <code>Texture Data</code> (for raster fills).</li>
+    through transformers specific to that workpiece, such as adding
+    holding <code>Tabs</code> or <code>Smooth</code>ing the geometry.</li>
+<li><strong>Vertex Encoder:</strong> The processed <code>Ops</code> are encoded into GPU-friendly
+    <code>Vertex Data</code> (for lines) and <code>Texture Data</code> (for raster fills).</li>
 </ol>
-<p>The final output is a <strong>Cached Artifact</strong> stored in shared memory. This
-artifact contains everything needed for both visualization and final
-job assembly. The artifact system uses NumPy arrays for efficient
-data transfer between processes and includes vertex data for GPU rendering
-and command data for G-code generation.</p>
-<h3 id="2b-jobrunner-final-assembly"><strong>2b. JobRunner: Final Assembly</strong><a class="headerlink" href="#2b-jobrunner-final-assembly" title="Permanent link">¶</a></h3>
-<p>The <code>JobRunner</code> is invoked when the user wants to generate the final G-code
-for the entire project. It consumes the artifacts created by the
-<code>StepRunner</code>.</p>
+<p>The output is a <strong>WorkPieceArtifact</strong> stored in shared memory. This contains
+un-positioned, un-rotated data ready for the next stage and for direct
+consumption by the 2D canvas.</p>
+<h3 id="2b-stepgeneratorstage-step-level-assembly"><strong>2b. StepGeneratorStage: Step-Level Assembly</strong><a class="headerlink" href="#2b-stepgeneratorstage-step-level-assembly" title="Permanent link">¶</a></h3>
+<p>This stage is responsible for assembling a final <strong>render bundle</strong> for an
+entire step. It consumes the <code>WorkPieceArtifacts</code> for all workpieces that
+are part of a given step.</p>
 <ol>
-<li><strong>Assemble &amp; Transform:</strong> The <code>JobRunner</code> retrieves all the required
-    <code>Artifacts</code> from the cache. It then applies the final world
-    transformations to each one—placing them at their correct X/Y position,
-    applying rotation, and scaling them to their final size. All these
-    individual toolpaths are combined into a single, large <code>Ops</code> object.</li>
-<li><strong>Per-Step Transformers:</strong> This unified <code>Ops</code> object is then processed
-    by transformers that operate on the job as a whole. This is where final
-    path <code>Optimize</code>ation (to reduce travel moves) and <code>Multi-Pass</code>
-    operations are applied.</li>
-<li><strong>G-code Encoder:</strong> The final, optimized <code>Ops</code> object is fed into the
-    <code>G-code Encoder</code>, which translates the machine-agnostic commands
-    into the specific G-code dialect required by the user's machine.
-    The encoder handles machine-specific formatting, coordinate systems,
-    and command syntax.</li>
+<li><strong>Assemble &amp; Transform:</strong> The stage retrieves all required
+    <code>WorkPieceArtifacts</code> from the cache. It then applies the final world
+    transformations to each one—placing them at their correct X/Y position
+    and applying rotation. All these individual toolpaths and textures are
+    combined.</li>
+<li><strong>Per-Step Transformers:</strong> The unified <code>Ops</code> are then processed
+    by transformers that operate on the step as a whole, such as path
+    <code>Optimize</code>ation or <code>Multi-Pass</code> operations.</li>
 </ol>
-<p>The final output is the complete <strong>G-code</strong> text.</p>
+<p>The output is a <strong>StepArtifact</strong>. This is a self-contained bundle for the
+3D canvas, containing all vertex and texture data for the entire step, now in
+final <strong>world-space</strong> coordinates.</p>
+<h3 id="2c-jobgeneratorstage-final-job-assembly"><strong>2c. JobGeneratorStage: Final Job Assembly</strong><a class="headerlink" href="#2c-jobgeneratorstage-final-job-assembly" title="Permanent link">¶</a></h3>
+<p>This stage is invoked when the user wants to generate the final G-code. It
+consumes the <code>StepArtifacts</code> created by the <code>StepGeneratorStage</code>.</p>
+<ol>
+<li><strong>Assemble Ops &amp; Encode:</strong> The <code>JobGeneratorStage</code> retrieves all required
+    <code>StepArtifacts</code> from the cache and combines their <code>Ops</code> into a single,
+    large sequence. It then encodes this sequence into G-code and generates
+    a final set of vertices for simulation, along with a high-fidelity
+    time estimate for the entire job.</li>
+</ol>
+<p>The final output is a <strong>JobArtifact</strong>, which contains the complete G-code,
+final vertex data, the OpMap, and the total time estimate.</p>
 <h2 id="3-consumers"><strong>3. Consumers</strong><a class="headerlink" href="#3-consumers" title="Permanent link">¶</a></h2>
-<p>The data generated by the pipeline is consumed by two primary clients:</p>
+<p>The data generated by the pipeline is consumed by several clients, each
+using the artifact best suited for its needs:</p>
 <ol>
-<li><strong>Canvas Visualization (UI):</strong> The UI directly and efficiently uses the
-    <code>Vertex Data</code> and <code>Texture Data</code> from the <strong>Cached Artifacts</strong> to render
-    the toolpaths on the screen. The rendering system uses OpenGL buffers
-    populated directly from the NumPy arrays in the artifacts. Because it uses
-    pre-computed data, the UI remains fast and responsive.</li>
-<li><strong>G-code File (for Machine):</strong> The final <strong>G-code</strong> from the <code>JobRunner</code>
+<li>
+<p><strong>2D Canvas (UI):</strong> Uses <strong>WorkPieceArtifacts</strong> directly. This allows it
+    to render the local geometry of each workpiece without needing to wait
+    for step-level assembly, providing fast feedback during design.</p>
+</li>
+<li>
+<p><strong>3D Canvas (UI):</strong> Uses <strong>StepArtifacts</strong>. These are perfect "render
+    bundles" containing all the geometry for an entire step, already in
+    world-space coordinates. This simplifies rendering and ensures an
+    accurate preview of the final assembled output.</p>
+</li>
+<li>
+<p><strong>Simulator (UI):</strong> Uses the <strong>JobArtifact</strong>. The final vertex data
+    within this artifact represents the exact path the machine will take,
+    allowing for an accurate, real-time simulation of the entire job from
+    start to finish. It also uses the final time estimate.</p>
+</li>
+<li>
+<p><strong>G-code File (for Machine):</strong> The <strong>G-code</strong> from the <code>JobArtifact</code>
     is saved to a file, which can then be sent to the laser cutter or CNC
-    machine for manufacturing. The G-code includes proper header/footer,
-    coordinate setup, and machine-specific optimizations.</li>
+    machine for manufacturing.</p>
+</li>
 </ol>
 
 
