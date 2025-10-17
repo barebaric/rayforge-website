@@ -3074,14 +3074,15 @@ visualization and manufacturing.</p>
             H("Multiple WorkPieceArtifacts");
             H --&gt; I(Assemble &amp; Transform&lt;br/&gt;&lt;i&gt;Applies position, rotation&lt;/i&gt;);
             I --&gt; J(Per-Step Transformers&lt;br/&gt;&lt;i&gt;e.g., Multi-Pass, Optimize&lt;/i&gt;);
-            J -- "Creates render bundle" --&gt; K("StepArtifact&lt;br/&gt;&lt;i&gt;World-space Vertices &amp; Textures&lt;/i&gt;")
+            J -- "Creates render bundle" --&gt; K("StepRenderArtifact&lt;br/&gt;&lt;i&gt;World-space Vertices &amp; Textures&lt;/i&gt;")
+            J -- "Creates ops bundle" --&gt; L("StepOpsArtifact&lt;br/&gt;&lt;i&gt;World-space Ops&lt;/i&gt;")
         end
 
         subgraph "2c. JobGenerator"
             direction LR
-            L("Multiple StepArtifacts");
-            L --&gt; M(Assemble Ops &amp; Encode);
-            M --&gt; N("JobArtifact&lt;br/&gt;&lt;i&gt;Final Ops, Vertices, G-code, Time&lt;/i&gt;");
+            M("Multiple StepOpsArtifacts");
+            M --&gt; N(Assemble Ops &amp; Encode);
+            N --&gt; O("JobArtifact&lt;br/&gt;&lt;i&gt;Final Ops, Vertices, G-code, Time&lt;/i&gt;");
         end
     end
 
@@ -3095,17 +3096,15 @@ visualization and manufacturing.</p>
     Input --&gt; A;
     G --&gt; H;
     G --&gt; Vis2D;
-    K --&gt; L;
     K --&gt; Vis3D;
-    N --&gt; Simulator;
-    N --&gt; File;
+    L --&gt; M;
+    O --&gt; Simulator;
+    O --&gt; File;
 
     classDef io fill:#f9f,stroke:#333,stroke-width:2px;
     classDef output fill:#bbf,stroke:#333,stroke-width:2px,max-width:500px;
-    classDef highlight fill:#dfd,stroke:#333,stroke-width:2px;
     class Input,Vis2D,Vis3D,Simulator,File io;
-    class A,D,G,H,K,L,N output;
-    class I,J,M highlight</code></pre>
+    class A,D,G,H,K,L,M,O output;</code></pre>
 <h1 id="detailed-breakdown-of-the-sequence"><strong>Detailed Breakdown of the Sequence</strong><a class="headerlink" href="#detailed-breakdown-of-the-sequence" title="Permanent link">¶</a></h1>
 <h2 id="1-input"><strong>1. Input</strong><a class="headerlink" href="#1-input" title="Permanent link">¶</a></h2>
 <p>The process begins with the <strong>Input</strong>, which is the <code>Doc Model</code>. This is the
@@ -3140,9 +3139,9 @@ create a cached <code>WorkPieceArtifact</code>. This artifact contains toolpaths
 un-positioned, un-rotated data ready for the next stage and for direct
 consumption by the 2D canvas.</p>
 <h3 id="2b-stepgeneratorstage-step-level-assembly"><strong>2b. StepGeneratorStage: Step-Level Assembly</strong><a class="headerlink" href="#2b-stepgeneratorstage-step-level-assembly" title="Permanent link">¶</a></h3>
-<p>This stage is responsible for assembling a final <strong>render bundle</strong> for an
-entire step. It consumes the <code>WorkPieceArtifacts</code> for all workpieces that
-are part of a given step.</p>
+<p>This stage is responsible for assembling final artifacts for an entire step. It
+consumes the <code>WorkPieceArtifacts</code> for all workpieces that are part of a given
+step.</p>
 <ol>
 <li><strong>Assemble &amp; Transform:</strong> The stage retrieves all required
     <code>WorkPieceArtifacts</code> from the cache. It then applies the final world
@@ -3153,15 +3152,20 @@ are part of a given step.</p>
     by transformers that operate on the step as a whole, such as path
     <code>Optimize</code>ation or <code>Multi-Pass</code> operations.</li>
 </ol>
-<p>The output is a <strong>StepArtifact</strong>. This is a self-contained bundle for the
-3D canvas, containing all vertex and texture data for the entire step, now in
-final <strong>world-space</strong> coordinates.</p>
+<p>The <code>StepGeneratorStage</code> produces two distinct outputs:</p>
+<ul>
+<li>A <strong>StepRenderArtifact</strong>: A lightweight "render bundle" for the 3D canvas,
+  containing all vertex and texture data for the entire step in final
+  <strong>world-space</strong> coordinates. This is delivered as quickly as possible.</li>
+<li>A <strong>StepOpsArtifact</strong>: An artifact containing only the final, transformed
+  <code>Ops</code> for the entire step. This is consumed later by the job generator.</li>
+</ul>
 <h3 id="2c-jobgeneratorstage-final-job-assembly"><strong>2c. JobGeneratorStage: Final Job Assembly</strong><a class="headerlink" href="#2c-jobgeneratorstage-final-job-assembly" title="Permanent link">¶</a></h3>
 <p>This stage is invoked when the user wants to generate the final G-code. It
-consumes the <code>StepArtifacts</code> created by the <code>StepGeneratorStage</code>.</p>
+consumes the <code>StepOpsArtifacts</code> created by the <code>StepGeneratorStage</code>.</p>
 <ol>
 <li><strong>Assemble Ops &amp; Encode:</strong> The <code>JobGeneratorStage</code> retrieves all required
-    <code>StepArtifacts</code> from the cache and combines their <code>Ops</code> into a single,
+    <code>StepOpsArtifacts</code> from the cache and combines their <code>Ops</code> into a single,
     large sequence. It then encodes this sequence into G-code and generates
     a final set of vertices for simulation, along with a high-fidelity
     time estimate for the entire job.</li>
@@ -3178,7 +3182,7 @@ using the artifact best suited for its needs:</p>
     for step-level assembly, providing fast feedback during design.</p>
 </li>
 <li>
-<p><strong>3D Canvas (UI):</strong> Uses <strong>StepArtifacts</strong>. These are perfect "render
+<p><strong>3D Canvas (UI):</strong> Uses <strong>StepRenderArtifacts</strong>. These are perfect "render
     bundles" containing all the geometry for an entire step, already in
     world-space coordinates. This simplifies rendering and ensures an
     accurate preview of the final assembled output.</p>
