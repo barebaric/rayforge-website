@@ -1158,6 +1158,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#flathub-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flathub Package
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#snap-package-cross-distribution" class="md-nav__link">
     <span class="md-ellipsis">
       Snap Package (Cross-Distribution)
@@ -3191,6 +3200,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#flathub-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flathub Package
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#snap-package-cross-distribution" class="md-nav__link">
     <span class="md-ellipsis">
       Snap Package (Cross-Distribution)
@@ -3321,6 +3339,10 @@
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>rayforge
 </span></code></pre></div>
 <p>Once installed, launch Rayforge from your application menu or by running <code>rayforge</code> in a terminal.</p>
+<h3 id="flathub-package">Flathub Package<a class="headerlink" href="#flathub-package" title="Permanent link">¶</a></h3>
+<p>The Flathub package is the easiest way to get started with Rayforge on Linux.</p>
+<p><a href="https://flathub.org/apps/org.rayforge.rayforge"><img alt="Get it from Flathub" src="../images/flathub-badge.svg" height="55"></a></p>
+<p>Just click the badge and click install - you are ready to go!</p>
 <h3 id="snap-package-cross-distribution">Snap Package (Cross-Distribution)<a class="headerlink" href="#snap-package-cross-distribution" title="Permanent link">¶</a></h3>
 <p>The Snap package works on most Linux distributions and includes all dependencies in a sandboxed environment.</p>
 <p><a href="https://snapcraft.io/rayforge"><img alt="Get it from the Snap Store" src="https://snapcraft.io/en/light/install.svg"></a></p>
@@ -3332,16 +3354,16 @@
 <p>The Snap version runs in a sandbox and requires manual permission grants for hardware access.</p>
 </div>
 <h4 id="granting-permissions">Granting Permissions<a class="headerlink" href="#granting-permissions" title="Permanent link">¶</a></h4>
-<p><strong>For Camera Access:</strong>
-</p><div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>snap<span class="w"> </span>connect<span class="w"> </span>rayforge:camera
-</span></code></pre></div><p></p>
-<p><strong>For USB Serial Port Access:</strong>
-</p><div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Enable experimental hotplug support (one-time setup)</span>
+<p><strong>For Camera Access:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>snap<span class="w"> </span>connect<span class="w"> </span>rayforge:camera
+</span></code></pre></div>
+<p><strong>For USB Serial Port Access:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Enable experimental hotplug support (one-time setup)</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>sudo<span class="w"> </span>snap<span class="w"> </span><span class="nb">set</span><span class="w"> </span>system<span class="w"> </span>experimental.hotplug<span class="o">=</span><span class="nb">true</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Connect your laser via USB, then grant access</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>sudo<span class="w"> </span>snap<span class="w"> </span>connect<span class="w"> </span>rayforge:serial-port
-</span></code></pre></div><p></p>
+</span></code></pre></div>
 <p>See <a href="../troubleshooting/snap-permissions.html">Snap Permissions Troubleshooting</a> for more details.</p>
 <h3 id="from-source-advanced">From Source (Advanced)<a class="headerlink" href="#from-source-advanced" title="Permanent link">¶</a></h3>
 <p>For developers and advanced users who want to run the latest development version or contribute to the project.</p>
