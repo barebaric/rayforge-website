@@ -3145,7 +3145,7 @@ complete representation of the user's project, containing:</p>
 <p>The <code>Pipeline</code> is the core processing engine that runs in the background.
 It takes the <code>Doc Model</code> as its input and orchestrates a series of distinct
 <code>PipelineStage</code>s.</p>
-<h3 id="2a-workpiecegeneratorstage-per-item-processing"><strong>2a. WorkpieceGeneratorStage: Per-Item Processing</strong><a class="headerlink" href="#2a-workpiecegeneratorstage-per-item-processing" title="Permanent link">¶</a></h3>
+<h3 id="2a-workpiecepipelinestage-per-item-processing"><strong>2a. WorkPiecePipelineStage: Per-Item Processing</strong><a class="headerlink" href="#2a-workpiecepipelinestage-per-item-processing" title="Permanent link">¶</a></h3>
 <p>This stage processes each <code>(WorkPiece, Step)</code> combination individually to
 create a cached <code>WorkPieceArtifact</code>. This artifact contains toolpaths in the
 <strong>local coordinate system</strong> of the workpiece. Its internal sequence is:</p>
@@ -3163,7 +3163,7 @@ create a cached <code>WorkPieceArtifact</code>. This artifact contains toolpaths
 <p>The output is a <strong>WorkPieceArtifact</strong> stored in shared memory. This contains
 un-positioned, un-rotated data ready for the next stage and for direct
 consumption by the 2D canvas.</p>
-<h3 id="2b-stepgeneratorstage-step-level-assembly"><strong>2b. StepGeneratorStage: Step-Level Assembly</strong><a class="headerlink" href="#2b-stepgeneratorstage-step-level-assembly" title="Permanent link">¶</a></h3>
+<h3 id="2b-steppipelinestage-step-level-assembly"><strong>2b. StepPipelineStage: Step-Level Assembly</strong><a class="headerlink" href="#2b-steppipelinestage-step-level-assembly" title="Permanent link">¶</a></h3>
 <p>This stage is responsible for assembling final artifacts for an entire step. It
 consumes the <code>WorkPieceArtifacts</code> for all workpieces that are part of a given
 step.</p>
@@ -3177,7 +3177,7 @@ step.</p>
     by transformers that operate on the step as a whole, such as path
     <code>Optimize</code>ation or <code>Multi-Pass</code> operations.</li>
 </ol>
-<p>The <code>StepGeneratorStage</code> produces two distinct outputs:</p>
+<p>The <code>StepPipelineStage</code> produces two distinct outputs:</p>
 <ul>
 <li>A <strong>StepRenderArtifact</strong>: A lightweight "render bundle" for the 3D canvas,
   containing all vertex and texture data for the entire step in final
@@ -3185,11 +3185,11 @@ step.</p>
 <li>A <strong>StepOpsArtifact</strong>: An artifact containing only the final, transformed
   <code>Ops</code> for the entire step. This is consumed later by the job generator.</li>
 </ul>
-<h3 id="2c-jobgeneratorstage-final-job-assembly"><strong>2c. JobGeneratorStage: Final Job Assembly</strong><a class="headerlink" href="#2c-jobgeneratorstage-final-job-assembly" title="Permanent link">¶</a></h3>
+<h3 id="2c-jobpipelinestage-final-job-assembly"><strong>2c. JobPipelineStage: Final Job Assembly</strong><a class="headerlink" href="#2c-jobpipelinestage-final-job-assembly" title="Permanent link">¶</a></h3>
 <p>This stage is invoked when the user wants to generate the final G-code. It
-consumes the <code>StepOpsArtifacts</code> created by the <code>StepGeneratorStage</code>.</p>
+consumes the <code>StepOpsArtifacts</code> created by the <code>StepPipelineStage</code>.</p>
 <ol>
-<li><strong>Assemble Ops &amp; Encode:</strong> The <code>JobGeneratorStage</code> retrieves all required
+<li><strong>Assemble Ops &amp; Encode:</strong> The <code>JobPipelineStage</code> retrieves all required
     <code>StepOpsArtifacts</code> from the cache and combines their <code>Ops</code> into a single,
     large sequence. It then encodes this sequence into G-code and generates
     a final set of vertices for simulation, along with a high-fidelity
