@@ -2,302 +2,302 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://rayforge.org/index.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/blog/index.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/blog/2025/02/20/5-tips-for-better-laser-engraving-results-with-rayforge.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/blog/2025/01/10/multi-laser-support-choose-different-lasers-for-each-operation.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/blog/2024/12/15/welcome-to-rayforge-modern-laser-control-software.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/contributing/index.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/concepts/index.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/concepts/coordinates-and-origin.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/concepts/gcode-basics.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/concepts/laser-safety.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/concepts/power-vs-speed.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/concepts/understanding-operations.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/developer/architecture.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/developer/docmodel.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/developer/driver.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/developer/pipeline.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/developer/tasker.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/developer/getting-started/index.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/developer/getting-started/setup.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/developer/getting-started/submitting-changes.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/features/index.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/features/camera.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/features/holding-tabs.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/features/kerf.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/features/macros-hooks.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/features/material-libraries.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/features/multi-layer.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/features/overscan.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/features/recipes.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/features/simulation-mode.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/features/stock-handling.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/features/operations/index.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/features/operations/contour.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/features/operations/depth.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/features/operations/material-test-grid.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/features/operations/raster.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/features/operations/shrink-wrap.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/files/index.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/files/exporting.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/files/formats.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/files/importing.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/getting-started/index.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/getting-started/first-time-setup.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/getting-started/framing-your-job.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/getting-started/installation.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/getting-started/quick-start.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/getting-started/simulating-your-job.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/includes/abbreviations.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/machine/index.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/machine/calibrating-your-workspace.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/machine/device-config.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/machine/grbl-settings.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/machine/multi-laser.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/machine/profiles.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/reference/index.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/reference/firmware.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/reference/gcode-dialects.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/reference/shortcuts.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/troubleshooting/index.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/troubleshooting/common.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/troubleshooting/connection.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/troubleshooting/debug.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/troubleshooting/performance.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/troubleshooting/snap-permissions.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/ui/index.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/ui/3d-preview.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/ui/canvas-tools.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/ui/jog-dialog.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/ui/main-window.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/docs/latest/ui/settings.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/blog/archive/2025.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/blog/archive/2024.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/blog/category/tips--tricks.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/blog/category/updates.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
     <url>
          <loc>https://rayforge.org/blog/category/announcements.html</loc>
-         <lastmod>2025-11-16</lastmod>
+         <lastmod>2025-11-17</lastmod>
     </url>
 </urlset>
