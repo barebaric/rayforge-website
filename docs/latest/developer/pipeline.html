@@ -3087,7 +3087,7 @@ visualization and manufacturing.</p>
             direction LR
             A(Single WorkPiece + Step Config);
             A --&gt; B(Modifiers&lt;br/&gt;&lt;i&gt;e.g., ToGrayscale&lt;/i&gt;);
-            B --&gt; C(Producer&lt;br/&gt;&lt;i&gt;e.g., EdgeTracer,&lt;br/&gt;Rasterizer&lt;/i&gt;);
+            B --&gt; C(Producer&lt;br/&gt;&lt;i&gt;e.g., ContourProducer,&lt;br/&gt;Rasterizer&lt;/i&gt;);
             C -- "Creates Artifact" --&gt; D("Toolpaths&lt;br/&gt;&lt;i&gt;Ops + Metadata&lt;/i&gt;");
             D --&gt; E(Transformers&lt;br/&gt;&lt;i&gt;e.g., Tabs,&lt;br/&gt;Smooth&lt;/i&gt;);
             E -- "Modifies Ops in-place" --&gt; F(Vertex Encoder);
@@ -3152,7 +3152,7 @@ create a cached <code>WorkPieceArtifact</code>. This artifact contains toolpaths
 <ol>
 <li><strong>Modifiers:</strong> (Optional) If the input is a raster image, modifiers
     perform initial image conditioning, such as converting it to grayscale.</li>
-<li><strong>Producer:</strong> A <code>Producer</code> (like <code>EdgeTracer</code> or <code>Rasterizer</code>) analyzes
+<li><strong>Producer:</strong> A <code>Producer</code> (like <code>ContourProducer</code> or <code>Rasterizer</code>) analyzes
     the input and creates the raw toolpaths (<code>Ops</code>) and metadata.</li>
 <li><strong>Per-Workpiece Transformers:</strong> The newly generated <code>Ops</code> are passed
     through transformers specific to that workpiece, such as adding
