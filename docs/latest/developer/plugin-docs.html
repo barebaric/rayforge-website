@@ -9,13 +9,13 @@
         <meta name="author" content="Rayforge Contributors">
       
       
-        <link rel="canonical" href="https://rayforge.org/docs/latest/features/recipes.html">
+        <link rel="canonical" href="https://rayforge.org/docs/latest/developer/plugin-docs.html">
       
       
-        <link rel="prev" href="material-libraries.html">
+        <link rel="prev" href="driver.html">
       
       
-        <link rel="next" href="camera.html">
+        <link rel="next" href="../../../contributing/index.html">
       
       
       <link rel="icon" href="../../../assets/favicon.png">
@@ -23,7 +23,7 @@
     
     
       
-        <title>Recipes - Rayforge</title>
+        <title>Plugin Developer Guide - Rayforge</title>
       
     
     
@@ -97,7 +97,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#recipes-and-settings" class="md-skip">
+        <a href="#rayforge-plugin-developer-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -136,7 +136,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Recipes
+              Plugin Developer Guide
             
           </span>
         </div>
@@ -273,8 +273,6 @@
   
   
   
-    
-  
   
     
     
@@ -282,12 +280,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../concepts/index.html" class="md-tabs__link">
           
   
@@ -309,6 +305,8 @@
   
   
   
+    
+  
   
     
     
@@ -316,11 +314,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../developer/getting-started/index.html" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="getting-started/index.html" class="md-tabs__link">
           
   
   
@@ -773,10 +773,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -800,22 +798,21 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -828,7 +825,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Documentation
@@ -864,13 +861,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -893,7 +887,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1060,13 +1054,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -1089,7 +1080,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1256,13 +1247,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -1285,7 +1273,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1427,8 +1415,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1468,21 +1454,20 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4">
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="index.html" class="md-nav__link ">
+            <a href="../features/index.html" class="md-nav__link ">
               
   
   
@@ -1495,13 +1480,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
             Features
@@ -1552,7 +1537,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="operations/index.html" class="md-nav__link ">
+            <a href="../features/operations/index.html" class="md-nav__link ">
               
   
   
@@ -1587,7 +1572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="operations/contour.html" class="md-nav__link">
+      <a href="../features/operations/contour.html" class="md-nav__link">
         
   
   
@@ -1610,7 +1595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="operations/raster.html" class="md-nav__link">
+      <a href="../features/operations/raster.html" class="md-nav__link">
         
   
   
@@ -1633,7 +1618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="operations/depth.html" class="md-nav__link">
+      <a href="../features/operations/depth.html" class="md-nav__link">
         
   
   
@@ -1656,7 +1641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="operations/shrink-wrap.html" class="md-nav__link">
+      <a href="../features/operations/shrink-wrap.html" class="md-nav__link">
         
   
   
@@ -1679,7 +1664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="operations/material-test-grid.html" class="md-nav__link">
+      <a href="../features/operations/material-test-grid.html" class="md-nav__link">
         
   
   
@@ -1710,7 +1695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sketcher.html" class="md-nav__link">
+      <a href="../features/sketcher.html" class="md-nav__link">
         
   
   
@@ -1733,7 +1718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="multi-layer.html" class="md-nav__link">
+      <a href="../features/multi-layer.html" class="md-nav__link">
         
   
   
@@ -1756,7 +1741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="stock-handling.html" class="md-nav__link">
+      <a href="../features/stock-handling.html" class="md-nav__link">
         
   
   
@@ -1779,7 +1764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="material-libraries.html" class="md-nav__link">
+      <a href="../features/material-libraries.html" class="md-nav__link">
         
   
   
@@ -1799,32 +1784,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Recipes
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="recipes.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../features/recipes.html" class="md-nav__link">
         
   
   
@@ -1835,110 +1798,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recipe-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recipe Management
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Recipe Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#creating-recipes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Creating Recipes
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Creating Recipes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-access-recipe-manager" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Access Recipe Manager
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-create-new-recipe" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Create New Recipe
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-define-applicability-criteria" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Define Applicability Criteria
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-configure-settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Configure Settings
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recipe-matching-system" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recipe Matching System
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1951,7 +1810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="camera.html" class="md-nav__link">
+      <a href="../features/camera.html" class="md-nav__link">
         
   
   
@@ -1974,7 +1833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="simulation-mode.html" class="md-nav__link">
+      <a href="../features/simulation-mode.html" class="md-nav__link">
         
   
   
@@ -1997,7 +1856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="holding-tabs.html" class="md-nav__link">
+      <a href="../features/holding-tabs.html" class="md-nav__link">
         
   
   
@@ -2020,7 +1879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="overscan.html" class="md-nav__link">
+      <a href="../features/overscan.html" class="md-nav__link">
         
   
   
@@ -2043,7 +1902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="kerf.html" class="md-nav__link">
+      <a href="../features/kerf.html" class="md-nav__link">
         
   
   
@@ -2066,7 +1925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="macros-hooks.html" class="md-nav__link">
+      <a href="../features/macros-hooks.html" class="md-nav__link">
         
   
   
@@ -2119,13 +1978,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -2148,7 +2004,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -2311,13 +2167,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -2340,7 +2193,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -2461,13 +2314,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -2490,7 +2340,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -2653,13 +2503,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -2682,7 +2529,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_8" id="__nav_3_8_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -2785,8 +2632,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -2800,21 +2649,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4">
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -2827,7 +2677,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             For Developers
@@ -2857,10 +2707,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -2870,7 +2723,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../developer/getting-started/index.html" class="md-nav__link ">
+            <a href="getting-started/index.html" class="md-nav__link ">
               
   
   
@@ -2883,7 +2736,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4_1" id="__nav_4_1_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -2905,7 +2758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/getting-started/setup.html" class="md-nav__link">
+      <a href="getting-started/setup.html" class="md-nav__link">
         
   
   
@@ -2928,7 +2781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/getting-started/submitting-changes.html" class="md-nav__link">
+      <a href="getting-started/submitting-changes.html" class="md-nav__link">
         
   
   
@@ -2977,10 +2830,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -2989,7 +2845,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2">
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
             
   
   
@@ -3016,7 +2872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/architecture.html" class="md-nav__link">
+      <a href="architecture.html" class="md-nav__link">
         
   
   
@@ -3039,7 +2895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/docmodel.html" class="md-nav__link">
+      <a href="docmodel.html" class="md-nav__link">
         
   
   
@@ -3062,7 +2918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/pipeline.html" class="md-nav__link">
+      <a href="pipeline.html" class="md-nav__link">
         
   
   
@@ -3085,7 +2941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/tasker.html" class="md-nav__link">
+      <a href="tasker.html" class="md-nav__link">
         
   
   
@@ -3108,7 +2964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/driver.html" class="md-nav__link">
+      <a href="driver.html" class="md-nav__link">
         
   
   
@@ -3136,8 +2992,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -3148,20 +3006,21 @@
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
         
           
+          
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3">
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
             
   
   
@@ -3174,7 +3033,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             Plugins
@@ -3185,10 +3044,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../developer/plugin-docs.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Plugin Developer Guide
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="plugin-docs.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3199,6 +3080,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Quick Start
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-plugin-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Plugin Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-manifest-rayforge_packageyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. The Manifest (rayforge_package.yaml)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-writing-the-plugin-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Writing the Plugin Code
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Writing the Plugin Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-boilerplate-pluginpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Boilerplate (plugin.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#available-hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available Hooks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-accessing-rayforge-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Accessing Rayforge Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-development-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Development &amp; Testing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-publishing" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Publishing
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3387,65 +3375,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#1-quick-start" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      1. Quick Start
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#recipe-management" class="md-nav__link">
+  <a href="#2-plugin-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      Recipe Management
+      2. Plugin Structure
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Recipe Management">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-manifest-rayforge_packageyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. The Manifest (rayforge_package.yaml)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-writing-the-plugin-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Writing the Plugin Code
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Writing the Plugin Code">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#creating-recipes" class="md-nav__link">
+  <a href="#basic-boilerplate-pluginpy" class="md-nav__link">
     <span class="md-ellipsis">
-      Creating Recipes
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Creating Recipes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-access-recipe-manager" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Access Recipe Manager
+      Basic Boilerplate (plugin.py)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-create-new-recipe" class="md-nav__link">
+  <a href="#available-hooks" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Create New Recipe
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-define-applicability-criteria" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Define Applicability Criteria
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-configure-settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Configure Settings
+      Available Hooks
     </span>
   </a>
   
@@ -3455,18 +3433,31 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#recipe-matching-system" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#5-accessing-rayforge-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Recipe Matching System
+      5. Accessing Rayforge Data
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#6-development-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Development &amp; Testing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-publishing" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Publishing
+    </span>
+  </a>
   
 </li>
       
@@ -3487,7 +3478,7 @@
 
   
     
-      <a href="https://github.com/barebaric/rayforge/edit/main/website/content/docs/features/recipes.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      <a href="https://github.com/barebaric/rayforge/edit/main/website/content/docs/developer/plugin-docs.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
       </a>
@@ -3497,7 +3488,7 @@
       
         
       
-      <a href="https://github.com/barebaric/rayforge/raw/main/website/content/docs/features/recipes.md" title="View source of this page" class="md-content__button md-icon">
+      <a href="https://github.com/barebaric/rayforge/raw/main/website/content/docs/developer/plugin-docs.md" title="View source of this page" class="md-content__button md-icon">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
       </a>
@@ -3507,67 +3498,152 @@
 
   
 
-<h1 id="recipes-and-settings">Recipes and Settings<a class="headerlink" href="#recipes-and-settings" title="Permanent link">¶</a></h1>
-<p>Rayforge provides a powerful recipe system that allows you to create, manage, and apply
-consistent settings across your laser cutting projects. This guide covers the complete
-user journey from creating recipes in the general settings to applying them to operations
-and managing settings at the step level.</p>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
-<p>The recipe system consists of three main components:</p>
+<h1 id="rayforge-plugin-developer-guide">Rayforge Plugin Developer Guide<a class="headerlink" href="#rayforge-plugin-developer-guide" title="Permanent link">¶</a></h1>
+<p>Rayforge uses a plugin system based on <a href="https://pluggy.readthedocs.io/">pluggy</a>
+to allow developers to extend functionality, add new machine drivers, or
+integrate custom logic without modifying the core codebase.</p>
+<h2 id="1-quick-start">1. Quick Start<a class="headerlink" href="#1-quick-start" title="Permanent link">¶</a></h2>
+<p>The fastest way to start is using the official template.</p>
 <ol>
-<li><strong>Recipe Management</strong>: Create and manage reusable settings presets</li>
-<li><strong>Stock Material Management</strong>: Define material properties and thickness</li>
-<li><strong>Step Settings</strong>: Apply and fine-tune settings for individual operations</li>
+<li><strong>Fork or Clone</strong> the
+   <a href="https://github.com/barebaric/rayforge-package-template">rayforge-package-template</a>.</li>
+<li><strong>Rename</strong> the directory and update the metadata.</li>
 </ol>
-<h2 id="recipe-management">Recipe Management<a class="headerlink" href="#recipe-management" title="Permanent link">¶</a></h2>
-<h3 id="creating-recipes">Creating Recipes<a class="headerlink" href="#creating-recipes" title="Permanent link">¶</a></h3>
-<p>Recipes are named presets that contain all the settings needed for specific operations.
-You can create recipes through the main settings interface:</p>
-<h4 id="1-access-recipe-manager">1. Access Recipe Manager<a class="headerlink" href="#1-access-recipe-manager" title="Permanent link">¶</a></h4>
-<p>Menu: Edit → Preferences → Recipes</p>
-<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../images/recipe-manager.png" data-desc-position="bottom"><img alt="Recipe manager" src="../images/recipe-manager.png"></a></p>
-<h4 id="2-create-new-recipe">2. Create New Recipe<a class="headerlink" href="#2-create-new-recipe" title="Permanent link">¶</a></h4>
-<p>Click "Add New Recipe". Fill in the basic information:</p>
-<ul>
-<li><strong>Name</strong>: Descriptive name (e.g., "3mm Plywood Cut")</li>
-<li><strong>Description</strong>: Optional detailed description</li>
-</ul>
-<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../images/recipe-editor.png" data-desc-position="bottom"><img alt="Recipe manager" src="../images/recipe-editor.png"></a></p>
-<h4 id="3-define-applicability-criteria">3. Define Applicability Criteria<a class="headerlink" href="#3-define-applicability-criteria" title="Permanent link">¶</a></h4>
-<ul>
-<li><strong>Task Type</strong>: Select the operation type (Cut, Engrave, etc.)</li>
-<li><strong>Machine</strong>: Choose a specific machine or leave as "Any Machine"</li>
-<li><strong>Material</strong>: Select a material type or leave open for any material</li>
-<li><strong>Thickness Range</strong>: Set minimum and maximum thickness values</li>
-</ul>
-<h4 id="4-configure-settings">4. Configure Settings<a class="headerlink" href="#4-configure-settings" title="Permanent link">¶</a></h4>
-<ul>
-<li>Adjust power, speed, and other parameters</li>
-<li>Settings automatically adapt based on the selected task type</li>
-</ul>
-<h3 id="recipe-matching-system">Recipe Matching System<a class="headerlink" href="#recipe-matching-system" title="Permanent link">¶</a></h3>
-<p>Rayforge automatically suggests the most appropriate recipes based on:</p>
-<ul>
-<li><strong>Machine compatibility</strong>: Recipes can be machine-specific</li>
-<li><strong>Material matching</strong>: Recipes can target specific materials</li>
-<li><strong>Thickness ranges</strong>: Recipes apply within defined thickness limits</li>
-<li><strong>Capability matching</strong>: Recipes are tied to specific operation types</li>
-</ul>
-<p>The system uses a specificity scoring algorithm to prioritize the most relevant recipes:</p>
+<h2 id="2-plugin-structure">2. Plugin Structure<a class="headerlink" href="#2-plugin-structure" title="Permanent link">¶</a></h2>
+<p>The <code>PackageManager</code> scans the <code>packages</code> directory. A valid plugin must be a
+directory containing at least two files:</p>
 <ol>
-<li>Machine-specific recipes rank higher than generic ones</li>
-<li>Laser head-specific recipes rank higher</li>
-<li>Material-specific recipes rank higher</li>
-<li>Thickness-specific recipes rank higher</li>
+<li><code>rayforge_package.yaml</code> (Metadata)</li>
+<li>A Python entry point (e.g., <code>plugin.py</code>)</li>
 </ol>
-<hr>
-<p><strong>Related Topics</strong>:</p>
+<p><strong>Directory Layout:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>my-rayforge-plugin/
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── rayforge_package.yaml  &lt;-- Required Manifest
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── plugin.py              &lt;-- Entry point (logic)
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── assets/                &lt;-- Optional resources
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>└── README.md
+</span></code></pre></div>
+<h2 id="3-the-manifest-rayforge_packageyaml">3. The Manifest (<code>rayforge_package.yaml</code>)<a class="headerlink" href="#3-the-manifest-rayforge_packageyaml" title="Permanent link">¶</a></h2>
+<p>This file tells Rayforge how to load your plugin.</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># rayforge_package.yaml</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Unique identifier for your plugin</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_custom_plugin</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># Human-readable display name</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nt">display_name</span><span class="p">:</span><span class="w"> </span><span class="s">"My</span><span class="nv"> </span><span class="s">Custom</span><span class="nv"> </span><span class="s">Plugin"</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># Version string</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.0</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="c1"># Description displayed in the UI</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Adds</span><span class="nv"> </span><span class="s">support</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">XYZ</span><span class="nv"> </span><span class="s">laser</span><span class="nv"> </span><span class="s">cutter."</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="c1"># The python file to load (relative to the plugin folder)</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="nt">entry_point</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">plugin.py</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="c1"># Author metadata</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Jane Doe</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/username/my-custom-plugin</span>
+</span></code></pre></div>
+<h2 id="4-writing-the-plugin-code">4. Writing the Plugin Code<a class="headerlink" href="#4-writing-the-plugin-code" title="Permanent link">¶</a></h2>
+<p>Rayforge uses <code>pluggy</code> hooks. To hook into Rayforge, define functions decorated
+with <code>@pluggy.HookimplMarker("rayforge")</code>.</p>
+<h3 id="basic-boilerplate-pluginpy">Basic Boilerplate (<code>plugin.py</code>)<a class="headerlink" href="#basic-boilerplate-pluginpy" title="Permanent link">¶</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pluggy</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rayforge.context</span><span class="w"> </span><span class="kn">import</span> <span class="n">RayforgeContext</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># Define the hook implementation marker</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">hookimpl</span> <span class="o">=</span> <span class="n">pluggy</span><span class="o">.</span><span class="n">HookimplMarker</span><span class="p">(</span><span class="s2">"rayforge"</span><span class="p">)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nd">@hookimpl</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">rayforge_init</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="n">RayforgeContext</span><span class="p">):</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="sd">"""</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="sd">    Called when Rayforge is fully initialized.</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="sd">    This is your main entry point to access managers.</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="sd">    """</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"My Custom Plugin has started!"</span><span class="p">)</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>    <span class="c1"># Access core systems via the context</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>    <span class="n">machine</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">machine</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>    <span class="n">camera</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">camera_mgr</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>    <span class="k">if</span> <span class="n">machine</span><span class="p">:</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Plugin running on machine: </span><span class="si">{</span><span class="n">machine</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="nd">@hookimpl</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="k">def</span><span class="w"> </span><span class="nf">register_machines</span><span class="p">(</span><span class="n">machine_manager</span><span class="p">):</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">    </span><span class="sd">"""</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="sd">    Called during startup to register new machine drivers.</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="sd">    """</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>    <span class="c1"># from .my_driver import MyNewMachine</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>    <span class="c1"># machine_manager.register("my_new_machine", MyNewMachine)</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>    <span class="k">pass</span>
+</span></code></pre></div>
+<h3 id="available-hooks">Available Hooks<a class="headerlink" href="#available-hooks" title="Permanent link">¶</a></h3>
+<p>Defined in <code>rayforge/core/hooks.py</code>:</p>
+<dl>
+<dt><strong><code>rayforge_init</code></strong> (<code>context</code>)</dt>
+<dd><strong>Main Entry Point.</strong> Called after config, camera, and hardware are loaded.
+  Use this for logic, UI injections, or listeners.</dd>
+<dt><strong><code>register_machines</code></strong> (<code>machine_manager</code>)</dt>
+<dd>Called early in the boot process. Use this to register new hardware
+  classes/drivers.</dd>
+</dl>
+<h2 id="5-accessing-rayforge-data">5. Accessing Rayforge Data<a class="headerlink" href="#5-accessing-rayforge-data" title="Permanent link">¶</a></h2>
+<p>The <code>rayforge_init</code> hook provides the <strong><code>RayforgeContext</code></strong>. Through this object,
+you can access:</p>
 <ul>
-<li><a href="material-libraries.html">Material Libraries</a> - Managing material properties</li>
-<li><a href="stock-handling.html">Stock Handling</a> - Working with stock materials</li>
-<li><a href="../machine/index.html">Machine Setup</a> - Configuring machines and laser heads</li>
-<li><a href="operations/index.html">Operations Overview</a> - Understanding different operation types</li>
+<li><strong><code>context.machine</code></strong>: The currently active machine instance.</li>
+<li><strong><code>context.config</code></strong>: Global configuration settings.</li>
+<li><strong><code>context.camera_mgr</code></strong>: Access camera feeds and computer vision tools.</li>
+<li><strong><code>context.material_mgr</code></strong>: Access the material library.</li>
+<li><strong><code>context.recipe_mgr</code></strong>: Access processing recipes.</li>
 </ul>
+<h2 id="6-development-testing">6. Development &amp; Testing<a class="headerlink" href="#6-development-testing" title="Permanent link">¶</a></h2>
+<p>To test your plugin locally without publishing it:</p>
+<ol>
+<li>
+<p><strong>Locate your Configuration Directory:</strong>
+    Rayforge uses <code>platformdirs</code>.</p>
+<ul>
+<li><strong>Windows:</strong> <code>C:\Users\&lt;User&gt;\AppData\Local\rayforge\rayforge\packages</code></li>
+<li><strong>macOS:</strong> <code>~/Library/Application Support/rayforge/packages</code></li>
+<li><strong>Linux:</strong> <code>~/.config/rayforge/packages</code>
+  <em>(Check the logs on startup for <code>Config dir is ...</code>)</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Symlink your plugin:</strong>
+    Instead of copying files back and forth, create a symbolic link from your dev
+    folder to the Rayforge packages folder.</p>
+<p><em>Linux/macOS:</em></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ln<span class="w"> </span>-s<span class="w"> </span>/path/to/my-rayforge-plugin<span class="w"> </span>~/.config/rayforge/packages/my-rayforge-plugin
+</span></code></pre></div>
+</li>
+<li>
+<p><strong>Restart Rayforge:</strong>
+    The application scans the directory on startup. Check the console logs for:
+    &gt; <code>Loaded plugin: my_custom_plugin</code></p>
+</li>
+</ol>
+<h2 id="7-publishing">7. Publishing<a class="headerlink" href="#7-publishing" title="Permanent link">¶</a></h2>
+<p>To share your plugin with the community:</p>
+<ol>
+<li><strong>Host on Git:</strong> Push your code to a public Git repository (GitHub, GitLab,
+    etc.).</li>
+<li><strong>Submit to Registry:</strong><ul>
+<li>Go to <a href="https://github.com/barebaric/rayforge-registry">rayforge-registry</a>.</li>
+<li>Fork the repository.</li>
+<li>Add your plugin's Git URL and metadata to the registry list.</li>
+<li>Submit a Pull Request.</li>
+</ul>
+</li>
+</ol>
+<p>Once accepted, users can install your plugin directly via the Rayforge UI or by
+using the Git URL.</p>
 
 
 
@@ -3605,7 +3681,7 @@ You can create recipes through the main settings interface:</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
-          <a href="material-libraries.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Material Libraries">
+          <a href="driver.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Drivers">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
@@ -3615,20 +3691,20 @@ You can create recipes through the main settings interface:</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Material Libraries
+                Drivers
               </div>
             </div>
           </a>
         
         
           
-          <a href="camera.html" class="md-footer__link md-footer__link--next" aria-label="Next: Camera">
+          <a href="../../../contributing/index.html" class="md-footer__link md-footer__link--next" aria-label="Next: Contributing to Rayforge">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Camera
+                Contributing to Rayforge
               </div>
             </div>
             <div class="md-footer__button md-icon">
