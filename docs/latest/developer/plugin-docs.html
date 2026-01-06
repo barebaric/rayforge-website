@@ -97,7 +97,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rayforge-plugin-developer-guide" class="md-skip">
+        <a href="#rayforge-package-developer-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -3106,9 +3106,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-plugin-structure" class="md-nav__link">
+  <a href="#2-package-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Plugin Structure
+      2. Package Structure
     </span>
   </a>
   
@@ -3124,19 +3124,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-writing-the-plugin-code" class="md-nav__link">
+  <a href="#4-writing-the-package-code" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Writing the Plugin Code
+      4. Writing the Package Code
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. Writing the Plugin Code">
+    <nav class="md-nav" aria-label="4. Writing the Package Code">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic-boilerplate-pluginpy" class="md-nav__link">
+  <a href="#basic-boilerplate-packagepy" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic Boilerplate (plugin.py)
+      Basic Boilerplate (package.py)
     </span>
   </a>
   
@@ -3384,9 +3384,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-plugin-structure" class="md-nav__link">
+  <a href="#2-package-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Plugin Structure
+      2. Package Structure
     </span>
   </a>
   
@@ -3402,19 +3402,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-writing-the-plugin-code" class="md-nav__link">
+  <a href="#4-writing-the-package-code" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Writing the Plugin Code
+      4. Writing the Package Code
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. Writing the Plugin Code">
+    <nav class="md-nav" aria-label="4. Writing the Package Code">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic-boilerplate-pluginpy" class="md-nav__link">
+  <a href="#basic-boilerplate-packagepy" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic Boilerplate (plugin.py)
+      Basic Boilerplate (package.py)
     </span>
   </a>
   
@@ -3498,8 +3498,8 @@
 
   
 
-<h1 id="rayforge-plugin-developer-guide">Rayforge Plugin Developer Guide<a class="headerlink" href="#rayforge-plugin-developer-guide" title="Permanent link">¶</a></h1>
-<p>Rayforge uses a plugin system based on <a href="https://pluggy.readthedocs.io/">pluggy</a>
+<h1 id="rayforge-package-developer-guide">Rayforge Package Developer Guide<a class="headerlink" href="#rayforge-package-developer-guide" title="Permanent link">¶</a></h1>
+<p>Rayforge uses a package system based on <a href="https://pluggy.readthedocs.io/">pluggy</a>
 to allow developers to extend functionality, add new machine drivers, or
 integrate custom logic without modifying the core codebase.</p>
 <h2 id="1-quick-start">1. Quick Start<a class="headerlink" href="#1-quick-start" title="Permanent link">¶</a></h2>
@@ -3509,29 +3509,29 @@ integrate custom logic without modifying the core codebase.</p>
    <a href="https://github.com/barebaric/rayforge-package-template">rayforge-package-template</a>.</li>
 <li><strong>Rename</strong> the directory and update the metadata.</li>
 </ol>
-<h2 id="2-plugin-structure">2. Plugin Structure<a class="headerlink" href="#2-plugin-structure" title="Permanent link">¶</a></h2>
-<p>The <code>PackageManager</code> scans the <code>packages</code> directory. A valid plugin must be a
+<h2 id="2-package-structure">2. Package Structure<a class="headerlink" href="#2-package-structure" title="Permanent link">¶</a></h2>
+<p>The <code>PackageManager</code> scans the <code>packages</code> directory. A valid package must be a
 directory containing at least two files:</p>
 <ol>
 <li><code>rayforge_package.yaml</code> (Metadata)</li>
-<li>A Python entry point (e.g., <code>plugin.py</code>)</li>
+<li>A Python entry point (e.g., <code>package.py</code>)</li>
 </ol>
 <p><strong>Directory Layout:</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>my-rayforge-plugin/
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>my-rayforge-package/
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── rayforge_package.yaml  &lt;-- Required Manifest
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── plugin.py              &lt;-- Entry point (logic)
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── package.py             &lt;-- Entry point (logic)
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── assets/                &lt;-- Optional resources
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>└── README.md
 </span></code></pre></div>
 <h2 id="3-the-manifest-rayforge_packageyaml">3. The Manifest (<code>rayforge_package.yaml</code>)<a class="headerlink" href="#3-the-manifest-rayforge_packageyaml" title="Permanent link">¶</a></h2>
-<p>This file tells Rayforge how to load your plugin.</p>
+<p>This file tells Rayforge how to load your package.</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># rayforge_package.yaml</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Unique identifier for your plugin</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_custom_plugin</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Unique identifier for your package</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_custom_package</span>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># Human-readable display name</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nt">display_name</span><span class="p">:</span><span class="w"> </span><span class="s">"My</span><span class="nv"> </span><span class="s">Custom</span><span class="nv"> </span><span class="s">Plugin"</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nt">display_name</span><span class="p">:</span><span class="w"> </span><span class="s">"My</span><span class="nv"> </span><span class="s">Custom</span><span class="nv"> </span><span class="s">Package"</span>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># Version string</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.0</span>
@@ -3539,17 +3539,17 @@ directory containing at least two files:</p>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="c1"># Description displayed in the UI</span>
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Adds</span><span class="nv"> </span><span class="s">support</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">XYZ</span><span class="nv"> </span><span class="s">laser</span><span class="nv"> </span><span class="s">cutter."</span>
 </span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="c1"># The python file to load (relative to the plugin folder)</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="nt">entry_point</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">plugin.py</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="c1"># The python file to load (relative to the package folder)</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="nt">entry_point</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">package.py</span>
 </span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
 </span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="c1"># Author metadata</span>
 </span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Jane Doe</span>
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/username/my-custom-plugin</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/username/my-custom-package</span>
 </span></code></pre></div>
-<h2 id="4-writing-the-plugin-code">4. Writing the Plugin Code<a class="headerlink" href="#4-writing-the-plugin-code" title="Permanent link">¶</a></h2>
+<h2 id="4-writing-the-package-code">4. Writing the Package Code<a class="headerlink" href="#4-writing-the-package-code" title="Permanent link">¶</a></h2>
 <p>Rayforge uses <code>pluggy</code> hooks. To hook into Rayforge, define functions decorated
 with <code>@pluggy.HookimplMarker("rayforge")</code>.</p>
-<h3 id="basic-boilerplate-pluginpy">Basic Boilerplate (<code>plugin.py</code>)<a class="headerlink" href="#basic-boilerplate-pluginpy" title="Permanent link">¶</a></h3>
+<h3 id="basic-boilerplate-packagepy">Basic Boilerplate (<code>package.py</code>)<a class="headerlink" href="#basic-boilerplate-packagepy" title="Permanent link">¶</a></h3>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pluggy</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rayforge.context</span><span class="w"> </span><span class="kn">import</span> <span class="n">RayforgeContext</span>
@@ -3564,14 +3564,14 @@ with <code>@pluggy.HookimplMarker("rayforge")</code>.</p>
 </span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="sd">    Called when Rayforge is fully initialized.</span>
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="sd">    This is your main entry point to access managers.</span>
 </span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="sd">    """</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"My Custom Plugin has started!"</span><span class="p">)</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"My Custom Package has started!"</span><span class="p">)</span>
 </span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
 </span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>    <span class="c1"># Access core systems via the context</span>
 </span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>    <span class="n">machine</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">machine</span>
 </span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>    <span class="n">camera</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">camera_mgr</span>
 </span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
 </span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>    <span class="k">if</span> <span class="n">machine</span><span class="p">:</span>
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Plugin running on machine: </span><span class="si">{</span><span class="n">machine</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Package running on machine: </span><span class="si">{</span><span class="n">machine</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
 </span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="nd">@hookimpl</span>
 </span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="k">def</span><span class="w"> </span><span class="nf">register_machines</span><span class="p">(</span><span class="n">machine_manager</span><span class="p">):</span>
@@ -3603,7 +3603,7 @@ you can access:</p>
 <li><strong><code>context.recipe_mgr</code></strong>: Access processing recipes.</li>
 </ul>
 <h2 id="6-development-testing">6. Development &amp; Testing<a class="headerlink" href="#6-development-testing" title="Permanent link">¶</a></h2>
-<p>To test your plugin locally without publishing it:</p>
+<p>To test your package locally without publishing it:</p>
 <ol>
 <li>
 <p><strong>Locate your Configuration Directory:</strong>
@@ -3616,33 +3616,33 @@ you can access:</p>
 </ul>
 </li>
 <li>
-<p><strong>Symlink your plugin:</strong>
+<p><strong>Symlink your package:</strong>
     Instead of copying files back and forth, create a symbolic link from your dev
     folder to the Rayforge packages folder.</p>
 <p><em>Linux/macOS:</em></p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ln<span class="w"> </span>-s<span class="w"> </span>/path/to/my-rayforge-plugin<span class="w"> </span>~/.config/rayforge/packages/my-rayforge-plugin
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ln<span class="w"> </span>-s<span class="w"> </span>/path/to/my-rayforge-package<span class="w"> </span>~/.config/rayforge/packages/my-rayforge-package
 </span></code></pre></div>
 </li>
 <li>
 <p><strong>Restart Rayforge:</strong>
     The application scans the directory on startup. Check the console logs for:
-    &gt; <code>Loaded plugin: my_custom_plugin</code></p>
+    &gt; <code>Loaded package: my_custom_package</code></p>
 </li>
 </ol>
 <h2 id="7-publishing">7. Publishing<a class="headerlink" href="#7-publishing" title="Permanent link">¶</a></h2>
-<p>To share your plugin with the community:</p>
+<p>To share your package with the community:</p>
 <ol>
 <li><strong>Host on Git:</strong> Push your code to a public Git repository (GitHub, GitLab,
     etc.).</li>
 <li><strong>Submit to Registry:</strong><ul>
 <li>Go to <a href="https://github.com/barebaric/rayforge-registry">rayforge-registry</a>.</li>
 <li>Fork the repository.</li>
-<li>Add your plugin's Git URL and metadata to the registry list.</li>
+<li>Add your package's Git URL and metadata to the registry list.</li>
 <li>Submit a Pull Request.</li>
 </ul>
 </li>
 </ol>
-<p>Once accepted, users can install your plugin directly via the Rayforge UI or by
+<p>Once accepted, users can install your package directly via the Rayforge UI or by
 using the Git URL.</p>
 
 
