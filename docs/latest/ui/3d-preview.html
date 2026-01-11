@@ -1252,6 +1252,8 @@
       
         
       
+        
+      
     
     
     
@@ -1454,6 +1456,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#work-coordinate-system-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      Work Coordinate System Display
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Work Coordinate System Display">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grid-and-axes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grid and Axes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-wcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing WCS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#display-options" class="md-nav__link">
     <span class="md-ellipsis">
       Display Options
@@ -1643,6 +1678,29 @@
   
   <span class="md-ellipsis">
     Jog Controls
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="work-coordinate-systems.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Work Coordinate Systems
     
   </span>
   
@@ -3573,6 +3631,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#work-coordinate-system-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      Work Coordinate System Display
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Work Coordinate System Display">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grid-and-axes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grid and Axes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-wcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing WCS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#display-options" class="md-nav__link">
     <span class="md-ellipsis">
       Display Options
@@ -3778,7 +3869,9 @@
   
 
 <h1 id="3d-preview">3D Preview<a class="headerlink" href="#3d-preview" title="Permanent link">¶</a></h1>
-<p>The 3D preview window lets you visualize your G-code toolpaths before sending them to your machine. This powerful feature helps you catch errors and verify your job setup.</p>
+<p>The 3D preview window lets you visualize your G-code toolpaths before
+sending them to your machine. This powerful feature helps you catch errors
+and verify your job setup.</p>
 <p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../images/3d-preview.png" data-desc-position="bottom"><img alt="3D Preview" src="../images/3d-preview.png"></a></p>
 <h2 id="opening-3d-preview">Opening 3D Preview<a class="headerlink" href="#opening-3d-preview" title="Permanent link">¶</a></h2>
 <p>Access the 3D preview:</p>
@@ -3809,6 +3902,32 @@
 <li><strong>Right</strong> (<span class="keys"><kbd class="key-3">3</kbd></span>): Right side elevation</li>
 <li><strong>Isometric</strong> (<span class="keys"><kbd class="key-4">4</kbd></span>): 3D isometric view</li>
 </ul>
+<h2 id="work-coordinate-system-display">Work Coordinate System Display<a class="headerlink" href="#work-coordinate-system-display" title="Permanent link">¶</a></h2>
+<p>The 3D preview visualizes the active Work Coordinate System (WCS)
+differently from the 2D canvas:</p>
+<h3 id="grid-and-axes">Grid and Axes<a class="headerlink" href="#grid-and-axes" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Isolated display</strong>: The grid and axes appear as if the WCS origin is
+  the world origin</li>
+<li><strong>Offset applied</strong>: The entire grid is shifted to align with the selected
+  WCS offset</li>
+<li><strong>Labels relative to WCS</strong>: Coordinate labels show positions relative to
+  the WCS origin, not machine origin</li>
+</ul>
+<p>This "in isolation" display makes it easy to understand where your job will
+run relative to the selected work coordinate system, without being confused
+by the machine's absolute position.</p>
+<h3 id="changing-wcs">Changing WCS<a class="headerlink" href="#changing-wcs" title="Permanent link">¶</a></h3>
+<p>The 3D preview automatically updates when you change the active WCS:
+- Select a different WCS from the toolbar dropdown
+- The grid and axes shift to reflect the new WCS origin
+- Labels update to show coordinates relative to the new WCS</p>
+<div class="admonition tip">
+<p class="admonition-title">WCS in 3D Preview</p>
+<p>The 3D preview shows your toolpaths relative to the selected WCS. When you
+change WCS, you'll see the toolpaths appear to move because the reference
+point (the grid) has changed, not because the toolpaths themselves moved.</p>
+</div>
 <h2 id="display-options">Display Options<a class="headerlink" href="#display-options" title="Permanent link">¶</a></h2>
 <h3 id="toolpath-visualization">Toolpath Visualization<a class="headerlink" href="#toolpath-visualization" title="Permanent link">¶</a></h3>
 <p>Customize what you see:</p>
@@ -3909,7 +4028,12 @@
 <li>Reset view settings to defaults</li>
 </ul>
 <hr>
-<p><strong>Next</strong>: <a href="settings.html">Settings &amp; Preferences →</a></p>
+<p><strong>Related Pages:</strong></p>
+<ul>
+<li><a href="work-coordinate-systems.html">Work Coordinate Systems (WCS)</a> - Understanding WCS display</li>
+<li><a href="main-window.html">Main Window</a> - Main interface overview</li>
+<li><a href="settings.html">Settings &amp; Preferences</a> - Configure preview settings</li>
+</ul>
 
 
 
