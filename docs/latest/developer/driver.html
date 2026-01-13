@@ -3689,35 +3689,50 @@
   
 
 <h1 id="rayforge-driver-development-guide">Rayforge Driver Development Guide<a class="headerlink" href="#rayforge-driver-development-guide" title="Permanent link">¶</a></h1>
-<p>This guide provides a high-level overview of how to create a driver in Rayforge to add support for your laser cutter or engraver. By creating a driver, you integrate your machine's unique communication protocol and command language into the Rayforge ecosystem.</p>
+<p>This guide provides a high-level overview of how to create a driver in Rayforge
+to add support for your laser cutter or engraver. By creating a driver, you
+integrate your machine's unique communication protocol and command language into
+the Rayforge ecosystem.</p>
 <h2 id="driver-overview">Driver Overview<a class="headerlink" href="#driver-overview" title="Permanent link">¶</a></h2>
-<p>A driver is the bridge between Rayforge's core logic and your physical hardware. It is responsible for three main tasks:</p>
+<p>A driver is the bridge between Rayforge's core logic and your physical hardware.
+It is responsible for three main tasks:</p>
 <ol>
-<li><strong>Managing Connectivity:</strong> Handling the low-level communication protocol (Serial, WebSocket, HTTP, etc.).</li>
-<li><strong>Translating and Executing Jobs:</strong> Converting Rayforge's internal representation of a job (<code>Ops</code>) into machine-specific commands (like G-code) and sending them to the device.</li>
-<li><strong>Reporting State:</strong> Emitting signals to update the UI with the laser's real-time position, status (<code>IDLE</code>, <code>RUN</code>), and log messages.</li>
+<li><strong>Managing Connectivity:</strong> Handling the low-level communication protocol
+    (Serial, WebSocket, HTTP, etc.).</li>
+<li><strong>Executing Jobs:</strong> Sending pre-encoded machine code (e.g., G-code) to the
+    device and tracking execution progress.</li>
+<li><strong>Reporting State:</strong> Emitting signals to update the UI with the laser's
+    real-time position, status (<code>IDLE</code>, <code>RUN</code>), and log messages.</li>
 </ol>
 <p>To simplify this, Rayforge provides an architecture based on composable parts:</p>
 <pre class="mermaid"><code>graph TD;
-    subgraph Your Driver Implementation
-        Driver--&gt;Transport;
-        Driver--&gt;OpsEncoder;
-    end
-
     subgraph Rayforge Core
-        OpsProducer --&gt; Ops;
+        OpsProducer--&gt;|Produces| Ops;
+        Pipeline--&gt;|Runs| OpsProducer;
     end
 
-    Ops --&gt; Driver;
+    subgraph Your Driver Implementation
+        Ops --&gt;|Encodes via| OpsEncoder;
+        OpsEncoder--&gt;|Produces| MachineCode
+        MachineCode--&gt;|Calls run| Driver;
+        Driver--&gt;|Sends via| Transport;
+    end
+
     Transport --&gt; Device[Physical Laser];</code></pre>
 <ul>
-<li><strong><code>OpsEncoder</code>:</strong> Translates <code>Ops</code> into a specific command language (e.g., G-code).</li>
+<li><strong><code>OpsEncoder</code>:</strong> Translates <code>Ops</code> into a specific command language
+  (e.g., G-code). Used by both the Pipeline (for job encoding) and the
+  Driver (for individual commands like move_to, home, etc.).</li>
+<li><strong><code>Pipeline</code>:</strong> Orchestrates encoding and produces final machine code.</li>
 <li><strong><code>Transport</code>:</strong> Manages the connection and data transfer.</li>
-<li><strong><code>Driver</code>:</strong> Orchestrates the process, handles device state, and communicates with the UI.</li>
+<li><strong><code>Driver</code>:</strong> Executes machine code, handles device state, and communicates
+  with the UI.</li>
 </ul>
 <p>All driver operations are <strong>asynchronous</strong> to ensure the user interface remains responsive.</p>
 <h2 id="the-ops-language">The <code>Ops</code> Language<a class="headerlink" href="#the-ops-language" title="Permanent link">¶</a></h2>
-<p>Rayforge describes a laser job as a sequence of high-level operations, stored in an <code>Ops</code> object. This is the universal language within Rayforge for describing machine movements, independent of any specific hardware.</p>
+<p>Rayforge describes a laser job as a sequence of high-level operations, stored in
+an <code>Ops</code> object. This is the universal language within Rayforge for describing
+machine movements, independent of any specific hardware.</p>
 <table>
 <thead>
 <tr>
@@ -3769,7 +3784,10 @@
 </tr>
 </tbody>
 </table>
-<p>Your driver receives an <code>Ops</code> object and must execute these operations on the device. Typically, this is done by passing the <code>Ops</code> object to an <code>OpsEncoder</code>.</p>
+<p>Your driver receives pre-encoded machine code (e.g., a G-code string) and an
+operation map that tracks which machine code commands correspond to which
+operations. The pipeline handles encoding <code>Ops</code> to machine code before calling
+the driver's <code>run()</code> method.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Example of how Rayforge builds an Ops object</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">ops</span> <span class="o">=</span> <span class="n">Ops</span><span class="p">()</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">ops</span><span class="o">.</span><span class="n">set_travel_speed</span><span class="p">(</span><span class="mi">3000</span><span class="p">)</span>
@@ -3795,46 +3813,73 @@
 <ul>
 <li><code>label</code>: A human-readable name shown in the UI.</li>
 <li><code>subtitle</code>: A brief description shown below the name.</li>
-<li><code>supports_settings</code>: A boolean indicating if the driver can read/write device settings (like GRBL's <code>$$</code>).</li>
+<li><code>supports_settings</code>: A boolean indicating if the driver can read/write device
+  settings (like GRBL's <code>$$</code>).</li>
 </ul>
 <h3 id="required-methods">Required Methods<a class="headerlink" href="#required-methods" title="Permanent link">¶</a></h3>
 <p>Your driver class <strong>MUST</strong> implement the following methods. Note that most are <strong>asynchronous</strong> and must be defined with <code>async def</code>.</p>
 <h4 id="configuration-and-lifecycle">Configuration and Lifecycle<a class="headerlink" href="#configuration-and-lifecycle" title="Permanent link">¶</a></h4>
 <ul>
-<li><code>get_setup_vars() -&gt; VarSet</code>: <strong>(Class Method)</strong> Returns a <code>VarSet</code> object defining the parameters needed for connection (e.g., IP address, serial port). Rayforge uses this to automatically generate the setup form in the UI.</li>
-<li><code>precheck(**kwargs)</code>: <strong>(Class Method)</strong> A non-blocking, static check of the configuration that can be run before driver instantiation. Should raise <code>DriverPrecheckError</code> on failure.</li>
-<li><code>setup(**kwargs)</code>: Called once with the values from the setup form. Use this to initialize your transports and internal state.</li>
-<li><code>async def connect()</code>: Establishes and maintains a persistent connection to the device. This method should contain auto-reconnection logic.</li>
-<li><code>async def cleanup()</code>: Called when disconnecting. Should close all connections and release resources.</li>
+<li><code>get_setup_vars() -&gt; VarSet</code>: <strong>(Class Method)</strong> Returns a <code>VarSet</code> object
+  defining the parameters needed for connection (e.g., IP address, serial port).
+  Rayforge uses this to automatically generate the setup form in the UI.</li>
+<li><code>precheck(**kwargs)</code>: <strong>(Class Method)</strong> A non-blocking, static check of the
+  configuration that can be run before driver instantiation. Should raise
+  <code>DriverPrecheckError</code> on failure.</li>
+<li><code>setup(**kwargs)</code>: Called once with the values from the setup form. Use this
+  to initialize your transports and internal state.</li>
+<li><code>async def connect()</code>: Establishes and maintains a persistent connection to
+  the device. This method should contain auto-reconnection logic.</li>
+<li><code>async def cleanup()</code>: Called when disconnecting. Should close all
+  connections and release resources.</li>
 </ul>
 <h4 id="device-control">Device Control<a class="headerlink" href="#device-control" title="Permanent link">¶</a></h4>
 <ul>
-<li><code>async def run(ops: Ops, machine: Machine, doc: Doc)</code>: The core method for executing a job. Here, you'll use an <code>OpsEncoder</code> to convert the <code>ops</code> object into commands and send them to the device.</li>
-<li><code>async def home(axes: Optional[Axis] = None)</code>: Homes the machine. Can home specific axes or all axes.</li>
-<li><code>async def move_to(pos_x: float, pos_y: float)</code>: Manually moves the laser head to a specific XY coordinate.</li>
-<li><code>async def set_hold(hold: bool = True)</code>: Pauses or resumes the current job.</li>
+<li><code>async def run(machine_code: Any, op_map: MachineCodeOpMap, doc: Doc,
+  on_command_done: Optional[Callable[[int], Union[None, Awaitable[None]]]]
+  = None)</code>: The core method for executing a job. Receives pre-encoded machine
+  code (e.g., G-code string) and a mapping between operation indices and
+  machine code. The <code>on_command_done</code> callback is called with the op_index
+  when each command completes.</li>
+<li><code>async def home(axes: Optional[Axis] = None)</code>: Homes the machine. Can home
+  specific axes or all axes.</li>
+<li><code>async def move_to(pos_x: float, pos_y: float)</code>: Manually moves the laser
+  head to a specific XY coordinate.</li>
+<li><code>async def set_hold(hold: bool = True)</code>: Pauses or resumes current job.</li>
 <li><code>async def cancel()</code>: Stops the current job.</li>
-<li><code>async def jog(axis: Axis, distance: float, speed: int)</code>: Jogs the machine along a specific axis.</li>
-<li><code>async def select_tool(tool_number: int)</code>: Selects a new tool/laser head by its number.</li>
+<li><code>async def jog(axis: Axis, distance: float, speed: int)</code>: Jogs the machine
+  along a specific axis.</li>
+<li><code>async def select_tool(tool_number: int)</code>: Selects a new tool/laser head by
+  its number.</li>
 <li><code>async def clear_alarm()</code>: Clears any active alarm state.</li>
 </ul>
 <h4 id="firmware-settings-if-supports_settings-is-true">Firmware Settings (if <code>supports_settings</code> is <code>True</code>)<a class="headerlink" href="#firmware-settings-if-supports_settings-is-true" title="Permanent link">¶</a></h4>
 <ul>
-<li><code>get_setting_vars() -&gt; List[VarSet]</code>: Returns <code>VarSet</code> objects that define the structure of the device's settings page.</li>
-<li><code>async def read_settings()</code>: Reads all settings from the device and calls <code>_on_settings_read()</code> with the result.</li>
-<li><code>async def write_setting(key: str, value: Any)</code>: Writes a single setting to the device.</li>
+<li><code>get_setting_vars() -&gt; List[VarSet]</code>: Returns <code>VarSet</code> objects that define
+  the structure of the device's settings page.</li>
+<li><code>async def read_settings()</code>: Reads all settings from the device and calls
+  <code>_on_settings_read()</code> with the result.</li>
+<li><code>async def write_setting(key: str, value: Any)</code>: Writes a single setting to
+  the device.</li>
 </ul>
 <h3 id="emitting-signals">Emitting Signals<a class="headerlink" href="#emitting-signals" title="Permanent link">¶</a></h3>
-<p>To communicate with the UI, your driver must emit signals. To ensure proper logging and thread safety, <strong>you must not emit signals directly.</strong> Instead, call the protected helper methods from the base <code>Driver</code> class.</p>
+<p>To communicate with the UI, your driver must emit signals. To ensure proper
+logging and thread safety, <strong>you must not emit signals directly.</strong> Instead,
+call the protected helper methods from the base <code>Driver</code> class.</p>
 <ul>
 <li><code>self._log(message)</code>: Sends a log message to the console.</li>
-<li><code>self._on_state_changed()</code>: Call this whenever you update <code>self.state</code> to notify the UI of a status or position change.</li>
-<li><code>self._on_connection_status_changed(status, message)</code>: Informs the UI about the connection status (<code>CONNECTING</code>, <code>CONNECTED</code>, <code>ERROR</code>, etc.).</li>
-<li><code>self._on_command_status_changed(status, message)</code>: Reports the status of a sent command.</li>
-<li><code>self._on_settings_read(settings)</code>: Sends the device settings you've read back to the UI.</li>
+<li><code>self._on_state_changed()</code>: Call this whenever you update <code>self.state</code> to
+  notify the UI of a status or position change.</li>
+<li><code>self._on_connection_status_changed(status, message)</code>: Informs the UI about
+  the connection status (<code>CONNECTING</code>, <code>CONNECTED</code>, <code>ERROR</code>, etc.).</li>
+<li><code>self._on_command_status_changed(status, message)</code>: Reports the status of a
+  sent command.</li>
+<li><code>self._on_settings_read(settings)</code>: Sends the device settings you've read
+  back to the UI.</li>
 </ul>
 <h2 id="have-questions">Have Questions?<a class="headerlink" href="#have-questions" title="Permanent link">¶</a></h2>
-<p>The best way to learn is to look at the existing drivers in <code>rayforge/machine/driver/</code>, such as:</p>
+<p>The best way to learn is to look at the existing drivers in
+<code>rayforge/machine/driver/</code>, such as:</p>
 <ul>
 <li><code>grbl.py</code> - GRBL-based machines</li>
 <li><code>grbl_serial.py</code> - Serial-based GRBL communication</li>
