@@ -1378,12 +1378,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../ui/jog-dialog.html" class="md-nav__link">
+      <a href="../ui/control-panel.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Jog Controls
+    Control Panel
     
   </span>
   
@@ -4262,6 +4262,21 @@
 <td>Create new sketch</td>
 </tr>
 <tr>
+<td><code>Ctrl+O</code></td>
+<td>Open</td>
+<td>Open existing project</td>
+</tr>
+<tr>
+<td><code>Ctrl+S</code></td>
+<td>Save</td>
+<td>Save current project</td>
+</tr>
+<tr>
+<td><code>Ctrl+Shift+S</code></td>
+<td>Save As</td>
+<td>Save project as new file</td>
+</tr>
+<tr>
 <td><code>Ctrl+I</code></td>
 <td>Import</td>
 <td>Open file import dialog</td>
@@ -4378,7 +4393,7 @@
 <td>Toggle 3D preview window</td>
 </tr>
 <tr>
-<td><code>Ctrl+Shift+S</code></td>
+<td><code>Ctrl+Shift+R</code></td>
 <td>Simulation Mode</td>
 <td>Toggle simulation mode</td>
 </tr>
@@ -4595,9 +4610,9 @@
 </thead>
 <tbody>
 <tr>
-<td><code>Ctrl+J</code></td>
-<td>Jog Dialog</td>
-<td>Open manual jog control dialog</td>
+<td><code>Ctrl+L</code></td>
+<td>Control Panel</td>
+<td>Toggle control panel visibility</td>
 </tr>
 <tr>
 <td><code>Ctrl+&lt;</code></td>
@@ -4740,8 +4755,8 @@
 <li><code>Delete</code> - Remove</li>
 <li><code>Ctrl+A</code> - Select All</li>
 <li><code>Ctrl+N</code> - New Sketch</li>
-<li><code>Ctrl+I</code> - Import</li>
-<li><code>Ctrl+E</code> - Export</li>
+<li><code>Ctrl+O</code> - Open</li>
+<li><code>Ctrl+S</code> - Save</li>
 <li><code>H</code> - Toggle Workpieces</li>
 <li><code>F12</code> - 3D View</li>
 </ol>
@@ -4751,7 +4766,7 @@
 <li><code>T</code> - Hide/show tabs</li>
 <li><code>Alt+C</code> - Toggle camera</li>
 <li><code>F12</code> - 3D view</li>
-<li><code>Ctrl+Shift+S</code> - Simulation mode</li>
+<li><code>F11</code> - Simulation mode</li>
 <li><code>1</code>, <code>2</code>, <code>7</code> - 3D view presets</li>
 <li><code>P</code> - Perspective toggle</li>
 </ul>
@@ -4796,12 +4811,12 @@
 </ol>
 <h3 id="workflow-shortcuts">Workflow Shortcuts<a class="headerlink" href="#workflow-shortcuts" title="Permanent link">¶</a></h3>
 <p><strong>Quick edit cycle:</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. New Sketch (Ctrl+N) or Import (Ctrl+I)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. New Sketch (Ctrl+N) or Open (Ctrl+O)
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>2. Arrange items (arrow keys, Shift+Arrow for alignment)
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>3. Duplicate parts (Ctrl+D)
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>4. Check in 3D (F12)
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>5. Simulate (Ctrl+Shift+S)
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>6. Export (Ctrl+E)
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>5. Simulate (F11)
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>6. Save (Ctrl+S) or Export (Ctrl+E)
 </span></code></pre></div>
 <p><strong>Precision positioning:</strong></p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>1. Select item
@@ -4883,6 +4898,21 @@
 <td><strong>File</strong></td>
 <td>Ctrl+N</td>
 <td>New Sketch</td>
+</tr>
+<tr>
+<td></td>
+<td>Ctrl+O</td>
+<td>Open</td>
+</tr>
+<tr>
+<td></td>
+<td>Ctrl+S</td>
+<td>Save</td>
+</tr>
+<tr>
+<td></td>
+<td>Ctrl+Shift+S</td>
+<td>Save As</td>
 </tr>
 <tr>
 <td></td>
@@ -4996,7 +5026,7 @@
 </tr>
 <tr>
 <td><strong>Simulate</strong></td>
-<td>Ctrl+Shift+S</td>
+<td>F11</td>
 <td>Mode</td>
 </tr>
 <tr>
@@ -5021,8 +5051,8 @@
 </tr>
 <tr>
 <td><strong>Machine</strong></td>
-<td>Ctrl+J</td>
-<td>Jog Dialog</td>
+<td>Ctrl+L</td>
+<td>Control Panel</td>
 </tr>
 <tr>
 <td></td>
