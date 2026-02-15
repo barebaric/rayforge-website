@@ -2739,6 +2739,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#creating-a-custom-dialect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a Custom Dialect
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#related-pages" class="md-nav__link">
     <span class="md-ellipsis">
       Related Pages
@@ -3566,6 +3575,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#creating-a-custom-dialect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a Custom Dialect
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#related-pages" class="md-nav__link">
     <span class="md-ellipsis">
       Related Pages
@@ -3638,6 +3656,18 @@
 <td> Optimized variant</td>
 </tr>
 <tr>
+<td><strong>GRBL Dynamic (Depth-Aware)</strong></td>
+<td>GRBL 1.1+</td>
+<td>Depth-Aware laser engraving</td>
+<td> Recommended for dynamic power</td>
+</tr>
+<tr>
+<td><strong>GRBL Dynamic (no Z axis)</strong></td>
+<td>GRBL 1.1+</td>
+<td>Depth-Aware laser engraving</td>
+<td> Optimized variant</td>
+</tr>
+<tr>
 <td><strong>Smoothieware</strong></td>
 <td>Smoothieware</td>
 <td>Laser cutters, CNC</td>
@@ -3652,9 +3682,21 @@
 </tbody>
 </table>
 <div class="admonition note">
-<p class="admonition-title">Recommended Dialect</p>
-<p><strong>GRBL (universal)</strong> is the most tested and recommended dialect for laser applications.</p>
+<p class="admonition-title">Recommended Dialects</p>
 </div>
+<p><strong>GRBL (universal)</strong> is the most tested and recommended dialect for standard laser applications.</p>
+<div class="language-text highlight"><pre><span></span><code>**GRBL Dynamic (Depth-Aware)** is recommended for Depth-Aware laser engraving where power varies during cuts (e.g., variable depth engraving).
+</code></pre></div>
+<hr>
+<h2 id="creating-a-custom-dialect">Creating a Custom Dialect<a class="headerlink" href="#creating-a-custom-dialect" title="Permanent link">¶</a></h2>
+<p>To create a custom G-code dialect based on a built-in dialect:</p>
+<ol>
+<li>Open <strong>Machine Settings</strong> → <strong>G-code Dialect</strong></li>
+<li>Click the <strong>Copy</strong> icon on a built-in dialect to create a new custom dialect</li>
+<li>Edit the dialect settings as needed</li>
+<li>Save your custom dialect</li>
+</ol>
+<p>Custom dialects are stored in your configuration directory and can be shared.</p>
 <hr>
 <h2 id="related-pages">Related Pages<a class="headerlink" href="#related-pages" title="Permanent link">¶</a></h2>
 <ul>
