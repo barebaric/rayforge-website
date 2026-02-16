@@ -1951,6 +1951,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#action-shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Action Shortcuts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#constraint-shortcuts" class="md-nav__link">
     <span class="md-ellipsis">
       Constraint Shortcuts
@@ -1977,6 +1986,15 @@
   <a href="#construction-mode" class="md-nav__link">
     <span class="md-ellipsis">
       Construction Mode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chamfer-and-fillet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chamfer and Fillet
     </span>
   </a>
   
@@ -3846,6 +3864,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#action-shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Action Shortcuts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#constraint-shortcuts" class="md-nav__link">
     <span class="md-ellipsis">
       Constraint Shortcuts
@@ -3872,6 +3899,15 @@
   <a href="#construction-mode" class="md-nav__link">
     <span class="md-ellipsis">
       Construction Mode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chamfer-and-fillet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chamfer and Fillet
     </span>
   </a>
   
@@ -3997,6 +4033,9 @@ ensures your designs maintain their intended geometry even when dimensions are m
 <li><strong>Lines</strong>: Draw straight line segments between points</li>
 <li><strong>Circles</strong>: Create circles by defining a center point and radius</li>
 <li><strong>Arcs</strong>: Draw arcs by specifying a center point, start point, and end point</li>
+<li><strong>Rectangles</strong>: Draw rectangles by specifying two opposite corners</li>
+<li><strong>Rounded Rectangles</strong>: Draw rectangles with rounded corners</li>
+<li><strong>Text Boxes</strong>: Add text elements to your sketch</li>
 <li><strong>Fills</strong>: Fill closed regions to create solid areas</li>
 </ul>
 <p>These elements form the foundation of your 2D designs and can be combined to create
@@ -4023,6 +4062,9 @@ precise geometric relationships:</p>
 <li><strong>Distance</strong>: Sets the exact distance between two points or along a line</li>
 <li><strong>Diameter</strong>: Defines the diameter of a circle</li>
 <li><strong>Radius</strong>: Sets the radius of a circle or arc</li>
+<li><strong>Angle</strong>: Enforces a specific angle between two lines</li>
+<li><strong>Aspect Ratio</strong>: Forces the ratio between two distances to be equal to a specified
+  value</li>
 <li><strong>Equal Length/Radius</strong>: Forces multiple elements (lines, arcs, or circles) to have
   the same length or radius</li>
 <li><strong>Equal Distance</strong>: Forces the distance between two point pairs to be equal</li>
@@ -4043,21 +4085,31 @@ selected geometry, you'll see applicable constraints.</p>
 <li><code>G+L</code>: Line tool</li>
 <li><code>G+A</code>: Arc tool</li>
 <li><code>G+C</code>: Circle tool</li>
+<li><code>G+R</code>: Rectangle tool</li>
+<li><code>G+O</code>: Rounded Rectangle tool</li>
 <li><code>G+F</code>: Fill Area tool</li>
+<li><code>G+T</code>: Text Box tool</li>
 <li><code>G+N</code>: Toggle construction mode on selection</li>
+</ul>
+<h3 id="action-shortcuts">Action Shortcuts<a class="headerlink" href="#action-shortcuts" title="Permanent link">¶</a></h3>
+<ul>
+<li><code>C+H</code>: Add Chamfer corner</li>
+<li><code>C+F</code>: Add Fillet corner</li>
 </ul>
 <h3 id="constraint-shortcuts">Constraint Shortcuts<a class="headerlink" href="#constraint-shortcuts" title="Permanent link">¶</a></h3>
 <ul>
 <li><code>H</code>: Apply Horizontal constraint</li>
 <li><code>V</code>: Apply Vertical constraint</li>
-<li><code>T</code>: Apply Tangent constraint</li>
 <li><code>N</code>: Apply Perpendicular constraint</li>
+<li><code>T</code>: Apply Tangent constraint</li>
 <li><code>E</code>: Apply Equal constraint</li>
 <li><code>O</code> or <code>C</code>: Apply Alignment constraint (Coincident)</li>
 <li><code>S</code>: Apply Symmetry constraint</li>
 <li><code>K+D</code>: Apply Distance constraint</li>
 <li><code>K+R</code>: Apply Radius constraint</li>
 <li><code>K+O</code>: Apply Diameter constraint</li>
+<li><code>K+A</code>: Apply Angle constraint</li>
+<li><code>K+X</code>: Apply Aspect Ratio constraint</li>
 </ul>
 <h3 id="general-shortcuts">General Shortcuts<a class="headerlink" href="#general-shortcuts" title="Permanent link">¶</a></h3>
 <ul>
@@ -4079,6 +4131,18 @@ the sketch is used for laser cutting or engraving.</p>
 - Creating reference lines and circles
 - Defining temporary geometry for alignment
 - Building complex shapes from a framework of guides</p>
+<h2 id="chamfer-and-fillet">Chamfer and Fillet<a class="headerlink" href="#chamfer-and-fillet" title="Permanent link">¶</a></h2>
+<p>The sketcher provides tools to modify corners of your geometry:</p>
+<ul>
+<li><strong>Chamfer</strong>: Replaces a sharp corner with a beveled edge. Select a junction point
+  (where two lines meet) and apply the chamfer action.</li>
+<li><strong>Fillet</strong>: Replaces a sharp corner with a rounded edge. Select a junction point
+  (where two lines meet) and apply the fillet action.</li>
+</ul>
+<p>To use chamfer or fillet:
+1. Select a junction point where two lines meet
+2. Press <code>C+H</code> for chamfer or <code>C+F</code> for fillet
+3. Use the pie menu or keyboard shortcuts to apply the modification</p>
 <h2 id="import-and-export">Import and Export<a class="headerlink" href="#import-and-export" title="Permanent link">¶</a></h2>
 <h3 id="saving-sketches">Saving Sketches<a class="headerlink" href="#saving-sketches" title="Permanent link">¶</a></h3>
 <p>You can save your 2D sketches to files for reuse in other projects. All parametric
@@ -4103,8 +4167,8 @@ dimensional relationships.</p>
 <li><strong>Dynamic Cursor</strong>: The cursor changes to reflect the active drawing tool</li>
 <li><strong>Constraint Visualization</strong>: Applied constraints are clearly indicated in the interface</li>
 <li><strong>Real-time Updates</strong>: Changes to constraints immediately update the geometry</li>
-<li><strong>Double-Click Editing</strong>: Double-click on dimensional constraints (Distance, Radius, Diameter)
-  opens a dialog to edit their values</li>
+<li><strong>Double-Click Editing</strong>: Double-click on dimensional constraints (Distance, Radius, Diameter,
+  Angle, Aspect Ratio) opens a dialog to edit their values</li>
 <li><strong>Parametric Expressions</strong>: Dimensional constraints support expressions, allowing values to be
   calculated from other parameters (e.g., <code>width/2</code> for a radius that's half the
   width)</li>
