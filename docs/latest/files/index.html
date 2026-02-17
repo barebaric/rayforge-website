@@ -3609,9 +3609,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#g-code" class="md-nav__link">
+  <a href="#object-export" class="md-nav__link">
     <span class="md-ellipsis">
-      G-code
+      Object Export
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#document-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      Document Export
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g-code-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      G-code Export
     </span>
   </a>
   
@@ -3813,7 +3831,77 @@
 <li><strong>Generate G-code</strong>: Machine → Generate G-code</li>
 </ol>
 <h2 id="export-formats">Export Formats<a class="headerlink" href="#export-formats" title="Permanent link">¶</a></h2>
-<h3 id="g-code">G-code<a class="headerlink" href="#g-code" title="Permanent link">¶</a></h3>
+<h3 id="object-export">Object Export<a class="headerlink" href="#object-export" title="Permanent link">¶</a></h3>
+<p>Any workpiece can be exported to vector formats for use in other software:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Format</th>
+<th style="text-align: left;">Extension</th>
+<th style="text-align: left;">Best For</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>RFS</strong></td>
+<td style="text-align: left;"><code>.rfs</code></td>
+<td style="text-align: left;">Parametric sketches</td>
+<td style="text-align: left;">Preserves constraints, re-importable</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SVG</strong></td>
+<td style="text-align: left;"><code>.svg</code></td>
+<td style="text-align: left;">Vector graphics</td>
+<td style="text-align: left;">Widely compatible</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>DXF</strong></td>
+<td style="text-align: left;"><code>.dxf</code></td>
+<td style="text-align: left;">CAD software</td>
+<td style="text-align: left;">Good for further CAD work</td>
+</tr>
+</tbody>
+</table>
+<p>To export a workpiece:</p>
+<ol>
+<li>Select the workpiece on the canvas</li>
+<li>Choose <strong>Object → Export Object...</strong></li>
+<li>Select format and save location</li>
+</ol>
+<h3 id="document-export">Document Export<a class="headerlink" href="#document-export" title="Permanent link">¶</a></h3>
+<p>Export all workpieces in a document to a single vector file:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Format</th>
+<th style="text-align: left;">Extension</th>
+<th style="text-align: left;">Best For</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>SVG</strong></td>
+<td style="text-align: left;"><code>.svg</code></td>
+<td style="text-align: left;">Vector graphics</td>
+<td style="text-align: left;">Widely compatible</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>DXF</strong></td>
+<td style="text-align: left;"><code>.dxf</code></td>
+<td style="text-align: left;">CAD software</td>
+<td style="text-align: left;">Good for further CAD work</td>
+</tr>
+</tbody>
+</table>
+<p>To export a document:</p>
+<ol>
+<li>Choose <strong>File → Export Document...</strong></li>
+<li>Select format and save location</li>
+</ol>
+<p>All workpieces from all layers are combined into a single file.</p>
+<h3 id="g-code-export">G-code Export<a class="headerlink" href="#g-code-export" title="Permanent link">¶</a></h3>
 <p>Rayforge generates standard G-code for GRBL and Smoothieware:</p>
 <ul>
 <li><strong>GRBL</strong>: Standard GRBL commands (G0, G1, M3, M5, etc.)</li>

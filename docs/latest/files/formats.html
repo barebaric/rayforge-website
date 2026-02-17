@@ -2440,6 +2440,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#rfs-rayforge-sketch" class="md-nav__link">
+    <span class="md-ellipsis">
+      RFS (Rayforge Sketch)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pdf-portable-document-format" class="md-nav__link">
     <span class="md-ellipsis">
       PDF (Portable Document Format)
@@ -2485,30 +2494,6 @@
   <a href="#bmp-bitmap" class="md-nav__link">
     <span class="md-ellipsis">
       BMP (Bitmap)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#output-formats" class="md-nav__link">
-    <span class="md-ellipsis">
-      Output Formats
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Output Formats">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#g-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      G-code
     </span>
   </a>
   
@@ -3732,6 +3717,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#rfs-rayforge-sketch" class="md-nav__link">
+    <span class="md-ellipsis">
+      RFS (Rayforge Sketch)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pdf-portable-document-format" class="md-nav__link">
     <span class="md-ellipsis">
       PDF (Portable Document Format)
@@ -3777,30 +3771,6 @@
   <a href="#bmp-bitmap" class="md-nav__link">
     <span class="md-ellipsis">
       BMP (Bitmap)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#output-formats" class="md-nav__link">
-    <span class="md-ellipsis">
-      Output Formats
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Output Formats">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#g-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      G-code
     </span>
   </a>
   
@@ -3875,57 +3845,64 @@
 <tr>
 <td><strong>SVG</strong></td>
 <td>Vector</td>
-<td> Direct</td>
-<td></td>
+<td>✓ Direct</td>
+<td>✓ Object export</td>
 <td>Primary design format</td>
 </tr>
 <tr>
 <td><strong>DXF</strong></td>
 <td>Vector</td>
-<td> Direct</td>
-<td></td>
+<td>✓ Direct</td>
+<td>✓ Object export</td>
 <td>CAD interchange</td>
 </tr>
 <tr>
 <td><strong>PDF</strong></td>
 <td>Mixed</td>
-<td> Trace</td>
-<td></td>
+<td>✓ Trace</td>
+<td>–</td>
 <td>Document export (limited)</td>
 </tr>
 <tr>
 <td><strong>PNG</strong></td>
 <td>Raster</td>
-<td> Trace</td>
-<td></td>
+<td>✓ Trace</td>
+<td>–</td>
 <td>Photos, images</td>
 </tr>
 <tr>
 <td><strong>JPEG</strong></td>
 <td>Raster</td>
-<td> Trace</td>
-<td></td>
+<td>✓ Trace</td>
+<td>–</td>
 <td>Photos</td>
 </tr>
 <tr>
 <td><strong>BMP</strong></td>
 <td>Raster</td>
-<td> Trace</td>
-<td></td>
+<td>✓ Trace</td>
+<td>–</td>
 <td>Simple graphics</td>
+</tr>
+<tr>
+<td><strong>RFS</strong></td>
+<td>Sketch</td>
+<td>✓ Direct</td>
+<td>✓ Object export</td>
+<td>Parametric sketches</td>
 </tr>
 <tr>
 <td><strong>G-code</strong></td>
 <td>Control</td>
-<td></td>
-<td></td>
+<td>–</td>
+<td>✓ Primary</td>
 <td>Machine output</td>
 </tr>
 <tr>
 <td><strong>Rayforge Project</strong></td>
 <td>Project</td>
-<td></td>
-<td></td>
+<td>✓</td>
+<td>✓</td>
 <td>Save/load projects</td>
 </tr>
 </tbody>
@@ -3936,27 +3913,34 @@
 <p><strong>Extension:</strong> <code>.svg</code>
 <strong>MIME Type:</strong> <code>image/svg+xml</code>
 <strong>Import:</strong> Direct vector parsing or bitmap trace
-<strong>Export:</strong> Not supported</p>
+<strong>Export:</strong> Object export (geometry only)</p>
 <p><strong>What is SVG?</strong></p>
 <p>SVG is an XML-based vector image format. It's the <strong>preferred format</strong> for importing designs into Rayforge.</p>
 <p><strong>Supported Features:</strong></p>
 <ul>
-<li> Paths (lines, curves, arcs)</li>
-<li> Basic shapes (rectangles, circles, ellipses, polygons)</li>
-<li> Groups and transformations</li>
-<li> Stroke and fill colors</li>
-<li> Multiple layers</li>
-<li> Coordinate transformations (translate, rotate, scale)</li>
+<li>✓ Paths (lines, curves, arcs)</li>
+<li>✓ Basic shapes (rectangles, circles, ellipses, polygons)</li>
+<li>✓ Groups and transformations</li>
+<li>✓ Stroke and fill colors</li>
+<li>✓ Multiple layers</li>
+<li>✓ Coordinate transformations (translate, rotate, scale)</li>
 </ul>
 <p><strong>Unsupported/Limited Features:</strong></p>
 <ul>
-<li> Text (must be converted to paths first)</li>
-<li> Gradients (simplified or ignored)</li>
-<li> Filters and effects (ignored)</li>
-<li> Masks and clipping paths (may not work correctly)</li>
-<li> Embedded raster images (imported separately if possible)</li>
-<li> Complex stroke styles (dashes may be simplified)</li>
-<li> Symbols and use elements (instances may not update)</li>
+<li>✗ Text (must be converted to paths first)</li>
+<li>✗ Gradients (simplified or ignored)</li>
+<li>✗ Filters and effects (ignored)</li>
+<li>✗ Masks and clipping paths (may not work correctly)</li>
+<li>✗ Embedded raster images (imported separately if possible)</li>
+<li>✗ Complex stroke styles (dashes may be simplified)</li>
+<li>✗ Symbols and use elements (instances may not update)</li>
+</ul>
+<p><strong>Export Notes:</strong></p>
+<p>When exporting a workpiece to SVG, Rayforge exports the geometry as vector paths with:</p>
+<ul>
+<li>Stroke-only rendering (no fill)</li>
+<li>Millimeter units</li>
+<li>Black stroke color</li>
 </ul>
 <p><strong>Best Practices:</strong></p>
 <ol>
@@ -3970,71 +3954,70 @@
 <p><strong>Software Recommendations:</strong></p>
 <ul>
 <li><strong>Inkscape</strong> (free) - Excellent SVG support, native format</li>
-<li><strong>Adobe Illustrator</strong> - Professional tool, "Save As SVG" with simplified options</li>
-<li><strong>Affinity Designer</strong> - Good SVG export capabilities</li>
-<li><strong>Figma</strong> - Web-based, export as SVG</li>
 </ul>
 <hr>
 <h3 id="dxf-drawing-exchange-format">DXF (Drawing Exchange Format)<a class="headerlink" href="#dxf-drawing-exchange-format" title="Permanent link">¶</a></h3>
 <p><strong>Extension:</strong> <code>.dxf</code>
 <strong>MIME Type:</strong> <code>application/dxf</code>, <code>image/vnd.dxf</code>
 <strong>Import:</strong> Direct vector parsing
-<strong>Export:</strong> Not supported</p>
+<strong>Export:</strong> Object export (geometry only)</p>
 <p><strong>What is DXF?</strong></p>
 <p>DXF is an AutoCAD drawing format, widely used for CAD interchange.</p>
 <p><strong>Supported Versions:</strong></p>
 <ul>
-<li> <strong>R12/LT2</strong> (recommended - best compatibility)</li>
-<li> R13, R14</li>
-<li> R2000 and later (usually works, but R12 is safer)</li>
+<li>✓ <strong>R12/LT2</strong> (recommended - best compatibility)</li>
+<li>✓ R13, R14</li>
+<li>✓ R2000 and later (usually works, but R12 is safer)</li>
 </ul>
 <p><strong>Supported Entities:</strong></p>
 <ul>
-<li> Lines (LINE)</li>
-<li> Polylines (LWPOLYLINE, POLYLINE)</li>
-<li> Arcs (ARC)</li>
-<li> Circles (CIRCLE)</li>
-<li> Splines (SPLINE) - converted to polylines</li>
-<li> Ellipses (ELLIPSE)</li>
-<li> Layers</li>
+<li>✓ Lines (LINE)</li>
+<li>✓ Polylines (LWPOLYLINE, POLYLINE)</li>
+<li>✓ Arcs (ARC)</li>
+<li>✓ Circles (CIRCLE)</li>
+<li>✓ Splines (SPLINE) - converted to polylines</li>
+<li>✓ Ellipses (ELLIPSE)</li>
+<li>✓ Layers</li>
 </ul>
 <p><strong>Unsupported/Limited Features:</strong></p>
 <ul>
-<li> 3D entities (use 2D projection)</li>
-<li> Dimensions and annotations (ignored)</li>
-<li> Blocks/inserts (may not instance correctly)</li>
-<li> Complex line types (simplified to solid)</li>
-<li> Text (ignored, convert to outlines first)</li>
-<li> Hatches (may be simplified or ignored)</li>
+<li>✗ 3D entities (use 2D projection)</li>
+<li>✗ Dimensions and annotations (ignored)</li>
+<li>✗ Blocks/inserts (may not instance correctly)</li>
+<li>✗ Complex line types (simplified to solid)</li>
+<li>✗ Text (ignored, convert to outlines first)</li>
+<li>✗ Hatches (may be simplified or ignored)</li>
 </ul>
-<p><strong>Common Issues:</strong></p>
-<p><strong>1. Wrong scale</strong>
-   - <strong>Cause:</strong> DXF files don't always specify units clearly
-   - <strong>Solution:</strong> Verify units before export, scale manually if needed</p>
-<p><strong>2. Missing entities</strong>
-   - <strong>Cause:</strong> Unsupported entity types or layers turned off
-   - <strong>Solution:</strong> Check layer visibility, convert complex entities to polylines</p>
-<p><strong>3. Segmented curves</strong>
-   - <strong>Cause:</strong> Splines and ellipses converted to line segments
-   - <strong>Solution:</strong> Increase segment count in export settings</p>
-<p><strong>Best Practices:</strong></p>
-<ol>
-<li><strong>Export as R12/LT2 DXF</strong> for maximum compatibility</li>
-<li><strong>Use 2D geometry only</strong> (no 3D)</li>
-<li><strong>Simplify before export:</strong></li>
-<li>Convert splines to polylines</li>
-<li>Explode blocks if needed</li>
-<li>Remove dimensions and text</li>
-<li><strong>Check units</strong> (mm recommended)</li>
-<li><strong>Test in viewer</strong> before importing to Rayforge</li>
-</ol>
-<p><strong>Software Recommendations:</strong></p>
+<p><strong>Export Notes:</strong></p>
+<p>When exporting a workpiece to DXF, Rayforge exports:</p>
 <ul>
-<li><strong>LibreCAD</strong> (free) - Good DXF support</li>
-<li><strong>QCAD</strong> (free community edition) - DXF native format</li>
-<li><strong>AutoCAD</strong> - Industry standard</li>
-<li><strong>FreeCAD</strong> - Free parametric CAD with DXF export</li>
-<li><strong>Fusion 360</strong> - Free for hobbyists, excellent DXF export</li>
+<li>Lines as LWPOLYLINE entities</li>
+<li>Arcs as ARC entities</li>
+<li>Bezier curves as SPLINE entities</li>
+<li>Millimeter units (INSUNITS = 4)</li>
+</ul>
+<hr>
+<h3 id="rfs-rayforge-sketch">RFS (Rayforge Sketch)<a class="headerlink" href="#rfs-rayforge-sketch" title="Permanent link">¶</a></h3>
+<p><strong>Extension:</strong> <code>.rfs</code>
+<strong>MIME Type:</strong> <code>application/x-rayforge-sketch</code>
+<strong>Import:</strong> Direct (sketch-based workpieces)
+<strong>Export:</strong> Object export (sketch-based workpieces)</p>
+<p><strong>What is RFS?</strong></p>
+<p>RFS is Rayforge's native parametric sketch format. It preserves all geometric
+elements and parametric constraints, allowing you to save and share fully
+editable sketches.</p>
+<p><strong>Features:</strong></p>
+<ul>
+<li>✓ All geometric elements (lines, arcs, circles, rectangles, etc.)</li>
+<li>✓ All parametric constraints</li>
+<li>✓ Dimensional values and expressions</li>
+<li>✓ Fill areas</li>
+</ul>
+<p><strong>When to Use:</strong></p>
+<ul>
+<li>Save reusable parametric designs</li>
+<li>Share editable sketches with other Rayforge users</li>
+<li>Archive work in progress</li>
 </ul>
 <hr>
 <h3 id="pdf-portable-document-format">PDF (Portable Document Format)<a class="headerlink" href="#pdf-portable-document-format" title="Permanent link">¶</a></h3>
@@ -4044,10 +4027,12 @@
 <strong>Export:</strong> Not supported</p>
 <p><strong>What is PDF Import?</strong></p>
 <p>Rayforge can import PDF files by rasterizing them first, then tracing to vectors.</p>
-<p><strong>Process:</strong>
-1. PDF rendered to raster image (default 300 DPI)
-2. Raster traced to create vector paths
-3. Paths added to document</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li>PDF rendered to raster image (default 300 DPI)</li>
+<li>Raster traced to create vector paths</li>
+<li>Paths added to document</li>
+</ol>
 <p><strong>Limitations:</strong></p>
 <ul>
 <li><strong>Not true vector import</strong> - Even vector PDFs are rasterized</li>
@@ -4127,72 +4112,10 @@
 <li>Only use if source software can't export PNG/SVG</li>
 </ul>
 <hr>
-<h2 id="output-formats">Output Formats<a class="headerlink" href="#output-formats" title="Permanent link">¶</a></h2>
-<h3 id="g-code">G-code<a class="headerlink" href="#g-code" title="Permanent link">¶</a></h3>
-<p><strong>Extension:</strong> <code>.gcode</code>, <code>.nc</code>, <code>.ngc</code>
-<strong>MIME Type:</strong> <code>text/plain</code>
-<strong>Import:</strong> Not supported
-<strong>Export:</strong>  Primary output format</p>
-<p><strong>What is G-code?</strong></p>
-<p>G-code is the <strong>machine control language</strong> used by laser controllers.</p>
-<p><strong>Rayforge G-code Features:</strong></p>
-<ul>
-<li><strong>Dialect support:</strong> GRBL (primary)</li>
-<li><strong>Optimized toolpaths:</strong> Efficient move ordering</li>
-<li><strong>Comments:</strong> Human-readable annotations</li>
-<li><strong>Precision control:</strong> Configurable decimal places</li>
-<li><strong>Macro insertion:</strong> Custom G-code via hooks</li>
-</ul>
-<p><strong>Export Settings:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>Description</th>
-<th>Typical Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Precision</strong></td>
-<td>Decimal places for coordinates</td>
-<td>3 (e.g., 12.345)</td>
-</tr>
-<tr>
-<td><strong>Dialect</strong></td>
-<td>G-code flavor</td>
-<td>GRBL</td>
-</tr>
-<tr>
-<td><strong>Line numbers</strong></td>
-<td>Add N line numbers</td>
-<td>Usually off</td>
-</tr>
-<tr>
-<td><strong>Whitespace</strong></td>
-<td>Add spaces for readability</td>
-<td>Usually on</td>
-</tr>
-</tbody>
-</table>
-<p><strong>File Size:</strong></p>
-<ul>
-<li>Simple cuts: 1-50 KB</li>
-<li>Complex engraving: 1-50 MB (large jobs can be &gt;100 MB)</li>
-</ul>
-<p><strong>Compatibility:</strong></p>
-<ul>
-<li> GRBL 1.1+ (primary target)</li>
-<li> grblHAL</li>
-<li> GRBL 0.9 (limited testing)</li>
-<li> Marlin, Smoothieware (not officially supported)</li>
-</ul>
-<p>See <a href="../reference/gcode-dialects.html">G-code Dialects</a> for details.</p>
-<hr>
 <h2 id="related-pages">Related Pages<a class="headerlink" href="#related-pages" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="importing.html">Importing Files</a> - How to import each format</li>
-<li><a href="exporting.html">Exporting G-code</a> - G-code export options</li>
+<li><a href="exporting.html">Exporting</a> - G-code export options</li>
 </ul>
 
 

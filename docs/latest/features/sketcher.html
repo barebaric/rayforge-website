@@ -2011,6 +2011,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#exporting-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exporting Objects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#saving-sketches" class="md-nav__link">
     <span class="md-ellipsis">
       Saving Sketches
@@ -3924,6 +3933,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#exporting-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exporting Objects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#saving-sketches" class="md-nav__link">
     <span class="md-ellipsis">
       Saving Sketches
@@ -4144,6 +4162,17 @@ the sketch is used for laser cutting or engraving.</p>
 2. Press <code>C+H</code> for chamfer or <code>C+F</code> for fillet
 3. Use the pie menu or keyboard shortcuts to apply the modification</p>
 <h2 id="import-and-export">Import and Export<a class="headerlink" href="#import-and-export" title="Permanent link">¶</a></h2>
+<h3 id="exporting-objects">Exporting Objects<a class="headerlink" href="#exporting-objects" title="Permanent link">¶</a></h3>
+<p>You can export any selected workpiece to various vector formats:</p>
+<ol>
+<li>Select a workpiece on the canvas</li>
+<li>Choose <strong>Object → Export Object...</strong> (or right-click and select from context menu)</li>
+<li>Choose the export format:</li>
+<li><strong>RFS (.rfs)</strong>: Rayforge's native parametric sketch format - preserves all
+     constraints and can be re-imported for editing</li>
+<li><strong>SVG (.svg)</strong>: Standard vector format - widely compatible with design software</li>
+<li><strong>DXF (.dxf)</strong>: CAD interchange format - compatible with most CAD applications</li>
+</ol>
 <h3 id="saving-sketches">Saving Sketches<a class="headerlink" href="#saving-sketches" title="Permanent link">¶</a></h3>
 <p>You can save your 2D sketches to files for reuse in other projects. All parametric
 constraints are preserved when saving, ensuring your designs maintain their geometric
@@ -4157,6 +4186,7 @@ dimensional relationships.</p>
 <li><strong>Start with Rough Geometry</strong>: Create basic shapes first, then refine with constraints</li>
 <li><strong>Use Constraints Early</strong>: Apply constraints as you build to maintain design intent</li>
 <li><strong>Check Constraint Status</strong>: The system indicates when sketches are fully constrained</li>
+<li><strong>Watch for Conflicts</strong>: Constraints that conflict with each other are highlighted in red</li>
 <li><strong>Utilize Symmetry</strong>: Symmetry constraints can significantly speed up complex designs</li>
 <li><strong>Iterate and Refine</strong>: Don't hesitate to modify constraints to achieve the desired
    result</li>
