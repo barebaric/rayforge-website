@@ -1635,37 +1635,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#log-view" class="md-nav__link">
+  <a href="#console" class="md-nav__link">
     <span class="md-ellipsis">
-      Log View
+      Console
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Log View">
+    <nav class="md-nav" aria-label="Console">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#log-contents" class="md-nav__link">
+  <a href="#command-input" class="md-nav__link">
     <span class="md-ellipsis">
-      Log Contents
+      Command Input
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#log-features" class="md-nav__link">
+  <a href="#log-display" class="md-nav__link">
     <span class="md-ellipsis">
-      Log Features
+      Log Display
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-the-log-for-troubleshooting" class="md-nav__link">
+  <a href="#verbose-mode" class="md-nav__link">
     <span class="md-ellipsis">
-      Using the Log for Troubleshooting
+      Verbose Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-scroll-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auto-Scroll Behavior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-console-for-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the Console for Troubleshooting
     </span>
   </a>
   
@@ -1873,9 +1891,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#log-not-updating" class="md-nav__link">
+  <a href="#console-not-updating" class="md-nav__link">
     <span class="md-ellipsis">
-      Log Not Updating
+      Console Not Updating
     </span>
   </a>
   
@@ -4097,37 +4115,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#log-view" class="md-nav__link">
+  <a href="#console" class="md-nav__link">
     <span class="md-ellipsis">
-      Log View
+      Console
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Log View">
+    <nav class="md-nav" aria-label="Console">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#log-contents" class="md-nav__link">
+  <a href="#command-input" class="md-nav__link">
     <span class="md-ellipsis">
-      Log Contents
+      Command Input
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#log-features" class="md-nav__link">
+  <a href="#log-display" class="md-nav__link">
     <span class="md-ellipsis">
-      Log Features
+      Log Display
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-the-log-for-troubleshooting" class="md-nav__link">
+  <a href="#verbose-mode" class="md-nav__link">
     <span class="md-ellipsis">
-      Using the Log for Troubleshooting
+      Verbose Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-scroll-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auto-Scroll Behavior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-console-for-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the Console for Troubleshooting
     </span>
   </a>
   
@@ -4335,9 +4371,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#log-not-updating" class="md-nav__link">
+  <a href="#console-not-updating" class="md-nav__link">
     <span class="md-ellipsis">
-      Log Not Updating
+      Console Not Updating
     </span>
   </a>
   
@@ -4394,7 +4430,7 @@ for monitoring operations.</p>
 <ol>
 <li><strong>Jog Controls</strong>: Manual movement and positioning</li>
 <li><strong>Machine Status</strong>: Real-time position and connection state</li>
-<li><strong>Log View</strong>: G-code communication and operation history</li>
+<li><strong>Console</strong>: Interactive G-code terminal with syntax highlighting</li>
 <li><strong>Work Coordinate System (WCS)</strong>: Quick WCS selection</li>
 </ol>
 <p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../images/control-panel.png" data-desc-position="bottom"><img alt="Control Panel" src="../images/control-panel.png"></a></p>
@@ -4679,29 +4715,50 @@ as machine coordinates are fixed by hardware.</p>
 <li>The offset is stored in your machine's controller</li>
 </ol>
 </div>
-<h2 id="log-view">Log View<a class="headerlink" href="#log-view" title="Permanent link">¶</a></h2>
-<p>The Log View displays G-code communication and operation history:</p>
-<h3 id="log-contents">Log Contents<a class="headerlink" href="#log-contents" title="Permanent link">¶</a></h3>
+<h2 id="console">Console<a class="headerlink" href="#console" title="Permanent link">¶</a></h2>
+<p>The Console provides an interactive terminal-style interface for sending G-code
+commands and monitoring machine communication:</p>
+<h3 id="command-input">Command Input<a class="headerlink" href="#command-input" title="Permanent link">¶</a></h3>
+<p>The command input box allows you to send raw G-code directly to the machine:</p>
 <ul>
-<li><strong>Sent Commands</strong>: G-code commands sent to the machine</li>
-<li><strong>Responses</strong>: Replies and status from the controller</li>
-<li><strong>Error Messages</strong>: Any errors or warnings from the machine</li>
-<li><strong>System Messages</strong>: Connection status and other system events</li>
+<li><strong>Multi-line Support</strong>: Paste or type multiple commands</li>
+<li><strong>Enter</strong>: Sends all commands</li>
+<li><strong>Shift+Enter</strong>: Inserts a newline (for editing before sending)</li>
+<li><strong>History</strong>: Use Up/Down arrows to navigate previously sent commands</li>
 </ul>
-<h3 id="log-features">Log Features<a class="headerlink" href="#log-features" title="Permanent link">¶</a></h3>
+<h3 id="log-display">Log Display<a class="headerlink" href="#log-display" title="Permanent link">¶</a></h3>
+<p>The log shows communication between Rayforge and your machine with
+syntax highlighting for easy reading:</p>
 <ul>
-<li><strong>Auto-scroll</strong>: Automatically scrolls to show latest messages</li>
-<li><strong>Search</strong>: Filter log messages by text</li>
-<li><strong>Clear</strong>: Clear the log history</li>
-<li><strong>Copy</strong>: Copy selected log text to clipboard</li>
+<li><strong>User Commands</strong> (blue): Commands you entered or sent during jobs</li>
+<li><strong>Timestamps</strong> (gray): Time of each message</li>
+<li><strong>Errors</strong> (red): Error messages from the machine</li>
+<li><strong>Warnings</strong> (orange): Warning messages</li>
+<li><strong>Status Polls</strong> (dim): Real-time position/status reports like
+  <code>&lt;Idle|WPos:0.000,0.000,0.000|...&gt;</code></li>
 </ul>
-<h3 id="using-the-log-for-troubleshooting">Using the Log for Troubleshooting<a class="headerlink" href="#using-the-log-for-troubleshooting" title="Permanent link">¶</a></h3>
-<p>The log view is invaluable for diagnosing issues:</p>
+<h3 id="verbose-mode">Verbose Mode<a class="headerlink" href="#verbose-mode" title="Permanent link">¶</a></h3>
+<p>Click the terminal icon in the top-right corner of the console to toggle
+verbose output:</p>
+<ul>
+<li><strong>Off</strong> (default): Hides frequent status polls and "ok" responses</li>
+<li><strong>On</strong>: Shows all machine communication</li>
+</ul>
+<h3 id="auto-scroll-behavior">Auto-Scroll Behavior<a class="headerlink" href="#auto-scroll-behavior" title="Permanent link">¶</a></h3>
+<p>The console automatically scrolls to show new messages:</p>
+<ul>
+<li>Scrolling up disables auto-scroll so you can review history</li>
+<li>Scrolling to the bottom re-enables auto-scroll</li>
+<li>New messages appear immediately when auto-scroll is active</li>
+</ul>
+<h3 id="using-the-console-for-troubleshooting">Using the Console for Troubleshooting<a class="headerlink" href="#using-the-console-for-troubleshooting" title="Permanent link">¶</a></h3>
+<p>The console is invaluable for diagnosing issues:</p>
 <ul>
 <li>Verify commands are being sent correctly</li>
 <li>Check for error messages from the controller</li>
 <li>Monitor connection status and stability</li>
-<li>Review job execution progress</li>
+<li>Review job execution progress in real-time</li>
+<li>Send diagnostic commands (e.g., <code>$$</code> to view GRBL settings)</li>
 </ul>
 <h2 id="machine-hours">Machine Hours<a class="headerlink" href="#machine-hours" title="Permanent link">¶</a></h2>
 <p>Rayforge tracks your machine's usage time to help with maintenance scheduling
@@ -4807,10 +4864,11 @@ the value before resetting if you need it for maintenance records.</p>
 </ol>
 <h3 id="monitoring-jobs">Monitoring Jobs<a class="headerlink" href="#monitoring-jobs" title="Permanent link">¶</a></h3>
 <ol>
-<li>Watch the log view for command execution</li>
+<li>Watch the console for command execution</li>
 <li>Monitor machine status during operation</li>
 <li>Check position updates for accuracy</li>
 <li>Review error messages if issues occur</li>
+<li>Use verbose mode for detailed communication logging</li>
 </ol>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">¶</a></h2>
 <h3 id="jog-controls-not-working">Jog Controls Not Working<a class="headerlink" href="#jog-controls-not-working" title="Permanent link">¶</a></h3>
@@ -4853,18 +4911,18 @@ the value before resetting if you need it for maintenance records.</p>
 <li>Adjust "Y-axis down" setting if needed</li>
 <li>Test with small movements first</li>
 </ul>
-<h3 id="log-not-updating">Log Not Updating<a class="headerlink" href="#log-not-updating" title="Permanent link">¶</a></h3>
+<h3 id="console-not-updating">Console Not Updating<a class="headerlink" href="#console-not-updating" title="Permanent link">¶</a></h3>
 <p><strong>Possible Causes:</strong></p>
 <ul>
 <li>Connection not established</li>
-<li>Log view disabled or hidden</li>
-<li>Filter settings hiding messages</li>
+<li>Verbose mode is off (status polls hidden)</li>
+<li>You scrolled up (auto-scroll disabled)</li>
 </ul>
 <p><strong>Solutions:</strong></p>
 <ul>
 <li>Verify machine is connected</li>
-<li>Check log view is visible</li>
-<li>Clear any active filters</li>
+<li>Enable verbose mode to see all messages</li>
+<li>Scroll to the bottom to re-enable auto-scroll</li>
 </ul>
 <hr>
 <p><strong>Related Pages:</strong></p>
