@@ -1612,6 +1612,8 @@
       
         
       
+        
+      
     
     
     
@@ -1695,6 +1697,29 @@
   
   <span class="md-ellipsis">
     Raster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/operations/dither.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dither
     
   </span>
   
@@ -4306,13 +4331,13 @@
 </ul>
 <h3 id="checking-grbl-version">Checking GRBL Version<a class="headerlink" href="#checking-grbl-version" title="Permanent link">¶</a></h3>
 <p><strong>Query version:</strong></p>
-<p>Connect to your controller and send:
-</p><div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$I
-</span></code></pre></div><p></p>
-<p><strong>Response examples:</strong>
-</p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[VER:1.1h.20190825:]
+<p>Connect to your controller and send:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$I
+</span></code></pre></div>
+<p><strong>Response examples:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[VER:1.1h.20190825:]
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>[OPT:V,15,128]
-</span></code></pre></div><p></p>
+</span></code></pre></div>
 <ul>
 <li><code>1.1h</code> = GRBL version 1.1h</li>
 <li>Date indicates build</li>
@@ -4398,7 +4423,7 @@
 </table>
 <p><strong>Using Smoothieware with Rayforge:</strong></p>
 <ol>
-<li><strong>Select Smoothieware dialect</strong> in machine settings</li>
+<li><strong>Select Smoothieware dialect</strong> in machine settings &gt; G-code &gt; Dialect</li>
 <li><strong>Test with low power</strong> first</li>
 <li><strong>Verify power range</strong> matches your config</li>
 <li><strong>No real-time status</strong> - limited feedback</li>
@@ -4439,7 +4464,7 @@
 </ul>
 <p><strong>Using Marlin with Rayforge:</strong></p>
 <ol>
-<li><strong>Select Marlin dialect</strong> in machine settings</li>
+<li><strong>Select Marlin dialect</strong> in machine settings &gt; G-code &gt; Dialect</li>
 <li><strong>Configure Marlin</strong> for laser use</li>
 <li><strong>Test power range</strong> matches (0-1000 or 0-255)</li>
 <li><strong>Limited testing</strong> - use with caution</li>
@@ -4474,16 +4499,16 @@
 <p><strong>Flash firmware:</strong></p>
 </li>
 </ol>
-<p><strong>Using Arduino IDE:</strong>
-   </p><div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>1. Install Arduino IDE
+<p><strong>Using Arduino IDE:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>1. Install Arduino IDE
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>2. Open GRBL sketch (grbl.ino)
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>3. Select correct board and port
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>4. Upload
-</span></code></pre></div><p></p>
-<p><strong>Using avrdude:</strong>
-   </p><div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>avrdude<span class="w"> </span>-c<span class="w"> </span>arduino<span class="w"> </span>-p<span class="w"> </span>m328p<span class="w"> </span>-P<span class="w"> </span>/dev/ttyUSB0<span class="w"> </span><span class="se">\</span>
+</span></code></pre></div>
+<p><strong>Using avrdude:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>avrdude<span class="w"> </span>-c<span class="w"> </span>arduino<span class="w"> </span>-p<span class="w"> </span>m328p<span class="w"> </span>-P<span class="w"> </span>/dev/ttyUSB0<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">        </span>-U<span class="w"> </span>flash:w:grbl.hex:i
-</span></code></pre></div><p></p>
+</span></code></pre></div>
 <ol>
 <li><strong>Configure GRBL:</strong></li>
 <li>Connect via serial</li>
@@ -4518,37 +4543,37 @@
 <tr>
 <td><strong>Arduino CNC Shield</strong></td>
 <td>GRBL 1.1</td>
-<td> Excellent</td>
+<td>Excellent</td>
 </tr>
 <tr>
 <td><strong>MKS DLC32</strong></td>
 <td>grblHAL</td>
-<td> Excellent</td>
+<td>Excellent</td>
 </tr>
 <tr>
 <td><strong>Cohesion3D</strong></td>
 <td>Smoothieware</td>
-<td> Limited</td>
+<td>Limited</td>
 </tr>
 <tr>
 <td><strong>SKR boards</strong></td>
 <td>Marlin/grblHAL</td>
-<td> Varies</td>
+<td>Varies</td>
 </tr>
 <tr>
 <td><strong>Ruida</strong></td>
 <td>Proprietary</td>
-<td> Not supported</td>
+<td>Not supported</td>
 </tr>
 <tr>
 <td><strong>Trocen</strong></td>
 <td>Proprietary</td>
-<td> Not supported</td>
+<td>Not supported</td>
 </tr>
 <tr>
 <td><strong>TopWisdom</strong></td>
 <td>Proprietary</td>
-<td> Not supported</td>
+<td>Not supported</td>
 </tr>
 </tbody>
 </table>
@@ -4601,46 +4626,46 @@
 <h3 id="testing-firmware">Testing Firmware<a class="headerlink" href="#testing-firmware" title="Permanent link">¶</a></h3>
 <p><strong>Basic test sequence:</strong></p>
 <ol>
-<li>
-<p><strong>Connection test:</strong>
-   </p><div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Send: ?
+<li><strong>Connection test:</strong></li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Send: ?
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Expect: &lt;Idle|...&gt;
-</span></code></pre></div><p></p>
-</li>
-<li>
-<p><strong>Version check:</strong>
-   </p><div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Send: $I
+</span></code></pre></div>
+<ol>
+<li><strong>Version check:</strong></li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Send: $I
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Expect: [VER:1.1...]
-</span></code></pre></div><p></p>
-</li>
-<li>
-<p><strong>Settings check:</strong>
-   </p><div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Send: $$
+</span></code></pre></div>
+<ol>
+<li><strong>Settings check:</strong></li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Send: $$
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Expect: $0=..., $1=..., etc.
-</span></code></pre></div><p></p>
-</li>
-<li>
-<p><strong>Movement test:</strong>
-   </p><div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Send: G91 G0 X10
+</span></code></pre></div>
+<ol>
+<li><strong>Movement test:</strong></li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Send: G91 G0 X10
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>Expect: Machine moves 10mm in X
-</span></code></pre></div><p></p>
-</li>
-<li>
-<p><strong>Laser test (very low power):</strong>
-   </p><div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Send: M4 S10
+</span></code></pre></div>
+<ol>
+<li><strong>Laser test (very low power):</strong>
+   <div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Send: M4 S10
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>Expect: Laser turns on (dim)
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>Send: M5
 </span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>Expect: Laser turns off
-</span></code></pre></div><p></p>
-</li>
+</span></code></pre></div></li>
 </ol>
 <hr>
 <h2 id="troubleshooting-firmware-issues">Troubleshooting Firmware Issues<a class="headerlink" href="#troubleshooting-firmware-issues" title="Permanent link">¶</a></h2>
 <h3 id="firmware-not-responding">Firmware Not Responding<a class="headerlink" href="#firmware-not-responding" title="Permanent link">¶</a></h3>
-<p><strong>Symptoms:</strong>
-- No response to commands
-- Connection fails
-- Status not reported</p>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>No response to commands</li>
+<li>Connection fails</li>
+<li>Status not reported</li>
+</ul>
 <p><strong>Diagnosis:</strong></p>
 <ol>
 <li><strong>Check baud rate:</strong></li>
@@ -4671,10 +4696,12 @@
 <li>Send <code>?</code> and see if you get response</li>
 </ol>
 <h3 id="firmware-crashes">Firmware Crashes<a class="headerlink" href="#firmware-crashes" title="Permanent link">¶</a></h3>
-<p><strong>Symptoms:</strong>
-- Controller locks up during job
-- Random disconnections
-- Inconsistent behavior</p>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Controller locks up during job</li>
+<li>Random disconnections</li>
+<li>Inconsistent behavior</li>
+</ul>
 <p><strong>Possible causes:</strong></p>
 <ol>
 <li><strong>Buffer overflow</strong> - G-code file too complex</li>
@@ -4690,10 +4717,12 @@
 <li>Improve grounding and cable routing</li>
 </ul>
 <h3 id="wrong-firmware">Wrong Firmware<a class="headerlink" href="#wrong-firmware" title="Permanent link">¶</a></h3>
-<p><strong>Symptoms:</strong>
-- Commands rejected
-- Unexpected behavior
-- Error messages</p>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Commands rejected</li>
+<li>Unexpected behavior</li>
+<li>Error messages</li>
+</ul>
 <p><strong>Solution:</strong></p>
 <ol>
 <li>Query firmware version: <code>$I</code></li>

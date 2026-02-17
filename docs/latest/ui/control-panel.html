@@ -1695,28 +1695,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#machine-hours" class="md-nav__link">
+  <a href="#maintenance-tracking" class="md-nav__link">
     <span class="md-ellipsis">
-      Machine Hours
+      Maintenance Tracking
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Machine Hours">
+    <nav class="md-nav" aria-label="Maintenance Tracking">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#viewing-machine-hours" class="md-nav__link">
+  <a href="#viewing-maintenance-information" class="md-nav__link">
     <span class="md-ellipsis">
-      Viewing Machine Hours
+      Viewing Maintenance Information
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#maintenance-tracking" class="md-nav__link">
+  <a href="#maintenance-tracking_1" class="md-nav__link">
     <span class="md-ellipsis">
       Maintenance Tracking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-counters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing Counters
     </span>
   </a>
   
@@ -2077,6 +2086,8 @@
       
         
       
+        
+      
     
     
     
@@ -2160,6 +2171,29 @@
   
   <span class="md-ellipsis">
     Raster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/operations/dither.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dither
     
   </span>
   
@@ -4175,28 +4209,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#machine-hours" class="md-nav__link">
+  <a href="#maintenance-tracking" class="md-nav__link">
     <span class="md-ellipsis">
-      Machine Hours
+      Maintenance Tracking
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Machine Hours">
+    <nav class="md-nav" aria-label="Maintenance Tracking">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#viewing-machine-hours" class="md-nav__link">
+  <a href="#viewing-maintenance-information" class="md-nav__link">
     <span class="md-ellipsis">
-      Viewing Machine Hours
+      Viewing Maintenance Information
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#maintenance-tracking" class="md-nav__link">
+  <a href="#maintenance-tracking_1" class="md-nav__link">
     <span class="md-ellipsis">
       Maintenance Tracking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-counters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing Counters
     </span>
   </a>
   
@@ -4760,24 +4803,33 @@ verbose output:</p>
 <li>Review job execution progress in real-time</li>
 <li>Send diagnostic commands (e.g., <code>$$</code> to view GRBL settings)</li>
 </ul>
-<h2 id="machine-hours">Machine Hours<a class="headerlink" href="#machine-hours" title="Permanent link">¶</a></h2>
+<h2 id="maintenance-tracking">Maintenance Tracking<a class="headerlink" href="#maintenance-tracking" title="Permanent link">¶</a></h2>
 <p>Rayforge tracks your machine's usage time to help with maintenance scheduling
-and usage tracking.</p>
-<h3 id="viewing-machine-hours">Viewing Machine Hours<a class="headerlink" href="#viewing-machine-hours" title="Permanent link">¶</a></h3>
-<p>The machine hours display shows:</p>
+and usage tracking. Open machine settings and navigate to the <strong>Maintenance</strong>
+page to view and manage machine hours.</p>
+<h3 id="viewing-maintenance-information">Viewing Maintenance Information<a class="headerlink" href="#viewing-maintenance-information" title="Permanent link">¶</a></h3>
+<p>The maintenance page displays:</p>
 <ul>
-<li><strong>Total Hours</strong>: Cumulative time the machine has been in operation</li>
-<li><strong>Job Time</strong>: Time spent executing jobs</li>
-<li><strong>Jog Time</strong>: Time spent jogging/moving the laser head</li>
+<li><strong>Total Operating Hours</strong>: Cumulative time the machine has been in operation</li>
+<li><strong>Maintenance Counters</strong>: Resettable counters for tracking various metrics
+  (e.g., laser tube hours, lubrication intervals)</li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../images/machine-hours.png" data-desc-position="bottom"><img alt="Machine Hours" src="../images/machine-hours.png"></a></p>
-<h3 id="maintenance-tracking">Maintenance Tracking<a class="headerlink" href="#maintenance-tracking" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../images/machine-maintenance.png" data-desc-position="bottom"><img alt="Maintenance" src="../images/machine-maintenance.png"></a></p>
+<h3 id="maintenance-tracking_1">Maintenance Tracking<a class="headerlink" href="#maintenance-tracking_1" title="Permanent link">¶</a></h3>
 <p>Use machine hours to schedule maintenance:</p>
 <ul>
 <li><strong>Clean Optics</strong>: Every 50-100 hours of use</li>
 <li><strong>Check Belts</strong>: Every 200-300 hours of use</li>
 <li><strong>Lubricate Rails</strong>: Every 100-200 hours of use</li>
 <li><strong>Replace Tube</strong>: Per manufacturer's specification</li>
+</ul>
+<h3 id="managing-counters">Managing Counters<a class="headerlink" href="#managing-counters" title="Permanent link">¶</a></h3>
+<p>The maintenance page allows you to:</p>
+<ul>
+<li><strong>Add Counter</strong>: Create a new maintenance counter with notification thresholds</li>
+<li><strong>Reset Counter</strong>: Reset accumulated hours to zero</li>
+<li><strong>Edit Counter</strong>: Modify counter settings including notification thresholds</li>
+<li><strong>Remove Counter</strong>: Delete a counter from the list</li>
 </ul>
 <h3 id="resetting-hours">Resetting Hours<a class="headerlink" href="#resetting-hours" title="Permanent link">¶</a></h3>
 <p>Machine hours can be reset when:</p>

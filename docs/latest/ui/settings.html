@@ -1608,9 +1608,36 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#advanced" class="md-nav__link">
     <span class="md-ellipsis">
       Advanced
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      G-code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hooks-macros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hooks &amp; Macros
     </span>
   </a>
   
@@ -1644,9 +1671,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#machine-hours" class="md-nav__link">
+  <a href="#maintenance" class="md-nav__link">
     <span class="md-ellipsis">
-      Machine Hours
+      Maintenance
     </span>
   </a>
   
@@ -1825,6 +1852,8 @@
       
         
       
+        
+      
     
     
     
@@ -1908,6 +1937,29 @@
   
   <span class="md-ellipsis">
     Raster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/operations/dither.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dither
     
   </span>
   
@@ -3790,9 +3842,36 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#advanced" class="md-nav__link">
     <span class="md-ellipsis">
       Advanced
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      G-code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hooks-macros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hooks &amp; Macros
     </span>
   </a>
   
@@ -3826,9 +3905,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#machine-hours" class="md-nav__link">
+  <a href="#maintenance" class="md-nav__link">
     <span class="md-ellipsis">
-      Machine Hours
+      Maintenance
     </span>
   </a>
   
@@ -3958,36 +4037,65 @@ for detailed information on machine configuration.</p>
 </ul>
 <h3 id="machine-settings-dialog">Machine Settings Dialog<a class="headerlink" href="#machine-settings-dialog" title="Permanent link">¶</a></h3>
 <p>Each machine has its own detailed settings dialog with the following pages:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../images/machine-settings.png" data-desc-position="bottom"><img alt="Machine Settings Dialog" src="../images/machine-settings.png"></a></p>
 <h4 id="general">General<a class="headerlink" href="#general" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../images/machine-general.png" data-desc-position="bottom"><img alt="General Settings" src="../images/machine-general.png"></a></p>
 <ul>
 <li><strong>Machine Name</strong>: Display name for the machine</li>
 <li><strong>Driver Settings</strong>: Select and configure the machine driver</li>
-<li><strong>Startup Behavior</strong>:</li>
-<li>Home On Start: Send a homing command when the application starts</li>
-<li>Clear Alarm On Connect: Automatically send an unlock command if
-    connected in an ALARM state</li>
-<li><strong>Axes &amp; Dimensions</strong>:</li>
+<li><strong>Speeds &amp; Acceleration</strong>:</li>
+<li>Max Travel Speed: Maximum rapid movement speed</li>
+<li>Max Cut Speed: Maximum cutting speed</li>
+<li>Acceleration: Used for time estimations and calculating the default
+    overscan distance</li>
+</ul>
+<h4 id="hardware">Hardware<a class="headerlink" href="#hardware" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../images/machine-hardware.png" data-desc-position="bottom"><img alt="Hardware Settings" src="../images/machine-hardware.png"></a></p>
+<ul>
+<li><strong>Dimensions</strong>:</li>
 <li>Width: Width of the machine work area in mm</li>
 <li>Height: Height of the machine work area in mm</li>
-<li>X Offset: Offset to add to each gcode command on x axis</li>
-<li>Y Offset: Offset to add to each gcode command on y axis</li>
-<li>Coordinate Origin: The physical corner where coordinates are zero
-    after homing (Bottom Left, Top Left, Top Right, Bottom Right)</li>
+<li><strong>Axes</strong>:</li>
+<li>Coordinate Origin (0,0): The physical corner where coordinates are
+    zero after homing (Bottom Left, Top Left, Top Right, Bottom Right)</li>
+<li>Reverse X-Axis Direction: Makes coordinate values negative</li>
+<li>Reverse Y-Axis Direction: Makes coordinate values negative</li>
+<li>Reverse Z-Axis Direction: Enable if a positive Z command (e.g., G0 Z10)
+    moves the head down</li>
+<li>X Offset: Offset to add to each gcode command on X axis</li>
+<li>Y Offset: Offset to add to each gcode command on Y axis</li>
 </ul>
 <h4 id="advanced">Advanced<a class="headerlink" href="#advanced" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../images/machine-advanced.png" data-desc-position="bottom"><img alt="Advanced Settings" src="../images/machine-advanced.png"></a></p>
 <ul>
-<li><strong>Output Settings</strong>:</li>
-<li>G-Code Dialect: Select the G-code flavor for your machine</li>
-<li>G-code Precision: Number of decimal places for coordinates
-    (e.g., 3 for mm, 6 for µm)</li>
-<li>Support Arcs: Generate G2/G3 arc commands for smoother paths</li>
+<li><strong>Path Processing</strong>:</li>
+<li>Support Arcs: Generate arc commands for smoother paths. Disable if your
+    machine does not support arcs</li>
 <li>Arc Tolerance: Maximum deviation from original path when fitting arcs
     (in mm). Lower values drastically increase processing time and job size</li>
+<li><strong>Homing and Startup</strong>:</li>
+<li>Home On Start: Send a homing command when the application starts</li>
+<li>Allow Single Axis Homing: Enable individual axis homing controls in the
+    jog dialog</li>
+<li>Clear Alarm On Connect: Automatically send an unlock command if
+    connected in an ALARM state</li>
+</ul>
+<h4 id="g-code">G-code<a class="headerlink" href="#g-code" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../images/machine-gcode.png" data-desc-position="bottom"><img alt="G-code Settings" src="../images/machine-gcode.png"></a></p>
+<ul>
+<li><strong>Precision</strong>:</li>
+<li>G-code Precision: Number of decimal places for coordinates</li>
+<li><strong>Dialect</strong>:</li>
+<li>Select, create and manage G-code dialect definitions</li>
+</ul>
+<h4 id="hooks-macros">Hooks &amp; Macros<a class="headerlink" href="#hooks-macros" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../images/machine-hooks-macros.png" data-desc-position="bottom"><img alt="Hooks &amp; Macros Settings" src="../images/machine-hooks-macros.png"></a></p>
+<ul>
 <li><strong>Hooks</strong>: Configure custom hooks for machine events</li>
-<li><strong>Macros</strong>: Manage G-code macros for quick execution</li>
-<li><strong>Dialects</strong>: Manage available G-code dialects</li>
+<li><strong>Macros</strong>: Create and manage reusable G-code snippets</li>
 </ul>
 <h4 id="device">Device<a class="headerlink" href="#device" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../images/machine-device.png" data-desc-position="bottom"><img alt="Device Settings" src="../images/machine-device.png"></a></p>
 <p>Read or apply settings directly to the connected device.</p>
 <ul>
 <li><strong>Read from Device</strong>: Fetch current settings from the machine</li>
@@ -4000,6 +4108,7 @@ inoperable! The device may restart or temporarily disconnect after a
 setting is changed.</p>
 </div>
 <h4 id="laser">Laser<a class="headerlink" href="#laser" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../images/machine-laser.png" data-desc-position="bottom"><img alt="Laser Settings" src="../images/machine-laser.png"></a></p>
 <ul>
 <li><strong>Laser Heads</strong>: Manage multiple laser heads with their properties:</li>
 <li>Tool number</li>
@@ -4007,16 +4116,24 @@ setting is changed.</p>
 <li>Spot size (X and Y dimensions)</li>
 </ul>
 <h4 id="camera">Camera<a class="headerlink" href="#camera" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../images/machine-camera.png" data-desc-position="bottom"><img alt="Camera Settings" src="../images/machine-camera.png"></a></p>
 <ul>
 <li><strong>Cameras</strong>: Configure cameras for machine monitoring and alignment</li>
 </ul>
-<h4 id="machine-hours">Machine Hours<a class="headerlink" href="#machine-hours" title="Permanent link">¶</a></h4>
+<h4 id="maintenance">Maintenance<a class="headerlink" href="#maintenance" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../images/machine-maintenance.png" data-desc-position="bottom"><img alt="Maintenance Settings" src="../images/machine-maintenance.png"></a></p>
 <p>Track and manage machine usage:</p>
 <ul>
-<li><strong>Counters</strong>: Resettable counters for tracking various machine metrics</li>
-<li><strong>Reset Counter</strong>: Reset accumulated hours to zero</li>
-<li><strong>Edit Counter</strong>: Modify counter settings including notification thresholds</li>
-<li><strong>Remove Counter</strong>: Delete a counter from the list</li>
+<li><strong>Total Hours</strong>:</li>
+<li>Total Operating Hours: Cumulative machine operating time</li>
+<li>Reset Total Hours: Reset the total cumulative operating hours to zero</li>
+<li><strong>Maintenance Counters</strong>:</li>
+<li>Track maintenance intervals with resettable counters. Use for laser
+    tubes, lubrication, etc.</li>
+<li>Add Counter: Create a new maintenance counter</li>
+<li>Reset Counter: Reset accumulated hours to zero</li>
+<li>Edit Counter: Modify counter settings including notification thresholds</li>
+<li>Remove Counter: Delete a counter from the list</li>
 </ul>
 <h2 id="materials">Materials<a class="headerlink" href="#materials" title="Permanent link">¶</a></h2>
 <p>Manage your material libraries and materials.</p>

@@ -1275,6 +1275,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#hardware-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Settings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#laser-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       Laser Configuration
@@ -1831,6 +1840,8 @@
       
         
       
+        
+      
     
     
     
@@ -1914,6 +1925,29 @@
   
   <span class="md-ellipsis">
     Raster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/operations/dither.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dither
     
   </span>
   
@@ -3753,6 +3787,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#hardware-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Settings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#laser-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       Laser Configuration
@@ -3939,32 +3982,41 @@
 <h2 id="step-3-create-a-machine-profile">Step 3: Create a Machine Profile<a class="headerlink" href="#step-3-create-a-machine-profile" title="Permanent link">¶</a></h2>
 <p>Rayforge supports multiple machine profiles, allowing you to switch between different laser cutters quickly.</p>
 <h3 id="general-settings">General Settings<a class="headerlink" href="#general-settings" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../images/machine-general.png" data-desc-position="bottom"><img alt="General Settings" src="../images/machine-general.png"></a></p>
 <ol>
 <li><strong>Machine Name</strong>: Give your machine a descriptive name (e.g., "K40 Laser", "Ortur LM2")</li>
-<li><strong>Working Area</strong>:</li>
+<li><strong>Driver Settings</strong>: Select and configure the machine driver (GRBL, Smoothieware, etc.)</li>
+<li><strong>Speeds &amp; Acceleration</strong>:</li>
+<li><strong>Max Travel Speed</strong>: Maximum rapid movement speed</li>
+<li><strong>Max Cut Speed</strong>: Maximum cutting speed</li>
+<li><strong>Acceleration</strong>: Used for time estimations</li>
+</ol>
+<h3 id="hardware-settings">Hardware Settings<a class="headerlink" href="#hardware-settings" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../images/machine-hardware.png" data-desc-position="bottom"><img alt="Hardware Settings" src="../images/machine-hardware.png"></a></p>
+<ol>
+<li><strong>Dimensions</strong>:</li>
 <li><strong>Width</strong>: Enter the maximum width of your working area in millimeters</li>
 <li><strong>Height</strong>: Enter the maximum height of your working area in millimeters</li>
-<li><strong>Origin Position</strong>: Select where your machine's origin (0,0) is located:</li>
+<li><strong>Axes</strong>:</li>
+<li><strong>Coordinate Origin (0,0)</strong>: Select where your machine's origin is located:<ul>
 <li>Bottom Left (most common for GRBL)</li>
 <li>Top Left</li>
 <li>Top Right</li>
 <li>Bottom Right</li>
+</ul>
+</li>
 </ol>
 <h3 id="laser-configuration">Laser Configuration<a class="headerlink" href="#laser-configuration" title="Permanent link">¶</a></h3>
 <ol>
-<li><strong>Power Settings</strong>:</li>
-<li><strong>Min Power</strong>: Minimum laser power percentage (typically 0-10%)</li>
-<li><strong>Max Power</strong>: Maximum laser power percentage (typically 80-100%)</li>
+<li><strong>Laser Heads</strong>: Configure your laser module properties:</li>
+<li><strong>Tool number</strong>: Tool number for the laser head</li>
+<li><strong>Maximum power</strong>: Maximum laser power percentage</li>
+<li><strong>Spot size</strong>: Laser spot size (X and Y dimensions)</li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Power Calibration</p>
 <p>Start with conservative power settings. You can always increase power later after testing.</p>
 </div>
-<ol>
-<li><strong>Speed Settings</strong>:</li>
-<li><strong>Default Speed</strong>: Your typical engraving/cutting speed in mm/min</li>
-<li><strong>Max Speed</strong>: Maximum speed your machine supports</li>
-</ol>
 <h2 id="step-4-configure-device-connection">Step 4: Configure Device Connection<a class="headerlink" href="#step-4-configure-device-connection" title="Permanent link">¶</a></h2>
 <p>Switch to the <strong>Device</strong> tab to configure how Rayforge connects to your machine.</p>
 <p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../images/machine-device.png" data-desc-position="bottom"><img alt="Device Settings" src="../images/machine-device.png"></a></p>

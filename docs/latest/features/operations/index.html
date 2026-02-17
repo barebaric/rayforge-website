@@ -1614,6 +1614,8 @@
       
         
       
+        
+      
     
     
     
@@ -1695,6 +1697,29 @@
   
   <span class="md-ellipsis">
     Raster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dither.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dither
     
   </span>
   
@@ -3534,6 +3559,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#dithered-raster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dithered Raster
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#depth-engraving" class="md-nav__link">
     <span class="md-ellipsis">
       Depth Engraving
@@ -3763,7 +3797,7 @@
     style F fill:#276749,stroke:#38a169,color:#fff
     style J fill:#276749,stroke:#38a169,color:#fff</code></pre>
 <h2 id="operation-types">Operation Types<a class="headerlink" href="#operation-types" title="Permanent link">¶</a></h2>
-<p>Rayforge supports four main operation types:</p>
+<p>Rayforge supports five main operation types:</p>
 <h3 id="contour-cutting"><a href="contour.html">Contour Cutting</a><a class="headerlink" href="#contour-cutting" title="Permanent link">¶</a></h3>
 <p>Cut along the outline of shapes and paths.</p>
 <p><strong>Best For:</strong></p>
@@ -3795,6 +3829,22 @@
 <li>Cross-hatch fill for consistent coverage</li>
 <li>Variable power based on image brightness</li>
 <li>Line interval (spacing) control</li>
+</ul>
+<h3 id="dithered-raster"><a href="dither.html">Dithered Raster</a><a class="headerlink" href="#dithered-raster" title="Permanent link">¶</a></h3>
+<p>Engrave images using dithering algorithms for high-quality grayscale reproduction.</p>
+<p><strong>Best For:</strong></p>
+<ul>
+<li>Photo engraving with fine detail</li>
+<li>Grayscale images on wood</li>
+<li>Halftone-style engravings</li>
+<li>High-contrast reproductions</li>
+</ul>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li>Floyd-Steinberg error diffusion dithering</li>
+<li>Bayer ordered dithering (2x2, 4x4, 8x8)</li>
+<li>Better tonal range than threshold-based raster</li>
+<li>Ideal for photographs</li>
 </ul>
 <h3 id="depth-engraving"><a href="depth.html">Depth Engraving</a><a class="headerlink" href="#depth-engraving" title="Permanent link">¶</a></h3>
 <p>Create 3D relief effects by varying power based on image brightness.</p>
@@ -3939,6 +3989,7 @@
 <ul>
 <li><strong><a href="contour.html">Contour Cutting →</a></strong></li>
 <li><strong><a href="raster.html">Raster Engraving →</a></strong></li>
+<li><strong><a href="dither.html">Dithered Raster →</a></strong></li>
 <li><strong><a href="depth.html">Depth Engraving →</a></strong></li>
 <li><strong><a href="shrink-wrap.html">Shrink Wrap →</a></strong></li>
 </ul>
