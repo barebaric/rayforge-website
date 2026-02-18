@@ -12,7 +12,7 @@
         <link rel="canonical" href="https://rayforge.org/docs/latest/features/operations/material-test-grid.html">
       
       
-        <link rel="prev" href="shrink-wrap.html">
+        <link rel="prev" href="frame-outline.html">
       
       
         <link rel="next" href="../sketcher.html">
@@ -1614,8 +1614,6 @@
       
         
       
-        
-      
     
     
     
@@ -1691,58 +1689,12 @@
   
   
     <li class="md-nav__item">
-      <a href="raster.html" class="md-nav__link">
+      <a href="engrave.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Raster
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="dither.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Dither
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="depth.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Depth
+    Engrave
     
   </span>
   
@@ -1766,6 +1718,29 @@
   
   <span class="md-ellipsis">
     Shrink Wrap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="frame-outline.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Frame Outline
     
   </span>
   
@@ -4390,32 +4365,6 @@
 <li>Optimizing execution order for safety (fastest speeds first)</li>
 <li>Adding labels to identify each test cell's settings</li>
 </ul>
-<!-- SCREENSHOT
-id: feature-material-test-grid-example
-type: screenshot
-size: full-window
-description: |
-  Material test grid displayed on canvas showing a 5x5 grid of test squares
-  with speed and power labels. Grid shows gradient shading indicating varying
-  power levels from light (low power) to dark (high power).
-setup:
-  - action: menu_click
-    path: Tools > Material Test Grid
-  - action: set_parameters
-    preset: diode_engrave
-    grid_rows: 5
-    grid_cols: 5
-  - action: click_element
-    text: "Generate"
-  - action: zoom_to_fit
-  - action: capture
-    region: main_window
-filename: Ref-MaterialTestGrid-Example.png
-alt: "Material test grid example showing 5x5 test pattern with labels"
--->
-
-<!-- ![Material test grid example](../../images/Ref-MaterialTestGrid-Example.png) -->
-
 <h2 id="creating-a-material-test-grid">Creating a Material Test Grid<a class="headerlink" href="#creating-a-material-test-grid" title="Permanent link">¶</a></h2>
 <h3 id="step-1-open-the-generator">Step 1: Open the Generator<a class="headerlink" href="#step-1-open-the-generator" title="Permanent link">¶</a></h3>
 <p>Access the Material Test Grid generator:</p>
@@ -4462,13 +4411,6 @@ alt: "Material test grid example showing 5x5 test pattern with labels"
 </tbody>
 </table>
 <p>Presets are starting points - you can adjust all parameters after selecting one.</p>
-<!-- SCREENSHOT: feature-material-test-presets
-description: Material Test Grid settings dialog showing preset dropdown with Diode Engrave selected
-filename: UI-MaterialTestGrid-Presets.png
--->
-
-<!-- ![Material test grid presets](../../images/UI-MaterialTestGrid-Presets.png) -->
-
 <h3 id="step-3-configure-parameters">Step 3: Configure Parameters<a class="headerlink" href="#step-3-configure-parameters" title="Permanent link">¶</a></h3>
 <p>Adjust the test grid parameters:</p>
 <h4 id="test-type">Test Type<a class="headerlink" href="#test-type" title="Permanent link">¶</a></h4>
@@ -4504,38 +4446,6 @@ filename: UI-MaterialTestGrid-Presets.png
 <li>Labels appear on left and top edges</li>
 <li>Labels are engraved at 10% power, 1000 mm/min</li>
 </ul>
-<!-- SCREENSHOT
-id: feature-material-test-settings
-type: screenshot
-size: dialog
-description: |
-  Material Test Grid settings dialog showing all configuration options:
-  - Preset selector set to "Diode Engrave"
-  - Test type: Engrave
-  - Speed range: 1000-10000 mm/min
-  - Power range: 10-100%
-  - Grid: 5 columns x 5 rows
-  - Shape size: 20mm
-  - Spacing: 5mm
-  - Labels: enabled
-setup:
-  - action: menu_click
-    path: Tools > Material Test Grid
-  - action: set_parameters
-    preset: diode_engrave
-    grid_rows: 5
-    grid_cols: 5
-    shape_size: 20
-    spacing: 5
-    include_labels: true
-  - action: capture
-    region: dialog
-filename: UI-MaterialTestGrid-SettingsDialog.png
-alt: "Material Test Grid settings dialog with all parameters configured"
--->
-
-<!-- ![Material test grid settings](../../images/UI-MaterialTestGrid-SettingsDialog.png) -->
-
 <h3 id="step-4-generate-the-grid">Step 4: Generate the Grid<a class="headerlink" href="#step-4-generate-the-grid" title="Permanent link">¶</a></h3>
 <p>Click <strong>Generate</strong> to create the test pattern. The grid appears on your canvas as a special workpiece.</p>
 <h2 id="understanding-the-grid-layout">Understanding the Grid Layout<a class="headerlink" href="#understanding-the-grid-layout" title="Permanent link">¶</a></h2>
@@ -4598,49 +4508,18 @@ alt: "Material Test Grid settings dialog with all parameters configured"
 <li><strong>Perfect</strong>: Note the speed/power combination</li>
 </ul>
 <h3 id="step-3-record-settings">Step 3: Record Settings<a class="headerlink" href="#step-3-record-settings" title="Permanent link">¶</a></h3>
-<p>Create a material settings reference:</p>
-<table>
-<thead>
-<tr>
-<th>Material</th>
-<th>Thickness</th>
-<th>Operation</th>
-<th>Speed</th>
-<th>Power</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Birch Plywood</td>
-<td>3mm</td>
-<td>Engrave</td>
-<td>5000 mm/min</td>
-<td>40%</td>
-<td>Perfect contrast</td>
-</tr>
-<tr>
-<td>Birch Plywood</td>
-<td>3mm</td>
-<td>Cut</td>
-<td>500 mm/min</td>
-<td>80%</td>
-<td>2 passes</td>
-</tr>
-<tr>
-<td>Acrylic (clear)</td>
-<td>3mm</td>
-<td>Cut</td>
-<td>300 mm/min</td>
-<td>90%</td>
-<td>Clean edge</td>
-</tr>
-</tbody>
-</table>
+<p>Document your successful settings for future reference:</p>
+<ul>
+<li>Material type and thickness</li>
+<li>Operation type (engrave or cut)</li>
+<li>Speed and power combination</li>
+<li>Number of passes</li>
+<li>Any special notes</li>
+</ul>
 <div class="admonition tip">
 <p class="admonition-title">Material Database</p>
+<p>Consider creating a reference document with your material test results for quick lookup in future projects.</p>
 </div>
-<p>Consider documenting your material test results for quick reference in future projects.</p>
 <h2 id="advanced-usage">Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permanent link">¶</a></h2>
 <h3 id="combining-with-other-operations">Combining with Other Operations<a class="headerlink" href="#combining-with-other-operations" title="Permanent link">¶</a></h3>
 <p>Material test grids are regular workpieces - you can combine them with other operations:</p>
@@ -4740,7 +4619,7 @@ alt: "Material Test Grid settings dialog with all parameters configured"
 <h2 id="related-topics">Related Topics<a class="headerlink" href="#related-topics" title="Permanent link">¶</a></h2>
 <ul>
 <li><strong><a href="../simulation-mode.html">Simulation Mode</a></strong> - Preview test execution before running</li>
-<li><strong><a href="raster.html">Raster Engraving</a></strong> - Understanding engrave operations</li>
+<li><strong><a href="engrave.html">Engrave</a></strong> - Understanding engrave operations</li>
 <li><strong><a href="contour.html">Contour Cutting</a></strong> - Understanding cut operations</li>
 </ul>
 
@@ -4780,7 +4659,7 @@ alt: "Material Test Grid settings dialog with all parameters configured"
       <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
-          <a href="shrink-wrap.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Shrink Wrap">
+          <a href="frame-outline.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Frame Outline">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
@@ -4790,7 +4669,7 @@ alt: "Material Test Grid settings dialog with all parameters configured"
                 Previous
               </span>
               <div class="md-ellipsis">
-                Shrink Wrap
+                Frame Outline
               </div>
             </div>
           </a>

@@ -1614,8 +1614,6 @@
       
         
       
-        
-      
     
     
     
@@ -1691,58 +1689,12 @@
   
   
     <li class="md-nav__item">
-      <a href="raster.html" class="md-nav__link">
+      <a href="engrave.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Raster
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="dither.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Dither
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="depth.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Depth
+    Engrave
     
   </span>
   
@@ -1766,6 +1718,29 @@
   
   <span class="md-ellipsis">
     Shrink Wrap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="frame-outline.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Frame Outline
     
   </span>
   
@@ -3550,27 +3525,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#raster-engraving" class="md-nav__link">
+  <a href="#engrave" class="md-nav__link">
     <span class="md-ellipsis">
-      Raster Engraving
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dithered-raster" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dithered Raster
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#depth-engraving" class="md-nav__link">
-    <span class="md-ellipsis">
-      Depth Engraving
+      Engrave
     </span>
   </a>
   
@@ -3580,6 +3537,15 @@
   <a href="#shrink-wrap" class="md-nav__link">
     <span class="md-ellipsis">
       Shrink Wrap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frame-outline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frame Outline
     </span>
   </a>
   
@@ -3777,9 +3743,9 @@
 <pre class="mermaid"><code>graph TB
     A[Select Objects] --&gt; B{Choose Operation}
     B --&gt; C[Contour]
-    B --&gt; D[Raster]
-    B --&gt; E[Depth]
-    B --&gt; F[Shrink Wrap]
+    B --&gt; D[Engrave]
+    B --&gt; E[Shrink Wrap]
+    B --&gt; F[Frame Outline]
 
     C --&gt; G[Configure Settings&lt;br/&gt;Power, Speed, Passes]
     D --&gt; G
@@ -3794,7 +3760,7 @@
     style C fill:#2b6cb0,stroke:#3182ce,color:#fff
     style D fill:#c05621,stroke:#dd6b20,color:#fff
     style E fill:#6b46c1,stroke:#805ad5,color:#fff
-    style F fill:#276749,stroke:#38a169,color:#fff
+    style F fill:#2f855a,stroke:#38a169,color:#fff
     style J fill:#276749,stroke:#38a169,color:#fff</code></pre>
 <h2 id="operation-types">Operation Types<a class="headerlink" href="#operation-types" title="Permanent link">¶</a></h2>
 <p>Rayforge supports five main operation types:</p>
@@ -3814,53 +3780,25 @@
 <li>Holding tabs to keep pieces in place</li>
 <li>Lead-in/lead-out for smooth starts and stops</li>
 </ul>
-<h3 id="raster-engraving"><a href="raster.html">Raster Engraving</a><a class="headerlink" href="#raster-engraving" title="Permanent link">¶</a></h3>
-<p>Fill areas with back-and-forth engraving lines (bi-directional scanning).</p>
+<h3 id="engrave"><a href="engrave.html">Engrave</a><a class="headerlink" href="#engrave" title="Permanent link">¶</a></h3>
+<p>Engrave images and filled areas with various raster engraving modes.</p>
 <p><strong>Best For:</strong></p>
 <ul>
 <li>Engraving photos and images</li>
 <li>Filling large areas</li>
 <li>Wood and leather engraving</li>
 <li>Creating textures and patterns</li>
+<li>3D relief effects and embossing</li>
 </ul>
 <p><strong>Key Features:</strong></p>
 <ul>
+<li>Variable Power mode for smooth grayscale engraving</li>
+<li>Constant Power mode for clean black/white engraving</li>
+<li>Dither mode for high-quality photo engraving</li>
+<li>Multiple Depths mode for 3D relief effects</li>
 <li>Overscan to eliminate endpoint burn marks</li>
 <li>Cross-hatch fill for consistent coverage</li>
-<li>Variable power based on image brightness</li>
 <li>Line interval (spacing) control</li>
-</ul>
-<h3 id="dithered-raster"><a href="dither.html">Dithered Raster</a><a class="headerlink" href="#dithered-raster" title="Permanent link">¶</a></h3>
-<p>Engrave images using dithering algorithms for high-quality grayscale reproduction.</p>
-<p><strong>Best For:</strong></p>
-<ul>
-<li>Photo engraving with fine detail</li>
-<li>Grayscale images on wood</li>
-<li>Halftone-style engravings</li>
-<li>High-contrast reproductions</li>
-</ul>
-<p><strong>Key Features:</strong></p>
-<ul>
-<li>Floyd-Steinberg error diffusion dithering</li>
-<li>Bayer ordered dithering (2x2, 4x4, 8x8)</li>
-<li>Better tonal range than threshold-based raster</li>
-<li>Ideal for photographs</li>
-</ul>
-<h3 id="depth-engraving"><a href="depth.html">Depth Engraving</a><a class="headerlink" href="#depth-engraving" title="Permanent link">¶</a></h3>
-<p>Create 3D relief effects by varying power based on image brightness.</p>
-<p><strong>Best For:</strong></p>
-<ul>
-<li>3D effects on acrylic or coated metals</li>
-<li>Grayscale photo engraving with depth</li>
-<li>Embossing effects</li>
-<li>Relief sculptures</li>
-</ul>
-<p><strong>Key Features:</strong></p>
-<ul>
-<li>Depth mapping from image brightness</li>
-<li>Configurable min/max depth</li>
-<li>Smooth gradients</li>
-<li>Compatible with grayscale images</li>
 </ul>
 <h3 id="shrink-wrap"><a href="shrink-wrap.html">Shrink Wrap</a><a class="headerlink" href="#shrink-wrap" title="Permanent link">¶</a></h3>
 <p>Create efficient cutting paths around multiple objects.</p>
@@ -3876,6 +3814,21 @@
 <li>Automatic hull calculation</li>
 <li>Configurable offset distance</li>
 <li>Combines multiple objects into single path</li>
+</ul>
+<h3 id="frame-outline"><a href="frame-outline.html">Frame Outline</a><a class="headerlink" href="#frame-outline" title="Permanent link">¶</a></h3>
+<p>Create a simple rectangular frame around your design.</p>
+<p><strong>Best For:</strong></p>
+<ul>
+<li>Adding decorative borders</li>
+<li>Cutting work free from sheet</li>
+<li>Simple rectangular boundaries</li>
+<li>Quick framing operations</li>
+</ul>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li>Automatic bounding box calculation</li>
+<li>Configurable offset/margin</li>
+<li>Kerf compensation support</li>
 </ul>
 <h2 id="operation-workflow_1">Operation Workflow<a class="headerlink" href="#operation-workflow_1" title="Permanent link">¶</a></h2>
 <h3 id="1-select-objects">1. Select Objects<a class="headerlink" href="#1-select-objects" title="Permanent link">¶</a></h3>
@@ -3946,15 +3899,15 @@
 <p>Additional settings vary by operation type:</p>
 <ul>
 <li><strong>Contour</strong>: Kerf, tabs, lead-in/lead-out</li>
-<li><strong>Raster</strong>: Overscan, line interval, angle</li>
-<li><strong>Depth</strong>: Min/max depth, smoothing</li>
+<li><strong>Engrave</strong>: Mode-specific settings (see Engrave page)</li>
 <li><strong>Shrink Wrap</strong>: Offset distance, segments</li>
+<li><strong>Frame Outline</strong>: Offset, cut side</li>
 </ul>
 <h2 id="operation-order">Operation Order<a class="headerlink" href="#operation-order" title="Permanent link">¶</a></h2>
 <p>Operations execute in the order they appear in the layers panel. Reorder operations by dragging them up or down.</p>
 <p><strong>Best Practice Order:</strong></p>
 <ol>
-<li><strong>Engraving operations</strong> (Raster, Depth)</li>
+<li><strong>Engraving operations</strong> (Engrave)</li>
 <li><strong>Scoring operations</strong> (Light contour cuts)</li>
 <li><strong>Through-cutting operations</strong> (Contour with full power)</li>
 </ol>
@@ -3988,10 +3941,9 @@
 <p>Explore each operation type for detailed information and examples:</p>
 <ul>
 <li><strong><a href="contour.html">Contour Cutting →</a></strong></li>
-<li><strong><a href="raster.html">Raster Engraving →</a></strong></li>
-<li><strong><a href="dither.html">Dithered Raster →</a></strong></li>
-<li><strong><a href="depth.html">Depth Engraving →</a></strong></li>
+<li><strong><a href="engrave.html">Engrave →</a></strong></li>
 <li><strong><a href="shrink-wrap.html">Shrink Wrap →</a></strong></li>
+<li><strong><a href="frame-outline.html">Frame Outline →</a></strong></li>
 </ul>
 
 

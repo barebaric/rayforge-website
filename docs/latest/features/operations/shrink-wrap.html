@@ -12,10 +12,10 @@
         <link rel="canonical" href="https://rayforge.org/docs/latest/features/operations/shrink-wrap.html">
       
       
-        <link rel="prev" href="depth.html">
+        <link rel="prev" href="engrave.html">
       
       
-        <link rel="next" href="material-test-grid.html">
+        <link rel="next" href="frame-outline.html">
       
       
       <link rel="icon" href="../../../../assets/favicon.png">
@@ -1614,8 +1614,6 @@
       
         
       
-        
-      
     
     
     
@@ -1691,58 +1689,12 @@
   
   
     <li class="md-nav__item">
-      <a href="raster.html" class="md-nav__link">
+      <a href="engrave.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Raster
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="dither.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Dither
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="depth.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Depth
+    Engrave
     
   </span>
   
@@ -1833,21 +1785,6 @@
       How Shrink Wrap Works
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="How Shrink Wrap Works">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#visual-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visual Example
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2218,6 +2155,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="frame-outline.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Frame Outline
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -3993,21 +3953,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How Shrink Wrap Works">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#visual-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visual Example
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -4421,13 +4366,6 @@
 <li>Support offset distances for clearance</li>
 <li>Work with any combination of vector shapes</li>
 </ul>
-<!-- SCREENSHOT: feature-shrinkwrap-example
-description: Canvas showing multiple small shapes with a shrink-wrapped boundary path around them, demonstrating material savings
-filename: Ref-ShrinkWrap-Example.png
--->
-
-<!-- ![Shrink wrap example](../../assets/images/Ref-ShrinkWrap-Example.png) -->
-
 <h2 id="when-to-use-shrink-wrap">When to Use Shrink Wrap<a class="headerlink" href="#when-to-use-shrink-wrap" title="Permanent link">¶</a></h2>
 <p>Use shrink wrap for:</p>
 <ul>
@@ -4437,10 +4375,12 @@ filename: Ref-ShrinkWrap-Example.png
 <li>Separating groups of parts</li>
 <li>Reducing total cutting time</li>
 </ul>
-<p><strong>Don't use shrink wrap for:</strong>
-- L Single objects (use <a href="contour.html">Contour</a> instead)
-- L Parts that need individual boundaries
-- L Precise rectangular cuts</p>
+<p><strong>Don't use shrink wrap for:</strong></p>
+<ul>
+<li>Single objects (use <a href="contour.html">Contour</a> instead)</li>
+<li>Parts that need individual boundaries</li>
+<li>Precise rectangular cuts</li>
+</ul>
 <h2 id="how-shrink-wrap-works">How Shrink Wrap Works<a class="headerlink" href="#how-shrink-wrap-works" title="Permanent link">¶</a></h2>
 <p>Shrink wrap creates a boundary using a computational geometry algorithm:</p>
 <ol>
@@ -4450,17 +4390,6 @@ filename: Ref-ShrinkWrap-Example.png
 <li><strong>Offset</strong> outward by the specified distance</li>
 </ol>
 <p>The result is an efficient cutting path that follows the overall shape of your parts while maintaining clearance.</p>
-<h3 id="visual-example">Visual Example<a class="headerlink" href="#visual-example" title="Permanent link">¶</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Before:                  After Shrink Wrap:
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>      
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>                    m���n    
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>                     p�o    
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>      
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Full sheet cut          Efficient boundary only
-</span></code></pre></div>
 <h2 id="creating-a-shrink-wrap-operation">Creating a Shrink Wrap Operation<a class="headerlink" href="#creating-a-shrink-wrap-operation" title="Permanent link">¶</a></h2>
 <h3 id="step-1-arrange-objects">Step 1: Arrange Objects<a class="headerlink" href="#step-1-arrange-objects" title="Permanent link">¶</a></h3>
 <ol>
@@ -4476,107 +4405,103 @@ filename: Ref-ShrinkWrap-Example.png
 </ol>
 <h3 id="step-3-add-shrink-wrap-operation">Step 3: Add Shrink Wrap Operation<a class="headerlink" href="#step-3-add-shrink-wrap-operation" title="Permanent link">¶</a></h3>
 <ul>
-<li><strong>Menu:</strong> Operations  Add Shrink Wrap</li>
-<li><strong>Right-click:</strong> Context menu  Add Operation  Shrink Wrap</li>
+<li><strong>Menu:</strong> Operations Add Shrink Wrap</li>
+<li><strong>Right-click:</strong> Context menu Add Operation Shrink Wrap</li>
 </ul>
 <h3 id="step-4-configure-settings">Step 4: Configure Settings<a class="headerlink" href="#step-4-configure-settings" title="Permanent link">¶</a></h3>
-<!-- SCREENSHOT
-id: ui-shrinkwrap-settings
-type: screenshot
-size: dialog
-description: |
-  Shrink wrap operation settings dialog showing:
-  - Power: 80%
-  - Speed: 500 mm/min
-  - Offset distance: 3mm
-  - Smoothness: medium
-setup:
-  - action: open_example
-    name: multiple-parts
-  - action: select_all
-  - action: add_operation
-    type: shrink_wrap
-  - action: open_settings
-  - action: set_parameters
-    power: 80
-    speed: 500
-    offset: 3
-  - action: capture
-    region: dialog
-filename: UI-ShrinkWrap-Settings.png
-alt: "Shrink wrap operation settings dialog"
--->
-
-<!-- ![Shrink wrap settings](../../assets/images/UI-ShrinkWrap-Settings.png) -->
-
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../images/step-shrink-wrap-step-settings.png" data-desc-position="bottom"><img alt="Shrink Wrap step settings" src="../../images/step-shrink-wrap-step-settings.png"></a></p>
 <h2 id="key-settings">Key Settings<a class="headerlink" href="#key-settings" title="Permanent link">¶</a></h2>
 <h3 id="power-speed">Power &amp; Speed<a class="headerlink" href="#power-speed" title="Permanent link">¶</a></h3>
 <p>Like other cutting operations:</p>
-<p><strong>Power (%):</strong>
-- Laser intensity for cutting
-- Same as you'd use for <a href="contour.html">Contour</a> cutting
-- Typical: 70-90% for 3mm plywood</p>
-<p><strong>Speed (mm/min):</strong>
-- How fast the laser moves
-- Match your material's cutting speed
-- Typical: 300-600 mm/min for 3mm wood</p>
-<p><strong>Passes:</strong>
-- Number of times to cut the boundary
-- Usually 1-2 passes
-- Same as contour cutting for your material</p>
+<p><strong>Power (%):</strong></p>
+<ul>
+<li>Laser intensity for cutting</li>
+<li>Same as you'd use for <a href="contour.html">Contour</a> cutting</li>
+</ul>
+<p><strong>Speed (mm/min):</strong></p>
+<ul>
+<li>How fast the laser moves</li>
+<li>Match your material's cutting speed</li>
+</ul>
+<p><strong>Passes:</strong></p>
+<ul>
+<li>Number of times to cut the boundary</li>
+<li>Usually 1-2 passes</li>
+<li>Same as contour cutting for your material</li>
+</ul>
 <h3 id="offset-distance">Offset Distance<a class="headerlink" href="#offset-distance" title="Permanent link">¶</a></h3>
-<p><strong>Offset (mm):</strong>
-- How much clearance around the parts
-- Distance from objects to the shrink-wrap boundary
-- Larger offset = more material left around parts</p>
-<p><strong>Typical values:</strong>
-- <strong>2-3mm:</strong> Tight wrap, minimal waste
-- <strong>5mm:</strong> Comfortable clearance
-- <strong>10mm+:</strong> Extra material for handling</p>
-<p><strong>Why offset matters:</strong>
-- Too small: Risk cutting into parts
-- Too large: Wastes material
-- Consider: Kerf width, cutting accuracy</p>
+<p><strong>Offset (mm):</strong></p>
+<ul>
+<li>How much clearance around the parts</li>
+<li>Distance from objects to the shrink-wrap boundary</li>
+<li>Larger offset = more material left around parts</li>
+</ul>
+<p><strong>Typical values:</strong></p>
+<ul>
+<li><strong>2-3mm:</strong> Tight wrap, minimal waste</li>
+<li><strong>5mm:</strong> Comfortable clearance</li>
+<li><strong>10mm+:</strong> Extra material for handling</li>
+</ul>
+<p><strong>Why offset matters:</strong></p>
+<ul>
+<li>Too small: Risk cutting into parts</li>
+<li>Too large: Wastes material</li>
+<li>Consider: Kerf width, cutting accuracy</li>
+</ul>
 <h3 id="smoothness">Smoothness<a class="headerlink" href="#smoothness" title="Permanent link">¶</a></h3>
 <p>Controls how closely the boundary follows object shapes:</p>
-<p><strong>High smoothness:</strong>
-- Follows objects more closely
-- More complex path
-- Longer cutting time
-- Less material waste</p>
-<p><strong>Low smoothness:</strong>
-- Simpler, more rounded path
-- Shorter cutting time
-- Slightly more material waste</p>
+<p><strong>High smoothness:</strong></p>
+<ul>
+<li>Follows objects more closely</li>
+<li>More complex path</li>
+<li>Longer cutting time</li>
+<li>Less material waste</li>
+</ul>
+<p><strong>Low smoothness:</strong></p>
+<ul>
+<li>Simpler, more rounded path</li>
+<li>Shorter cutting time</li>
+<li>Slightly more material waste</li>
+</ul>
 <p><strong>Recommended:</strong> Medium smoothness for most cases</p>
 <h2 id="use-cases">Use Cases<a class="headerlink" href="#use-cases" title="Permanent link">¶</a></h2>
 <h3 id="batch-part-production">Batch Part Production<a class="headerlink" href="#batch-part-production" title="Permanent link">¶</a></h3>
 <p><strong>Scenario:</strong> Cutting 20 small parts from a large sheet</p>
-<p><strong>Without shrink wrap:</strong>
-- Cut full sheet boundary
-- Waste all material around parts
-- Long cutting time</p>
-<p><strong>With shrink wrap:</strong>
-- Cut tight boundary around part group
-- Save material for other projects
-- Faster cutting (shorter perimeter)</p>
+<p><strong>Without shrink wrap:</strong></p>
+<ul>
+<li>Cut full sheet boundary</li>
+<li>Waste all material around parts</li>
+<li>Long cutting time</li>
+</ul>
+<p><strong>With shrink wrap:</strong></p>
+<ul>
+<li>Cut tight boundary around part group</li>
+<li>Save material for other projects</li>
+<li>Faster cutting (shorter perimeter)</li>
+</ul>
 <h3 id="nesting-optimization">Nesting Optimization<a class="headerlink" href="#nesting-optimization" title="Permanent link">¶</a></h3>
-<p><strong>Workflow:</strong>
-1. Nest parts efficiently on sheet
-2. Group parts into sections
-3. Shrink wrap each section
-4. Cut sections separately</p>
-<p><strong>Benefits:</strong>
-- Can remove finished sections while continuing
-- Easier handling of cut parts
-- Reduced risk of part movement</p>
+<p><strong>Workflow:</strong></p>
+<ol>
+<li>Nest parts efficiently on sheet</li>
+<li>Group parts into sections</li>
+<li>Shrink wrap each section</li>
+<li>Cut sections separately</li>
+</ol>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Can remove finished sections while continuing</li>
+<li>Easier handling of cut parts</li>
+<li>Reduced risk of part movement</li>
+</ul>
 <h3 id="material-conservation">Material Conservation<a class="headerlink" href="#material-conservation" title="Permanent link">¶</a></h3>
 <p><strong>Example:</strong> Small parts on expensive material</p>
-<p><strong>Process:</strong>
-1. Arrange parts tightly
-2. Shrink wrap with 3mm offset
-3. Cut free from sheet
-4. Save remaining material</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Arrange parts tightly</li>
+<li>Shrink wrap with 3mm offset</li>
+<li>Cut free from sheet</li>
+<li>Save remaining material</li>
+</ol>
 <p><strong>Result:</strong> Maximum material efficiency</p>
 <h2 id="combining-with-other-operations">Combining with Other Operations<a class="headerlink" href="#combining-with-other-operations" title="Permanent link">¶</a></h2>
 <h3 id="shrink-wrap-contour">Shrink Wrap + Contour<a class="headerlink" href="#shrink-wrap-contour" title="Permanent link">¶</a></h3>
@@ -4585,9 +4510,11 @@ alt: "Shrink wrap operation settings dialog"
 <li><strong>Contour</strong> operations on individual parts (cut details)</li>
 <li><strong>Shrink wrap</strong> around the group (cut free from sheet)</li>
 </ol>
-<p><strong>Execution order:</strong>
-- First: Cut details in parts (while secured)
-- Last: Shrink wrap cuts group free</p>
+<p><strong>Execution order:</strong></p>
+<ul>
+<li>First: Cut details in parts (while secured)</li>
+<li>Last: Shrink wrap cuts group free</li>
+</ul>
 <p>See <a href="../multi-layer.html">Multi-Layer Workflow</a> for details.</p>
 <h3 id="shrink-wrap-raster">Shrink Wrap + Raster<a class="headerlink" href="#shrink-wrap-raster" title="Permanent link">¶</a></h3>
 <p><strong>Example:</strong> Engraved and cut parts</p>
@@ -4596,61 +4523,84 @@ alt: "Shrink wrap operation settings dialog"
 <li><strong>Contour</strong> cut part outlines</li>
 <li><strong>Shrink wrap</strong> around entire group</li>
 </ol>
-<p><strong>Benefits:</strong>
-- All engraving happens while material is secured
-- Final shrink wrap cuts entire batch free</p>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>All engraving happens while material is secured</li>
+<li>Final shrink wrap cuts entire batch free</li>
+</ul>
 <h2 id="tips-best-practices">Tips &amp; Best Practices<a class="headerlink" href="#tips-best-practices" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../images/step-shrink-wrap-post-processing.png" data-desc-position="bottom"><img alt="Shrink Wrap post-processing settings" src="../../images/step-shrink-wrap-post-processing.png"></a></p>
 <h3 id="part-spacing">Part Spacing<a class="headerlink" href="#part-spacing" title="Permanent link">¶</a></h3>
-<p><strong>Optimal spacing:</strong>
-- 5-10mm between parts
-- Enough for shrink wrap to distinguish separate objects
-- Not so much that you waste material</p>
-<p>� <strong>Too close:</strong>
-- Parts may be wrapped together
-- Shrink wrap may bridge gaps
-- Difficult to separate after cutting</p>
-<p>� <strong>Too far:</strong>
-- Wastes material
-- Longer cutting time
-- Inefficient use of sheet</p>
+<p><strong>Optimal spacing:</strong></p>
+<ul>
+<li>5-10mm between parts</li>
+<li>Enough for shrink wrap to distinguish separate objects</li>
+<li>Not so much that you waste material</li>
+</ul>
+<p><strong>Too close:</strong></p>
+<ul>
+<li>Parts may be wrapped together</li>
+<li>Shrink wrap may bridge gaps</li>
+<li>Difficult to separate after cutting</li>
+</ul>
+<p><strong>Too far:</strong></p>
+<ul>
+<li>Wastes material</li>
+<li>Longer cutting time</li>
+<li>Inefficient use of sheet</li>
+</ul>
 <h3 id="material-considerations">Material Considerations<a class="headerlink" href="#material-considerations" title="Permanent link">¶</a></h3>
-<p><strong>Best for:</strong>
-- Production runs (many identical parts)
-- Small parts from large sheets
-- Expensive materials (minimize waste)
-- Batch cutting jobs</p>
-<p><strong>Not ideal for:</strong>
-- Single large parts
-- Parts filling entire sheet
-- When you need full sheet cut</p>
+<p><strong>Best for:</strong></p>
+<ul>
+<li>Production runs (many identical parts)</li>
+<li>Small parts from large sheets</li>
+<li>Expensive materials (minimize waste)</li>
+<li>Batch cutting jobs</li>
+</ul>
+<p><strong>Not ideal for:</strong></p>
+<ul>
+<li>Single large parts</li>
+<li>Parts filling entire sheet</li>
+<li>When you need full sheet cut</li>
+</ul>
 <h3 id="safety">Safety<a class="headerlink" href="#safety" title="Permanent link">¶</a></h3>
-<p><strong>Always:</strong>
-- Check that boundary doesn't overlap parts
-- Verify offset is sufficient
-- Preview in <a href="../simulation-mode.html">Simulation Mode</a>
-- Test on scrap first</p>
-<p>� <strong>Watch for:</strong>
-- Shrink wrap cutting into parts (increase offset)
-- Parts moving before shrink wrap completes
-- Material warping pulling parts out of position</p>
+<p><strong>Always:</strong></p>
+<ul>
+<li>Check that boundary doesn't overlap parts</li>
+<li>Verify offset is sufficient</li>
+<li>Preview in <a href="../simulation-mode.html">Simulation Mode</a></li>
+<li>Test on scrap first</li>
+</ul>
+<p><strong>Watch for:</strong></p>
+<ul>
+<li>Shrink wrap cutting into parts (increase offset)</li>
+<li>Parts moving before shrink wrap completes</li>
+<li>Material warping pulling parts out of position</li>
+</ul>
 <h2 id="advanced-techniques">Advanced Techniques<a class="headerlink" href="#advanced-techniques" title="Permanent link">¶</a></h2>
 <h3 id="multiple-shrink-wraps">Multiple Shrink Wraps<a class="headerlink" href="#multiple-shrink-wraps" title="Permanent link">¶</a></h3>
 <p>Create separate boundaries for different groups:</p>
-<p><strong>Process:</strong>
-1. Arrange parts into logical groups
-2. Shrink wrap Group 1 (top parts)
-3. Shrink wrap Group 2 (bottom parts)
-4. Cut groups separately</p>
-<p><strong>Benefits:</strong>
-- Remove finished groups during job
-- Better organization
-- Easier part retrieval</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Arrange parts into logical groups</li>
+<li>Shrink wrap Group 1 (top parts)</li>
+<li>Shrink wrap Group 2 (bottom parts)</li>
+<li>Cut groups separately</li>
+</ol>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Remove finished groups during job</li>
+<li>Better organization</li>
+<li>Easier part retrieval</li>
+</ul>
 <h3 id="nested-shrink-wraps">Nested Shrink Wraps<a class="headerlink" href="#nested-shrink-wraps" title="Permanent link">¶</a></h3>
 <p>Shrink wrap within a larger boundary:</p>
-<p><strong>Example:</strong>
-1. Inner shrink wrap: Small detailed parts
-2. Outer shrink wrap: Includes larger parts
-3. Contour: Full sheet boundary</p>
+<p><strong>Example:</strong></p>
+<ol>
+<li>Inner shrink wrap: Small detailed parts</li>
+<li>Outer shrink wrap: Includes larger parts</li>
+<li>Contour: Full sheet boundary</li>
+</ol>
 <p><strong>Use for:</strong> Complex multi-part layouts</p>
 <h3 id="clearance-testing">Clearance Testing<a class="headerlink" href="#clearance-testing" title="Permanent link">¶</a></h3>
 <p>Before production run:</p>
@@ -4704,10 +4654,12 @@ alt: "Shrink wrap operation settings dialog"
 <li><strong>Simplify</strong> - Based on smoothness setting</li>
 </ol>
 <h3 id="path-optimization">Path Optimization<a class="headerlink" href="#path-optimization" title="Permanent link">¶</a></h3>
-<p>The boundary path is optimized for:
-- Minimum total length
-- Smooth curves (based on smoothness)
-- Efficient start/end points</p>
+<p>The boundary path is optimized for:</p>
+<ul>
+<li>Minimum total length</li>
+<li>Smooth curves (based on smoothness)</li>
+<li>Efficient start/end points</li>
+</ul>
 <h3 id="coordinate-system">Coordinate System<a class="headerlink" href="#coordinate-system" title="Permanent link">¶</a></h3>
 <ul>
 <li><strong>Units:</strong> Millimeters (mm)</li>
@@ -4759,7 +4711,7 @@ alt: "Shrink wrap operation settings dialog"
       <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
-          <a href="depth.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Depth">
+          <a href="engrave.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Engrave">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
@@ -4769,20 +4721,20 @@ alt: "Shrink wrap operation settings dialog"
                 Previous
               </span>
               <div class="md-ellipsis">
-                Depth
+                Engrave
               </div>
             </div>
           </a>
         
         
           
-          <a href="material-test-grid.html" class="md-footer__link md-footer__link--next" aria-label="Next: Material Test Grid">
+          <a href="frame-outline.html" class="md-footer__link md-footer__link--next" aria-label="Next: Frame Outline">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Material Test Grid
+                Frame Outline
               </div>
             </div>
             <div class="md-footer__button md-icon">

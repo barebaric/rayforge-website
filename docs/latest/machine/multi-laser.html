@@ -1612,8 +1612,6 @@
       
         
       
-        
-      
     
     
     
@@ -1691,58 +1689,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../features/operations/raster.html" class="md-nav__link">
+      <a href="../features/operations/engrave.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Raster
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../features/operations/dither.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Dither
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../features/operations/depth.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Depth
+    Engrave
     
   </span>
   
@@ -1766,6 +1718,29 @@
   
   <span class="md-ellipsis">
     Shrink Wrap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/operations/frame-outline.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Frame Outline
     
   </span>
   
@@ -4390,30 +4365,6 @@
 <li><strong>Tool selection</strong>: Switch between lasers via G-code commands</li>
 <li><strong>Per-operation assignment</strong>: Choose which laser executes each operation</li>
 </ul>
-<!-- SCREENSHOT
-id: ui-multi-laser-config
-type: screenshot
-size: dialog
-description: |
-  Multi-laser configuration dialog showing:
-  - List of configured laser heads
-  - Add/Remove head buttons
-  - Head properties for each laser
-  - Tool number assignments
-setup:
-  - action: open_preferences
-  - action: navigate_to
-    section: machine
-  - action: open_heads_config
-  - action: add_second_head
-  - action: capture
-    region: dialog
-filename: UI-MultiLaser-Config.png
-alt: "Multi-laser configuration dialog"
--->
-
-<!-- ![Multi-laser configuration](../images/UI-Multi-Laser-Config.png) -->
-
 <h2 id="common-multi-laser-configurations">Common Multi-Laser Configurations<a class="headerlink" href="#common-multi-laser-configurations" title="Permanent link">¶</a></h2>
 <h3 id="diode-co">Diode + CO<a class="headerlink" href="#diode-co" title="Permanent link">¶</a></h3>
 <p><strong>Use case:</strong> Versatility - marking with diode, cutting with CO</p>
@@ -4470,32 +4421,6 @@ alt: "Multi-laser configuration dialog"
 <li>Save profile</li>
 </ol>
 <h3 id="laser-head-properties">Laser Head Properties<a class="headerlink" href="#laser-head-properties" title="Permanent link">¶</a></h3>
-<!-- SCREENSHOT
-id: ui-single-head-config
-type: screenshot
-size: dialog
-description: |
-  Single laser head configuration showing:
-  - Head name field
-  - Tool number selector (T0, T1, T2, etc.)
-  - Max power setting
-  - Frame power setting
-  - Spot size X/Y inputs
-setup:
-  - action: open_preferences
-  - action: navigate_to
-    section: machine
-  - action: open_heads_config
-  - action: select_head
-    index: 1
-  - action: capture
-    region: dialog
-filename: UI-SingleHead-Config.png
-alt: "Single laser head configuration dialog"
--->
-
-<!-- ![Single head configuration](../images/UI-Single-Head-Config.png) -->
-
 <p><strong>Head Name:</strong>
 - Descriptive label for this laser
 - Examples: "Blue Diode 20W", "CO Tube", "IR Fiber Laser"
@@ -4570,35 +4495,6 @@ alt: "Single laser head configuration dialog"
 <p>When creating operations, choose which laser should execute it.</p>
 <h3 id="in-operation-settings">In Operation Settings<a class="headerlink" href="#in-operation-settings" title="Permanent link">¶</a></h3>
 <p>Each operation has a "Laser Head" selector:</p>
-<!-- SCREENSHOT
-id: ui-operation-head-selector
-type: screenshot
-size: custom
-region:
-  x: 0
-  y: 0
-  width: 0
-  height: 0
-description: |
-  Operation settings showing laser head selector with:
-  - Dropdown showing available heads
-  - Selected head highlighted
-  - Icon indicating which tool
-setup:
-  - action: create_shape
-    type: rectangle
-  - action: add_operation
-    type: contour
-  - action: open_operation_settings
-  - action: show_head_selector
-  - action: capture
-    region: settings_panel
-filename: UI-OperationHead-Selector.png
-alt: "Laser head selector in operation settings"
--->
-
-<!-- ![Operation head selector](../images/UI-Operation-Head-Selector.png) -->
-
 <p><strong>Choosing the right head:</strong></p>
 <p><strong>For engraving text/logos (low power):</strong>
 - Use diode laser if available
@@ -4671,21 +4567,6 @@ alt: "Laser head selector in operation settings"
 <li>Measure offset between patterns</li>
 <li>Adjust design placement or configure head offset</li>
 </ol>
-<!-- SCREENSHOT
-id: ref-multi-laser-alignment-test
-type: screenshot
-size: full-window
-description: |
-  Test pattern showing alignment check for multi-laser setup:
-  - Crosshairs engraved by Tool 0 (blue)
-  - Crosshairs engraved by Tool 1 (red overlay)
-  - Measurement annotations showing X/Y offset
-filename: Ref-MultiLaser-Alignment.png
-alt: "Multi-laser alignment test pattern"
--->
-
-<!-- ![Alignment test pattern](../images/Ref-Multi-Laser-Alignment.png) -->
-
 <h3 id="power-calibration">Power Calibration<a class="headerlink" href="#power-calibration" title="Permanent link">¶</a></h3>
 <p>Each laser needs individual power/speed testing:</p>
 <ol>

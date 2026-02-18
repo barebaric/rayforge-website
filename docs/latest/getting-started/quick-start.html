@@ -1306,15 +1306,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#material-testing-recommendations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Material Testing Recommendations
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1801,8 +1792,6 @@
       
         
       
-        
-      
     
     
     
@@ -1880,58 +1869,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../features/operations/raster.html" class="md-nav__link">
+      <a href="../features/operations/engrave.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Raster
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../features/operations/dither.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Dither
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../features/operations/depth.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Depth
+    Engrave
     
   </span>
   
@@ -1955,6 +1898,29 @@
   
   <span class="md-ellipsis">
     Shrink Wrap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/operations/frame-outline.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Frame Outline
     
   </span>
   
@@ -3756,15 +3722,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#material-testing-recommendations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Material Testing Recommendations
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -3947,49 +3904,11 @@
 <li><strong>Speed</strong>: Movement speed in mm/min</li>
 <li><strong>Passes</strong>: Number of times to repeat the operation (useful for cutting thick materials)</li>
 </ol>
-<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../images/contour-settings.png" data-desc-position="bottom"><img alt="Operation Settings" src="../images/contour-settings.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../images/step-contour-step-settings.png" data-desc-position="bottom"><img alt="Operation Settings" src="../images/step-contour-step-settings.png"></a></p>
 <div class="admonition warning">
 <p class="admonition-title">Start with Low Power</p>
-<p>When working with new materials, always start with lower power settings and run test cuts. Gradually increase power until you achieve the desired result.</p>
+<p>When working with new materials, always start with lower power settings and run test cuts. Gradually increase power until you achieve the desired result. Use the <a href="../features/operations/material-test-grid.html">Material Test Grid</a> feature to systematically find optimal settings.</p>
 </div>
-<h3 id="material-testing-recommendations">Material Testing Recommendations<a class="headerlink" href="#material-testing-recommendations" title="Permanent link">¶</a></h3>
-<table>
-<thead>
-<tr>
-<th>Material</th>
-<th>Power (%)</th>
-<th>Speed (mm/min)</th>
-<th>Passes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Paper</td>
-<td>10-20</td>
-<td>3000-5000</td>
-<td>1</td>
-</tr>
-<tr>
-<td>Cardboard</td>
-<td>30-50</td>
-<td>1500-3000</td>
-<td>1-2</td>
-</tr>
-<tr>
-<td>Plywood (3mm)</td>
-<td>60-80</td>
-<td>300-600</td>
-<td>1-3</td>
-</tr>
-<tr>
-<td>Acrylic (3mm)</td>
-<td>70-90</td>
-<td>200-400</td>
-<td>1-2</td>
-</tr>
-</tbody>
-</table>
-<p><em>These are starting points only. Always test with your specific machine and materials.</em></p>
 <h2 id="step-4-preview-g-code">Step 4: Preview G-code<a class="headerlink" href="#step-4-preview-g-code" title="Permanent link">¶</a></h2>
 <p>Before sending to your machine, preview the toolpath in 3D:</p>
 <ol>
