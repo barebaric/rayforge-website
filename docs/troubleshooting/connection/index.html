@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-troubleshooting/connection" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Connection Issues | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://rayforge.org/docs/troubleshooting/connection"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Connection Issues | Rayforge"><meta data-rh="true" name="description" content="This page helps you diagnose and resolve problems connecting Rayforge to your laser machine via serial connection."><meta data-rh="true" property="og:description" content="This page helps you diagnose and resolve problems connecting Rayforge to your laser machine via serial connection."><link data-rh="true" rel="icon" href="/assets/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/docs/troubleshooting/connection"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/troubleshooting/connection" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/troubleshooting/connection" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Connection Issues","item":"https://rayforge.org/docs/troubleshooting/connection"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Rayforge RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Rayforge Atom Feed"><link rel="stylesheet" href="/assets/css/styles.919edc8e.css">
+<script src="/assets/js/runtime~main.53705bdf.js" defer="defer"></script>
+<script src="/assets/js/main.c26f01b2.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/assets/icon.svg" alt="Rayforge Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/assets/icon.svg" alt="Rayforge Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Rayforge</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/getting-started/installation">Documentation</a><a class="navbar__item navbar__link" href="/docs/developer/getting-started/">Developer</a><a class="navbar__item navbar__link" href="/contributing">Contributing</a><a class="navbar__item navbar__link" href="/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="patreonLink_HbXT"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" class="patreonImg_dUDi"></a><span class="githubWrapper_c8Sl"><a href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><span class="discordWrapper_j0RJ"><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs/getting-started/installation"><span title="Getting Started" class="categoryLinkLabel_W154">Getting Started</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting-started/installation"><span title="Installation" class="linkLabel_WmDU">Installation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting-started/first-time-setup"><span title="First Time Setup" class="linkLabel_WmDU">First Time Setup</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting-started/quick-start"><span title="Quick Start Guide" class="linkLabel_WmDU">Quick Start Guide</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/ui/settings"><span title="Application Settings" class="categoryLinkLabel_W154">Application Settings</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/machine/general"><span title="Machine Setup" class="categoryLinkLabel_W154">Machine Setup</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/ui/main-window"><span title="User Interface" class="categoryLinkLabel_W154">User Interface</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/features/operations/contour"><span title="Features" class="categoryLinkLabel_W154">Features</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/files/importing"><span title="Files" class="categoryLinkLabel_W154">Files</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/general-info/laser-safety"><span title="General Info" class="categoryLinkLabel_W154">General Info</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/troubleshooting/connection"><span title="Troubleshooting" class="categoryLinkLabel_W154">Troubleshooting</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/troubleshooting/connection"><span title="Connection Issues" class="linkLabel_WmDU">Connection Issues</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/troubleshooting/debug"><span title="Troubleshooting &amp; Reporting Issues" class="linkLabel_WmDU">Troubleshooting &amp; Reporting Issues</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/troubleshooting/snap-permissions"><span title="Snap Permissions (Linux)" class="linkLabel_WmDU">Snap Permissions (Linux)</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/reference/shortcuts"><span title="Reference" class="categoryLinkLabel_W154">Reference</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Troubleshooting</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Connection Issues</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Connection Issues</h1></header>
+<p>This page helps you diagnose and resolve problems connecting Rayforge to your laser machine via serial connection.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="quick-diagnosis">Quick Diagnosis<a href="#quick-diagnosis" class="hash-link" aria-label="Direct link to Quick Diagnosis" title="Direct link to Quick Diagnosis" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="symptoms">Symptoms<a href="#symptoms" class="hash-link" aria-label="Direct link to Symptoms" title="Direct link to Symptoms" translate="no">​</a></h3>
+<p>Common connection problems include:</p>
+<ul>
+<li class="">&quot;Port must be configured&quot; error when trying to connect</li>
+<li class="">Connection repeatedly failing and reconnecting</li>
+<li class="">Serial port not appearing in the port list</li>
+<li class="">&quot;Permission denied&quot; errors when trying to open serial port</li>
+<li class="">Device appears to connect but doesn&#x27;t respond to commands</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="common-problems-and-solutions">Common Problems and Solutions<a href="#common-problems-and-solutions" class="hash-link" aria-label="Direct link to Common Problems and Solutions" title="Direct link to Common Problems and Solutions" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="no-serial-ports-detected">No Serial Ports Detected<a href="#no-serial-ports-detected" class="hash-link" aria-label="Direct link to No Serial Ports Detected" title="Direct link to No Serial Ports Detected" translate="no">​</a></h3>
+<p><strong>Problem:</strong> The serial port dropdown is empty or doesn&#x27;t show your device.</p>
+<p><strong>Diagnosis:</strong></p>
+<ol>
+<li class="">Check if your device is powered on and connected via USB</li>
+<li class="">Try unplugging and re-plugging the USB cable</li>
+<li class="">Test the USB cable with another device (cables can fail)</li>
+<li class="">Try a different USB port on your computer</li>
+</ol>
+<p><strong>Solutions:</strong></p>
+<p><strong>Linux:</strong>
+If you&#x27;re using the Snap version, you need to grant serial port permissions:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
+<p>See <a class="" href="/docs/troubleshooting/snap-permissions">Snap Permissions</a> for detailed Linux setup.</p>
+<p>For non-Snap installations, add your user to the <code>dialout</code> group:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo usermod -a -G dialout $USER</span><br></span></code></pre></div></div>
+<p>Then log out and log back in for the change to take effect.</p>
+<p><strong>Windows:</strong></p>
+<ol>
+<li class="">Open Device Manager (Win+X, then select Device Manager)</li>
+<li class="">Look under &quot;Ports (COM &amp; LPT)&quot; for your device</li>
+<li class="">If you see a yellow warning icon, update or reinstall the driver</li>
+<li class="">Note the COM port number (e.g., COM3)</li>
+<li class="">If the device isn&#x27;t listed at all, the USB cable or driver may be faulty</li>
+</ol>
+<p><strong>macOS:</strong></p>
+<ol>
+<li class="">Check System Information → USB to verify the device is recognized</li>
+<li class="">Install CH340/CH341 drivers if your controller uses this chipset</li>
+<li class="">Check for <code>/dev/tty.usbserial*</code> or <code>/dev/cu.usbserial*</code> devices</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="permission-denied-errors">Permission Denied Errors<a href="#permission-denied-errors" class="hash-link" aria-label="Direct link to Permission Denied Errors" title="Direct link to Permission Denied Errors" translate="no">​</a></h3>
+<p><strong>Problem:</strong> You get &quot;Permission denied&quot; or similar errors when trying to connect.</p>
+<p><strong>On Linux (non-Snap):</strong></p>
+<p>Your user needs to be in the <code>dialout</code> group (or <code>uucp</code> on some distributions):</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Add yourself to the dialout group</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo usermod -a -G dialout $USER</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Verify you&#x27;re in the group (after logging out/in)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">groups | grep dialout</span><br></span></code></pre></div></div>
+<p><strong>Important:</strong> You must log out and log back in (or reboot) for group changes to take effect.</p>
+<p><strong>On Linux (Snap):</strong></p>
+<p>Grant serial port access to the snap:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
+<p>See the <a class="" href="/docs/troubleshooting/snap-permissions">Snap Permissions</a> guide for more details.</p>
+<p><strong>On Windows:</strong></p>
+<p>Close any other applications that might be using the serial port (including:</p>
+<ul>
+<li class="">Previous instances of Rayforge</li>
+<li class="">Serial monitor tools</li>
+<li class="">Other laser software</li>
+<li class="">Arduino IDE or similar tools</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="wrong-serial-port-selected">Wrong Serial Port Selected<a href="#wrong-serial-port-selected" class="hash-link" aria-label="Direct link to Wrong Serial Port Selected" title="Direct link to Wrong Serial Port Selected" translate="no">​</a></h3>
+<p><strong>Problem:</strong> Rayforge connects but the machine doesn&#x27;t respond.</p>
+<p><strong>Diagnosis:</strong></p>
+<p>You might have selected the wrong port, especially if you have multiple USB devices connected.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li class="">Disconnect all other USB serial devices</li>
+<li class="">Note which ports are available in Rayforge</li>
+<li class="">Plug in your laser controller</li>
+<li class="">Refresh the port list - the new port is your laser</li>
+<li class="">On Linux, laser controllers typically appear as:
+<ul>
+<li class=""><code>/dev/ttyUSB0</code> (common for CH340 chipsets)</li>
+<li class=""><code>/dev/ttyACM0</code> (common for native USB controllers)</li>
+</ul>
+</li>
+<li class="">On Windows, note the COM port from Device Manager</li>
+<li class="">Avoid ports named <code>/dev/ttyS*</code> on Linux - these are hardware serial ports, not USB</li>
+</ol>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Hardware Serial Ports</div><div class="admonitionContent_BuS1"><p>Rayforge will warn you if you select <code>/dev/ttyS*</code> ports on Linux, as these are typically not USB-based GRBL devices. USB serial ports use <code>/dev/ttyUSB*</code> or <code>/dev/ttyACM*</code>.</p></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="incorrect-baud-rate">Incorrect Baud Rate<a href="#incorrect-baud-rate" class="hash-link" aria-label="Direct link to Incorrect Baud Rate" title="Direct link to Incorrect Baud Rate" translate="no">​</a></h3>
+<p><strong>Problem:</strong> Connection establishes but commands don&#x27;t work or produce garbled responses.</p>
+<p><strong>Solution:</strong></p>
+<p>GRBL controllers typically use one of these baud rates:</p>
+<ul>
+<li class=""><strong>115200</strong> (most common, GRBL 1.1+)</li>
+<li class=""><strong>9600</strong> (older GRBL versions)</li>
+<li class=""><strong>250000</strong> (less common, some custom firmware)</li>
+</ul>
+<p>Try different baud rates in Rayforge&#x27;s device settings. The most common is <strong>115200</strong>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="connection-keeps-dropping">Connection Keeps Dropping<a href="#connection-keeps-dropping" class="hash-link" aria-label="Direct link to Connection Keeps Dropping" title="Direct link to Connection Keeps Dropping" translate="no">​</a></h3>
+<p><strong>Problem:</strong> Rayforge connects successfully but keeps disconnecting and reconnecting.</p>
+<p><strong>Possible Causes:</strong></p>
+<ol>
+<li class=""><strong>Flaky USB cable</strong> - Replace with a known-good cable (preferably short, &lt;2m)</li>
+<li class=""><strong>USB power issues</strong> - Try a different USB port, preferably on the computer itself rather than a hub</li>
+<li class=""><strong>EMI/Interference</strong> - Keep USB cables away from motor wires and high-voltage power supplies</li>
+<li class=""><strong>Firmware issues</strong> - Update your GRBL firmware if possible</li>
+<li class=""><strong>USB port conflicts</strong> - On Windows, try different USB ports</li>
+</ol>
+<p><strong>Troubleshooting Steps:</strong></p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># On Linux, monitor system logs while connecting:</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo dmesg -w</span><br></span></code></pre></div></div>
+<p>Look for messages like:</p>
+<ul>
+<li class="">&quot;USB disconnect&quot; - indicates physical/cable issues</li>
+<li class="">&quot;device descriptor read error&quot; - often a power or cable problem</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="device-not-responding-after-connection">Device Not Responding After Connection<a href="#device-not-responding-after-connection" class="hash-link" aria-label="Direct link to Device Not Responding After Connection" title="Direct link to Device Not Responding After Connection" translate="no">​</a></h3>
+<p><strong>Problem:</strong> Connection status shows &quot;Connected&quot; but the machine doesn&#x27;t respond to commands.</p>
+<p><strong>Diagnosis:</strong></p>
+<ol>
+<li class="">Check that the correct firmware type is selected (GRBL vs other)</li>
+<li class="">Verify the machine is powered on (controller and power supply)</li>
+<li class="">Check if the machine is in an alarm state (requires homing or alarm clear)</li>
+</ol>
+<p><strong>Solution:</strong></p>
+<p>Try sending a manual command in the Console:</p>
+<ul>
+<li class=""><code>?</code> - Request status report</li>
+<li class=""><code>$X</code> - Clear alarm</li>
+<li class=""><code>$H</code> - Home the machine</li>
+</ul>
+<p>If there&#x27;s no response, double-check baud rate and port selection.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="connection-status-messages">Connection Status Messages<a href="#connection-status-messages" class="hash-link" aria-label="Direct link to Connection Status Messages" title="Direct link to Connection Status Messages" translate="no">​</a></h2>
+<p>Rayforge shows different connection states:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Status</th><th>Meaning</th><th>Action</th></tr></thead><tbody><tr><td><strong>Disconnected</strong></td><td>Not connected to any device</td><td>Configure port and connect</td></tr><tr><td><strong>Connecting</strong></td><td>Attempting to establish connection</td><td>Wait, or check configuration if stuck</td></tr><tr><td><strong>Connected</strong></td><td>Successfully connected and receiving status</td><td>Ready to use</td></tr><tr><td><strong>Error</strong></td><td>Connection failed with an error</td><td>Check error message for details</td></tr><tr><td><strong>Sleeping</strong></td><td>Waiting before reconnection attempt</td><td>Previous connection failed, retrying in 5s</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="testing-your-connection">Testing Your Connection<a href="#testing-your-connection" class="hash-link" aria-label="Direct link to Testing Your Connection" title="Direct link to Testing Your Connection" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-by-step-connection-test">Step-by-Step Connection Test<a href="#step-by-step-connection-test" class="hash-link" aria-label="Direct link to Step-by-Step Connection Test" title="Direct link to Step-by-Step Connection Test" translate="no">​</a></h3>
+<ol>
+<li class="">
+<p><strong>Configure the machine:</strong></p>
+<ul>
+<li class="">Open Settings  Machine</li>
+<li class="">Select or create a machine profile</li>
+<li class="">Choose the correct driver (GRBL Serial)</li>
+<li class="">Select the serial port</li>
+<li class="">Set baud rate (typically 115200)</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Attempt connection:</strong></p>
+<ul>
+<li class="">Click &quot;Connect&quot; in the machine control panel</li>
+<li class="">Watch the connection status indicator</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Verify communication:</strong></p>
+<ul>
+<li class="">If connected, try sending a status query</li>
+<li class="">The machine should report its position and state</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Test basic commands:</strong></p>
+<ul>
+<li class="">Try homing (<code>$H</code>) if your machine has limit switches</li>
+<li class="">Or clear alarms (<code>$X</code>) if needed</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="using-debug-logs">Using Debug Logs<a href="#using-debug-logs" class="hash-link" aria-label="Direct link to Using Debug Logs" title="Direct link to Using Debug Logs" translate="no">​</a></h3>
+<p>Rayforge includes detailed logging for connection issues. To enable debug logging:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Run Rayforge from terminal with debug logging</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">rayforge --loglevel DEBUG</span><br></span></code></pre></div></div>
+<p>Check the logs for:</p>
+<ul>
+<li class="">Connection attempts and failures</li>
+<li class="">Serial data transmitted (TX) and received (RX)</li>
+<li class="">Error messages with stack traces</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="advanced-troubleshooting">Advanced Troubleshooting<a href="#advanced-troubleshooting" class="hash-link" aria-label="Direct link to Advanced Troubleshooting" title="Direct link to Advanced Troubleshooting" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="checking-port-availability-manually">Checking Port Availability Manually<a href="#checking-port-availability-manually" class="hash-link" aria-label="Direct link to Checking Port Availability Manually" title="Direct link to Checking Port Availability Manually" translate="no">​</a></h3>
+<p><strong>Linux:</strong></p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># List all USB serial devices</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">ls -l /dev/ttyUSB* /dev/ttyACM*</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Check permissions</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">ls -l /dev/ttyUSB0  # Replace with your port</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Should show: crw-rw---- 1 root dialout</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># You need to be in the &#x27;dialout&#x27; group</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Test port manually</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo minicom -D /dev/ttyUSB0 -b 115200</span><br></span></code></pre></div></div>
+<p><strong>Windows:</strong></p>
+<div class="language-powershell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-powershell codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># List COM ports in PowerShell</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">[System.IO.Ports.SerialPort]::getportnames()</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Or use Device Manager:</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Win + X → Device Manager → Ports (COM &amp; LPT)</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="firmware-compatibility">Firmware Compatibility<a href="#firmware-compatibility" class="hash-link" aria-label="Direct link to Firmware Compatibility" title="Direct link to Firmware Compatibility" translate="no">​</a></h3>
+<p>Rayforge is designed for GRBL-compatible firmware. Ensure your controller runs:</p>
+<ul>
+<li class=""><strong>GRBL 1.1</strong> (most common, recommended)</li>
+<li class=""><strong>GRBL 0.9</strong> (older, may have limited features)</li>
+<li class=""><strong>grblHAL</strong> (modern GRBL fork, supported)</li>
+</ul>
+<p>Other firmware types (Marlin, Smoothieware) are not currently supported via the GRBL driver.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="usb-to-serial-chipsets">USB-to-Serial Chipsets<a href="#usb-to-serial-chipsets" class="hash-link" aria-label="Direct link to USB-to-Serial Chipsets" title="Direct link to USB-to-Serial Chipsets" translate="no">​</a></h3>
+<p>Common chipsets and their drivers:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Chipset</th><th>Linux</th><th>Windows</th><th>macOS</th></tr></thead><tbody><tr><td><strong>CH340/CH341</strong></td><td>Built-in kernel driver</td><td><a href="http://www.wch.cn/downloads/" target="_blank" rel="noopener noreferrer" class="">CH341SER driver</a></td><td>Requires driver</td></tr><tr><td><strong>FTDI FT232</strong></td><td>Built-in kernel driver</td><td>Built-in (Windows 10+)</td><td>Built-in</td></tr><tr><td><strong>CP2102 (SiLabs)</strong></td><td>Built-in kernel driver</td><td>Built-in (Windows 10+)</td><td>Built-in</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="still-having-issues">Still Having Issues?<a href="#still-having-issues" class="hash-link" aria-label="Direct link to Still Having Issues?" title="Direct link to Still Having Issues?" translate="no">​</a></h2>
+<p>If you&#x27;ve tried everything above and still can&#x27;t connect:</p>
+<ol>
+<li class=""><strong>Check the GitHub issues</strong> - Someone may have reported the same problem</li>
+<li class=""><strong>Create a detailed issue report</strong> with:
+<ul>
+<li class="">Operating system and version</li>
+<li class="">Rayforge version (Snap/Flatpak/AppImage/source)</li>
+<li class="">Controller board model and firmware version</li>
+<li class="">USB chipset (check Device Manager on Windows or <code>lsusb</code> on Linux)</li>
+<li class="">Full error messages and debug logs</li>
+</ul>
+</li>
+<li class=""><strong>Test with another application</strong> - Try connecting with a serial terminal (minicom, PuTTY, Arduino Serial Monitor) to verify the hardware works</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-pages">Related Pages<a href="#related-pages" class="hash-link" aria-label="Direct link to Related Pages" title="Direct link to Related Pages" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/docs/troubleshooting/snap-permissions">Snap Permissions</a> - Detailed Linux Snap permission setup</li>
+<li class=""><a class="" href="/docs/troubleshooting/common">Common Problems</a> - Other common issues and solutions</li>
+<li class=""><a class="" href="/docs/machine/general">General Settings</a> - Machine setup guide</li>
+<li class=""><a class="" href="/docs/machine/device">Device Settings</a> - GRBL configuration reference</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/troubleshooting/connection.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/general-info/gcode-basics"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">G-code Basics</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/troubleshooting/debug"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Troubleshooting &amp; Reporting Issues</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#quick-diagnosis" class="table-of-contents__link toc-highlight">Quick Diagnosis</a><ul><li><a href="#symptoms" class="table-of-contents__link toc-highlight">Symptoms</a></li></ul></li><li><a href="#common-problems-and-solutions" class="table-of-contents__link toc-highlight">Common Problems and Solutions</a><ul><li><a href="#no-serial-ports-detected" class="table-of-contents__link toc-highlight">No Serial Ports Detected</a></li><li><a href="#permission-denied-errors" class="table-of-contents__link toc-highlight">Permission Denied Errors</a></li><li><a href="#wrong-serial-port-selected" class="table-of-contents__link toc-highlight">Wrong Serial Port Selected</a></li><li><a href="#incorrect-baud-rate" class="table-of-contents__link toc-highlight">Incorrect Baud Rate</a></li><li><a href="#connection-keeps-dropping" class="table-of-contents__link toc-highlight">Connection Keeps Dropping</a></li><li><a href="#device-not-responding-after-connection" class="table-of-contents__link toc-highlight">Device Not Responding After Connection</a></li></ul></li><li><a href="#connection-status-messages" class="table-of-contents__link toc-highlight">Connection Status Messages</a></li><li><a href="#testing-your-connection" class="table-of-contents__link toc-highlight">Testing Your Connection</a><ul><li><a href="#step-by-step-connection-test" class="table-of-contents__link toc-highlight">Step-by-Step Connection Test</a></li><li><a href="#using-debug-logs" class="table-of-contents__link toc-highlight">Using Debug Logs</a></li></ul></li><li><a href="#advanced-troubleshooting" class="table-of-contents__link toc-highlight">Advanced Troubleshooting</a><ul><li><a href="#checking-port-availability-manually" class="table-of-contents__link toc-highlight">Checking Port Availability Manually</a></li><li><a href="#firmware-compatibility" class="table-of-contents__link toc-highlight">Firmware Compatibility</a></li><li><a href="#usb-to-serial-chipsets" class="table-of-contents__link toc-highlight">USB-to-Serial Chipsets</a></li></ul></li><li><a href="#still-having-issues" class="table-of-contents__link toc-highlight">Still Having Issues?</a></li><li><a href="#related-pages" class="table-of-contents__link toc-highlight">Related Pages</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</body>
+</html>

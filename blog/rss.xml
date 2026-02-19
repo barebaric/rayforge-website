@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Rayforge Blog</title>
+        <link>https://rayforge.org/blog</link>
+        <description>Rayforge Blog</description>
+        <lastBuildDate>Thu, 29 Jan 2026 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[Rayforge 1.0 - A First Birthday Celebration]]></title>
+            <link>https://rayforge.org/blog/rayforge-1.0-first-birthday</link>
+            <guid>https://rayforge.org/blog/rayforge-1.0-first-birthday</guid>
+            <pubDate>Thu, 29 Jan 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Rayforge 1.0]]></description>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 1.0" src="https://rayforge.org/assets/images/rayforge-1.0-95669e0bab418ed91ad92eb5532ec092.png" width="1920" height="1024" class="img_ev3q"></p>
+<p>Today marks a special milestone for Rayforge - we're releasing version
+1.0 exactly on the project's first birthday! What started as a single
+commit on February 1st, 2025, has grown into a fully-featured laser
+cutting and engraving platform.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-journey-so-far">The Journey So Far<a href="https://rayforge.org/blog/rayforge-1.0-first-birthday#the-journey-so-far" class="hash-link" aria-label="Direct link to The Journey So Far" title="Direct link to The Journey So Far" translate="no">​</a></h2>
+<p>Over the past year, Rayforge has evolved from a basic laser control tool
+into a comprehensive design and manufacturing platform. We've built
+everything from scratch: a parametric 2D CAD system, 3D G-code preview,
+multi-layer support, multi-laser support, camera alignment, work
+coordinate systems, and so much more.</p>
+<p>This release represents the culmination of that vision - a stable,
+production-ready tool that can handle real-world laser cutting and
+engraving workflows.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="whats-new-in-10">What's New in 1.0<a href="https://rayforge.org/blog/rayforge-1.0-first-birthday#whats-new-in-10" class="hash-link" aria-label="Direct link to What's New in 1.0" title="Direct link to What's New in 1.0" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="project-saveload">Project Save/Load<a href="https://rayforge.org/blog/rayforge-1.0-first-birthday#project-saveload" class="hash-link" aria-label="Direct link to Project Save/Load" title="Direct link to Project Save/Load" translate="no">​</a></h3>
+<p>The most requested feature is finally here. You can now save your
+complete workflows and restore them later. The <code>.ryp</code> (project) and
+<code>.rfs</code> (sketch) file extensions are registered system-wide, so you can
+double-click your projects to open them directly. A recent files menu
+provides quick access to your work.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="parametric-sketcher-with-text-support">Parametric Sketcher with Text Support<a href="https://rayforge.org/blog/rayforge-1.0-first-birthday#parametric-sketcher-with-text-support" class="hash-link" aria-label="Direct link to Parametric Sketcher with Text Support" title="Direct link to Parametric Sketcher with Text Support" translate="no">​</a></h3>
+<p>The sketcher now supports text with full constraint integration. Add
+text to your sketches, apply aspect ratio constraints, and control
+placement and sizing parametrically. This opens up a whole new world of
+design possibilities for laser-engraved signs, labels, and decorative
+elements.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="unified-bottom-panel">Unified Bottom Panel<a href="https://rayforge.org/blog/rayforge-1.0-first-birthday#unified-bottom-panel" class="hash-link" aria-label="Direct link to Unified Bottom Panel" title="Direct link to Unified Bottom Panel" translate="no">​</a></h3>
+<p>The jog dialog and log view have been merged into a single, unified
+bottom panel. This consolidation provides a cleaner workspace while
+keeping essential machine control and monitoring tools readily
+accessible. The panel features tabbed access to jog controls and log
+output, making it easy to switch between operations without losing
+screen real estate.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/blog/rayforge-1.0-first-birthday#other-improvements" class="hash-link" aria-label="Direct link to Other Improvements" title="Direct link to Other Improvements" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Bottom panel</strong>: Jog dialog and log view are now merged into a
+unified bottom panel</li>
+<li class=""><strong>Import dialog</strong>: Errors are now collected and displayed together</li>
+<li class=""><strong>Importers</strong>: Almost completely rewritten for better testability</li>
+<li class=""><strong>Sketcher stability</strong>: Solver now biases points for more stable
+dragging</li>
+<li class=""><strong>Bug fixes</strong>: Multi-layer DXF import, alignment bugs, centering
+issues, and more</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="feature-highlights">Feature Highlights<a href="https://rayforge.org/blog/rayforge-1.0-first-birthday#feature-highlights" class="hash-link" aria-label="Direct link to Feature Highlights" title="Direct link to Feature Highlights" translate="no">​</a></h2>
+<p>Rayforge 1.0 includes over 60 features:</p>
+<p><strong>Design Tools</strong></p>
+<ul>
+<li class="">2D CAD with parametric sketching</li>
+<li class="">Geometric and dimensional constraints</li>
+<li class="">Text support in sketches</li>
+<li class="">Multi-layer support</li>
+</ul>
+<p><strong>Manufacturing</strong></p>
+<ul>
+<li class="">2.5D operations (contour, raster, depth engraving)</li>
+<li class="">Multi-laser support</li>
+<li class="">Work Coordinate Systems (G54-G59)</li>
+<li class="">Path optimization and smoothing</li>
+<li class="">Holding tabs with auto-placement</li>
+</ul>
+<p><strong>Import/Export</strong></p>
+<ul>
+<li class="">SVG, DXF, PDF, JPEG, PNG, BMP, Ruida file support</li>
+<li class="">Vector tracing with multiple algorithms</li>
+<li class="">Image preprocessing (denoising, invert, threshold)</li>
+</ul>
+<p><strong>Machine Control</strong></p>
+<ul>
+<li class="">Multi-machine profiles</li>
+<li class="">Firmware settings for GRBL, Smoothieware, Marlin</li>
+<li class="">G-code macros and hooks</li>
+<li class="">Variable substitution</li>
+<li class="">Terminal console with live status</li>
+</ul>
+<p><strong>Visualization</strong></p>
+<ul>
+<li class="">3D G-code preview with full simulation</li>
+<li class="">Camera alignment</li>
+<li class="">Dark and light themes</li>
+<li class="">Multi-language support</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-look-back">A Look Back<a href="https://rayforge.org/blog/rayforge-1.0-first-birthday#a-look-back" class="hash-link" aria-label="Direct link to A Look Back" title="Direct link to A Look Back" translate="no">​</a></h2>
+<p>The first commit was made on February 1st, 2025, at 19:37:27. It was a
+simple "initial import" with basic SVG rendering support. Since then,
+we've:</p>
+<ul>
+<li class="">Released 28 versions (0.13 through 0.28, plus 1.0)</li>
+<li class="">Added over 60 features</li>
+<li class="">Fixed hundreds of bugs</li>
+<li class="">Built a community of users and contributors</li>
+<li class="">Created installers for Windows, Linux (deb, snap, flatpak), and macOS</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="whats-next">What's Next?<a href="https://rayforge.org/blog/rayforge-1.0-first-birthday#whats-next" class="hash-link" aria-label="Direct link to What's Next?" title="Direct link to What's Next?" translate="no">​</a></h2>
+<p>Version 1.0 is a milestone, not a destination. The roadmap ahead
+includes:</p>
+<ul>
+<li class="">Enhanced vector tools and editing capabilities</li>
+<li class="">Broader hardware support</li>
+<li class="">Performance optimizations for large projects</li>
+<li class="">More machine profiles and dialects</li>
+<li class="">Community-driven package ecosystem</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-10">Download Rayforge 1.0<a href="https://rayforge.org/blog/rayforge-1.0-first-birthday#download-rayforge-10" class="hash-link" aria-label="Direct link to Download Rayforge 1.0" title="Direct link to Download Rayforge 1.0" translate="no">​</a></h2>
+<p>Get the latest version from our website: <a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">https://rayforge.org/</a></p>
+<p>Installers are available for:</p>
+<ul>
+<li class="">Windows (installer)</li>
+<li class="">Linux (deb, snap, flatpak)</li>
+<li class="">macOS (dmg)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/blog/rayforge-1.0-first-birthday#join-the-community" class="hash-link" aria-label="Direct link to Join the Community" title="Direct link to Join the Community" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>GitHub</strong>: <a href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" class="">https://github.com/barebaric/rayforge</a></li>
+<li class=""><strong>Discord</strong>: <a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">https://discord.gg/sTHNdTtpQJ</a></li>
+<li class=""><strong>Patreon</strong>: <a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">https://www.patreon.com/c/knipknap</a></li>
+</ul>
+<p>Thank you to everyone who has contributed, tested, reported bugs, or
+simply used Rayforge over this past year. Here's to another year of
+building the future of open-source manufacturing!</p>
+<hr>
+<p><em>Happy first birthday, Rayforge! 🎂</em></p>]]></content:encoded>
+            <category>release</category>
+            <category>1</category>
+            <category>milestone</category>
+        </item>
+        <item>
+            <title><![CDATA[5 Tips for Better Laser Engraving Results with Rayforge]]></title>
+            <link>https://rayforge.org/blog/5-tips-better-engraving</link>
+            <guid>https://rayforge.org/blog/5-tips-better-engraving</guid>
+            <pubDate>Thu, 20 Feb 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[3D Preview]]></description>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="3D Preview" src="https://rayforge.org/assets/images/3d-preview-4196762903b841b57d35fe5e469b189c.png" width="1676" height="1135" class="img_ev3q"></p>
+<p>Getting professional-quality laser engraving results requires more than
+just good hardware—your software settings and workflow matter too. Here
+are five tips to help you get the most out of Rayforge.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-use-overscan-for-smoother-raster-engraving">1. Use Overscan for Smoother Raster Engraving<a href="https://rayforge.org/blog/5-tips-better-engraving#1-use-overscan-for-smoother-raster-engraving" class="hash-link" aria-label="Direct link to 1. Use Overscan for Smoother Raster Engraving" title="Direct link to 1. Use Overscan for Smoother Raster Engraving" translate="no">​</a></h2>
+<p>When doing raster engraving, one common issue is visible lines or
+inconsistencies at the edges where the laser changes direction. This
+happens because the laser head needs to decelerate and accelerate, which
+can affect engraving quality.</p>
+<p><strong>Solution</strong>: Enable <strong>Overscan</strong> in your raster operation settings.</p>
+<p>Overscan extends the laser's travel path beyond the actual engraving
+area, allowing the head to reach full speed before entering the work
+area and maintain that speed throughout. This results in much smoother,
+more consistent engraving.</p>
+<p>To enable overscan:</p>
+<ol>
+<li class="">Select your raster operation</li>
+<li class="">Open the operation settings</li>
+<li class="">Enable "Overscan" and set the distance (typically 3-5mm works well)</li>
+</ol>
+<p>Learn more in our <a class="" href="https://rayforge.org/docs/features/overscan">Overscan guide</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-optimize-travel-time-with-path-ordering">2. Optimize Travel Time with Path Ordering<a href="https://rayforge.org/blog/5-tips-better-engraving#2-optimize-travel-time-with-path-ordering" class="hash-link" aria-label="Direct link to 2. Optimize Travel Time with Path Ordering" title="Direct link to 2. Optimize Travel Time with Path Ordering" translate="no">​</a></h2>
+<p>For contour operations with many separate paths, the order in which the
+laser visits each shape can significantly impact total job time.</p>
+<p><strong>Solution</strong>: Use Rayforge's built-in <strong>travel time optimization</strong>.</p>
+<p>Rayforge can automatically reorder paths to minimize non-cutting travel
+time. This is especially useful for jobs with many small objects or text
+with multiple letters.</p>
+<p>The path optimization is typically enabled by default, but you can
+verify and adjust it in the Contour operation settings.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-add-holding-tabs-to-prevent-part-movement">3. Add Holding Tabs to Prevent Part Movement<a href="https://rayforge.org/blog/5-tips-better-engraving#3-add-holding-tabs-to-prevent-part-movement" class="hash-link" aria-label="Direct link to 3. Add Holding Tabs to Prevent Part Movement" title="Direct link to 3. Add Holding Tabs to Prevent Part Movement" translate="no">​</a></h2>
+<p>Nothing is more frustrating than having a nearly-finished cut job ruined
+because the part shifted or fell through the machine bed at the last
+moment.</p>
+<p><strong>Solution</strong>: Use <strong>Holding Tabs</strong> to keep parts in place until the job
+is complete.</p>
+<p>Holding tabs are small uncut sections that keep your part connected to
+the surrounding material. After the job completes, you can easily remove
+the part and clean up the tabs with a knife or sandpaper.</p>
+<p>Rayforge supports both manual and automatic tab placement:</p>
+<ul>
+<li class=""><strong>Manual</strong>: Click exactly where you want tabs in the canvas</li>
+<li class=""><strong>Automatic</strong>: Specify the number of tabs and let Rayforge distribute
+them evenly</li>
+</ul>
+<p>Check out the <a class="" href="https://rayforge.org/docs/features/holding-tabs">Holding Tabs documentation</a>
+for a complete guide.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-preview-your-job-in-3d-before-running">4. Preview Your Job in 3D Before Running<a href="https://rayforge.org/blog/5-tips-better-engraving#4-preview-your-job-in-3d-before-running" class="hash-link" aria-label="Direct link to 4. Preview Your Job in 3D Before Running" title="Direct link to 4. Preview Your Job in 3D Before Running" translate="no">​</a></h2>
+<p>One of Rayforge's most valuable features is the 3D G-code preview. It's
+tempting to skip this step and send the job directly to the machine, but
+taking a moment to preview can save you time and materials.</p>
+<p><strong>What to look for in the preview</strong>:</p>
+<ul>
+<li class="">Verify all operations are executing in the correct order</li>
+<li class="">Check for any unexpected toolpaths or overlaps</li>
+<li class="">Confirm that multi-pass operations have the correct number of passes</li>
+<li class="">Ensure the job bounds fit within your material</li>
+</ul>
+<p>To open the 3D preview, click the <strong>3D Preview</strong> button in the main
+toolbar after generating your G-code.</p>
+<p>Learn more about the 3D preview in our
+<a class="" href="https://rayforge.org/docs/ui/3d-preview">UI documentation</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-use-custom-g-code-hooks-for-consistent-workflows">5. Use Custom G-code Hooks for Consistent Workflows<a href="https://rayforge.org/blog/5-tips-better-engraving#5-use-custom-g-code-hooks-for-consistent-workflows" class="hash-link" aria-label="Direct link to 5. Use Custom G-code Hooks for Consistent Workflows" title="Direct link to 5. Use Custom G-code Hooks for Consistent Workflows" translate="no">​</a></h2>
+<p>If you find yourself running the same G-code commands before or after
+every job—like homing, turning on an air assist, or running a focus
+routine—you can automate this with <strong>G-code Macros &amp; Hooks</strong>.</p>
+<p><strong>Common use cases</strong>:</p>
+<ul>
+<li class=""><strong>Pre-job hook</strong>: Home the machine, turn on air assist, run an
+auto-focus routine</li>
+<li class=""><strong>Post-job hook</strong>: Turn off air assist, return to home position, play
+a completion sound</li>
+<li class=""><strong>Layer-specific macros</strong>: Change focus height between operations,
+switch laser modules</li>
+</ul>
+<p>Hooks support variable substitution, so you can reference job properties
+like material thickness, operation type, and more.</p>
+<p>Example pre-job hook:</p>
+<div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">G28 ; Home all axes</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">M8 ; Turn on air assist</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">G0 Z{focus_height} ; Move to focus height</span><br></span></code></pre></div></div>
+<p>See our <a class="" href="https://rayforge.org/docs/machine/hooks-macros">G-code Macros &amp; Hooks guide</a> for
+detailed examples and variable reference.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bonus-tip-test-on-scrap-material-first">Bonus Tip: Test on Scrap Material First<a href="https://rayforge.org/blog/5-tips-better-engraving#bonus-tip-test-on-scrap-material-first" class="hash-link" aria-label="Direct link to Bonus Tip: Test on Scrap Material First" title="Direct link to Bonus Tip: Test on Scrap Material First" translate="no">​</a></h2>
+<p>While this isn't specific to Rayforge, it's worth repeating: always test
+new settings, operations, or materials on scrap first. Use Rayforge's
+material profiles and operation presets to save your tested settings for
+future use.</p>
+<hr>
+<p><em>Have your own Rayforge tips and tricks? Share them with the community
+on <a href="https://github.com/barebaric/rayforge/discussions" target="_blank" rel="noopener noreferrer" class="">GitHub Discussions</a>!</em></p>]]></content:encoded>
+            <category>engraving</category>
+            <category>optimization</category>
+            <category>quality</category>
+            <category>workflow</category>
+        </item>
+        <item>
+            <title><![CDATA[Multi-Laser Support - Choose Different Lasers for Each Operation]]></title>
+            <link>https://rayforge.org/blog/multi-laser-support</link>
+            <guid>https://rayforge.org/blog/multi-laser-support</guid>
+            <pubDate>Fri, 10 Jan 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Camera Overlay]]></description>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Camera Overlay" src="https://rayforge.org/assets/images/camera-overlay-9f900a6a0a1cf06b93ce089eb4ad5173.png" width="2426" height="1418" class="img_ev3q"></p>
+<p>One of the most powerful features in Rayforge is the ability to assign
+different lasers to different operations within a single job. This opens
+up exciting possibilities for multi-tool setups and specialized
+workflows.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-is-multi-laser-support">What is Multi-Laser Support?<a href="https://rayforge.org/blog/multi-laser-support#what-is-multi-laser-support" class="hash-link" aria-label="Direct link to What is Multi-Laser Support?" title="Direct link to What is Multi-Laser Support?" translate="no">​</a></h2>
+<p>If your machine is equipped with multiple laser modules—say, a diode
+laser for engraving and a CO2 laser for cutting, or different power
+diode lasers optimized for different materials—Rayforge lets you take
+full advantage of this setup.</p>
+<p>With multi-laser support, you can:</p>
+<ul>
+<li class=""><strong>Assign different lasers to different operations</strong> in your job</li>
+<li class=""><strong>Switch between laser modules</strong> automatically during job execution</li>
+<li class=""><strong>Optimize for material and task</strong> by using the right tool for each
+operation</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="use-cases">Use Cases<a href="https://rayforge.org/blog/multi-laser-support#use-cases" class="hash-link" aria-label="Direct link to Use Cases" title="Direct link to Use Cases" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hybrid-engraving-and-cutting">Hybrid Engraving and Cutting<a href="https://rayforge.org/blog/multi-laser-support#hybrid-engraving-and-cutting" class="hash-link" aria-label="Direct link to Hybrid Engraving and Cutting" title="Direct link to Hybrid Engraving and Cutting" translate="no">​</a></h3>
+<p>Imagine you're working on a wooden sign project:</p>
+<ol>
+<li class=""><strong>Operation 1</strong>: Use a low-power diode laser to engrave fine text
+and detailed graphics</li>
+<li class=""><strong>Operation 2</strong>: Switch to a higher-power CO2 laser to cut out the
+sign shape</li>
+</ol>
+<p>With Rayforge, you simply assign each operation to the appropriate laser
+in your machine profile, and the software handles the rest.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="material-specific-optimization">Material-Specific Optimization<a href="https://rayforge.org/blog/multi-laser-support#material-specific-optimization" class="hash-link" aria-label="Direct link to Material-Specific Optimization" title="Direct link to Material-Specific Optimization" translate="no">​</a></h3>
+<p>Different laser types excel at different materials:</p>
+<ul>
+<li class=""><strong>Diode lasers</strong>: Great for wood engraving, leather, and some plastics</li>
+<li class=""><strong>CO2 lasers</strong>: Excellent for cutting acrylic, wood, and other organic
+materials</li>
+<li class=""><strong>Fiber lasers</strong>: Perfect for marking metals</li>
+</ul>
+<p>If you have multiple laser types on a gantry system, Rayforge's
+multi-laser support lets you use the optimal tool for each part of your
+project.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-to-set-it-up">How to Set It Up<a href="https://rayforge.org/blog/multi-laser-support#how-to-set-it-up" class="hash-link" aria-label="Direct link to How to Set It Up" title="Direct link to How to Set It Up" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-configure-multiple-lasers-in-your-machine-profile">1. Configure Multiple Lasers in Your Machine Profile<a href="https://rayforge.org/blog/multi-laser-support#1-configure-multiple-lasers-in-your-machine-profile" class="hash-link" aria-label="Direct link to 1. Configure Multiple Lasers in Your Machine Profile" title="Direct link to 1. Configure Multiple Lasers in Your Machine Profile" translate="no">​</a></h3>
+<p>Go to <strong>Machine Setup → Multiple Lasers</strong> and define each laser module
+in your system. You can specify:</p>
+<ul>
+<li class="">Laser type and power range</li>
+<li class="">Offset positions (if lasers are mounted at different locations)</li>
+<li class="">Material compatibility</li>
+</ul>
+<p>See our <a class="" href="https://rayforge.org/docs/machine/multi-laser">Multi-Laser Configuration Guide</a>
+for detailed instructions.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-assign-lasers-to-operations">2. Assign Lasers to Operations<a href="https://rayforge.org/blog/multi-laser-support#2-assign-lasers-to-operations" class="hash-link" aria-label="Direct link to 2. Assign Lasers to Operations" title="Direct link to 2. Assign Lasers to Operations" translate="no">​</a></h3>
+<p>When creating operations in your project:</p>
+<ol>
+<li class="">Select the operation (Contour, Raster, etc.)</li>
+<li class="">In the operation settings, choose which laser to use from the
+dropdown</li>
+<li class="">Configure the operation parameters specific to that laser</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-preview-and-run">3. Preview and Run<a href="https://rayforge.org/blog/multi-laser-support#3-preview-and-run" class="hash-link" aria-label="Direct link to 3. Preview and Run" title="Direct link to 3. Preview and Run" translate="no">​</a></h3>
+<p>Use the 3D preview to verify your toolpaths, then send the job to your
+machine. Rayforge will automatically generate the appropriate G-code
+commands to switch between lasers as needed.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="technical-details">Technical Details<a href="https://rayforge.org/blog/multi-laser-support#technical-details" class="hash-link" aria-label="Direct link to Technical Details" title="Direct link to Technical Details" translate="no">​</a></h2>
+<p>Under the hood, Rayforge uses G-code commands to switch between laser
+modules. The exact implementation depends on your firmware and hardware
+setup, but common approaches include:</p>
+<ul>
+<li class=""><strong>M3/M4 with tool offsets</strong>: Switch between lasers using tool change
+commands</li>
+<li class=""><strong>GPIO control</strong>: Use firmware-supported GPIO pins to enable/disable
+different laser modules</li>
+<li class=""><strong>Custom macros</strong>: Define pre- and post-operation macros for laser
+switching</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="getting-started">Getting Started<a href="https://rayforge.org/blog/multi-laser-support#getting-started" class="hash-link" aria-label="Direct link to Getting Started" title="Direct link to Getting Started" translate="no">​</a></h2>
+<p>Multi-laser support is available in Rayforge 0.15 and later. To get
+started:</p>
+<ol>
+<li class="">Update to the latest version</li>
+<li class="">Configure your machine profile with multiple lasers</li>
+<li class="">Try it out on a test project!</li>
+</ol>
+<p>Check out the <a class="" href="https://rayforge.org/docs/machine/general">Machine Profiles documentation</a>
+for more details.</p>
+<hr>
+<p><em>Have a multi-laser setup? We'd love to hear about your experience!
+Share your projects and feedback on
+<a href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" class="">GitHub</a>.</em></p>]]></content:encoded>
+            <category>multi-laser</category>
+            <category>operations</category>
+            <category>workflow</category>
+        </item>
+        <item>
+            <title><![CDATA[Welcome to Rayforge: Modern Laser Control Software]]></title>
+            <link>https://rayforge.org/blog/welcome-to-rayforge</link>
+            <guid>https://rayforge.org/blog/welcome-to-rayforge</guid>
+            <pubDate>Sun, 15 Dec 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Rayforge Main Window]]></description>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge Main Window" src="https://rayforge.org/assets/images/ss-main-202d2879d71282ee321b921eb461ded0.png" width="1884" height="1403" class="img_ev3q"></p>
+<p>We're excited to introduce Rayforge, a modern, open-source G-code sender
+and control software designed specifically for GRBL-based laser cutters
+and engravers.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-rayforge">Why Rayforge?<a href="https://rayforge.org/blog/welcome-to-rayforge#why-rayforge" class="hash-link" aria-label="Direct link to Why Rayforge?" title="Direct link to Why Rayforge?" translate="no">​</a></h2>
+<p>In the world of laser cutting and engraving, having reliable, intuitive
+software is just as important as having quality hardware. Rayforge was
+built from the ground up with a focus on:</p>
+<ul>
+<li class=""><strong>Modern User Experience</strong>: Built with Gtk4 and Libadwaita, Rayforge
+offers a clean, native interface that feels at home on Linux and
+Windows</li>
+<li class=""><strong>Professional Features</strong>: Multi-layer workflows, 3D preview, camera
+integration, and advanced path generation</li>
+<li class=""><strong>Flexibility</strong>: Support for multiple machine profiles, custom macros,
+and extensive configuration options</li>
+<li class=""><strong>Open Development</strong>: Community-driven with contributions welcome</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-makes-rayforge-different">What Makes Rayforge Different?<a href="https://rayforge.org/blog/welcome-to-rayforge#what-makes-rayforge-different" class="hash-link" aria-label="Direct link to What Makes Rayforge Different?" title="Direct link to What Makes Rayforge Different?" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="multi-layer-operations">Multi-Layer Operations<a href="https://rayforge.org/blog/welcome-to-rayforge#multi-layer-operations" class="hash-link" aria-label="Direct link to Multi-Layer Operations" title="Direct link to Multi-Layer Operations" translate="no">​</a></h3>
+<p>One of Rayforge's standout features is its multi-layer workflow. Assign
+different operations to different layers in your design—engrave fine
+details on one layer, then cut out the piece on another. All managed
+seamlessly in one interface.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3d-g-code-preview">3D G-code Preview<a href="https://rayforge.org/blog/welcome-to-rayforge#3d-g-code-preview" class="hash-link" aria-label="Direct link to 3D G-code Preview" title="Direct link to 3D G-code Preview" translate="no">​</a></h3>
+<p>Before sending your job to the machine, visualize exactly what will
+happen with our 3D G-code preview. Catch potential issues before they
+happen and save time and materials.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="camera-integration">Camera Integration<a href="https://rayforge.org/blog/welcome-to-rayforge#camera-integration" class="hash-link" aria-label="Direct link to Camera Integration" title="Direct link to Camera Integration" translate="no">​</a></h3>
+<p>Use a USB camera for precise workpiece alignment, positioning, and even
+background tracing. Perfect for positioning designs on pre-existing
+materials or creating jigs.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="advanced-path-generation">Advanced Path Generation<a href="https://rayforge.org/blog/welcome-to-rayforge#advanced-path-generation" class="hash-link" aria-label="Direct link to Advanced Path Generation" title="Direct link to Advanced Path Generation" translate="no">​</a></h3>
+<p>Rayforge includes high-quality image tracing, travel time optimization,
+path smoothing, and spot size interpolation to ensure your projects come
+out exactly as planned.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="getting-started">Getting Started<a href="https://rayforge.org/blog/welcome-to-rayforge#getting-started" class="hash-link" aria-label="Direct link to Getting Started" title="Direct link to Getting Started" translate="no">​</a></h2>
+<p>Ready to try Rayforge? Check out our
+<a class="" href="https://rayforge.org/docs/getting-started/installation">Installation Guide</a> to get started.
+Whether you're running Ubuntu, another Linux distribution via Snap, or
+Windows, we've got you covered.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/blog/welcome-to-rayforge#join-the-community" class="hash-link" aria-label="Direct link to Join the Community" title="Direct link to Join the Community" translate="no">​</a></h2>
+<p>Rayforge is open-source and community-driven. We welcome contributions of
+all kinds:</p>
+<ul>
+<li class="">Report bugs and request features on
+<a href="https://github.com/barebaric/rayforge/issues" target="_blank" rel="noopener noreferrer" class="">GitHub Issues</a></li>
+<li class="">Contribute code via
+<a href="https://github.com/barebaric/rayforge/pulls" target="_blank" rel="noopener noreferrer" class="">pull requests</a></li>
+<li class="">Improve documentation</li>
+<li class="">Share your projects and experiences</li>
+</ul>
+<hr>
+<p><em>Have questions or feedback? Join the conversation on GitHub or check
+out our <a class="" href="https://rayforge.org/docs/getting-started/installation">documentation</a>.</em></p>]]></content:encoded>
+            <category>introduction</category>
+            <category>features</category>
+        </item>
+    </channel>
+</rss>

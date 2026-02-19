@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-troubleshooting/snap-permissions" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Snap Permissions (Linux) | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://rayforge.org/docs/troubleshooting/snap-permissions"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Snap Permissions (Linux) | Rayforge"><meta data-rh="true" name="description" content="This page explains how to configure permissions for Rayforge when installed as a Snap package on Linux."><meta data-rh="true" property="og:description" content="This page explains how to configure permissions for Rayforge when installed as a Snap package on Linux."><link data-rh="true" rel="icon" href="/assets/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/docs/troubleshooting/snap-permissions"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/troubleshooting/snap-permissions" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/troubleshooting/snap-permissions" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Snap Permissions (Linux)","item":"https://rayforge.org/docs/troubleshooting/snap-permissions"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Rayforge RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Rayforge Atom Feed"><link rel="stylesheet" href="/assets/css/styles.919edc8e.css">
+<script src="/assets/js/runtime~main.53705bdf.js" defer="defer"></script>
+<script src="/assets/js/main.c26f01b2.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/assets/icon.svg" alt="Rayforge Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/assets/icon.svg" alt="Rayforge Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Rayforge</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/getting-started/installation">Documentation</a><a class="navbar__item navbar__link" href="/docs/developer/getting-started/">Developer</a><a class="navbar__item navbar__link" href="/contributing">Contributing</a><a class="navbar__item navbar__link" href="/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="patreonLink_HbXT"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" class="patreonImg_dUDi"></a><span class="githubWrapper_c8Sl"><a href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><span class="discordWrapper_j0RJ"><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs/getting-started/installation"><span title="Getting Started" class="categoryLinkLabel_W154">Getting Started</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting-started/installation"><span title="Installation" class="linkLabel_WmDU">Installation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting-started/first-time-setup"><span title="First Time Setup" class="linkLabel_WmDU">First Time Setup</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting-started/quick-start"><span title="Quick Start Guide" class="linkLabel_WmDU">Quick Start Guide</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/ui/settings"><span title="Application Settings" class="categoryLinkLabel_W154">Application Settings</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/machine/general"><span title="Machine Setup" class="categoryLinkLabel_W154">Machine Setup</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/ui/main-window"><span title="User Interface" class="categoryLinkLabel_W154">User Interface</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/features/operations/contour"><span title="Features" class="categoryLinkLabel_W154">Features</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/files/importing"><span title="Files" class="categoryLinkLabel_W154">Files</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/general-info/laser-safety"><span title="General Info" class="categoryLinkLabel_W154">General Info</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/troubleshooting/connection"><span title="Troubleshooting" class="categoryLinkLabel_W154">Troubleshooting</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/troubleshooting/connection"><span title="Connection Issues" class="linkLabel_WmDU">Connection Issues</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/troubleshooting/debug"><span title="Troubleshooting &amp; Reporting Issues" class="linkLabel_WmDU">Troubleshooting &amp; Reporting Issues</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/troubleshooting/snap-permissions"><span title="Snap Permissions (Linux)" class="linkLabel_WmDU">Snap Permissions (Linux)</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/reference/shortcuts"><span title="Reference" class="categoryLinkLabel_W154">Reference</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Troubleshooting</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Snap Permissions (Linux)</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Snap Permissions (Linux)</h1></header>
+<p>This page explains how to configure permissions for Rayforge when installed as a Snap package on Linux.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-are-snap-permissions">What are Snap Permissions?<a href="#what-are-snap-permissions" class="hash-link" aria-label="Direct link to What are Snap Permissions?" title="Direct link to What are Snap Permissions?" translate="no">​</a></h2>
+<p>Snaps are containerized applications that run in a sandbox for security. By default, they have limited access to system resources. To use certain features (like serial ports for laser controllers), you must explicitly grant permissions.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="required-permissions">Required Permissions<a href="#required-permissions" class="hash-link" aria-label="Direct link to Required Permissions" title="Direct link to Required Permissions" translate="no">​</a></h2>
+<p>Rayforge needs these Snap interfaces connected for full functionality:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Interface</th><th>Purpose</th><th>Required?</th></tr></thead><tbody><tr><td><code>serial-port</code></td><td>Access to USB serial devices (laser controllers)</td><td><strong>Yes</strong> (for machine control)</td></tr><tr><td><code>home</code></td><td>Read/write files in your home directory</td><td>Auto-connected</td></tr><tr><td><code>removable-media</code></td><td>Access external drives and USB storage</td><td>Optional</td></tr><tr><td><code>network</code></td><td>Network connectivity (for updates, etc.)</td><td>Auto-connected</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="granting-serial-port-access">Granting Serial Port Access<a href="#granting-serial-port-access" class="hash-link" aria-label="Direct link to Granting Serial Port Access" title="Direct link to Granting Serial Port Access" translate="no">​</a></h2>
+<p><strong>This is the most important permission for Rayforge.</strong></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="check-current-permissions">Check Current Permissions<a href="#check-current-permissions" class="hash-link" aria-label="Direct link to Check Current Permissions" title="Direct link to Check Current Permissions" translate="no">​</a></h3>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># View all connections for Rayforge</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">snap connections rayforge</span><br></span></code></pre></div></div>
+<p>Look for the <code>serial-port</code> interface. If it shows &quot;disconnected&quot; or &quot;-&quot;, you need to connect it.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="connect-serial-port-interface">Connect Serial Port Interface<a href="#connect-serial-port-interface" class="hash-link" aria-label="Direct link to Connect Serial Port Interface" title="Direct link to Connect Serial Port Interface" translate="no">​</a></h3>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Grant serial port access</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
+<p><strong>You only need to do this once.</strong> The permission persists across app updates and reboots.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="verify-connection">Verify Connection<a href="#verify-connection" class="hash-link" aria-label="Direct link to Verify Connection" title="Direct link to Verify Connection" translate="no">​</a></h3>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Check if serial-port is now connected</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">snap connections rayforge | grep serial-port</span><br></span></code></pre></div></div>
+<p>Expected output:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">serial-port     rayforge:serial-port     :serial-port     -</span><br></span></code></pre></div></div>
+<p>If you see a plug/slot indicator, the connection is active.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="granting-removable-media-access">Granting Removable Media Access<a href="#granting-removable-media-access" class="hash-link" aria-label="Direct link to Granting Removable Media Access" title="Direct link to Granting Removable Media Access" translate="no">​</a></h2>
+<p>If you want to import/export files from USB drives or external storage:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Grant access to removable media</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:removable-media</span><br></span></code></pre></div></div>
+<p>Now you can access files in <code>/media</code> and <code>/mnt</code>.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="troubleshooting-snap-permissions">Troubleshooting Snap Permissions<a href="#troubleshooting-snap-permissions" class="hash-link" aria-label="Direct link to Troubleshooting Snap Permissions" title="Direct link to Troubleshooting Snap Permissions" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="serial-port-still-not-working">Serial Port Still Not Working<a href="#serial-port-still-not-working" class="hash-link" aria-label="Direct link to Serial Port Still Not Working" title="Direct link to Serial Port Still Not Working" translate="no">​</a></h3>
+<p><strong>After connecting the interface:</strong></p>
+<ol>
+<li class="">
+<p><strong>Replug the USB device:</strong></p>
+<ul>
+<li class="">Unplug your laser controller</li>
+<li class="">Wait 5 seconds</li>
+<li class="">Plug it back in</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Restart Rayforge:</strong></p>
+<ul>
+<li class="">Close Rayforge completely</li>
+<li class="">Relaunch from the application menu or:
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">snap run rayforge</span><br></span></code></pre></div></div>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Check that the port appears:</strong></p>
+<ul>
+<li class="">Open Rayforge  Settings  Machine</li>
+<li class="">Look for serial ports in the dropdown</li>
+<li class="">Should see <code>/dev/ttyUSB0</code>, <code>/dev/ttyACM0</code>, or similar</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Verify the device exists:</strong></p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># List USB serial devices</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">ls -l /dev/ttyUSB* /dev/ttyACM*</span><br></span></code></pre></div></div>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="permission-denied-despite-connected-interface">&quot;Permission Denied&quot; Despite Connected Interface<a href="#permission-denied-despite-connected-interface" class="hash-link" aria-label="Direct link to &quot;Permission Denied&quot; Despite Connected Interface" title="Direct link to &quot;Permission Denied&quot; Despite Connected Interface" translate="no">​</a></h3>
+<p>This is rare but can happen if:</p>
+<ol>
+<li class="">
+<p><strong>The Snap installation is broken:</strong></p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Reinstall the snap</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap refresh rayforge --devmode</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Or if that fails:</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap remove rayforge</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap install rayforge</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Re-connect interfaces</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
+</li>
+<li class="">
+<p><strong>Conflicting udev rules:</strong></p>
+<ul>
+<li class="">Check <code>/etc/udev/rules.d/</code> for custom serial port rules</li>
+<li class="">They might conflict with Snap&#x27;s device access</li>
+</ul>
+</li>
+<li class="">
+<p><strong>AppArmor denials:</strong></p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Check for AppArmor denials</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo journalctl -xe | grep DENIED | grep rayforge</span><br></span></code></pre></div></div>
+<p>If you see denials for serial ports, there may be an AppArmor profile conflict.</p>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cant-access-files-outside-home-directory">Can&#x27;t Access Files Outside Home Directory<a href="#cant-access-files-outside-home-directory" class="hash-link" aria-label="Direct link to Can&#x27;t Access Files Outside Home Directory" title="Direct link to Can&#x27;t Access Files Outside Home Directory" translate="no">​</a></h3>
+<p><strong>By design</strong>, Snaps can&#x27;t access files outside your home directory unless you grant <code>removable-media</code>.</p>
+<p><strong>Workaround options:</strong></p>
+<ol>
+<li class="">
+<p><strong>Move files to your home directory:</strong></p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Copy SVG files to ~/Documents</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">cp /some/other/location/*.svg ~/Documents/</span><br></span></code></pre></div></div>
+</li>
+<li class="">
+<p><strong>Grant removable-media access:</strong></p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:removable-media</span><br></span></code></pre></div></div>
+</li>
+<li class="">
+<p><strong>Use Snap&#x27;s file picker:</strong></p>
+<ul>
+<li class="">The built-in file chooser has broader access</li>
+<li class="">Open files through File  Open rather than command-line arguments</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="manual-interface-management">Manual Interface Management<a href="#manual-interface-management" class="hash-link" aria-label="Direct link to Manual Interface Management" title="Direct link to Manual Interface Management" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="list-all-available-interfaces">List All Available Interfaces<a href="#list-all-available-interfaces" class="hash-link" aria-label="Direct link to List All Available Interfaces" title="Direct link to List All Available Interfaces" translate="no">​</a></h3>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># See all Snap interfaces on your system</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">snap interface</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="disconnect-an-interface">Disconnect an Interface<a href="#disconnect-an-interface" class="hash-link" aria-label="Direct link to Disconnect an Interface" title="Direct link to Disconnect an Interface" translate="no">​</a></h3>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Disconnect serial-port (if needed)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap disconnect rayforge:serial-port</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="reconnect-after-disconnect">Reconnect After Disconnect<a href="#reconnect-after-disconnect" class="hash-link" aria-label="Direct link to Reconnect After Disconnect" title="Direct link to Reconnect After Disconnect" translate="no">​</a></h3>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="alternative-install-from-source">Alternative: Install from Source<a href="#alternative-install-from-source" class="hash-link" aria-label="Direct link to Alternative: Install from Source" title="Direct link to Alternative: Install from Source" translate="no">​</a></h2>
+<p>If Snap permissions are too restrictive for your workflow:</p>
+<p><strong>Option 1: Build from source</strong></p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Clone the repository</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">git clone https://github.com/kylemartin57/rayforge.git</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">cd rayforge</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Install dependencies using pixi</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">pixi install</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Run Rayforge</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">pixi run rayforge</span><br></span></code></pre></div></div>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li class="">No permission restrictions</li>
+<li class="">Full system access</li>
+<li class="">Easier debugging</li>
+<li class="">Latest development version</li>
+</ul>
+<p><strong>Drawbacks:</strong></p>
+<ul>
+<li class="">Manual updates (git pull)</li>
+<li class="">More dependencies to manage</li>
+<li class="">No automatic updates</li>
+</ul>
+<p><strong>Option 2: Use Flatpak (if available)</strong></p>
+<p>Flatpak has similar sandboxing but sometimes with different permission models. Check if Rayforge offers a Flatpak package.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="snap-permission-best-practices">Snap Permission Best Practices<a href="#snap-permission-best-practices" class="hash-link" aria-label="Direct link to Snap Permission Best Practices" title="Direct link to Snap Permission Best Practices" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="only-connect-what-you-need">Only Connect What You Need<a href="#only-connect-what-you-need" class="hash-link" aria-label="Direct link to Only Connect What You Need" title="Direct link to Only Connect What You Need" translate="no">​</a></h3>
+<p>Don&#x27;t connect interfaces you don&#x27;t use:</p>
+<ul>
+<li class=""> Connect <code>serial-port</code> if you use a laser controller</li>
+<li class=""> Connect <code>removable-media</code> if you import from USB drives</li>
+<li class="">L Don&#x27;t connect everything &quot;just in case&quot; - defeats security purpose</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="verify-snap-source">Verify Snap Source<a href="#verify-snap-source" class="hash-link" aria-label="Direct link to Verify Snap Source" title="Direct link to Verify Snap Source" translate="no">​</a></h3>
+<p>Always install from the official Snap Store:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Check publisher</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">snap info rayforge</span><br></span></code></pre></div></div>
+<p>Look for:</p>
+<ul>
+<li class="">Verified publisher</li>
+<li class="">Official repository source</li>
+<li class="">Regular updates</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="understanding-snap-sandbox">Understanding Snap Sandbox<a href="#understanding-snap-sandbox" class="hash-link" aria-label="Direct link to Understanding Snap Sandbox" title="Direct link to Understanding Snap Sandbox" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-can-snaps-access-by-default">What Can Snaps Access by Default?<a href="#what-can-snaps-access-by-default" class="hash-link" aria-label="Direct link to What Can Snaps Access by Default?" title="Direct link to What Can Snaps Access by Default?" translate="no">​</a></h3>
+<p><strong>Allowed:</strong></p>
+<ul>
+<li class="">Files in your home directory</li>
+<li class="">Network connections</li>
+<li class="">Display/audio</li>
+</ul>
+<p><strong>Not allowed without explicit permission:</strong></p>
+<ul>
+<li class="">Serial ports (USB devices)</li>
+<li class="">Removable media</li>
+<li class="">System files</li>
+<li class="">Other users&#x27; home directories</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-this-matters-for-rayforge">Why This Matters for Rayforge<a href="#why-this-matters-for-rayforge" class="hash-link" aria-label="Direct link to Why This Matters for Rayforge" title="Direct link to Why This Matters for Rayforge" translate="no">​</a></h3>
+<p>Rayforge needs:</p>
+<ol>
+<li class="">
+<p><strong>Home directory access</strong> (auto-granted)</p>
+<ul>
+<li class="">To save project files</li>
+<li class="">To read imported SVG/DXF files</li>
+<li class="">To store preferences</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Serial port access</strong> (must be granted)</p>
+<ul>
+<li class="">To communicate with laser controllers</li>
+<li class=""><strong>This is the critical permission</strong></li>
+</ul>
+</li>
+<li class="">
+<p><strong>Removable media</strong> (optional)</p>
+<ul>
+<li class="">To import files from USB drives</li>
+<li class="">To export G-code to external storage</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="debugging-snap-issues">Debugging Snap Issues<a href="#debugging-snap-issues" class="hash-link" aria-label="Direct link to Debugging Snap Issues" title="Direct link to Debugging Snap Issues" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="enable-verbose-snap-logging">Enable Verbose Snap Logging<a href="#enable-verbose-snap-logging" class="hash-link" aria-label="Direct link to Enable Verbose Snap Logging" title="Direct link to Enable Verbose Snap Logging" translate="no">​</a></h3>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Run Snap with debug output</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">snap run --shell rayforge</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Inside the snap shell:</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">export RAYFORGE_LOG_LEVEL=DEBUG</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">exec rayforge</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="check-snap-logs">Check Snap Logs<a href="#check-snap-logs" class="hash-link" aria-label="Direct link to Check Snap Logs" title="Direct link to Check Snap Logs" translate="no">​</a></h3>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># View Rayforge logs</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">snap logs rayforge</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Follow logs in real-time</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">snap logs -f rayforge</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="check-system-journal-for-denials">Check System Journal for Denials<a href="#check-system-journal-for-denials" class="hash-link" aria-label="Direct link to Check System Journal for Denials" title="Direct link to Check System Journal for Denials" translate="no">​</a></h3>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Look for AppArmor denials</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo journalctl -xe | grep DENIED | grep rayforge</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Look for USB device events</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo journalctl -f -u snapd</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Then plug in your laser controller</span><br></span></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="getting-help">Getting Help<a href="#getting-help" class="hash-link" aria-label="Direct link to Getting Help" title="Direct link to Getting Help" translate="no">​</a></h2>
+<p>If you&#x27;re still having Snap-related issues:</p>
+<ol>
+<li class="">
+<p><strong>Check permissions first:</strong></p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">snap connections rayforge</span><br></span></code></pre></div></div>
+</li>
+<li class="">
+<p><strong>Try a serial port test:</strong></p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># If you have screen or minicom installed</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Then test in Rayforge</span><br></span></code></pre></div></div>
+</li>
+<li class="">
+<p><strong>Report the issue with:</strong></p>
+<ul>
+<li class="">Output of <code>snap connections rayforge</code></li>
+<li class="">Output of <code>snap version</code></li>
+<li class="">Output of <code>snap info rayforge</code></li>
+<li class="">Your Ubuntu/Linux distribution version</li>
+<li class="">Exact error messages</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Consider alternatives:</strong></p>
+<ul>
+<li class="">Install from source (see above)</li>
+<li class="">Use a different package format (AppImage, Flatpak)</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="quick-reference-commands">Quick Reference Commands<a href="#quick-reference-commands" class="hash-link" aria-label="Direct link to Quick Reference Commands" title="Direct link to Quick Reference Commands" translate="no">​</a></h2>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Grant serial port access (most important)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Grant removable media access</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:removable-media</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Check current connections</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">snap connections rayforge</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># View Rayforge logs</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">snap logs rayforge</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Refresh/update Rayforge</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap refresh rayforge</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Remove and reinstall (last resort)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap remove rayforge</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap install rayforge</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-pages">Related Pages<a href="#related-pages" class="hash-link" aria-label="Direct link to Related Pages" title="Direct link to Related Pages" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/docs/troubleshooting/connection">Connection Issues</a> - Serial connection troubleshooting</li>
+<li class=""><a class="" href="/docs/troubleshooting/common">Common Problems</a> - General troubleshooting</li>
+<li class=""><a class="" href="/docs/getting-started/installation">Installation</a> - Installation guide</li>
+<li class=""><a class="" href="/docs/machine/general">General Settings</a> - Machine setup</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/troubleshooting/snap-permissions.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/troubleshooting/debug"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Troubleshooting &amp; Reporting Issues</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/reference/shortcuts"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Keyboard Shortcuts</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#what-are-snap-permissions" class="table-of-contents__link toc-highlight">What are Snap Permissions?</a></li><li><a href="#required-permissions" class="table-of-contents__link toc-highlight">Required Permissions</a></li><li><a href="#granting-serial-port-access" class="table-of-contents__link toc-highlight">Granting Serial Port Access</a><ul><li><a href="#check-current-permissions" class="table-of-contents__link toc-highlight">Check Current Permissions</a></li><li><a href="#connect-serial-port-interface" class="table-of-contents__link toc-highlight">Connect Serial Port Interface</a></li><li><a href="#verify-connection" class="table-of-contents__link toc-highlight">Verify Connection</a></li></ul></li><li><a href="#granting-removable-media-access" class="table-of-contents__link toc-highlight">Granting Removable Media Access</a></li><li><a href="#troubleshooting-snap-permissions" class="table-of-contents__link toc-highlight">Troubleshooting Snap Permissions</a><ul><li><a href="#serial-port-still-not-working" class="table-of-contents__link toc-highlight">Serial Port Still Not Working</a></li><li><a href="#permission-denied-despite-connected-interface" class="table-of-contents__link toc-highlight">&quot;Permission Denied&quot; Despite Connected Interface</a></li><li><a href="#cant-access-files-outside-home-directory" class="table-of-contents__link toc-highlight">Can&#39;t Access Files Outside Home Directory</a></li></ul></li><li><a href="#manual-interface-management" class="table-of-contents__link toc-highlight">Manual Interface Management</a><ul><li><a href="#list-all-available-interfaces" class="table-of-contents__link toc-highlight">List All Available Interfaces</a></li><li><a href="#disconnect-an-interface" class="table-of-contents__link toc-highlight">Disconnect an Interface</a></li><li><a href="#reconnect-after-disconnect" class="table-of-contents__link toc-highlight">Reconnect After Disconnect</a></li></ul></li><li><a href="#alternative-install-from-source" class="table-of-contents__link toc-highlight">Alternative: Install from Source</a></li><li><a href="#snap-permission-best-practices" class="table-of-contents__link toc-highlight">Snap Permission Best Practices</a><ul><li><a href="#only-connect-what-you-need" class="table-of-contents__link toc-highlight">Only Connect What You Need</a></li><li><a href="#verify-snap-source" class="table-of-contents__link toc-highlight">Verify Snap Source</a></li></ul></li><li><a href="#understanding-snap-sandbox" class="table-of-contents__link toc-highlight">Understanding Snap Sandbox</a><ul><li><a href="#what-can-snaps-access-by-default" class="table-of-contents__link toc-highlight">What Can Snaps Access by Default?</a></li><li><a href="#why-this-matters-for-rayforge" class="table-of-contents__link toc-highlight">Why This Matters for Rayforge</a></li></ul></li><li><a href="#debugging-snap-issues" class="table-of-contents__link toc-highlight">Debugging Snap Issues</a><ul><li><a href="#enable-verbose-snap-logging" class="table-of-contents__link toc-highlight">Enable Verbose Snap Logging</a></li><li><a href="#check-snap-logs" class="table-of-contents__link toc-highlight">Check Snap Logs</a></li><li><a href="#check-system-journal-for-denials" class="table-of-contents__link toc-highlight">Check System Journal for Denials</a></li></ul></li><li><a href="#getting-help" class="table-of-contents__link toc-highlight">Getting Help</a></li><li><a href="#quick-reference-commands" class="table-of-contents__link toc-highlight">Quick Reference Commands</a></li><li><a href="#related-pages" class="table-of-contents__link toc-highlight">Related Pages</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-features/operations/shrink-wrap" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Shrink Wrap | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://rayforge.org/docs/features/operations/shrink-wrap"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Shrink Wrap | Rayforge"><meta data-rh="true" name="description" content="Shrink Wrap creates an efficient cutting path around multiple objects by generating a boundary that &quot;shrinks&quot; around them. It&#x27;s useful for cutting multiple parts from a sheet with minimal waste."><meta data-rh="true" property="og:description" content="Shrink Wrap creates an efficient cutting path around multiple objects by generating a boundary that &quot;shrinks&quot; around them. It&#x27;s useful for cutting multiple parts from a sheet with minimal waste."><link data-rh="true" rel="icon" href="/assets/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/docs/features/operations/shrink-wrap"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/features/operations/shrink-wrap" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/features/operations/shrink-wrap" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Shrink Wrap","item":"https://rayforge.org/docs/features/operations/shrink-wrap"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Rayforge RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Rayforge Atom Feed"><link rel="stylesheet" href="/assets/css/styles.919edc8e.css">
+<script src="/assets/js/runtime~main.53705bdf.js" defer="defer"></script>
+<script src="/assets/js/main.c26f01b2.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/assets/icon.svg" alt="Rayforge Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/assets/icon.svg" alt="Rayforge Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Rayforge</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/getting-started/installation">Documentation</a><a class="navbar__item navbar__link" href="/docs/developer/getting-started/">Developer</a><a class="navbar__item navbar__link" href="/contributing">Contributing</a><a class="navbar__item navbar__link" href="/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="patreonLink_HbXT"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" class="patreonImg_dUDi"></a><span class="githubWrapper_c8Sl"><a href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><span class="discordWrapper_j0RJ"><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs/getting-started/installation"><span title="Getting Started" class="categoryLinkLabel_W154">Getting Started</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting-started/installation"><span title="Installation" class="linkLabel_WmDU">Installation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting-started/first-time-setup"><span title="First Time Setup" class="linkLabel_WmDU">First Time Setup</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting-started/quick-start"><span title="Quick Start Guide" class="linkLabel_WmDU">Quick Start Guide</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/ui/settings"><span title="Application Settings" class="categoryLinkLabel_W154">Application Settings</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/machine/general"><span title="Machine Setup" class="categoryLinkLabel_W154">Machine Setup</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/ui/main-window"><span title="User Interface" class="categoryLinkLabel_W154">User Interface</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/features/operations/contour"><span title="Features" class="categoryLinkLabel_W154">Features</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/docs/features/operations/contour"><span title="Operations" class="categoryLinkLabel_W154">Operations</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/operations/contour"><span title="Contour Cutting" class="linkLabel_WmDU">Contour Cutting</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/operations/engrave"><span title="Engrave" class="linkLabel_WmDU">Engrave</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/features/operations/shrink-wrap"><span title="Shrink Wrap" class="linkLabel_WmDU">Shrink Wrap</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/operations/frame-outline"><span title="Frame Outline" class="linkLabel_WmDU">Frame Outline</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/operations/material-test-grid"><span title="Material Test Grid" class="linkLabel_WmDU">Material Test Grid</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/sketcher"><span title="Parametric 2D Sketcher" class="linkLabel_WmDU">Parametric 2D Sketcher</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/multi-layer"><span title="Multi-Layer Workflow" class="linkLabel_WmDU">Multi-Layer Workflow</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/stock-handling"><span title="Stock Handling Workflow" class="linkLabel_WmDU">Stock Handling Workflow</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/simulation-mode"><span title="Simulation Mode" class="linkLabel_WmDU">Simulation Mode</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/simulating-your-job"><span title="Simulating Your Job" class="linkLabel_WmDU">Simulating Your Job</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/framing-your-job"><span title="Framing Your Job" class="linkLabel_WmDU">Framing Your Job</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/holding-tabs"><span title="Holding Tabs" class="linkLabel_WmDU">Holding Tabs</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/overscan"><span title="Overscan" class="linkLabel_WmDU">Overscan</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/kerf"><span title="Kerf Compensation" class="linkLabel_WmDU">Kerf Compensation</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/files/importing"><span title="Files" class="categoryLinkLabel_W154">Files</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/general-info/laser-safety"><span title="General Info" class="categoryLinkLabel_W154">General Info</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/troubleshooting/connection"><span title="Troubleshooting" class="categoryLinkLabel_W154">Troubleshooting</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/reference/shortcuts"><span title="Reference" class="categoryLinkLabel_W154">Reference</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Features</span></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Operations</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Shrink Wrap</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Shrink Wrap</h1></header>
+<p>Shrink Wrap creates an efficient cutting path around multiple objects by generating a boundary that &quot;shrinks&quot; around them. It&#x27;s useful for cutting multiple parts from a sheet with minimal waste.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h2>
+<p>Shrink Wrap operations:</p>
+<ul>
+<li class="">Create boundary paths around groups of objects</li>
+<li class="">Minimize material waste</li>
+<li class="">Reduce cutting time by combining paths</li>
+<li class="">Support offset distances for clearance</li>
+<li class="">Work with any combination of vector shapes</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="when-to-use-shrink-wrap">When to Use Shrink Wrap<a href="#when-to-use-shrink-wrap" class="hash-link" aria-label="Direct link to When to Use Shrink Wrap" title="Direct link to When to Use Shrink Wrap" translate="no">​</a></h2>
+<p>Use shrink wrap for:</p>
+<ul>
+<li class="">Cutting multiple small parts from a sheet</li>
+<li class="">Minimizing material waste</li>
+<li class="">Creating efficient nesting boundaries</li>
+<li class="">Separating groups of parts</li>
+<li class="">Reducing total cutting time</li>
+</ul>
+<p><strong>Don&#x27;t use shrink wrap for:</strong></p>
+<ul>
+<li class="">Single objects (use <a class="" href="/docs/features/operations/contour">Contour</a> instead)</li>
+<li class="">Parts that need individual boundaries</li>
+<li class="">Precise rectangular cuts</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-shrink-wrap-works">How Shrink Wrap Works<a href="#how-shrink-wrap-works" class="hash-link" aria-label="Direct link to How Shrink Wrap Works" title="Direct link to How Shrink Wrap Works" translate="no">​</a></h2>
+<p>Shrink wrap creates a boundary using a computational geometry algorithm:</p>
+<ol>
+<li class=""><strong>Start</strong> with a convex hull around all objects</li>
+<li class=""><strong>Shrink</strong> the boundary inward toward the objects</li>
+<li class=""><strong>Wrap</strong> tightly around the object group</li>
+<li class=""><strong>Offset</strong> outward by the specified distance</li>
+</ol>
+<p>The result is an efficient cutting path that follows the overall shape of your parts while maintaining clearance.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="creating-a-shrink-wrap-operation">Creating a Shrink Wrap Operation<a href="#creating-a-shrink-wrap-operation" class="hash-link" aria-label="Direct link to Creating a Shrink Wrap Operation" title="Direct link to Creating a Shrink Wrap Operation" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-1-arrange-objects">Step 1: Arrange Objects<a href="#step-1-arrange-objects" class="hash-link" aria-label="Direct link to Step 1: Arrange Objects" title="Direct link to Step 1: Arrange Objects" translate="no">​</a></h3>
+<ol>
+<li class="">Place all parts you want to wrap on the canvas</li>
+<li class="">Position them with desired spacing</li>
+<li class="">Multiple separate groups can be shrink-wrapped together</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-2-select-objects">Step 2: Select Objects<a href="#step-2-select-objects" class="hash-link" aria-label="Direct link to Step 2: Select Objects" title="Direct link to Step 2: Select Objects" translate="no">​</a></h3>
+<ol>
+<li class="">Select all objects to include in the shrink wrap</li>
+<li class="">Can be different shapes, sizes, and types</li>
+<li class="">All selected objects will be wrapped together</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-3-add-shrink-wrap-operation">Step 3: Add Shrink Wrap Operation<a href="#step-3-add-shrink-wrap-operation" class="hash-link" aria-label="Direct link to Step 3: Add Shrink Wrap Operation" title="Direct link to Step 3: Add Shrink Wrap Operation" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Menu:</strong> Operations Add Shrink Wrap</li>
+<li class=""><strong>Right-click:</strong> Context menu Add Operation Shrink Wrap</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-4-configure-settings">Step 4: Configure Settings<a href="#step-4-configure-settings" class="hash-link" aria-label="Direct link to Step 4: Configure Settings" title="Direct link to Step 4: Configure Settings" translate="no">​</a></h3>
+<p><img decoding="async" loading="lazy" alt="Shrink Wrap step settings" src="/assets/images/step-shrink-wrap-step-settings-67250330a3e7ea5f0c89ba4f87d1dd5a.png" width="722" height="1022" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="key-settings">Key Settings<a href="#key-settings" class="hash-link" aria-label="Direct link to Key Settings" title="Direct link to Key Settings" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="power--speed">Power &amp; Speed<a href="#power--speed" class="hash-link" aria-label="Direct link to Power &amp; Speed" title="Direct link to Power &amp; Speed" translate="no">​</a></h3>
+<p>Like other cutting operations:</p>
+<p><strong>Power (%):</strong></p>
+<ul>
+<li class="">Laser intensity for cutting</li>
+<li class="">Same as you&#x27;d use for <a class="" href="/docs/features/operations/contour">Contour</a> cutting</li>
+</ul>
+<p><strong>Speed (mm/min):</strong></p>
+<ul>
+<li class="">How fast the laser moves</li>
+<li class="">Match your material&#x27;s cutting speed</li>
+</ul>
+<p><strong>Passes:</strong></p>
+<ul>
+<li class="">Number of times to cut the boundary</li>
+<li class="">Usually 1-2 passes</li>
+<li class="">Same as contour cutting for your material</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="offset-distance">Offset Distance<a href="#offset-distance" class="hash-link" aria-label="Direct link to Offset Distance" title="Direct link to Offset Distance" translate="no">​</a></h3>
+<p><strong>Offset (mm):</strong></p>
+<ul>
+<li class="">How much clearance around the parts</li>
+<li class="">Distance from objects to the shrink-wrap boundary</li>
+<li class="">Larger offset = more material left around parts</li>
+</ul>
+<p><strong>Typical values:</strong></p>
+<ul>
+<li class=""><strong>2-3mm:</strong> Tight wrap, minimal waste</li>
+<li class=""><strong>5mm:</strong> Comfortable clearance</li>
+<li class=""><strong>10mm+:</strong> Extra material for handling</li>
+</ul>
+<p><strong>Why offset matters:</strong></p>
+<ul>
+<li class="">Too small: Risk cutting into parts</li>
+<li class="">Too large: Wastes material</li>
+<li class="">Consider: Kerf width, cutting accuracy</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="smoothness">Smoothness<a href="#smoothness" class="hash-link" aria-label="Direct link to Smoothness" title="Direct link to Smoothness" translate="no">​</a></h3>
+<p>Controls how closely the boundary follows object shapes:</p>
+<p><strong>High smoothness:</strong></p>
+<ul>
+<li class="">Follows objects more closely</li>
+<li class="">More complex path</li>
+<li class="">Longer cutting time</li>
+<li class="">Less material waste</li>
+</ul>
+<p><strong>Low smoothness:</strong></p>
+<ul>
+<li class="">Simpler, more rounded path</li>
+<li class="">Shorter cutting time</li>
+<li class="">Slightly more material waste</li>
+</ul>
+<p><strong>Recommended:</strong> Medium smoothness for most cases</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="use-cases">Use Cases<a href="#use-cases" class="hash-link" aria-label="Direct link to Use Cases" title="Direct link to Use Cases" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="batch-part-production">Batch Part Production<a href="#batch-part-production" class="hash-link" aria-label="Direct link to Batch Part Production" title="Direct link to Batch Part Production" translate="no">​</a></h3>
+<p><strong>Scenario:</strong> Cutting 20 small parts from a large sheet</p>
+<p><strong>Without shrink wrap:</strong></p>
+<ul>
+<li class="">Cut full sheet boundary</li>
+<li class="">Waste all material around parts</li>
+<li class="">Long cutting time</li>
+</ul>
+<p><strong>With shrink wrap:</strong></p>
+<ul>
+<li class="">Cut tight boundary around part group</li>
+<li class="">Save material for other projects</li>
+<li class="">Faster cutting (shorter perimeter)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="nesting-optimization">Nesting Optimization<a href="#nesting-optimization" class="hash-link" aria-label="Direct link to Nesting Optimization" title="Direct link to Nesting Optimization" translate="no">​</a></h3>
+<p><strong>Workflow:</strong></p>
+<ol>
+<li class="">Nest parts efficiently on sheet</li>
+<li class="">Group parts into sections</li>
+<li class="">Shrink wrap each section</li>
+<li class="">Cut sections separately</li>
+</ol>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li class="">Can remove finished sections while continuing</li>
+<li class="">Easier handling of cut parts</li>
+<li class="">Reduced risk of part movement</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="material-conservation">Material Conservation<a href="#material-conservation" class="hash-link" aria-label="Direct link to Material Conservation" title="Direct link to Material Conservation" translate="no">​</a></h3>
+<p><strong>Example:</strong> Small parts on expensive material</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li class="">Arrange parts tightly</li>
+<li class="">Shrink wrap with 3mm offset</li>
+<li class="">Cut free from sheet</li>
+<li class="">Save remaining material</li>
+</ol>
+<p><strong>Result:</strong> Maximum material efficiency</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="combining-with-other-operations">Combining with Other Operations<a href="#combining-with-other-operations" class="hash-link" aria-label="Direct link to Combining with Other Operations" title="Direct link to Combining with Other Operations" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="shrink-wrap--contour">Shrink Wrap + Contour<a href="#shrink-wrap--contour" class="hash-link" aria-label="Direct link to Shrink Wrap + Contour" title="Direct link to Shrink Wrap + Contour" translate="no">​</a></h3>
+<p>Common workflow:</p>
+<ol>
+<li class=""><strong>Contour</strong> operations on individual parts (cut details)</li>
+<li class=""><strong>Shrink wrap</strong> around the group (cut free from sheet)</li>
+</ol>
+<p><strong>Execution order:</strong></p>
+<ul>
+<li class="">First: Cut details in parts (while secured)</li>
+<li class="">Last: Shrink wrap cuts group free</li>
+</ul>
+<p>See <a class="" href="/docs/features/multi-layer">Multi-Layer Workflow</a> for details.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="shrink-wrap--raster">Shrink Wrap + Raster<a href="#shrink-wrap--raster" class="hash-link" aria-label="Direct link to Shrink Wrap + Raster" title="Direct link to Shrink Wrap + Raster" translate="no">​</a></h3>
+<p><strong>Example:</strong> Engraved and cut parts</p>
+<ol>
+<li class=""><strong>Raster</strong> engrave logos on parts</li>
+<li class=""><strong>Contour</strong> cut part outlines</li>
+<li class=""><strong>Shrink wrap</strong> around entire group</li>
+</ol>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li class="">All engraving happens while material is secured</li>
+<li class="">Final shrink wrap cuts entire batch free</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tips--best-practices">Tips &amp; Best Practices<a href="#tips--best-practices" class="hash-link" aria-label="Direct link to Tips &amp; Best Practices" title="Direct link to Tips &amp; Best Practices" translate="no">​</a></h2>
+<p><img decoding="async" loading="lazy" alt="Shrink Wrap post-processing settings" src="/assets/images/step-shrink-wrap-post-processing-bf0b3509168dbb540aae20fd3fe8b945.png" width="722" height="1022" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="part-spacing">Part Spacing<a href="#part-spacing" class="hash-link" aria-label="Direct link to Part Spacing" title="Direct link to Part Spacing" translate="no">​</a></h3>
+<p><strong>Optimal spacing:</strong></p>
+<ul>
+<li class="">5-10mm between parts</li>
+<li class="">Enough for shrink wrap to distinguish separate objects</li>
+<li class="">Not so much that you waste material</li>
+</ul>
+<p><strong>Too close:</strong></p>
+<ul>
+<li class="">Parts may be wrapped together</li>
+<li class="">Shrink wrap may bridge gaps</li>
+<li class="">Difficult to separate after cutting</li>
+</ul>
+<p><strong>Too far:</strong></p>
+<ul>
+<li class="">Wastes material</li>
+<li class="">Longer cutting time</li>
+<li class="">Inefficient use of sheet</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="material-considerations">Material Considerations<a href="#material-considerations" class="hash-link" aria-label="Direct link to Material Considerations" title="Direct link to Material Considerations" translate="no">​</a></h3>
+<p><strong>Best for:</strong></p>
+<ul>
+<li class="">Production runs (many identical parts)</li>
+<li class="">Small parts from large sheets</li>
+<li class="">Expensive materials (minimize waste)</li>
+<li class="">Batch cutting jobs</li>
+</ul>
+<p><strong>Not ideal for:</strong></p>
+<ul>
+<li class="">Single large parts</li>
+<li class="">Parts filling entire sheet</li>
+<li class="">When you need full sheet cut</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="safety">Safety<a href="#safety" class="hash-link" aria-label="Direct link to Safety" title="Direct link to Safety" translate="no">​</a></h3>
+<p><strong>Always:</strong></p>
+<ul>
+<li class="">Check that boundary doesn&#x27;t overlap parts</li>
+<li class="">Verify offset is sufficient</li>
+<li class="">Preview in <a class="" href="/docs/features/simulation-mode">Simulation Mode</a></li>
+<li class="">Test on scrap first</li>
+</ul>
+<p><strong>Watch for:</strong></p>
+<ul>
+<li class="">Shrink wrap cutting into parts (increase offset)</li>
+<li class="">Parts moving before shrink wrap completes</li>
+<li class="">Material warping pulling parts out of position</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="advanced-techniques">Advanced Techniques<a href="#advanced-techniques" class="hash-link" aria-label="Direct link to Advanced Techniques" title="Direct link to Advanced Techniques" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="multiple-shrink-wraps">Multiple Shrink Wraps<a href="#multiple-shrink-wraps" class="hash-link" aria-label="Direct link to Multiple Shrink Wraps" title="Direct link to Multiple Shrink Wraps" translate="no">​</a></h3>
+<p>Create separate boundaries for different groups:</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li class="">Arrange parts into logical groups</li>
+<li class="">Shrink wrap Group 1 (top parts)</li>
+<li class="">Shrink wrap Group 2 (bottom parts)</li>
+<li class="">Cut groups separately</li>
+</ol>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li class="">Remove finished groups during job</li>
+<li class="">Better organization</li>
+<li class="">Easier part retrieval</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="nested-shrink-wraps">Nested Shrink Wraps<a href="#nested-shrink-wraps" class="hash-link" aria-label="Direct link to Nested Shrink Wraps" title="Direct link to Nested Shrink Wraps" translate="no">​</a></h3>
+<p>Shrink wrap within a larger boundary:</p>
+<p><strong>Example:</strong></p>
+<ol>
+<li class="">Inner shrink wrap: Small detailed parts</li>
+<li class="">Outer shrink wrap: Includes larger parts</li>
+<li class="">Contour: Full sheet boundary</li>
+</ol>
+<p><strong>Use for:</strong> Complex multi-part layouts</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="clearance-testing">Clearance Testing<a href="#clearance-testing" class="hash-link" aria-label="Direct link to Clearance Testing" title="Direct link to Clearance Testing" translate="no">​</a></h3>
+<p>Before production run:</p>
+<ol>
+<li class="">Create shrink wrap</li>
+<li class="">Preview with <a class="" href="/docs/features/simulation-mode">Simulation Mode</a></li>
+<li class="">Verify clearance is adequate</li>
+<li class="">Check no parts are intersected</li>
+<li class="">Run test on scrap material</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="troubleshooting">Troubleshooting<a href="#troubleshooting" class="hash-link" aria-label="Direct link to Troubleshooting" title="Direct link to Troubleshooting" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="shrink-wrap-cuts-into-parts">Shrink wrap cuts into parts<a href="#shrink-wrap-cuts-into-parts" class="hash-link" aria-label="Direct link to Shrink wrap cuts into parts" title="Direct link to Shrink wrap cuts into parts" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Increase:</strong> Offset distance</li>
+<li class=""><strong>Check:</strong> Parts aren&#x27;t too close together</li>
+<li class=""><strong>Verify:</strong> Shrink wrap path in preview</li>
+<li class=""><strong>Account for:</strong> Kerf width (laser beam width)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="boundary-doesnt-follow-shapes">Boundary doesn&#x27;t follow shapes<a href="#boundary-doesnt-follow-shapes" class="hash-link" aria-label="Direct link to Boundary doesn&#x27;t follow shapes" title="Direct link to Boundary doesn&#x27;t follow shapes" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Increase:</strong> Smoothness setting</li>
+<li class=""><strong>Check:</strong> Parts are properly selected</li>
+<li class=""><strong>Try:</strong> Smaller offset (might be wrapping too far out)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="parts-are-wrapped-together">Parts are wrapped together<a href="#parts-are-wrapped-together" class="hash-link" aria-label="Direct link to Parts are wrapped together" title="Direct link to Parts are wrapped together" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Increase:</strong> Spacing between parts</li>
+<li class=""><strong>Add:</strong> Manual contours around individual parts</li>
+<li class=""><strong>Split:</strong> Into multiple shrink wrap operations</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cutting-takes-too-long">Cutting takes too long<a href="#cutting-takes-too-long" class="hash-link" aria-label="Direct link to Cutting takes too long" title="Direct link to Cutting takes too long" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Decrease:</strong> Smoothness (simpler path)</li>
+<li class=""><strong>Increase:</strong> Offset (straighter boundaries)</li>
+<li class=""><strong>Consider:</strong> Multiple smaller shrink wraps</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="parts-move-during-cutting">Parts move during cutting<a href="#parts-move-during-cutting" class="hash-link" aria-label="Direct link to Parts move during cutting" title="Direct link to Parts move during cutting" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Add:</strong> Small tabs to hold parts (see <a class="" href="/docs/features/holding-tabs">Holding Tabs</a>)</li>
+<li class=""><strong>Use:</strong> Cutting order: inside to outside</li>
+<li class=""><strong>Ensure:</strong> Material is flat and secured</li>
+<li class=""><strong>Check:</strong> Sheet isn&#x27;t warped</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="technical-details">Technical Details<a href="#technical-details" class="hash-link" aria-label="Direct link to Technical Details" title="Direct link to Technical Details" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="algorithm">Algorithm<a href="#algorithm" class="hash-link" aria-label="Direct link to Algorithm" title="Direct link to Algorithm" translate="no">​</a></h3>
+<p>Shrink wrap uses computational geometry:</p>
+<ol>
+<li class=""><strong>Convex hull</strong> - Find outer boundary</li>
+<li class=""><strong>Alpha shape</strong> - Shrink toward objects</li>
+<li class=""><strong>Offset</strong> - Expand by offset distance</li>
+<li class=""><strong>Simplify</strong> - Based on smoothness setting</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="path-optimization">Path Optimization<a href="#path-optimization" class="hash-link" aria-label="Direct link to Path Optimization" title="Direct link to Path Optimization" translate="no">​</a></h3>
+<p>The boundary path is optimized for:</p>
+<ul>
+<li class="">Minimum total length</li>
+<li class="">Smooth curves (based on smoothness)</li>
+<li class="">Efficient start/end points</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="coordinate-system">Coordinate System<a href="#coordinate-system" class="hash-link" aria-label="Direct link to Coordinate System" title="Direct link to Coordinate System" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Units:</strong> Millimeters (mm)</li>
+<li class=""><strong>Precision:</strong> 0.01mm typical</li>
+<li class=""><strong>Coordinates:</strong> Same as workspace</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-topics">Related Topics<a href="#related-topics" class="hash-link" aria-label="Direct link to Related Topics" title="Direct link to Related Topics" translate="no">​</a></h2>
+<ul>
+<li class=""><strong><a class="" href="/docs/features/operations/contour">Contour Cutting</a></strong> - Cutting individual object outlines</li>
+<li class=""><strong><a class="" href="/docs/features/multi-layer">Multi-Layer Workflow</a></strong> - Combining operations effectively</li>
+<li class=""><strong><a class="" href="/docs/features/holding-tabs">Holding Tabs</a></strong> - Keeping parts secure during cutting</li>
+<li class=""><strong><a class="" href="/docs/features/simulation-mode">Simulation Mode</a></strong> - Previewing cutting paths</li>
+<li class=""><strong><a class="" href="/docs/features/operations/material-test-grid">Material Test Grid</a></strong> - Finding optimal cutting settings</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/features/operations/shrink-wrap.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/features/operations/engrave"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Engrave</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/features/operations/frame-outline"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Frame Outline</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#when-to-use-shrink-wrap" class="table-of-contents__link toc-highlight">When to Use Shrink Wrap</a></li><li><a href="#how-shrink-wrap-works" class="table-of-contents__link toc-highlight">How Shrink Wrap Works</a></li><li><a href="#creating-a-shrink-wrap-operation" class="table-of-contents__link toc-highlight">Creating a Shrink Wrap Operation</a><ul><li><a href="#step-1-arrange-objects" class="table-of-contents__link toc-highlight">Step 1: Arrange Objects</a></li><li><a href="#step-2-select-objects" class="table-of-contents__link toc-highlight">Step 2: Select Objects</a></li><li><a href="#step-3-add-shrink-wrap-operation" class="table-of-contents__link toc-highlight">Step 3: Add Shrink Wrap Operation</a></li><li><a href="#step-4-configure-settings" class="table-of-contents__link toc-highlight">Step 4: Configure Settings</a></li></ul></li><li><a href="#key-settings" class="table-of-contents__link toc-highlight">Key Settings</a><ul><li><a href="#power--speed" class="table-of-contents__link toc-highlight">Power &amp; Speed</a></li><li><a href="#offset-distance" class="table-of-contents__link toc-highlight">Offset Distance</a></li><li><a href="#smoothness" class="table-of-contents__link toc-highlight">Smoothness</a></li></ul></li><li><a href="#use-cases" class="table-of-contents__link toc-highlight">Use Cases</a><ul><li><a href="#batch-part-production" class="table-of-contents__link toc-highlight">Batch Part Production</a></li><li><a href="#nesting-optimization" class="table-of-contents__link toc-highlight">Nesting Optimization</a></li><li><a href="#material-conservation" class="table-of-contents__link toc-highlight">Material Conservation</a></li></ul></li><li><a href="#combining-with-other-operations" class="table-of-contents__link toc-highlight">Combining with Other Operations</a><ul><li><a href="#shrink-wrap--contour" class="table-of-contents__link toc-highlight">Shrink Wrap + Contour</a></li><li><a href="#shrink-wrap--raster" class="table-of-contents__link toc-highlight">Shrink Wrap + Raster</a></li></ul></li><li><a href="#tips--best-practices" class="table-of-contents__link toc-highlight">Tips &amp; Best Practices</a><ul><li><a href="#part-spacing" class="table-of-contents__link toc-highlight">Part Spacing</a></li><li><a href="#material-considerations" class="table-of-contents__link toc-highlight">Material Considerations</a></li><li><a href="#safety" class="table-of-contents__link toc-highlight">Safety</a></li></ul></li><li><a href="#advanced-techniques" class="table-of-contents__link toc-highlight">Advanced Techniques</a><ul><li><a href="#multiple-shrink-wraps" class="table-of-contents__link toc-highlight">Multiple Shrink Wraps</a></li><li><a href="#nested-shrink-wraps" class="table-of-contents__link toc-highlight">Nested Shrink Wraps</a></li><li><a href="#clearance-testing" class="table-of-contents__link toc-highlight">Clearance Testing</a></li></ul></li><li><a href="#troubleshooting" class="table-of-contents__link toc-highlight">Troubleshooting</a><ul><li><a href="#shrink-wrap-cuts-into-parts" class="table-of-contents__link toc-highlight">Shrink wrap cuts into parts</a></li><li><a href="#boundary-doesnt-follow-shapes" class="table-of-contents__link toc-highlight">Boundary doesn&#39;t follow shapes</a></li><li><a href="#parts-are-wrapped-together" class="table-of-contents__link toc-highlight">Parts are wrapped together</a></li><li><a href="#cutting-takes-too-long" class="table-of-contents__link toc-highlight">Cutting takes too long</a></li><li><a href="#parts-move-during-cutting" class="table-of-contents__link toc-highlight">Parts move during cutting</a></li></ul></li><li><a href="#technical-details" class="table-of-contents__link toc-highlight">Technical Details</a><ul><li><a href="#algorithm" class="table-of-contents__link toc-highlight">Algorithm</a></li><li><a href="#path-optimization" class="table-of-contents__link toc-highlight">Path Optimization</a></li><li><a href="#coordinate-system" class="table-of-contents__link toc-highlight">Coordinate System</a></li></ul></li><li><a href="#related-topics" class="table-of-contents__link toc-highlight">Related Topics</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-features/multi-layer" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Multi-Layer Workflow | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://rayforge.org/docs/features/multi-layer"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Multi-Layer Workflow | Rayforge"><meta data-rh="true" name="description" content="Rayforge&#x27;s multi-layer system allows you to organize complex jobs into separate processing stages, each with its own operations and settings. This is essential for combining different processes like engraving and cutting, or working with multiple materials."><meta data-rh="true" property="og:description" content="Rayforge&#x27;s multi-layer system allows you to organize complex jobs into separate processing stages, each with its own operations and settings. This is essential for combining different processes like engraving and cutting, or working with multiple materials."><link data-rh="true" rel="icon" href="/assets/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/docs/features/multi-layer"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/features/multi-layer" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/features/multi-layer" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Multi-Layer Workflow","item":"https://rayforge.org/docs/features/multi-layer"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Rayforge RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Rayforge Atom Feed"><link rel="stylesheet" href="/assets/css/styles.919edc8e.css">
+<script src="/assets/js/runtime~main.53705bdf.js" defer="defer"></script>
+<script src="/assets/js/main.c26f01b2.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/assets/icon.svg" alt="Rayforge Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/assets/icon.svg" alt="Rayforge Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Rayforge</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/getting-started/installation">Documentation</a><a class="navbar__item navbar__link" href="/docs/developer/getting-started/">Developer</a><a class="navbar__item navbar__link" href="/contributing">Contributing</a><a class="navbar__item navbar__link" href="/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="patreonLink_HbXT"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" class="patreonImg_dUDi"></a><span class="githubWrapper_c8Sl"><a href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><span class="discordWrapper_j0RJ"><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs/getting-started/installation"><span title="Getting Started" class="categoryLinkLabel_W154">Getting Started</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting-started/installation"><span title="Installation" class="linkLabel_WmDU">Installation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting-started/first-time-setup"><span title="First Time Setup" class="linkLabel_WmDU">First Time Setup</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting-started/quick-start"><span title="Quick Start Guide" class="linkLabel_WmDU">Quick Start Guide</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/ui/settings"><span title="Application Settings" class="categoryLinkLabel_W154">Application Settings</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/machine/general"><span title="Machine Setup" class="categoryLinkLabel_W154">Machine Setup</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/ui/main-window"><span title="User Interface" class="categoryLinkLabel_W154">User Interface</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/features/operations/contour"><span title="Features" class="categoryLinkLabel_W154">Features</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/features/operations/contour"><span title="Operations" class="categoryLinkLabel_W154">Operations</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/sketcher"><span title="Parametric 2D Sketcher" class="linkLabel_WmDU">Parametric 2D Sketcher</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/features/multi-layer"><span title="Multi-Layer Workflow" class="linkLabel_WmDU">Multi-Layer Workflow</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/stock-handling"><span title="Stock Handling Workflow" class="linkLabel_WmDU">Stock Handling Workflow</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/simulation-mode"><span title="Simulation Mode" class="linkLabel_WmDU">Simulation Mode</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/simulating-your-job"><span title="Simulating Your Job" class="linkLabel_WmDU">Simulating Your Job</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/framing-your-job"><span title="Framing Your Job" class="linkLabel_WmDU">Framing Your Job</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/holding-tabs"><span title="Holding Tabs" class="linkLabel_WmDU">Holding Tabs</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/overscan"><span title="Overscan" class="linkLabel_WmDU">Overscan</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/kerf"><span title="Kerf Compensation" class="linkLabel_WmDU">Kerf Compensation</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/files/importing"><span title="Files" class="categoryLinkLabel_W154">Files</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/general-info/laser-safety"><span title="General Info" class="categoryLinkLabel_W154">General Info</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/troubleshooting/connection"><span title="Troubleshooting" class="categoryLinkLabel_W154">Troubleshooting</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/reference/shortcuts"><span title="Reference" class="categoryLinkLabel_W154">Reference</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Features</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Multi-Layer Workflow</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Multi-Layer Workflow</h1></header>
+<p>Rayforge&#x27;s multi-layer system allows you to organize complex jobs into separate processing stages, each with its own operations and settings. This is essential for combining different processes like engraving and cutting, or working with multiple materials.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-are-layers">What Are Layers?<a href="#what-are-layers" class="hash-link" aria-label="Direct link to What Are Layers?" title="Direct link to What Are Layers?" translate="no">​</a></h2>
+<p>A <strong>layer</strong> in Rayforge is:</p>
+<ul>
+<li class=""><strong>A container</strong> for workpieces (imported shapes, images, text)</li>
+<li class=""><strong>A workflow</strong> defining how those workpieces are processed</li>
+<li class=""><strong>A step</strong> processed sequentially during jobs</li>
+</ul>
+<p><strong>Key concept:</strong> Layers are processed in order, one after another, allowing
+you to control the sequence of operations.</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>Layers and Workpieces</div><div class="admonitionContent_BuS1"><p>A layer contains one or more workpieces. When importing SVG files with
+layers, each layer from your design becomes a separate layer in Rayforge.
+This lets you keep your design organized exactly as you created it.</p></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-use-multiple-layers">Why Use Multiple Layers?<a href="#why-use-multiple-layers" class="hash-link" aria-label="Direct link to Why Use Multiple Layers?" title="Direct link to Why Use Multiple Layers?" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="common-use-cases">Common Use Cases<a href="#common-use-cases" class="hash-link" aria-label="Direct link to Common Use Cases" title="Direct link to Common Use Cases" translate="no">​</a></h3>
+<p><strong>1. Engrave then Cut</strong></p>
+<p>The most common multi-layer workflow:</p>
+<ul>
+<li class=""><strong>Layer 1:</strong> Raster engrave the design</li>
+<li class=""><strong>Layer 2:</strong> Contour cut the outline</li>
+</ul>
+<p><strong>Why separate layers?</strong></p>
+<ul>
+<li class="">Engraving first ensures the piece doesn&#x27;t move during engraving</li>
+<li class="">Cutting last prevents pieces from falling before engraving completes</li>
+<li class="">Different power/speed settings for each operation</li>
+</ul>
+<p><strong>2. Multi-Pass Cutting</strong></p>
+<p>For thick materials:</p>
+<ul>
+<li class=""><strong>Layer 1:</strong> First pass at moderate power</li>
+<li class=""><strong>Layer 2:</strong> Second pass at full power (same geometry)</li>
+<li class=""><strong>Layer 3:</strong> Optional third pass if needed</li>
+</ul>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li class="">Reduces charring compared to single high-power pass</li>
+<li class="">Each layer can have different speed/power settings</li>
+</ul>
+<p><strong>3. Multi-Material Projects</strong></p>
+<p>Different materials in one job:</p>
+<ul>
+<li class=""><strong>Layer 1:</strong> Cut acrylic parts</li>
+<li class=""><strong>Layer 2:</strong> Engrave wood parts</li>
+<li class=""><strong>Layer 3:</strong> Mark metal parts</li>
+</ul>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li class="">Each layer targets different areas of the bed</li>
+<li class="">Different speed/power/focus for each material</li>
+</ul>
+<p><strong>4. SVG Layer Import</strong></p>
+<p>Import SVG files with existing layer structure:</p>
+<ul>
+<li class=""><strong>Layer 1:</strong> Engraving elements from SVG</li>
+<li class=""><strong>Layer 2:</strong> Cutting elements from SVG</li>
+<li class=""><strong>Layer 3:</strong> Scoring elements from SVG</li>
+</ul>
+<p><strong>Workflow:</strong></p>
+<ul>
+<li class="">Import an SVG file that has layers</li>
+<li class="">Enable &quot;Use Original Vectors&quot; in the import dialog</li>
+<li class="">Select which layers to import from the detected layers list</li>
+<li class="">Each layer becomes a separate layer in Rayforge</li>
+</ul>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li class="">Your SVG file must use layers (created in Inkscape or similar software)</li>
+<li class="">Enable &quot;Use Original Vectors&quot; when importing</li>
+<li class="">Layer names are preserved from your design software</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="creating-and-managing-layers">Creating and Managing Layers<a href="#creating-and-managing-layers" class="hash-link" aria-label="Direct link to Creating and Managing Layers" title="Direct link to Creating and Managing Layers" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="adding-a-new-layer">Adding a New Layer<a href="#adding-a-new-layer" class="hash-link" aria-label="Direct link to Adding a New Layer" title="Direct link to Adding a New Layer" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Click the &quot;+&quot; button</strong> in the Layers panel</li>
+<li class=""><strong>Name the layer</strong> descriptively (e.g., &quot;Engrave Layer&quot;, &quot;Cut Layer&quot;)</li>
+<li class=""><strong>The layer appears</strong> in the layer list</li>
+</ol>
+<p><strong>Default:</strong> New documents start with one layer.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="layer-properties">Layer Properties<a href="#layer-properties" class="hash-link" aria-label="Direct link to Layer Properties" title="Direct link to Layer Properties" translate="no">​</a></h3>
+<p>Each layer has:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Property</th><th>Description</th></tr></thead><tbody><tr><td><strong>Name</strong></td><td>The name shown in the layer list</td></tr><tr><td><strong>Visible</strong></td><td>Toggle visibility in canvas and preview</td></tr><tr><td><strong>Stock Item</strong></td><td>Optional material association</td></tr><tr><td><strong>Workflow</strong></td><td>The operation(s) applied to workpieces in this layer</td></tr><tr><td><strong>Workpieces</strong></td><td>The shapes/images contained in this layer</td></tr></tbody></table>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>Layers as Containers</div><div class="admonitionContent_BuS1"><p>Layers are containers for your workpieces. When importing SVG files with
+layers, each layer from your design becomes a separate layer in Rayforge.</p></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="reordering-layers">Reordering Layers<a href="#reordering-layers" class="hash-link" aria-label="Direct link to Reordering Layers" title="Direct link to Reordering Layers" translate="no">​</a></h3>
+<p><strong>Execution order = layer order in the list (top to bottom)</strong></p>
+<p>To reorder:</p>
+<ol>
+<li class=""><strong>Drag and drop</strong> layers in the Layers panel</li>
+<li class=""><strong>Order matters</strong> - layers execute from top to bottom</li>
+</ol>
+<p><strong>Example:</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">Layers Panel:</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">1. Engrave Layer     Executes first</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">2. Score Layer       Executes second</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">3. Cut Layer         Executes last (recommended)</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="deleting-layers">Deleting Layers<a href="#deleting-layers" class="hash-link" aria-label="Direct link to Deleting Layers" title="Direct link to Deleting Layers" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Select the layer</strong> in the Layers panel</li>
+<li class=""><strong>Click the delete button</strong> or press Delete</li>
+<li class=""><strong>Confirm deletion</strong> (all workpieces in the layer are removed)</li>
+</ol>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Deletion is Permanent</div><div class="admonitionContent_BuS1"><p>Deleting a layer removes all its workpieces and workflow settings. Use Undo
+if you delete accidentally.</p></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="assigning-workpieces-to-layers">Assigning Workpieces to Layers<a href="#assigning-workpieces-to-layers" class="hash-link" aria-label="Direct link to Assigning Workpieces to Layers" title="Direct link to Assigning Workpieces to Layers" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="manual-assignment">Manual Assignment<a href="#manual-assignment" class="hash-link" aria-label="Direct link to Manual Assignment" title="Direct link to Manual Assignment" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Import or create</strong> a workpiece</li>
+<li class=""><strong>Drag the workpiece</strong> to the desired layer in the Layers panel</li>
+<li class=""><strong>Or use the properties panel</strong> to change the workpiece&#x27;s layer</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="svg-layer-import">SVG Layer Import<a href="#svg-layer-import" class="hash-link" aria-label="Direct link to SVG Layer Import" title="Direct link to SVG Layer Import" translate="no">​</a></h3>
+<p>When importing SVG files with &quot;Use Original Vectors&quot; enabled:</p>
+<ol>
+<li class=""><strong>Enable &quot;Use Original Vectors&quot;</strong> in the import dialog</li>
+<li class=""><strong>Rayforge detects layers</strong> from your SVG file</li>
+<li class=""><strong>Select which layers</strong> to import using the layer switches</li>
+<li class=""><strong>Each selected layer</strong> becomes a separate layer with its own workpiece</li>
+</ol>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>Layer Detection</div><div class="admonitionContent_BuS1"><p>Rayforge automatically detects layers from your SVG file. Each layer
+you created in your design software will appear as a separate layer in
+Rayforge.</p></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>Vector Import Only</div><div class="admonitionContent_BuS1"><p>Layer selection is only available when using direct vector import.
+When using trace mode, the entire SVG is processed as one workpiece.</p></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="moving-workpieces-between-layers">Moving Workpieces Between Layers<a href="#moving-workpieces-between-layers" class="hash-link" aria-label="Direct link to Moving Workpieces Between Layers" title="Direct link to Moving Workpieces Between Layers" translate="no">​</a></h3>
+<p><strong>Drag and drop:</strong></p>
+<ul>
+<li class="">Select workpiece(s) in the canvas or Document panel</li>
+<li class="">Drag to target layer in Layers panel</li>
+</ul>
+<p><strong>Cut and paste:</strong></p>
+<ul>
+<li class="">Cut workpiece from current layer (Ctrl+X)</li>
+<li class="">Select target layer</li>
+<li class="">Paste (Ctrl+V)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="svg-import-dialog">SVG Import Dialog<a href="#svg-import-dialog" class="hash-link" aria-label="Direct link to SVG Import Dialog" title="Direct link to SVG Import Dialog" translate="no">​</a></h3>
+<p>When importing SVG files, the import dialog provides options that affect
+layer handling:</p>
+<p><strong>Import Mode:</strong></p>
+<ul>
+<li class=""><strong>Use Original Vectors:</strong> Preserves your vector paths and layer structure.
+When enabled, a &quot;Layers&quot; section appears showing all layers from your file.</li>
+<li class=""><strong>Trace Mode:</strong> Converts the SVG to a bitmap and traces the outlines.
+Layer selection is disabled in this mode.</li>
+</ul>
+<p><strong>Layers Section (Vector Import Only):</strong></p>
+<ul>
+<li class="">Shows all layers from your SVG file</li>
+<li class="">Each layer has a toggle switch to enable/disable import</li>
+<li class="">Layer names from your design software are preserved</li>
+<li class="">Only selected layers are imported as separate layers</li>
+</ul>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>Preparing SVG Files for Layer Import</div><div class="admonitionContent_BuS1"><p>To use SVG layer import, create your design with layers in software like
+Inkscape. Use the Layers panel to organize your design, and Rayforge
+will preserve that structure.</p></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="layer-workflows">Layer Workflows<a href="#layer-workflows" class="hash-link" aria-label="Direct link to Layer Workflows" title="Direct link to Layer Workflows" translate="no">​</a></h2>
+<p>Each layer has a <strong>Workflow</strong> that defines how its workpieces are processed.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setting-up-layer-workflows">Setting Up Layer Workflows<a href="#setting-up-layer-workflows" class="hash-link" aria-label="Direct link to Setting Up Layer Workflows" title="Direct link to Setting Up Layer Workflows" translate="no">​</a></h3>
+<p>For each layer, you choose an operation type and configure its settings:</p>
+<p><strong>Operation Types:</strong></p>
+<ul>
+<li class=""><strong>Contour</strong> - Follows outlines (for cutting or scoring)</li>
+<li class=""><strong>Raster Engraving</strong> - Engraves images and fills areas</li>
+<li class=""><strong>Depth Engraving</strong> - Creates varying depth engravings</li>
+</ul>
+<p><strong>Optional Enhancements:</strong></p>
+<ul>
+<li class=""><strong>Tabs</strong> - Small bridges to hold parts in place during cutting</li>
+<li class=""><strong>Overscan</strong> - Extends cuts beyond the shape for cleaner edges</li>
+<li class=""><strong>Kerf Adjustment</strong> - Compensates for the laser&#x27;s cutting width</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="common-layer-setups">Common Layer Setups<a href="#common-layer-setups" class="hash-link" aria-label="Direct link to Common Layer Setups" title="Direct link to Common Layer Setups" translate="no">​</a></h3>
+<p><strong>Engraving Layer:</strong></p>
+<ul>
+<li class="">Operation: Raster Engraving</li>
+<li class="">Settings: 300-500 DPI, moderate speed</li>
+<li class="">Typically no additional options needed</li>
+</ul>
+<p><strong>Cutting Layer:</strong></p>
+<ul>
+<li class="">Operation: Contour Cutting</li>
+<li class="">Options: Tabs (to hold parts), Overscan (for clean edges)</li>
+<li class="">Settings: Slower speed, higher power</li>
+</ul>
+<p><strong>Scoring Layer:</strong></p>
+<ul>
+<li class="">Operation: Contour (light power, doesn&#x27;t cut through)</li>
+<li class="">Settings: Low power, fast speed</li>
+<li class="">Purpose: Fold lines, decorative lines</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="layer-visibility">Layer Visibility<a href="#layer-visibility" class="hash-link" aria-label="Direct link to Layer Visibility" title="Direct link to Layer Visibility" translate="no">​</a></h2>
+<p>Control which layers are shown in the canvas and previews:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="canvas-visibility">Canvas Visibility<a href="#canvas-visibility" class="hash-link" aria-label="Direct link to Canvas Visibility" title="Direct link to Canvas Visibility" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Eye icon</strong> in Layers panel toggles visibility</li>
+<li class=""><strong>Hidden layers:</strong>
+<ul>
+<li class="">Not shown in 2D canvas</li>
+<li class="">Not shown in 3D preview</li>
+<li class=""><strong>Still included in generated G-code</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>Use cases:</strong></p>
+<ul>
+<li class="">Hide complex engraving layers while positioning cut layers</li>
+<li class="">Declutter the canvas when working on specific layers</li>
+<li class="">Focus on one layer at a time</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="visibility-vs-enabled">Visibility vs. Enabled<a href="#visibility-vs-enabled" class="hash-link" aria-label="Direct link to Visibility vs. Enabled" title="Direct link to Visibility vs. Enabled" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>State</th><th>Canvas</th><th>Preview</th><th>G-code</th></tr></thead><tbody><tr><td><strong>Visible &amp; Enabled</strong></td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td><strong>Hidden &amp; Enabled</strong></td><td>No</td><td>No</td><td>Yes</td></tr><tr><td><strong>Visible &amp; Disabled</strong></td><td>Yes</td><td>Yes</td><td>No</td></tr><tr><td><strong>Hidden &amp; Disabled</strong></td><td>No</td><td>No</td><td>No</td></tr></tbody></table>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>Disabling Layers</div></div>
+<p>To temporarily exclude a layer from jobs without deleting it, turn off the
+layer&#x27;s operation or disable it in the layer settings.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="layer-execution-order">Layer Execution Order<a href="#layer-execution-order" class="hash-link" aria-label="Direct link to Layer Execution Order" title="Direct link to Layer Execution Order" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-layers-are-processed">How Layers are Processed<a href="#how-layers-are-processed" class="hash-link" aria-label="Direct link to How Layers are Processed" title="Direct link to How Layers are Processed" translate="no">​</a></h3>
+<p>During job execution, Rayforge processes each layer in order from top to
+bottom. Within each layer, all workpieces are processed before moving to
+the next layer.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="order-matters">Order Matters<a href="#order-matters" class="hash-link" aria-label="Direct link to Order Matters" title="Direct link to Order Matters" translate="no">​</a></h3>
+<p><strong>Wrong order:</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">1. Cut Layer</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">2. Engrave Layer</span><br></span></code></pre></div></div>
+<p><strong>Problem:</strong> Cut parts may fall out or move before engraving!</p>
+<p><strong>Correct order:</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">1. Engrave Layer</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">2. Cut Layer</span><br></span></code></pre></div></div>
+<p><strong>Why:</strong> Engraving happens while part is still attached, then cutting frees it.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="multiple-passes">Multiple Passes<a href="#multiple-passes" class="hash-link" aria-label="Direct link to Multiple Passes" title="Direct link to Multiple Passes" translate="no">​</a></h3>
+<p>For thick materials, create multiple cutting layers:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">1. Engrave Layer</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">2. Cut Layer (Pass 1) - 50% power</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">3. Cut Layer (Pass 2) - 75% power</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">4. Cut Layer (Pass 3) - 100% power</span><br></span></code></pre></div></div>
+<p><strong>Tip:</strong> Use the same geometry for all cutting passes (duplicate the layer).</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="advanced-techniques">Advanced Techniques<a href="#advanced-techniques" class="hash-link" aria-label="Direct link to Advanced Techniques" title="Direct link to Advanced Techniques" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="layer-grouping-by-material">Layer Grouping by Material<a href="#layer-grouping-by-material" class="hash-link" aria-label="Direct link to Layer Grouping by Material" title="Direct link to Layer Grouping by Material" translate="no">​</a></h3>
+<p>Use layers to organize by material when running mixed jobs:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">Material 1 (3mm Acrylic):</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">  - Acrylic Engrave Layer</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">  - Acrylic Cut Layer</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">Material 2 (3mm Plywood):</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">  - Wood Engrave Layer</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">  - Wood Cut Layer</span><br></span></code></pre></div></div>
+<p><strong>Workflow:</strong></p>
+<ol>
+<li class="">Process all Material 1 layers</li>
+<li class="">Swap materials</li>
+<li class="">Process all Material 2 layers</li>
+</ol>
+<p><strong>Alternative:</strong> Use separate documents for different materials.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pausing-between-layers">Pausing Between Layers<a href="#pausing-between-layers" class="hash-link" aria-label="Direct link to Pausing Between Layers" title="Direct link to Pausing Between Layers" translate="no">​</a></h3>
+<p>You can configure Rayforge to pause between layers. This is useful when you
+need to:</p>
+<ul>
+<li class="">Change materials mid-job</li>
+<li class="">Inspect progress before continuing</li>
+<li class="">Adjust focus for different operations</li>
+</ul>
+<p>To set up layer pauses, use the hooks feature in your machine settings.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="layer-specific-settings">Layer-Specific Settings<a href="#layer-specific-settings" class="hash-link" aria-label="Direct link to Layer-Specific Settings" title="Direct link to Layer-Specific Settings" translate="no">​</a></h3>
+<p>Each layer&#x27;s workflow can have unique settings:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Layer</th><th>Operation</th><th>Speed</th><th>Power</th><th>Passes</th></tr></thead><tbody><tr><td>Engrave</td><td>Raster</td><td>300 mm/min</td><td>20%</td><td>1</td></tr><tr><td>Score</td><td>Contour</td><td>500 mm/min</td><td>10%</td><td>1</td></tr><tr><td>Cut</td><td>Contour</td><td>100 mm/min</td><td>90%</td><td>2</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="best-practices">Best Practices<a href="#best-practices" class="hash-link" aria-label="Direct link to Best Practices" title="Direct link to Best Practices" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="naming-conventions">Naming Conventions<a href="#naming-conventions" class="hash-link" aria-label="Direct link to Naming Conventions" title="Direct link to Naming Conventions" translate="no">​</a></h3>
+<p><strong>Good layer names:</strong></p>
+<ul>
+<li class="">&quot;Engrave - Logo&quot;</li>
+<li class="">&quot;Cut - Outer Contour&quot;</li>
+<li class="">&quot;Score - Fold Lines&quot;</li>
+<li class="">&quot;Pass 1 - Rough Cut&quot;</li>
+<li class="">&quot;Pass 2 - Final Cut&quot;</li>
+</ul>
+<p><strong>Poor layer names:</strong></p>
+<ul>
+<li class="">&quot;Layer 1&quot;, &quot;Layer 2&quot; (not descriptive)</li>
+<li class="">Long descriptions (keep concise)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="layer-organization">Layer Organization<a href="#layer-organization" class="hash-link" aria-label="Direct link to Layer Organization" title="Direct link to Layer Organization" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Top to bottom = execution order</strong></li>
+<li class=""><strong>Engraving before cutting</strong> (general rule)</li>
+<li class=""><strong>Group related operations</strong> (all cutting, all engraving)</li>
+<li class=""><strong>Use visibility</strong> to focus on current work</li>
+<li class=""><strong>Delete unused layers</strong> to keep projects clean</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="preparing-svg-files-for-layer-import">Preparing SVG Files for Layer Import<a href="#preparing-svg-files-for-layer-import" class="hash-link" aria-label="Direct link to Preparing SVG Files for Layer Import" title="Direct link to Preparing SVG Files for Layer Import" translate="no">​</a></h3>
+<p><strong>For best results when importing SVG layers:</strong></p>
+<ol>
+<li class=""><strong>Use the Layers panel</strong> in your design software to organize your design</li>
+<li class=""><strong>Assign meaningful names</strong> to each layer (e.g., &quot;Engrave&quot;, &quot;Cut&quot;)</li>
+<li class=""><strong>Keep layers flat</strong> - avoid putting layers inside other layers</li>
+<li class=""><strong>Save your file</strong> and import into Rayforge</li>
+<li class=""><strong>Verify layer detection</strong> by checking the import dialog</li>
+</ol>
+<p>Rayforge works best with SVG files created in Inkscape or similar vector
+design software that supports layers.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance">Performance<a href="#performance" class="hash-link" aria-label="Direct link to Performance" title="Direct link to Performance" translate="no">​</a></h3>
+<p><strong>Many layers:</strong></p>
+<ul>
+<li class="">No significant performance impact</li>
+<li class="">10-20 layers is common for complex jobs</li>
+<li class="">Organize logically, not to minimize layer count</li>
+</ul>
+<p><strong>Simplify if needed:</strong></p>
+<ul>
+<li class="">Combine similar operations into one layer when possible</li>
+<li class="">Use fewer raster engravings (most resource-intensive)</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="troubleshooting">Troubleshooting<a href="#troubleshooting" class="hash-link" aria-label="Direct link to Troubleshooting" title="Direct link to Troubleshooting" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="layer-not-generating-g-code">Layer Not Generating G-code<a href="#layer-not-generating-g-code" class="hash-link" aria-label="Direct link to Layer Not Generating G-code" title="Direct link to Layer Not Generating G-code" translate="no">​</a></h3>
+<p><strong>Problem:</strong> Layer appears in document but not in generated G-code.</p>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li class=""><strong>Check layer has workpieces</strong> - Empty layers are skipped</li>
+<li class=""><strong>Check workflow is configured</strong> - Layer needs an operation</li>
+<li class=""><strong>Verify operation settings</strong> - Power &gt; 0, valid speed, etc.</li>
+<li class=""><strong>Check workpiece visibility</strong> - Hidden workpieces may not process</li>
+<li class=""><strong>Regenerate G-code</strong> - Make a small change to force regeneration</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="wrong-layer-order">Wrong Layer Order<a href="#wrong-layer-order" class="hash-link" aria-label="Direct link to Wrong Layer Order" title="Direct link to Wrong Layer Order" translate="no">​</a></h3>
+<p><strong>Problem:</strong> Operations execute in unexpected order.</p>
+<p><strong>Solution:</strong> Reorder layers in the Layers panel. Remember: top = first.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="layers-overlapping-in-preview">Layers Overlapping in Preview<a href="#layers-overlapping-in-preview" class="hash-link" aria-label="Direct link to Layers Overlapping in Preview" title="Direct link to Layers Overlapping in Preview" translate="no">​</a></h3>
+<p><strong>Problem:</strong> Multiple layers show overlapping content in preview.</p>
+<p><strong>Clarification:</strong> This is normal if layers share the same XY area.</p>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li class="">Use layer visibility to hide other layers temporarily</li>
+<li class="">Check 3D preview to see depth/order</li>
+<li class="">Verify this is intentional (e.g., engraving then cutting same shape)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="workpiece-in-wrong-layer">Workpiece in Wrong Layer<a href="#workpiece-in-wrong-layer" class="hash-link" aria-label="Direct link to Workpiece in Wrong Layer" title="Direct link to Workpiece in Wrong Layer" translate="no">​</a></h3>
+<p><strong>Problem:</strong> Workpiece was assigned to incorrect layer.</p>
+<p><strong>Solution:</strong> Drag workpiece to correct layer in Layers panel or Document tree.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="svg-layers-not-detected">SVG Layers Not Detected<a href="#svg-layers-not-detected" class="hash-link" aria-label="Direct link to SVG Layers Not Detected" title="Direct link to SVG Layers Not Detected" translate="no">​</a></h3>
+<p><strong>Problem:</strong> Importing an SVG file but no layers appear in the import dialog.</p>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li class=""><strong>Check SVG structure</strong> - Open your file in Inkscape or similar software
+to verify it has layers</li>
+<li class=""><strong>Enable &quot;Use Original Vectors&quot;</strong> - Layer selection is only available in
+this import mode</li>
+<li class=""><strong>Verify your design has layers</strong> - Make sure you created layers in your
+design software, not just groups</li>
+<li class=""><strong>Check for nested layers</strong> - Layers inside other layers may not be
+detected properly</li>
+<li class=""><strong>Re-save your file</strong> - Sometimes re-saving with a current version of
+your design software helps</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="svg-layer-import-shows-wrong-content">SVG Layer Import Shows Wrong Content<a href="#svg-layer-import-shows-wrong-content" class="hash-link" aria-label="Direct link to SVG Layer Import Shows Wrong Content" title="Direct link to SVG Layer Import Shows Wrong Content" translate="no">​</a></h3>
+<p><strong>Problem:</strong> Imported layer shows content from other layers or is empty.</p>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li class=""><strong>Check layer selection</strong> - Verify the correct layers are enabled in the
+import dialog</li>
+<li class=""><strong>Verify your design</strong> - Open the original file in your design software
+to confirm each layer contains the right content</li>
+<li class=""><strong>Check for shared elements</strong> - Elements that appear in multiple layers
+may cause confusion</li>
+<li class=""><strong>Try trace mode</strong> - Use trace mode as a fallback if vector import has
+issues</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-pages">Related Pages<a href="#related-pages" class="hash-link" aria-label="Direct link to Related Pages" title="Direct link to Related Pages" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/docs/features/operations/index">Operations</a> - Operation types for layer workflows</li>
+<li class=""><a class="" href="/docs/features/simulation-mode">Simulation Mode</a> - Preview multi-layer execution</li>
+<li class=""><a class="" href="/docs/features/macros-hooks">Macros &amp; Hooks</a> - Layer-level hooks for automation</li>
+<li class=""><a class="" href="/docs/ui/3d-preview">3D Preview</a> - Visualize layer stack</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/features/multi-layer.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/features/sketcher"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Parametric 2D Sketcher</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/features/stock-handling"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Stock Handling Workflow</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#what-are-layers" class="table-of-contents__link toc-highlight">What Are Layers?</a></li><li><a href="#why-use-multiple-layers" class="table-of-contents__link toc-highlight">Why Use Multiple Layers?</a><ul><li><a href="#common-use-cases" class="table-of-contents__link toc-highlight">Common Use Cases</a></li></ul></li><li><a href="#creating-and-managing-layers" class="table-of-contents__link toc-highlight">Creating and Managing Layers</a><ul><li><a href="#adding-a-new-layer" class="table-of-contents__link toc-highlight">Adding a New Layer</a></li><li><a href="#layer-properties" class="table-of-contents__link toc-highlight">Layer Properties</a></li><li><a href="#reordering-layers" class="table-of-contents__link toc-highlight">Reordering Layers</a></li><li><a href="#deleting-layers" class="table-of-contents__link toc-highlight">Deleting Layers</a></li></ul></li><li><a href="#assigning-workpieces-to-layers" class="table-of-contents__link toc-highlight">Assigning Workpieces to Layers</a><ul><li><a href="#manual-assignment" class="table-of-contents__link toc-highlight">Manual Assignment</a></li><li><a href="#svg-layer-import" class="table-of-contents__link toc-highlight">SVG Layer Import</a></li><li><a href="#moving-workpieces-between-layers" class="table-of-contents__link toc-highlight">Moving Workpieces Between Layers</a></li><li><a href="#svg-import-dialog" class="table-of-contents__link toc-highlight">SVG Import Dialog</a></li></ul></li><li><a href="#layer-workflows" class="table-of-contents__link toc-highlight">Layer Workflows</a><ul><li><a href="#setting-up-layer-workflows" class="table-of-contents__link toc-highlight">Setting Up Layer Workflows</a></li><li><a href="#common-layer-setups" class="table-of-contents__link toc-highlight">Common Layer Setups</a></li></ul></li><li><a href="#layer-visibility" class="table-of-contents__link toc-highlight">Layer Visibility</a><ul><li><a href="#canvas-visibility" class="table-of-contents__link toc-highlight">Canvas Visibility</a></li><li><a href="#visibility-vs-enabled" class="table-of-contents__link toc-highlight">Visibility vs. Enabled</a></li></ul></li><li><a href="#layer-execution-order" class="table-of-contents__link toc-highlight">Layer Execution Order</a><ul><li><a href="#how-layers-are-processed" class="table-of-contents__link toc-highlight">How Layers are Processed</a></li><li><a href="#order-matters" class="table-of-contents__link toc-highlight">Order Matters</a></li><li><a href="#multiple-passes" class="table-of-contents__link toc-highlight">Multiple Passes</a></li></ul></li><li><a href="#advanced-techniques" class="table-of-contents__link toc-highlight">Advanced Techniques</a><ul><li><a href="#layer-grouping-by-material" class="table-of-contents__link toc-highlight">Layer Grouping by Material</a></li><li><a href="#pausing-between-layers" class="table-of-contents__link toc-highlight">Pausing Between Layers</a></li><li><a href="#layer-specific-settings" class="table-of-contents__link toc-highlight">Layer-Specific Settings</a></li></ul></li><li><a href="#best-practices" class="table-of-contents__link toc-highlight">Best Practices</a><ul><li><a href="#naming-conventions" class="table-of-contents__link toc-highlight">Naming Conventions</a></li><li><a href="#layer-organization" class="table-of-contents__link toc-highlight">Layer Organization</a></li><li><a href="#preparing-svg-files-for-layer-import" class="table-of-contents__link toc-highlight">Preparing SVG Files for Layer Import</a></li><li><a href="#performance" class="table-of-contents__link toc-highlight">Performance</a></li></ul></li><li><a href="#troubleshooting" class="table-of-contents__link toc-highlight">Troubleshooting</a><ul><li><a href="#layer-not-generating-g-code" class="table-of-contents__link toc-highlight">Layer Not Generating G-code</a></li><li><a href="#wrong-layer-order" class="table-of-contents__link toc-highlight">Wrong Layer Order</a></li><li><a href="#layers-overlapping-in-preview" class="table-of-contents__link toc-highlight">Layers Overlapping in Preview</a></li><li><a href="#workpiece-in-wrong-layer" class="table-of-contents__link toc-highlight">Workpiece in Wrong Layer</a></li><li><a href="#svg-layers-not-detected" class="table-of-contents__link toc-highlight">SVG Layers Not Detected</a></li><li><a href="#svg-layer-import-shows-wrong-content" class="table-of-contents__link toc-highlight">SVG Layer Import Shows Wrong Content</a></li></ul></li><li><a href="#related-pages" class="table-of-contents__link toc-highlight">Related Pages</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</body>
+</html>

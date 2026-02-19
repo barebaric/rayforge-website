@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-features/sketcher" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Parametric 2D Sketcher | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://rayforge.org/docs/features/sketcher"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Parametric 2D Sketcher | Rayforge"><meta data-rh="true" name="description" content="The Parametric 2D Sketcher is a powerful feature in Rayforge that allows you to create"><meta data-rh="true" property="og:description" content="The Parametric 2D Sketcher is a powerful feature in Rayforge that allows you to create"><link data-rh="true" rel="icon" href="/assets/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/docs/features/sketcher"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/features/sketcher" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/features/sketcher" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Parametric 2D Sketcher","item":"https://rayforge.org/docs/features/sketcher"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Rayforge RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Rayforge Atom Feed"><link rel="stylesheet" href="/assets/css/styles.919edc8e.css">
+<script src="/assets/js/runtime~main.53705bdf.js" defer="defer"></script>
+<script src="/assets/js/main.c26f01b2.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/assets/icon.svg" alt="Rayforge Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/assets/icon.svg" alt="Rayforge Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Rayforge</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/getting-started/installation">Documentation</a><a class="navbar__item navbar__link" href="/docs/developer/getting-started/">Developer</a><a class="navbar__item navbar__link" href="/contributing">Contributing</a><a class="navbar__item navbar__link" href="/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="patreonLink_HbXT"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" class="patreonImg_dUDi"></a><span class="githubWrapper_c8Sl"><a href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><span class="discordWrapper_j0RJ"><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs/getting-started/installation"><span title="Getting Started" class="categoryLinkLabel_W154">Getting Started</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting-started/installation"><span title="Installation" class="linkLabel_WmDU">Installation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting-started/first-time-setup"><span title="First Time Setup" class="linkLabel_WmDU">First Time Setup</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting-started/quick-start"><span title="Quick Start Guide" class="linkLabel_WmDU">Quick Start Guide</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/ui/settings"><span title="Application Settings" class="categoryLinkLabel_W154">Application Settings</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/machine/general"><span title="Machine Setup" class="categoryLinkLabel_W154">Machine Setup</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/ui/main-window"><span title="User Interface" class="categoryLinkLabel_W154">User Interface</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/features/operations/contour"><span title="Features" class="categoryLinkLabel_W154">Features</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/features/operations/contour"><span title="Operations" class="categoryLinkLabel_W154">Operations</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/features/sketcher"><span title="Parametric 2D Sketcher" class="linkLabel_WmDU">Parametric 2D Sketcher</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/multi-layer"><span title="Multi-Layer Workflow" class="linkLabel_WmDU">Multi-Layer Workflow</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/stock-handling"><span title="Stock Handling Workflow" class="linkLabel_WmDU">Stock Handling Workflow</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/simulation-mode"><span title="Simulation Mode" class="linkLabel_WmDU">Simulation Mode</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/simulating-your-job"><span title="Simulating Your Job" class="linkLabel_WmDU">Simulating Your Job</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/framing-your-job"><span title="Framing Your Job" class="linkLabel_WmDU">Framing Your Job</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/holding-tabs"><span title="Holding Tabs" class="linkLabel_WmDU">Holding Tabs</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/overscan"><span title="Overscan" class="linkLabel_WmDU">Overscan</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/features/kerf"><span title="Kerf Compensation" class="linkLabel_WmDU">Kerf Compensation</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/files/importing"><span title="Files" class="categoryLinkLabel_W154">Files</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/general-info/laser-safety"><span title="General Info" class="categoryLinkLabel_W154">General Info</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/troubleshooting/connection"><span title="Troubleshooting" class="categoryLinkLabel_W154">Troubleshooting</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/reference/shortcuts"><span title="Reference" class="categoryLinkLabel_W154">Reference</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Features</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Parametric 2D Sketcher</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Parametric 2D Sketcher</h1></header>
+<p>The Parametric 2D Sketcher is a powerful feature in Rayforge that allows you to create
+and edit precise, constraint-based 2D designs directly within the application. This
+feature enables you to design custom parts from scratch without needing external CAD
+software.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h2>
+<p>The sketcher provides a complete set of tools for creating geometric shapes and applying
+parametric constraints to define precise relationships between elements. This approach
+ensures your designs maintain their intended geometry even when dimensions are modified.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="creating-and-editing-sketches">Creating and Editing Sketches<a href="#creating-and-editing-sketches" class="hash-link" aria-label="Direct link to Creating and Editing Sketches" title="Direct link to Creating and Editing Sketches" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="creating-a-new-sketch">Creating a New Sketch<a href="#creating-a-new-sketch" class="hash-link" aria-label="Direct link to Creating a New Sketch" title="Direct link to Creating a New Sketch" translate="no">​</a></h3>
+<ol>
+<li class="">Click the &quot;New Sketch&quot; button in the toolbar or use the main menu</li>
+<li class="">A new empty sketch workspace will open with the sketch editor interface</li>
+<li class="">Start creating geometry using the drawing tools from the pie menu or keyboard
+shortcuts</li>
+<li class="">Apply constraints to define relationships between elements</li>
+<li class="">Click &quot;Finish Sketch&quot; to save your work and return to the main workspace</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="editing-existing-sketches">Editing Existing Sketches<a href="#editing-existing-sketches" class="hash-link" aria-label="Direct link to Editing Existing Sketches" title="Direct link to Editing Existing Sketches" translate="no">​</a></h3>
+<ol>
+<li class="">Double-click on a sketch-based workpiece in the main workspace</li>
+<li class="">Alternatively, select a sketch and choose &quot;Edit Sketch&quot; from the context menu</li>
+<li class="">Make your modifications using the same tools and constraints</li>
+<li class="">Click &quot;Finish Sketch&quot; to save changes or &quot;Cancel Sketch&quot; to discard them</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="creating-2d-geometry">Creating 2D Geometry<a href="#creating-2d-geometry" class="hash-link" aria-label="Direct link to Creating 2D Geometry" title="Direct link to Creating 2D Geometry" translate="no">​</a></h2>
+<p>The sketcher supports creating the following basic geometric elements:</p>
+<ul>
+<li class=""><strong>Lines</strong>: Draw straight line segments between points</li>
+<li class=""><strong>Circles</strong>: Create circles by defining a center point and radius</li>
+<li class=""><strong>Arcs</strong>: Draw arcs by specifying a center point, start point, and end point</li>
+<li class=""><strong>Rectangles</strong>: Draw rectangles by specifying two opposite corners</li>
+<li class=""><strong>Rounded Rectangles</strong>: Draw rectangles with rounded corners</li>
+<li class=""><strong>Text Boxes</strong>: Add text elements to your sketch</li>
+<li class=""><strong>Fills</strong>: Fill closed regions to create solid areas</li>
+</ul>
+<p>These elements form the foundation of your 2D designs and can be combined to create
+complex shapes. Fills are particularly useful for creating solid regions that will
+be engraved or cut as a single piece.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="parametric-constraint-system">Parametric Constraint System<a href="#parametric-constraint-system" class="hash-link" aria-label="Direct link to Parametric Constraint System" title="Direct link to Parametric Constraint System" translate="no">​</a></h2>
+<p>The constraint system is the core of the parametric sketcher, allowing you to define
+precise geometric relationships:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="geometric-constraints">Geometric Constraints<a href="#geometric-constraints" class="hash-link" aria-label="Direct link to Geometric Constraints" title="Direct link to Geometric Constraints" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Coincident</strong>: Forces two points to occupy the same location</li>
+<li class=""><strong>Vertical</strong>: Constrains a line to be perfectly vertical</li>
+<li class=""><strong>Horizontal</strong>: Constrains a line to be perfectly horizontal</li>
+<li class=""><strong>Tangent</strong>: Makes a line tangent to a circle or arc</li>
+<li class=""><strong>Perpendicular</strong>: Forces two lines, a line and an arc/circle, or two arcs/circles
+to meet at 90 degrees</li>
+<li class=""><strong>Point on Line/Shape</strong>: Constrains a point to lie on a line, arc, or circle</li>
+<li class=""><strong>Symmetry</strong>: Creates symmetrical relationships between elements. Supports two modes:
+<ul>
+<li class=""><strong>Point Symmetry</strong>: Select 3 points (first is the center)</li>
+<li class=""><strong>Line Symmetry</strong>: Select 2 points and 1 line (the line is the axis)</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dimensional-constraints">Dimensional Constraints<a href="#dimensional-constraints" class="hash-link" aria-label="Direct link to Dimensional Constraints" title="Direct link to Dimensional Constraints" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Distance</strong>: Sets the exact distance between two points or along a line</li>
+<li class=""><strong>Diameter</strong>: Defines the diameter of a circle</li>
+<li class=""><strong>Radius</strong>: Sets the radius of a circle or arc</li>
+<li class=""><strong>Angle</strong>: Enforces a specific angle between two lines</li>
+<li class=""><strong>Aspect Ratio</strong>: Forces the ratio between two distances to be equal to a specified
+value</li>
+<li class=""><strong>Equal Length/Radius</strong>: Forces multiple elements (lines, arcs, or circles) to have
+the same length or radius</li>
+<li class=""><strong>Equal Distance</strong>: Forces the distance between two point pairs to be equal</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pie-menu-interface">Pie Menu Interface<a href="#pie-menu-interface" class="hash-link" aria-label="Direct link to Pie Menu Interface" title="Direct link to Pie Menu Interface" translate="no">​</a></h2>
+<p>The sketcher features a context-aware pie menu that provides quick access to all drawing
+and constraint tools. This radial menu appears when you right-click in the sketch
+workspace and adapts based on your current context and selection.</p>
+<p>The pie menu items dynamically show available options based on what you have selected.
+For example, when clicking on empty space, you&#x27;ll see drawing tools. When clicking on
+selected geometry, you&#x27;ll see applicable constraints.</p>
+<p><img decoding="async" loading="lazy" alt="Sketcher Pie Menu" src="/assets/images/sketcher-pie-menu-a3332c447ad5789c22d9bf91c0859075.png" width="458" height="325" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="keyboard-shortcuts">Keyboard Shortcuts<a href="#keyboard-shortcuts" class="hash-link" aria-label="Direct link to Keyboard Shortcuts" title="Direct link to Keyboard Shortcuts" translate="no">​</a></h2>
+<p>The sketcher provides keyboard shortcuts for efficient workflow:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tool-shortcuts">Tool Shortcuts<a href="#tool-shortcuts" class="hash-link" aria-label="Direct link to Tool Shortcuts" title="Direct link to Tool Shortcuts" translate="no">​</a></h3>
+<ul>
+<li class=""><code>Space</code>: Select tool</li>
+<li class=""><code>G+L</code>: Line tool</li>
+<li class=""><code>G+A</code>: Arc tool</li>
+<li class=""><code>G+C</code>: Circle tool</li>
+<li class=""><code>G+R</code>: Rectangle tool</li>
+<li class=""><code>G+O</code>: Rounded Rectangle tool</li>
+<li class=""><code>G+F</code>: Fill Area tool</li>
+<li class=""><code>G+T</code>: Text Box tool</li>
+<li class=""><code>G+N</code>: Toggle construction mode on selection</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="action-shortcuts">Action Shortcuts<a href="#action-shortcuts" class="hash-link" aria-label="Direct link to Action Shortcuts" title="Direct link to Action Shortcuts" translate="no">​</a></h3>
+<ul>
+<li class=""><code>C+H</code>: Add Chamfer corner</li>
+<li class=""><code>C+F</code>: Add Fillet corner</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="constraint-shortcuts">Constraint Shortcuts<a href="#constraint-shortcuts" class="hash-link" aria-label="Direct link to Constraint Shortcuts" title="Direct link to Constraint Shortcuts" translate="no">​</a></h3>
+<ul>
+<li class=""><code>H</code>: Apply Horizontal constraint</li>
+<li class=""><code>V</code>: Apply Vertical constraint</li>
+<li class=""><code>N</code>: Apply Perpendicular constraint</li>
+<li class=""><code>T</code>: Apply Tangent constraint</li>
+<li class=""><code>E</code>: Apply Equal constraint</li>
+<li class=""><code>O</code> or <code>C</code>: Apply Alignment constraint (Coincident)</li>
+<li class=""><code>S</code>: Apply Symmetry constraint</li>
+<li class=""><code>K+D</code>: Apply Distance constraint</li>
+<li class=""><code>K+R</code>: Apply Radius constraint</li>
+<li class=""><code>K+O</code>: Apply Diameter constraint</li>
+<li class=""><code>K+A</code>: Apply Angle constraint</li>
+<li class=""><code>K+X</code>: Apply Aspect Ratio constraint</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="general-shortcuts">General Shortcuts<a href="#general-shortcuts" class="hash-link" aria-label="Direct link to General Shortcuts" title="Direct link to General Shortcuts" translate="no">​</a></h3>
+<ul>
+<li class=""><code>Ctrl+Z</code>: Undo</li>
+<li class=""><code>Ctrl+Y</code> or <code>Ctrl+Shift+Z</code>: Redo</li>
+<li class=""><code>Delete</code>: Delete selected elements</li>
+<li class=""><code>Escape</code>: Cancel current operation or deselect</li>
+<li class=""><code>F</code>: Fit view to content</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="construction-mode">Construction Mode<a href="#construction-mode" class="hash-link" aria-label="Direct link to Construction Mode" title="Direct link to Construction Mode" translate="no">​</a></h2>
+<p>Construction mode allows you to mark entities as &quot;construction geometry&quot; - helper
+elements used to guide your design but not part of the final output. Construction
+entities are displayed differently (typically as dashed lines) and are not included when
+the sketch is used for laser cutting or engraving.</p>
+<p>To toggle construction mode:</p>
+<ul>
+<li class="">Select one or more entities</li>
+<li class="">Press <code>N</code> or <code>G+N</code>, or use the Construction option in the pie menu</li>
+</ul>
+<p>Construction entities are useful for:</p>
+<ul>
+<li class="">Creating reference lines and circles</li>
+<li class="">Defining temporary geometry for alignment</li>
+<li class="">Building complex shapes from a framework of guides</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="chamfer-and-fillet">Chamfer and Fillet<a href="#chamfer-and-fillet" class="hash-link" aria-label="Direct link to Chamfer and Fillet" title="Direct link to Chamfer and Fillet" translate="no">​</a></h2>
+<p>The sketcher provides tools to modify corners of your geometry:</p>
+<ul>
+<li class=""><strong>Chamfer</strong>: Replaces a sharp corner with a beveled edge. Select a junction point
+(where two lines meet) and apply the chamfer action.</li>
+<li class=""><strong>Fillet</strong>: Replaces a sharp corner with a rounded edge. Select a junction point
+(where two lines meet) and apply the fillet action.</li>
+</ul>
+<p>To use chamfer or fillet:</p>
+<ol>
+<li class="">Select a junction point where two lines meet</li>
+<li class="">Press <code>C+H</code> for chamfer or <code>C+F</code> for fillet</li>
+<li class="">Use the pie menu or keyboard shortcuts to apply the modification</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="import-and-export">Import and Export<a href="#import-and-export" class="hash-link" aria-label="Direct link to Import and Export" title="Direct link to Import and Export" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="exporting-objects">Exporting Objects<a href="#exporting-objects" class="hash-link" aria-label="Direct link to Exporting Objects" title="Direct link to Exporting Objects" translate="no">​</a></h3>
+<p>You can export any selected workpiece to various vector formats:</p>
+<ol>
+<li class="">Select a workpiece on the canvas</li>
+<li class="">Choose <strong>Object → Export Object...</strong> (or right-click and select from context menu)</li>
+<li class="">Choose the export format:
+<ul>
+<li class=""><strong>RFS (.rfs)</strong>: Rayforge&#x27;s native parametric sketch format - preserves all
+constraints and can be re-imported for editing</li>
+<li class=""><strong>SVG (.svg)</strong>: Standard vector format - widely compatible with design software</li>
+<li class=""><strong>DXF (.dxf)</strong>: CAD interchange format - compatible with most CAD applications</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="saving-sketches">Saving Sketches<a href="#saving-sketches" class="hash-link" aria-label="Direct link to Saving Sketches" title="Direct link to Saving Sketches" translate="no">​</a></h3>
+<p>You can save your 2D sketches to files for reuse in other projects. All parametric
+constraints are preserved when saving, ensuring your designs maintain their geometric
+relationships.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="importing-sketches">Importing Sketches<a href="#importing-sketches" class="hash-link" aria-label="Direct link to Importing Sketches" title="Direct link to Importing Sketches" translate="no">​</a></h3>
+<p>Saved sketches can be imported into any workspace, allowing you to create a library of
+commonly used design elements. The import process maintains all constraints and
+dimensional relationships.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="workflow-tips">Workflow Tips<a href="#workflow-tips" class="hash-link" aria-label="Direct link to Workflow Tips" title="Direct link to Workflow Tips" translate="no">​</a></h2>
+<ol>
+<li class=""><strong>Start with Rough Geometry</strong>: Create basic shapes first, then refine with constraints</li>
+<li class=""><strong>Use Constraints Early</strong>: Apply constraints as you build to maintain design intent</li>
+<li class=""><strong>Check Constraint Status</strong>: The system indicates when sketches are fully constrained</li>
+<li class=""><strong>Watch for Conflicts</strong>: Constraints that conflict with each other are highlighted in red</li>
+<li class=""><strong>Utilize Symmetry</strong>: Symmetry constraints can significantly speed up complex designs</li>
+<li class=""><strong>Iterate and Refine</strong>: Don&#x27;t hesitate to modify constraints to achieve the desired
+result</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="editing-features">Editing Features<a href="#editing-features" class="hash-link" aria-label="Direct link to Editing Features" title="Direct link to Editing Features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Full Undo/Redo Support</strong>: The entire sketch state is saved with each operation</li>
+<li class=""><strong>Dynamic Cursor</strong>: The cursor changes to reflect the active drawing tool</li>
+<li class=""><strong>Constraint Visualization</strong>: Applied constraints are clearly indicated in the interface</li>
+<li class=""><strong>Real-time Updates</strong>: Changes to constraints immediately update the geometry</li>
+<li class=""><strong>Double-Click Editing</strong>: Double-click on dimensional constraints (Distance, Radius, Diameter,
+Angle, Aspect Ratio) opens a dialog to edit their values</li>
+<li class=""><strong>Parametric Expressions</strong>: Dimensional constraints support expressions, allowing values to be
+calculated from other parameters (e.g., <code>width/2</code> for a radius that&#x27;s half the
+width)</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/features/sketcher.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/features/operations/material-test-grid"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Material Test Grid</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/features/multi-layer"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Multi-Layer Workflow</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#creating-and-editing-sketches" class="table-of-contents__link toc-highlight">Creating and Editing Sketches</a><ul><li><a href="#creating-a-new-sketch" class="table-of-contents__link toc-highlight">Creating a New Sketch</a></li><li><a href="#editing-existing-sketches" class="table-of-contents__link toc-highlight">Editing Existing Sketches</a></li></ul></li><li><a href="#creating-2d-geometry" class="table-of-contents__link toc-highlight">Creating 2D Geometry</a></li><li><a href="#parametric-constraint-system" class="table-of-contents__link toc-highlight">Parametric Constraint System</a><ul><li><a href="#geometric-constraints" class="table-of-contents__link toc-highlight">Geometric Constraints</a></li><li><a href="#dimensional-constraints" class="table-of-contents__link toc-highlight">Dimensional Constraints</a></li></ul></li><li><a href="#pie-menu-interface" class="table-of-contents__link toc-highlight">Pie Menu Interface</a></li><li><a href="#keyboard-shortcuts" class="table-of-contents__link toc-highlight">Keyboard Shortcuts</a><ul><li><a href="#tool-shortcuts" class="table-of-contents__link toc-highlight">Tool Shortcuts</a></li><li><a href="#action-shortcuts" class="table-of-contents__link toc-highlight">Action Shortcuts</a></li><li><a href="#constraint-shortcuts" class="table-of-contents__link toc-highlight">Constraint Shortcuts</a></li><li><a href="#general-shortcuts" class="table-of-contents__link toc-highlight">General Shortcuts</a></li></ul></li><li><a href="#construction-mode" class="table-of-contents__link toc-highlight">Construction Mode</a></li><li><a href="#chamfer-and-fillet" class="table-of-contents__link toc-highlight">Chamfer and Fillet</a></li><li><a href="#import-and-export" class="table-of-contents__link toc-highlight">Import and Export</a><ul><li><a href="#exporting-objects" class="table-of-contents__link toc-highlight">Exporting Objects</a></li><li><a href="#saving-sketches" class="table-of-contents__link toc-highlight">Saving Sketches</a></li><li><a href="#importing-sketches" class="table-of-contents__link toc-highlight">Importing Sketches</a></li></ul></li><li><a href="#workflow-tips" class="table-of-contents__link toc-highlight">Workflow Tips</a></li><li><a href="#editing-features" class="table-of-contents__link toc-highlight">Editing Features</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</body>
+</html>

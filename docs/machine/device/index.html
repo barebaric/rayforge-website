@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-machine/device" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Device Settings | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://rayforge.org/docs/machine/device"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Device Settings | Rayforge"><meta data-rh="true" name="description" content="The Device page in Machine Settings allows you to read and apply settings directly to your connected device (controller). These are also known as &quot;dollar settings&quot; or $$ settings in GRBL."><meta data-rh="true" property="og:description" content="The Device page in Machine Settings allows you to read and apply settings directly to your connected device (controller). These are also known as &quot;dollar settings&quot; or $$ settings in GRBL."><link data-rh="true" rel="icon" href="/assets/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/docs/machine/device"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/machine/device" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/machine/device" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Device Settings","item":"https://rayforge.org/docs/machine/device"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Rayforge RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Rayforge Atom Feed"><link rel="stylesheet" href="/assets/css/styles.919edc8e.css">
+<script src="/assets/js/runtime~main.53705bdf.js" defer="defer"></script>
+<script src="/assets/js/main.c26f01b2.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/assets/icon.svg" alt="Rayforge Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/assets/icon.svg" alt="Rayforge Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Rayforge</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/getting-started/installation">Documentation</a><a class="navbar__item navbar__link" href="/docs/developer/getting-started/">Developer</a><a class="navbar__item navbar__link" href="/contributing">Contributing</a><a class="navbar__item navbar__link" href="/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="patreonLink_HbXT"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" class="patreonImg_dUDi"></a><span class="githubWrapper_c8Sl"><a href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><span class="discordWrapper_j0RJ"><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs/getting-started/installation"><span title="Getting Started" class="categoryLinkLabel_W154">Getting Started</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting-started/installation"><span title="Installation" class="linkLabel_WmDU">Installation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting-started/first-time-setup"><span title="First Time Setup" class="linkLabel_WmDU">First Time Setup</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting-started/quick-start"><span title="Quick Start Guide" class="linkLabel_WmDU">Quick Start Guide</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/ui/settings"><span title="Application Settings" class="categoryLinkLabel_W154">Application Settings</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/machine/general"><span title="Machine Setup" class="categoryLinkLabel_W154">Machine Setup</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/machine/general"><span title="General Settings" class="linkLabel_WmDU">General Settings</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/machine/hardware"><span title="Hardware Settings" class="linkLabel_WmDU">Hardware Settings</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/machine/advanced"><span title="Advanced Settings" class="linkLabel_WmDU">Advanced Settings</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/machine/gcode"><span title="G-code Settings" class="linkLabel_WmDU">G-code Settings</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/machine/hooks-macros"><span title="Macros &amp; Hooks" class="linkLabel_WmDU">Macros &amp; Hooks</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/machine/device"><span title="Device Settings" class="linkLabel_WmDU">Device Settings</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/machine/laser"><span title="Laser Settings" class="linkLabel_WmDU">Laser Settings</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/machine/camera"><span title="Camera Integration" class="linkLabel_WmDU">Camera Integration</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/machine/maintenance"><span title="Maintenance" class="linkLabel_WmDU">Maintenance</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/ui/main-window"><span title="User Interface" class="categoryLinkLabel_W154">User Interface</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/features/operations/contour"><span title="Features" class="categoryLinkLabel_W154">Features</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/files/importing"><span title="Files" class="categoryLinkLabel_W154">Files</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/general-info/laser-safety"><span title="General Info" class="categoryLinkLabel_W154">General Info</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/troubleshooting/connection"><span title="Troubleshooting" class="categoryLinkLabel_W154">Troubleshooting</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/reference/shortcuts"><span title="Reference" class="categoryLinkLabel_W154">Reference</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Machine Setup</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Device Settings</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Device Settings</h1></header>
+<p>The Device page in Machine Settings allows you to read and apply settings directly to your connected device (controller). These are also known as &quot;dollar settings&quot; or <code>$$</code> settings in GRBL.</p>
+<p><img decoding="async" loading="lazy" alt="Device Settings" src="/assets/images/machine-device-7ba39e8b1ac025983fcb675d8c74dc7d.png" width="922" height="922" class="img_ev3q"></p>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Caution When Changing Settings</div><div class="admonitionContent_BuS1"><p>Incorrect firmware settings can cause your machine to behave unpredictably, lose position, or even damage hardware. Always record original values before making changes, and modify one setting at a time.</p></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h2>
+<p>The Device page provides direct access to your controller&#x27;s firmware settings. This is where you can:</p>
+<ul>
+<li class="">Read current settings from the device</li>
+<li class="">Modify individual settings</li>
+<li class="">Apply changes to the device</li>
+</ul>
+<p>Firmware settings control:</p>
+<ul>
+<li class=""><strong>Motion parameters</strong>: Speed limits, acceleration, calibration</li>
+<li class=""><strong>Limit switches</strong>: Homing behavior, soft/hard limits</li>
+<li class=""><strong>Laser control</strong>: Power range, laser mode enable</li>
+<li class=""><strong>Electrical configuration</strong>: Pin inversions, pullups</li>
+<li class=""><strong>Reporting</strong>: Status message format and frequency</li>
+</ul>
+<p>These settings are stored on your controller (not in Rayforge) and persist across power cycles.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="reading-settings">Reading Settings<a href="#reading-settings" class="hash-link" aria-label="Direct link to Reading Settings" title="Direct link to Reading Settings" translate="no">​</a></h2>
+<p>Click the <strong>Read from Device</strong> button to fetch the current settings from your connected controller. This requires:</p>
+<ul>
+<li class="">The machine to be connected</li>
+<li class="">The driver to support reading device settings</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="applying-settings">Applying Settings<a href="#applying-settings" class="hash-link" aria-label="Direct link to Applying Settings" title="Direct link to Applying Settings" translate="no">​</a></h2>
+<p>After modifying settings, changes are applied to the device. The device may:</p>
+<ul>
+<li class="">Restart temporarily</li>
+<li class="">Disconnect and reconnect</li>
+<li class="">Require a power cycle for some changes</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="console-access">Console Access<a href="#console-access" class="hash-link" aria-label="Direct link to Console Access" title="Direct link to Console Access" translate="no">​</a></h2>
+<p>You can also view/modify settings via G-code console:</p>
+<p><strong>View all settings:</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">$$</span><br></span></code></pre></div></div>
+<p><strong>View single setting:</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">$100</span><br></span></code></pre></div></div>
+<p><strong>Modify setting:</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">$100=80.0</span><br></span></code></pre></div></div>
+<p><strong>Restore defaults:</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">$RST=$</span><br></span></code></pre></div></div>
+<div class="theme-admonition theme-admonition-danger admonition_xJq3 alert alert--danger"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path></svg></span>Restore Defaults Erases All Settings</div><div class="admonitionContent_BuS1"><p>The <code>$RST=$</code> command resets all GRBL settings to factory defaults. You&#x27;ll lose any calibration and tuning. Back up your settings first!</p></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="critical-settings-for-lasers">Critical Settings for Lasers<a href="#critical-settings-for-lasers" class="hash-link" aria-label="Direct link to Critical Settings for Lasers" title="Direct link to Critical Settings for Lasers" translate="no">​</a></h2>
+<p>These settings are most important for laser operation:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="32---laser-mode">$32 - Laser Mode<a href="#32---laser-mode" class="hash-link" aria-label="Direct link to $32 - Laser Mode" title="Direct link to $32 - Laser Mode" translate="no">​</a></h3>
+<p><strong>Value:</strong> 0 = Disabled, 1 = Enabled</p>
+<p><strong>Purpose:</strong> Enables laser-specific features in GRBL</p>
+<p><strong>When enabled (1):</strong></p>
+<ul>
+<li class="">Laser automatically turns off during G0 (rapid) moves</li>
+<li class="">Power dynamically adjusts during acceleration/deceleration</li>
+<li class="">Prevents accidental burns during positioning</li>
+</ul>
+<p><strong>When disabled (0):</strong></p>
+<ul>
+<li class="">Laser behaves like a spindle (CNC mode)</li>
+<li class="">Doesn&#x27;t turn off during rapids</li>
+<li class=""><strong>Dangerous for laser use!</strong></li>
+</ul>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Always Enable Laser Mode</div><div class="admonitionContent_BuS1"><p>$32 should <strong>always</strong> be set to 1 for laser cutters. Disabled laser mode can cause unintended burns and fire hazards.</p></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="30--31---laser-power-range">$30 &amp; $31 - Laser Power Range<a href="#30--31---laser-power-range" class="hash-link" aria-label="Direct link to $30 &amp; $31 - Laser Power Range" title="Direct link to $30 &amp; $31 - Laser Power Range" translate="no">​</a></h3>
+<p><strong>$30 - Maximum Laser Power (RPM)</strong>
+<strong>$31 - Minimum Laser Power (RPM)</strong></p>
+<p><strong>Purpose:</strong> Defines the power range for S commands</p>
+<p><strong>Typical values:</strong></p>
+<ul>
+<li class="">$30=1000, $31=0 (S0-S1000 range, most common)</li>
+<li class="">$30=255, $31=0 (S0-S255 range, some controllers)</li>
+</ul>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>Matching Rayforge Configuration</div><div class="admonitionContent_BuS1"><p>The &quot;Max Power&quot; setting in your <a class="" href="/docs/machine/laser">Laser Settings</a> should match your $30 value. If $30=1000, set max power to 1000 in Rayforge.</p></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="130--131---maximum-travel">$130 &amp; $131 - Maximum Travel<a href="#130--131---maximum-travel" class="hash-link" aria-label="Direct link to $130 &amp; $131 - Maximum Travel" title="Direct link to $130 &amp; $131 - Maximum Travel" translate="no">​</a></h3>
+<p><strong>$130 - X Maximum Travel (mm)</strong>
+<strong>$131 - Y Maximum Travel (mm)</strong></p>
+<p><strong>Purpose:</strong> Defines your machine&#x27;s working area</p>
+<p><strong>Why it matters:</strong></p>
+<ul>
+<li class="">Soft limits ($20) use these values to prevent crashes</li>
+<li class="">Defines the coordinate system bounds</li>
+<li class="">Must match your physical machine size</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="settings-reference">Settings Reference<a href="#settings-reference" class="hash-link" aria-label="Direct link to Settings Reference" title="Direct link to Settings Reference" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stepper-configuration-0-6">Stepper Configuration ($0-$6)<a href="#stepper-configuration-0-6" class="hash-link" aria-label="Direct link to Stepper Configuration ($0-$6)" title="Direct link to Stepper Configuration ($0-$6)" translate="no">​</a></h3>
+<p>Controls stepper motor electrical signals and timing.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Setting</th><th>Description</th><th>Typical Value</th></tr></thead><tbody><tr><td>$0</td><td>Step pulse time (μs)</td><td>10</td></tr><tr><td>$1</td><td>Step idle delay (ms)</td><td>25</td></tr><tr><td>$2</td><td>Step pulse invert (mask)</td><td>0</td></tr><tr><td>$3</td><td>Step direction invert (mask)</td><td>0</td></tr><tr><td>$4</td><td>Invert step enable pin</td><td>0</td></tr><tr><td>$5</td><td>Invert limit pins</td><td>0</td></tr><tr><td>$6</td><td>Invert probe pin</td><td>0</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="limits--homing-20-27">Limits &amp; Homing ($20-$27)<a href="#limits--homing-20-27" class="hash-link" aria-label="Direct link to Limits &amp; Homing ($20-$27)" title="Direct link to Limits &amp; Homing ($20-$27)" translate="no">​</a></h3>
+<p>Controls limit switches and homing behavior.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Setting</th><th>Description</th><th>Typical Value</th></tr></thead><tbody><tr><td>$20</td><td>Soft limits enable</td><td>0 or 1</td></tr><tr><td>$21</td><td>Hard limits enable</td><td>0</td></tr><tr><td>$22</td><td>Homing cycle enable</td><td>0 or 1</td></tr><tr><td>$23</td><td>Homing direction invert</td><td>0</td></tr><tr><td>$24</td><td>Homing locate feed rate (mm/min)</td><td>25</td></tr><tr><td>$25</td><td>Homing search seek rate (mm/min)</td><td>500</td></tr><tr><td>$26</td><td>Homing debounce delay (ms)</td><td>250</td></tr><tr><td>$27</td><td>Homing pull-off distance (mm)</td><td>1.0</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="spindle--laser-30-32">Spindle &amp; Laser ($30-$32)<a href="#spindle--laser-30-32" class="hash-link" aria-label="Direct link to Spindle &amp; Laser ($30-$32)" title="Direct link to Spindle &amp; Laser ($30-$32)" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Setting</th><th>Description</th><th>Laser Value</th></tr></thead><tbody><tr><td>$30</td><td>Maximum spindle speed</td><td>1000.0</td></tr><tr><td>$31</td><td>Minimum spindle speed</td><td>0.0</td></tr><tr><td>$32</td><td>Laser mode enable</td><td>1</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="axis-calibration-100-102">Axis Calibration ($100-$102)<a href="#axis-calibration-100-102" class="hash-link" aria-label="Direct link to Axis Calibration ($100-$102)" title="Direct link to Axis Calibration ($100-$102)" translate="no">​</a></h3>
+<p>Defines how many stepper motor steps equal one millimeter of movement.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Setting</th><th>Description</th><th>Notes</th></tr></thead><tbody><tr><td>$100</td><td>X steps/mm</td><td>Depends on pulley/belt ratio</td></tr><tr><td>$101</td><td>Y steps/mm</td><td>Usually same as X</td></tr><tr><td>$102</td><td>Z steps/mm</td><td>Not used on most lasers</td></tr></tbody></table>
+<p><strong>Calculating steps/mm:</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">steps/mm = (motor_steps_per_rev × microstepping) / (pulley_teeth × belt_pitch)</span><br></span></code></pre></div></div>
+<p><strong>Example:</strong> 200 steps/rev, 16 microstepping, 20 teeth pulley, GT2 belt:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">steps/mm = (200 × 16) / (20 × 2) = 3200 / 40 = 80</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="axis-speed--acceleration-110-122">Axis Speed &amp; Acceleration ($110-$122)<a href="#axis-speed--acceleration-110-122" class="hash-link" aria-label="Direct link to Axis Speed &amp; Acceleration ($110-$122)" title="Direct link to Axis Speed &amp; Acceleration ($110-$122)" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Setting</th><th>Description</th><th>Typical Value</th></tr></thead><tbody><tr><td>$110</td><td>X max rate (mm/min)</td><td>5000.0</td></tr><tr><td>$111</td><td>Y max rate (mm/min)</td><td>5000.0</td></tr><tr><td>$112</td><td>Z max rate (mm/min)</td><td>500.0</td></tr><tr><td>$120</td><td>X acceleration (mm/sec²)</td><td>500.0</td></tr><tr><td>$121</td><td>Y acceleration (mm/sec²)</td><td>500.0</td></tr><tr><td>$122</td><td>Z acceleration (mm/sec²)</td><td>100.0</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="axis-travel-130-132">Axis Travel ($130-$132)<a href="#axis-travel-130-132" class="hash-link" aria-label="Direct link to Axis Travel ($130-$132)" title="Direct link to Axis Travel ($130-$132)" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Setting</th><th>Description</th><th>Notes</th></tr></thead><tbody><tr><td>$130</td><td>X max travel (mm)</td><td>Working area width</td></tr><tr><td>$131</td><td>Y max travel (mm)</td><td>Working area depth</td></tr><tr><td>$132</td><td>Z max travel (mm)</td><td>Z travel (if applicable)</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="common-configuration-example">Common Configuration Example<a href="#common-configuration-example" class="hash-link" aria-label="Direct link to Common Configuration Example" title="Direct link to Common Configuration Example" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="typical-diode-laser-300400mm">Typical Diode Laser (300×400mm)<a href="#typical-diode-laser-300400mm" class="hash-link" aria-label="Direct link to Typical Diode Laser (300×400mm)" title="Direct link to Typical Diode Laser (300×400mm)" translate="no">​</a></h3>
+<div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">$0=10          ; Step pulse 10μs</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$1=255         ; Step idle delay 255ms</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$2=0           ; No step invert</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$3=0           ; No direction invert</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$4=0           ; No enable invert</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$5=0           ; No limit invert</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$10=1          ; Report WPos</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$11=0.010      ; Junction deviation 0.01mm</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$12=0.002      ; Arc tolerance 0.002mm</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$13=0          ; Report mm</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$20=1          ; Soft limits enabled</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$21=0          ; Hard limits disabled</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$22=1          ; Homing enabled</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$23=0          ; Home to min</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$24=50.0       ; Homing feed 50mm/min</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$25=1000.0     ; Homing seek 1000mm/min</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$26=250        ; Homing debounce 250ms</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$27=2.0        ; Homing pull-off 2mm</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$30=1000.0     ; Max power S1000</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$31=0.0        ; Min power S0</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$32=1          ; Laser mode ON</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$100=80.0      ; X steps/mm</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$101=80.0      ; Y steps/mm</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$102=80.0      ; Z steps/mm</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$110=5000.0    ; X max rate</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$111=5000.0    ; Y max rate</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$112=500.0     ; Z max rate</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$120=500.0     ; X accel</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$121=500.0     ; Y accel</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$122=100.0     ; Z accel</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$130=400.0     ; X max travel</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$131=300.0     ; Y max travel</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$132=0.0       ; Z max travel</span><br></span></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="backing-up-settings">Backing Up Settings<a href="#backing-up-settings" class="hash-link" aria-label="Direct link to Backing Up Settings" title="Direct link to Backing Up Settings" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="backup-procedure">Backup Procedure<a href="#backup-procedure" class="hash-link" aria-label="Direct link to Backup Procedure" title="Direct link to Backup Procedure" translate="no">​</a></h3>
+<ol>
+<li class="">
+<p><strong>Via Rayforge:</strong></p>
+<ul>
+<li class="">Open Device Settings panel</li>
+<li class="">Click &quot;Export Settings&quot;</li>
+<li class="">Save file as <code>grbl-backup-YYYY-MM-DD.txt</code></li>
+</ul>
+</li>
+<li class="">
+<p><strong>Via console:</strong></p>
+<ul>
+<li class="">Send <code>$$</code> command</li>
+<li class="">Copy all output to text file</li>
+<li class="">Save with date</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="restore-procedure">Restore Procedure<a href="#restore-procedure" class="hash-link" aria-label="Direct link to Restore Procedure" title="Direct link to Restore Procedure" translate="no">​</a></h3>
+<ol>
+<li class="">Open backup file</li>
+<li class="">Send each line (<code>$100=80.0</code>, etc.) via console</li>
+<li class="">Verify with <code>$$</code> command</li>
+</ol>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>Regular Backups</div><div class="admonitionContent_BuS1"><p>Back up your settings after any calibration or tuning. Store backups in a safe location.</p></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="see-also">See Also<a href="#see-also" class="hash-link" aria-label="Direct link to See Also" title="Direct link to See Also" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/docs/machine/general">General Settings</a> - Machine name and speed settings</li>
+<li class=""><a class="" href="/docs/machine/laser">Laser Settings</a> - Laser head configuration</li>
+<li class=""><a class="" href="/docs/troubleshooting/connection">Connection Troubleshooting</a> - Fixing connection problems</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="external-resources">External Resources<a href="#external-resources" class="hash-link" aria-label="Direct link to External Resources" title="Direct link to External Resources" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://github.com/gnea/grbl/wiki/Grbl-v1.1-Configuration" target="_blank" rel="noopener noreferrer" class="">GRBL v1.1 Configuration</a></li>
+<li class=""><a href="https://github.com/gnea/grbl/wiki/Grbl-v1.1-Commands" target="_blank" rel="noopener noreferrer" class="">GRBL v1.1 Commands</a></li>
+<li class=""><a href="https://github.com/bdring/Grbl_Esp32/wiki" target="_blank" rel="noopener noreferrer" class="">Grbl_ESP32 Documentation</a></li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/machine/device.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/machine/hooks-macros"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Macros &amp; Hooks</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/machine/laser"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Laser Settings</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#reading-settings" class="table-of-contents__link toc-highlight">Reading Settings</a></li><li><a href="#applying-settings" class="table-of-contents__link toc-highlight">Applying Settings</a></li><li><a href="#console-access" class="table-of-contents__link toc-highlight">Console Access</a></li><li><a href="#critical-settings-for-lasers" class="table-of-contents__link toc-highlight">Critical Settings for Lasers</a><ul><li><a href="#32---laser-mode" class="table-of-contents__link toc-highlight">$32 - Laser Mode</a></li><li><a href="#30--31---laser-power-range" class="table-of-contents__link toc-highlight">$30 &amp; $31 - Laser Power Range</a></li><li><a href="#130--131---maximum-travel" class="table-of-contents__link toc-highlight">$130 &amp; $131 - Maximum Travel</a></li></ul></li><li><a href="#settings-reference" class="table-of-contents__link toc-highlight">Settings Reference</a><ul><li><a href="#stepper-configuration-0-6" class="table-of-contents__link toc-highlight">Stepper Configuration ($0-$6)</a></li><li><a href="#limits--homing-20-27" class="table-of-contents__link toc-highlight">Limits &amp; Homing ($20-$27)</a></li><li><a href="#spindle--laser-30-32" class="table-of-contents__link toc-highlight">Spindle &amp; Laser ($30-$32)</a></li><li><a href="#axis-calibration-100-102" class="table-of-contents__link toc-highlight">Axis Calibration ($100-$102)</a></li><li><a href="#axis-speed--acceleration-110-122" class="table-of-contents__link toc-highlight">Axis Speed &amp; Acceleration ($110-$122)</a></li><li><a href="#axis-travel-130-132" class="table-of-contents__link toc-highlight">Axis Travel ($130-$132)</a></li></ul></li><li><a href="#common-configuration-example" class="table-of-contents__link toc-highlight">Common Configuration Example</a><ul><li><a href="#typical-diode-laser-300400mm" class="table-of-contents__link toc-highlight">Typical Diode Laser (300×400mm)</a></li></ul></li><li><a href="#backing-up-settings" class="table-of-contents__link toc-highlight">Backing Up Settings</a><ul><li><a href="#backup-procedure" class="table-of-contents__link toc-highlight">Backup Procedure</a></li><li><a href="#restore-procedure" class="table-of-contents__link toc-highlight">Restore Procedure</a></li></ul></li><li><a href="#see-also" class="table-of-contents__link toc-highlight">See Also</a></li><li><a href="#external-resources" class="table-of-contents__link toc-highlight">External Resources</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</body>
+</html>

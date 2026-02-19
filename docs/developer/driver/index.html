@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-developer/driver" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Driver Development Guide | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://rayforge.org/docs/developer/driver"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Driver Development Guide | Rayforge"><meta data-rh="true" name="description" content="This guide provides a high-level overview of how to create a driver in Rayforge"><meta data-rh="true" property="og:description" content="This guide provides a high-level overview of how to create a driver in Rayforge"><link data-rh="true" rel="icon" href="/assets/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/docs/developer/driver"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/developer/driver" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/developer/driver" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Driver Development Guide","item":"https://rayforge.org/docs/developer/driver"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Rayforge RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Rayforge Atom Feed"><link rel="stylesheet" href="/assets/css/styles.919edc8e.css">
+<script src="/assets/js/runtime~main.53705bdf.js" defer="defer"></script>
+<script src="/assets/js/main.c26f01b2.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/assets/icon.svg" alt="Rayforge Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/assets/icon.svg" alt="Rayforge Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Rayforge</b></a><a class="navbar__item navbar__link" href="/docs/getting-started/installation">Documentation</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/developer/getting-started/">Developer</a><a class="navbar__item navbar__link" href="/contributing">Contributing</a><a class="navbar__item navbar__link" href="/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="patreonLink_HbXT"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" class="patreonImg_dUDi"></a><span class="githubWrapper_c8Sl"><a href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><span class="discordWrapper_j0RJ"><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs/developer/getting-started/"><span title="Getting Started" class="categoryLinkLabel_W154">Getting Started</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/developer/getting-started/"><span title="Getting the Code" class="linkLabel_WmDU">Getting the Code</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/developer/getting-started/setup"><span title="Setup" class="linkLabel_WmDU">Setup</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/developer/getting-started/submitting-changes"><span title="Submitting Changes" class="linkLabel_WmDU">Submitting Changes</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/developer/architecture"><span title="Architecture" class="categoryLinkLabel_W154">Architecture</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/developer/architecture"><span title="Rayforge Architecture" class="linkLabel_WmDU">Rayforge Architecture</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/developer/docmodel"><span title="Document Model Architecture" class="linkLabel_WmDU">Document Model Architecture</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/developer/importer"><span title="Importer Architecture" class="linkLabel_WmDU">Importer Architecture</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/developer/pipeline"><span title="Pipeline Architecture" class="linkLabel_WmDU">Pipeline Architecture</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/developer/tasker"><span title="Tasker: Background Task Management" class="linkLabel_WmDU">Tasker: Background Task Management</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/developer/driver"><span title="Driver Development Guide" class="linkLabel_WmDU">Driver Development Guide</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/developer/plugin-docs"><span title="Plugins" class="categoryLinkLabel_W154">Plugins</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Architecture</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Driver Development Guide</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Driver Development Guide</h1></header>
+<p>This guide provides a high-level overview of how to create a driver in Rayforge
+to add support for your laser cutter or engraver. By creating a driver, you
+integrate your machine&#x27;s unique communication protocol and command language into
+the Rayforge ecosystem.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="driver-overview">Driver Overview<a href="#driver-overview" class="hash-link" aria-label="Direct link to Driver Overview" title="Direct link to Driver Overview" translate="no">​</a></h2>
+<p>A driver is the bridge between Rayforge&#x27;s core logic and your physical hardware.
+It is responsible for three main tasks:</p>
+<ol>
+<li class=""><strong>Managing Connectivity:</strong> Handling the low-level communication protocol
+(Serial, WebSocket, HTTP, etc.).</li>
+<li class=""><strong>Executing Jobs:</strong> Sending pre-encoded machine code (e.g., G-code) to the
+device and tracking execution progress.</li>
+<li class=""><strong>Reporting State:</strong> Emitting signals to update the UI with the laser&#x27;s
+real-time position, status (<code>IDLE</code>, <code>RUN</code>), and log messages.</li>
+</ol>
+<p>To simplify this, Rayforge provides an architecture based on composable parts:</p>
+<!-- -->
+<ul>
+<li class=""><strong><code>OpsEncoder</code>:</strong> Translates <code>Ops</code> into a specific command language
+(e.g., G-code). Used by both the Pipeline (for job encoding) and the
+Driver (for individual commands like move_to, home, etc.).</li>
+<li class=""><strong><code>Pipeline</code>:</strong> Orchestrates encoding and produces final machine code.</li>
+<li class=""><strong><code>Transport</code>:</strong> Manages the connection and data transfer.</li>
+<li class=""><strong><code>Driver</code>:</strong> Executes machine code, handles device state, and communicates
+with the UI.</li>
+</ul>
+<p>All driver operations are <strong>asynchronous</strong> to ensure the user interface remains responsive.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-ops-language">The <code>Ops</code> Language<a href="#the-ops-language" class="hash-link" aria-label="Direct link to the-ops-language" title="Direct link to the-ops-language" translate="no">​</a></h2>
+<p>Rayforge describes a laser job as a sequence of high-level operations, stored in
+an <code>Ops</code> object. This is the universal language within Rayforge for describing
+machine movements, independent of any specific hardware.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:left"><code>Ops</code> Method</th><th style="text-align:left">Signature</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><code>move_to</code></td><td style="text-align:left"><code>(x, y, z=0.0)</code></td><td style="text-align:left">Rapid movement (no cutting)</td></tr><tr><td style="text-align:left"><code>line_to</code></td><td style="text-align:left"><code>(x, y, z=0.0)</code></td><td style="text-align:left">Cutting/Engraving movement</td></tr><tr><td style="text-align:left"><code>arc_to</code></td><td style="text-align:left"><code>(x, y, i, j, cw=True, z=0.0)</code></td><td style="text-align:left">Cutting/Engraving arc movement</td></tr><tr><td style="text-align:left"><code>set_power</code></td><td style="text-align:left"><code>(power)</code></td><td style="text-align:left">Set laser power (0-100%)</td></tr><tr><td style="text-align:left"><code>set_cut_speed</code></td><td style="text-align:left"><code>(speed)</code></td><td style="text-align:left">Set speed for cutting moves (mm/min)</td></tr><tr><td style="text-align:left"><code>set_travel_speed</code></td><td style="text-align:left"><code>(speed)</code></td><td style="text-align:left">Set speed for rapid moves (mm/min)</td></tr><tr><td style="text-align:left"><code>enable_air_assist</code></td><td style="text-align:left"><code>()</code></td><td style="text-align:left">Turn on air assist</td></tr><tr><td style="text-align:left"><code>disable_air_assist</code></td><td style="text-align:left"><code>()</code></td><td style="text-align:left">Turn off air assist</td></tr></tbody></table>
+<p>Your driver receives pre-encoded machine code (e.g., a G-code string) and an
+operation map that tracks which machine code commands correspond to which
+operations. The pipeline handles encoding <code>Ops</code> to machine code before calling
+the driver&#x27;s <code>run()</code> method.</p>
+<div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token comment" style="color:rgb(105, 112, 152);font-style:italic"># Example of how Rayforge builds an Ops object</span><span class="token plain"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">ops </span><span class="token operator" style="color:rgb(137, 221, 255)">=</span><span class="token plain"> Ops</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">ops</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">set_travel_speed</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token number" style="color:rgb(247, 140, 108)">3000</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">ops</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">set_cut_speed</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token number" style="color:rgb(247, 140, 108)">800</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">ops</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">set_power</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token number" style="color:rgb(247, 140, 108)">80</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">ops</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">move_to</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token number" style="color:rgb(247, 140, 108)">10</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"> </span><span class="token number" style="color:rgb(247, 140, 108)">10</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain">       </span><span class="token comment" style="color:rgb(105, 112, 152);font-style:italic"># Rapid move to start point</span><span class="token plain"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">ops</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">enable_air_assist</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">ops</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">line_to</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token number" style="color:rgb(247, 140, 108)">50</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"> </span><span class="token number" style="color:rgb(247, 140, 108)">10</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain">       </span><span class="token comment" style="color:rgb(105, 112, 152);font-style:italic"># Cut a line with air assist</span><span class="token plain"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">ops</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">disable_air_assist</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">ops</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">line_to</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token number" style="color:rgb(247, 140, 108)">50</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"> </span><span class="token number" style="color:rgb(247, 140, 108)">50</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain">       </span><span class="token comment" style="color:rgb(105, 112, 152);font-style:italic"># Cut a line without air assist</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="driver-implementation">Driver Implementation<a href="#driver-implementation" class="hash-link" aria-label="Direct link to Driver Implementation" title="Direct link to Driver Implementation" translate="no">​</a></h2>
+<p>All drivers MUST inherit from <code>rayforge.machine.drivers.Driver</code>.</p>
+<div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token keyword" style="font-style:italic">from</span><span class="token plain"> rayforge</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">machine</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">driver</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">driver </span><span class="token keyword" style="font-style:italic">import</span><span class="token plain"> Driver</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"></span><span class="token keyword" style="font-style:italic">class</span><span class="token plain"> </span><span class="token class-name" style="color:rgb(255, 203, 107)">YourDriver</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token plain">Driver</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    label </span><span class="token operator" style="color:rgb(137, 221, 255)">=</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">&quot;Your Device&quot;</span><span class="token plain">  </span><span class="token comment" style="color:rgb(105, 112, 152);font-style:italic"># Display name in the UI</span><span class="token plain"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    subtitle </span><span class="token operator" style="color:rgb(137, 221, 255)">=</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">&quot;Description for users&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    supports_settings </span><span class="token operator" style="color:rgb(137, 221, 255)">=</span><span class="token plain"> </span><span class="token boolean" style="color:rgb(255, 88, 116)">False</span><span class="token plain"> </span><span class="token comment" style="color:rgb(105, 112, 152);font-style:italic"># Set True if the driver can read/write firmware settings</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="required-properties">Required Properties<a href="#required-properties" class="hash-link" aria-label="Direct link to Required Properties" title="Direct link to Required Properties" translate="no">​</a></h3>
+<ul>
+<li class=""><code>label</code>: A human-readable name shown in the UI.</li>
+<li class=""><code>subtitle</code>: A brief description shown below the name.</li>
+<li class=""><code>supports_settings</code>: A boolean indicating if the driver can read/write device
+settings (like GRBL&#x27;s <code>$$</code>).</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="required-methods">Required Methods<a href="#required-methods" class="hash-link" aria-label="Direct link to Required Methods" title="Direct link to Required Methods" translate="no">​</a></h3>
+<p>Your driver class <strong>MUST</strong> implement the following methods. Note that most are <strong>asynchronous</strong> and must be defined with <code>async def</code>.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="configuration-and-lifecycle">Configuration and Lifecycle<a href="#configuration-and-lifecycle" class="hash-link" aria-label="Direct link to Configuration and Lifecycle" title="Direct link to Configuration and Lifecycle" translate="no">​</a></h4>
+<ul>
+<li class=""><code>get_setup_vars() -&gt; VarSet</code>: <strong>(Class Method)</strong> Returns a <code>VarSet</code> object
+defining the parameters needed for connection (e.g., IP address, serial port).
+Rayforge uses this to automatically generate the setup form in the UI.</li>
+<li class=""><code>precheck(**kwargs)</code>: <strong>(Class Method)</strong> A non-blocking, static check of the
+configuration that can be run before driver instantiation. Should raise
+<code>DriverPrecheckError</code> on failure.</li>
+<li class=""><code>setup(**kwargs)</code>: Called once with the values from the setup form. Use this
+to initialize your transports and internal state.</li>
+<li class=""><code>async def connect()</code>: Establishes and maintains a persistent connection to
+the device. This method should contain auto-reconnection logic.</li>
+<li class=""><code>async def cleanup()</code>: Called when disconnecting. Should close all
+connections and release resources.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="device-control">Device Control<a href="#device-control" class="hash-link" aria-label="Direct link to Device Control" title="Direct link to Device Control" translate="no">​</a></h4>
+<ul>
+<li class=""><code>async def run(machine_code: Any, op_map: MachineCodeOpMap, doc: Doc, on_command_done: Optional[Callable[[int], Union[None, Awaitable[None]]]] = None)</code>: The core method for executing a job. Receives pre-encoded machine
+code (e.g., G-code string) and a mapping between operation indices and
+machine code. The <code>on_command_done</code> callback is called with the op_index
+when each command completes.</li>
+<li class=""><code>async def home(axes: Optional[Axis] = None)</code>: Homes the machine. Can home
+specific axes or all axes.</li>
+<li class=""><code>async def move_to(pos_x: float, pos_y: float)</code>: Manually moves the laser
+head to a specific XY coordinate.</li>
+<li class=""><code>async def set_hold(hold: bool = True)</code>: Pauses or resumes current job.</li>
+<li class=""><code>async def cancel()</code>: Stops the current job.</li>
+<li class=""><code>async def jog(axis: Axis, distance: float, speed: int)</code>: Jogs the machine
+along a specific axis.</li>
+<li class=""><code>async def select_tool(tool_number: int)</code>: Selects a new tool/laser head by
+its number.</li>
+<li class=""><code>async def clear_alarm()</code>: Clears any active alarm state.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="firmware-settings-if-supports_settings-is-true">Firmware Settings (if <code>supports_settings</code> is <code>True</code>)<a href="#firmware-settings-if-supports_settings-is-true" class="hash-link" aria-label="Direct link to firmware-settings-if-supports_settings-is-true" title="Direct link to firmware-settings-if-supports_settings-is-true" translate="no">​</a></h4>
+<ul>
+<li class=""><code>get_setting_vars() -&gt; List[VarSet]</code>: Returns <code>VarSet</code> objects that define
+the structure of the device&#x27;s settings page.</li>
+<li class=""><code>async def read_settings()</code>: Reads all settings from the device and calls
+<code>_on_settings_read()</code> with the result.</li>
+<li class=""><code>async def write_setting(key: str, value: Any)</code>: Writes a single setting to
+the device.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="emitting-signals">Emitting Signals<a href="#emitting-signals" class="hash-link" aria-label="Direct link to Emitting Signals" title="Direct link to Emitting Signals" translate="no">​</a></h3>
+<p>To communicate with the UI, your driver must emit signals. To ensure proper
+logging and thread safety, <strong>you must not emit signals directly.</strong> Instead,
+call the protected helper methods from the base <code>Driver</code> class.</p>
+<ul>
+<li class=""><code>self._log(message)</code>: Sends a log message to the console.</li>
+<li class=""><code>self._on_state_changed()</code>: Call this whenever you update <code>self.state</code> to
+notify the UI of a status or position change.</li>
+<li class=""><code>self._on_connection_status_changed(status, message)</code>: Informs the UI about
+the connection status (<code>CONNECTING</code>, <code>CONNECTED</code>, <code>ERROR</code>, etc.).</li>
+<li class=""><code>self._on_command_status_changed(status, message)</code>: Reports the status of a
+sent command.</li>
+<li class=""><code>self._on_settings_read(settings)</code>: Sends the device settings you&#x27;ve read
+back to the UI.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="have-questions">Have Questions?<a href="#have-questions" class="hash-link" aria-label="Direct link to Have Questions?" title="Direct link to Have Questions?" translate="no">​</a></h2>
+<p>The best way to learn is to look at the existing drivers in
+<code>rayforge/machine/driver/</code>, such as:</p>
+<ul>
+<li class=""><code>grbl.py</code> - GRBL-based machines</li>
+<li class=""><code>grbl_serial.py</code> - Serial-based GRBL communication</li>
+<li class=""><code>smoothie.py</code> - Smoothieboard-based machines</li>
+<li class=""><code>dummy.py</code> - A test driver for development</li>
+</ul>
+<p>If you get stuck, please don&#x27;t hesitate to open an issue on GitHub! We&#x27;re happy to help.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/driver.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/developer/tasker"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Tasker: Background Task Management</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/developer/plugin-docs"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Rayforge Package Developer Guide</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#driver-overview" class="table-of-contents__link toc-highlight">Driver Overview</a></li><li><a href="#the-ops-language" class="table-of-contents__link toc-highlight">The <code>Ops</code> Language</a></li><li><a href="#driver-implementation" class="table-of-contents__link toc-highlight">Driver Implementation</a><ul><li><a href="#required-properties" class="table-of-contents__link toc-highlight">Required Properties</a></li><li><a href="#required-methods" class="table-of-contents__link toc-highlight">Required Methods</a></li><li><a href="#emitting-signals" class="table-of-contents__link toc-highlight">Emitting Signals</a></li></ul></li><li><a href="#have-questions" class="table-of-contents__link toc-highlight">Have Questions?</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</body>
+</html>
