@@ -303,7 +303,7 @@ in your system. You can specify:</p>
 <li class="">Offset positions (if lasers are mounted at different locations)</li>
 <li class="">Material compatibility</li>
 </ul>
-<p>See our <a class="" href="https://rayforge.org/docs/machine/multi-laser">Multi-Laser Configuration Guide</a>
+<p>See our <a class="" href="https://rayforge.org/docs/machine/laser">Laser Configuration Guide</a>
 for detailed instructions.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-assign-lasers-to-operations">2. Assign Lasers to Operations<a href="https://rayforge.org/blog/multi-laser-support#2-assign-lasers-to-operations" class="hash-link" aria-label="Direct link to 2. Assign Lasers to Operations" title="Direct link to 2. Assign Lasers to Operations" translate="no">​</a></h3>
 <p>When creating operations in your project:</p>
