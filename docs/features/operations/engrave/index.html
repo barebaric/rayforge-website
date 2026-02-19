@@ -5,7 +5,7 @@
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Engrave | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://rayforge.org/docs/features/operations/engrave"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Engrave | Rayforge"><meta data-rh="true" name="description" content="Engrave operations fill areas with raster scanning lines, supporting multiple modes for different engraving effects. From smooth grayscale photos to 3D relief effects, choose the mode that best suits your design and material."><meta data-rh="true" property="og:description" content="Engrave operations fill areas with raster scanning lines, supporting multiple modes for different engraving effects. From smooth grayscale photos to 3D relief effects, choose the mode that best suits your design and material."><link data-rh="true" rel="icon" href="/assets/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/docs/features/operations/engrave"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/features/operations/engrave" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/features/operations/engrave" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Engrave","item":"https://rayforge.org/docs/features/operations/engrave"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Rayforge RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Rayforge Atom Feed"><link rel="stylesheet" href="/assets/css/styles.919edc8e.css">
-<script src="/assets/js/runtime~main.70eec23e.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.5073a7f4.js" defer="defer"></script>
 <script src="/assets/js/main.26f8b3a5.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -129,7 +129,7 @@
 <li class=""><strong>Multiple Depths</strong> - 3D relief effects</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-4-configure-settings">Step 4: Configure Settings<a href="#step-4-configure-settings" class="hash-link" aria-label="Direct link to Step 4: Configure Settings" title="Direct link to Step 4: Configure Settings" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" alt="Engrave step settings" src="/assets/images/step-engrave-step-settings-9d713139070755ff0f7b865e868aa1e0.png" width="722" height="1022" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Engrave step settings" src="/assets/images/step-engrave-step-settings-2a5e0429cd229f5015c22ba50914a040.png" width="722" height="1022" class="img_ev3q"></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="common-settings">Common Settings<a href="#common-settings" class="hash-link" aria-label="Direct link to Common Settings" title="Direct link to Common Settings" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="power--speed">Power &amp; Speed<a href="#power--speed" class="hash-link" aria-label="Direct link to Power &amp; Speed" title="Direct link to Power &amp; Speed" translate="no">​</a></h3>
 <p><strong>Power (%):</strong></p>
@@ -224,7 +224,7 @@
 <p>See <a class="" href="/docs/features/overscan">Overscan</a> for details.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="mode-specific-settings">Mode-Specific Settings<a href="#mode-specific-settings" class="hash-link" aria-label="Direct link to Mode-Specific Settings" title="Direct link to Mode-Specific Settings" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="variable-power-mode-settings">Variable Power Mode Settings<a href="#variable-power-mode-settings" class="hash-link" aria-label="Direct link to Variable Power Mode Settings" title="Direct link to Variable Power Mode Settings" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" alt="Variable Power mode settings" src="/assets/images/step-engrave-step-settings-9d713139070755ff0f7b865e868aa1e0.png" width="722" height="1022" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Variable Power mode settings" src="/assets/images/step-engrave-step-settings-2a5e0429cd229f5015c22ba50914a040.png" width="722" height="1022" class="img_ev3q"></p>
 <p><strong>Min Power (%):</strong></p>
 <ul>
 <li class="">Laser power for lightest areas (white pixels)</li>
@@ -270,6 +270,18 @@
 <li class=""><strong>On</strong>: White = deep, Black = shallow</li>
 </ul>
 <p>Use invert for lithophanes (light areas should be thin) or embossing (raised areas).</p>
+<p><strong>Brightness Range:</strong></p>
+<p>Controls how image brightness values are mapped to laser power. The histogram shows the distribution of brightness values in your image.</p>
+<ul>
+<li class=""><strong>Auto Levels</strong> (default): Automatically adjusts the black and white points based on image content. Values below the black point are treated as black, values above the white point are treated as white. This stretches the image&#x27;s contrast to use the full power range.</li>
+<li class=""><strong>Manual Mode</strong>: Disable Auto Levels to manually set black and white points by dragging the markers on the histogram.</li>
+</ul>
+<p>This is particularly useful for:</p>
+<ul>
+<li class="">Low-contrast images that need contrast enhancement</li>
+<li class="">Images with limited tonal range</li>
+<li class="">Ensuring consistent results across different source images</li>
+</ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="constant-power-mode-settings">Constant Power Mode Settings<a href="#constant-power-mode-settings" class="hash-link" aria-label="Direct link to Constant Power Mode Settings" title="Direct link to Constant Power Mode Settings" translate="no">​</a></h3>
 <p><img decoding="async" loading="lazy" alt="Constant Power mode settings" src="/assets/images/step-engrave-constant_power-step-settings-0dff84cebe524e79840db87cec4bcfb2.png" width="722" height="1022" class="img_ev3q"></p>
 <p><strong>Threshold (0-255):</strong></p>
