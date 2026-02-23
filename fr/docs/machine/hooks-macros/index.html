@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="fr" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-machine/hooks-macros" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Macros &amp; Hooks | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://rayforge.org/fr/docs/machine/hooks-macros"><meta data-rh="true" property="og:locale" content="fr"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="pt_BR"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="de"><meta data-rh="true" property="og:locale:alternate" content="zh_CN"><meta data-rh="true" name="docusaurus_locale" content="fr"><meta data-rh="true" name="docsearch:language" content="fr"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Macros &amp; Hooks | Rayforge"><meta data-rh="true" name="description" content="Rayforge fournit deux puissantes fonctionnalités d&#x27;automatisation pour personnaliser votre flux de travail : Macros et Hooks. Les deux vous permettent d&#x27;injecter du G-code personnalisé dans vos travaux, mais ils servent des objectifs différents."><meta data-rh="true" property="og:description" content="Rayforge fournit deux puissantes fonctionnalités d&#x27;automatisation pour personnaliser votre flux de travail : Macros et Hooks. Les deux vous permettent d&#x27;injecter du G-code personnalisé dans vos travaux, mais ils servent des objectifs différents."><link data-rh="true" rel="icon" href="/fr/assets/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/fr/docs/machine/hooks-macros"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/machine/hooks-macros" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/pt-BR/docs/machine/hooks-macros" hreflang="pt-BR"><link data-rh="true" rel="alternate" href="https://rayforge.org/es/docs/machine/hooks-macros" hreflang="es"><link data-rh="true" rel="alternate" href="https://rayforge.org/fr/docs/machine/hooks-macros" hreflang="fr"><link data-rh="true" rel="alternate" href="https://rayforge.org/de/docs/machine/hooks-macros" hreflang="de"><link data-rh="true" rel="alternate" href="https://rayforge.org/zh-CN/docs/machine/hooks-macros" hreflang="zh-CN"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/machine/hooks-macros" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Macros & Hooks","item":"https://rayforge.org/fr/docs/machine/hooks-macros"}]}</script><link rel="alternate" type="application/rss+xml" href="/fr/blog/rss.xml" title="Rayforge RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/fr/blog/atom.xml" title="Rayforge Atom Feed"><link rel="stylesheet" href="/fr/assets/css/styles.919edc8e.css">
+<script src="/fr/assets/js/runtime~main.0e7f4110.js" defer="defer"></script>
+<script src="/fr/assets/js/main.4cc89177.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Aller au contenu principal"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Aller au contenu principal</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Ouvrir/fermer la barre de navigation" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/fr/"><div class="navbar__logo"><img src="/fr/assets/icon.svg" alt="Rayforge Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/fr/assets/icon.svg" alt="Rayforge Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Rayforge</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/fr/docs/getting-started/installation">Documentation</a><a class="navbar__item navbar__link" href="/fr/docs/developer/getting-started/">Developer</a><a class="navbar__item navbar__link" href="/fr/contributing">Contributing</a><a class="navbar__item navbar__link" href="/fr/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>Français</a><ul class="dropdown__menu"><li><a href="/docs/machine/hooks-macros" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="en">English</a></li><li><a href="/pt-BR/docs/machine/hooks-macros" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="pt-BR">Português (Brasil)</a></li><li><a href="/es/docs/machine/hooks-macros" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="es">Español</a></li><li><a href="/fr/docs/machine/hooks-macros" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="fr">Français</a></li><li><a href="/de/docs/machine/hooks-macros" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="de">Deutsch</a></li><li><a href="/zh-CN/docs/machine/hooks-macros" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="zh-CN">中文（中国）</a></li></ul></div><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="patreonLink_HbXT"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" class="patreonImg_dUDi"></a><span class="githubWrapper_c8Sl"><a href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><span class="discordWrapper_j0RJ"><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Basculer entre le mode sombre et clair (actuellement system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Retour au début de la page" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/fr/docs/getting-started/installation"><span title="Démarrage" class="categoryLinkLabel_W154">Démarrage</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/getting-started/installation"><span title="Installation" class="linkLabel_WmDU">Installation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/getting-started/first-time-setup"><span title="Configuration Initiale" class="linkLabel_WmDU">Configuration Initiale</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/getting-started/quick-start"><span title="Guide de Démarrage Rapide" class="linkLabel_WmDU">Guide de Démarrage Rapide</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/fr/docs/ui/settings"><span title="Paramètres de l&#x27;Application" class="categoryLinkLabel_W154">Paramètres de l&#x27;Application</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/fr/docs/machine/general"><span title="Configuration de la Machine" class="categoryLinkLabel_W154">Configuration de la Machine</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/machine/general"><span title="Paramètres Généraux" class="linkLabel_WmDU">Paramètres Généraux</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/machine/hardware"><span title="Paramètres Matériels" class="linkLabel_WmDU">Paramètres Matériels</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/machine/advanced"><span title="Paramètres Avancés" class="linkLabel_WmDU">Paramètres Avancés</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/machine/gcode"><span title="Paramètres G-code" class="linkLabel_WmDU">Paramètres G-code</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/fr/docs/machine/hooks-macros"><span title="Macros &amp; Hooks" class="linkLabel_WmDU">Macros &amp; Hooks</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/machine/device"><span title="Paramètres de l&#x27;Appareil" class="linkLabel_WmDU">Paramètres de l&#x27;Appareil</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/machine/laser"><span title="Paramètres Laser" class="linkLabel_WmDU">Paramètres Laser</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/machine/camera"><span title="Intégration Caméra" class="linkLabel_WmDU">Intégration Caméra</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/machine/maintenance"><span title="Maintenance" class="linkLabel_WmDU">Maintenance</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/fr/docs/ui/main-window"><span title="Interface Utilisateur" class="categoryLinkLabel_W154">Interface Utilisateur</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/fr/docs/features/operations/contour"><span title="Fonctionnalités" class="categoryLinkLabel_W154">Fonctionnalités</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/fr/docs/files/importing"><span title="Fichiers" class="categoryLinkLabel_W154">Fichiers</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/fr/docs/general-info/laser-safety"><span title="Informations Générales" class="categoryLinkLabel_W154">Informations Générales</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/fr/docs/troubleshooting/connection"><span title="Dépannage" class="categoryLinkLabel_W154">Dépannage</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/fr/docs/reference/shortcuts"><span title="Référence" class="categoryLinkLabel_W154">Référence</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Fil d&#x27;Ariane"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Page d&#x27;accueil" class="breadcrumbs__link" href="/fr/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Configuration de la Machine</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Macros &amp; Hooks</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">Sur cette page</button></div><div class="theme-doc-markdown markdown"><header><h1>Macros &amp; Hooks</h1></header>
+<p>Rayforge fournit deux puissantes fonctionnalités d&#x27;automatisation pour personnaliser votre flux de travail : <strong>Macros</strong> et <strong>Hooks</strong>. Les deux vous permettent d&#x27;injecter du G-code personnalisé dans vos travaux, mais ils servent des objectifs différents.</p>
+<p><img decoding="async" loading="lazy" alt="Paramètres Hooks &amp;amp; Macros" src="/fr/assets/images/machine-hooks-macros-5560b22c0a23e3d123ca91d549cd0a57.png" width="922" height="922" class="img_ev3q"></p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="aperçu">Aperçu<a href="#aperçu" class="hash-link" aria-label="Lien direct vers Aperçu" title="Lien direct vers Aperçu" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Fonctionnalité</th><th>Objectif</th><th>Déclencheur</th><th>Cas d&#x27;Utilisation</th></tr></thead><tbody><tr><td><strong>Macros</strong></td><td>Extraits de G-code réutilisables</td><td>Exécution manuelle</td><td>Commandes rapides, motifs de test, routines personnalisées</td></tr><tr><td><strong>Hooks</strong></td><td>Injection automatique de G-code</td><td>Événements du cycle de vie du travail</td><td>Séquences de démarrage, changements de calque, nettoyage</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="macros">Macros<a href="#macros" class="hash-link" aria-label="Lien direct vers Macros" title="Lien direct vers Macros" translate="no">​</a></h2>
+<p>Les macros sont des <strong>scripts G-code nommés et réutilisables</strong> que vous pouvez exécuter manuellement à tout moment.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="à-quoi-servent-les-macros-">À quoi Servent les Macros ?<a href="#à-quoi-servent-les-macros-" class="hash-link" aria-label="Lien direct vers À quoi Servent les Macros ?" title="Lien direct vers À quoi Servent les Macros ?" translate="no">​</a></h3>
+<p>Cas d&#x27;utilisation courants des macros :</p>
+<ul>
+<li class=""><strong>Mettre la machine à l&#x27;origine</strong> - Envoyer <code>$H</code> rapidement</li>
+<li class=""><strong>Définir les décalages de travail</strong> - Stocker et rappeler les positions G54/G55</li>
+<li class=""><strong>Contrôle de l&#x27;assistance air</strong> - Activer/désactiver l&#x27;assistance air</li>
+<li class=""><strong>Test de mise au point</strong> - Exécuter un motif de test de mise au point rapide</li>
+<li class=""><strong>Changements d&#x27;outil personnalisés</strong> - Pour les configurations multi-lasers</li>
+<li class=""><strong>Routines d&#x27;urgence</strong> - Arrêt rapide ou effacement d&#x27;alarme</li>
+<li class=""><strong>Sondage de matériau</strong> - Autofocus ou mesure de hauteur</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="créer-une-macro">Créer une Macro<a href="#créer-une-macro" class="hash-link" aria-label="Lien direct vers Créer une Macro" title="Lien direct vers Créer une Macro" translate="no">​</a></h3>
+<ol>
+<li class="">
+<p><strong>Ouvrir les Paramètres Machine :</strong></p>
+<ul>
+<li class="">Naviguez vers <strong>Paramètres Machine Macros</strong></li>
+</ul>
+</li>
+<li class="">
+<p><strong>Ajouter une nouvelle macro :</strong></p>
+<ul>
+<li class="">Cliquez sur le bouton <strong>&quot;+&quot;</strong></li>
+<li class="">Entrez un nom descriptif (ex : &quot;Mettre Machine à l&#x27;Origine&quot;, &quot;Activer Assistance Air&quot;)</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Écrivez votre G-code :</strong></p>
+<ul>
+<li class="">Chaque ligne est une commande G-code séparée</li>
+<li class="">Les commentaires commencent par <code>;</code> ou <code>(</code></li>
+<li class="">Des variables peuvent être utilisées (voir Substitution de Variables ci-dessous)</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Sauvegardez la macro</strong></p>
+</li>
+<li class="">
+<p><strong>Exécutez la macro :</strong></p>
+<ul>
+<li class="">Depuis la liste des macros, cliquez sur la macro</li>
+<li class="">Ou assignez un raccourci clavier (si supporté)</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="exemples-de-macros">Exemples de Macros<a href="#exemples-de-macros" class="hash-link" aria-label="Lien direct vers Exemples de Macros" title="Lien direct vers Exemples de Macros" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="simple--mettre-la-machine-à-lorigine">Simple : Mettre la Machine à l&#x27;Origine<a href="#simple--mettre-la-machine-à-lorigine" class="hash-link" aria-label="Lien direct vers Simple : Mettre la Machine à l&#x27;Origine" title="Lien direct vers Simple : Mettre la Machine à l&#x27;Origine" translate="no">​</a></h4>
+<p><strong>Nom :</strong> Mettre Machine à l&#x27;Origine
+<strong>Code :</strong></p>
+<div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">$H</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">; Attend que le homing soit terminé</span><br></span></code></pre></div></div>
+<p><strong>Utilisation :</strong> Mettre rapidement la machine à l&#x27;origine avant de commencer le travail.</p>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="moyen--définir-le-décalage-de-travail">Moyen : Définir le Décalage de Travail<a href="#moyen--définir-le-décalage-de-travail" class="hash-link" aria-label="Lien direct vers Moyen : Définir le Décalage de Travail" title="Lien direct vers Moyen : Définir le Décalage de Travail" translate="no">​</a></h4>
+<p><strong>Nom :</strong> Définir G54 à la Position Actuelle
+<strong>Code :</strong></p>
+<div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">G10 L20 P1 X0 Y0</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">; Définit l&#x27;origine du système de coordonnées de travail G54 à la position actuelle</span><br></span></code></pre></div></div>
+<p><strong>Utilisation :</strong> Marquer la position actuelle du laser comme origine du travail.</p>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="avancé--grille-de-test-de-mise-au-point">Avancé : Grille de Test de Mise au Point<a href="#avancé--grille-de-test-de-mise-au-point" class="hash-link" aria-label="Lien direct vers Avancé : Grille de Test de Mise au Point" title="Lien direct vers Avancé : Grille de Test de Mise au Point" translate="no">​</a></h4>
+<p><strong>Nom :</strong> Test de Mise au Point 9 Points
+<strong>Code :</strong></p>
+<div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">; Grille 9 points pour trouver la mise au point optimale</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">G21  ; Millimètres</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">G90  ; Positionnement absolu</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">G0 X10 Y10</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">M3 S1000</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">G4 P0.1</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">M5</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">G0 X20 Y10</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">M3 S1000</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">G4 P0.1</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">M5</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">; ... (répéter pour les points restants)</span><br></span></code></pre></div></div>
+<p><strong>Utilisation :</strong> Tester rapidement la mise au point à différentes positions sur le lit.</p>
+<hr>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="exemples-de-macros-1">Exemples de Macros<a href="#exemples-de-macros-1" class="hash-link" aria-label="Lien direct vers Exemples de Macros" title="Lien direct vers Exemples de Macros" translate="no">​</a></h3>
+<p>Les hooks sont des <strong>injections automatiques de G-code</strong> déclenchées par des événements spécifiques pendant l&#x27;exécution du travail.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="déclencheurs-de-hooks">Déclencheurs de Hooks<a href="#déclencheurs-de-hooks" class="hash-link" aria-label="Lien direct vers Déclencheurs de Hooks" title="Lien direct vers Déclencheurs de Hooks" translate="no">​</a></h3>
+<p>Rayforge supporte ces déclencheurs de hooks :</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Déclencheur</th><th>Quand il S&#x27;exécute</th><th>Utilisations Courantes</th></tr></thead><tbody><tr><td><strong>Début de Travail</strong></td><td>Tout au début du travail</td><td>Homing, décalage de travail, assistance air activée, préchauffage</td></tr><tr><td><strong>Fin de Travail</strong></td><td>Tout à la fin du travail</td><td>Retour à l&#x27;origine, assistance air désactivée, bip, refroidissement</td></tr><tr><td><strong>Début de Calque</strong></td><td>Avant le traitement de chaque calque</td><td>Changement d&#x27;outil, ajustement de puissance, commentaires</td></tr><tr><td><strong>Fin de Calque</strong></td><td>Après le traitement de chaque calque</td><td>Notification de progression, pause</td></tr><tr><td><strong>Début de Pièce</strong></td><td>Avant le traitement de chaque pièce</td><td>Numérotation des pièces, marques d&#x27;alignement</td></tr><tr><td><strong>Fin de Pièce</strong></td><td>Après le traitement de chaque pièce</td><td>Refroidissement, pause d&#x27;inspection</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="créer-un-hook">Créer un Hook<a href="#créer-un-hook" class="hash-link" aria-label="Lien direct vers Créer un Hook" title="Lien direct vers Créer un Hook" translate="no">​</a></h3>
+<ol>
+<li class="">
+<p><strong>Ouvrir les Paramètres Machine :</strong></p>
+<ul>
+<li class="">Naviguez vers <strong>Paramètres Machine Hooks</strong></li>
+</ul>
+</li>
+<li class="">
+<p><strong>Sélectionner un déclencheur :</strong></p>
+<ul>
+<li class="">Choisissez l&#x27;événement quand ce hook doit s&#x27;exécuter</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Écrivez votre G-code :</strong></p>
+<ul>
+<li class="">Le code du hook est injecté au point de déclenchement</li>
+<li class="">Utilisez des variables pour des valeurs dynamiques (voir ci-dessous)</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Activer/désactiver :</strong></p>
+<ul>
+<li class="">Activez/désactivez les hooks sans les supprimer</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="exemples-de-hooks">Exemples de Hooks<a href="#exemples-de-hooks" class="hash-link" aria-label="Lien direct vers Exemples de Hooks" title="Lien direct vers Exemples de Hooks" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="début-de-travail--initialiser-la-machine">Début de Travail : Initialiser la Machine<a href="#début-de-travail--initialiser-la-machine" class="hash-link" aria-label="Lien direct vers Début de Travail : Initialiser la Machine" title="Lien direct vers Début de Travail : Initialiser la Machine" translate="no">​</a></h4>
+<p><strong>Déclencheur :</strong> Début de Travail
+<strong>Code :</strong></p>
+<div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">G21         ; Millimètres</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">G90         ; Positionnement absolu</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$H          ; Mettre la machine à l&#x27;origine</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">G0 X0 Y0    ; Déplacer à l&#x27;origine</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">M3 S0       ; Laser activé mais puissance 0 (certains contrôleurs ont besoin de cela)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">M8          ; Assistance air ACTIVÉE</span><br></span></code></pre></div></div>
+<p><strong>Objectif :</strong> S&#x27;assure que la machine est dans un état connu avant chaque travail.</p>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="fin-de-travail--retour-à-lorigine-et-bip">Fin de Travail : Retour à l&#x27;Origine et Bip<a href="#fin-de-travail--retour-à-lorigine-et-bip" class="hash-link" aria-label="Lien direct vers Fin de Travail : Retour à l&#x27;Origine et Bip" title="Lien direct vers Fin de Travail : Retour à l&#x27;Origine et Bip" translate="no">​</a></h4>
+<p><strong>Déclencheur :</strong> Fin de Travail
+<strong>Code :</strong></p>
+<div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">M5          ; Laser ÉTEINT</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">M9          ; Assistance air ÉTEINTE</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">G0 X0 Y0    ; Retour à l&#x27;origine</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">M300 S800 P200  ; Bip (si supporté)</span><br></span></code></pre></div></div>
+<p><strong>Objectif :</strong> Termine le travail en toute sécurité et signale l&#x27;achèvement.</p>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="début-de-calque--ajouter-un-commentaire">Début de Calque : Ajouter un Commentaire<a href="#début-de-calque--ajouter-un-commentaire" class="hash-link" aria-label="Lien direct vers Début de Calque : Ajouter un Commentaire" title="Lien direct vers Début de Calque : Ajouter un Commentaire" translate="no">​</a></h4>
+<p><strong>Déclencheur :</strong> Début de Calque
+<strong>Code :</strong></p>
+<div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">; Démarrage du calque : {layer_name}</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">; Index du calque : {layer_index}</span><br></span></code></pre></div></div>
+<p><strong>Objectif :</strong> Rend le G-code plus lisible pour le débogage.</p>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="début-de-pièce--numérotation-des-pièces">Début de Pièce : Numérotation des Pièces<a href="#début-de-pièce--numérotation-des-pièces" class="hash-link" aria-label="Lien direct vers Début de Pièce : Numérotation des Pièces" title="Lien direct vers Début de Pièce : Numérotation des Pièces" translate="no">​</a></h4>
+<p><strong>Déclencheur :</strong> Début de Pièce
+<strong>Code :</strong></p>
+<div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">; Pièce : {workpiece_name}</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">; Pièce {workpiece_index} sur {total_workpieces}</span><br></span></code></pre></div></div>
+<p><strong>Objectif :</strong> Suivre la progression dans les travaux multi-pièces.</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ordre-dexécution-des-hooks">Ordre d&#x27;Exécution des Hooks<a href="#ordre-dexécution-des-hooks" class="hash-link" aria-label="Lien direct vers Ordre d&#x27;Exécution des Hooks" title="Lien direct vers Ordre d&#x27;Exécution des Hooks" translate="no">​</a></h3>
+<p>Pour un travail avec 2 calques, chacun avec 2 pièces :</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">[Hook Début de Travail]</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">  [Hook Début de Calque] (Calque 1)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    [Hook Début de Pièce] (Pièce 1)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">      ... G-code de la pièce 1 ...</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    [Hook Fin de Pièce] (Pièce 1)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    [Hook Début de Pièce] (Pièce 2)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">      ... G-code de la pièce 2 ...</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    [Hook Fin de Pièce] (Pièce 2)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">  [Hook Fin de Calque] (Calque 1)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">  [Hook Début de Calque] (Calque 2)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    [Hook Début de Pièce] (Pièce 3)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">      ... G-code de la pièce 3 ...</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    [Hook Fin de Pièce] (Pièce 3)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    [Hook Début de Pièce] (Pièce 4)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">      ... G-code de la pièce 4 ...</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    [Hook Fin de Pièce] (Pièce 4)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">  [Hook Fin de Calque] (Calque 2)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">[Hook Fin de Travail]</span><br></span></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="substitution-de-variables">Substitution de Variables<a href="#substitution-de-variables" class="hash-link" aria-label="Lien direct vers Substitution de Variables" title="Lien direct vers Substitution de Variables" translate="no">​</a></h2>
+<p>Les macros et hooks supportent la <strong>substitution de variables</strong> pour injecter des valeurs dynamiques.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="variables-disponibles">Variables Disponibles<a href="#variables-disponibles" class="hash-link" aria-label="Lien direct vers Variables Disponibles" title="Lien direct vers Variables Disponibles" translate="no">​</a></h3>
+<p>Les variables utilisent la syntaxe <code>{nom_variable}</code> et sont remplacées pendant la génération du G-code.</p>
+<p><strong>Variables au niveau du travail :</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Variable</th><th>Description</th><th>Exemple de Valeur</th></tr></thead><tbody><tr><td><code>{job_name}</code></td><td>Nom du travail/document actuel</td><td>&quot;test-job&quot;</td></tr><tr><td><code>{date}</code></td><td>Date actuelle</td><td>&quot;2025-10-03&quot;</td></tr><tr><td><code>{time}</code></td><td>Heure actuelle</td><td>&quot;14:30:25&quot;</td></tr></tbody></table>
+<p><strong>Variables au niveau du calque :</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Variable</th><th>Description</th><th>Exemple de Valeur</th></tr></thead><tbody><tr><td><code>{layer_name}</code></td><td>Nom du calque actuel</td><td>&quot;Calque de Coupe&quot;</td></tr><tr><td><code>{layer_index}</code></td><td>Index base 0 du calque actuel</td><td>0, 1, 2...</td></tr><tr><td><code>{total_layers}</code></td><td>Nombre total de calques dans le travail</td><td>3</td></tr></tbody></table>
+<p><strong>Variables au niveau de la pièce :</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Variable</th><th>Description</th><th>Exemple de Valeur</th></tr></thead><tbody><tr><td><code>{workpiece_name}</code></td><td>Nom de la pièce</td><td>&quot;Cercle 1&quot;</td></tr><tr><td><code>{workpiece_index}</code></td><td>Index base 0 de la pièce actuelle</td><td>0, 1, 2...</td></tr><tr><td><code>{total_workpieces}</code></td><td>Nombre total de pièces</td><td>5</td></tr></tbody></table>
+<p><strong>Variables machine :</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Variable</th><th>Description</th><th>Exemple de Valeur</th></tr></thead><tbody><tr><td><code>{machine_name}</code></td><td>Nom du profil de machine</td><td>&quot;Ma K40&quot;</td></tr><tr><td><code>{max_speed}</code></td><td>Vitesse de coupe maximale (mm/min)</td><td>1000</td></tr><tr><td><code>{work_width}</code></td><td>Largeur de la zone de travail (mm)</td><td>300</td></tr><tr><td><code>{work_height}</code></td><td>Hauteur de la zone de travail (mm)</td><td>200</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="exemple--notification-de-progression">Exemple : Notification de Progression<a href="#exemple--notification-de-progression" class="hash-link" aria-label="Lien direct vers Exemple : Notification de Progression" title="Lien direct vers Exemple : Notification de Progression" translate="no">​</a></h3>
+<p><strong>Hook :</strong> Début de Calque
+<strong>Code :</strong></p>
+<div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">; ========================================</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">; Calque {layer_index} sur {total_layers} : {layer_name}</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">; Travail : {job_name}</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">; Heure : {time}</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">; ========================================</span><br></span></code></pre></div></div>
+<p><strong>Résultat dans le G-code :</strong></p>
+<div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">; ========================================</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">; Calque 0 sur 3 : Calque de Coupe</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">; Travail : test-project</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">; Heure : 14:30:25</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">; ========================================</span><br></span></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="cas-dutilisation-avancés">Cas d&#x27;Utilisation Avancés<a href="#cas-dutilisation-avancés" class="hash-link" aria-label="Lien direct vers Cas d&#x27;Utilisation Avancés" title="Lien direct vers Cas d&#x27;Utilisation Avancés" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="configuration-multi-outils">Configuration Multi-Outils<a href="#configuration-multi-outils" class="hash-link" aria-label="Lien direct vers Configuration Multi-Outils" title="Lien direct vers Configuration Multi-Outils" translate="no">​</a></h3>
+<p>Pour les machines avec plusieurs lasers ou outils :</p>
+<p><strong>Hook :</strong> Début de Pièce
+<strong>Code :</strong></p>
+<div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">; Sélectionner l&#x27;outil pour la pièce {workpiece_name}</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">T{tool_number}  ; Commande de changement d&#x27;outil (si supporté)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">G4 P1           ; Attendre le changement d&#x27;outil</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pauses-conditionnelles">Pauses Conditionnelles<a href="#pauses-conditionnelles" class="hash-link" aria-label="Lien direct vers Pauses Conditionnelles" title="Lien direct vers Pauses Conditionnelles" translate="no">​</a></h3>
+<p>Ajoutez des pauses optionnelles pour l&#x27;inspection :</p>
+<p><strong>Hook :</strong> Fin de Calque
+<strong>Code :</strong></p>
+<div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">; M0  ; Décommenter pour暂停 après chaque calque pour inspection</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="assistance-air-par-calque">Assistance Air par Calque<a href="#assistance-air-par-calque" class="hash-link" aria-label="Lien direct vers Assistance Air par Calque" title="Lien direct vers Assistance Air par Calque" translate="no">​</a></h3>
+<p>Contrôlez l&#x27;assistance air calque par calque :</p>
+<p><strong>Hook :</strong> Début de Calque (pour calques de coupe)
+<strong>Code :</strong></p>
+<div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">M8  ; Assistance air ACTIVÉE</span><br></span></code></pre></div></div>
+<p><strong>Hook :</strong> Début de Calque (pour calques de gravure)
+<strong>Code :</strong></p>
+<div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">M9  ; Assistance air ÉTEINTE (empêche la dispersion de poussière pour la gravure)</span><br></span></code></pre></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>Hooks Spécifiques au Calque</div><div class="admonitionContent_BuS1"><p>Rayforge ne supporte actuellement pas la personnalisation de hooks par calque. Pour y parvenir, utilisez du G-code conditionnel ou des profils de machine séparés.</p></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="considérations-de-sécurité">Considérations de Sécurité<a href="#considérations-de-sécurité" class="hash-link" aria-label="Lien direct vers Considérations de Sécurité" title="Lien direct vers Considérations de Sécurité" translate="no">​</a></h2>
+<div class="theme-admonition theme-admonition-danger admonition_xJq3 alert alert--danger"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path></svg></span>Testez Avant Production</div><div class="admonitionContent_BuS1"><p>Testez toujours les macros et hooks en <strong>mode simulation</strong> ou avec le laser <strong>désactivé</strong> avant de les exécuter sur de vrais travaux. Un G-code mal configuré peut :</p><ul>
+<li class="">Faire planter la machine contre les limites</li>
+<li class="">Déclencher le laser de manière inattendue</li>
+<li class="">Endommager les matériaux ou équipements</li>
+</ul></div></div>
+<p><strong>Liste de contrôle de sécurité :</strong></p>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> Les macros incluent des limites de vitesse d&#x27;avance (paramètre <code>F</code>)</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> Les macros vérifient les limites de position</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> Les hooks de début de travail incluent <code>M5</code> ou commande laser éteint</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> Les hooks de fin de travail éteignent le laser (<code>M5</code>) et l&#x27;assistance air (<code>M9</code>)</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> Pas de commandes destructives sans confirmation</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> Testé en simulation ou avec laser désactivé</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pages-connexes">Pages Connexes<a href="#pages-connexes" class="hash-link" aria-label="Lien direct vers Pages Connexes" title="Lien direct vers Pages Connexes" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/fr/docs/machine/device">Paramètres de l&#x27;Appareil</a> - Référence des commandes GRBL</li>
+<li class=""><a class="" href="/fr/docs/reference/gcode-dialects">Dialectes G-code</a> - Compatibilité G-code</li>
+<li class=""><a class="" href="/fr/docs/machine/general">Paramètres Généraux</a> - Configuration de la machine</li>
+<li class=""><a class="" href="/fr/docs/features/multi-layer">Flux de Travail Multi-Couches</a> - Utiliser les hooks avec les calques</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/machine/hooks-macros.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Éditer cette page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Pages de documentation"><a class="pagination-nav__link pagination-nav__link--prev" href="/fr/docs/machine/gcode"><div class="pagination-nav__sublabel">Précédent</div><div class="pagination-nav__label">Paramètres G-code</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/fr/docs/machine/device"><div class="pagination-nav__sublabel">Suivant</div><div class="pagination-nav__label">Paramètres de l&#x27;Appareil</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#aperçu" class="table-of-contents__link toc-highlight">Aperçu</a></li><li><a href="#macros" class="table-of-contents__link toc-highlight">Macros</a><ul><li><a href="#à-quoi-servent-les-macros-" class="table-of-contents__link toc-highlight">À quoi Servent les Macros ?</a></li><li><a href="#créer-une-macro" class="table-of-contents__link toc-highlight">Créer une Macro</a></li><li><a href="#exemples-de-macros" class="table-of-contents__link toc-highlight">Exemples de Macros</a></li><li><a href="#exemples-de-macros-1" class="table-of-contents__link toc-highlight">Exemples de Macros</a></li><li><a href="#déclencheurs-de-hooks" class="table-of-contents__link toc-highlight">Déclencheurs de Hooks</a></li><li><a href="#créer-un-hook" class="table-of-contents__link toc-highlight">Créer un Hook</a></li><li><a href="#exemples-de-hooks" class="table-of-contents__link toc-highlight">Exemples de Hooks</a></li><li><a href="#ordre-dexécution-des-hooks" class="table-of-contents__link toc-highlight">Ordre d&#39;Exécution des Hooks</a></li></ul></li><li><a href="#substitution-de-variables" class="table-of-contents__link toc-highlight">Substitution de Variables</a><ul><li><a href="#variables-disponibles" class="table-of-contents__link toc-highlight">Variables Disponibles</a></li><li><a href="#exemple--notification-de-progression" class="table-of-contents__link toc-highlight">Exemple : Notification de Progression</a></li></ul></li><li><a href="#cas-dutilisation-avancés" class="table-of-contents__link toc-highlight">Cas d&#39;Utilisation Avancés</a><ul><li><a href="#configuration-multi-outils" class="table-of-contents__link toc-highlight">Configuration Multi-Outils</a></li><li><a href="#pauses-conditionnelles" class="table-of-contents__link toc-highlight">Pauses Conditionnelles</a></li><li><a href="#assistance-air-par-calque" class="table-of-contents__link toc-highlight">Assistance Air par Calque</a></li></ul></li><li><a href="#considérations-de-sécurité" class="table-of-contents__link toc-highlight">Considérations de Sécurité</a></li><li><a href="#pages-connexes" class="table-of-contents__link toc-highlight">Pages Connexes</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="pt-BR" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-developer/pipeline" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Arquitetura do Pipeline | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://rayforge.org/pt-BR/docs/developer/pipeline"><meta data-rh="true" property="og:locale" content="pt_BR"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="de"><meta data-rh="true" property="og:locale:alternate" content="zh_CN"><meta data-rh="true" name="docusaurus_locale" content="pt-BR"><meta data-rh="true" name="docsearch:language" content="pt-BR"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Arquitetura do Pipeline | Rayforge"><meta data-rh="true" name="description" content="Este documento descreve a arquitetura do pipeline, que usa um Grafo Acíclico"><meta data-rh="true" property="og:description" content="Este documento descreve a arquitetura do pipeline, que usa um Grafo Acíclico"><link data-rh="true" rel="icon" href="/pt-BR/assets/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/pt-BR/docs/developer/pipeline"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/developer/pipeline" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/pt-BR/docs/developer/pipeline" hreflang="pt-BR"><link data-rh="true" rel="alternate" href="https://rayforge.org/es/docs/developer/pipeline" hreflang="es"><link data-rh="true" rel="alternate" href="https://rayforge.org/fr/docs/developer/pipeline" hreflang="fr"><link data-rh="true" rel="alternate" href="https://rayforge.org/de/docs/developer/pipeline" hreflang="de"><link data-rh="true" rel="alternate" href="https://rayforge.org/zh-CN/docs/developer/pipeline" hreflang="zh-CN"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/developer/pipeline" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Arquitetura do Pipeline","item":"https://rayforge.org/pt-BR/docs/developer/pipeline"}]}</script><link rel="alternate" type="application/rss+xml" href="/pt-BR/blog/rss.xml" title="Rayforge RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/pt-BR/blog/atom.xml" title="Rayforge Atom Feed"><link rel="stylesheet" href="/pt-BR/assets/css/styles.8817abbb.css">
+<script src="/pt-BR/assets/js/runtime~main.88b9347a.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/main.40789e92.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Pular para o conteúdo principal"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Pular para o conteúdo principal</a></div><nav aria-label="Navegação principal" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Alternar painel de navegação" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/pt-BR/"><div class="navbar__logo"><img src="/pt-BR/assets/icon.svg" alt="Rayforge Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/pt-BR/assets/icon.svg" alt="Rayforge Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Rayforge</b></a><a class="navbar__item navbar__link" href="/pt-BR/docs/getting-started/installation">Documentation</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/pt-BR/docs/developer/getting-started/">Developer</a><a class="navbar__item navbar__link" href="/pt-BR/contributing">Contributing</a><a class="navbar__item navbar__link" href="/pt-BR/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>Português (Brasil)</a><ul class="dropdown__menu"><li><a href="/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="en">English</a></li><li><a href="/pt-BR/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="pt-BR">Português (Brasil)</a></li><li><a href="/es/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="es">Español</a></li><li><a href="/fr/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="fr">Français</a></li><li><a href="/de/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="de">Deutsch</a></li><li><a href="/zh-CN/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="zh-CN">中文（中国）</a></li></ul></div><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="patreonLink_HbXT"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" class="patreonImg_dUDi"></a><span class="githubWrapper_c8Sl"><a href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><span class="discordWrapper_j0RJ"><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="modo do sistema" aria-label="Mudar entre modo claro e escuro (modo do sistema está ativo)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Voltar para o topo" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Painel lateral de documentos" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/pt-BR/docs/developer/getting-started/"><span title="Primeiros Passos" class="categoryLinkLabel_W154">Primeiros Passos</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/pt-BR/docs/developer/getting-started/"><span title="Obtendo o Código" class="linkLabel_WmDU">Obtendo o Código</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/pt-BR/docs/developer/getting-started/setup"><span title="Configuração" class="linkLabel_WmDU">Configuração</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/pt-BR/docs/developer/getting-started/submitting-changes"><span title="Enviando Alterações" class="linkLabel_WmDU">Enviando Alterações</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/pt-BR/docs/developer/architecture"><span title="Arquitetura" class="categoryLinkLabel_W154">Arquitetura</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/pt-BR/docs/developer/architecture"><span title="Arquitetura do Rayforge" class="linkLabel_WmDU">Arquitetura do Rayforge</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/pt-BR/docs/developer/docmodel"><span title="Arquitetura do Modelo de Documento" class="linkLabel_WmDU">Arquitetura do Modelo de Documento</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/pt-BR/docs/developer/importer"><span title="Arquitetura do Importador" class="linkLabel_WmDU">Arquitetura do Importador</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/pt-BR/docs/developer/pipeline"><span title="Arquitetura do Pipeline" class="linkLabel_WmDU">Arquitetura do Pipeline</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/pt-BR/docs/developer/tasker"><span title="Tasker: Gerenciamento de Tarefas em Segundo Plano" class="linkLabel_WmDU">Tasker: Gerenciamento de Tarefas em Segundo Plano</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/pt-BR/docs/developer/driver"><span title="Guia de Desenvolvimento de Driver" class="linkLabel_WmDU">Guia de Desenvolvimento de Driver</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/pt-BR/docs/developer/plugin-docs"><span title="Plugins" class="categoryLinkLabel_W154">Plugins</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Trilha"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Página Inicial" class="breadcrumbs__link" href="/pt-BR/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Arquitetura</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Arquitetura do Pipeline</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">Nesta página</button></div><div class="theme-doc-markdown markdown"><header><h1>Arquitetura do Pipeline</h1></header>
+<p>Este documento descreve a arquitetura do pipeline, que usa um Grafo Acíclico
+Direcionado (DAG) para orquestrar a geração de artefatos. O pipeline transforma dados
+de design brutos em saídas finais para visualização e manufatura, com
+agendamento consciente de dependências e cache eficiente de artefatos.</p>
+<!-- -->
+<h1>Conceitos Principais</h1>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="nós-de-artefato-e-o-grafo-de-dependências">Nós de Artefato e o Grafo de Dependências<a href="#nós-de-artefato-e-o-grafo-de-dependências" class="hash-link" aria-label="Link direto para Nós de Artefato e o Grafo de Dependências" title="Link direto para Nós de Artefato e o Grafo de Dependências" translate="no">​</a></h2>
+<p>O pipeline usa um <strong>Grafo Acíclico Direcionado (DAG)</strong> para modelar artefatos e
+suas dependências. Cada artefato é representado como um <code>ArtifactNode</code> no
+grafo.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="artifactnode">ArtifactNode<a href="#artifactnode" class="hash-link" aria-label="Link direto para ArtifactNode" title="Link direto para ArtifactNode" translate="no">​</a></h3>
+<p>Cada nó contém:</p>
+<ul>
+<li class=""><strong>ArtifactKey</strong>: Um identificador único consistindo de um ID e um tipo de grupo
+(<code>workpiece</code>, <code>step</code>, <code>job</code>, ou <code>view</code>)</li>
+<li class=""><strong>Estado</strong>: O estado atual do ciclo de vida do nó</li>
+<li class=""><strong>Dependências</strong>: Lista de nós dos quais este nó depende (filhos)</li>
+<li class=""><strong>Dependentes</strong>: Lista de nós que dependem deste nó (pais)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="estados-dos-nós">Estados dos Nós<a href="#estados-dos-nós" class="hash-link" aria-label="Link direto para Estados dos Nós" title="Link direto para Estados dos Nós" translate="no">​</a></h3>
+<p>Os nós progridem por quatro estados:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Estado</th><th>Descrição</th></tr></thead><tbody><tr><td><code>DIRTY</code></td><td>O artefato precisa ser regenerado</td></tr><tr><td><code>PROCESSING</code></td><td>Uma tarefa está gerando o artefato atual</td></tr><tr><td><code>VALID</code></td><td>O artefato está pronto e atualizado</td></tr><tr><td><code>ERROR</code></td><td>A geração falhou</td></tr></tbody></table>
+<p>Quando um nó é marcado como sujo, todos os seus dependentes também são marcados como sujos,
+propagando invalidação pelo grafo.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pipelinegraph">PipelineGraph<a href="#pipelinegraph" class="hash-link" aria-label="Link direto para PipelineGraph" title="Link direto para PipelineGraph" translate="no">​</a></h3>
+<p>O <code>PipelineGraph</code> é construído a partir do modelo Doc e contém:</p>
+<ul>
+<li class="">Um nó para cada par <code>(WorkPiece, Step)</code></li>
+<li class="">Um nó para cada Step</li>
+<li class="">Um nó para o Job</li>
+</ul>
+<p>Dependências são estabelecidas:</p>
+<ul>
+<li class="">Steps dependem de seus nós de par <code>(WorkPiece, Step)</code></li>
+<li class="">Job depende de todos os Steps</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="dagscheduler">DagScheduler<a href="#dagscheduler" class="hash-link" aria-label="Link direto para DagScheduler" title="Link direto para DagScheduler" translate="no">​</a></h2>
+<p>O <code>DagScheduler</code> é o orquestrador central do pipeline. Ele possui o
+<code>PipelineGraph</code> e é responsável por:</p>
+<ol>
+<li class=""><strong>Construir o grafo</strong> a partir do modelo Doc</li>
+<li class=""><strong>Identificar nós prontos</strong> (DIRTY com todas as dependências VALID)</li>
+<li class=""><strong>Lançar tarefas</strong> para gerar artefatos</li>
+<li class=""><strong>Rastrear estado</strong> através do processo de geração</li>
+<li class=""><strong>Notificar consumidores</strong> quando artefatos estão prontos</li>
+</ol>
+<p>O agendador funciona com IDs de geração para rastrear quais artefatos pertencem a
+qual versão do documento, permitindo reuso de artefatos válidos entre gerações.</p>
+<p>Comportamentos principais:</p>
+<ul>
+<li class="">Quando o grafo é construído, o agendador sincroniza estados dos nós com o
+gerenciador de artefatos para identificar artefatos em cache que podem ser reusados</li>
+<li class="">Artefatos da geração anterior podem ser reusados se permanecerem válidos</li>
+<li class="">O agendador rastreia quais IDs de geração têm tarefas rodando para preservar
+artefatos durante transições de geração</li>
+<li class="">Invalidações são rastreadas mesmo antes da reconstrução do grafo e reaplicadas depois</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="artifactmanager">ArtifactManager<a href="#artifactmanager" class="hash-link" aria-label="Link direto para ArtifactManager" title="Link direto para ArtifactManager" translate="no">​</a></h2>
+<p>O <code>ArtifactManager</code> é um gerenciador de cache puro para handles de artefatos. Ele:</p>
+<ul>
+<li class="">Armazena e recupera handles de artefatos</li>
+<li class="">Gerencia contagem de referências para limpeza</li>
+<li class="">Lida com ciclo de vida (criação, retenção, liberação)</li>
+<li class="">NÃO rastreia estado (estado é gerenciado pelo agendador DAG)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ciclo-de-vida-da-memória-compartilhada">Ciclo de Vida da Memória Compartilhada<a href="#ciclo-de-vida-da-memória-compartilhada" class="hash-link" aria-label="Link direto para Ciclo de Vida da Memória Compartilhada" title="Link direto para Ciclo de Vida da Memória Compartilhada" translate="no">​</a></h2>
+<p>Artefatos são armazenados em memória compartilhada (<code>multiprocessing.shared_memory</code>) para
+comunicação inter-processo eficiente entre processos worker e o processo
+principal. O <code>ArtifactStore</code> gerencia o ciclo de vida desses blocos de memória.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="padrões-de-propriedade">Padrões de Propriedade<a href="#padrões-de-propriedade" class="hash-link" aria-label="Link direto para Padrões de Propriedade" title="Link direto para Padrões de Propriedade" translate="no">​</a></h3>
+<p><strong>Propriedade Local:</strong> O processo criador possui o handle e o libera
+quando termina. Este é o padrão mais simples.</p>
+<p><strong>Transferência Inter-Processo:</strong> Um worker cria um artefato, envia para o
+processo principal via IPC, e transfere propriedade. O worker &quot;esquece&quot; o
+handle (fecha seu descritor de arquivo sem desvincular a memória), enquanto
+o processo principal o &quot;adota&quot; e se torna responsável pela eventual liberação.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="contagem-de-referências">Contagem de Referências<a href="#contagem-de-referências" class="hash-link" aria-label="Link direto para Contagem de Referências" title="Link direto para Contagem de Referências" translate="no">​</a></h3>
+<p>O <code>ArtifactStore</code> mantém contagens de referências para cada bloco de memória compartilhada.
+Múltiplos chamadores podem fazer <code>retain()</code> de um handle, e o bloco só é desvinculado
+quando a contagem chega a zero. Isso é usado pelo <code>ViewManager</code> para
+renderização progressiva onde múltiplos callbacks podem acessar o mesmo artefato.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="estágios-do-pipeline">Estágios do Pipeline<a href="#estágios-do-pipeline" class="hash-link" aria-label="Link direto para Estágios do Pipeline" title="Link direto para Estágios do Pipeline" translate="no">​</a></h2>
+<p>Os estágios do pipeline (<code>WorkPiecePipelineStage</code>, <code>StepPipelineStage</code>,
+<code>JobPipelineStage</code>) agora servem como interfaces em vez de lançadores de tarefas:</p>
+<ul>
+<li class="">Eles lidam com requisições de invalidação da UI</li>
+<li class="">Eles delegam lançamento de tarefas ao DagScheduler</li>
+<li class="">Eles fornecem acesso a artefatos em cache</li>
+<li class="">Eles encaminham sinais do agendador para a UI</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="invalidationscope">InvalidationScope<a href="#invalidationscope" class="hash-link" aria-label="Link direto para InvalidationScope" title="Link direto para InvalidationScope" translate="no">​</a></h2>
+<p>O enum <code>InvalidationScope</code> define o escopo de invalidação para artefatos
+downstream:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Escopo</th><th>Descrição</th></tr></thead><tbody><tr><td><code>FULL_REPRODUCTION</code></td><td>Invalida workpieces, que se propaga para steps e depois para o job. Usado para mudanças que requerem regeneração de artefatos (geometria, parâmetros, mudanças de tamanho).</td></tr><tr><td><code>STEP_ONLY</code></td><td>Invalida steps diretamente, que se propaga para o job. Usado para mudanças de transformação apenas de posição/rotação onde a geometria do workpiece permanece inalterada.</td></tr></tbody></table>
+<h1>Análise Detalhada</h1>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="entrada">Entrada<a href="#entrada" class="hash-link" aria-label="Link direto para Entrada" title="Link direto para Entrada" translate="no">​</a></h2>
+<p>O processo começa com o <strong>Modelo Doc</strong>, que contém:</p>
+<ul>
+<li class=""><strong>WorkPieces:</strong> Elementos de design individuais (SVGs, imagens) colocados na tela</li>
+<li class=""><strong>Steps:</strong> Instruções de processamento (Contorno, Raster) com configurações</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="núcleo-do-pipeline">Núcleo do Pipeline<a href="#núcleo-do-pipeline" class="hash-link" aria-label="Link direto para Núcleo do Pipeline" title="Link direto para Núcleo do Pipeline" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pipeline-orquestrador">Pipeline (Orquestrador)<a href="#pipeline-orquestrador" class="hash-link" aria-label="Link direto para Pipeline (Orquestrador)" title="Link direto para Pipeline (Orquestrador)" translate="no">​</a></h3>
+<p>A classe <code>Pipeline</code> é o condutor de alto nível que:</p>
+<ul>
+<li class="">Escuta o modelo Doc por mudanças</li>
+<li class="">Coordena com o DagScheduler para disparar regeneração</li>
+<li class="">Gerencia o estado geral de processamento</li>
+<li class="">Conecta sinais entre componentes</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dagscheduler-1">DagScheduler<a href="#dagscheduler-1" class="hash-link" aria-label="Link direto para DagScheduler" title="Link direto para DagScheduler" translate="no">​</a></h3>
+<p>O <code>DagScheduler</code>:</p>
+<ul>
+<li class="">Constrói e mantém o <code>PipelineGraph</code></li>
+<li class="">Identifica nós prontos para processamento</li>
+<li class="">Lança tarefas via TaskManager</li>
+<li class="">Rastreia transições de estado dos nós</li>
+<li class="">Emite sinais quando artefatos estão prontos</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="artifactmanager-1">ArtifactManager<a href="#artifactmanager-1" class="hash-link" aria-label="Link direto para ArtifactManager" title="Link direto para ArtifactManager" translate="no">​</a></h3>
+<p>O <code>ArtifactManager</code>:</p>
+<ul>
+<li class="">Faz cache de handles de artefatos em memória compartilhada</li>
+<li class="">Gerencia contagem de referências para limpeza</li>
+<li class="">Fornece busca por ArtifactKey e ID de geração</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="geração-de-artefatos">Geração de Artefatos<a href="#geração-de-artefatos" class="hash-link" aria-label="Link direto para Geração de Artefatos" title="Link direto para Geração de Artefatos" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="workpieceartifacts">WorkPieceArtifacts<a href="#workpieceartifacts" class="hash-link" aria-label="Link direto para WorkPieceArtifacts" title="Link direto para WorkPieceArtifacts" translate="no">​</a></h3>
+<p>Gerados para cada combinação <code>(WorkPiece, Step)</code>, contendo:</p>
+<ul>
+<li class="">Toolpaths (<code>Ops</code>) no sistema de coordenadas local</li>
+<li class="">Dados de vértices para linhas</li>
+<li class="">Dados de textura para preenchimentos raster</li>
+</ul>
+<p>Sequência de processamento:</p>
+<ol>
+<li class=""><strong>Modificadores:</strong> (Opcional) Condicionamento de imagem (escala de cinza, etc.)</li>
+<li class=""><strong>Produtor:</strong> Cria toolpaths brutos (<code>Ops</code>)</li>
+<li class=""><strong>Transformadores:</strong> Modificações por workpiece (Abas, Suavização)</li>
+<li class=""><strong>Codificador de Vértices:</strong> Cria dados amigáveis para GPU</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stepartifacts">StepArtifacts<a href="#stepartifacts" class="hash-link" aria-label="Link direto para StepArtifacts" title="Link direto para StepArtifacts" translate="no">​</a></h3>
+<p>Gerados para cada Step, consumindo todos os WorkPieceArtifacts relacionados:</p>
+<p>**StepRenderArtifact:</p>
+<ul>
+<li class="">Dados combinados de vértices e textura para todos os workpieces</li>
+<li class="">Transformados para coordenadas de espaço-mundo</li>
+<li class="">Otimizados para renderização na tela 3D</li>
+</ul>
+<p>**StepOpsArtifact:</p>
+<ul>
+<li class="">Ops combinados para todos os workpieces</li>
+<li class="">Transformados para coordenadas de espaço-mundo</li>
+<li class="">Inclui transformadores por-step (Otimização, Multi-Pass)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="jobartifact">JobArtifact<a href="#jobartifact" class="hash-link" aria-label="Link direto para JobArtifact" title="Link direto para JobArtifact" translate="no">​</a></h3>
+<p>Gerado sob demanda quando G-code é necessário, consumindo todos os StepOpsArtifacts:</p>
+<ul>
+<li class="">G-code final para todo o trabalho</li>
+<li class="">Dados completos de vértices para simulação</li>
+<li class="">Estimativa de tempo de alta fidelidade</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="viewmanager-separado">ViewManager (Separado)<a href="#viewmanager-separado" class="hash-link" aria-label="Link direto para ViewManager (Separado)" title="Link direto para ViewManager (Separado)" translate="no">​</a></h2>
+<p>O <code>ViewManager</code> é <strong>desacoplado</strong> do pipeline de dados. Ele lida com renderização
+para a tela 2D com base no estado da UI:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rendercontext">RenderContext<a href="#rendercontext" class="hash-link" aria-label="Link direto para RenderContext" title="Link direto para RenderContext" translate="no">​</a></h3>
+<p>Contém os parâmetros atuais de visualização:</p>
+<ul>
+<li class="">Pixels por milímetro (nível de zoom)</li>
+<li class="">Deslocamento do viewport (pan)</li>
+<li class="">Opções de exibição (mostrar movimentos de deslocamento, etc.)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="workpieceviewartifacts">WorkPieceViewArtifacts<a href="#workpieceviewartifacts" class="hash-link" aria-label="Link direto para WorkPieceViewArtifacts" title="Link direto para WorkPieceViewArtifacts" translate="no">​</a></h3>
+<p>O ViewManager cria <code>WorkPieceViewArtifacts</code> que:</p>
+<ul>
+<li class="">Rasterizam WorkPieceArtifacts para espaço de tela</li>
+<li class="">Aplicam o RenderContext atual</li>
+<li class="">São cacheados e atualizados quando contexto ou fonte muda</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ciclo-de-vida">Ciclo de Vida<a href="#ciclo-de-vida" class="hash-link" aria-label="Link direto para Ciclo de Vida" title="Link direto para Ciclo de Vida" translate="no">​</a></h3>
+<ol>
+<li class="">ViewManager rastreia handles de <code>WorkPieceArtifact</code> fonte</li>
+<li class="">Quando contexto de renderização muda, ViewManager dispara re-renderização</li>
+<li class="">Quando artefato fonte muda, ViewManager dispara re-renderização</li>
+<li class="">Throttling previne atualizações excessivas durante mudanças contínuas</li>
+</ol>
+<p>O ViewManager indexa views por <code>(workpiece_uid, step_uid)</code> para suportar
+visualização de estados intermediários de um workpiece através de múltiplos steps.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="consumidores">Consumidores<a href="#consumidores" class="hash-link" aria-label="Link direto para Consumidores" title="Link direto para Consumidores" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Consumidor</th><th>Usa</th><th>Propósito</th></tr></thead><tbody><tr><td>Tela 2D</td><td>WorkPieceViewArtifacts</td><td>Renderiza workpieces em espaço de tela</td></tr><tr><td>Tela 3D</td><td>StepRenderArtifacts</td><td>Renderiza step completo em espaço-mundo</td></tr><tr><td>Simulador</td><td>JobArtifact</td><td>Simulação precisa do caminho da máquina</td></tr><tr><td>Máquina</td><td>G-code JobArtifact</td><td>Saída de manufatura</td></tr></tbody></table>
+<h1>Principais Diferenças da Arquitetura Anterior</h1>
+<ol>
+<li class="">
+<p><strong>Agendamento baseado em DAG:</strong> Em vez de estágios sequenciais, artefatos são
+gerados conforme suas dependências ficam disponíveis.</p>
+</li>
+<li class="">
+<p><strong>Gerenciamento de Estado:</strong> O estado do nó é rastreado no grafo DAG, não em
+componentes individuais.</p>
+</li>
+<li class="">
+<p><strong>Separação do ViewManager:</strong> Renderização para a tela 2D agora é tratada
+por um ViewManager separado, não como parte do pipeline de dados.</p>
+</li>
+<li class="">
+<p><strong>IDs de Geração:</strong> Artefatos são rastreados com IDs de geração, permitindo
+reuso eficiente entre versões de documento.</p>
+</li>
+<li class="">
+<p><strong>Orquestração Centralizada:</strong> O DagScheduler é o ponto único de
+controle para lançamento de tarefas e rastreamento de estado.</p>
+</li>
+<li class="">
+<p><strong>Gerenciador de Cache Puro:</strong> O ArtifactManager agora é um cache simples,
+delegando todo gerenciamento de estado ao agendador DAG.</p>
+</li>
+<li class="">
+<p><strong>Rastreamento de Invalidação:</strong> Chaves marcadas como sujas antes da reconstrução do grafo são
+preservadas e reaplicadas após a reconstrução.</p>
+</li>
+<li class="">
+<p><strong>Detecção de Trabalho Pendente:</strong> Apenas nós <code>PROCESSING</code> contam como trabalho pendente;
+nós <code>DIRTY</code> podem ter dependências não satisfeitas (ex.: sem contexto de visualização).</p>
+</li>
+</ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/pipeline.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Páginas de documento"><a class="pagination-nav__link pagination-nav__link--prev" href="/pt-BR/docs/developer/importer"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Arquitetura do Importador</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/pt-BR/docs/developer/tasker"><div class="pagination-nav__sublabel">Próxima</div><div class="pagination-nav__label">Tasker: Gerenciamento de Tarefas em Segundo Plano</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#nós-de-artefato-e-o-grafo-de-dependências" class="table-of-contents__link toc-highlight">Nós de Artefato e o Grafo de Dependências</a><ul><li><a href="#artifactnode" class="table-of-contents__link toc-highlight">ArtifactNode</a></li><li><a href="#estados-dos-nós" class="table-of-contents__link toc-highlight">Estados dos Nós</a></li><li><a href="#pipelinegraph" class="table-of-contents__link toc-highlight">PipelineGraph</a></li></ul></li><li><a href="#dagscheduler" class="table-of-contents__link toc-highlight">DagScheduler</a></li><li><a href="#artifactmanager" class="table-of-contents__link toc-highlight">ArtifactManager</a></li><li><a href="#ciclo-de-vida-da-memória-compartilhada" class="table-of-contents__link toc-highlight">Ciclo de Vida da Memória Compartilhada</a><ul><li><a href="#padrões-de-propriedade" class="table-of-contents__link toc-highlight">Padrões de Propriedade</a></li><li><a href="#contagem-de-referências" class="table-of-contents__link toc-highlight">Contagem de Referências</a></li></ul></li><li><a href="#estágios-do-pipeline" class="table-of-contents__link toc-highlight">Estágios do Pipeline</a></li><li><a href="#invalidationscope" class="table-of-contents__link toc-highlight">InvalidationScope</a></li><li><a href="#entrada" class="table-of-contents__link toc-highlight">Entrada</a></li><li><a href="#núcleo-do-pipeline" class="table-of-contents__link toc-highlight">Núcleo do Pipeline</a><ul><li><a href="#pipeline-orquestrador" class="table-of-contents__link toc-highlight">Pipeline (Orquestrador)</a></li><li><a href="#dagscheduler-1" class="table-of-contents__link toc-highlight">DagScheduler</a></li><li><a href="#artifactmanager-1" class="table-of-contents__link toc-highlight">ArtifactManager</a></li></ul></li><li><a href="#geração-de-artefatos" class="table-of-contents__link toc-highlight">Geração de Artefatos</a><ul><li><a href="#workpieceartifacts" class="table-of-contents__link toc-highlight">WorkPieceArtifacts</a></li><li><a href="#stepartifacts" class="table-of-contents__link toc-highlight">StepArtifacts</a></li><li><a href="#jobartifact" class="table-of-contents__link toc-highlight">JobArtifact</a></li></ul></li><li><a href="#viewmanager-separado" class="table-of-contents__link toc-highlight">ViewManager (Separado)</a><ul><li><a href="#rendercontext" class="table-of-contents__link toc-highlight">RenderContext</a></li><li><a href="#workpieceviewartifacts" class="table-of-contents__link toc-highlight">WorkPieceViewArtifacts</a></li><li><a href="#ciclo-de-vida" class="table-of-contents__link toc-highlight">Ciclo de Vida</a></li></ul></li><li><a href="#consumidores" class="table-of-contents__link toc-highlight">Consumidores</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="de" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-features/operations/shrink-wrap" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Schrumpfumhüllung | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://rayforge.org/de/docs/features/operations/shrink-wrap"><meta data-rh="true" property="og:locale" content="de"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="pt_BR"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="zh_CN"><meta data-rh="true" name="docusaurus_locale" content="de"><meta data-rh="true" name="docsearch:language" content="de"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Schrumpfumhüllung | Rayforge"><meta data-rh="true" name="description" content="Schrumpfumhüllung erzeugt einen effizienten Schneidepfad um mehrere Objekte, indem sie eine Grenze erzeugt, die sich um sie &quot;schrumpft&quot;. Sie ist nützlich, um mehrere Teile aus einem Blatt mit minimalem Abfall zu schneiden."><meta data-rh="true" property="og:description" content="Schrumpfumhüllung erzeugt einen effizienten Schneidepfad um mehrere Objekte, indem sie eine Grenze erzeugt, die sich um sie &quot;schrumpft&quot;. Sie ist nützlich, um mehrere Teile aus einem Blatt mit minimalem Abfall zu schneiden."><link data-rh="true" rel="icon" href="/de/assets/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/de/docs/features/operations/shrink-wrap"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/features/operations/shrink-wrap" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/pt-BR/docs/features/operations/shrink-wrap" hreflang="pt-BR"><link data-rh="true" rel="alternate" href="https://rayforge.org/es/docs/features/operations/shrink-wrap" hreflang="es"><link data-rh="true" rel="alternate" href="https://rayforge.org/fr/docs/features/operations/shrink-wrap" hreflang="fr"><link data-rh="true" rel="alternate" href="https://rayforge.org/de/docs/features/operations/shrink-wrap" hreflang="de"><link data-rh="true" rel="alternate" href="https://rayforge.org/zh-CN/docs/features/operations/shrink-wrap" hreflang="zh-CN"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/features/operations/shrink-wrap" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Schrumpfumhüllung","item":"https://rayforge.org/de/docs/features/operations/shrink-wrap"}]}</script><link rel="alternate" type="application/rss+xml" href="/de/blog/rss.xml" title="Rayforge RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/de/blog/atom.xml" title="Rayforge Atom Feed"><link rel="stylesheet" href="/de/assets/css/styles.5bde25bf.css">
+<script src="/de/assets/js/runtime~main.18c6c389.js" defer="defer"></script>
+<script src="/de/assets/js/main.e6f64401.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Zum Hauptinhalt springen"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Zum Hauptinhalt springen</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/de/"><div class="navbar__logo"><img src="/de/assets/icon.svg" alt="Rayforge Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/de/assets/icon.svg" alt="Rayforge Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Rayforge</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/de/docs/getting-started/installation">Documentation</a><a class="navbar__item navbar__link" href="/de/docs/developer/getting-started/">Developer</a><a class="navbar__item navbar__link" href="/de/contributing">Contributing</a><a class="navbar__item navbar__link" href="/de/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>Deutsch</a><ul class="dropdown__menu"><li><a href="/docs/features/operations/shrink-wrap" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="en">English</a></li><li><a href="/pt-BR/docs/features/operations/shrink-wrap" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="pt-BR">Português (Brasil)</a></li><li><a href="/es/docs/features/operations/shrink-wrap" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="es">Español</a></li><li><a href="/fr/docs/features/operations/shrink-wrap" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="fr">Français</a></li><li><a href="/de/docs/features/operations/shrink-wrap" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="de">Deutsch</a></li><li><a href="/zh-CN/docs/features/operations/shrink-wrap" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="zh-CN">中文（中国）</a></li></ul></div><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="patreonLink_HbXT"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" class="patreonImg_dUDi"></a><span class="githubWrapper_c8Sl"><a href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><span class="discordWrapper_j0RJ"><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Umschalten zwischen dunkler und heller Ansicht (momentan system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Zurück nach oben scrollen" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/de/docs/getting-started/installation"><span title="Erste Schritte" class="categoryLinkLabel_W154">Erste Schritte</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/de/docs/getting-started/installation"><span title="Installation" class="linkLabel_WmDU">Installation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/de/docs/getting-started/first-time-setup"><span title="Ersteinrichtung" class="linkLabel_WmDU">Ersteinrichtung</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/de/docs/getting-started/quick-start"><span title="Schnellstart-Anleitung" class="linkLabel_WmDU">Schnellstart-Anleitung</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/de/docs/ui/settings"><span title="Anwendungseinstellungen" class="categoryLinkLabel_W154">Anwendungseinstellungen</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/de/docs/machine/general"><span title="Maschinenkonfiguration" class="categoryLinkLabel_W154">Maschinenkonfiguration</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/de/docs/ui/main-window"><span title="Benutzeroberfläche" class="categoryLinkLabel_W154">Benutzeroberfläche</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/de/docs/features/operations/contour"><span title="Funktionen" class="categoryLinkLabel_W154">Funktionen</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/de/docs/features/operations/contour"><span title="Operationen" class="categoryLinkLabel_W154">Operationen</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/de/docs/features/operations/contour"><span title="Kontur-Schneiden" class="linkLabel_WmDU">Kontur-Schneiden</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/de/docs/features/operations/engrave"><span title="Gravur" class="linkLabel_WmDU">Gravur</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/de/docs/features/operations/shrink-wrap"><span title="Schrumpfumhüllung" class="linkLabel_WmDU">Schrumpfumhüllung</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/de/docs/features/operations/frame-outline"><span title="Rahmen-Umriss" class="linkLabel_WmDU">Rahmen-Umriss</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/de/docs/features/operations/material-test-grid"><span title="Materialtest-Raster" class="linkLabel_WmDU">Materialtest-Raster</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/de/docs/features/sketcher"><span title="Parametrischer 2D-Sketcher" class="linkLabel_WmDU">Parametrischer 2D-Sketcher</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/de/docs/features/multi-layer"><span title="Mehrschicht-Workflow" class="linkLabel_WmDU">Mehrschicht-Workflow</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/de/docs/features/stock-handling"><span title="Rohmaterial-Workflow" class="linkLabel_WmDU">Rohmaterial-Workflow</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/de/docs/features/simulation-mode"><span title="Simulationsmodus" class="linkLabel_WmDU">Simulationsmodus</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/de/docs/features/simulating-your-job"><span title="Ihren Job simulieren" class="linkLabel_WmDU">Ihren Job simulieren</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/de/docs/features/framing-your-job"><span title="Ihren Job einrahmen" class="linkLabel_WmDU">Ihren Job einrahmen</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/de/docs/features/holding-tabs"><span title="Halte-Laschen" class="linkLabel_WmDU">Halte-Laschen</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/de/docs/features/overscan"><span title="Overscan" class="linkLabel_WmDU">Overscan</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/de/docs/features/kerf"><span title="Schnittbreiten-Kompensation" class="linkLabel_WmDU">Schnittbreiten-Kompensation</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/de/docs/files/importing"><span title="Dateien" class="categoryLinkLabel_W154">Dateien</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/de/docs/general-info/laser-safety"><span title="Allgemeine Informationen" class="categoryLinkLabel_W154">Allgemeine Informationen</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/de/docs/troubleshooting/connection"><span title="Fehlerbehebung" class="categoryLinkLabel_W154">Fehlerbehebung</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/de/docs/reference/shortcuts"><span title="Referenz" class="categoryLinkLabel_W154">Referenz</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/de/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Funktionen</span></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Operationen</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Schrumpfumhüllung</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">Auf dieser Seite</button></div><div class="theme-doc-markdown markdown"><header><h1>Schrumpfumhüllung</h1></header>
+<p>Schrumpfumhüllung erzeugt einen effizienten Schneidepfad um mehrere Objekte, indem sie eine Grenze erzeugt, die sich um sie &quot;schrumpft&quot;. Sie ist nützlich, um mehrere Teile aus einem Blatt mit minimalem Abfall zu schneiden.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="übersicht">Übersicht<a href="#übersicht" class="hash-link" aria-label="Direkter Link zur Übersicht" title="Direkter Link zur Übersicht" translate="no">​</a></h2>
+<p>Schrumpfumhüllungs-Operationen:</p>
+<ul>
+<li class="">Erstellen Grenzpfade um Gruppen von Objekten</li>
+<li class="">Minimieren Materialabfall</li>
+<li class="">Reduzieren Schneidezeit durch Kombinieren von Pfaden</li>
+<li class="">Unterstützen Offset-Distanzen für Spielraum</li>
+<li class="">Arbeiten mit jeder Kombination von Vektorformen</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="wann-schrumpfumhüllung-verwenden">Wann Schrumpfumhüllung verwenden<a href="#wann-schrumpfumhüllung-verwenden" class="hash-link" aria-label="Direkter Link zur Wann Schrumpfumhüllung verwenden" title="Direkter Link zur Wann Schrumpfumhüllung verwenden" translate="no">​</a></h2>
+<p>Verwenden Sie Schrumpfumhüllung für:</p>
+<ul>
+<li class="">Schneiden mehrerer kleiner Teile aus einem Blatt</li>
+<li class="">Minimieren von Materialabfall</li>
+<li class="">Erstellen effizienter Nesting-Grenzen</li>
+<li class="">Trennen von Gruppen von Teilen</li>
+<li class="">Reduzieren der Gesamtschneidezeit</li>
+</ul>
+<p><strong>Verwenden Sie Schrumpfumhüllung nicht für:</strong></p>
+<ul>
+<li class="">Einzelne Objekte (verwenden Sie stattdessen <a class="" href="/de/docs/features/operations/contour">Kontur</a>)</li>
+<li class="">Teile, die individuelle Grenzen benötigen</li>
+<li class="">Präzise rechteckige Schnitte</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="wie-schrumpfumhüllung-funktioniert">Wie Schrumpfumhüllung funktioniert<a href="#wie-schrumpfumhüllung-funktioniert" class="hash-link" aria-label="Direkter Link zur Wie Schrumpfumhüllung funktioniert" title="Direkter Link zur Wie Schrumpfumhüllung funktioniert" translate="no">​</a></h2>
+<p>Schrumpfumhüllung erzeugt eine Grenze mit einem algorithmus für rechnerische Geometrie:</p>
+<ol>
+<li class=""><strong>Starten</strong> mit einer konvexen Hülle um alle Objekte</li>
+<li class=""><strong>Schrumpfen</strong> der Grenze nach innen in Richtung der Objekte</li>
+<li class=""><strong>Umhüllen</strong> eng um die Objektgruppe</li>
+<li class=""><strong>Offset</strong> nach außen um die angegebene Distanz</li>
+</ol>
+<p>Das Ergebnis ist ein effizienter Schneidepfad, der der Gesamtform Ihrer Teile folgt, während Spielraum beibehalten wird.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="eine-schrumpfumhüllungs-operation-erstellen">Eine Schrumpfumhüllungs-Operation erstellen<a href="#eine-schrumpfumhüllungs-operation-erstellen" class="hash-link" aria-label="Direkter Link zur Eine Schrumpfumhüllungs-Operation erstellen" title="Direkter Link zur Eine Schrumpfumhüllungs-Operation erstellen" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="schritt-1-objekte-anordnen">Schritt 1: Objekte anordnen<a href="#schritt-1-objekte-anordnen" class="hash-link" aria-label="Direkter Link zur Schritt 1: Objekte anordnen" title="Direkter Link zur Schritt 1: Objekte anordnen" translate="no">​</a></h3>
+<ol>
+<li class="">Platzieren Sie alle zu umhüllenden Teile auf der Arbeitsfläche</li>
+<li class="">Positionieren Sie sie mit gewünschtem Abstand</li>
+<li class="">Mehrere separate Gruppen können zusammen schrumpfumhüllt werden</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="schritt-2-objekte-auswählen">Schritt 2: Objekte auswählen<a href="#schritt-2-objekte-auswählen" class="hash-link" aria-label="Direkter Link zur Schritt 2: Objekte auswählen" title="Direkter Link zur Schritt 2: Objekte auswählen" translate="no">​</a></h3>
+<ol>
+<li class="">Wählen Sie alle in die Schrumpfumhüllung einzubeziehenden Objekte aus</li>
+<li class="">Können verschiedene Formen, Größen und Typen sein</li>
+<li class="">Alle ausgewählten Objekte werden zusammen umhüllt</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="schritt-3-schrumpfumhüllungs-operation-hinzufügen">Schritt 3: Schrumpfumhüllungs-Operation hinzufügen<a href="#schritt-3-schrumpfumhüllungs-operation-hinzufügen" class="hash-link" aria-label="Direkter Link zur Schritt 3: Schrumpfumhüllungs-Operation hinzufügen" title="Direkter Link zur Schritt 3: Schrumpfumhüllungs-Operation hinzufügen" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Menü:</strong> Operationen Schrumpfumhüllung hinzufügen</li>
+<li class=""><strong>Rechtsklick:</strong> Kontextmenü Operation hinzufügen Schrumpfumhüllung</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="schritt-4-einstellungen-konfigurieren">Schritt 4: Einstellungen konfigurieren<a href="#schritt-4-einstellungen-konfigurieren" class="hash-link" aria-label="Direkter Link zur Schritt 4: Einstellungen konfigurieren" title="Direkter Link zur Schritt 4: Einstellungen konfigurieren" translate="no">​</a></h3>
+<p><img decoding="async" loading="lazy" alt="Schrumpfumhüllungs-Schritt-Einstellungen" src="/de/assets/images/step-settings-shrink-wrap-general-67250330a3e7ea5f0c89ba4f87d1dd5a.png" width="722" height="1022" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="haupt-einstellungen">Haupt-Einstellungen<a href="#haupt-einstellungen" class="hash-link" aria-label="Direkter Link zur Haupt-Einstellungen" title="Direkter Link zur Haupt-Einstellungen" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="leistung--geschwindigkeit">Leistung &amp; Geschwindigkeit<a href="#leistung--geschwindigkeit" class="hash-link" aria-label="Direkter Link zur Leistung &amp; Geschwindigkeit" title="Direkter Link zur Leistung &amp; Geschwindigkeit" translate="no">​</a></h3>
+<p>Wie andere Schneideoperationen:</p>
+<p><strong>Leistung (%):</strong></p>
+<ul>
+<li class="">Laserintensität zum Schneiden</li>
+<li class="">Gleich wie für <a class="" href="/de/docs/features/operations/contour">Kontur</a>-Schneiden</li>
+</ul>
+<p><strong>Geschwindigkeit (mm/min):</strong></p>
+<ul>
+<li class="">Wie schnell sich der Laser bewegt</li>
+<li class="">An die Schnittgeschwindigkeit Ihres Materials anpassen</li>
+</ul>
+<p><strong>Durchgänge:</strong></p>
+<ul>
+<li class="">Anzahl der Male, die Grenze zu schneiden</li>
+<li class="">Normalerweise 1-2 Durchgänge</li>
+<li class="">Gleich wie Kontur-Schneiden für Ihr Material</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="offset-distanz">Offset-Distanz<a href="#offset-distanz" class="hash-link" aria-label="Direkter Link zur Offset-Distanz" title="Direkter Link zur Offset-Distanz" translate="no">​</a></h3>
+<p><strong>Offset (mm):</strong></p>
+<ul>
+<li class="">Wie viel Spielraum um die Teile</li>
+<li class="">Distanz von Objekten zur Schrumpfumhüllungs-Grenze</li>
+<li class="">Größerer Offset = mehr Material um Teile gelassen</li>
+</ul>
+<p><strong>Typische Werte:</strong></p>
+<ul>
+<li class=""><strong>2-3mm:</strong> Enge Umhüllung, minimaler Abfall</li>
+<li class=""><strong>5mm:</strong> Komfortabler Spielraum</li>
+<li class=""><strong>10mm+:</strong> Extra Material für Handhabung</li>
+</ul>
+<p><strong>Warum Offset wichtig ist:</strong></p>
+<ul>
+<li class="">Zu klein: Risiko, in Teile zu schneiden</li>
+<li class="">Zu groß: Verschwendet Material</li>
+<li class="">Berücksichtigen: Schnittbreite, Schneidegenauigkeit</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="glättung">Glättung<a href="#glättung" class="hash-link" aria-label="Direkter Link zur Glättung" title="Direkter Link zur Glättung" translate="no">​</a></h3>
+<p>Steuert, wie eng die Grenze Objektformen folgt:</p>
+<p><strong>Hohe Glättung:</strong></p>
+<ul>
+<li class="">Folgt Objekten enger</li>
+<li class="">Komplexerer Pfad</li>
+<li class="">Längere Schneidezeit</li>
+<li class="">Weniger Materialabfall</li>
+</ul>
+<p><strong>Niedrige Glättung:</strong></p>
+<ul>
+<li class="">Einfacherer, gerundeterer Pfad</li>
+<li class="">Kürzere Schneidezeit</li>
+<li class="">Etwas mehr Materialabfall</li>
+</ul>
+<p><strong>Empfohlen:</strong> Mittlere Glättung für die meisten Fälle</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="anwendungsfälle">Anwendungsfälle<a href="#anwendungsfälle" class="hash-link" aria-label="Direkter Link zur Anwendungsfälle" title="Direkter Link zur Anwendungsfälle" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="chargen-teile-produktion">Chargen-Teile-Produktion<a href="#chargen-teile-produktion" class="hash-link" aria-label="Direkter Link zur Chargen-Teile-Produktion" title="Direkter Link zur Chargen-Teile-Produktion" translate="no">​</a></h3>
+<p><strong>Szenario:</strong> 20 kleine Teile aus einem großen Blatt schneiden</p>
+<p><strong>Ohne Schrumpfumhüllung:</strong></p>
+<ul>
+<li class="">Volle Blatt-Grenze schneiden</li>
+<li class="">Alles Material um Teile verschwenden</li>
+<li class="">Lange Schneidezeit</li>
+</ul>
+<p><strong>Mit Schrumpfumhüllung:</strong></p>
+<ul>
+<li class="">Enge Grenze um Teilgruppe schneiden</li>
+<li class="">Material für andere Projekte sparen</li>
+<li class="">Schnelleres Schneiden (kürzerer Umfang)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="nesting-optimierung">Nesting-Optimierung<a href="#nesting-optimierung" class="hash-link" aria-label="Direkter Link zur Nesting-Optimierung" title="Direkter Link zur Nesting-Optimierung" translate="no">​</a></h3>
+<p><strong>Workflow:</strong></p>
+<ol>
+<li class="">Teile effizient auf Blatt nesten</li>
+<li class="">Teile in Abschnitte gruppieren</li>
+<li class="">Jeden Abschnitt schrumpfumhüllen</li>
+<li class="">Abschnitte separat schneiden</li>
+</ol>
+<p><strong>Vorteile:</strong></p>
+<ul>
+<li class="">Fertige Abschnitte entfernen während Fortsetzung</li>
+<li class="">Einfachere Handhabung geschnittener Teile</li>
+<li class="">Reduziertes Risiko von Teilbewegung</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="material-schonung">Material-Schonung<a href="#material-schonung" class="hash-link" aria-label="Direkter Link zur Material-Schonung" title="Direkter Link zur Material-Schonung" translate="no">​</a></h3>
+<p><strong>Beispiel:</strong> Kleine Teile auf teurem Material</p>
+<p><strong>Prozess:</strong></p>
+<ol>
+<li class="">Teile eng anordnen</li>
+<li class="">Schrumpfumhüllung mit 3mm Offset</li>
+<li class="">Frei aus Blatt schneiden</li>
+<li class="">Verbleibendes Material sparen</li>
+</ol>
+<p><strong>Ergebnis:</strong> Maximale Materialeffizienz</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="mit-anderen-operationen-kombinieren">Mit anderen Operationen kombinieren<a href="#mit-anderen-operationen-kombinieren" class="hash-link" aria-label="Direkter Link zur Mit anderen Operationen kombinieren" title="Direkter Link zur Mit anderen Operationen kombinieren" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="schrumpfumhüllung--kontur">Schrumpfumhüllung + Kontur<a href="#schrumpfumhüllung--kontur" class="hash-link" aria-label="Direkter Link zur Schrumpfumhüllung + Kontur" title="Direkter Link zur Schrumpfumhüllung + Kontur" translate="no">​</a></h3>
+<p>Häufiger Workflow:</p>
+<ol>
+<li class=""><strong>Kontur</strong>-Operationen auf einzelnen Teilen (Details schneiden)</li>
+<li class=""><strong>Schrumpfumhüllung</strong> um die Gruppe (frei aus Blatt schneiden)</li>
+</ol>
+<p><strong>Ausführungsreihenfolge:</strong></p>
+<ul>
+<li class="">Zuerst: Details in Teilen schneiden (während befestigt)</li>
+<li class="">Zuletzt: Schrumpfumhüllung schneidet Gruppe frei</li>
+</ul>
+<p>Siehe <a class="" href="/de/docs/features/multi-layer">Mehrschicht-Workflow</a> für Details.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="schrumpfumhüllung--raster">Schrumpfumhüllung + Raster<a href="#schrumpfumhüllung--raster" class="hash-link" aria-label="Direkter Link zur Schrumpfumhüllung + Raster" title="Direkter Link zur Schrumpfumhüllung + Raster" translate="no">​</a></h3>
+<p><strong>Beispiel:</strong> Gravierte und geschnittene Teile</p>
+<ol>
+<li class=""><strong>Raster</strong> Logos auf Teilen gravieren</li>
+<li class=""><strong>Kontur</strong> Teilumrisse schneiden</li>
+<li class=""><strong>Schrumpfumhüllung</strong> um gesamte Gruppe</li>
+</ol>
+<p><strong>Vorteile:</strong></p>
+<ul>
+<li class="">Alle Gravur geschieht während Material befestigt ist</li>
+<li class="">Finale Schrumpfumhüllung schneidet gesamte Charge frei</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tipps--best-practices">Tipps &amp; Best Practices<a href="#tipps--best-practices" class="hash-link" aria-label="Direkter Link zur Tipps &amp; Best Practices" title="Direkter Link zur Tipps &amp; Best Practices" translate="no">​</a></h2>
+<p><img decoding="async" loading="lazy" alt="Schrumpfumhüllungs-Nachbearbeitungseinstellungen" src="/de/assets/images/step-settings-shrink-wrap-post-6479db8ee4aac0b1004559df19da4a68.png" width="722" height="1022" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="teil-abstand">Teil-Abstand<a href="#teil-abstand" class="hash-link" aria-label="Direkter Link zur Teil-Abstand" title="Direkter Link zur Teil-Abstand" translate="no">​</a></h3>
+<p><strong>Optimaler Abstand:</strong></p>
+<ul>
+<li class="">5-10mm zwischen Teilen</li>
+<li class="">Genug, damit Schrumpfumhüllung separate Objekte unterscheidet</li>
+<li class="">Nicht so viel, dass Sie Material verschwenden</li>
+</ul>
+<p><strong>Zu nah:</strong></p>
+<ul>
+<li class="">Teile können zusammen umhüllt werden</li>
+<li class="">Schrumpfumhüllung kann Lücken überbrücken</li>
+<li class="">Schwierig nach dem Schneiden zu trennen</li>
+</ul>
+<p><strong>Zu weit:</strong></p>
+<ul>
+<li class="">Verschwendet Material</li>
+<li class="">Längere Schneidezeit</li>
+<li class="">Ineffiziente Nutzung des Blattes</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="material-überlegungen">Material-Überlegungen<a href="#material-überlegungen" class="hash-link" aria-label="Direkter Link zur Material-Überlegungen" title="Direkter Link zur Material-Überlegungen" translate="no">​</a></h3>
+<p><strong>Am besten für:</strong></p>
+<ul>
+<li class="">Produktionsläufe (viele identische Teile)</li>
+<li class="">Kleine Teile aus großen Blättern</li>
+<li class="">Teure Materialien (Abfall minimieren)</li>
+<li class="">Chargen-Schneide-Jobs</li>
+</ul>
+<p><strong>Nicht ideal für:</strong></p>
+<ul>
+<li class="">Einzelne große Teile</li>
+<li class="">Teile, die gesamtes Blatt füllen</li>
+<li class="">Wenn Sie volles Blatt schneiden müssen</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sicherheit">Sicherheit<a href="#sicherheit" class="hash-link" aria-label="Direkter Link zur Sicherheit" title="Direkter Link zur Sicherheit" translate="no">​</a></h3>
+<p><strong>Immer:</strong></p>
+<ul>
+<li class="">Überprüfen, dass Grenze keine Teile überschneidet</li>
+<li class="">Verifizieren, dass Offset ausreichend ist</li>
+<li class="">Vorschau im <a class="" href="/de/docs/features/simulation-mode">Simulationsmodus</a></li>
+<li class="">Erst auf Abfall testen</li>
+</ul>
+<p><strong>Achten auf:</strong></p>
+<ul>
+<li class="">Schrumpfumhüllung schneidet in Teile (Offset erhöhen)</li>
+<li class="">Teile bewegen sich, bevor Schrumpfumhüllung abgeschlossen ist</li>
+<li class="">Material-Warping zieht Teile aus der Position</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="erweiterte-techniken">Erweiterte Techniken<a href="#erweiterte-techniken" class="hash-link" aria-label="Direkter Link zur Erweiterte Techniken" title="Direkter Link zur Erweiterte Techniken" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mehrere-schrumpfumhüllungen">Mehrere Schrumpfumhüllungen<a href="#mehrere-schrumpfumhüllungen" class="hash-link" aria-label="Direkter Link zur Mehrere Schrumpfumhüllungen" title="Direkter Link zur Mehrere Schrumpfumhüllungen" translate="no">​</a></h3>
+<p>Separate Grenzen für verschiedene Gruppen erstellen:</p>
+<p><strong>Prozess:</strong></p>
+<ol>
+<li class="">Teile in logische Gruppen anordnen</li>
+<li class="">Schrumpfumhüllung Gruppe 1 (obere Teile)</li>
+<li class="">Schrumpfumhüllung Gruppe 2 (untere Teile)</li>
+<li class="">Gruppen separat schneiden</li>
+</ol>
+<p><strong>Vorteile:</strong></p>
+<ul>
+<li class="">Fertige Gruppen während Job entfernen</li>
+<li class="">Bessere Organisation</li>
+<li class="">Einfachere Teil-Entnahme</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="verschachtelte-schrumpfumhüllungen">Verschachtelte Schrumpfumhüllungen<a href="#verschachtelte-schrumpfumhüllungen" class="hash-link" aria-label="Direkter Link zur Verschachtelte Schrumpfumhüllungen" title="Direkter Link zur Verschachtelte Schrumpfumhüllungen" translate="no">​</a></h3>
+<p>Schrumpfumhüllung innerhalb einer größeren Grenze:</p>
+<p><strong>Beispiel:</strong></p>
+<ol>
+<li class="">Innere Schrumpfumhüllung: Kleine detaillierte Teile</li>
+<li class="">Äußere Schrumpfumhüllung: Inklusive größerer Teile</li>
+<li class="">Kontur: Volles Blatt-Grenze</li>
+</ol>
+<p><strong>Verwendung für:</strong> Komplexe Multi-Teil-Layouts</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="spielraum-testen">Spielraum-Testen<a href="#spielraum-testen" class="hash-link" aria-label="Direkter Link zur Spielraum-Testen" title="Direkter Link zur Spielraum-Testen" translate="no">​</a></h3>
+<p>Vor Produktionslauf:</p>
+<ol>
+<li class="">Schrumpfumhüllung erstellen</li>
+<li class="">Vorschau mit <a class="" href="/de/docs/features/simulation-mode">Simulationsmodus</a></li>
+<li class="">Verifizieren, dass Spielraum ausreichend ist</li>
+<li class="">Überprüfen, dass keine Teile geschnitten werden</li>
+<li class="">Test auf Abfallmaterial ausführen</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="fehlerbehebung">Fehlerbehebung<a href="#fehlerbehebung" class="hash-link" aria-label="Direkter Link zur Fehlerbehebung" title="Direkter Link zur Fehlerbehebung" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="schrumpfumhüllung-schneidet-in-teile">Schrumpfumhüllung schneidet in Teile<a href="#schrumpfumhüllung-schneidet-in-teile" class="hash-link" aria-label="Direkter Link zur Schrumpfumhüllung schneidet in Teile" title="Direkter Link zur Schrumpfumhüllung schneidet in Teile" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Erhöhen:</strong> Offset-Distanz</li>
+<li class=""><strong>Überprüfen:</strong> Teile sind nicht zu nah beieinander</li>
+<li class=""><strong>Verifizieren:</strong> Schrumpfumhüllungspfad in Vorschau</li>
+<li class=""><strong>Berücksichtigen:</strong> Schnittbreite (Laserstrahl-Breite)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="grenze-folgt-formen-nicht">Grenze folgt Formen nicht<a href="#grenze-folgt-formen-nicht" class="hash-link" aria-label="Direkter Link zur Grenze folgt Formen nicht" title="Direkter Link zur Grenze folgt Formen nicht" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Erhöhen:</strong> Glättungseinstellung</li>
+<li class=""><strong>Überprüfen:</strong> Teile sind richtig ausgewählt</li>
+<li class=""><strong>Versuchen:</strong> Kleinerer Offset (könnte zu weit außen umhüllen)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="teile-werden-zusammen-umhüllt">Teile werden zusammen umhüllt<a href="#teile-werden-zusammen-umhüllt" class="hash-link" aria-label="Direkter Link zur Teile werden zusammen umhüllt" title="Direkter Link zur Teile werden zusammen umhüllt" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Erhöhen:</strong> Abstand zwischen Teilen</li>
+<li class=""><strong>Hinzufügen:</strong> Manuelle Konturen um einzelne Teile</li>
+<li class=""><strong>Aufteilen:</strong> In mehrere Schrumpfumhüllungs-Operationen</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="schneiden-dauert-zu-lange">Schneiden dauert zu lange<a href="#schneiden-dauert-zu-lange" class="hash-link" aria-label="Direkter Link zur Schneiden dauert zu lange" title="Direkter Link zur Schneiden dauert zu lange" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Verringern:</strong> Glättung (einfacherer Pfad)</li>
+<li class=""><strong>Erhöhen:</strong> Offset (geradere Grenzen)</li>
+<li class=""><strong>In Betracht ziehen:</strong> Mehrere kleinere Schrumpfumhüllungen</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="teile-bewegen-sich-während-des-schneidens">Teile bewegen sich während des Schneidens<a href="#teile-bewegen-sich-während-des-schneidens" class="hash-link" aria-label="Direkter Link zur Teile bewegen sich während des Schneidens" title="Direkter Link zur Teile bewegen sich während des Schneidens" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Hinzufügen:</strong> Kleine Laschen, um Teile zu halten (siehe <a class="" href="/de/docs/features/holding-tabs">Halte-Laschen</a>)</li>
+<li class=""><strong>Verwenden:</strong> Schneide-Reihenfolge: von innen nach außen</li>
+<li class=""><strong>Sicherstellen:</strong> Material ist flach und befestigt</li>
+<li class=""><strong>Überprüfen:</strong> Blatt ist nicht gewölbt</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="technische-details">Technische Details<a href="#technische-details" class="hash-link" aria-label="Direkter Link zur Technische Details" title="Direkter Link zur Technische Details" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="algorithmus">Algorithmus<a href="#algorithmus" class="hash-link" aria-label="Direkter Link zur Algorithmus" title="Direkter Link zur Algorithmus" translate="no">​</a></h3>
+<p>Schrumpfumhüllung verwendet rechnerische Geometrie:</p>
+<ol>
+<li class=""><strong>Konvexe Hülle</strong> - Äußere Grenze finden</li>
+<li class=""><strong>Alpha-Form</strong> - In Richtung Objekte schrumpfen</li>
+<li class=""><strong>Offset</strong> - Um Offset-Distanz erweitern</li>
+<li class=""><strong>Vereinfachen</strong> - Basierend auf Glättungseinstellung</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pfad-optimierung">Pfad-Optimierung<a href="#pfad-optimierung" class="hash-link" aria-label="Direkter Link zur Pfad-Optimierung" title="Direkter Link zur Pfad-Optimierung" translate="no">​</a></h3>
+<p>Der Grenzpfad wird optimiert für:</p>
+<ul>
+<li class="">Minimale Gesamtlänge</li>
+<li class="">Glatte Kurven (basierend auf Glättung)</li>
+<li class="">Effiziente Start/End-Punkte</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="koordinatensystem">Koordinatensystem<a href="#koordinatensystem" class="hash-link" aria-label="Direkter Link zur Koordinatensystem" title="Direkter Link zur Koordinatensystem" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Einheiten:</strong> Millimeter (mm)</li>
+<li class=""><strong>Präzision:</strong> 0.01mm typisch</li>
+<li class=""><strong>Koordinaten:</strong> Gleich wie Arbeitsbereich</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="verwandte-themen">Verwandte Themen<a href="#verwandte-themen" class="hash-link" aria-label="Direkter Link zur Verwandte Themen" title="Direkter Link zur Verwandte Themen" translate="no">​</a></h2>
+<ul>
+<li class=""><strong><a class="" href="/de/docs/features/operations/contour">Kontur-Schneiden</a></strong> - Individuelle Objektumrisse schneiden</li>
+<li class=""><strong><a class="" href="/de/docs/features/multi-layer">Mehrschicht-Workflow</a></strong> - Operationen effektiv kombinieren</li>
+<li class=""><strong><a class="" href="/de/docs/features/holding-tabs">Halte-Laschen</a></strong> - Teile während des Schneidens sichern</li>
+<li class=""><strong><a class="" href="/de/docs/features/simulation-mode">Simulationsmodus</a></strong> - Schneidepfade vorschauen</li>
+<li class=""><strong><a class="" href="/de/docs/features/operations/material-test-grid">Materialtest-Raster</a></strong> - Optimale Schneideeinstellungen finden</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/features/operations/shrink-wrap.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Diese Seite bearbeiten</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Dokumentation Seiten"><a class="pagination-nav__link pagination-nav__link--prev" href="/de/docs/features/operations/engrave"><div class="pagination-nav__sublabel">Zurück</div><div class="pagination-nav__label">Gravur</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/de/docs/features/operations/frame-outline"><div class="pagination-nav__sublabel">Weiter</div><div class="pagination-nav__label">Rahmen-Umriss</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#übersicht" class="table-of-contents__link toc-highlight">Übersicht</a></li><li><a href="#wann-schrumpfumhüllung-verwenden" class="table-of-contents__link toc-highlight">Wann Schrumpfumhüllung verwenden</a></li><li><a href="#wie-schrumpfumhüllung-funktioniert" class="table-of-contents__link toc-highlight">Wie Schrumpfumhüllung funktioniert</a></li><li><a href="#eine-schrumpfumhüllungs-operation-erstellen" class="table-of-contents__link toc-highlight">Eine Schrumpfumhüllungs-Operation erstellen</a><ul><li><a href="#schritt-1-objekte-anordnen" class="table-of-contents__link toc-highlight">Schritt 1: Objekte anordnen</a></li><li><a href="#schritt-2-objekte-auswählen" class="table-of-contents__link toc-highlight">Schritt 2: Objekte auswählen</a></li><li><a href="#schritt-3-schrumpfumhüllungs-operation-hinzufügen" class="table-of-contents__link toc-highlight">Schritt 3: Schrumpfumhüllungs-Operation hinzufügen</a></li><li><a href="#schritt-4-einstellungen-konfigurieren" class="table-of-contents__link toc-highlight">Schritt 4: Einstellungen konfigurieren</a></li></ul></li><li><a href="#haupt-einstellungen" class="table-of-contents__link toc-highlight">Haupt-Einstellungen</a><ul><li><a href="#leistung--geschwindigkeit" class="table-of-contents__link toc-highlight">Leistung &amp; Geschwindigkeit</a></li><li><a href="#offset-distanz" class="table-of-contents__link toc-highlight">Offset-Distanz</a></li><li><a href="#glättung" class="table-of-contents__link toc-highlight">Glättung</a></li></ul></li><li><a href="#anwendungsfälle" class="table-of-contents__link toc-highlight">Anwendungsfälle</a><ul><li><a href="#chargen-teile-produktion" class="table-of-contents__link toc-highlight">Chargen-Teile-Produktion</a></li><li><a href="#nesting-optimierung" class="table-of-contents__link toc-highlight">Nesting-Optimierung</a></li><li><a href="#material-schonung" class="table-of-contents__link toc-highlight">Material-Schonung</a></li></ul></li><li><a href="#mit-anderen-operationen-kombinieren" class="table-of-contents__link toc-highlight">Mit anderen Operationen kombinieren</a><ul><li><a href="#schrumpfumhüllung--kontur" class="table-of-contents__link toc-highlight">Schrumpfumhüllung + Kontur</a></li><li><a href="#schrumpfumhüllung--raster" class="table-of-contents__link toc-highlight">Schrumpfumhüllung + Raster</a></li></ul></li><li><a href="#tipps--best-practices" class="table-of-contents__link toc-highlight">Tipps &amp; Best Practices</a><ul><li><a href="#teil-abstand" class="table-of-contents__link toc-highlight">Teil-Abstand</a></li><li><a href="#material-überlegungen" class="table-of-contents__link toc-highlight">Material-Überlegungen</a></li><li><a href="#sicherheit" class="table-of-contents__link toc-highlight">Sicherheit</a></li></ul></li><li><a href="#erweiterte-techniken" class="table-of-contents__link toc-highlight">Erweiterte Techniken</a><ul><li><a href="#mehrere-schrumpfumhüllungen" class="table-of-contents__link toc-highlight">Mehrere Schrumpfumhüllungen</a></li><li><a href="#verschachtelte-schrumpfumhüllungen" class="table-of-contents__link toc-highlight">Verschachtelte Schrumpfumhüllungen</a></li><li><a href="#spielraum-testen" class="table-of-contents__link toc-highlight">Spielraum-Testen</a></li></ul></li><li><a href="#fehlerbehebung" class="table-of-contents__link toc-highlight">Fehlerbehebung</a><ul><li><a href="#schrumpfumhüllung-schneidet-in-teile" class="table-of-contents__link toc-highlight">Schrumpfumhüllung schneidet in Teile</a></li><li><a href="#grenze-folgt-formen-nicht" class="table-of-contents__link toc-highlight">Grenze folgt Formen nicht</a></li><li><a href="#teile-werden-zusammen-umhüllt" class="table-of-contents__link toc-highlight">Teile werden zusammen umhüllt</a></li><li><a href="#schneiden-dauert-zu-lange" class="table-of-contents__link toc-highlight">Schneiden dauert zu lange</a></li><li><a href="#teile-bewegen-sich-während-des-schneidens" class="table-of-contents__link toc-highlight">Teile bewegen sich während des Schneidens</a></li></ul></li><li><a href="#technische-details" class="table-of-contents__link toc-highlight">Technische Details</a><ul><li><a href="#algorithmus" class="table-of-contents__link toc-highlight">Algorithmus</a></li><li><a href="#pfad-optimierung" class="table-of-contents__link toc-highlight">Pfad-Optimierung</a></li><li><a href="#koordinatensystem" class="table-of-contents__link toc-highlight">Koordinatensystem</a></li></ul></li><li><a href="#verwandte-themen" class="table-of-contents__link toc-highlight">Verwandte Themen</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</body>
+</html>
