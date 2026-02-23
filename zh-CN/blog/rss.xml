@@ -16,17 +16,17 @@
             <description><![CDATA[Rayforge 1.0]]></description>
             <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 1.0" src="https://rayforge.org/zh-CN/assets/images/rayforge-1.0-95669e0bab418ed91ad92eb5532ec092.png" width="1920" height="1024" class="img_ev3q"></p>
 <p>今天标志着 Rayforge 的一个特殊里程碑——我们在项目的一周岁生日当天发布 1.0 版本！从 2025 年 2 月 1 日的第一次提交开始，这已经发展成为一个功能齐全的激光切割和雕刻平台。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="迄今为止的旅程">迄今为止的旅程<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E8%BF%84%E4%BB%8A%E4%B8%BA%E6%AD%A2%E7%9A%84%E6%97%85%E7%A8%8B" class="hash-link" aria-label="迄今为止的旅程的直接链接" title="迄今为止的旅程�的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="迄今为止的旅程">迄今为止的旅程<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E8%BF%84%E4%BB%8A%E4%B8%BA%E6%AD%A2%E7%9A%84%E6%97%85%E7%A8%8B" class="hash-link" aria-label="迄今为止的旅程 的直接链接" title="迄今��为止的旅程 的直接链接" translate="no">​</a></h2>
 <p>在过去的一年里，Rayforge 已从一个基本的激光控制工具演变为一个综合性的设计和制造平台。我们从零开始构建了一切：参数化 2D CAD 系统、3D G-code 预览、多图层支持、多激光支持、相机对齐、工作坐标系等等。</p>
 <p>此次发布代表了这一愿景的顶点——一个稳定、可用于生产的工具，能够处理现实世界的激光切割和雕刻工作流程。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="10-版本的新功能">1.0 版本的新功能<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#10-%E7%89%88%E6%9C%AC%E7%9A%84%E6%96%B0%E5%8A%9F%E8%83%BD" class="hash-link" aria-label="1.0 版本的新功能的直接链接" title="1.0 版本的新功能的直接链接" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="项目保存加载">项目保存/加载<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E9%A1%B9%E7%9B%AE%E4%BF%9D%E5%AD%98%E5%8A%A0%E8%BD%BD" class="hash-link" aria-label="项目保存/加载的直接链接" title="项目保存/加载的直接链接" translate="no">​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="10-版本的新功能">1.0 版本的新功能<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#10-%E7%89%88%E6%9C%AC%E7%9A%84%E6%96%B0%E5%8A%9F%E8%83%BD" class="hash-link" aria-label="1.0 版本的新功能 的直接链接" title="1.0 版本的新功能 的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="项目保存加载">项目保存/加载<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E9%A1%B9%E7%9B%AE%E4%BF%9D%E5%AD%98%E5%8A%A0%E8%BD%BD" class="hash-link" aria-label="项目保存/加载 的直接链接" title="项目保存/加载 的直接链接" translate="no">​</a></h3>
 <p>最受请求的功能终于来了。您现在可以保存完整的工作流程并在以后恢复。<code>.ryp</code>（项目）和 <code>.rfs</code>（草图）文件扩展名已在系统范围内注册，因此您可以双击项目直接打开它们。最近文件菜单可让您快速访问您的工作。</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="带文本支持的参数化草图器">带文本支持的参数化草图器<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E5%B8%A6%E6%96%87%E6%9C%AC%E6%94%AF%E6%8C%81%E7%9A%84%E5%8F%82%E6%95%B0%E5%8C%96%E8%8D%89%E5%9B%BE%E5%99%A8" class="hash-link" aria-label="带文本支持的参数化草图器的直接链接" title="带文本支持的参数化草图器的直接链接" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="带文本支持的参数化草图器">带文本支持的参数化草图器<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E5%B8%A6%E6%96%87%E6%9C%AC%E6%94%AF%E6%8C%81%E7%9A%84%E5%8F%82%E6%95%B0%E5%8C%96%E8%8D%89%E5%9B%BE%E5%99%A8" class="hash-link" aria-label="带文本支持的参数化草图器 的直接链接" title="带文本支持的参数化草图器 的直接链接" translate="no">​</a></h3>
 <p>草图器现在支持具有完整约束集成的文本。在草图中添加文本、应用纵横比约束，并通过参数控制位置和大小。这为激光雕刻标牌、标签和装饰元素开辟了一个全新的设计可能性世界。</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="统一底部面板">统一底部面板<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E7%BB%9F%E4%B8%80%EF%BF%BD%EF%BF%BD%E5%BA%95%E9%83%A8%E9%9D%A2%E6%9D%BF" class="hash-link" aria-label="统一底部面板的直接链接" title="统一底部面板的直接链接" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="统一底部面板">统一底部面板<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E7%BB%9F%E4%B8%80%E5%BA%95%E9%83%A8%E9%9D%A2%E6%9D%BF" class="hash-link" aria-label="统一底部面板 的直接链接" title="统一底部面板 的直接链接" translate="no">​</a></h3>
 <p>点动对话框和日志视图已合并为一个统一的底部面板。这种整合提供了更简洁的工作空间，同时保持基本的机器控制和监控工具易于访问。该面板具有标签式访问点动控制和日志输出的功能，使切换操作变得容易，而不会损失屏幕空间。</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="其他改进">其他改进<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E5%85%B6%E4%BB%96%E6%94%B9%E8%BF%9B" class="hash-link" aria-label="其他改进的直接链接" title="其他改进的直接链接" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="其他改进">其他改进<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E5%85%B6%E4%BB%96%E6%94%B9%E8%BF%9B" class="hash-link" aria-label="其他改进 的直接链接" title="其他改进 的直接链接" translate="no">​</a></h3>
 <ul>
 <li class=""><strong>底部面板</strong>：点动对话框和日志视图现在合并为统一的底部面板</li>
 <li class=""><strong>导入对话框</strong>：错误现在被收集并一起显示</li>
@@ -34,7 +34,7 @@
 <li class=""><strong>草图器稳定性</strong>：求解器现在偏向点以实现更稳定的拖动</li>
 <li class=""><strong>错误修复</strong>：多图层 DXF 导入、对齐错误、居中问题等</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="功能亮点">功能亮点<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E5%8A%9F%E8%83%BD%E4%BA%AE%E7%82%B9" class="hash-link" aria-label="功能亮点的直接链接" title="功能亮点的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="功能亮点">功能亮点<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E5%8A%9F%E8%83%BD%E4%BA%AE%E7%82%B9" class="hash-link" aria-label="功能亮点 的直接链接" title="功能亮点 的直接链接" translate="no">​</a></h2>
 <p>Rayforge 1.0 包含超过 60 项功能：</p>
 <p><strong>设计工具</strong></p>
 <ul>
@@ -72,7 +72,7 @@
 <li class="">深色和浅色主题</li>
 <li class="">多语言支持</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="回顾">回顾<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E5%9B%9E%E9%A1%BE" class="hash-link" aria-label="回顾的直接链接" title="回顾的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="回顾">回顾<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E5%9B%9E%E9%A1%BE" class="hash-link" aria-label="回顾 的直接链接" title="回顾 的直接链接" translate="no">​</a></h2>
 <p>第一次提交是在 2025 年 2 月 1 日 19:37:27 进行的。这是一个简单的"初始导入"，具有基本的 SVG 渲染支持。从那时起，我们：</p>
 <ul>
 <li class="">发布了 28 个版本（0.13 到 0.28，加上 1.0）</li>
@@ -81,7 +81,7 @@
 <li class="">建立了用户和贡献者社区</li>
 <li class="">为 Windows、Linux（deb、snap、flatpak）和 macOS 创建了安装程序</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="接下来是什么">接下来是什么？<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E6%8E%A5%E4%B8%8B%E6%9D%A5%E6%98%AF%E4%BB%80%E4%B9%88" class="hash-link" aria-label="接下来是什么？的直接链接" title="接下来是什么？的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="接下来是什么">接下来是什么？<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E6%8E%A5%E4%B8%8B%E6%9D%A5%E6%98%AF%E4%BB%80%E4%B9%88" class="hash-link" aria-label="接下来是什么？ 的直接链接" title="接下来是什么？ 的直接链接" translate="no">​</a></h2>
 <p>1.0 版本是一个里程碑，而不是终点。未来的路线图包括：</p>
 <ul>
 <li class="">增强的矢量工具和编辑功能</li>
@@ -90,7 +90,7 @@
 <li class="">更多机器配置文件和方言</li>
 <li class="">社区驱动的包生态系统</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="下载-rayforge-10">下载 Rayforge 1.0<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E4%B8%8B%E8%BD%BD-rayforge-10" class="hash-link" aria-label="下载 Rayforge 1.0的直接链接" title="下载 Rayforge 1.0的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="下载-rayforge-10">下载 Rayforge 1.0<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E4%B8%8B%E8%BD%BD-rayforge-10" class="hash-link" aria-label="下载 Rayforge 1.0 的直接链接" title="下载 Rayforge 1.0 的直接链接" translate="no">​</a></h2>
 <p>从我们的网站获取最新版本：<a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">https://rayforge.org/</a></p>
 <p>适用于以下平台的安装程序：</p>
 <ul>
@@ -98,7 +98,7 @@
 <li class="">Linux（deb、snap、flatpak）</li>
 <li class="">macOS（dmg）</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="加入社区">加入社区<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E5%8A%A0%E5%85%A5%E7%A4%BE%E5%8C%BA" class="hash-link" aria-label="加入社区的直接链接" title="加入社区的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="加入社区">加入社区<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E5%8A%A0%E5%85%A5%E7%A4%BE%E5%8C%BA" class="hash-link" aria-label="加入社区 的直接链接" title="加入社区 的直接链接" translate="no">​</a></h2>
 <ul>
 <li class=""><strong>GitHub</strong>: <a href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" class="">https://github.com/barebaric/rayforge</a></li>
 <li class=""><strong>Discord</strong>: <a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">https://discord.gg/sTHNdTtpQJ</a></li>
@@ -119,7 +119,7 @@
             <description><![CDATA[3D 预览]]></description>
             <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="3D 预览" src="https://rayforge.org/zh-CN/assets/images/main-3d-4a91bd0d959ffd6d3ea14fd611a9d67d.png" width="3194" height="1850" class="img_ev3q"></p>
 <p>获得专业品质的激光雕刻效果不仅需要好的硬件——您的软件设置和工作流程也很重要。以下是帮助您充分利用 Rayforge 的五个技巧。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-使用过扫描获得更平滑的光栅雕刻">1. 使用过扫描获得更平滑的光栅雕刻<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#1-%E4%BD%BF%E7%94%A8%E8%BF%87%E6%89%AB%E6%8F%8F%E8%8E%B7%E5%BE%97%E6%9B%B4%E5%B9%B3%E6%BB%91%E7%9A%84%E5%85%89%E6%A0%85%E9%9B%95%E5%88%BB" class="hash-link" aria-label="1. 使用过扫描获得更平滑的光栅雕刻的直接链接" title="1. 使用过扫描获得更平滑的光栅雕刻的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-使用过扫描获得更平滑的光栅雕刻">1. 使用过扫描获得更平滑的光栅雕刻<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#1-%E4%BD%BF%E7%94%A8%E8%BF%87%E6%89%AB%E6%8F%8F%E8%8E%B7%E5%BE%97%E6%9B%B4%E5%B9%B3%E6%BB%91%E7%9A%84%E5%85%89%E6%A0%85%E9%9B%95%E5%88%BB" class="hash-link" aria-label="1. 使用��过扫描获得更平滑的光栅雕刻 的直接链接" title="1. 使用过扫描获得更平滑的光栅雕刻 的直接链接" translate="no">​</a></h2>
 <p>在进行光栅雕刻时，一个常见问题是在激光改变方向的边缘处出现可见的线条或不一致。这是因为激光头需要减速和加速，这会影响雕刻质量。</p>
 <p><strong>解决方案</strong>：在光栅操作设置中启用 <strong>过扫描</strong>。</p>
 <p>过扫描将激光的移动路径延伸到实际雕刻区域之外，使激光头在进入工作区域之前达到全速，并始终保持该速度。这样可以获得更平滑、更一致的雕刻效果。</p>
@@ -130,12 +130,12 @@
 <li class="">启用"过扫描"并设置距离（通常 3-5mm 效果良好）</li>
 </ol>
 <p>在我们的<a class="" href="https://rayforge.org/zh-CN/docs/features/overscan">过扫描指南</a>中了解更多信息。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-通过路径排序优化移动时间">2. 通过路径排序优化移动时间<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#2-%E9%80%9A%E8%BF%87%E8%B7%AF%E5%BE%84%E6%8E%92%E5%BA%8F%E4%BC%98%E5%8C%96%E7%A7%BB%E5%8A%A8%E6%97%B6%E9%97%B4" class="hash-link" aria-label="2. 通过路径排序优化移动时间的直接链接" title="2. 通过路径排序优化移动时间的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-通过路径排序优化移动时间">2. 通过路径排序优化移动时间<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#2-%E9%80%9A%E8%BF%87%E8%B7%AF%E5%BE%84%E6%8E%92%E5%BA%8F%E4%BC%98%E5%8C%96%E7%A7%BB%E5%8A%A8%E6%97%B6%E9%97%B4" class="hash-link" aria-label="2. 通过路径排序优化移动时间 的直接链接" title="2. 通过路径排序优化移动时间 的直接链接" translate="no">​</a></h2>
 <p>对于具有许多独立路径的轮廓操作，激光访问每个形状的顺序会显著影响总作业时间。</p>
 <p><strong>解决方案</strong>：使用 Rayforge 内置的 <strong>移动时间优化</strong>。</p>
 <p>Rayforge 可以自动重新排序路径，以最大限度地减少非切割移动时间。这对于具有许多小对象或多个字母的文本的作业特别有用。</p>
 <p>路径优化通常默认启用，但您可以在轮廓操作设置中验证和调整它。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-添加固定标签防止零件移动">3. 添加固定标签防止零件移动<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#3-%E6%B7%BB%E5%8A%A0%E5%9B%BA%E5%AE%9A%E6%A0%87%E7%AD%BE%E9%98%B2%E6%AD%A2%E9%9B%B6%E4%BB%B6%E7%A7%BB%E5%8A%A8" class="hash-link" aria-label="3. 添加固定标签防止零件移动的直接链接" title="3. 添加固定标签防止零件移动的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-添加固定标签防止零件移动">3. 添加固定标签防止零件移动<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#3-%E6%B7%BB%E5%8A%A0%E5%9B%BA%E5%AE%9A%E6%A0%87%E7%AD%BE%E9%98%B2%E6%AD%A2%E9%9B%B6%E4%BB%B6%E7%A7%BB%E5%8A%A8" class="hash-link" aria-label="3. 添加固定标签防止零件移动 的直接链接" title="3. 添加固定标签防止零件移动 的直接链接" translate="no">​</a></h2>
 <p>没有什么比几乎完成的切割作业在最后一刻因为零件移动或从机床床身上掉落而毁掉更令人沮丧的了。</p>
 <p><strong>解决方案</strong>：使用 <strong>固定标签</strong> 将零件保持在原位，直到作业完成。</p>
 <p>固定标签是保持零件与周围材料连接的小型未切割部分。作业完成后，您可以轻松取出零件，并用刀或砂纸清理标签。</p>
@@ -145,7 +145,7 @@
 <li class=""><strong>自动</strong>：指定标签数量，让 Rayforge 均匀分布它们</li>
 </ul>
 <p>查看<a class="" href="https://rayforge.org/zh-CN/docs/features/holding-tabs">固定标签文档</a>获取完整指南。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-在运行前以-3d-预览您的作业">4. 在运行前以 3D 预览您的作业<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#4-%E5%9C%A8%E8%BF%90%E8%A1%8C%E5%89%8D%E4%BB%A5-3d-%E9%A2%84%E8%A7%88%E6%82%A8%E7%9A%84%E4%BD%9C%E4%B8%9A" class="hash-link" aria-label="4. 在运行前以 3D 预览您的作业的直接链接" title="4. 在运行前以 3D 预览您的作业的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-在运行前以-3d-预览您的作业">4. 在运行前以 3D 预览您的作业<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#4-%E5%9C%A8%E8%BF%90%E8%A1%8C%E5%89%8D%E4%BB%A5-3d-%E9%A2%84%E8%A7%88%E6%82%A8%E7%9A%84%E4%BD%9C%E4%B8%9A" class="hash-link" aria-label="4. 在运行前以 3D 预览您的作业 的直接链接" title="4. 在运行前以 3D 预览您的作业 的直接链接" translate="no">​</a></h2>
 <p>Rayforge 最有价值的功能之一是 3D G-code 预览。跳过这一步直接将作业发送到机器很诱人，但花一点时间预览可以节省您的时间和材料。</p>
 <p><strong>在预览中要注意什么</strong>：</p>
 <ul>
@@ -156,7 +156,7 @@
 </ul>
 <p>要打开 3D 预览，在生成 G-code 后点击主工具栏中的 <strong>3D 预览</strong> 按钮。</p>
 <p>在我们的 <a class="" href="https://rayforge.org/zh-CN/docs/ui/3d-preview">UI 文档</a>中了解更多关于 3D 预览的信息。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-使用自定义-g-code-钩子实现一致的工作流程">5. 使用自定义 G-code 钩子实现一致的工作流程<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#5-%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89-g-code-%E9%92%A9%E5%AD%90%E5%AE%9E%E7%8E%B0%E4%B8%80%E8%87%B4%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B" class="hash-link" aria-label="5. 使用自定义 G-code 钩子实现一致的工作流程的直接链接" title="5. 使用自定义 G-code 钩子实现一致的工作流程的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-使用自定义-g-code-钩子实现一致的工作流程">5. 使用自定义 G-code 钩子实现一致的工作流程<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#5-%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89-g-code-%E9%92%A9%E5%AD%90%E5%AE%9E%E7%8E%B0%E4%B8%80%E8%87%B4%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B" class="hash-link" aria-label="5. 使用自定义 G-code 钩子实现一致的工作流程 的直接链接" title="5. 使用自定义 G-code 钩子实现一致的工作流程 的直接链接" translate="no">​</a></h2>
 <p>如果您发现自己在每个作业前后都运行相同的 G-code 命令——比如归零、打开气辅或运行对焦程序——您可以使用 <strong>G-code 宏和钩子</strong> 来自动化这些操作。</p>
 <p><strong>常见用例</strong>：</p>
 <ul>
@@ -169,7 +169,7 @@
 <div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">G28 ; Home all axes</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">M8 ; Turn on air assist</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">G0 Z{focus_height} ; Move to focus height</span><br></span></code></pre></div></div>
 <p>有关详细示例和变量参考，请参阅我们的 <a class="" href="https://rayforge.org/zh-CN/docs/machine/hooks-macros">G-code 宏和钩子指南</a>。</p>
 <hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="额外提示先在废料上测试">额外提示：先在废料上测试<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#%E9%A2%9D%E5%A4%96%E6%8F%90%E7%A4%BA%E5%85%88%E5%9C%A8%E5%BA%9F%E6%96%99%E4%B8%8A%E6%B5%8B%E8%AF%95" class="hash-link" aria-label="额外提示：先在废料上测试的直接链接" title="额外提示：先在废料上测试的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="额外提示先在废料上测试">额外提示：先在废料上测试<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#%E9%A2%9D%E5%A4%96%E6%8F%90%E7%A4%BA%E5%85%88%E5%9C%A8%E5%BA%9F%E6%96%99%E4%B8%8A%E6%B5%8B%E8%AF%95" class="hash-link" aria-label="额外提示：先在废料上测试 的直接链接" title="额外提示：先在废料上测试 的直接链接" translate="no">​</a></h2>
 <p>虽然这不是 Rayforge 特有的，但值得重复：始终先在废料上测试新的设置、操作或材料。使用 Rayforge 的材料配置文件和操作预设保存您测试过的设置以备将来使用。</p>
 <hr>
 <p><em>有您自己的 Rayforge 技巧和窍门？在 <a href="https://github.com/barebaric/rayforge/discussions" target="_blank" rel="noopener noreferrer" class="">GitHub Discussions</a> 上与社区分享！</em></p>]]></content:encoded>
@@ -186,7 +186,7 @@
             <description><![CDATA[相机叠加]]></description>
             <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="相机叠加" src="https://rayforge.org/zh-CN/assets/images/camera-overlay-9f900a6a0a1cf06b93ce089eb4ad5173.png" width="2426" height="1418" class="img_ev3q"></p>
 <p>Rayforge 最强大的功能之一是能够在单个作业中为不同操作分配不同的激光器。这为多工具设置和专业化工作流程开启了令人兴奋的可能性。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="什么是多激光支持">什么是多激光支持？<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%9A%E6%BF%80%E5%85%89%E6%94%AF%E6%8C%81" class="hash-link" aria-label="什么是多激光支持？的直接链接" title="什么是多激光支持��？的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="什么是多激光支持">什么是多激光支持？<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%9A%E6%BF%80%E5%85%89%E6%94%AF%E6%8C%81" class="hash-link" aria-label="什么是多激光支持？ 的直接链接" title="什么是多激光支持？ 的直接链接" translate="no">​</a></h2>
 <p>如果您的机器配备多个激光模块——例如，一个用于雕刻的二极管激光器和一个用于切割的 CO2 激光器，或者针对不同材料优化的不同功率二极管激光器——Rayforge 让您充分利用这种设置。</p>
 <p>通过多激光支持，您可以：</p>
 <ul>
@@ -194,15 +194,15 @@
 <li class=""><strong>在作业执行期间自动切换激光模块</strong></li>
 <li class=""><strong>针对材料和任务进行优化</strong>，为每个操作使用合适的工具</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="使用场景">使用场景<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF" class="hash-link" aria-label="使用场景的直接链接" title="使用场景的直接链接" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="混合雕刻和切割">混合雕刻和切割<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#%E6%B7%B7%E5%90%88%E9%9B%95%E5%88%BB%E5%92%8C%E5%88%87%E5%89%B2" class="hash-link" aria-label="混合雕刻和切割的直接链接" title="混合雕刻和切割的直接链接" translate="no">​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="使用场景">使用场景<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF" class="hash-link" aria-label="使用场景 的直接链接" title="使用场景 的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="混合雕刻和切割">混合雕刻和切割<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#%E6%B7%B7%E5%90%88%E9%9B%95%E5%88%BB%E5%92%8C%E5%88%87%E5%89%B2" class="hash-link" aria-label="混合雕刻和切割 的直接链接" title="混合雕刻和切割 的直接链接" translate="no">​</a></h3>
 <p>想象一下您正在制作一个木制标牌项目：</p>
 <ol>
 <li class=""><strong>操作 1</strong>：使用低功率二极管激光器雕刻精细的文字和详细图形</li>
 <li class=""><strong>操作 2</strong>：切换到更高功率的 CO2 激光器切割出标牌形状</li>
 </ol>
 <p>在 Rayforge 中，您只需在机器配置文件中将每个操作分配给相应的激光器，软件会处理其余的工作。</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="材料特定优化">材料特定优化<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#%E6%9D%90%E6%96%99%E7%89%B9%E5%AE%9A%E4%BC%98%E5%8C%96" class="hash-link" aria-label="材料特定优化的直接链接" title="材料特定优化的直接链接" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="材料特定优化">材料特定优化<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#%E6%9D%90%E6%96%99%E7%89%B9%E5%AE%9A%E4%BC%98%E5%8C%96" class="hash-link" aria-label="材料特定优化 的直接链接" title="材料特定优化 的直接链接" translate="no">​</a></h3>
 <p>不同类型的激光器在不同材料上表现出色：</p>
 <ul>
 <li class=""><strong>二极管激光器</strong>：非常适合木材雕刻、皮革和某些塑料</li>
@@ -210,8 +210,8 @@
 <li class=""><strong>光纤激光器</strong>：非常适合金属标记</li>
 </ul>
 <p>如果您在龙门系统上有多种激光类型，Rayforge 的多激光支持让您可以为项目的每个部分使用最佳工具。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="如何设置">如何设置<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE" class="hash-link" aria-label="如何设置的直接链接" title="如何设置的直接链接" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-在机器配置文件中配置多个激光器">1. 在机器配置文件中配置多个激光器<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#1-%E5%9C%A8%E6%9C%BA%E5%99%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AA%E6%BF%80%E5%85%89%E5%99%A8" class="hash-link" aria-label="1. 在机器配置文件中配置多个激光器的直接链接" title="1. 在机器配置文件中配置多个激光器的直接链接" translate="no">​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="如何设置">如何设置<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE" class="hash-link" aria-label="如何设置 的直接链接" title="如何设置 的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-在机器配置文件中配置多个激光器">1. 在机器配置文件中配置多个激光器<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#1-%E5%9C%A8%E6%9C%BA%E5%99%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AA%E6%BF%80%E5%85%89%E5%99%A8" class="hash-link" aria-label="1. 在机器配置文件中配置多个激光器 的直接链接" title="1. 在机器配置文件中配置多个激光器 的直接链接" translate="no">​</a></h3>
 <p>转到 <strong>机器设置 → 多激光器</strong> 并定义系统中的每个激光模块。您可以指定：</p>
 <ul>
 <li class="">激光类型和功率范围</li>
@@ -219,23 +219,23 @@
 <li class="">材料兼容性</li>
 </ul>
 <p>有关详细说明，请参阅我们的<a class="" href="https://rayforge.org/zh-CN/docs/machine/laser">激光配置指南</a>。</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-为操作分配激光器">2. 为操作分配激光器<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#2-%E4%B8%BA%E6%93%8D%E4%BD%9C%E5%88%86%E9%85%8D%E6%BF%80%E5%85%89%E5%99%A8" class="hash-link" aria-label="2. 为操作分配激光器的直接链接" title="2. 为操作分配激光器的直接链接" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-为操作分配激光器">2. 为操作分配激光器<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#2-%E4%B8%BA%E6%93%8D%E4%BD%9C%E5%88%86%E9%85%8D%E6%BF%80%E5%85%89%E5%99%A8" class="hash-link" aria-label="2. 为操作分配激光器 的直接链接" title="2. 为操作分配激光器 的直接链接" translate="no">​</a></h3>
 <p>在项目中创建操作时：</p>
 <ol>
 <li class="">选择操作（轮廓、光栅等）</li>
 <li class="">在操作设置中，从下拉菜单中选择要使用的激光器</li>
 <li class="">配置特定于该激光器的操作参数</li>
 </ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-预览并运行">3. 预览并运行<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#3-%E9%A2%84%E8%A7%88%E5%B9%B6%E8%BF%90%E8%A1%8C" class="hash-link" aria-label="3. 预览并运行的直接链接" title="3. 预览并运行的直接链接" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-预览并运行">3. 预览并运行<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#3-%E9%A2%84%E8%A7%88%E5%B9%B6%E8%BF%90%E8%A1%8C" class="hash-link" aria-label="3. 预览并运行 的直接链接" title="3. 预览并运行 的直接链接" translate="no">​</a></h3>
 <p>使用 3D 预览验证您的刀具路径，然后将作业发送到机器。Rayforge 将自动生成适当的 G-code 命令，根据需要在激光器之间切换。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="技术细节">技术细节<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#%E6%8A%80%E6%9C%AF%E7%BB%86%E8%8A%82" class="hash-link" aria-label="技术细节的直接链接" title="技术细节的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="技术细节">技术细节<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#%E6%8A%80%E6%9C%AF%E7%BB%86%E8%8A%82" class="hash-link" aria-label="技术细节 的直接链接" title="技术细节 的直接链接" translate="no">​</a></h2>
 <p>在底层，Rayforge 使用 G-code 命令在激光模块之间切换。具体实现取决于您的固件和硬件设置，但常见方法包括：</p>
 <ul>
 <li class=""><strong>带工具偏移的 M3/M4</strong>：使用换刀命令在激光器之间切换</li>
 <li class=""><strong>GPIO 控制</strong>：使用固件支持的 GPIO 引脚启用/禁用不同的激光模块</li>
 <li class=""><strong>自定义宏</strong>：定义激光切换的前操作和后操作宏</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="开始使用">开始使用<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8" class="hash-link" aria-label="开始使用的直接链接" title="开始使用的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="开始使用">开始使用<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8" class="hash-link" aria-label="开始使用 的直接链接" title="开始使用 的直接链接" translate="no">​</a></h2>
 <p>多激光支持在 Rayforge 0.15 及更高版本中可用。开始使用：</p>
 <ol>
 <li class="">更新到最新版本</li>
@@ -257,7 +257,7 @@
             <description><![CDATA[Rayforge 主窗口]]></description>
             <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 主窗口" src="https://rayforge.org/zh-CN/assets/images/main-standard-631d889d7fc1e627a4216c74fa95aff5.png" width="3194" height="1850" class="img_ev3q"></p>
 <p>我们很高兴向您介绍 Rayforge，这是一款专为基于 GRBL 的激光切割机和雕刻机设计的现代化开源 G-code 发送器和控制软件。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="为什么选择-rayforge">为什么选择 Rayforge？<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-rayforge" class="hash-link" aria-label="为什么选择 Rayforge？的直接链接" title="为什么选择 Rayforge？的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="为什么选择-rayforge">为什么选择 Rayforge？<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-rayforge" class="hash-link" aria-label="为什么选择 Rayforge？ 的直接链接" title="为什么选择 Rayforge？ 的直接链�接" translate="no">​</a></h2>
 <p>在激光切割和雕刻的世界中，拥有可靠、直观的软件与拥有优质硬件同样重要。Rayforge 从零开始构建，专注于：</p>
 <ul>
 <li class=""><strong>现代用户体验</strong>：基于 Gtk4 和 Libadwaita 构建，Rayforge 提供简洁的原生界面，在 Linux 和 Windows 上都能完美运行</li>
@@ -265,18 +265,18 @@
 <li class=""><strong>灵活性</strong>：支持多个机器配置文件、自定义宏和丰富的配置选项</li>
 <li class=""><strong>开放开发</strong>：社区驱动，欢迎贡献</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="rayforge-有何不同">Rayforge 有何不同？<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#rayforge-%E6%9C%89%E4%BD%95%E4%B8%8D%E5%90%8C" class="hash-link" aria-label="Rayforge 有何不同？的直接链接" title="Rayforge 有何不同？的直接链接" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="多图层操作">多图层操作<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E5%A4%9A%E5%9B%BE%E5%B1%82%E6%93%8D%E4%BD%9C" class="hash-link" aria-label="多图层操作的直接链接" title="多图层操作的直接链接" translate="no">​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="rayforge-有何不同">Rayforge 有何不同？<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#rayforge-%E6%9C%89%E4%BD%95%E4%B8%8D%E5%90%8C" class="hash-link" aria-label="Rayforge 有何不同？ 的直接链接" title="Rayforge 有何不同？ 的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="多图层操作">多图层操作<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E5%A4%9A%E5%9B%BE%E5%B1%82%E6%93%8D%E4%BD%9C" class="hash-link" aria-label="多图层操作 的直接链接" title="多图层操作 的直接链接" translate="no">​</a></h3>
 <p>Rayforge 的突出功能之一是其多图层工作流程。将不同的操作分配给设计中的不同图层——在一个图层上雕刻精细细节，然后在另一个图层上切割出作品。所有操作都在一个界面中无缝管理。</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3d-g-code-预览">3D G-code 预览<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#3d-g-code-%E9%A2%84%E8%A7%88" class="hash-link" aria-label="3D G-code 预览的直接链接" title="3D G-code 预览的直接链接" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3d-g-code-预览">3D G-code 预览<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#3d-g-code-%E9%A2%84%E8%A7%88" class="hash-link" aria-label="3D G-code 预览 的直接链接" title="3D G-code 预览 的直接链接" translate="no">​</a></h3>
 <p>在将作业发送到机器之前，通过我们的 3D G-code 预览精确可视化将要发生的操作。在问题发生之前发现潜在问题，节省时间和材料。</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="相机集成">相机集成<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E7%9B%B8%E6%9C%BA%E9%9B%86%E6%88%90" class="hash-link" aria-label="相机集成的直接链接" title="相机集成的直接链接" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="相机集成">相机集成<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E7%9B%B8%E6%9C%BA%E9%9B%86%E6%88%90" class="hash-link" aria-label="相机集成 ��的直接链接" title="相机集成 的直接链接" translate="no">​</a></h3>
 <p>使用 USB 摄像头进行精确的工件对齐、定位，甚至背景描摹。非常适合在现有材料上定位设计或制作夹具。</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="高级路径生成">高级路径生成<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E9%AB%98%E7%BA%A7%E8%B7%AF%E5%BE%84%E7%94%9F%E6%88%90" class="hash-link" aria-label="高级路径生成的直接链接" title="高级路径生成的直接链接" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="高级路径生成">高级路径生成<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E9%AB%98%E7%BA%A7%E8%B7%AF%E5%BE%84%E7%94%9F%E6%88%90" class="hash-link" aria-label="高级路径生成 的直接链接" title="高级路径生成 的直接链接" translate="no">​</a></h3>
 <p>Rayforge 包括高质量图像描摹、移动时间优化、路径平滑和光斑大小插值，确保您的项目按计划完美呈现。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="开始使用">开始使用<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8" class="hash-link" aria-label="开始使用的直接链接" title="开始使用的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="开始使用">开始使用<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8" class="hash-link" aria-label="开始使用 的直接链接" title="开始使用 的直接链接" translate="no">​</a></h2>
 <p>准备好尝试 Rayforge 了吗？请查看我们的<a class="" href="https://rayforge.org/zh-CN/docs/getting-started/installation">安装指南</a>开始使用。无论您使用的是 Ubuntu、通过 Snap 安装的其他 Linux 发行版，还是 Windows，我们都能满足您的需求。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="加入社区">加入社区<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E5%8A%A0%E5%85%A5%E7%A4%BE%E5%8C%BA" class="hash-link" aria-label="加入社区的直接链接" title="加入社区的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="加入社区">加入社区<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E5%8A%A0%E5%85%A5%E7%A4%BE%E5%8C%BA" class="hash-link" aria-label="加入社区 的直接链接" title="加入社区 的直接链接" translate="no">​</a></h2>
 <p>Rayforge 是开源的，由社区驱动。我们欢迎各种形式的贡献：</p>
 <ul>
 <li class="">在 <a href="https://github.com/barebaric/rayforge/issues" target="_blank" rel="noopener noreferrer" class="">GitHub Issues</a> 上报告错误和请求功能</li>
