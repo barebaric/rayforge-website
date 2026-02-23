@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite_new=self.webpackChunkwebsite_new||[]).push([[1903],{1912(e){e.exports=JSON.parse('{"blogBasePath":"/uk/blog","blogTitle":"Rayforge Blog","authorsListPath":"/uk/blog/authors"}')}}]);

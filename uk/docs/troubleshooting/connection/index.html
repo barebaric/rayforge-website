@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="uk" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-troubleshooting/connection" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Проблеми з підключенням | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://rayforge.org/uk/docs/troubleshooting/connection"><meta data-rh="true" property="og:locale" content="uk"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="pt_BR"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="de"><meta data-rh="true" property="og:locale:alternate" content="zh_CN"><meta data-rh="true" name="docusaurus_locale" content="uk"><meta data-rh="true" name="docsearch:language" content="uk"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Проблеми з підключенням | Rayforge"><meta data-rh="true" name="description" content="Ця сторінка допомагає діагностувати та вирішити проблеми підключення Rayforge до вашої лазерної машини через послідовне з&#x27;єднання."><meta data-rh="true" property="og:description" content="Ця сторінка допомагає діагностувати та вирішити проблеми підключення Rayforge до вашої лазерної машини через послідовне з&#x27;єднання."><link data-rh="true" rel="icon" href="/uk/assets/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/uk/docs/troubleshooting/connection"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/troubleshooting/connection" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/pt-BR/docs/troubleshooting/connection" hreflang="pt-BR"><link data-rh="true" rel="alternate" href="https://rayforge.org/es/docs/troubleshooting/connection" hreflang="es"><link data-rh="true" rel="alternate" href="https://rayforge.org/fr/docs/troubleshooting/connection" hreflang="fr"><link data-rh="true" rel="alternate" href="https://rayforge.org/de/docs/troubleshooting/connection" hreflang="de"><link data-rh="true" rel="alternate" href="https://rayforge.org/zh-CN/docs/troubleshooting/connection" hreflang="zh-CN"><link data-rh="true" rel="alternate" href="https://rayforge.org/uk/docs/troubleshooting/connection" hreflang="uk"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/troubleshooting/connection" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Проблеми з підключенням","item":"https://rayforge.org/uk/docs/troubleshooting/connection"}]}</script><link rel="alternate" type="application/rss+xml" href="/uk/blog/rss.xml" title="Rayforge RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/uk/blog/atom.xml" title="Rayforge Atom Feed"><link rel="stylesheet" href="/uk/assets/css/styles.5bde25bf.css">
+<script src="/uk/assets/js/runtime~main.fc689081.js" defer="defer"></script>
+<script src="/uk/assets/js/main.76319594.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Перейти до основного вмісту"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Перейти до основного вмісту</a></div><nav aria-label="Головна" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Перемкнути сайдбар" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/uk/"><div class="navbar__logo"><img src="/uk/assets/icon.svg" alt="Rayforge Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/uk/assets/icon.svg" alt="Rayforge Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Rayforge</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/uk/docs/getting-started/installation">Documentation</a><a class="navbar__item navbar__link" href="/uk/docs/developer/getting-started/">Developer</a><a class="navbar__item navbar__link" href="/uk/contributing">Contributing</a><a class="navbar__item navbar__link" href="/uk/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>Українська</a><ul class="dropdown__menu"><li><a href="/docs/troubleshooting/connection" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="en">English</a></li><li><a href="/pt-BR/docs/troubleshooting/connection" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="pt-BR">Português (Brasil)</a></li><li><a href="/es/docs/troubleshooting/connection" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="es">Español</a></li><li><a href="/fr/docs/troubleshooting/connection" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="fr">Français</a></li><li><a href="/de/docs/troubleshooting/connection" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="de">Deutsch</a></li><li><a href="/zh-CN/docs/troubleshooting/connection" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="zh-CN">中文（中国）</a></li><li><a href="/uk/docs/troubleshooting/connection" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="uk">Українська</a></li></ul></div><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="patreonLink_HbXT"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" class="patreonImg_dUDi"></a><span class="githubWrapper_c8Sl"><a href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><span class="discordWrapper_j0RJ"><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Автоматичний режим" aria-label="Перемикання між темним та світлим режимом (зараз використовується Автоматичний режим)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Прокрутити до початку" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Сайдбар документації" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/uk/docs/getting-started/installation"><span title="Початок роботи" class="categoryLinkLabel_W154">Початок роботи</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/uk/docs/getting-started/installation"><span title="Встановлення" class="linkLabel_WmDU">Встановлення</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/uk/docs/getting-started/first-time-setup"><span title="Перше налаштування" class="linkLabel_WmDU">Перше налаштування</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/uk/docs/getting-started/quick-start"><span title="Посібник швидкого старту" class="linkLabel_WmDU">Посібник швидкого старту</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/uk/docs/ui/settings"><span title="Налаштування програми" class="categoryLinkLabel_W154">Налаштування програми</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/uk/docs/machine/general"><span title="Налаштування машини" class="categoryLinkLabel_W154">Налаштування машини</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/uk/docs/ui/main-window"><span title="Інтерфейс користувача" class="categoryLinkLabel_W154">Інтерфейс користувача</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/uk/docs/features/operations/contour"><span title="Функції" class="categoryLinkLabel_W154">Функції</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/uk/docs/files/importing"><span title="Файли" class="categoryLinkLabel_W154">Файли</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/uk/docs/general-info/laser-safety"><span title="Загальна інформація" class="categoryLinkLabel_W154">Загальна інформація</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/uk/docs/troubleshooting/connection"><span title="Виправлення проблем" class="categoryLinkLabel_W154">Виправлення проблем</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/uk/docs/troubleshooting/connection"><span title="Проблеми з підключенням" class="linkLabel_WmDU">Проблеми з підключенням</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/uk/docs/troubleshooting/debug"><span title="Усунення неполадок та звітування про проблеми" class="linkLabel_WmDU">Усунення неполадок та звітування про проблеми</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/uk/docs/troubleshooting/snap-permissions"><span title="Дозволи Snap (Linux)" class="linkLabel_WmDU">Дозволи Snap (Linux)</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/uk/docs/reference/shortcuts"><span title="Довідник" class="categoryLinkLabel_W154">Довідник</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Навігаційний ланцюжок поточної сторінки"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Головна сторінка" class="breadcrumbs__link" href="/uk/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Виправлення проблем</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Проблеми з підключенням</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">Зміст цієї сторінки</button></div><div class="theme-doc-markdown markdown"><header><h1>Проблеми з підключенням</h1></header>
+<p>Ця сторінка допомагає діагностувати та вирішити проблеми підключення Rayforge до вашої лазерної машини через послідовне з&#x27;єднання.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="швидка-діагностика">Швидка діагностика<a href="#швидка-діагностика" class="hash-link" aria-label="Пряме посилання на Швидка діагностика" title="Пряме посилання на Швидка діагностика" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="симптоми">Симптоми<a href="#симптоми" class="hash-link" aria-label="Пряме посилання на Симптоми" title="Пряме посилання на Симптоми" translate="no">​</a></h3>
+<p>Поширені проблеми підключення включають:</p>
+<ul>
+<li class="">Помилка &quot;Порт має бути налаштований&quot; при спробі підключення</li>
+<li class="">Підключення постійно зазнає невдачі та перепідключається</li>
+<li class="">Послідовний порт не з&#x27;являється в списку портів</li>
+<li class="">Помилки &quot;Відмовлено в дозволі&quot; при спробі відкрити послідовний порт</li>
+<li class="">Пристрій здається підключеним, але не відповідає на команди</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="поширені-проблеми-та-рішення">Поширені проблеми та рішення<a href="#поширені-проблеми-та-рішення" class="hash-link" aria-label="Пряме посилання на Поширені проблеми та рішення" title="Пряме посилання на Поширені проблеми та рішення" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="послідовні-порти-не-виявлено">Послідовні порти не виявлено<a href="#послідовні-порти-не-виявлено" class="hash-link" aria-label="Пряме посилання на Послідовні порти не виявлено" title="Пряме посилання на Послідовні порти не виявлено" translate="no">​</a></h3>
+<p><strong>Проблема:</strong> Випадаючий список послідовних портів порожній або не показує ваш пристрій.</p>
+<p><strong>Діагностика:</strong></p>
+<ol>
+<li class="">Перевірте, чи ваш пристрій увімкнено та підключено через USB</li>
+<li class="">Спробуйте відключити та знову підключити USB-кабель</li>
+<li class="">Протестуйте USB-кабель з іншим пристроєм (кабелі можуть виходити з ладу)</li>
+<li class="">Спробуйте інший USB-порт на вашому комп&#x27;ютері</li>
+</ol>
+<p><strong>Рішення:</strong></p>
+<p><strong>Linux:</strong>
+Якщо ви використовуєте версію Snap, вам потрібно надати дозволи на послідовний порт:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
+<p>Див. <a class="" href="/uk/docs/troubleshooting/snap-permissions">Дозволи Snap</a> для детального налаштування Linux.</p>
+<p>Для встановлень не через Snap додайте свого користувача до групи <code>dialout</code>:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo usermod -a -G dialout $USER</span><br></span></code></pre></div></div>
+<p>Потім вийдіть з системи та зайдіть знову, щоб зміни набрали чинності.</p>
+<p><strong>Windows:</strong></p>
+<ol>
+<li class="">Відкрийте Диспетчер пристроїв (Win+X, потім виберіть Диспетчер пристроїв)</li>
+<li class="">Шукайте під &quot;Порти (COM та LPT)&quot; ваш пристрій</li>
+<li class="">Якщо бачите жовтий значок попередження, оновіть або п еревстановіть драйвер</li>
+<li class="">Запишіть номер COM-порту (наприклад, COM3)</li>
+<li class="">Якщо пристрій взагалі не в списку, USB-кабель або драйвер може бути несправним</li>
+</ol>
+<p><strong>macOS:</strong></p>
+<ol>
+<li class="">Перевірте Системну інформацію → USB щоб переконатися, що пристрій розпізнається</li>
+<li class="">Встановіть драйвери CH340/CH341, якщо ваш контролер використовує цей чіпсет</li>
+<li class="">Шукайте пристрої <code>/dev/tty.usbserial*</code> або <code>/dev/cu.usbserial*</code></li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="помилки-відмовлено-в-дозволі">Помилки &quot;Відмовлено в дозволі&quot;<a href="#помилки-відмовлено-в-дозволі" class="hash-link" aria-label="Пряме посилання на Помилки &quot;Відмовлено в дозволі&quot;" title="Пряме посилання на Помилки &quot;Відмовлено в дозволі&quot;" translate="no">​</a></h3>
+<p><strong>Проблема:</strong> Ви отримуєте помилки &quot;Відмовлено в дозволі&quot; або подібні при спробі підключення.</p>
+<p><strong>На Linux (не Snap):</strong></p>
+<p>Вашому користувачу потрібно бути в групі <code>dialout</code> (або <code>uucp</code> на деяких дистрибутивах):</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Додайте себе до групи dialout</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo usermod -a -G dialout $USER</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Перевірте, що ви в групі (після виходу/входу)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">groups | grep dialout</span><br></span></code></pre></div></div>
+<p><strong>Важливо:</strong> Ви повинні вийти з системи та зайти знову (або перезавантажити) щоб зміни групи набрали чинності.</p>
+<p><strong>На Linux (Snap):</strong></p>
+<p>Надайте доступ до послідовного порту snap-пакету:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
+<p>Див. посібник <a class="" href="/uk/docs/troubleshooting/snap-permissions">Дозволи Snap</a> для деталей.</p>
+<p><strong>На Windows:</strong></p>
+<p>Закрийте будь-які інші програми, які можуть використовувати послідовний порт, включаючи:</p>
+<ul>
+<li class="">Попередні екземпляри Rayforge</li>
+<li class="">Інструменти моніторингу послідовного порту</li>
+<li class="">Інше лазерне ПЗ</li>
+<li class="">Arduino IDE або подібні інструменти</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="вибрано-неправильний-послідовний-порт">Вибрано неправильний послідовний порт<a href="#вибрано-неправильний-послідовний-порт" class="hash-link" aria-label="Пряме посилання на Вибрано неправильний послідовний порт" title="Пряме посилання на Вибрано неправильний послідовний порт" translate="no">​</a></h3>
+<p><strong>Проблема:</strong> Rayforge підключається, але машина не відповідає.</p>
+<p><strong>Діагностика:</strong></p>
+<p>Ви могли вибрати неправильний порт, особливо якщо у вас підключено кілька USB-пристроїв.</p>
+<p><strong>Рішення:</strong></p>
+<ol>
+<li class="">Відключіть усі інші USB послідовні пристрої</li>
+<li class="">Запишіть, які порти доступні в Rayforge</li>
+<li class="">Підключіть ваш лазерний контролер</li>
+<li class="">Оновіть список портів - новий порт і є вашим лазером</li>
+<li class="">На Linux лазерні контролери зазвичай з&#x27;являються як:
+<ul>
+<li class=""><code>/dev/ttyUSB0</code> (поширено для чіпсетів CH340)</li>
+<li class=""><code>/dev/ttyACM0</code> (поширено для нативних USB контролерів)</li>
+</ul>
+</li>
+<li class="">На Windows запишіть COM-порт з Диспетчера пристроїв</li>
+<li class="">Уникайте портів з назвою <code>/dev/ttyS*</code> на Linux - це апаратні послідовні порти, не USB</li>
+</ol>
+<p>:::увага Апаратні послідовні порти
+Rayforge попередить вас, якщо ви виберете порти <code>/dev/ttyS*</code> на Linux, оскільки вони зазвичай не є USB-пристроями GRBL. USB послідовні порти використовують <code>/dev/ttyUSB*</code> або <code>/dev/ttyACM*</code>.
+:::</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="неправильна-швидкість-передачі">Неправильна швидкість передачі<a href="#неправильна-швидкість-передачі" class="hash-link" aria-label="Пряме посилання на Неправильна швидкість передачі" title="Пряме посилання на Неправильна швидкість передачі" translate="no">​</a></h3>
+<p><strong>Проблема:</strong> Підключення встановлюється, але команди не працюють або дають спотворені відповіді.</p>
+<p><strong>Рішення:</strong></p>
+<p>Контролери GRBL зазвичай використовують одну з цих швидкостей передачі:</p>
+<ul>
+<li class=""><strong>115200</strong> (найпоширеніша, GRBL 1.1+)</li>
+<li class=""><strong>9600</strong> (старіші версії GRBL)</li>
+<li class=""><strong>250000</strong> (менш поширена, деяка власна прошивка)</li>
+</ul>
+<p>Спробуйте різні швидкості передачі в налаштуваннях пристрою Rayforge. Найпоширеніша - <strong>115200</strong>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="підключення-постійно-розривається">Підключення постійно розривається<a href="#підключення-постійно-розривається" class="hash-link" aria-label="Пряме по силання на Підключення постійно розривається" title="Пряме посилання на Підключення постійно розривається" translate="no">​</a></h3>
+<p><strong>Проблема:</strong> Rayforge успішно підключається, але постійно відключається та перепідключається.</p>
+<p><strong>Можливі причини:</strong></p>
+<ol>
+<li class=""><strong>Ненадійний USB-кабель</strong> - Замініть на відомий робочий кабель (бажано короткий, &lt;2м)</li>
+<li class=""><strong>Проблеми з живленням USB</strong> - Спробуйте інший USB-порт, бажано на самому комп&#x27;ютері, а не на хабі</li>
+<li class=""><strong>EMI/Перешкоди</strong> - Тримайте USB-кабелі подалі від проводів двигунів та високовольтних блоків живлення</li>
+<li class=""><strong>Проблеми прошивки</strong> - Оновіть прошивку GRBL якщо можливо</li>
+<li class=""><strong>Конфлікти USB-портів</strong> - На Windows спробуйте різні USB-порти</li>
+</ol>
+<p><strong>Кроки усунення неполадок:</strong></p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># На Linux моніторте системні логи під час підключення:</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo dmesg -w</span><br></span></code></pre></div></div>
+<p>Шукайте повідомлення типу:</p>
+<ul>
+<li class="">&quot;USB disconnect&quot; - вказує на фізичні проблеми/проблеми з кабелем</li>
+<li class="">&quot;device descriptor read error&quot; - часто проблема з живленням або кабелем</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="пристрій-не-відповідає-після-підключення">Пристрій не відповідає після підключення<a href="#пристрій-не-відповідає-після-підключення" class="hash-link" aria-label="Пряме посилання на Пристрій не відповідає після підключення" title="Пряме посилання на Пристрій не відповідає після підключення" translate="no">​</a></h3>
+<p><strong>Проблема:</strong> Статус підключення показує &quot;Підключено&quot;, але машина не відповідає на команди.</p>
+<p><strong>Діагностика:</strong></p>
+<ol>
+<li class="">Перевірте, що вибрано правильний тип прошивки (GRBL або інший)</li>
+<li class="">Переконайтеся, що машина увімкнена (контролер та блок живлення)</li>
+<li class="">Перевірте, чи машина в стані аварії (потребує homing або очищення аварії)</li>
+</ol>
+<p><strong>Рішення:</strong></p>
+<p>Спробуйте надіслати ручну команду в Консолі:</p>
+<ul>
+<li class=""><code>?</code> - Запит звіту про статус</li>
+<li class=""><code>$X</code> - Очистити аварію</li>
+<li class=""><code>$H</code> - Виконати homing машини</li>
+</ul>
+<p>Якщо немає відповіді, перевірте швидкість передачі та вибір порту.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="повідомлення-про-статус-підключення">Повідомлення про статус підключення<a href="#повідомлення-про-статус-підключення" class="hash-link" aria-label="Пряме посилання на Повідомлення про статус підключення" title="Пряме посилання на Повідомлення про статус підключення" translate="no">​</a></h2>
+<p>Rayforge показує різні стани підключення:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Статус</th><th>Значення</th><th>Дія</th></tr></thead><tbody><tr><td><strong>Відключено</strong></td><td>Не підключено до жодного пристрою</td><td>Налаштуйте порт та підключіться</td></tr><tr><td><strong>Підключення</strong></td><td>Спроба встановити з&#x27;єднання</td><td>Чекайте, або перевірте конфігурацію якщо зависло</td></tr><tr><td><strong>Підключено</strong></td><td>Успішно підключено та отримується статус</td><td>Готово до використання</td></tr><tr><td><strong>Помилка</strong></td><td>Підключення не вдалося з помилкою</td><td>Перевірте повідомлення про помилку для деталей</td></tr><tr><td><strong>Очікування</strong></td><td>Очікування перед спробою перепідключення</td><td>Попереднє підключення не вдалося, повтор через 5с</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="тестування-вашого-підключення">Тестування вашого підключення<a href="#те стування-вашого-підключення" class="hash-link" aria-label="Пряме посилання на Тестування вашого підключення" title="Пряме посилання на Тестування вашого підключення" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="покроковий-тест-підключення">Покроковий тест підключення<a href="#покроковий-тест-підключення" class="hash-link" aria-label="Пряме посилання на Покроковий тест підключення" title="Пряме посилання на Покроковий тест підключення" translate="no">​</a></h3>
+<ol>
+<li class="">
+<p><strong>Налаштуйте машину:</strong></p>
+<ul>
+<li class="">Відкрийте Налаштування  Машина</li>
+<li class="">Виберіть або створіть профіль машини</li>
+<li class="">Виберіть правильний драйвер (GRBL Serial)</li>
+<li class="">Виберіть послідовний порт</li>
+<li class="">Встановіть швидкість передачі (зазвичай 115200)</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Спробуйте підключення:</strong></p>
+<ul>
+<li class="">Натисніть &quot;Підключити&quot; на панелі керування машиною</li>
+<li class="">Спостерігайте за індикатором статусу підключення</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Перевірте зв&#x27;язок:</strong></p>
+<ul>
+<li class="">Якщо підключено, спробуйте надіслати запит статусу</li>
+<li class="">Машина має повідомити свою позицію та стан</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Протестуйте базові команди:</strong></p>
+<ul>
+<li class="">Спробуйте homing (<code>$H</code>) якщо ваша машина має кінцеві вимикачі</li>
+<li class="">Або очистіть аварії (<code>$X</code>) якщо потрібно</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="використання-debug-логів">Використання debug-логів<a href="#використання-debug-логів" class="hash-link" aria-label="Пряме посилання на Використання debug-логів" title="Пряме посилання на Використання debug-логів" translate="no">​</a></h3>
+<p>Rayforge включає детальне логування для проблем підключення. Щоб увімкнути debug-логування:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Запустіть Rayforge з терміналу з debug-логуванням</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">rayforge --loglevel DEBUG</span><br></span></code></pre></div></div>
+<p>Перевірте логи на:</p>
+<ul>
+<li class="">Спроби підключення та невдачі</li>
+<li class="">Послідовні дані передані (TX) та отримані (RX)</li>
+<li class="">Повідомлення про помилки з трасуванням стека</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="розширене-усунення-неполадок">Розширене усунення неполадок<a href="#розширене-усунення-неполадок" class="hash-link" aria-label="Пряме посилання на Розширене усунення неполадок" title="Пряме посилання на Розширене усунення неполадок" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ручна-перевірка-доступності-порту">Ручна перевірка доступності порту<a href="#ручна-перевірка-доступності-порту" class="hash-link" aria-label="Пряме посилання на Ручна перевірка доступності порту" title="Пряме посилання на Ручна перевірка доступності порту" translate="no">​</a></h3>
+<p><strong>Linux:</strong></p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Список всіх USB послідовних пристроїв</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">ls -l /dev/ttyUSB* /dev/ttyACM*</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Перевірте дозволи</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">ls -l /dev/ttyUSB0  # Замініть на ваш порт</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Має показати: crw-rw---- 1 root dialout</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Вам потрібно бути в групі &#x27;dialout&#x27;</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Протестуйте порт вручну</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo minicom -D /dev/ttyUSB0 -b 115200</span><br></span></code></pre></div></div>
+<p><strong>Windows:</strong></p>
+<div class="language-powershell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-powershell codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Список COM-портів в PowerShell</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">[System.IO.Ports.SerialPort]::getportnames()</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Або використовуйте Диспетчер пристроїв:</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Win + X → Диспетчер пристроїв → Порти (COM та LPT)</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="сумісність-прошивки">Сумісність прошивки<a href="#сумісність-прошивки" class="hash-link" aria-label="Пряме посилання на Сумісність прошивки" title="Пряме посилання на Сумісність прошивки" translate="no">​</a></h3>
+<p>Rayforge розроблений для прошивок, сумісних з GRBL. Переконайтеся, що ваш контролер використовує:</p>
+<ul>
+<li class=""><strong>GRBL 1.1</strong> (найпоширеніша, рекомендується)</li>
+<li class=""><strong>GRBL 0.9</strong> (старіша, може мати обмежені функції)</li>
+<li class=""><strong>grblHAL</strong> (сучасний форк GRBL, підтримується)</li>
+</ul>
+<p>Інші типи прошивок (Marlin, Smoothieware) наразі не підтримуються через драйвер GRBL.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="usb-до-послідовних-чіпсетів">USB-до-послідовних чіпсетів<a href="#usb-до-послідовних-чіпсетів" class="hash-link" aria-label="Пряме посилання на USB-до-послідовних чіпсетів" title="Пряме посилання на USB-до-послідовних чіпсетів" translate="no">​</a></h3>
+<p>Поширені чіпсети та їхні драйвери:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Чіпсет</th><th>Linux</th><th>Windows</th><th>macOS</th></tr></thead><tbody><tr><td><strong>CH340/CH341</strong></td><td>Вбудований драйвер ядра</td><td><a href="http://www.wch.cn/downloads/" target="_blank" rel="noopener noreferrer" class="">CH341SER драйвер</a></td><td>Потребує драйвер</td></tr><tr><td><strong>FTDI FT232</strong></td><td>Вбудований драйвер ядра</td><td>Вбудований (Windows 10+)</td><td>Вбудований</td></tr><tr><td><strong>CP2102 (SiLabs)</strong></td><td>Вбудований драйвер ядра</td><td>Вбудований (Windows 10+)</td><td>Вбудований</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="все-ще-є-проблеми">Все ще є проблеми?<a href="#все-ще-є-проблеми" class="hash-link" aria-label="Пряме посилання на Все ще є проблеми?" title="Пряме посилання на Все ще є проблеми?" translate="no">​</a></h2>
+<p>Якщо ви спробували все вище і все ще не можете підключитися:</p>
+<ol>
+<li class=""><strong>Перевірте GitHub issues</strong> - Хтось міг повідомити про ту саму проблему</li>
+<li class=""><strong>Створіть детальний звіт про проблему</strong> з:
+<ul>
+<li class="">Операційна система та версія</li>
+<li class="">Версія Rayforge (Snap/Flatpak/AppImage/з вихідних кодів)</li>
+<li class="">Модель плати контролера та версія прошивки</li>
+<li class="">USB чіпсет (перевірте Диспетчер пристроїв на Windows або <code>lsusb</code> на Linux)</li>
+<li class="">Повні повідомлення про помилки та debug-логи</li>
+</ul>
+</li>
+<li class=""><strong>Протестуйте з іншою програмою</strong> - Спробуйте підключитися з серійним терміналом (minicom, PuTTY, Arduino Serial Monitor) щоб перевірити, що обладнання працює</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="повязані-сторінки">Пов&#x27;язані сторінки<a href="#повязані-сторінки" class="hash-link" aria-label="Пряме посилання на Пов&#x27;язані сторінки" title="Пряме посилання на Пов&#x27;язані сторінки" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/uk/docs/troubleshooting/snap-permissions">Дозволи Snap</a> - Налаштування дозволів Linux Snap</li>
+<li class=""><a class="" href="/uk/docs/troubleshooting/debug">Режим debug</a> - Увімкнути діагностичне логування</li>
+<li class=""><a class="" href="/uk/docs/machine/general">Загальні налаштування</a> - Посібник з налаштування машини</li>
+<li class=""><a class="" href="/uk/docs/machine/device">Налаштування пристрою</a> - Довідник конфігурації GRBL</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/troubleshooting/connection.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Відредагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="сторінка документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/general-info/gcode-basics"><div class="pagination-nav__sublabel">Попередня сторінка</div><div class="pagination-nav__label">Основи G-code</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/uk/docs/troubleshooting/debug"><div class="pagination-nav__sublabel">Наступна сторінка</div><div class="pagination-nav__label">Усунення неполадок та звітування про проблеми</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#швидка-діагностик а" class="table-of-contents__link toc-highlight">Швидка діагностика</a><ul><li><a href="#симптоми" class="table-of-contents__link toc-highlight">Симптоми</a></li></ul></li><li><a href="#поширені-проблеми-та-рішення" class="table-of-contents__link toc-highlight">Поширені проблеми та рішення</a><ul><li><a href="#послідовні-порти-не-виявлено" class="table-of-contents__link toc-highlight">Послідовні порти не виявлено</a></li><li><a href="#помилки-відмовлено-в-дозволі" class="table-of-contents__link toc-highlight">Помилки &quot;Відмовлено в дозволі&quot;</a></li><li><a href="#вибрано-неправильний-послідовний-порт" class="table-of-contents__link toc-highlight">Вибрано неправильний послідовний порт</a></li><li><a href="#неправильна-швидкість-передачі" class="table-of-contents__link toc-highlight">Неправильна швидкість передачі</a></li><li><a href="#підключення-постійно-розривається" class="table-of-contents__link toc-highlight">Підключення постійно розривається</a></li><li><a href="#пристрій-не-відповідає-після-підключення" class="table-of-contents__link toc-highlight">Пристрій не відповідає після підключення</a></li></ul></li><li><a href="#повідомлення-про-статус-підключення" class="table-of-contents__link toc-highlight">Повідомлення про статус підключення</a></li><li><a href="#тестування-вашого-підключення" class="table-of-contents__link toc-highlight">Тестування вашого підключення</a><ul><li><a href="#покроковий-тест-підключення" class="table-of-contents__link toc-highlight">Покроковий тест підключення</a></li><li><a href="#використання-debug-логів" class="table-of-contents__link toc-highlight">Використання debug-логів</a></li></ul></li><li><a href="#розширене-усунення-неполадок" class="table-of-contents__link toc-highlight">Розширене усунення неполадок</a><ul><li><a href="#ручна-перевірка-доступності-порту" class="table-of-contents__link toc-highlight">Ручна перевірка доступності порту</a></li><li><a href="#сумісність-прошивки" class="table-of-contents__link toc-highlight">Сумісність прошивки</a></li><li><a href="#usb-до-послідовних-чіпсетів" class="table-of-contents__link toc-highlight">USB-до-послідовних чіпсетів</a></li></ul></li><li><a href="#все-ще-є-проблеми" class="table-of-contents__link toc-highlight">Все ще є проблеми?</a></li><li><a href="#повязані-сторінки" class="table-of-contents__link toc-highlight">Пов&#39;язані сторінки</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</body>
+</html>
