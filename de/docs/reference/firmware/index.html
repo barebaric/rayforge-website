@@ -5,8 +5,8 @@
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Firmware-Kompatibilität | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://rayforge.org/de/docs/reference/firmware"><meta data-rh="true" property="og:locale" content="de"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="pt_BR"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="zh_CN"><meta data-rh="true" property="og:locale:alternate" content="uk"><meta data-rh="true" name="docusaurus_locale" content="de"><meta data-rh="true" name="docsearch:language" content="de"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Firmware-Kompatibilität | Rayforge"><meta data-rh="true" name="description" content="Diese Seite dokumentiert die Firmware-Kompatibilität für Laser-Controller, die mit Rayforge verwendet werden."><meta data-rh="true" property="og:description" content="Diese Seite dokumentiert die Firmware-Kompatibilität für Laser-Controller, die mit Rayforge verwendet werden."><link data-rh="true" rel="icon" href="/de/assets/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/de/docs/reference/firmware"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/reference/firmware" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/pt-BR/docs/reference/firmware" hreflang="pt-BR"><link data-rh="true" rel="alternate" href="https://rayforge.org/es/docs/reference/firmware" hreflang="es"><link data-rh="true" rel="alternate" href="https://rayforge.org/fr/docs/reference/firmware" hreflang="fr"><link data-rh="true" rel="alternate" href="https://rayforge.org/de/docs/reference/firmware" hreflang="de"><link data-rh="true" rel="alternate" href="https://rayforge.org/zh-CN/docs/reference/firmware" hreflang="zh-CN"><link data-rh="true" rel="alternate" href="https://rayforge.org/uk/docs/reference/firmware" hreflang="uk"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/reference/firmware" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Firmware-Kompatibilität","item":"https://rayforge.org/de/docs/reference/firmware"}]}</script><link rel="alternate" type="application/rss+xml" href="/de/blog/rss.xml" title="Rayforge RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/de/blog/atom.xml" title="Rayforge Atom Feed"><link rel="stylesheet" href="/de/assets/css/styles.43b0ad27.css">
-<script src="/de/assets/js/runtime~main.746c1a3f.js" defer="defer"></script>
-<script src="/de/assets/js/main.e006737a.js" defer="defer"></script>
+<script src="/de/assets/js/runtime~main.a38d143c.js" defer="defer"></script>
+<script src="/de/assets/js/main.fedb6606.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -101,7 +101,7 @@
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="grbl-version-überprüfen">GRBL-Version überprüfen<a href="#grbl-version-überprüfen" class="hash-link" aria-label="Direkter Link zur GRBL-Version überprüfen" title="Direkter Link zur GRBL-Version überprüfen" translate="no">​</a></h3>
 <p><strong>Version abfragen:</strong></p>
-<p>Verbinden Sie sich mit Ihrem Controller und senden Sie:</p>
+<p>Verbinde sich mit deinem Controller und sende:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">$I</span><br></span></code></pre></div></div>
 <p><strong>Beispielantworten:</strong></p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">[VER:1.1h.20190825:]</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">[OPT:V,15,128]</span><br></span></code></pre></div></div>
@@ -119,7 +119,7 @@
 <li class="">Weniger Einstellungen</li>
 <li class="">Andere Jogging-Syntax</li>
 </ul>
-<p><strong>Wenn Sie GRBL 0.9 haben:</strong></p>
+<p><strong>Wenn du GRBL 0.9 haben:</strong></p>
 <ol>
 <li class=""><strong>Upgrade auf GRBL 1.1</strong> wenn möglich (empfohlen)</li>
 <li class=""><strong>M3 statt M4 verwenden</strong> (weniger vorhersagbare Leistung)</li>
@@ -149,8 +149,8 @@
 </ul>
 <p><strong>Verwendung von grblHAL:</strong></p>
 <ol>
-<li class="">Wählen Sie &quot;GRBL Serial&quot;-Treiber in Rayforge</li>
-<li class="">Verbinden Sie über USB-Seriell (genau wie GRBL)</li>
+<li class="">Wähle &quot;GRBL Serial&quot;-Treiber in Rayforge</li>
+<li class="">Verbinde über USB-Seriell (genau wie GRBL)</li>
 <li class="">Alle Funktionen funktionieren wie für GRBL dokumentiert</li>
 </ol>
 <p><strong>Zukunft:</strong> Rayforge könnte Unterstützung für grblHAL-spezifische Funktionen hinzufügen (Netzwerk usw.)</p>
@@ -191,7 +191,7 @@
 <ol>
 <li class=""><strong>Smoothieware-Dialekt auswählen</strong> in Maschineneinstellungen &gt; G-Code &gt; Dialekt</li>
 <li class=""><strong>Mit geringer Leistung testen</strong> zuerst</li>
-<li class=""><strong>Leistungsbereich überprüfen</strong> entspricht Ihrer Konfiguration</li>
+<li class=""><strong>Leistungsbereich überprüfen</strong> entspricht deiner Konfiguration</li>
 <li class=""><strong>Kein Echtzeit-Status</strong> – eingeschränktes Feedback</li>
 </ol>
 <p><strong>Einschränkungen:</strong></p>
@@ -201,7 +201,7 @@ Leistungsskalierung kann abweichen</li>
 <li class="">Einstellungen ($$-Befehle) nicht unterstützt</li>
 <li class="">Ungetestet auf echter Hardware</li>
 </ul>
-<p><strong>Empfehlung:</strong> Verwenden Sie wenn möglich GRBL-kompatible Firmware.</p>
+<p><strong>Empfehlung:</strong> Verwende wenn möglich GRBL-kompatible Firmware.</p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="marlin">Marlin<a href="#marlin" class="hash-link" aria-label="Direkter Link zur Marlin" title="Direkter Link zur Marlin" translate="no">​</a></h2>
 <p><strong>Versionen:</strong> 2.0+ mit Laser-Unterstützung
@@ -233,7 +233,7 @@ Leistungsskalierung kann abweichen</li>
 <li class=""><strong>Leistungsbereich testen</strong> entspricht (0-1000 oder 0-255)</li>
 <li class=""><strong>Eingeschränkte Tests</strong> – mit Vorsicht verwenden</li>
 </ol>
-<p><strong>Bessere Alternative:</strong> Verwenden Sie GRBL-Firmware auf Lasermaschinen.</p>
+<p><strong>Bessere Alternative:</strong> Verwende GRBL-Firmware auf Lasermaschinen.</p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="firmware-upgrade-leitfaden">Firmware-Upgrade-Leitfaden<a href="#firmware-upgrade-leitfaden" class="hash-link" aria-label="Direkter Link zur Firmware-Upgrade-Leitfaden" title="Direkter Link zur Firmware-Upgrade-Leitfaden" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="upgrade-auf-grbl-11">Upgrade auf GRBL 1.1<a href="#upgrade-auf-grbl-11" class="hash-link" aria-label="Direkter Link zur Upgrade auf GRBL 1.1" title="Direkter Link zur Upgrade auf GRBL 1.1" translate="no">​</a></h3>
@@ -247,7 +247,7 @@ Leistungsskalierung kann abweichen</li>
 <p><strong>Wie man upgradet:</strong></p>
 <ol>
 <li class="">
-<p><strong>Identifizieren Sie Ihr Controller-Board:</strong></p>
+<p><strong>Identifiziere dein Controller-Board:</strong></p>
 <ul>
 <li class="">Arduino Nano/Uno (ATmega328P)</li>
 <li class="">Arduino Mega (ATmega2560)</li>
@@ -273,7 +273,7 @@ Leistungsskalierung kann abweichen</li>
 <ul>
 <li class="">Über Seriell verbinden</li>
 <li class=""><code>$$</code> senden um Einstellungen anzuzeigen</li>
-<li class="">Für Ihre Maschine konfigurieren</li>
+<li class="">Für deine Maschine konfigurieren</li>
 </ul>
 </li>
 </ol>
@@ -338,7 +338,7 @@ Leistungsskalierung kann abweichen</li>
 
 
 
-<table><thead><tr><th>Board</th><th>Typische Firmware</th><th>Rayforge-Support</th></tr></thead><tbody><tr><td><strong>Arduino CNC Shield</strong></td><td>GRBL 1.1</td><td>Ausgezeichnet</td></tr><tr><td><strong>MKS DLC32</strong></td><td>grblHAL</td><td>Ausgezeichnet</td></tr><tr><td><strong>Cohesion3D</strong></td><td>Smoothieware</td><td>Eingeschränkt</td></tr><tr><td><strong>SKR-Boards</strong></td><td>Marlin/grblHAL</td><td>Variiert</td></tr><tr><td><strong>Ruida</strong></td><td>Proprietär</td><td>Nicht unterstützt</td></tr><tr><td><strong>Trocen</strong></td><td>Proprietär</td><td>Nicht unterstützt</td></tr><tr><td><strong>TopWisdom</strong></td><td>Proprietär</td><td>Nicht unterstützt</td></tr></tbody></table>
+<table><thead><tr><th>Board</th><th>Typische Firmware</th><th>Rayforge-Support</th></tr></thead><tbody><tr><td><strong>Arduino CNC Shield</strong></td><td>GRBL 1.1</td><td>Ausgezeichnet</td></tr><tr><td><strong>MKS DLC32</strong></td><td>grblHAL</td><td>Ausgezeichnet</td></tr><tr><td><strong>Cohesion3D</strong></td><td>Smoothieware</td><td>Eingeschränkt</td></tr><tr><td><strong>SKR-Boards</strong></td><td>Marlin/grblHAL</td><td>Variiert</td></tr><tr><td><strong>Ruida</strong></td><td>Proprietär</td><td>Nicht unterstützt</td></tr><tr><td><strong>Trocen</strong></td><td>Proprietär</td><td>Nicht unterst ützt</td></tr><tr><td><strong>TopWisdom</strong></td><td>Proprietär</td><td>Nicht unterstützt</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="empfohlene-controller">Empfohlene Controller<a href="#empfohlene-controller" class="hash-link" aria-label="Direkter Link zur Empfohlene Controller" title="Direkter Link zur Empfohlene Controller" translate="no">​</a></h3>
 <p>Für beste Rayforge-Kompatibilität:</p>
 <ol>
@@ -372,9 +372,9 @@ Leistungsskalierung kann abweichen</li>
 <p><strong>Wesentliche Einstellungen:</strong></p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">$30=1000    ; Max. Spindel/Laser-Leistung (1000 = 100%)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$31=0       ; Min. Spindel/Laser-Leistung</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$32=1       ; Laser-Modus aktiviert (1 = ein)</span><br></span></code></pre></div></div>
 <p><strong>Maschineneinstellungen:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">$100=80     ; X Schritte/mm (für Ihre Maschine kalibrieren)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$101=80     ; Y Schritte/mm</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$110=3000   ; X max. Rate (mm/min)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$111=3000   ; Y max. Rate</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$120=100    ; X Beschleunigung (mm/sek)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$121=100    ; Y Beschleunigung</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$130=300    ; X max. Verfahrweg (mm)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$131=200    ; Y max. Verfahrweg (mm)</span><br></span></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">$100=80     ; X Schritte/mm (für deine Maschine kalibrieren)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$101=80     ; Y Schritte/mm</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$110=3000   ; X max. Rate (mm/min)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$111=3000   ; Y max. Rate</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$120=100    ; X Beschleunigung (mm/sek)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$121=100    ; Y Beschleunigung</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$130=300    ; X max. Verfahrweg (mm)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$131=200    ; Y max. Verfahrweg (mm)</span><br></span></code></pre></div></div>
 <p><strong>Sicherheitseinstellungen:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">$20=1       ; Software-Endschalter aktiviert</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$21=1       ; Hardware-Endschalter aktiviert (wenn Sie Endschalter haben)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$22=1       ; Referenzfahrt aktiviert</span><br></span></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">$20=1       ; Software-Endschalter aktiviert</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$21=1       ; Hardware-Endschalter aktiviert (wenn du Endschalter haben)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">$22=1       ; Referenzfahrt aktiviert</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="firmware-testen">Firmware testen<a href="#firmware-testen" class="hash-link" aria-label="Direkter Link zur Firmware testen" title="Direkter Link zur Firmware testen" translate="no">​</a></h3>
 <p><strong>Grundlegende Testsequenz:</strong></p>
 <ol>

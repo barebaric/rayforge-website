@@ -29,15 +29,15 @@ produktionsreifes Werkzeug, das realen Laser-Schneide- und Gravier-Workflows
 gewachsen ist.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="was-ist-neu-in-10">Was ist neu in 1.0<a href="https://rayforge.org/de/blog/rayforge-1.0-first-birthday#was-ist-neu-in-10" class="hash-link" aria-label="Direkter Link zur Was ist neu in 1.0" title="Direkter Link zur Was ist neu in 1.0" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="projekt-speichernladen">Projekt Speichern/Laden<a href="https://rayforge.org/de/blog/rayforge-1.0-first-birthday#projekt-speichernladen" class="hash-link" aria-label="Direkter Link zur Projekt Speichern/Laden" title="Direkter Link zur Projekt Speichern/Laden" translate="no">​</a></h3>
-<p>Die am häufigsten angeforderte Funktion ist endlich da. Sie können jetzt Ihre
+<p>Die am häufigsten angeforderte Funktion ist endlich da. Du kannst jetzt deine
 vollständigen Workflows speichern und später wiederherstellen. Die <code>.ryp</code>-
 (Projekt) und <code>.rfs</code>-(Skizze) Dateierweiterungen sind systemweit registriert,
-sodass Sie Ihre Projekte per Doppelklick direkt öffnen können. Ein Menü für
-zuletzt verwendete Dateien bietet schnellen Zugriff auf Ihre Arbeit.</p>
+sodass du deine Projekte per Doppelklick direkt öffnen kannst. Ein Menü für
+zuletzt verwendete Dateien bietet schnellen Zugriff auf deine Arbeit.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="parametrischer-skizzierer-mit-textunterstützung">Parametrischer Skizzierer mit Textunterstützung<a href="https://rayforge.org/de/blog/rayforge-1.0-first-birthday#parametrischer-skizzierer-mit-textunterst%C3%BCtzung" class="hash-link" aria-label="Direkter Link zur Parametrischer Skizzierer mit Textunterstützung" title="Direkter Link zur Parametrischer Skizzierer mit Textunterstützung" translate="no">​</a></h3>
 <p>Der Skizzierer unterstützt jetzt Text mit voller Beschränkungs-Integration.
-Fügen Sie Text zu Ihren Skizzen hinzu, wenden Sie Seitenverhältnis-
-Beschränkungen an und steuern Sie Platzierung und Größe parametrisch. Dies
+Füge Text zu deinen Skizzen hinzu, wende Seitenverhältnis-
+Beschränkungen an und steuere Platzierung und Größe parametrisch. Dies
 eröffnet eine ganz neue Welt von Designmöglichkeiten für lasergravierte
 Schilder, Etiketten und Dekorationselemente.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="vereinheitlichtes-unteres-bedienfeld">Vereinheitlichtes unteres Bedienfeld<a href="https://rayforge.org/de/blog/rayforge-1.0-first-birthday#vereinheitlichtes-unteres-bedienfeld" class="hash-link" aria-label="Direkter Link zur Vereinheitlichtes unteres Bedienfeld" title="Direkter Link zur Vereinheitlichtes unteres Bedienfeld" translate="no">​</a></h3>
@@ -115,15 +115,15 @@ haben wir:</p>
 <li class="">Weitere Maschinenprofile und Dialekte</li>
 <li class="">Community-getriebenes Paket-Ökosystem</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="laden-sie-rayforge-10-herunter">Laden Sie Rayforge 1.0 herunter<a href="https://rayforge.org/de/blog/rayforge-1.0-first-birthday#laden-sie-rayforge-10-herunter" class="hash-link" aria-label="Direkter Link zur Laden Sie Rayforge 1.0 herunter" title="Direkter Link zur Laden Sie Rayforge 1.0 herunter" translate="no">​</a></h2>
-<p>Holen Sie sich die neueste Version von unserer Website: <a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">https://rayforge.org/</a></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="lade-rayforge-10-herunter">Lade Rayforge 1.0 herunter<a href="https://rayforge.org/de/blog/rayforge-1.0-first-birthday#lade-rayforge-10-herunter" class="hash-link" aria-label="Direkter Link zur Lade Rayforge 1.0 herunter" title="Direkter Link zur Lade Rayforge 1.0 herunter" translate="no">​</a></h2>
+<p>Hol dir die neueste Version von unserer Website: <a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">https://rayforge.org/</a></p>
 <p>Installer sind verfügbar für:</p>
 <ul>
 <li class="">Windows (Installer)</li>
 <li class="">Linux (deb, snap, flatpak)</li>
 <li class="">macOS (dmg)</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="werden-sie-teil-der-community">Werden Sie Teil der Community<a href="https://rayforge.org/de/blog/rayforge-1.0-first-birthday#werden-sie-teil-der-community" class="hash-link" aria-label="Direkter Link zur Werden Sie Teil der Community" title="Direkter Link zur Werden Sie Teil der Community" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="werde-teil-der-community">Werde Teil der Community<a href="https://rayforge.org/de/blog/rayforge-1.0-first-birthday#werde-teil-der-community" class="hash-link" aria-label="Direkter Link zur Werde Teil der Community" title="Direkter Link zur Werde Teil der Community" translate="no">​</a></h2>
 <ul>
 <li class=""><strong>GitHub</strong>: <a href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" class="">https://github.com/barebaric/rayforge</a></li>
 <li class=""><strong>Discord</strong>: <a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">https://discord.gg/sTHNdTtpQJ</a></li>
@@ -150,75 +150,75 @@ Open-Source-Fertigung!</p>
         <summary type="html"><![CDATA[3D Preview]]></summary>
         <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="3D Preview" src="https://rayforge.org/de/assets/images/main-3d-c14f330885c97e507d5cd12d5483fdae.png" width="3194" height="1850" class="img_ev3q"></p>
 <p>Professionelle Lasergravierergebnisse erfordern mehr als nur gute Hardware –
-auch Ihre Software-Einstellungen und Ihr Workflow sind wichtig. Hier sind fünf
-Tipps, die Ihnen helfen, das Beste aus Rayforge herauszuholen.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-verwenden-sie-overscan-für-glattere-rastergravur">1. Verwenden Sie Overscan für glattere Rastergravur<a href="https://rayforge.org/de/blog/5-tips-better-engraving#1-verwenden-sie-overscan-f%C3%BCr-glattere-rastergravur" class="hash-link" aria-label="Direkter Link zur 1. Verwenden Sie Overscan für glattere Rastergravur" title="Direkter Link zur 1. Verwenden Sie Overscan für glattere Rastergravur" translate="no">​</a></h2>
+auch deine Software-Einstellungen und dein Workflow sind wichtig. Hier sind fünf
+Tipps, die dir helfen, das Beste aus Rayforge herauszuholen.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-verwende-overscan-für-glattere-rastergravur">1. Verwende Overscan für glattere Rastergravur<a href="https://rayforge.org/de/blog/5-tips-better-engraving#1-verwende-overscan-f%C3%BCr-glattere-rastergravur" class="hash-link" aria-label="Direkter Link zur 1. Verwende Overscan für glattere Rastergravur" title="Direkter Link zur 1. Verwende Overscan für glattere Rastergravur" translate="no">​</a></h2>
 <p>Bei der Rastergravur ist ein häufiges Problem sichtbare Linien oder
 Unregelmäßigkeiten an den Rändern, wo der Laser die Richtung wechselt. Dies
 passiert, weil der Laserkopf abbremsen und beschleunigen muss, was die
 Gravurqualität beeinträchtigen kann.</p>
-<p><strong>Lösung</strong>: Aktivieren Sie <strong>Overscan</strong> in Ihren Raster-Operationseinstellungen.</p>
+<p><strong>Lösung</strong>: Aktiviere <strong>Overscan</strong> in deinen Raster-Operationseinstellungen.</p>
 <p>Overscan verlängert den Fahrweg des Lasers über den tatsächlichen Gravurbereich
 hinaus, sodass der Kopf volle Geschwindigkeit erreicht, bevor er in den
 Arbeitsbereich eintritt, und diese Geschwindigkeit beibehält. Dies führt zu
 einer viel glatteren, gleichmäßigeren Gravur.</p>
-<p>So aktivieren Sie Overscan:</p>
+<p>So aktivierst du Overscan:</p>
 <ol>
-<li class="">Wählen Sie Ihre Raster-Operation</li>
-<li class="">Öffnen Sie die Operationseinstellungen</li>
-<li class="">Aktivieren Sie "Overscan" und stellen Sie den Abstand ein (typischerweise
+<li class="">Wähle deine Raster-Operation</li>
+<li class="">Öffne die Operationseinstellungen</li>
+<li class="">Aktiviere "Overscan" und stelle den Abstand ein (typischerweise
 funktionieren 3-5mm gut)</li>
 </ol>
-<p>Erfahren Sie mehr in unserem <a class="" href="https://rayforge.org/de/docs/features/overscan">Overscan-Leitfaden</a>.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-optimieren-sie-die-fahrzeit-mit-pfadsortierung">2. Optimieren Sie die Fahrzeit mit Pfadsortierung<a href="https://rayforge.org/de/blog/5-tips-better-engraving#2-optimieren-sie-die-fahrzeit-mit-pfadsortierung" class="hash-link" aria-label="Direkter Link zur 2. Optimieren Sie die Fahrzeit mit Pfadsortierung" title="Direkter Link zur 2. Optimieren Sie die Fahrzeit mit Pfadsortierung" translate="no">​</a></h2>
+<p>Erfahre mehr in unserem <a class="" href="https://rayforge.org/de/docs/features/overscan">Overscan-Leitfaden</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-optimiere-die-fahrzeit-mit-pfadsortierung">2. Optimiere die Fahrzeit mit Pfadsortierung<a href="https://rayforge.org/de/blog/5-tips-better-engraving#2-optimiere-die-fahrzeit-mit-pfadsortierung" class="hash-link" aria-label="Direkter Link zur 2. Optimiere die Fahrzeit mit Pfadsortierung" title="Direkter Link zur 2. Optimiere die Fahrzeit mit Pfadsortierung" translate="no">​</a></h2>
 <p>Bei Kontur-Operationen mit vielen separaten Pfaden kann die Reihenfolge, in der
 der Laser jede Form besucht, die Gesamtauftragszeit erheblich beeinflussen.</p>
-<p><strong>Lösung</strong>: Verwenden Sie Rayforges integrierte <strong>Fahrzeitoptimierung</strong>.</p>
+<p><strong>Lösung</strong>: Verwende Rayforges integrierte <strong>Fahrzeitoptimierung</strong>.</p>
 <p>Rayforge kann Pfade automatisch neu anordnen, um die Nicht-Schneide-Fahrzeit zu
 minimieren. Dies ist besonders nützlich für Aufträge mit vielen kleinen Objekten
 oder Text mit mehreren Buchstaben.</p>
-<p>Die Pfadoptimierung ist typischerweise standardmäßig aktiviert, aber Sie können
+<p>Die Pfadoptimierung ist typischerweise standardmäßig aktiviert, aber du kannst
 sie in den Kontur-Operationseinstellungen überprüfen und anpassen.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-fügen-sie-haltelaschen-hinzu-um-teilbewegung-zu-verhindern">3. Fügen Sie HalteLaschen hinzu, um Teilbewegung zu verhindern<a href="https://rayforge.org/de/blog/5-tips-better-engraving#3-f%C3%BCgen-sie-haltelaschen-hinzu-um-teilbewegung-zu-verhindern" class="hash-link" aria-label="Direkter Link zur 3. Fügen Sie HalteLaschen hinzu, um Teilbewegung zu verhindern" title="Direkter Link zur 3. Fügen Sie HalteLaschen hinzu, um Teilbewegung zu verhindern" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-füge-haltelaschen-hinzu-um-teilbewegung-zu-verhindern">3. Füge HalteLaschen hinzu, um Teilbewegung zu verhindern<a href="https://rayforge.org/de/blog/5-tips-better-engraving#3-f%C3%BCge-haltelaschen-hinzu-um-teilbewegung-zu-verhindern" class="hash-link" aria-label="Direkter Link zur 3. Füge HalteLaschen hinzu, um Teilbewegung zu verhindern" title="Direkter Link zur 3. Füge HalteLaschen hinzu, um Teilbewegung zu verhindern" translate="no">​</a></h2>
 <p>Nichts ist frustrierender als ein fast fertiger Schnittauftrag, der ruiniert wird,
 weil sich das Teil im letzten Moment verschoben oder durch das Maschinenbett
 gefallen ist.</p>
-<p><strong>Lösung</strong>: Verwenden Sie <strong>HalteLaschen</strong>, um Teile an Ort und Stelle zu halten,
+<p><strong>Lösung</strong>: Verwende <strong>HalteLaschen</strong>, um Teile an Ort und Stelle zu halten,
 bis der Auftrag abgeschlossen ist.</p>
-<p>HalteLaschen sind kleine ungeschnittene Bereiche, die Ihr Teil mit dem
-umliegenden Material verbinden. Nach Abschluss des Auftrags können Sie das Teil
+<p>HalteLaschen sind kleine ungeschnittene Bereiche, die dein Teil mit dem
+umliegenden Material verbinden. Nach Abschluss des Auftrags kannst du das Teil
 einfach entfernen und die Laschen mit einem Messer oder Schleifpapier säubern.</p>
 <p>Rayforge unterstützt sowohl manuelle als auch automatische Laschen-Platzierung:</p>
 <ul>
-<li class=""><strong>Manuell</strong>: Klicken Sie genau dort, wo Sie Laschen auf der Arbeitsfläche
-möchten</li>
-<li class=""><strong>Automatisch</strong>: Geben Sie die Anzahl der Laschen an und lassen Sie Rayforge
+<li class=""><strong>Manuell</strong>: Klicke genau dort, wo du Laschen auf der Arbeitsfläche
+möchtest</li>
+<li class=""><strong>Automatisch</strong>: Gib die Anzahl der Laschen an und lass Rayforge
 sie gleichmäßig verteilen</li>
 </ul>
-<p>Schauen Sie sich die <a class="" href="https://rayforge.org/de/docs/features/holding-tabs">HalteLaschen-Dokumentation</a>
+<p>Schau dir die <a class="" href="https://rayforge.org/de/docs/features/holding-tabs">HalteLaschen-Dokumentation</a>
 für eine vollständige Anleitung an.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-vorschau-ihres-auftrags-in-3d-vor-dem-ausführen">4. Vorschau Ihres Auftrags in 3D vor dem Ausführen<a href="https://rayforge.org/de/blog/5-tips-better-engraving#4-vorschau-ihres-auftrags-in-3d-vor-dem-ausf%C3%BChren" class="hash-link" aria-label="Direkter Link zur 4. Vorschau Ihres Auftrags in 3D vor dem Ausführen" title="Direkter Link zur 4. Vorschau Ihres Auftrags in 3D vor dem Ausführen" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-vorschau-deines-auftrags-in-3d-vor-dem-ausführen">4. Vorschau deines Auftrags in 3D vor dem Ausführen<a href="https://rayforge.org/de/blog/5-tips-better-engraving#4-vorschau-deines-auftrags-in-3d-vor-dem-ausf%C3%BChren" class="hash-link" aria-label="Direkter Link zur 4. Vorschau deines Auftrags in 3D vor dem Ausführen" title="Direkter Link zur 4. Vorschau deines Auftrags in 3D vor dem Ausführen" translate="no">​</a></h2>
 <p>Eines der wertvollsten Features von Rayforge ist die 3D-G-Code-Vorschau. Es ist
 verlockend, diesen Schritt zu überspringen und den Auftrag direkt an die Maschine
-zu senden, aber einen Moment zur Vorschau zu nehmen, kann Ihnen Zeit und Material
+zu senden, aber einen Moment zur Vorschau zu nehmen, kann dir Zeit und Material
 sparen.</p>
-<p><strong>Worauf Sie in der Vorschau achten sollten</strong>:</p>
+<p><strong>Worauf du in der Vorschau achten solltest</strong>:</p>
 <ul>
-<li class="">Überprüfen Sie, ob alle Operationen in der richtigen Reihenfolge ausgeführt
+<li class="">Überprüfe, ob alle Operationen in der richtigen Reihenfolge ausgeführt
 werden</li>
-<li class="">Prüfen Sie auf unerwartete Werkzeugwege oder Überschneidungen</li>
-<li class="">Bestätigen Sie, dass Multi-Pass-Operationen die richtige Anzahl von Durchläufen
+<li class="">Prüfe auf unerwartete Werkzeugwege oder Überschneidungen</li>
+<li class="">Bestätige, dass Multi-Pass-Operationen die richtige Anzahl von Durchläufen
 haben</li>
-<li class="">Stellen Sie sicher, dass die Auftraggrenzen in Ihr Material passen</li>
+<li class="">Stelle sicher, dass die Auftraggrenzen in dein Material passen</li>
 </ul>
-<p>Um die 3D-Vorschau zu öffnen, klicken Sie nach dem Generieren Ihres G-Codes auf
+<p>Um die 3D-Vorschau zu öffnen, klicke nach dem Generieren deines G-Codes auf
 die <strong>3D-Vorschau</strong>-Schaltfläche in der Hauptsymbolleiste.</p>
-<p>Erfahren Sie mehr über die 3D-Vorschau in unserer
+<p>Erfahre mehr über die 3D-Vorschau in unserer
 <a class="" href="https://rayforge.org/de/docs/ui/3d-preview">UI-Dokumentation</a>.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-verwenden-sie-eigene-g-code-hooks-für-konsistente-workflows">5. Verwenden Sie eigene G-Code-Hooks für konsistente Workflows<a href="https://rayforge.org/de/blog/5-tips-better-engraving#5-verwenden-sie-eigene-g-code-hooks-f%C3%BCr-konsistente-workflows" class="hash-link" aria-label="Direkter Link zur 5. Verwenden Sie eigene G-Code-Hooks für konsistente Workflows" title="Direkter Link zur 5. Verwenden Sie eigene G-Code-Hooks für konsistente Workflows" translate="no">​</a></h2>
-<p>Wenn Sie feststellen, dass Sie vor oder nach jedem Auftrag dieselben G-Code-Befehle
-ausführen – wie Referenzfahrt, Einschalten einer Luftunterstützung oder Ausführen
-eines Fokus-Routines – können Sie dies mit <strong>G-Code-Makros &amp; Hooks</strong> automatisieren.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-verwende-eigene-g-code-hooks-für-konsistente-workflows">5. Verwende eigene G-Code-Hooks für konsistente Workflows<a href="https://rayforge.org/de/blog/5-tips-better-engraving#5-verwende-eigene-g-code-hooks-f%C3%BCr-konsistente-workflows" class="hash-link" aria-label="Direkter Link zur 5. Verwende eigene G-Code-Hooks für konsistente Workflows" title="Direkter Link zur 5. Verwende eigene G-Code-Hooks für konsistente Workflows" translate="no">​</a></h2>
+<p>Wenn du feststellst, dass du vor oder nach jedem Auftrag dieselben G-Code-Befehle
+ausführst – wie Referenzfahrt, Einschalten einer Luftunterstützung oder Ausführen
+eines Fokus-Routines – kannst du dies mit <strong>G-Code-Makros &amp; Hooks</strong> automatisieren.</p>
 <p><strong>Häufige Anwendungsfälle</strong>:</p>
 <ul>
 <li class=""><strong>Pre-Job-Hook</strong>: Referenzfahrt der Maschine, Luftunterstützung einschalten,
@@ -228,20 +228,20 @@ einen Abschluss-Sound abspielen</li>
 <li class=""><strong>Ebenenspezifische Makros</strong>: Fokushöhe zwischen Operationen ändern,
 Lasermodule wechseln</li>
 </ul>
-<p>Hooks unterstützen Variablensubstitution, sodass Sie Auftragseigenschaften wie
-Materialstärke, Operationstyp und mehr referenzieren können.</p>
+<p>Hooks unterstützen Variablensubstitution, sodass du Auftragseigenschaften wie
+Materialstärke, Operationstyp und mehr referenzieren kannst.</p>
 <p>Beispiel Pre-Job-Hook:</p>
 <div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">G28 ; Home all axes</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">M8 ; Turn on air assist</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">G0 Z{focus_height} ; Move to focus height</span><br></span></code></pre></div></div>
 <p>Siehe unseren <a class="" href="https://rayforge.org/de/docs/machine/hooks-macros">G-Code-Makros &amp; Hooks Leitfaden</a> für
 detaillierte Beispiele und Variablenreferenz.</p>
 <hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bonustipp-testen-sie-zuerst-auf-restmaterial">Bonustipp: Testen Sie zuerst auf Restmaterial<a href="https://rayforge.org/de/blog/5-tips-better-engraving#bonustipp-testen-sie-zuerst-auf-restmaterial" class="hash-link" aria-label="Direkter Link zur Bonustipp: Testen Sie zuerst auf Restmaterial" title="Direkter Link zur Bonustipp: Testen Sie zuerst auf Restmaterial" translate="no">​</a></h2>
-<p>Obwohl dies nicht spezifisch für Rayforge ist, ist es wert zu wiederholen: Testen
-Sie immer neue Einstellungen, Operationen oder Materialien zuerst auf Reststücken.
-Verwenden Sie Rayforges Materialprofile und Operationsvoreinstellungen, um Ihre
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bonustipp-teste-zuerst-auf-restmaterial">Bonustipp: Teste zuerst auf Restmaterial<a href="https://rayforge.org/de/blog/5-tips-better-engraving#bonustipp-teste-zuerst-auf-restmaterial" class="hash-link" aria-label="Direkter Link zur Bonustipp: Teste zuerst auf Restmaterial" title="Direkter Link zur Bonustipp: Teste zuerst auf Restmaterial" translate="no">​</a></h2>
+<p>Obwohl dies nicht spezifisch für Rayforge ist, ist es wert zu wiederholen: Teste
+immer neue Einstellungen, Operationen oder Materialien zuerst auf Reststücken.
+Verwende Rayforges Materialprofile und Operationsvoreinstellungen, um deine
 getesteten Einstellungen für zukünftige Verwendung zu speichern.</p>
 <hr>
-<p><em>Haben Sie Ihre eigenen Rayforge-Tipps und Tricks? Teilen Sie sie mit der
+<p><em>Hast du deine eigenen Rayforge-Tipps und Tricks? Teile sie mit der
 Community auf <a href="https://github.com/barebaric/rayforge/discussions" target="_blank" rel="noopener noreferrer" class="">GitHub Discussions</a>!</em></p>]]></content>
         <author>
             <name>Rayforge Team</name>
@@ -253,7 +253,7 @@ Community auf <a href="https://github.com/barebaric/rayforge/discussions" target
         <category label="workflow" term="workflow"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Multi-Laser-Unterstützung - Wählen Sie verschiedene Laser für jede Operation]]></title>
+        <title type="html"><![CDATA[Multi-Laser-Unterstützung - Wähle verschiedene Laser für jede Operation]]></title>
         <id>https://rayforge.org/de/blog/multi-laser-support</id>
         <link href="https://rayforge.org/de/blog/multi-laser-support"/>
         <updated>2025-01-10T00:00:00.000Z</updated>
@@ -264,27 +264,27 @@ Laser unterschiedlichen Operationen innerhalb eines einzelnen Auftrags zuzuweise
 Dies eröffnet spannende Möglichkeiten für Multi-Werkzeug-Setups und spezialisierte
 Workflows.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="was-ist-multi-laser-unterstützung">Was ist Multi-Laser-Unterstützung?<a href="https://rayforge.org/de/blog/multi-laser-support#was-ist-multi-laser-unterst%C3%BCtzung" class="hash-link" aria-label="Direkter Link zur Was ist Multi-Laser-Unterstützung?" title="Direkter Link zur Was ist Multi-Laser-Unterstützung?" translate="no">​</a></h2>
-<p>Wenn Ihre Maschine mit mehreren Lasermodulen ausgestattet ist – sagen wir, ein
+<p>Wenn deine Maschine mit mehreren Lasermodulen ausgestattet ist – sagen wir, ein
 Diodenlaser zum Gravieren und ein CO2-Laser zum Schneiden, oder unterschiedliche
-Leistungs-Diodenlaser, optimiert für verschiedene Materialien – ermöglicht Ihnen
+Leistungs-Diodenlaser, optimiert für verschiedene Materialien – ermöglicht dir
 Rayforge, dieses Setup voll auszuschöpfen.</p>
-<p>Mit Multi-Laser-Unterstützung können Sie:</p>
+<p>Mit Multi-Laser-Unterstützung kannst du:</p>
 <ul>
-<li class=""><strong>Verschiedene Laser verschiedenen Operationen zuweisen</strong> in Ihrem Auftrag</li>
+<li class=""><strong>Verschiedene Laser verschiedenen Operationen zuweisen</strong> in deinem Auftrag</li>
 <li class=""><strong>Zwischen Lasermodulen wechseln</strong> automatisch während der Auftragsausführung</li>
 <li class=""><strong>Für Material und Aufgabe optimieren</strong> durch Verwendung des richtigen Werkzeugs
 für jede Operation</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="anwendungsfälle">Anwendungsfälle<a href="https://rayforge.org/de/blog/multi-laser-support#anwendungsf%C3%A4lle" class="hash-link" aria-label="Direkter Link zur Anwendungsfälle" title="Direkter Link zur Anwendungsfälle" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hybrid-gravur-und--schnitt">Hybrid-Gravur und -Schnitt<a href="https://rayforge.org/de/blog/multi-laser-support#hybrid-gravur-und--schnitt" class="hash-link" aria-label="Direkter Link zur Hybrid-Gravur und -Schnitt" title="Direkter Link zur Hybrid-Gravur und -Schnitt" translate="no">​</a></h3>
-<p>Stellen Sie sich vor, Sie arbeiten an einem Holzzeichen-Projekt:</p>
+<p>Stell dir vor, du arbeitest an einem Holzzeichen-Projekt:</p>
 <ol>
-<li class=""><strong>Operation 1</strong>: Verwenden Sie einen Niederleistungs-Diodenlaser, um feinen Text
+<li class=""><strong>Operation 1</strong>: Verwende einen Niederleistungs-Diodenlaser, um feinen Text
 und detaillierte Grafiken zu gravieren</li>
-<li class=""><strong>Operation 2</strong>: Wechseln Sie zu einem leistungsstärkeren CO2-Laser, um die
+<li class=""><strong>Operation 2</strong>: Wechsle zu einem leistungsstärkeren CO2-Laser, um die
 Zeichenform auszuschneiden</li>
 </ol>
-<p>Mit Rayforge weisen Sie einfach jede Operation dem entsprechenden Laser in Ihrem
+<p>Mit Rayforge weist du einfach jede Operation dem entsprechenden Laser in deinem
 Maschinenprofil zu, und die Software erledigt den Rest.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="materialspezifische-optimierung">Materialspezifische Optimierung<a href="https://rayforge.org/de/blog/multi-laser-support#materialspezifische-optimierung" class="hash-link" aria-label="Direkter Link zur Materialspezifische Optimierung" title="Direkter Link zur Materialspezifische Optimierung" translate="no">​</a></h3>
 <p>Verschiedene Lasertypen eignen sich für verschiedene Materialien:</p>
@@ -294,13 +294,13 @@ Maschinenprofil zu, und die Software erledigt den Rest.</p>
 Materialien</li>
 <li class=""><strong>Faserlaser</strong>: Perfekt zum Markieren von Metallen</li>
 </ul>
-<p>Wenn Sie mehrere Lasertypen auf einem Portal-System haben, ermöglicht Ihnen Rayforges
-Multi-Laser-Unterstützung, das optimale Werkzeug für jeden Teil Ihres Projekts zu
+<p>Wenn du mehrere Lasertypen auf einem Portal-System hast, ermöglicht dir Rayforges
+Multi-Laser-Unterstützung, das optimale Werkzeug für jeden Teil deines Projekts zu
 verwenden.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="so-richten-sie-es-ein">So richten Sie es ein<a href="https://rayforge.org/de/blog/multi-laser-support#so-richten-sie-es-ein" class="hash-link" aria-label="Direkter Link zur So richten Sie es ein" title="Direkter Link zur So richten Sie es ein" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-konfigurieren-sie-mehrere-laser-in-ihrem-maschinenprofil">1. Konfigurieren Sie mehrere Laser in Ihrem Maschinenprofil<a href="https://rayforge.org/de/blog/multi-laser-support#1-konfigurieren-sie-mehrere-laser-in-ihrem-maschinenprofil" class="hash-link" aria-label="Direkter Link zur 1. Konfigurieren Sie mehrere Laser in Ihrem Maschinenprofil" title="Direkter Link zur 1. Konfigurieren Sie mehrere Laser in Ihrem Maschinenprofil" translate="no">​</a></h3>
-<p>Gehen Sie zu <strong>Maschinen-Setup → Mehrere Laser</strong> und definieren Sie jedes Lasermodul
-in Ihrem System. Sie können angeben:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="so-richtest-du-es-ein">So richtest du es ein<a href="https://rayforge.org/de/blog/multi-laser-support#so-richtest-du-es-ein" class="hash-link" aria-label="Direkter Link zur So richtest du es ein" title="Direkter Link zur So richtest du es ein" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-konfiguriere-mehrere-laser-in-deinem-maschinenprofil">1. Konfiguriere mehrere Laser in deinem Maschinenprofil<a href="https://rayforge.org/de/blog/multi-laser-support#1-konfiguriere-mehrere-laser-in-deinem-maschinenprofil" class="hash-link" aria-label="Direkter Link zur 1. Konfiguriere mehrere Laser in deinem Maschinenprofil" title="Direkter Link zur 1. Konfiguriere mehrere Laser in deinem Maschinenprofil" translate="no">​</a></h3>
+<p>Gehe zu <strong>Maschinen-Setup → Mehrere Laser</strong> und definiere jedes Lasermodul
+in deinem System. Du kannst angeben:</p>
 <ul>
 <li class="">Lasertyp und Leistungsbereich</li>
 <li class="">Offset-Positionen (wenn Laser an verschiedenen Positionen montiert sind)</li>
@@ -308,42 +308,42 @@ in Ihrem System. Sie können angeben:</p>
 </ul>
 <p>Siehe unseren <a class="" href="https://rayforge.org/de/docs/machine/laser">Laser-Konfigurationsleitfaden</a>
 für detaillierte Anweisungen.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-weisen-sie-laser-operationen-zu">2. Weisen Sie Laser Operationen zu<a href="https://rayforge.org/de/blog/multi-laser-support#2-weisen-sie-laser-operationen-zu" class="hash-link" aria-label="Direkter Link zur 2. Weisen Sie Laser Operationen zu" title="Direkter Link zur 2. Weisen Sie Laser Operationen zu" translate="no">​</a></h3>
-<p>Beim Erstellen von Operationen in Ihrem Projekt:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-weise-laser-operationen-zu">2. Weise Laser Operationen zu<a href="https://rayforge.org/de/blog/multi-laser-support#2-weise-laser-operationen-zu" class="hash-link" aria-label="Direkter Link zur 2. Weise Laser Operationen zu" title="Direkter Link zur 2. Weise Laser Operationen zu" translate="no">​</a></h3>
+<p>Beim Erstellen von Operationen in deinem Projekt:</p>
 <ol>
-<li class="">Wählen Sie die Operation (Kontur, Raster, etc.)</li>
-<li class="">In den Betriebseinstellungen wählen Sie im Dropdown-Menü, welcher Laser
+<li class="">Wähle die Operation (Kontur, Raster, etc.)</li>
+<li class="">In den Betriebseinstellungen wähle im Dropdown-Menü, welcher Laser
 verwendet werden soll</li>
-<li class="">Konfigurieren Sie die für diesen Laser spezifischen Operationsparameter</li>
+<li class="">Konfiguriere die für diesen Laser spezifischen Operationsparameter</li>
 </ol>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-vorschau-und-ausführung">3. Vorschau und Ausführung<a href="https://rayforge.org/de/blog/multi-laser-support#3-vorschau-und-ausf%C3%BChrung" class="hash-link" aria-label="Direkter Link zur 3. Vorschau und Ausführung" title="Direkter Link zur 3. Vorschau und Ausführung" translate="no">​</a></h3>
-<p>Verwenden Sie die 3D-Vorschau, um Ihre Werkzeugwege zu überprüfen, und senden Sie
-dann den Auftrag an Ihre Maschine. Rayforge generiert automatisch die entsprechenden
+<p>Verwende die 3D-Vorschau, um deine Werkzeugwege zu überprüfen, und sende
+dann den Auftrag an deine Maschine. Rayforge generiert automatisch die entsprechenden
 G-Code-Befehle, um bei Bedarf zwischen Lasern zu wechseln.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="technische-details">Technische Details<a href="https://rayforge.org/de/blog/multi-laser-support#technische-details" class="hash-link" aria-label="Direkter Link zur Technische Details" title="Direkter Link zur Technische Details" translate="no">​</a></h2>
 <p>Unter der Haube verwendet Rayforge G-Code-Befehle, um zwischen Lasermodulen zu
-wechseln. Die genaue Implementierung hängt von Ihrer Firmware- und Hardware-
+wechseln. Die genaue Implementierung hängt von deiner Firmware- und Hardware-
 Konfiguration ab, aber gängige Ansätze umfassen:</p>
 <ul>
 <li class=""><strong>M3/M4 mit Werkzeug-Offsets</strong>: Wechseln zwischen Lasern mit Werkzeugwechsel-
 Befehlen</li>
-<li class=""><strong>GPIO-Steuerung</strong>: Verwenden Sie von der Firmware unterstützte GPIO-Pins, um
+<li class=""><strong>GPIO-Steuerung</strong>: Verwende von der Firmware unterstützte GPIO-Pins, um
 verschiedene Lasermodule zu aktivieren/deaktivieren</li>
-<li class=""><strong>Eigene Makros</strong>: Definieren Sie Vor- und Nach-Operations-Makros für Laser-
+<li class=""><strong>Eigene Makros</strong>: Definiere Vor- und Nach-Operations-Makros für Laser-
 Wechsel</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="erste-schritte">Erste Schritte<a href="https://rayforge.org/de/blog/multi-laser-support#erste-schritte" class="hash-link" aria-label="Direkter Link zur Erste Schritte" title="Direkter Link zur Erste Schritte" translate="no">​</a></h2>
 <p>Multi-Laser-Unterstützung ist in Rayforge 0.15 und neuer verfügbar. Um loszulegen:</p>
 <ol>
-<li class="">Aktualisieren Sie auf die neueste Version</li>
-<li class="">Konfigurieren Sie Ihr Maschinenprofil mit mehreren Lasern</li>
-<li class="">Probieren Sie es an einem Testprojekt aus!</li>
+<li class="">Aktualisiere auf die neueste Version</li>
+<li class="">Konfiguriere dein Maschinenprofil mit mehreren Lasern</li>
+<li class="">Probiere es an einem Testprojekt aus!</li>
 </ol>
-<p>Schauen Sie sich die <a class="" href="https://rayforge.org/de/docs/machine/general">Maschinenprofile-Dokumentation</a>
+<p>Schau dir die <a class="" href="https://rayforge.org/de/docs/machine/general">Maschinenprofile-Dokumentation</a>
 für weitere Details an.</p>
 <hr>
-<p><em>Haben Sie ein Multi-Laser-Setup? Wir würden gerne von Ihrer Erfahrung hören!
-Teilen Sie Ihre Projekte und Ihr Feedback auf
+<p><em>Hast du ein Multi-Laser-Setup? Wir würden gerne von deiner Erfahrung hören!
+Teile deine Projekte und dein Feedback auf
 <a href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" class="">GitHub</a>.</em></p>]]></content>
         <author>
             <name>Rayforge Team</name>
@@ -379,40 +379,40 @@ und umfangreiche Konfigurationsoptionen</li>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="was-macht-rayforge-besonders">Was macht Rayforge besonders?<a href="https://rayforge.org/de/blog/welcome-to-rayforge#was-macht-rayforge-besonders" class="hash-link" aria-label="Direkter Link zur Was macht Rayforge besonders?" title="Direkter Link zur Was macht Rayforge besonders?" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="multi-layer-operationen">Multi-Layer-Operationen<a href="https://rayforge.org/de/blog/welcome-to-rayforge#multi-layer-operationen" class="hash-link" aria-label="Direkter Link zur Multi-Layer-Operationen" title="Direkter Link zur Multi-Layer-Operationen" translate="no">​</a></h3>
 <p>Eines der herausragenden Merkmale von Rayforge ist der Multi-Layer-Workflow.
-Weisen Sie verschiedenen Ebenen in Ihrem Design unterschiedliche Operationen zu
-– gravieren Sie feine Details auf einer Ebene, schneiden Sie dann das Stück auf
+Weise verschiedenen Ebenen in deinem Design unterschiedliche Operationen zu
+– graviere feine Details auf einer Ebene, schneide dann das Stück auf
 einer anderen aus. Alles nahtlos in einer Oberfläche verwaltet.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3d-g-code-vorschau">3D-G-Code-Vorschau<a href="https://rayforge.org/de/blog/welcome-to-rayforge#3d-g-code-vorschau" class="hash-link" aria-label="Direkter Link zur 3D-G-Code-Vorschau" title="Direkter Link zur 3D-G-Code-Vorschau" translate="no">​</a></h3>
-<p>Bevor Sie Ihren Auftrag an die Maschine senden, visualisieren Sie genau, was
+<p>Bevor du deinen Auftrag an die Maschine sendest, visualisiere genau, was
 passieren wird, mit unserer 3D-G-Code-Vorschau. Erkenne potenzielle Probleme,
 bevor sie auftreten, und spare Zeit und Material.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="kamera-integration">Kamera-Integration<a href="https://rayforge.org/de/blog/welcome-to-rayforge#kamera-integration" class="hash-link" aria-label="Direkter Link zur Kamera-Integration" title="Direkter Link zur Kamera-Integration" translate="no">​</a></h3>
-<p>Verwenden Sie eine USB-Kamera für präzises Werkstück-Alignment, Positionierung
+<p>Verwende eine USB-Kamera für präzises Werkstück-Alignment, Positionierung
 und sogar Hintergrund-Tracking. Perfekt zum Positionieren von Designs auf
 vorhandenen Materialien oder zum Erstellen von Spannvorrichtungen.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fortgeschrittene-pfadgenerierung">Fortgeschrittene Pfadgenerierung<a href="https://rayforge.org/de/blog/welcome-to-rayforge#fortgeschrittene-pfadgenerierung" class="hash-link" aria-label="Direkter Link zur Fortgeschrittene Pfadgenerierung" title="Direkter Link zur Fortgeschrittene Pfadgenerierung" translate="no">​</a></h3>
 <p>Rayforge beinhaltet hochwertiges Bild-Tracing, Fahrzeitoptimierung,
-Pfadglättung und Spotgrößen-Interpolation, um sicherzustellen, dass Ihre
+Pfadglättung und Spotgrößen-Interpolation, um sicherzustellen, dass deine
 Projekte genau wie geplant realisiert werden.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="erste-schritte">Erste Schritte<a href="https://rayforge.org/de/blog/welcome-to-rayforge#erste-schritte" class="hash-link" aria-label="Direkter Link zur Erste Schritte" title="Direkter Link zur Erste Schritte" translate="no">​</a></h2>
-<p>Bereit, Rayforge auszuprobieren? Schauen Sie sich unseren
+<p>Bereit, Rayforge auszuprobieren? Schau dir unseren
 <a class="" href="https://rayforge.org/de/docs/getting-started/installation">Installationsleitfaden</a> an, um loszulegen.
-Egal ob Sie Ubuntu, eine andere Linux-Distribution über Snap oder
-Windows verwenden – wir haben alles für Sie.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="werden-sie-teil-der-community">Werden Sie Teil der Community<a href="https://rayforge.org/de/blog/welcome-to-rayforge#werden-sie-teil-der-community" class="hash-link" aria-label="Direkter Link zur Werden Sie Teil der Community" title="Direkter Link zur Werden Sie Teil der Community" translate="no">​</a></h2>
+Egal ob du Ubuntu, eine andere Linux-Distribution über Snap oder
+Windows verwendest – wir haben alles für dich.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="werde-teil-der-community">Werde Teil der Community<a href="https://rayforge.org/de/blog/welcome-to-rayforge#werde-teil-der-community" class="hash-link" aria-label="Direkter Link zur Werde Teil der Community" title="Direkter Link zur Werde Teil der Community" translate="no">​</a></h2>
 <p>Rayforge ist Open-Source und Community-getrieben. Wir begrüßen Beiträge
 aller Art:</p>
 <ul>
-<li class="">Melden Sie Fehler und fordern Sie Funktionen auf
+<li class="">Melde Fehler und fordere Funktionen auf
 <a href="https://github.com/barebaric/rayforge/issues" target="_blank" rel="noopener noreferrer" class="">GitHub Issues</a></li>
-<li class="">Tragen Sie Code über
+<li class="">Trage Code über
 <a href="https://github.com/barebaric/rayforge/pulls" target="_blank" rel="noopener noreferrer" class="">Pull Requests</a> bei</li>
-<li class="">Verbessern Sie die Dokumentation</li>
-<li class="">Teilen Sie Ihre Projekte und Erfahrungen</li>
+<li class="">Verbessere die Dokumentation</li>
+<li class="">Teile deine Projekte und Erfahrungen</li>
 </ul>
 <hr>
-<p><em>Haben Sie Fragen oder Feedback? Diskutieren Sie auf GitHub oder schauen
-Sie sich unsere <a class="" href="https://rayforge.org/de/docs/getting-started/installation">Dokumentation</a> an.</em></p>]]></content>
+<p><em>Hast du Fragen oder Feedback? Diskutiere auf GitHub oder schau
+dir unsere <a class="" href="https://rayforge.org/de/docs/getting-started/installation">Dokumentation</a> an.</em></p>]]></content>
         <author>
             <name>Rayforge Team</name>
             <uri>https://github.com/barebaric/rayforge</uri>
