@@ -2,11 +2,115 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rayforge.org/pt-BR/blog</id>
     <title>Rayforge Blog</title>
-    <updated>2026-01-29T00:00:00.000Z</updated>
+    <updated>2026-02-27T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rayforge.org/pt-BR/blog"/>
     <subtitle>Rayforge Blog</subtitle>
     <icon>https://rayforge.org/pt-BR/assets/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Rayforge 1.1 - MacOS Support, Pipeline Rewrite, G-code Console, and Unified Raster]]></title>
+        <id>https://rayforge.org/pt-BR/blog/rayforge-1.1-pipeline-rewrite</id>
+        <link href="https://rayforge.org/pt-BR/blog/rayforge-1.1-pipeline-rewrite"/>
+        <updated>2026-02-27T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Rayforge 1.1]]></summary>
+        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 1.1" src="https://rayforge.org/pt-BR/assets/images/rayforge-1.1-7e0d0638da78baa86b6281fa7f32df3b.png" width="1344" height="768" class="img_ev3q"></p>
+<p>Rayforge 1.1 brings a powerful new G-code console, unified raster operations,
+and a completely rebuilt data pipeline for improved performance and stability.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="macos-support">MacOS Support<a href="https://rayforge.org/pt-BR/blog/rayforge-1.1-pipeline-rewrite#macos-support" class="hash-link" aria-label="Link direto para MacOS Support" title="Link direto para MacOS Support" translate="no">​</a></h2>
+<p>Thanks to the incredible work of GitHub user <strong>pgilfernandez</strong>, Rayforge
+now officially supports macOS! Both Intel and Apple Silicon Macs are
+supported. This has been a long-requested feature, and we're thrilled to
+welcome Mac users to the Rayforge community.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-big-story-complete-pipeline-rewrite">The Big Story: Complete Pipeline Rewrite<a href="https://rayforge.org/pt-BR/blog/rayforge-1.1-pipeline-rewrite#the-big-story-complete-pipeline-rewrite" class="hash-link" aria-label="Link direto para The Big Story: Complete Pipeline Rewrite" title="Link direto para The Big Story: Complete Pipeline Rewrite" translate="no">​</a></h2>
+<p>The headline feature of this release is a complete rewrite of the data
+pipeline backend. The new architecture is based on a Directed Acyclic Graph
+(DAG), which brings significant improvements:</p>
+<ul>
+<li class=""><strong>Better performance</strong> for complex projects with many operations</li>
+<li class=""><strong>Reduced memory usage</strong> through more efficient data handling</li>
+<li class=""><strong>Smoother UI responsiveness</strong> during heavy processing</li>
+<li class=""><strong>Fixed memory leaks</strong> that affected long editing sessions</li>
+</ul>
+<p>This foundational upgrade makes Rayforge more robust and prepares the
+codebase for future features.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="unified-raster-operations">Unified Raster Operations<a href="https://rayforge.org/pt-BR/blog/rayforge-1.1-pipeline-rewrite#unified-raster-operations" class="hash-link" aria-label="Link direto para Unified Raster Operations" title="Link direto para Unified Raster Operations" translate="no">​</a></h2>
+<p>The old "raster", "depth", and "dither" operations have been merged into a
+single, unified raster operation. This simplifies the workflow while giving
+you more control:</p>
+<ul>
+<li class=""><strong>Configurable line distance</strong> in all raster operations</li>
+<li class=""><strong>New "Raster (Dither)" operation</strong> with configurable algorithms</li>
+<li class=""><strong>Auto thresholding</strong> for Variable Power and Multipass modes</li>
+<li class=""><strong>Histogram</strong> in the raster engraver for visual threshold setting</li>
+<li class=""><strong>Symbolic visualization</strong> of raster direction in the rasterizer</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="g-code-console">G-code Console<a href="https://rayforge.org/pt-BR/blog/rayforge-1.1-pipeline-rewrite#g-code-console" class="hash-link" aria-label="Link direto para G-code Console" title="Link direto para G-code Console" translate="no">​</a></h2>
+<p>The log view has been replaced with a fully-featured G-code terminal. You can
+now send commands directly to your machine, view responses in real-time, and
+interact with your laser cutter more directly than ever before.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="more-new-features">More New Features<a href="https://rayforge.org/pt-BR/blog/rayforge-1.1-pipeline-rewrite#more-new-features" class="hash-link" aria-label="Link direto para More New Features" title="Link direto para More New Features" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="export-support">Export Support<a href="https://rayforge.org/pt-BR/blog/rayforge-1.1-pipeline-rewrite#export-support" class="hash-link" aria-label="Link direto para Export Support" title="Link direto para Export Support" translate="no">​</a></h3>
+<p>You can now export your documents or selected objects to SVG and DXF formats.
+This is great for sharing designs or using them in other software.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-improvements">Sketcher Improvements<a href="https://rayforge.org/pt-BR/blog/rayforge-1.1-pipeline-rewrite#sketcher-improvements" class="hash-link" aria-label="Link direto para Sketcher Improvements" title="Link direto para Sketcher Improvements" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Angle constraints</strong> are now available in the parametric sketcher</li>
+<li class=""><strong>Conflicting constraints</strong> are highlighted in red for easier debugging</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="machine-configuration">Machine Configuration<a href="https://rayforge.org/pt-BR/blog/rayforge-1.1-pipeline-rewrite#machine-configuration" class="hash-link" aria-label="Link direto para Machine Configuration" title="Link direto para Machine Configuration" translate="no">​</a></h3>
+<ul>
+<li class="">Axis extents, work surface, and soft limits can now be configured per machine</li>
+<li class="">Built-in G-code dialect supporting dynamic power mode</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-additions">Other Additions<a href="https://rayforge.org/pt-BR/blog/rayforge-1.1-pipeline-rewrite#other-additions" class="hash-link" aria-label="Link direto para Other Additions" title="Link direto para Other Additions" translate="no">​</a></h3>
+<ul>
+<li class="">Increased maximum laser spot size to 10 mm</li>
+<li class=""><code>RAYFORGE_MAX_WORKERS</code> environment variable to limit processes</li>
+<li class="">macOS packaging scripts and resources for better platform support</li>
+<li class=""><code>--uiscript</code> CLI argument for executing scripts after the UI is up</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/pt-BR/blog/rayforge-1.1-pipeline-rewrite#bug-fixes" class="hash-link" aria-label="Link direto para Bug Fixes" title="Link direto para Bug Fixes" translate="no">​</a></h2>
+<p>This release addresses many issues:</p>
+<ul>
+<li class="">Multiple memory leaks in the data pipeline</li>
+<li class="">Race conditions between worker pool task completion and pipeline shutdown</li>
+<li class="">Camera device scanning crash on Windows</li>
+<li class="">Multipass post-processor exception</li>
+<li class="">Rasterizer angle causing distortion</li>
+<li class="">Various macOS issues: shm_open length errors, SVG rendering fallback,
+keyboard shortcuts</li>
+<li class="">Workpiece stage not emitting correct node state</li>
+<li class="">Zoom resolution stuck until resizing at least once</li>
+<li class="">Blurry view overlay on startup</li>
+<li class="">Unresponsive serial ports now handled gracefully</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="special-thanks">Special Thanks<a href="https://rayforge.org/pt-BR/blog/rayforge-1.1-pipeline-rewrite#special-thanks" class="hash-link" aria-label="Link direto para Special Thanks" title="Link direto para Special Thanks" translate="no">​</a></h2>
+<p>This release was made possible with the support of our Patreon supporters:</p>
+<ul>
+<li class="">2 anonymous contributors</li>
+<li class="">Amsel</li>
+</ul>
+<p>Thank you for supporting Rayforge development!</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-11">Download Rayforge 1.1<a href="https://rayforge.org/pt-BR/blog/rayforge-1.1-pipeline-rewrite#download-rayforge-11" class="hash-link" aria-label="Link direto para Download Rayforge 1.1" title="Link direto para Download Rayforge 1.1" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://github.com/barebaric/rayforge/releases" target="_blank" rel="noopener noreferrer" class="">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/pt-BR/blog/rayforge-1.1-pipeline-rewrite#join-the-community" class="hash-link" aria-label="Link direto para Join the Community" title="Link direto para Join the Community" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content>
+        <author>
+            <name>Rayforge Team</name>
+            <uri>https://github.com/barebaric/rayforge</uri>
+        </author>
+        <category label="release" term="release"/>
+        <category label="1.1" term="1.1"/>
+        <category label="pipeline" term="pipeline"/>
+        <category label="raster" term="raster"/>
+        <category label="gcode" term="gcode"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Rayforge 1.0 - Uma Celebração do Primeiro Aniversário]]></title>
         <id>https://rayforge.org/pt-BR/blog/rayforge-1.0-first-birthday</id>

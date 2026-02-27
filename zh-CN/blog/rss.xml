@@ -4,10 +4,110 @@
         <title>Rayforge Blog</title>
         <link>https://rayforge.org/zh-CN/blog</link>
         <description>Rayforge Blog</description>
-        <lastBuildDate>Thu, 29 Jan 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 27 Feb 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh-CN</language>
+        <item>
+            <title><![CDATA[Rayforge 1.1 - MacOS Support, Pipeline Rewrite, G-code Console, and Unified Raster]]></title>
+            <link>https://rayforge.org/zh-CN/blog/rayforge-1.1-pipeline-rewrite</link>
+            <guid>https://rayforge.org/zh-CN/blog/rayforge-1.1-pipeline-rewrite</guid>
+            <pubDate>Fri, 27 Feb 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Rayforge 1.1]]></description>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 1.1" src="https://rayforge.org/zh-CN/assets/images/rayforge-1.1-7e0d0638da78baa86b6281fa7f32df3b.png" width="1344" height="768" class="img_ev3q"></p>
+<p>Rayforge 1.1 brings a powerful new G-code console, unified raster operations,
+and a completely rebuilt data pipeline for improved performance and stability.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="macos-support">MacOS Support<a href="https://rayforge.org/zh-CN/blog/rayforge-1.1-pipeline-rewrite#macos-support" class="hash-link" aria-label="MacOS Support 的直接链接" title="MacOS Support 的直接链接" translate="no">​</a></h2>
+<p>Thanks to the incredible work of GitHub user <strong>pgilfernandez</strong>, Rayforge
+now officially supports macOS! Both Intel and Apple Silicon Macs are
+supported. This has been a long-requested feature, and we're thrilled to
+welcome Mac users to the Rayforge community.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-big-story-complete-pipeline-rewrite">The Big Story: Complete Pipeline Rewrite<a href="https://rayforge.org/zh-CN/blog/rayforge-1.1-pipeline-rewrite#the-big-story-complete-pipeline-rewrite" class="hash-link" aria-label="The Big Story: Complete Pipeline Rewrite 的直接链接" title="The Big Story: Complete Pipeline Rewrite 的直接链接" translate="no">​</a></h2>
+<p>The headline feature of this release is a complete rewrite of the data
+pipeline backend. The new architecture is based on a Directed Acyclic Graph
+(DAG), which brings significant improvements:</p>
+<ul>
+<li class=""><strong>Better performance</strong> for complex projects with many operations</li>
+<li class=""><strong>Reduced memory usage</strong> through more efficient data handling</li>
+<li class=""><strong>Smoother UI responsiveness</strong> during heavy processing</li>
+<li class=""><strong>Fixed memory leaks</strong> that affected long editing sessions</li>
+</ul>
+<p>This foundational upgrade makes Rayforge more robust and prepares the
+codebase for future features.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="unified-raster-operations">Unified Raster Operations<a href="https://rayforge.org/zh-CN/blog/rayforge-1.1-pipeline-rewrite#unified-raster-operations" class="hash-link" aria-label="Unified Raster Operations 的直接链接" title="Unified Raster Operations 的直接链接" translate="no">​</a></h2>
+<p>The old "raster", "depth", and "dither" operations have been merged into a
+single, unified raster operation. This simplifies the workflow while giving
+you more control:</p>
+<ul>
+<li class=""><strong>Configurable line distance</strong> in all raster operations</li>
+<li class=""><strong>New "Raster (Dither)" operation</strong> with configurable algorithms</li>
+<li class=""><strong>Auto thresholding</strong> for Variable Power and Multipass modes</li>
+<li class=""><strong>Histogram</strong> in the raster engraver for visual threshold setting</li>
+<li class=""><strong>Symbolic visualization</strong> of raster direction in the rasterizer</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="g-code-console">G-code Console<a href="https://rayforge.org/zh-CN/blog/rayforge-1.1-pipeline-rewrite#g-code-console" class="hash-link" aria-label="G-code Console 的直接链接" title="G-code Console 的直接链接" translate="no">​</a></h2>
+<p>The log view has been replaced with a fully-featured G-code terminal. You can
+now send commands directly to your machine, view responses in real-time, and
+interact with your laser cutter more directly than ever before.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="more-new-features">More New Features<a href="https://rayforge.org/zh-CN/blog/rayforge-1.1-pipeline-rewrite#more-new-features" class="hash-link" aria-label="More New Features 的直接链接" title="More New Features 的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="export-support">Export Support<a href="https://rayforge.org/zh-CN/blog/rayforge-1.1-pipeline-rewrite#export-support" class="hash-link" aria-label="Export Support 的直接链接" title="Export Support 的直接链接" translate="no">​</a></h3>
+<p>You can now export your documents or selected objects to SVG and DXF formats.
+This is great for sharing designs or using them in other software.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-improvements">Sketcher Improvements<a href="https://rayforge.org/zh-CN/blog/rayforge-1.1-pipeline-rewrite#sketcher-improvements" class="hash-link" aria-label="Sketcher Improvements 的直接链接" title="Sketcher Improvements 的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Angle constraints</strong> are now available in the parametric sketcher</li>
+<li class=""><strong>Conflicting constraints</strong> are highlighted in red for easier debugging</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="machine-configuration">Machine Configuration<a href="https://rayforge.org/zh-CN/blog/rayforge-1.1-pipeline-rewrite#machine-configuration" class="hash-link" aria-label="Machine Configuration 的直接链接" title="Machine Configuration 的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">Axis extents, work surface, and soft limits can now be configured per machine</li>
+<li class="">Built-in G-code dialect supporting dynamic power mode</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-additions">Other Additions<a href="https://rayforge.org/zh-CN/blog/rayforge-1.1-pipeline-rewrite#other-additions" class="hash-link" aria-label="Other Additions 的直接链接" title="Other Additions 的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">Increased maximum laser spot size to 10 mm</li>
+<li class=""><code>RAYFORGE_MAX_WORKERS</code> environment variable to limit processes</li>
+<li class="">macOS packaging scripts and resources for better platform support</li>
+<li class=""><code>--uiscript</code> CLI argument for executing scripts after the UI is up</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/zh-CN/blog/rayforge-1.1-pipeline-rewrite#bug-fixes" class="hash-link" aria-label="Bug Fixes 的直接链接" title="Bug Fixes 的直接链接" translate="no">​</a></h2>
+<p>This release addresses many issues:</p>
+<ul>
+<li class="">Multiple memory leaks in the data pipeline</li>
+<li class="">Race conditions between worker pool task completion and pipeline shutdown</li>
+<li class="">Camera device scanning crash on Windows</li>
+<li class="">Multipass post-processor exception</li>
+<li class="">Rasterizer angle causing distortion</li>
+<li class="">Various macOS issues: shm_open length errors, SVG rendering fallback,
+keyboard shortcuts</li>
+<li class="">Workpiece stage not emitting correct node state</li>
+<li class="">Zoom resolution stuck until resizing at least once</li>
+<li class="">Blurry view overlay on startup</li>
+<li class="">Unresponsive serial ports now handled gracefully</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="special-thanks">Special Thanks<a href="https://rayforge.org/zh-CN/blog/rayforge-1.1-pipeline-rewrite#special-thanks" class="hash-link" aria-label="Special Thanks 的直接链接" title="Special Thanks 的直接链接" translate="no">​</a></h2>
+<p>This release was made possible with the support of our Patreon supporters:</p>
+<ul>
+<li class="">2 anonymous contributors</li>
+<li class="">Amsel</li>
+</ul>
+<p>Thank you for supporting Rayforge development!</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-11">Download Rayforge 1.1<a href="https://rayforge.org/zh-CN/blog/rayforge-1.1-pipeline-rewrite#download-rayforge-11" class="hash-link" aria-label="Download Rayforge 1.1 的直接链接" title="Download Rayforge 1.1 的直接链接" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://github.com/barebaric/rayforge/releases" target="_blank" rel="noopener noreferrer" class="">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/zh-CN/blog/rayforge-1.1-pipeline-rewrite#join-the-community" class="hash-link" aria-label="Join the Community 的直接链接" title="Join the Community 的直接链接" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content:encoded>
+            <category>release</category>
+            <category>1.1</category>
+            <category>pipeline</category>
+            <category>raster</category>
+            <category>gcode</category>
+        </item>
         <item>
             <title><![CDATA[Rayforge 1.0 - 周岁庆典]]></title>
             <link>https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday</link>
@@ -16,7 +116,7 @@
             <description><![CDATA[Rayforge 1.0]]></description>
             <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 1.0" src="https://rayforge.org/zh-CN/assets/images/rayforge-1.0-95669e0bab418ed91ad92eb5532ec092.png" width="1920" height="1024" class="img_ev3q"></p>
 <p>今天标志着 Rayforge 的一个特殊里程碑——我们在项目的一周岁生日当天发布 1.0 版本！从 2025 年 2 月 1 日的第一次提交开始，这已经发展成为一个功能齐全的激光切割和雕刻平台。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="迄今为止的旅程">迄今为止的旅程<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E8%BF%84%E4%BB%8A%E4%B8%BA%E6%AD%A2%E7%9A%84%E6%97%85%E7%A8%8B" class="hash-link" aria-label="迄今为止的旅程 的直接链接" title="迄今��为止的旅程 的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="迄今为止的旅程">迄今为止的旅程<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E8%BF%84%E4%BB%8A%E4%B8%BA%E6%AD%A2%E7%9A%84%E6%97%85%E7%A8%8B" class="hash-link" aria-label="迄今为止的旅程 的直接链接" title="迄今为止的旅程 的直接链接" translate="no">​</a></h2>
 <p>在过去的一年里，Rayforge 已从一个基本的激光控制工具演变为一个综合性的设计和制造平台。我们从零开始构建了一切：参数化 2D CAD 系统、3D G-code 预览、多图层支持、多激光支持、相机对齐、工作坐标系等等。</p>
 <p>此次发布代表了这一愿景的顶点——一个稳定、可用于生产的工具，能够处理现实世界的激光切割和雕刻工作流程。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="10-版本的新功能">1.0 版本的新功能<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#10-%E7%89%88%E6%9C%AC%E7%9A%84%E6%96%B0%E5%8A%9F%E8%83%BD" class="hash-link" aria-label="1.0 版本的新功能 的直接链接" title="1.0 版本的新功能 的直接链接" translate="no">​</a></h2>
@@ -119,7 +219,7 @@
             <description><![CDATA[3D 预览]]></description>
             <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="3D 预览" src="https://rayforge.org/zh-CN/assets/images/main-3d-c3b6553984105944dabffd524ac694b8.png" width="2522" height="1772" class="img_ev3q"></p>
 <p>获得专业品质的激光雕刻效果不仅需要好的硬件——您的软件设置和工作流程也很重要。以下是帮助您充分利用 Rayforge 的五个技巧。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-使用过扫描获得更平滑的光栅雕刻">1. 使用过扫描获得更平滑的光栅雕刻<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#1-%E4%BD%BF%E7%94%A8%E8%BF%87%E6%89%AB%E6%8F%8F%E8%8E%B7%E5%BE%97%E6%9B%B4%E5%B9%B3%E6%BB%91%E7%9A%84%E5%85%89%E6%A0%85%E9%9B%95%E5%88%BB" class="hash-link" aria-label="1. 使用��过扫描获得更平滑的光栅雕刻 的直接链接" title="1. 使用过扫描获得更平滑的光栅雕刻 的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-使用过扫描获得更平滑的光栅雕刻">1. 使用过扫描获得更平滑的光栅雕刻<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#1-%E4%BD%BF%E7%94%A8%E8%BF%87%E6%89%AB%E6%8F%8F%E8%8E%B7%E5%BE%97%E6%9B%B4%E5%B9%B3%E6%BB%91%E7%9A%84%E5%85%89%E6%A0%85%E9%9B%95%E5%88%BB" class="hash-link" aria-label="1. 使用过扫描获得更平滑的光栅雕刻 的直接链接" title="1. 使用过扫描获得更平滑的光栅雕刻 的直接链接" translate="no">​</a></h2>
 <p>在进行光栅雕刻时，一个常见问题是在激光改变方向的边缘处出现可见的线条或不一致。这是因为激光头需要减速和加速，这会影响雕刻质量。</p>
 <p><strong>解决方案</strong>：在光栅操作设置中启用 <strong>过扫描</strong>。</p>
 <p>过扫描将激光的移动路径延伸到实际雕刻区域之外，使激光头在进入工作区域之前达到全速，并始终保持该速度。这样可以获得更平滑、更一致的雕刻效果。</p>
@@ -257,7 +357,7 @@
             <description><![CDATA[Rayforge 主窗口]]></description>
             <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 主窗口" src="https://rayforge.org/zh-CN/assets/images/main-standard-f49dfa470825368c819126d41d15d9b1.png" width="2522" height="1772" class="img_ev3q"></p>
 <p>我们很高兴向您介绍 Rayforge，这是一款专为基于 GRBL 的激光切割机和雕刻机设计的现代化开源 G-code 发送器和控制软件。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="为什么选择-rayforge">为什么选择 Rayforge？<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-rayforge" class="hash-link" aria-label="为什么选择 Rayforge？ 的直接链接" title="为什么选择 Rayforge？ 的直接链�接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="为什么�选择-rayforge">为什么选择 Rayforge？<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-rayforge" class="hash-link" aria-label="为什么选择 Rayforge？ 的直接链接" title="为什么选择 Rayforge？ 的直接链接" translate="no">​</a></h2>
 <p>在激光切割和雕刻的世界中，拥有可靠、直观的软件与拥有优质硬件同样重要。Rayforge 从零开始构建，专注于：</p>
 <ul>
 <li class=""><strong>现代用户体验</strong>：基于 Gtk4 和 Libadwaita 构建，Rayforge 提供简洁的原生界面，在 Linux 和 Windows 上都能完美运行</li>
@@ -270,7 +370,7 @@
 <p>Rayforge 的突出功能之一是其多图层工作流程。将不同的操作分配给设计中的不同图层——在一个图层上雕刻精细细节，然后在另一个图层上切割出作品。所有操作都在一个界面中无缝管理。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3d-g-code-预览">3D G-code 预览<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#3d-g-code-%E9%A2%84%E8%A7%88" class="hash-link" aria-label="3D G-code 预览 的直接链接" title="3D G-code 预览 的直接链接" translate="no">​</a></h3>
 <p>在将作业发送到机器之前，通过我们的 3D G-code 预览精确可视化将要发生的操作。在问题发生之前发现潜在问题，节省时间和材料。</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="相机集成">相机集成<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E7%9B%B8%E6%9C%BA%E9%9B%86%E6%88%90" class="hash-link" aria-label="相机集成 ��的直接链接" title="相机集成 的直接链接" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="相机集成">相机集成<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E7%9B%B8%E6%9C%BA%E9%9B%86%E6%88%90" class="hash-link" aria-label="相机集成 的直接链接" title="相机集成 的直接链接" translate="no">​</a></h3>
 <p>使用 USB 摄像头进行精确的工件对齐、定位，甚至背景描摹。非常适合在现有材料上定位设计或制作夹具。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="高级路径生成">高级路径生成<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E9%AB%98%E7%BA%A7%E8%B7%AF%E5%BE%84%E7%94%9F%E6%88%90" class="hash-link" aria-label="高级路径生成 的直接链接" title="高级路径生成 的直接链接" translate="no">​</a></h3>
 <p>Rayforge 包括高质量图像描摹、移动时间优化、路径平滑和光斑大小插值，确保您的项目按计划完美呈现。</p>

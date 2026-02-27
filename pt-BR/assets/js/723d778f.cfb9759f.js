@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite_new=self.webpackChunkwebsite_new||[]).push([[6621],{23598(e){e.exports=JSON.parse('{"authors":[{"name":"Rayforge Team","title":"Core development team","url":"https://github.com/barebaric/rayforge","imageURL":"/pt-BR/assets/icon.svg","key":"rayforge_team","page":null,"count":4}]}')}}]);
