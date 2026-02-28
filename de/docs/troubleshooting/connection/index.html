@@ -12,8 +12,8 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/de/assets/css/styles.43b0ad27.css">
-<script src="/de/assets/js/runtime~main.d2c05ceb.js" defer="defer"></script>
-<script src="/de/assets/js/main.79dd0548.js" defer="defer"></script>
+<script src="/de/assets/js/runtime~main.39886ce2.js" defer="defer"></script>
+<script src="/de/assets/js/main.7de7bea9.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -43,13 +43,16 @@
 <li class="">Versuche einen anderen USB-Port an deinem Computer</li>
 </ol>
 <p><strong>Lösungen:</strong></p>
-<p><strong>Linux:</strong>
-Wenn du die Snap-Version verwendest, musst du serielle Port-Berechtigungen gewähren:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
-<p>Siehe <a class="" href="/de/docs/troubleshooting/snap-permissions">Snap-Berechtigungen</a> für detaillierte Linux-Einrichtung.</p>
-<p>Für Nicht-Snap-Installationen füge deinen Benutzer zur <code>dialout</code>-Gruppe hinzu:</p>
+<p><strong>Linux:</strong></p>
+<p>Zuerst füge deinen Benutzer zur <code>dialout</code>-Gruppe hinzu (erforderlich für
+Snap- und Nicht-Snap-Installationen auf den meisten Debian-basierten
+Distributionen):</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo usermod -a -G dialout $USER</span><br></span></code></pre></div></div>
 <p>Dann abmelden und wieder anmelden, damit die Änderung wirksam wird.</p>
+<p>Wenn du die Snap-Version verwendest, musst du außerdem serielle
+Port-Berechtigungen gewähren:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
+<p>Siehe <a class="" href="/de/docs/troubleshooting/snap-permissions">Snap-Berechtigungen</a> für detaillierte Linux-Einrichtung.</p>
 <p><strong>Windows:</strong></p>
 <ol>
 <li class="">Geräte-Manager öffnen (Win+X, dann Geräte-Manager auswählen)</li>
@@ -66,12 +69,15 @@ Wenn du die Snap-Version verwendest, musst du serielle Port-Berechtigungen gewä
 </ol>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="zugriff-verweigert-fehler">&quot;Zugriff verweigert&quot;-Fehler<a href="#zugriff-verweigert-fehler" class="hash-link" aria-label="Direkter Link zur &quot;Zugriff verweigert&quot;-Fehler" title="Direkter Link zur &quot;Zugriff verweigert&quot;-Fehler" translate="no">​</a></h3>
 <p><strong>Problem:</strong> Du erhältst &quot;Permission denied&quot; oder ähnliche Fehler beim Versuch zu verbinden.</p>
-<p><strong>Unter Linux (Nicht-Snap):</strong></p>
-<p>Dein Benutzer muss in der <code>dialout</code>-Gruppe sein (oder <code>uucp</code> bei einigen Distributionen):</p>
+<p><strong>Unter Linux:</strong></p>
+<p>Dein Benutzer muss in der <code>dialout</code>-Gruppe sein (oder <code>uucp</code> bei einigen
+Distributionen). Dies ist für <strong>Snap- und Nicht-Snap-Installationen</strong> auf
+Debian-basierten Distributionen erforderlich, um AppArmor DENIED-Meldungen
+zu vermeiden:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Dich selbst zur dialout-Gruppe hinzufügen</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo usermod -a -G dialout $USER</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Verifizieren, dass du in der Gruppe bist (nach Abmelden/Anmelden)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">groups | grep dialout</span><br></span></code></pre></div></div>
-<p><strong>Wichtig:</strong> Du musst dich abmelden und wieder anmelden (oder neu starten), damit Gruppenänderungen wirksam werden.</p>
-<p><strong>Unter Linux (Snap):</strong></p>
-<p>Gewähre dem Snap seriellen Port-Zugriff:</p>
+<p><strong>Wichtig:</strong> Du musst dich abmelden und wieder anmelden (oder neu starten),
+damit Gruppenänderungen wirksam werden.</p>
+<p><strong>Zusätzlich für Snap-Installationen</strong>, gewähre dem Snap seriellen Port-Zugriff:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
 <p>Siehe den Leitfaden <a class="" href="/de/docs/troubleshooting/snap-permissions">Snap-Berechtigungen</a> für weitere Details.</p>
 <p><strong>Unter Windows:</strong></p>

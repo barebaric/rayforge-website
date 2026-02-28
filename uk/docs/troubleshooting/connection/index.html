@@ -12,8 +12,8 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.43b0ad27.css">
-<script src="/uk/assets/js/runtime~main.ff349f78.js" defer="defer"></script>
-<script src="/uk/assets/js/main.7d1b2446.js" defer="defer"></script>
+<script src="/uk/assets/js/runtime~main.1f10d873.js" defer="defer"></script>
+<script src="/uk/assets/js/main.665340ee.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -43,18 +43,20 @@
 <li class="">Спробуйте інший USB-порт на вашому комп&#x27;ютері</li>
 </ol>
 <p><strong>Рішення:</strong></p>
-<p><strong>Linux:</strong>
-Якщо ви використовуєте версію Snap, вам потрібно надати дозволи на послідовний порт:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
-<p>Див. <a class="" href="/uk/docs/troubleshooting/snap-permissions">Дозволи Snap</a> для детального налаштування Linux.</p>
-<p>Для встановлень не через Snap додайте свого користувача до групи <code>dialout</code>:</p>
+<p><strong>Linux:</strong></p>
+<p>Спочатку додайте свого користувача до групи <code>dialout</code> (необхідно для обох Snap
+і не-Snap інсталяцій на більшості дистрибутивів на основі Debian):</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo usermod -a -G dialout $USER</span><br></span></code></pre></div></div>
 <p>Потім вийдіть з системи та зайдіть знову, щоб зміни набрали чинності.</p>
+<p>Якщо ви використовуєте версію Snap, вам також потрібно надати дозволи на
+послідовний порт:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
+<p>Див. <a class="" href="/uk/docs/troubleshooting/snap-permissions">Дозволи Snap</a> для детального налаштування Linux.</p>
 <p><strong>Windows:</strong></p>
 <ol>
 <li class="">Відкрийте Диспетчер пристроїв (Win+X, потім виберіть Диспетчер пристроїв)</li>
-<li class="">Шукайте під &quot;Порти (COM та LPT)&quot; ваш пристрій</li>
-<li class="">Якщо бачите жовтий значок попередження, оновіть або п еревстановіть драйвер</li>
+<li class="">Шукайте під &quot;Порти (COM та LPT)&quot; ва ш пристрій</li>
+<li class="">Якщо бачите жовтий значок попередження, оновіть або перевстановіть драйвер</li>
 <li class="">Запишіть номер COM-порту (наприклад, COM3)</li>
 <li class="">Якщо пристрій взагалі не в списку, USB-кабель або драйвер може бути несправним</li>
 </ol>
@@ -66,15 +68,18 @@
 </ol>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="помилки-відмовлено-в-дозволі">Помилки &quot;Відмовлено в дозволі&quot;<a href="#помилки-відмовлено-в-дозволі" class="hash-link" aria-label="Пряме посилання на Помилки &quot;Відмовлено в дозволі&quot;" title="Пряме посилання на Помилки &quot;Відмовлено в дозволі&quot;" translate="no">​</a></h3>
 <p><strong>Проблема:</strong> Ви отримуєте помилки &quot;Відмовлено в дозволі&quot; або подібні при спробі підключення.</p>
-<p><strong>На Linux (не Snap):</strong></p>
-<p>Вашому користувачу потрібно бути в групі <code>dialout</code> (або <code>uucp</code> на деяких дистрибутивах):</p>
+<p><strong>На Linux:</strong></p>
+<p>Вашому користувачу потрібно бути в групі <code>dialout</code> (або <code>uucp</code> на деяких
+дистрибутивах). Це необхідно для <strong>обох Snap і не-Snap інсталяцій</strong> на
+дистрибутивах на основі Debian, щоб уникнути повідомлень AppArmor DENIED:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Додайте себе до групи dialout</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo usermod -a -G dialout $USER</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Перевірте, що ви в групі (після виходу/входу)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">groups | grep dialout</span><br></span></code></pre></div></div>
-<p><strong>Важливо:</strong> Ви повинні вийти з системи та зайти знову (або перезавантажити) щоб зміни групи набрали чинності.</p>
-<p><strong>На Linux (Snap):</strong></p>
-<p>Надайте доступ до послідовного порту snap-пакету:</p>
+<p><strong>Важливо:</strong> Ви повинні вийти з системи та зайти знову (або перезавантажити)
+щоб зміни групи набрали чинності.</p>
+<p><strong>Додатково для Snap інсталяцій</strong>, надайте доступ до послідовного порту
+snap-пакету:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
 <p>Див. посібник <a class="" href="/uk/docs/troubleshooting/snap-permissions">Дозволи Snap</a> для деталей.</p>
-<p><strong>На Windows:</strong></p>
+<p><strong> На Windows:</strong></p>
 <p>Закрийте будь-які інші програми, які можуть використовувати послідовний порт, включаючи:</p>
 <ul>
 <li class="">Попередні екземпляри Rayforge</li>
@@ -114,7 +119,7 @@ Rayforge попередить вас, якщо ви виберете порти 
 <li class=""><strong>250000</strong> (менш поширена, деяка власна прошивка)</li>
 </ul>
 <p>Спробуйте різні швидкості передачі в налаштуваннях пристрою Rayforge. Найпоширеніша - <strong>115200</strong>.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="підключення-постійно-розривається">Підключення постійно розривається<a href="#підключення-постійно-розривається" class="hash-link" aria-label="Пряме по силання на Підключення постійно розривається" title="Пряме посилання на Підключення постійно розривається" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="підключення-постійно-розривається">Підключення постійно розривається<a href="#підключення-постійно-розривається" class="hash-link" aria-label="Пряме посилання на Підключення постійно розривається" title="Пряме посилання на Підключення постійно розривається" translate="no">​</a></h3>
 <p><strong>Проблема:</strong> Rayforge успішно підключається, але постійно відключається та перепідключається.</p>
 <p><strong>Можливі причини:</strong></p>
 <ol>
@@ -140,7 +145,7 @@ Rayforge попередить вас, якщо ви виберете порти 
 <li class="">Перевірте, чи машина в стані аварії (потребує homing або очищення аварії)</li>
 </ol>
 <p><strong>Рішення:</strong></p>
-<p>Спробуйте надіслати ручну команду в Консолі:</p>
+<p>Спробуйте надіслати ручну к оманду в Консолі:</p>
 <ul>
 <li class=""><code>?</code> - Запит звіту про статус</li>
 <li class=""><code>$X</code> - Очистити аварію</li>
@@ -187,7 +192,7 @@ Rayforge попередить вас, якщо ви виберете порти 
 
 <table><thead><tr><th>Статус</th><th>Значення</th><th>Дія</th></tr></thead><tbody><tr><td><strong>Відключено</strong></td><td>Не підключено до жодного пристрою</td><td>Налаштуйте порт та підключіться</td></tr><tr><td><strong>Підключення</strong></td><td>Спроба встановити з&#x27;єднання</td><td>Чекайте, або перевірте конфігурацію якщо зависло</td></tr><tr><td><strong>Підключено</strong></td><td>Успішно підключено та отримується статус</td><td>Готово до використання</td></tr><tr><td><strong>Помилка</strong></td><td>Підключення не вдалося з помилкою</td><td>Перевірте повідомлення про помилку для деталей</td></tr><tr><td><strong>Очікування</strong></td><td>Очікування перед спробою перепідключення</td><td>Попереднє підключення не вдалося, повтор через 5с</td></tr></tbody></table>
 <hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="тестування-вашого-підключення">Тестування вашого підключення<a href="#те стування-вашого-підключення" class="hash-link" aria-label="Пряме посилання на Тестування вашого підключення" title="Пряме посилання на Тестування вашого підключення" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="тестування-вашого-підключення">Тестування вашого підключення<a href="#тестування-вашого-підключення" class="hash-link" aria-label="Пряме посилання на Тестування вашого підключення" title="Пряме посилання на Тестування вашого підключення" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="покроковий-тест-підключення">Покроковий тест підключення<a href="#покроковий-тест-підключення" class="hash-link" aria-label="Пряме посилання на Покроковий тест підключення" title="Пряме посилання на Покроковий тест підключення" translate="no">​</a></h3>
 <ol>
 <li class="">
@@ -301,6 +306,6 @@ Rayforge попередить вас, якщо ви виберете порти 
 <li class=""><a class="" href="/uk/docs/troubleshooting/debug">Режим debug</a> - Увімкнути діагностичне логування</li>
 <li class=""><a class="" href="/uk/docs/machine/general">Загальні налаштування</a> - Посібник з налаштування машини</li>
 <li class=""><a class="" href="/uk/docs/machine/device">Налаштування пристрою</a> - Довідник конфігурації GRBL</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/troubleshooting/connection.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Відредагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="сторінка документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/general-info/usage-tracking"><div class="pagination-nav__sublabel">Попередня сторінка</div><div class="pagination-nav__label">Відстеження використання</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/uk/docs/troubleshooting/debug"><div class="pagination-nav__sublabel">Наступна сторінка</div><div class="pagination-nav__label">Усунення неполадок та звітування про проблеми</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#швидка-діагностика" class="table-of-contents__link toc-highlight">Швидка діагностика</a><ul><li><a href="#симптоми" class="table-of-contents__link toc-highlight">Симптоми</a></li></ul></li><li><a href="#поширені-проблеми-та-рішення" class="table-of-contents__link toc-highlight">Поширені проблеми та рішення</a><ul><li><a href="#послідовні-порти-не-виявлено" class="table-of-contents__link toc-highlight">Послідовні порти не виявлено</a></li><li><a href="#помилки-відмовлено-в-дозволі" class="table-of-contents__link toc-highlight">Помилки &quot;Відмовлено в дозволі&quot;</a></li><li><a href="#вибрано-неправильний-послідовний-порт" class="table-of-contents__link toc-highlight">Вибрано неправильний послідовний порт</a></li><li><a href="#неправильна-швидкість-передачі" class="table-of-contents__link toc-highlight">Неправильна швидкість передачі</a></li><li><a href="#підключення-постійно-розривається" class="table-of-contents__link toc-highlight">Підключення постійно розривається</a></li><li><a href="#пристрій-не-відповідає-після-підключення" class="table-of-contents__link toc-highlight">Пристрій не відповідає після підключення</a></li></ul></li><li><a href="#повідомлення-про-статус-підключення" class="table-of-contents__link toc-highlight">Повідомлення про статус підключення</a></li><li><a href="#тестування-вашого-підключення" class="table-of-contents__link toc-highlight">Тестування вашого підключення</a><ul><li><a href="#покроковий-тест-підключення" class="table-of-contents__link toc-highlight">Покроковий тест підключення</a></li><li><a href="#використання-debug-логів" class="table-of-contents__link toc-highlight">Використання debug-логів</a></li></ul></li><li><a href="#розширене-усунення-неполадок" class="table-of-contents__link toc-highlight">Розширене усунення неполадок</a><ul><li><a href="#ручна-перевірка-доступності-порту" class="table-of-contents__link toc-highlight">Ручна перевірка доступності порту</a></li><li><a href="#сумісність-прошивки" class="table-of-contents__link toc-highlight">Сумісність прошивки</a></li><li><a href="#usb-до-послідовних-чіпсетів" class="table-of-contents__link toc-highlight">USB-до-послідовних чіпсетів</a></li></ul></li><li><a href="#все-ще-є-проблеми" class="table-of-contents__link toc-highlight">Все ще є проблеми?</a></li><li><a href="#повязані-сторінки" class="table-of-contents__link toc-highlight">Пов&#39;язані сторінки</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/troubleshooting/connection.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Відредагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="сторінка документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/general-info/usage-tracking"><div class="pagination-nav__sublabel">Попередня сторінка</div><div class="pagination-nav__label">Відстеження використання</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/uk/docs/troubleshooting/debug"><div class="pagination-nav__sublabel">Наступна сторінка</div><div class="pagination-nav__label">Усунення неполадок та звітування про проблеми</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#швидка-діагностика" class="table-of-contents__link toc-highlight">Швидка діагностика</a><ul><li><a href="#симптоми" class="table-of-contents__link toc-highlight">Симптоми</a></li></ul></li><li><a href="#поширені-проблеми-та-рішення" class="table-of-contents__link toc-highlight">Поширені проблеми та рішення</a><ul><li><a href="#послідовні-порти-не-виявлено" class="table-of-contents__link toc-highlight">Послідовні порти не виявлено</a></li><li><a href="#помилки-відмовлено-в-дозволі" class="table-of-contents__link toc-highlight">Помилки &quot;Відмовлено в дозволі&quot;</a></li><li><a href="#вибрано-неправильний-послідовний-порт" class="table-of-contents__link toc-highlight">Вибрано неправильний послідовний порт</a></li><li><a href="#неправильна-швидкість-передачі" class="table-of-contents__link toc-highlight">Неправильна швидкість передачі</a></li><li><a href="#підключення-постійно-розривається" class="table-of-contents__link toc-highlight">Підключення постійно розривається</a></li><li><a href="#пристрій-не-відповідає-після-підключення" class="table-of-contents__link toc-highlight">Пристрій не відповідає після підключення</a></li></ul></li><li><a href="#повідомлення-про-статус-підкл ючення" class="table-of-contents__link toc-highlight">Повідомлення про статус підключення</a></li><li><a href="#тестування-вашого-підключення" class="table-of-contents__link toc-highlight">Тестування вашого підключення</a><ul><li><a href="#покроковий-тест-підключення" class="table-of-contents__link toc-highlight">Покроковий тест підключення</a></li><li><a href="#використання-debug-логів" class="table-of-contents__link toc-highlight">Використання debug-логів</a></li></ul></li><li><a href="#розширене-усунення-неполадок" class="table-of-contents__link toc-highlight">Розширене усунення неполадок</a><ul><li><a href="#ручна-перевірка-доступності-порту" class="table-of-contents__link toc-highlight">Ручна перевірка доступності порту</a></li><li><a href="#сумісність-прошивки" class="table-of-contents__link toc-highlight">Сумісність прошивки</a></li><li><a href="#usb-до-послідовних-чіпсетів" class="table-of-contents__link toc-highlight">USB-до-послідовних чіпсетів</a></li></ul></li><li><a href="#все-ще-є-проблеми" class="table-of-contents__link toc-highlight">Все ще є проблеми?</a></li><li><a href="#повязані-сторінки" class="table-of-contents__link toc-highlight">Пов&#39;язані сторінки</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

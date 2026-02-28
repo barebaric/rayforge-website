@@ -12,8 +12,8 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/pt-BR/assets/css/styles.d1aa29d4.css">
-<script src="/pt-BR/assets/js/runtime~main.504c3e69.js" defer="defer"></script>
-<script src="/pt-BR/assets/js/main.3fce1998.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/runtime~main.f3a02438.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/main.1a2f96f2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -43,13 +43,15 @@
 <li class="">Tente uma porta USB diferente no seu computador</li>
 </ol>
 <p><strong>Soluções:</strong></p>
-<p><strong>Linux:</strong>
-Se você está usando a versão Snap, você precisa conceder permissões de porta serial:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
-<p>Veja <a class="" href="/pt-BR/docs/troubleshooting/snap-permissions">Permissões Snap</a> para configuração detalhada do Linux.</p>
-<p>Para instalações não-Snap, adicione seu usuário ao grupo <code>dialout</code>:</p>
+<p><strong>Linux:</strong></p>
+<p>Primeiro, adicione seu usuário ao grupo <code>dialout</code> (necessário para ambas
+instalações Snap e não-Snap na maioria das distribuições baseadas em Debian):</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo usermod -a -G dialout $USER</span><br></span></code></pre></div></div>
 <p>Então saia e entre novamente para a mudança ter efeito.</p>
+<p>Se você está usando a versão Snap, você também precisa conceder permissões de
+porta serial:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
+<p>Veja <a class="" href="/pt-BR/docs/troubleshooting/snap-permissions">Permissões Snap</a> para configuração detalhada do Linux.</p>
 <p><strong>Windows:</strong></p>
 <ol>
 <li class="">Abra Gerenciador de Dispositivos (Win+X, depois selecione Gerenciador de Dispositivos)</li>
@@ -66,12 +68,14 @@ Se você está usando a versão Snap, você precisa conceder permissões de port
 </ol>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="erros-de-permissão-negada">Erros de Permissão Negada<a href="#erros-de-permissão-negada" class="hash-link" aria-label="Link direto para Erros de Permissão Negada" title="Link direto para Erros de Permissão Negada" translate="no">​</a></h3>
 <p><strong>Problema:</strong> Você recebe erros &quot;Permissão negada&quot; ou similares ao tentar conectar.</p>
-<p><strong>No Linux (não-Snap):</strong></p>
-<p>Seu usuário precisa estar no grupo <code>dialout</code> (ou <code>uucp</code> em algumas distribuições):</p>
+<p><strong>No Linux:</strong></p>
+<p>Seu usuário precisa estar no grupo <code>dialout</code> (ou <code>uucp</code> em algumas distribuições).
+Isto é necessário para <strong>ambas instalações Snap e não-Snap</strong> em distribuições
+baseadas em Debian para evitar mensagens AppArmor DENIED:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Adicione você mesmo ao grupo dialout</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo usermod -a -G dialout $USER</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Verifique se você está no grupo (após sair/entrar)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">groups | grep dialout</span><br></span></code></pre></div></div>
-<p><strong>Importante:</strong> Voc ê deve sair e entrar novamente (ou reiniciar) para mudanças de grupo terem efeito.</p>
-<p><strong>No Linux (Snap):</strong></p>
-<p>Conceda acesso à porta serial ao snap:</p>
+<p><strong>Importante:</strong> Você deve sair e entrar novamente (ou reiniciar) para mudanças
+de grupo terem efeito.</p>
+<p><strong>Adicionalmente para instalações Snap</strong>, conceda acesso à porta serial ao snap:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
 <p>Veja o guia <a class="" href="/pt-BR/docs/troubleshooting/snap-permissions">Permissões Snap</a> para mais detalhes.</p>
 <p><strong>No Windows:</strong></p>

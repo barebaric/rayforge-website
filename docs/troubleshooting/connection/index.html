@@ -12,7 +12,7 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.4e9e11c4.css">
-<script src="/assets/js/runtime~main.e6192cf7.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.3d8f6838.js" defer="defer"></script>
 <script src="/assets/js/main.d11b8433.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -43,13 +43,15 @@
 <li class="">Try a different USB port on your computer</li>
 </ol>
 <p><strong>Solutions:</strong></p>
-<p><strong>Linux:</strong>
-If you&#x27;re using the Snap version, you need to grant serial port permissions:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
-<p>See <a class="" href="/docs/troubleshooting/snap-permissions">Snap Permissions</a> for detailed Linux setup.</p>
-<p>For non-Snap installations, add your user to the <code>dialout</code> group:</p>
+<p><strong>Linux:</strong></p>
+<p>First, add your user to the <code>dialout</code> group (required for both Snap and
+non-Snap installations on most Debian-based distributions):</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo usermod -a -G dialout $USER</span><br></span></code></pre></div></div>
 <p>Then log out and log back in for the change to take effect.</p>
+<p>If you&#x27;re using the Snap version, you also need to grant serial port
+permissions:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
+<p>See <a class="" href="/docs/troubleshooting/snap-permissions">Snap Permissions</a> for detailed Linux setup.</p>
 <p><strong>Windows:</strong></p>
 <ol>
 <li class="">Open Device Manager (Win+X, then select Device Manager)</li>
@@ -66,12 +68,14 @@ If you&#x27;re using the Snap version, you need to grant serial port permissions
 </ol>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="permission-denied-errors">Permission Denied Errors<a href="#permission-denied-errors" class="hash-link" aria-label="Direct link to Permission Denied Errors" title="Direct link to Permission Denied Errors" translate="no">​</a></h3>
 <p><strong>Problem:</strong> You get &quot;Permission denied&quot; or similar errors when trying to connect.</p>
-<p><strong>On Linux (non-Snap):</strong></p>
-<p>Your user needs to be in the <code>dialout</code> group (or <code>uucp</code> on some distributions):</p>
+<p><strong>On Linux:</strong></p>
+<p>Your user needs to be in the <code>dialout</code> group (or <code>uucp</code> on some distributions).
+This is required for <strong>both Snap and non-Snap installations</strong> on Debian-based
+distributions to avoid AppArmor DENIED messages:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Add yourself to the dialout group</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo usermod -a -G dialout $USER</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Verify you&#x27;re in the group (after logging out/in)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">groups | grep dialout</span><br></span></code></pre></div></div>
-<p><strong>Important:</strong> You must log out and log back in (or reboot) for group changes to take effect.</p>
-<p><strong>On Linux (Snap):</strong></p>
-<p>Grant serial port access to the snap:</p>
+<p><strong>Important:</strong> You must log out and log back in (or reboot) for group changes
+to take effect.</p>
+<p><strong>Additionally for Snap installations</strong>, grant serial port access to the snap:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
 <p>See the <a class="" href="/docs/troubleshooting/snap-permissions">Snap Permissions</a> guide for more details.</p>
 <p><strong>On Windows:</strong></p>

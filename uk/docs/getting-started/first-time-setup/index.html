@@ -12,8 +12,8 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.43b0ad27.css">
-<script src="/uk/assets/js/runtime~main.ff349f78.js" defer="defer"></script>
-<script src="/uk/assets/js/main.7d1b2446.js" defer="defer"></script>
+<script src="/uk/assets/js/runtime~main.1f10d873.js" defer="defer"></script>
+<script src="/uk/assets/js/main.665340ee.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -108,19 +108,23 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="пристрій-не-знайдено">Пристрій не знайдено<a href="#пристрій-не-знайдено" class="hash-link" aria-label="Пряме посилання на Пристрій не знайдено" title="Пряме посилання на Пристрій не знайдено" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Linux (Serial)</strong>: Додайте свого користувача до групи <code>dialout</code>:</p>
+<p><strong>Linux (Serial)</strong>: Додайте свого користувача до групи <code>dialout</code>. Це
+необхідно для <strong>обох Snap і не-Snap інсталяцій</strong> на дистрибутивах на основі
+Debian, щоб уникнути повідомлень AppArmor DENIED:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo usermod -a -G dialout $USER</span><br></span></code></pre></div></div>
 <p>Вийдіть із системи та увійдіть знову, щоб зміни набули чинності.</p>
 </li>
 <li class="">
-<p><strong>Snap-пакет</strong>: Переконайтеся, що ви надали дозволи на послідовний порт:</p>
+<p><strong>Snap-пакет</strong>: На додачу до групи <code>dialout</code> вище, переконайтеся, що ви
+надали дозволи на послідовний порт:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
 </li>
 <li class="">
-<p><strong>Windows</strong>: Перевірте Диспетчер пристроїв, щоб підтвердити, що пристрій розпізнається, і запишіть номер COM-порту.</p>
+<p><strong>Windows</strong>: Перевірте Диспетчер пристроїв, щоб підтвердити, що пристрій
+розпізнається, і запишіть номер COM-порту.</p>
 </li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="у-зєднанні-відмовлено">У з&#x27;єднанні відмовлено<a href="#у-зєднанні-відмовлено" class="hash-link" aria-label="Пряме посилання на У з&#x27;єднанні відмовлено" title="Пряме посилання на У з&#x27;єднанні відмовлено" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="у-зєднанні-відмовлено">У з&#x27;єднанні відмовлено<a href="#у-зєдн анні-відмовлено" class="hash-link" aria-label="Пряме посилання на У з&#x27;єднанні відмовлено" title="Пряме посилання на У з&#x27;єднанні відмовлено" translate="no">​</a></h3>
 <ul>
 <li class="">Перевірте, що IP-адреса та номер порту правильні</li>
 <li class="">Переконайтеся, що ваша машина увімкнена та підключена до мережі</li>

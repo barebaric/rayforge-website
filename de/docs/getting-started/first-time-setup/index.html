@@ -12,8 +12,8 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/de/assets/css/styles.43b0ad27.css">
-<script src="/de/assets/js/runtime~main.d2c05ceb.js" defer="defer"></script>
-<script src="/de/assets/js/main.79dd0548.js" defer="defer"></script>
+<script src="/de/assets/js/runtime~main.39886ce2.js" defer="defer"></script>
+<script src="/de/assets/js/main.7de7bea9.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -108,16 +108,20 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="gerät-nicht-gefunden">Gerät nicht gefunden<a href="#gerät-nicht-gefunden" class="hash-link" aria-label="Direkter Link zur Gerät nicht gefunden" title="Direkter Link zur Gerät nicht gefunden" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Linux (Seriell)</strong>: Füge deinen Benutzer zur <code>dialout</code>-Gruppe hinzu:</p>
+<p><strong>Linux (Seriell)</strong>: Füge deinen Benutzer zur <code>dialout</code>-Gruppe hinzu. Dies
+ist für <strong>Snap- und Nicht-Snap-Installationen</strong> auf Debian-basierten
+Distributionen erforderlich, um AppArmor DENIED-Meldungen zu vermeiden:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo usermod -a -G dialout $USER</span><br></span></code></pre></div></div>
 <p>Melde dich ab und wieder an, damit die Änderungen wirksam werden.</p>
 </li>
 <li class="">
-<p><strong>Snap-Paket</strong>: Stelle sicher, dass du serielle Port-Berechtigungen erteilt hast:</p>
+<p><strong>Snap-Paket</strong>: Zusätzlich zur <code>dialout</code>-Gruppe oben, stelle sicher, dass
+du serielle Port-Berechtigungen erteilt hast:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
 </li>
 <li class="">
-<p><strong>Windows</strong>: Überprüfe den Geräte-Manager, um zu bestätigen, dass das Gerät erkannt wird, und notiere dir die COM-Port-Nummer.</p>
+<p><strong>Windows</strong>: Überprüfe den Geräte-Manager, um zu bestätigen, dass das Gerät
+erkannt wird, und notiere dir die COM-Port-Nummer.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="verbindung-verweigert">Verbindung verweigert<a href="#verbindung-verweigert" class="hash-link" aria-label="Direkter Link zur Verbindung verweigert" title="Direkter Link zur Verbindung verweigert" translate="no">​</a></h3>

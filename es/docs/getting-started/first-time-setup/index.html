@@ -12,8 +12,8 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/es/assets/css/styles.a1195d80.css">
-<script src="/es/assets/js/runtime~main.fd08f581.js" defer="defer"></script>
-<script src="/es/assets/js/main.0adc8b01.js" defer="defer"></script>
+<script src="/es/assets/js/runtime~main.7e7970f6.js" defer="defer"></script>
+<script src="/es/assets/js/main.e1bc6a39.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -108,16 +108,20 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dispositivo-no-encontrado">Dispositivo No Encontrado<a href="#dispositivo-no-encontrado" class="hash-link" aria-label="Enlace directo al Dispositivo No Encontrado" title="Enlace directo al Dispositivo No Encontrado" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Linux (Serial)</strong>: Añade tu usuario al grupo <code>dialout</code>:</p>
+<p><strong>Linux (Serial)</strong>: Añade tu usuario al grupo <code>dialout</code>. Esto es requerido
+para <strong>instalaciones Snap y no Snap</strong> en distribuciones basadas en Debian
+para evitar mensajes AppArmor DENIED:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo usermod -a -G dialout $USER</span><br></span></code></pre></div></div>
 <p>Cierra sesión y vuelve a entrar para que los cambios surtan efecto.</p>
 </li>
 <li class="">
-<p><strong>Paquete Snap</strong>: Asegúrate de haber otorgado permisos de puerto serie:</p>
+<p><strong>Paquete Snap</strong>: Además del grupo <code>dialout</code> arriba, asegúrate de haber
+otorgado permisos de puerto serie:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
 </li>
 <li class="">
-<p><strong>Windows</strong>: Revisa el Administrador de Dispositivos para confirmar que el dispositivo es reconocido y anota el número de puerto COM.</p>
+<p><strong>Windows</strong>: Revisa el Administrador de Dispositivos para confirmar que el
+dispositivo es reconocido y anota el número de puerto COM.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="conexión-rechazada">Conexión Rechazada<a href="#conexión-rechazada" class="hash-link" aria-label="Enlace directo al Conexión Rechazada" title="Enlace directo al Conexión Rechazada" translate="no">​</a></h3>

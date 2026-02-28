@@ -12,8 +12,8 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/fr/assets/css/styles.4e9e11c4.css">
-<script src="/fr/assets/js/runtime~main.b1ad2b6b.js" defer="defer"></script>
-<script src="/fr/assets/js/main.798f1f07.js" defer="defer"></script>
+<script src="/fr/assets/js/runtime~main.bc42a8c3.js" defer="defer"></script>
+<script src="/fr/assets/js/main.8d77bf8c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -43,13 +43,18 @@
 <li class="">Essayez un port USB différent sur votre ordinateur</li>
 </ol>
 <p><strong>Solutions :</strong></p>
-<p><strong>Linux :</strong>
-Si vous utilisez la version Snap, vous devez accorder les permissions de port série :</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
-<p>Voir <a class="" href="/fr/docs/troubleshooting/snap-permissions">Permissions Snap</a> pour la configuration détaillée de Linux.</p>
-<p>Pour les installations non-Snap, ajoutez votre utilisateur au groupe <code>dialout</code> :</p>
+<p><strong>Linux :</strong></p>
+<p>D&#x27;abord, ajoutez votre utilisateur au groupe <code>dialout</code> (requis pour les
+installations Snap et non-Snap sur la plupart des distributions basées sur
+Debian) :</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo usermod -a -G dialout $USER</span><br></span></code></pre></div></div>
-<p>Ensuite, déconnectez-vous et reconnectez-vous pour que le changement prenne effet.</p>
+<p>Ensuite, déconnectez-vous et reconnectez-vous pour que le changement prenne
+effet.</p>
+<p>Si vous utilisez la version Snap, vous devez également accorder les
+permissions de port série :</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
+<p>Voir <a class="" href="/fr/docs/troubleshooting/snap-permissions">Permissions Snap</a> pour la configuration détaillée de
+Linux.</p>
 <p><strong>Windows :</strong></p>
 <ol>
 <li class="">Ouvrez le Gestionnaire de périphériques (Win+X, puis sélectionnez Gestionnaire de périphériques)</li>
@@ -66,12 +71,16 @@ Si vous utilisez la version Snap, vous devez accorder les permissions de port s�
 </ol>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="erreurs-de-permission-refusée">Erreurs de permission refusée<a href="#erreurs-de-permission-refusée" class="hash-link" aria-label="Lien direct vers Erreurs de permission refusée" title="Lien direct vers Erreurs de permission refusée" translate="no">​</a></h3>
 <p><strong>Problème :</strong> Vous obtenez des erreurs &quot;Permission refusée&quot; ou similaires lors de la tentative de connexion.</p>
-<p><strong>Sur Linux (non-Snap) :</strong></p>
-<p>Votre utilisateur doit être dans le groupe <code>dialout</code> (ou <code>uucp</code> sur certaines distributions) :</p>
+<p><strong>Sur Linux :</strong></p>
+<p>Votre utilisateur doit être dans le groupe <code>dialout</code> (ou <code>uucp</code> sur certaines
+distributions). Ceci est requis pour <strong>les installations Snap et non-Snap</strong>
+sur les distributions basées sur Debian pour éviter les messages AppArmor
+DENIED :</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Ajoutez-vous au groupe dialout</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo usermod -a -G dialout $USER</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Vérifiez que vous êtes dans le groupe (après déconnexion/reconnexion)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">groups | grep dialout</span><br></span></code></pre></div></div>
-<p><strong>Important :</strong> Vous devez vous déconnecter et vous reconnecter (ou redémarrer) pour que les changements de groupe prennent effet.</p>
-<p><strong>Sur Linux (Snap) :</strong></p>
-<p>Accordez l&#x27;accès au port série au snap :</p>
+<p><strong>Important :</strong> Vous devez vous déconnecter et vous reconnecter (ou redémarrer)
+pour que les changements de groupe prennent effet.</p>
+<p><strong>De plus pour les installations Snap</strong>, accordez l&#x27;accès au port série au
+snap :</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
 <p>Voir le guide <a class="" href="/fr/docs/troubleshooting/snap-permissions">Permissions Snap</a> pour plus de détails.</p>
 <p><strong>Sur Windows :</strong></p>

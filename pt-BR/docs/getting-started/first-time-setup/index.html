@@ -12,8 +12,8 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/pt-BR/assets/css/styles.d1aa29d4.css">
-<script src="/pt-BR/assets/js/runtime~main.504c3e69.js" defer="defer"></script>
-<script src="/pt-BR/assets/js/main.3fce1998.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/runtime~main.f3a02438.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/main.1a2f96f2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -108,16 +108,20 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dispositivo-não-encontrado">Dispositivo Não Encontrado<a href="#dispositivo-não-encontrado" class="hash-link" aria-label="Link direto para Dispositivo Não Encontrado" title="Link direto para Dispositivo Não Encontrado" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Linux (Serial)</strong>: Adicione seu usuário ao grupo <code>dialout</code>:</p>
+<p><strong>Linux (Serial)</strong>: Adicione seu usuário ao grupo <code>dialout</code>. Isto é
+necessário para <strong>ambas instalações Snap e não-Snap</strong> em distribuições
+baseadas em Debian para evitar mensagens AppArmor DENIED:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo usermod -a -G dialout $USER</span><br></span></code></pre></div></div>
 <p>Saia e entre novamente para que as alterações tenham efeito.</p>
 </li>
 <li class="">
-<p><strong>Pacote Snap</strong>: Certifique-se de ter concedido permissões de porta serial:</p>
+<p><strong>Pacote Snap</strong>: Além do grupo <code>dialout</code> acima, certifique-se de ter
+concedido permissões de porta serial:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo snap connect rayforge:serial-port</span><br></span></code></pre></div></div>
 </li>
 <li class="">
-<p><strong>Windows</strong>: Verifique o Gerenciador de Dispositivos para confirmar se o dispositivo é reconhecido e anote o número da porta COM.</p>
+<p><strong>Windows</strong>: Verifique o Gerenciador de Dispositivos para confirmar se o
+dispositivo é reconhecido e anote o número da porta COM.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="conexão-recusada">Conexão Recusada<a href="#conexão-recusada" class="hash-link" aria-label="Link direto para Conexão Recusada" title="Link direto para Conexão Recusada" translate="no">​</a></h3>
