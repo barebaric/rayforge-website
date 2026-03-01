@@ -12,7 +12,7 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.4e9e11c4.css">
-<script src="/assets/js/runtime~main.2b371e3f.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.f873f62a.js" defer="defer"></script>
 <script src="/assets/js/main.77282c04.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -88,17 +88,17 @@ resources, close connections, unregister handlers, etc.</p>
 <p><strong><code>register_machines</code></strong> (<code>machine_manager</code>)
 : Called during startup to register new machine drivers.</p>
 <p><strong><code>register_steps</code></strong> (<code>step_registry</code>)
-: Called to allow plugins to register custom step types.</p>
+: Called to allow addons to register custom step types.</p>
 <p><strong><code>register_producers</code></strong> (<code>producer_registry</code>)
-: Called to allow plugins to register custom ops producers.</p>
+: Called to allow addons to register custom ops producers.</p>
 <p><strong><code>register_step_widgets</code></strong> (<code>widget_registry</code>)
-: Called to allow plugins to register custom step settings widgets.</p>
+: Called to allow addons to register custom step settings widgets.</p>
 <p><strong><code>register_menu_items</code></strong> (<code>menu_registry</code>)
-: Called to allow plugins to register menu items.</p>
+: Called to allow addons to register menu items.</p>
 <p><strong><code>register_commands</code></strong> (<code>command_registry</code>)
-: Called to allow plugins to register editor commands.</p>
+: Called to allow addons to register editor commands.</p>
 <p><strong><code>register_actions</code></strong> (<code>window</code>)
-: Called to allow plugins to register window actions.</p>
+: Called to allow addons to register window actions.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-accessing-rayforge-data">6. Accessing Rayforge Data<a href="#6-accessing-rayforge-data" class="hash-link" aria-label="Direct link to 6. Accessing Rayforge Data" title="Direct link to 6. Accessing Rayforge Data" translate="no">​</a></h2>
 <p>The <code>rayforge_init</code> hook provides the <strong><code>RayforgeContext</code></strong>. Through this object,
 you can access:</p>
@@ -113,7 +113,7 @@ you can access:</p>
 <li class=""><strong><code>context.dialect_mgr</code></strong>: G-code dialect manager.</li>
 <li class=""><strong><code>context.language</code></strong>: Current language code for localized content.</li>
 <li class=""><strong><code>context.addon_mgr</code></strong>: Addon manager instance.</li>
-<li class=""><strong><code>context.plugin_mgr</code></strong>: Plugin manager instance.</li>
+<li class=""><strong><code>context.plugin_mgr</code></strong>: Plugin manager instance (internal pluggy).</li>
 <li class=""><strong><code>context.debug_dump_manager</code></strong>: Debug dump manager.</li>
 <li class=""><strong><code>context.artifact_store</code></strong>: Pipeline artifact store.</li>
 </ul>
