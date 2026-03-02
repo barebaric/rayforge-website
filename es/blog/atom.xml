@@ -6,7 +6,7 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rayforge.org/es/blog"/>
     <subtitle>Rayforge Blog</subtitle>
-    <icon>https://rayforge.org/es/assets/favicon.png</icon>
+    <icon>https://rayforge.org/es/images/favicon.png</icon>
     <entry>
         <title type="html"><![CDATA[Rayforge 1.1 - MacOS Support, Pipeline Rewrite, G-code Console, and Unified Raster]]></title>
         <id>https://rayforge.org/es/blog/rayforge-1.1-pipeline-rewrite</id>
