@@ -12,7 +12,7 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.43b0ad27.css">
-<script src="/uk/assets/js/runtime~main.9ed80109.js" defer="defer"></script>
+<script src="/uk/assets/js/runtime~main.0b2e016c.js" defer="defer"></script>
 <script src="/uk/assets/js/main.49e09a69.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -111,7 +111,7 @@ UID. Він також <strong>має</strong> власну <code>Geometry</code
 асоціює групу деталей з одним виробничим
 робочим процесом.</li>
 <li class=""><strong>Ключові властивості:</strong> <code>children</code> (WorkPieces, Groups, one Workflow),
-<code>visible</code>, <code>stock_item_uid</code>.</li>
+<code>visible</code>.</li>
 </ul>
 </li>
 <li class="">
@@ -154,8 +154,9 @@ UID. Він також <strong>має</strong> власну <code>Geometry</code
 <p><strong><code>StockItem</code></strong></p>
 <ul>
 <li class=""><strong>Роль:</strong> Представляє шматок фізичного матеріалу в документі,
-визначений власною векторною <code>geometry</code>. <code>Layer</code> можуть бути призначені до
-конкретного елемента заготовки.</li>
+визначений його векторною <code>geometry</code>. StockItems є елементами
+рівня документа (дочірні елементи <code>Doc</code>, поряд з <code>Layer</code>) і
+існують незалежно від шарів.</li>
 </ul>
 </li>
 </ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/docmodel.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Відредагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="сторінка документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/developer/architecture"><div class="pagination-nav__sublabel">Попередня сторінка</div><div class="pagination-nav__label">Архітектура Rayforge</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/uk/docs/developer/importer"><div class="pagination-nav__sublabel">Наступна сторінка</div><div class="pagination-nav__label">Архітектура імпортера</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#огляд" class="table-of-contents__link toc-highlight">Огляд</a></li><li><a href="#успадкування-класів" class="table-of-contents__link toc-highlight">Успадкування класів</a></li><li><a href="#композиція-обєктів" class="table-of-contents__link toc-highlight">Композиція об&#39;єктів</a></li><li><a href="#описи-docitem" class="table-of-contents__link toc-highlight">Описи DocItem</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>

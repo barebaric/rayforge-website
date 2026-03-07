@@ -217,7 +217,7 @@ keyboard shortcuts</li>
             <guid>https://rayforge.org/es/blog/5-tips-better-engraving</guid>
             <pubDate>Thu, 20 Feb 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[3D Preview]]></description>
-            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="3D Preview" src="https://rayforge.org/es/assets/images/main-3d-c3b6553984105944dabffd524ac694b8.png" width="2522" height="1772" class="img_ev3q"></p>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="3D Preview" src="https://rayforge.org/es/assets/images/main-3d-f5bba1fd405746a3a93194fe739447be.png" width="2522" height="1772" class="img_ev3q"></p>
 <p>Obtener resultados de grabado láser de calidad profesional requiere más que solo buen hardware—tu configuración de software y flujo de trabajo también importan. Aquí hay cinco consejos para ayudarte a aprovechar al máximo Rayforge.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-usa-overscan-para-un-grabado-raster-más-suave">1. Usa Overscan para un Grabado Raster Más Suave<a href="https://rayforge.org/es/blog/5-tips-better-engraving#1-usa-overscan-para-un-grabado-raster-m%C3%A1s-suave" class="hash-link" aria-label="Enlace directo al 1. Usa Overscan para un Grabado Raster Más Suave" title="Enlace directo al 1. Usa Overscan para un Grabado Raster Más Suave" translate="no">​</a></h2>
 <p>Al hacer grabado raster, un problema común es ver líneas visibles o inconsistencias en los bordes donde el láser cambia de dirección. Esto sucede porque la cabeza del láser necesita desacelerar y acelerar, lo que puede afectar la calidad del grabado.</p>
@@ -355,7 +355,7 @@ keyboard shortcuts</li>
             <guid>https://rayforge.org/es/blog/welcome-to-rayforge</guid>
             <pubDate>Sun, 15 Dec 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Rayforge Main Window]]></description>
-            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge Main Window" src="https://rayforge.org/es/assets/images/main-standard-f49dfa470825368c819126d41d15d9b1.png" width="2522" height="1772" class="img_ev3q"></p>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge Main Window" src="https://rayforge.org/es/assets/images/main-standard-cd07481f65c3f08a7a4fcaeb62c54e0a.png" width="2522" height="1772" class="img_ev3q"></p>
 <p>Estamos emocionados de presentar Rayforge, un software de control y envío de G-code moderno y de código abierto, diseñado específicamente para cortadoras y grabadoras láser basadas en GRBL.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="por-qué-rayforge">¿Por qué Rayforge?<a href="https://rayforge.org/es/blog/welcome-to-rayforge#por-qu%C3%A9-rayforge" class="hash-link" aria-label="Enlace directo al ¿Por qué Rayforge?" title="Enlace directo al ¿Por qué Rayforge?" translate="no">​</a></h2>
 <p>En el mundo del corte y grabado láser, tener un software confiable e intuitivo es tan importante como tener hardware de calidad. Rayforge fue construido desde cero con un enfoque en:</p>

@@ -12,8 +12,8 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/pt-BR/assets/css/styles.d1aa29d4.css">
-<script src="/pt-BR/assets/js/runtime~main.fd0b32c5.js" defer="defer"></script>
-<script src="/pt-BR/assets/js/main.d6fec084.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/runtime~main.78de2150.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/main.12d1fe0f.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -109,7 +109,7 @@ composite.</li>
 <li class=""><strong>Função:</strong> A unidade organizacional primária para conteúdo. Uma camada
 associa um grupo de workpieces a um único workflow de manufatura.</li>
 <li class=""><strong>Propriedades Principais:</strong> <code>children</code> (WorkPieces, Groups, um Workflow),
-<code>visible</code>, <code>stock_item_uid</code>.</li>
+<code>visible</code>.</li>
 </ul>
 </li>
 <li class="">
@@ -152,8 +152,9 @@ transformadores a serem usados.</li>
 <p><strong><code>StockItem</code></strong></p>
 <ul>
 <li class=""><strong>Função:</strong> Representa uma peça de material físico no documento,
-definida por sua própria <code>geometry</code> vetorial. <code>Layer</code>s podem ser atribuídas a um
-item de estoque específico.</li>
+definida por sua <code>geometry</code> vetorial. StockItems são itens de nível
+de documento (filhos de <code>Doc</code>, junto com <code>Layer</code>s) e existem
+independentemente de camadas.</li>
 </ul>
 </li>
 </ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/docmodel.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Páginas de documentação"><a class="pagination-nav__link pagination-nav__link--prev" href="/pt-BR/docs/developer/architecture"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Arquitetura do Rayforge</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/pt-BR/docs/developer/importer"><div class="pagination-nav__sublabel">Próximo</div><div class="pagination-nav__label">Arquitetura do Importador</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#visão-geral" class="table-of-contents__link toc-highlight">Visão Geral</a></li><li><a href="#herança-de-classes" class="table-of-contents__link toc-highlight">Herança de Classes</a></li><li><a href="#composição-de-objetos" class="table-of-contents__link toc-highlight">Composição de Objetos</a></li><li><a href="#descrições-dos-docitems" class="table-of-contents__link toc-highlight">Descrições dos DocItems</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
