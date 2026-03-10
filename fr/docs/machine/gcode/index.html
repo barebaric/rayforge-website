@@ -12,7 +12,7 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/fr/assets/css/styles.4e9e11c4.css">
-<script src="/fr/assets/js/runtime~main.592460b8.js" defer="defer"></script>
+<script src="/fr/assets/js/runtime~main.05dc384b.js" defer="defer"></script>
 <script src="/fr/assets/js/main.82f88b83.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -26,37 +26,25 @@
 <p>Sélectionnez le dialecte G-code qui correspond au firmware de votre contrôleur. Différents contrôleurs utilisent des commandes et des formats légèrement différents.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dialectes-disponibles">Dialectes Disponibles<a href="#dialectes-disponibles" class="hash-link" aria-label="Lien direct vers Dialectes Disponibles" title="Lien direct vers Dialectes Disponibles" translate="no">​</a></h3>
 <ul>
-<li class=""><strong>GRBL</strong> : Le plus courant pour les découpeuses laser de loisir. Utilise M3/M5 pour le contrôle laser.</li>
+<li class=""><strong>Grbl (Compat)</strong> : Dialecte GRBL standard pour les découpeuses laser de loisir. Utilise M3/M5 pour le contrôle laser.</li>
+<li class=""><strong>Grbl (Compat, no Z axis)</strong> : Identique à Grbl (Compat) mais sans commandes d&#x27;axe Z. Pour machines 2D uniquement.</li>
+<li class=""><strong>GRBL Dynamic</strong> : Utilise le mode de puissance laser dynamique de GRBL pour la gravure à puissance variable.</li>
+<li class=""><strong>GRBL Dynamic (no Z axis)</strong> : Mode dynamique sans commandes d&#x27;axe Z.</li>
 <li class=""><strong>Smoothieware</strong> : Pour Smoothieboard et contrôleurs similaires.</li>
 <li class=""><strong>Marlin</strong> : Pour contrôleurs basés sur Marlin.</li>
-<li class=""><strong>GRBL-compatible</strong> : Pour les contrôleurs qui suivent majoritairement la syntaxe GRBL.</li>
 </ul>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Le dialecte affecte la façon dont la puissance laser, les mouvements et autres commandes sont formatés dans le G-code de sortie.</p></div></div>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="g-code-personnalisé">G-code Personnalisé<a href="#g-code-personnalisé" class="hash-link" aria-label="Lien direct vers G-code Personnalisé" title="Lien direct vers G-code Personnalisé" translate="no">​</a></h2>
-<p>Vous pouvez personnaliser le G-code que Rayforge génère à des points spécifiques du travail.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="début-de-programme">Début de Programme<a href="#début-de-programme" class="hash-link" aria-label="Lien direct vers Début de Programme" title="Lien direct vers Début de Programme" translate="no">​</a></h3>
-<p>Commandes G-code exécutées au début de chaque travail, avant toute opération de coupe.</p>
-<p>Utilisations courantes :</p>
-<ul>
-<li class="">Définir les unités (G21 pour mm)</li>
-<li class="">Définir le mode de positionnement (G90 pour absolu)</li>
-<li class="">Initialiser l&#x27;état de la machine</li>
-</ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fin-de-programme">Fin de Programme<a href="#fin-de-programme" class="hash-link" aria-label="Lien direct vers Fin de Programme" title="Lien direct vers Fin de Programme" translate="no">​</a></h3>
-<p>Commandes G-code exécutées à la fin de chaque travail, après toutes les opérations de coupe.</p>
-<p>Utilisations courantes :</p>
-<ul>
-<li class="">Éteindre le laser (M5)</li>
-<li class="">Retourner à l&#x27;origine (G0 X0 Y0)</li>
-<li class="">Parquer la tête</li>
-</ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="changement-doutil">Changement d&#x27;Outil<a href="#changement-doutil" class="hash-link" aria-label="Lien direct vers Changement d&#x27;Outil" title="Lien direct vers Changement d&#x27;Outil" translate="no">​</a></h3>
-<p>Commandes G-code exécutées lors du basculement entre têtes laser (pour machines multi-lasers).</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="préambule-et-postscript-du-dialecte">Préambule et Postscript du Dialecte<a href="#préambule-et-postscript-du-dialecte" class="hash-link" aria-label="Lien direct vers Préambule et Postscript du Dialecte" title="Lien direct vers Préambule et Postscript du Dialecte" translate="no">​</a></h2>
+<p>Chaque dialecte inclut un préambule et un postscript G-code personnalisables qui s&#x27;exécutent au début et à la fin des travaux.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="préambule">Préambule<a href="#préambule" class="hash-link" aria-label="Lien direct vers Préambule" title="Lien direct vers Préambule" translate="no">​</a></h3>
+<p>Commandes G-code exécutées au début de chaque travail, avant toute opération de coupe. Les utilisations courantes incluent la définition des unités (G21 pour mm), le mode de positionnement (G90 pour absolu) et l&#x27;initialisation de l&#x27;état de la machine.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="postscript">Postscript<a href="#postscript" class="hash-link" aria-label="Lien direct vers Postscript" title="Lien direct vers Postscript" translate="no">​</a></h3>
+<p>Commandes G-code exécutées à la fin de chaque travail, après toutes les opérations de coupe. Les utilisations courantes incluent l&#x27;extinction du laser (M5), le retour à l&#x27;origine (G0 X0 Y0) et le stationnement de la tête.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="voir-aussi">Voir Aussi<a href="#voir-aussi" class="hash-link" aria-label="Lien direct vers Voir Aussi" title="Lien direct vers Voir Aussi" translate="no">​</a></h2>
 <ul>
 <li class=""><a class="" href="/fr/docs/general-info/gcode-basics">Bases du G-code</a> - Comprendre le G-code</li>
 <li class=""><a class="" href="/fr/docs/reference/gcode-dialects">Dialectes G-code</a> - Différences détaillées des dialectes</li>
 <li class=""><a class="" href="/fr/docs/machine/hooks-macros">Hooks &amp; Macros</a> - Points d&#x27;injection de G-code personnalisé</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/machine/gcode.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Modifier cette page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Pages de documentation"><a class="pagination-nav__link pagination-nav__link--prev" href="/fr/docs/machine/advanced"><div class="pagination-nav__sublabel">Précédent</div><div class="pagination-nav__label">Paramètres Avancés</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/fr/docs/machine/hooks-macros"><div class="pagination-nav__sublabel">Suivant</div><div class="pagination-nav__label">Macros &amp; Hooks</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#dialecte-g-code" class="table-of-contents__link toc-highlight">Dialecte G-code</a><ul><li><a href="#dialectes-disponibles" class="table-of-contents__link toc-highlight">Dialectes Disponibles</a></li></ul></li><li><a href="#g-code-personnalisé" class="table-of-contents__link toc-highlight">G-code Personnalisé</a><ul><li><a href="#début-de-programme" class="table-of-contents__link toc-highlight">Début de Programme</a></li><li><a href="#fin-de-programme" class="table-of-contents__link toc-highlight">Fin de Programme</a></li><li><a href="#changement-doutil" class="table-of-contents__link toc-highlight">Changement d&#39;Outil</a></li></ul></li><li><a href="#voir-aussi" class="table-of-contents__link toc-highlight">Voir Aussi</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/machine/gcode.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Modifier cette page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Pages de documentation"><a class="pagination-nav__link pagination-nav__link--prev" href="/fr/docs/machine/advanced"><div class="pagination-nav__sublabel">Précédent</div><div class="pagination-nav__label">Paramètres Avancés</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/fr/docs/machine/hooks-macros"><div class="pagination-nav__sublabel">Suivant</div><div class="pagination-nav__label">Macros &amp; Hooks</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#dialecte-g-code" class="table-of-contents__link toc-highlight">Dialecte G-code</a><ul><li><a href="#dialectes-disponibles" class="table-of-contents__link toc-highlight">Dialectes Disponibles</a></li></ul></li><li><a href="#préambule-et-postscript-du-dialecte" class="table-of-contents__link toc-highlight">Préambule et Postscript du Dialecte</a><ul><li><a href="#préambule" class="table-of-contents__link toc-highlight">Préambule</a></li><li><a href="#postscript" class="table-of-contents__link toc-highlight">Postscript</a></li></ul></li><li><a href="#voir-aussi" class="table-of-contents__link toc-highlight">Voir Aussi</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

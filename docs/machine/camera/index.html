@@ -12,7 +12,7 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.4e9e11c4.css">
-<script src="/assets/js/runtime~main.901c9429.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.8e6e588d.js" defer="defer"></script>
 <script src="/assets/js/main.6c94515d.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -61,7 +61,7 @@
 <li class="">
 <p><strong>Open Camera Settings:</strong></p>
 <ul>
-<li class="">Navigate to <strong>Settings Preferences Camera</strong></li>
+<li class="">Navigate to <strong>Settings → Preferences → Camera</strong></li>
 <li class="">Or use the camera toolbar button</li>
 </ul>
 </li>
@@ -112,7 +112,7 @@
 <p><strong>Open the Alignment Dialog:</strong></p>
 <ul>
 <li class="">Click the camera alignment button in the toolbar</li>
-<li class="">Or go to <strong>Camera Align Camera</strong></li>
+<li class="">Or go to <strong>Camera → Align Camera</strong></li>
 </ul>
 </li>
 <li class="">
@@ -289,7 +289,12 @@
 
 
 
-<table><thead><tr><th>Setting</th><th>Description</th><th>Range</th></tr></thead><tbody><tr><td><strong>Brightness</strong></td><td>Overall image brightness</td><td>-100 to +100</td></tr><tr><td><strong>Contrast</strong></td><td>Edge definition and contrast</td><td>0 to 100</td></tr><tr><td><strong>Transparency</strong></td><td>Overlay opacity on canvas</td><td>0% (opaque) to 100% (transparent)</td></tr><tr><td><strong>White Balance</strong></td><td>Color temperature correction</td><td>Auto or 2000-10000K</td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Setting</th><th>Description</th><th>Range</th></tr></thead><tbody><tr><td><strong>Brightness</strong></td><td>Overall image brightness</td><td>-100 to +100</td></tr><tr><td><strong>Contrast</strong></td><td>Edge definition and contrast</td><td>0 to 100</td></tr><tr><td><strong>Transparency</strong></td><td>Overlay opacity on canvas</td><td>0% (opaque) to 100% (transparent)</td></tr><tr><td><strong>White Balance</strong></td><td>Color temperature correction</td><td>Auto or 2500-10000K</td></tr><tr><td><strong>Denoise</strong></td><td>Temporal noise reduction</td><td>0.0 to 0.95</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="alignment-data">Alignment Data<a href="#alignment-data" class="hash-link" aria-label="Direct link to Alignment Data" title="Direct link to Alignment Data" translate="no">​</a></h3>
 
 
@@ -318,7 +323,7 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="camera-calibration-lens-distortion-correction">Camera Calibration (Lens Distortion Correction)<a href="#camera-calibration-lens-distortion-correction" class="hash-link" aria-label="Direct link to Camera Calibration (Lens Distortion Correction)" title="Direct link to Camera Calibration (Lens Distortion Correction)" translate="no">​</a></h3>
 <p>For precise work, you can calibrate the camera to correct barrel/pincushion distortion:</p>
 <ol>
-<li class=""><strong>Print a checkerboard pattern</strong> (e.g., 86 grid with 25mm squares)</li>
+<li class=""><strong>Print a checkerboard pattern</strong> (e.g., 8×6 grid with 25mm squares)</li>
 <li class=""><strong>Capture 10+ images</strong> of the pattern from different angles/positions</li>
 <li class=""><strong>Use OpenCV calibration tools</strong> to calculate camera matrix and distortion coefficients</li>
 <li class=""><strong>Apply calibration</strong> in Rayforge (advanced settings)</li>
@@ -397,6 +402,7 @@ Check if the camera is recognized by the system:</p>
 <li class=""><strong>Check focus</strong> - Auto-focus may not work well; use manual if possible</li>
 <li class=""><strong>Reduce transparency</strong> temporarily to see camera image more clearly</li>
 <li class=""><strong>Try different white balance</strong> settings</li>
+<li class=""><strong>Adjust denoise setting</strong> if image appears grainy</li>
 </ol>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="camera-lag-or-stuttering">Camera Lag or Stuttering<a href="#camera-lag-or-stuttering" class="hash-link" aria-label="Direct link to Camera Lag or Stuttering" title="Direct link to Camera Lag or Stuttering" translate="no">​</a></h3>
 <p><strong>Problem:</strong> Live camera feed is choppy or delayed.</p>

@@ -12,7 +12,7 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.4e9e11c4.css">
-<script src="/assets/js/runtime~main.901c9429.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.8e6e588d.js" defer="defer"></script>
 <script src="/assets/js/main.6c94515d.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -46,7 +46,7 @@ changes separately for efficient updates.</li>
 world matrices of all its ancestors.</li>
 <li class=""><strong>Data Decoupling:</strong> The visual or raw data for a <code>WorkPiece</code> is not
 stored directly within it. Instead, the <code>WorkPiece</code> holds a UID that
-references an <code>ImportSource</code> object in a central registry on the <code>Doc</code>.
+references a <code>SourceAsset</code> object in the unified <code>assets</code> registry on the <code>Doc</code>.
 This decouples the document structure from the data management,
 making the model more lightweight and flexible.</li>
 </ul>
@@ -71,8 +71,8 @@ references between objects.</p>
 <!-- -->
 <ul>
 <li class="">A <code>Doc</code> is the top-level object. It <strong>contains</strong> one or more <code>Layer</code>s and
-<code>StockItem</code>s. It also <strong>manages</strong> a registry of all <code>ImportSource</code>s in
-the project.</li>
+<code>StockItem</code>s. It also <strong>manages</strong> the unified <code>assets</code> registry containing
+all <code>SourceAsset</code>s in the project.</li>
 <li class="">Each <code>Layer</code> <strong>contains</strong> the user&#x27;s content: <code>WorkPiece</code>s and <code>Group</code>s.
 Crucially, a <code>Layer</code> also <strong>owns one</strong> <code>Workflow</code>.</li>
 <li class="">A <code>Workflow</code> <strong>contains</strong> an ordered list of <code>Step</code>s, which define the
@@ -80,7 +80,7 @@ manufacturing process for that layer.</li>
 <li class="">A <code>Group</code> is a container that can hold <code>WorkPiece</code>s and other <code>Group</code>s,
 allowing for nested transformations.</li>
 <li class="">A <code>WorkPiece</code> is a fundamental design element. It does not store its
-raw data directly. Instead, it <strong>references</strong> an <code>ImportSource</code> via a
+raw data directly. Instead, it <strong>references</strong> a <code>SourceAsset</code> via a
 UID. It also <strong>has</strong> its own <code>Geometry</code> (vector data) and can have a
 list of <code>Tab</code>s.</li>
 </ul>
@@ -100,8 +100,8 @@ pattern logic.</li>
 <p><strong><code>Doc</code></strong></p>
 <ul>
 <li class=""><strong>Role:</strong> The root of the document tree.</li>
-<li class=""><strong>Key Properties:</strong> <code>children</code> (Layers, StockItems), <code>import_sources</code>
-(a dictionary mapping UIDs to <code>ImportSource</code> objects), <code>active_layer</code>.</li>
+<li class=""><strong>Key Properties:</strong> <code>children</code> (Layers, StockItems), <code>assets</code>
+(a unified registry mapping UIDs to <code>SourceAsset</code> objects), <code>active_layer</code>.</li>
 </ul>
 </li>
 <li class="">
@@ -127,7 +127,7 @@ Allows a collection of items to be transformed as a single unit.</li>
 <li class=""><strong>Role:</strong> Represents a single, tangible design element on the canvas
 (e.g., an imported SVG).</li>
 <li class=""><strong>Key Properties:</strong> <code>vectors</code> (a <code>Geometry</code> object),
-<code>import_source_uid</code>,
+<code>source_asset_uid</code>,
 <code>tabs</code>, <code>tabs_enabled</code>. Its <code>vectors</code> are normalized to a 1x1 box,
 with all scaling and positioning handled by its transformation
 <code>matrix</code>.</li>

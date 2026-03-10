@@ -12,7 +12,7 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/de/assets/css/styles.43b0ad27.css">
-<script src="/de/assets/js/runtime~main.5c0effb4.js" defer="defer"></script>
+<script src="/de/assets/js/runtime~main.8112b679.js" defer="defer"></script>
 <script src="/de/assets/js/main.038cdb00.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -26,37 +26,25 @@
 <p>Wähle den G-Code-Dialekt, der mit deiner Controller-Firmware übereinstimmt. Verschiedene Controller verwenden leicht unterschiedliche Befehle und Formate.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="verfügbare-dialekte">Verfügbare Dialekte<a href="#verfügbare-dialekte" class="hash-link" aria-label="Direkter Link zur Verfügbare Dialekte" title="Direkter Link zur Verfügbare Dialekte" translate="no">​</a></h3>
 <ul>
-<li class=""><strong>GRBL</strong>: Am häufigsten bei Hobby-Laserschneidern. Verwendet M3/M5 zur Lasersteuerung.</li>
+<li class=""><strong>Grbl (Compat)</strong>: Standard-GRBL-Dialekt für Hobby-Laserschneider. Verwendet M3/M5 zur Lasersteuerung.</li>
+<li class=""><strong>Grbl (Compat, no Z axis)</strong>: Wie Grbl (Compat), aber ohne Z-Achsen-Befehle. Für reine 2D-Maschinen.</li>
+<li class=""><strong>GRBL Dynamic</strong>: Verwendet GRBLs dynamischen Laserleistungsmodus für variablen Leistungsgravur.</li>
+<li class=""><strong>GRBL Dynamic (no Z axis)</strong>: Dynamischer Modus ohne Z-Achsen-Befehle.</li>
 <li class=""><strong>Smoothieware</strong>: Für Smoothieboard und ähnliche Controller.</li>
 <li class=""><strong>Marlin</strong>: Für Marlin-basierte Controller.</li>
-<li class=""><strong>GRBL-kompatibel</strong>: Für Controller, die größtenteils der GRBL-Syntax folgen.</li>
 </ul>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Der Dialekt beeinflusst, wie Laserleistung, Bewegungen und andere Befehle im Ausgabe-G-Code formatiert werden.</p></div></div>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="benutzerdefinierter-g-code">Benutzerdefinierter G-Code<a href="#benutzerdefinierter-g-code" class="hash-link" aria-label="Direkter Link zur Benutzerdefinierter G-Code" title="Direkter Link zur Benutzerdefinierter G-Code" translate="no">​</a></h2>
-<p>Du kannst den G-Code anpassen, den Rayforge an bestimmten Punkten im Job generiert.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="programmstart">Programmstart<a href="#programmstart" class="hash-link" aria-label="Direkter Link zur Programmstart" title="Direkter Link zur Programmstart" translate="no">​</a></h3>
-<p>G-Code-Befehle, die am Anfang jedes Jobs ausgeführt werden, vor allen Schneideoperationen.</p>
-<p>Häufige Verwendungen:</p>
-<ul>
-<li class="">Einheiten festlegen (G21 für mm)</li>
-<li class="">Positionierungsmodus festlegen (G90 für absolut)</li>
-<li class="">Maschinenzustand initialisieren</li>
-</ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="programmende">Programmende<a href="#programmende" class="hash-link" aria-label="Direkter Link zur Programmende" title="Direkter Link zur Programmende" translate="no">​</a></h3>
-<p>G-Code-Befehle, die am Ende jedes Jobs ausgeführt werden, nach allen Schneideoperationen.</p>
-<p>Häufige Verwendungen:</p>
-<ul>
-<li class="">Laser ausschalten (M5)</li>
-<li class="">Zum Ursprung zurückkehren (G0 X0 Y0)</li>
-<li class="">Kopf parken</li>
-</ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="werkzeugwechsel">Werkzeugwechsel<a href="#werkzeugwechsel" class="hash-link" aria-label="Direkter Link zur Werkzeugwechsel" title="Direkter Link zur Werkzeugwechsel" translate="no">​</a></h3>
-<p>G-Code-Befehle, die beim Wechsel zwischen Laserköpfen ausgeführt werden (für Multi-Laser-Maschinen).</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="dialekt-präambel-und-postscript">Dialekt-Präambel und Postscript<a href="#dialekt-präambel-und-postscript" class="hash-link" aria-label="Direkter Link zur Dialekt-Präambel und Postscript" title="Direkter Link zur Dialekt-Präambel und Postscript" translate="no">​</a></h2>
+<p>Jeder Dialekt enthält anpassbare Präambel- und Postscript-G-Codes, die am Anfang und Ende von Jobs ausgeführt werden.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="präambel">Präambel<a href="#präambel" class="hash-link" aria-label="Direkter Link zur Präambel" title="Direkter Link zur Präambel" translate="no">​</a></h3>
+<p>G-Code-Befehle, die am Anfang jedes Jobs ausgeführt werden, vor allen Schneideoperationen. Häufige Verwendungen umfassen das Festlegen von Einheiten (G21 für mm), Positionierungsmodus (G90 für absolut) und Initialisierung des Maschinenzustands.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="postscript">Postscript<a href="#postscript" class="hash-link" aria-label="Direkter Link zur Postscript" title="Direkter Link zur Postscript" translate="no">​</a></h3>
+<p>G-Code-Befehle, die am Ende jedes Jobs ausgeführt werden, nach allen Schneideoperationen. Häufige Verwendungen umfassen das Ausschalten des Lasers (M5), Rückkehr zum Ursprung (G0 X0 Y0) und Parken des Kopfes.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="siehe-auch">Siehe auch<a href="#siehe-auch" class="hash-link" aria-label="Direkter Link zur Siehe auch" title="Direkter Link zur Siehe auch" translate="no">​</a></h2>
 <ul>
 <li class=""><a class="" href="/de/docs/general-info/gcode-basics">G-Code-Grundlagen</a> - G-Code verstehen</li>
 <li class=""><a class="" href="/de/docs/reference/gcode-dialects">G-Code-Dialekte</a> - Detaillierte Dialekt-Unterschiede</li>
 <li class=""><a class="" href="/de/docs/machine/hooks-macros">Hooks &amp; Makros</a> - Benutzerdefinierte G-Code-Einschubpunkte</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/machine/gcode.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Diese Seite bearbeiten</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Dokumentation Seiten"><a class="pagination-nav__link pagination-nav__link--prev" href="/de/docs/machine/advanced"><div class="pagination-nav__sublabel">Zurück</div><div class="pagination-nav__label">Erweiterte Einstellungen</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/de/docs/machine/hooks-macros"><div class="pagination-nav__sublabel">Weiter</div><div class="pagination-nav__label">Makros &amp; Hooks</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#g-code-dialekt" class="table-of-contents__link toc-highlight">G-Code-Dialekt</a><ul><li><a href="#verfügbare-dialekte" class="table-of-contents__link toc-highlight">Verfügbare Dialekte</a></li></ul></li><li><a href="#benutzerdefinierter-g-code" class="table-of-contents__link toc-highlight">Benutzerdefinierter G-Code</a><ul><li><a href="#programmstart" class="table-of-contents__link toc-highlight">Programmstart</a></li><li><a href="#programmende" class="table-of-contents__link toc-highlight">Programmende</a></li><li><a href="#werkzeugwechsel" class="table-of-contents__link toc-highlight">Werkzeugwechsel</a></li></ul></li><li><a href="#siehe-auch" class="table-of-contents__link toc-highlight">Siehe auch</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/machine/gcode.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Diese Seite bearbeiten</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Dokumentation Seiten"><a class="pagination-nav__link pagination-nav__link--prev" href="/de/docs/machine/advanced"><div class="pagination-nav__sublabel">Zurück</div><div class="pagination-nav__label">Erweiterte Einstellungen</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/de/docs/machine/hooks-macros"><div class="pagination-nav__sublabel">Weiter</div><div class="pagination-nav__label">Makros &amp; Hooks</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#g-code-dialekt" class="table-of-contents__link toc-highlight">G-Code-Dialekt</a><ul><li><a href="#verfügbare-dialekte" class="table-of-contents__link toc-highlight">Verfügbare Dialekte</a></li></ul></li><li><a href="#dialekt-präambel-und-postscript" class="table-of-contents__link toc-highlight">Dialekt-Präambel und Postscript</a><ul><li><a href="#präambel" class="table-of-contents__link toc-highlight">Präambel</a></li><li><a href="#postscript" class="table-of-contents__link toc-highlight">Postscript</a></li></ul></li><li><a href="#siehe-auch" class="table-of-contents__link toc-highlight">Siehe auch</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

@@ -12,7 +12,7 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/pt-BR/assets/css/styles.d1aa29d4.css">
-<script src="/pt-BR/assets/js/runtime~main.044a364c.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/runtime~main.141f16b4.js" defer="defer"></script>
 <script src="/pt-BR/assets/js/main.6e4ec7a0.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -46,7 +46,7 @@ separadamente para atualizações eficientes.</li>
 matrizes mundiais de todos os seus ancestrais.</li>
 <li class=""><strong>Desacoplamento de Dados:</strong> Os dados visuais ou brutos para um <code>WorkPiece</code> não são
 armazenados diretamente nele. Em vez disso, o <code>WorkPiece</code> mantém um UID que
-referencia um objeto <code>ImportSource</code> em um registro central no <code>Doc</code>.
+referencia um objeto <code>SourceAsset</code> no registro unificado <code>assets</code> no <code>Doc</code>.
 Isso desacopla a estrutura do documento do gerenciamento de dados,
 tornando o modelo mais leve e flexível.</li>
 </ul>
@@ -70,7 +70,7 @@ referências entre objetos.</p>
 <!-- -->
 <ul>
 <li class="">Um <code>Doc</code> é o objeto de nível superior. Ele <strong>contém</strong> um ou mais <code>Layer</code>s e
-<code>StockItem</code>s. Ele também <strong>gerencia</strong> um registro de todos os <code>ImportSource</code>s no
+<code>StockItem</code>s. Ele também <strong>gerencia</strong> o registro unificado <code>assets</code> de todos os <code>SourceAsset</code>s no
 projeto.</li>
 <li class="">Cada <code>Layer</code> <strong>contém</strong> o conteúdo do usuário: <code>WorkPiece</code>s e <code>Group</code>s.
 Crucialmente, uma <code>Layer</code> também <strong>possui um</strong> <code>Workflow</code>.</li>
@@ -79,8 +79,8 @@ processo de manufatura para aquela camada.</li>
 <li class="">Um <code>Group</code> é um contêiner que pode conter <code>WorkPiece</code>s e outros <code>Group</code>s,
 permitindo transformações aninhadas.</li>
 <li class="">Um <code>WorkPiece</code> é um elemento de design fundamental. Ele não armazena seus
-dados brutos diretamente. Em vez disso, ele <strong>referencia</strong> um <code>ImportSource</code> via um
-UID. Ele também <strong>tem</strong> sua própria <code>Geometry</code> (dados vetoriais) e pode ter uma
+dados brutos diretamente. Em vez disso, ele <strong>referencia</strong> um <code>SourceAsset</code> via um
+UID do registro unificado <code>assets</code> no <code>Doc</code>. Ele também <strong>tem</strong> sua própria <code>Geometry</code> (dados vetoriais) e pode ter uma
 lista de <code>Tab</code>s.</li>
 </ul>
 <hr>
@@ -99,8 +99,8 @@ composite.</li>
 <p><strong><code>Doc</code></strong></p>
 <ul>
 <li class=""><strong>Função:</strong> A raiz da árvore do documento.</li>
-<li class=""><strong>Propriedades Principais:</strong> <code>children</code> (Layers, StockItems), <code>import_sources</code>
-(um dicionário mapeando UIDs para objetos <code>ImportSource</code>), <code>active_layer</code>.</li>
+<li class=""><strong>Propriedades Principais:</strong> <code>children</code> (Layers, StockItems), <code>assets</code>
+(registro unificado mapeando UIDs para objetos <code>SourceAsset</code>), <code>active_layer</code>.</li>
 </ul>
 </li>
 <li class="">

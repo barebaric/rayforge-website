@@ -12,7 +12,7 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/es/assets/css/styles.a1195d80.css">
-<script src="/es/assets/js/runtime~main.ec1660c3.js" defer="defer"></script>
+<script src="/es/assets/js/runtime~main.5cd6b3b8.js" defer="defer"></script>
 <script src="/es/assets/js/main.4a298b21.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -43,11 +43,15 @@
 <p>Este diagrama ilustra cómo las instancias de las clases se ensamblan para formar un documento completo. Muestra las relaciones padre-hijo y referencias entre objetos.</p>
 <!-- -->
 <ul>
-<li class="">Un <code>Doc</code> es el objeto de nivel superior. <strong>Contiene</strong> uno o más <code>Layer</code>s y <code>StockItem</code>s. También <strong>gestiona</strong> un registro de todos los <code>ImportSource</code>s en el proyecto.</li>
+<li class="">Un <code>Doc</code> es el objeto de nivel superior. <strong>Contiene</strong> uno o más <code>Layer</code>s y
+<code>StockItem</code>s. También <strong>gestiona</strong> el registro unificado <code>assets</code> de todos los <code>SourceAsset</code>s en el proyecto.</li>
 <li class="">Cada <code>Layer</code> <strong>contiene</strong> el contenido del usuario: <code>WorkPiece</code>s y <code>Group</code>s. Crucialmente, un <code>Layer</code> también <strong>posee uno</strong> <code>Workflow</code>.</li>
 <li class="">Un <code>Workflow</code> <strong>contiene</strong> una lista ordenada de <code>Step</code>s, que definen el proceso de manufactura para esa capa.</li>
 <li class="">Un <code>Group</code> es un contenedor que puede contener <code>WorkPiece</code>s y otros <code>Group</code>s, permitiendo transformaciones anidadas.</li>
-<li class="">Un <code>WorkPiece</code> es un elemento de diseño fundamental. No almacena sus datos crudos directamente. En su lugar, <strong>referencia</strong> un <code>ImportSource</code> via un UID. También <strong>tiene</strong> su propia <code>Geometry</code> (datos vectoriales) y puede tener una lista de <code>Tab</code>s.</li>
+<li class="">Un <code>WorkPiece</code> es un elemento de diseño fundamental. No almacena sus
+datos crudos directamente. En su lugar, <strong>referencia</strong> un <code>SourceAsset</code> via un
+UID desde el registro unificado <code>assets</code> en el <code>Doc</code>. También <strong>tiene</strong> su propia <code>Geometry</code> (datos vectoriales) y puede tener una
+lista de <code>Tab</code>s.</li>
 </ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="descripciones-de-docitem">Descripciones de DocItem<a href="#descripciones-de-docitem" class="hash-link" aria-label="Enlace directo al Descripciones de DocItem" title="Enlace directo al Descripciones de DocItem" translate="no">​</a></h2>
