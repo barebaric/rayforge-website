@@ -4,10 +4,144 @@
         <title>Rayforge Blog</title>
         <link>https://rayforge.org/es/blog</link>
         <description>Rayforge Blog</description>
-        <lastBuildDate>Fri, 27 Feb 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 10 Mar 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>es</language>
+        <item>
+            <title><![CDATA[Rayforge 1.2 - AI Generator, Camera Enhancements, and Improved Add-ons]]></title>
+            <link>https://rayforge.org/es/blog/rayforge-1.2-addons-camera-ai</link>
+            <guid>https://rayforge.org/es/blog/rayforge-1.2-addons-camera-ai</guid>
+            <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Rayforge 1.2 brings an AI workpiece generator, significant camera]]></description>
+            <content:encoded><![CDATA[<p>Rayforge 1.2 brings an AI workpiece generator, significant camera
+enhancements, and a completely revamped add-on system with core
+functionality now available as optional modules.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ai-workpiece-generator-add-on">AI Workpiece Generator Add-on<a href="https://rayforge.org/es/blog/rayforge-1.2-addons-camera-ai#ai-workpiece-generator-add-on" class="hash-link" aria-label="Enlace directo al AI Workpiece Generator Add-on" title="Enlace directo al AI Workpiece Generator Add-on" translate="no">​</a></h2>
+<p>A new experimental add-on allows generating workpieces from text prompts.
+This is great for quickly creating simple designs or getting inspiration
+for new projects.</p>
+<p>This is a first step, and we're excited about the possibilities this
+opens up for the future!</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="camera-enhancements">Camera Enhancements<a href="https://rayforge.org/es/blog/rayforge-1.2-addons-camera-ai#camera-enhancements" class="hash-link" aria-label="Enlace directo al Camera Enhancements" title="Enlace directo al Camera Enhancements" translate="no">​</a></h2>
+<p>Thanks to the incredible work of <strong>MausRundung</strong>, the camera system has
+received a major overhaul:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="image-enhancement">Image Enhancement<a href="https://rayforge.org/es/blog/rayforge-1.2-addons-camera-ai#image-enhancement" class="hash-link" aria-label="Enlace directo al Image Enhancement" title="Enlace directo al Image Enhancement" translate="no">​</a></h3>
+<ul>
+<li class="">Temporal noise reduction with configurable strength</li>
+<li class="">Cleaner preview images, especially in low-light conditions</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fisheye-distortion-correction">Fisheye Distortion Correction<a href="https://rayforge.org/es/blog/rayforge-1.2-addons-camera-ai#fisheye-distortion-correction" class="hash-link" aria-label="Enlace directo al Fisheye Distortion Correction" title="Enlace directo al Fisheye Distortion Correction" translate="no">​</a></h3>
+<ul>
+<li class="">Radial distortion correction (k1, k2 parameters)</li>
+<li class="">Tangential distortion correction (p1, p2 parameters)</li>
+<li class="">Perfect for wide-angle lenses</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="improved-alignment-ui">Improved Alignment UI<a href="https://rayforge.org/es/blog/rayforge-1.2-addons-camera-ai#improved-alignment-ui" class="hash-link" aria-label="Enlace directo al Improved Alignment UI" title="Enlace directo al Improved Alignment UI" translate="no">​</a></h3>
+<ul>
+<li class="">Zoom, pan, and keyboard navigation in the alignment dialog</li>
+<li class="">Better point dragging with visual feedback</li>
+<li class="">Image stretching and positioning controls with offsets</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="improved-add-on-system">Improved Add-on System<a href="https://rayforge.org/es/blog/rayforge-1.2-addons-camera-ai#improved-add-on-system" class="hash-link" aria-label="Enlace directo al Improved Add-on System" title="Enlace directo al Improved Add-on System" translate="no">​</a></h2>
+<p>The add-on system has been greatly improved. The main change is that much
+of the core functionality has been moved into add-ons that are installed
+by default, but can be disabled or enabled as needed:</p>
+<p><strong>Core as Add-ons</strong>
+The built-in transformers and laser essentials have been converted to
+add-ons. This makes Rayforge more modular - you can disable features you
+don't need or enable only what you want.</p>
+<p><strong>Add-on Capabilities</strong>
+Add-ons can now:</p>
+<ul>
+<li class="">Register transformers (post-processors) for custom G-code manipulation</li>
+<li class="">Register keyboard shortcuts for custom workflows</li>
+<li class="">Hook into the backend and frontend independently</li>
+</ul>
+<p><strong>Commercial Support</strong>
+The system now supports paid and third-party add-ons, enabling developers
+to create commercial extensions for Rayforge.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="stock-improvements">Stock Improvements<a href="https://rayforge.org/es/blog/rayforge-1.2-addons-camera-ai#stock-improvements" class="hash-link" aria-label="Enlace directo al Stock Improvements" title="Enlace directo al Stock Improvements" translate="no">​</a></h2>
+<p>Stock handling is now more flexible:</p>
+<ul>
+<li class=""><strong>Document-level stock</strong> - stock is no longer tied to individual layers</li>
+<li class=""><strong>Duplicate stock</strong> using Ctrl+D</li>
+<li class=""><strong>Non-rectangular stock</strong> - convert any workpiece to stock for irregular
+materials</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-improvements">Sketcher Improvements<a href="https://rayforge.org/es/blog/rayforge-1.2-addons-camera-ai#sketcher-improvements" class="hash-link" aria-label="Enlace directo al Sketcher Improvements" title="Enlace directo al Sketcher Improvements" translate="no">​</a></h2>
+<p>The parametric sketcher received several quality-of-life improvements in
+this release:</p>
+<ul>
+<li class=""><strong>Live preview for line tool</strong> - see the line before you commit</li>
+<li class=""><strong>Dimension display</strong> - shows dimensions while adding geometry</li>
+<li class=""><strong>Snap-to-grid</strong> - hold Ctrl to snap to the grid</li>
+<li class=""><strong>Entity highlighting</strong> - hovered entities and constraints are highlighted</li>
+<li class=""><strong>Toolbar shortcuts</strong> - shows currently available keyboard shortcuts</li>
+<li class=""><strong>Connected selection</strong> - Shift+Double click selects connected geometry</li>
+<li class=""><strong>Arc radius adjustment</strong> - change arc radius while adding the second endpoint</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="more-new-features">More New Features<a href="https://rayforge.org/es/blog/rayforge-1.2-addons-camera-ai#more-new-features" class="hash-link" aria-label="Enlace directo al More New Features" title="Enlace directo al More New Features" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="crop-to-stock-post-processor">Crop to Stock Post-Processor<a href="https://rayforge.org/es/blog/rayforge-1.2-addons-camera-ai#crop-to-stock-post-processor" class="hash-link" aria-label="Enlace directo al Crop to Stock Post-Processor" title="Enlace directo al Crop to Stock Post-Processor" translate="no">​</a></h3>
+<p>A new post-processor that automatically crops operations to your stock
+boundaries, saving time and material.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="inter-workpiece-path-optimization">Inter-Workpiece Path Optimization<a href="https://rayforge.org/es/blog/rayforge-1.2-addons-camera-ai#inter-workpiece-path-optimization" class="hash-link" aria-label="Enlace directo al Inter-Workpiece Path Optimization" title="Enlace directo al Inter-Workpiece Path Optimization" translate="no">​</a></h3>
+<p>The path optimizer now also optimizes the workpiece order, reducing travel
+distance when working with multiple workpieces in a single job. Previously,
+Rayforge only optimized travel paths within individual workpieces.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="configurable-cutraster-colors">Configurable Cut/Raster Colors<a href="https://rayforge.org/es/blog/rayforge-1.2-addons-camera-ai#configurable-cutraster-colors" class="hash-link" aria-label="Enlace directo al Configurable Cut/Raster Colors" title="Enlace directo al Configurable Cut/Raster Colors" translate="no">​</a></h3>
+<p>Each laser can now have its own cut and raster colors, making it easier
+to distinguish between different laser heads.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="quick-wcs-positioning">Quick WCS Positioning<a href="https://rayforge.org/es/blog/rayforge-1.2-addons-camera-ai#quick-wcs-positioning" class="hash-link" aria-label="Enlace directo al Quick WCS Positioning" title="Enlace directo al Quick WCS Positioning" translate="no">​</a></h3>
+<p>Click anywhere on the canvas to set the work coordinate system origin.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="omtech-k40-profile">OMTech K40+ Profile<a href="https://rayforge.org/es/blog/rayforge-1.2-addons-camera-ai#omtech-k40-profile" class="hash-link" aria-label="Enlace directo al OMTech K40+ Profile" title="Enlace directo al OMTech K40+ Profile" translate="no">​</a></h3>
+<p>New machine profile for the popular OMTech K40+ laser cutter.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mach4-g-code-dialect">Mach4 G-code Dialect<a href="https://rayforge.org/es/blog/rayforge-1.2-addons-camera-ai#mach4-g-code-dialect" class="hash-link" aria-label="Enlace directo al Mach4 G-code Dialect" title="Enlace directo al Mach4 G-code Dialect" translate="no">​</a></h3>
+<p>New built-in G-code dialect for Mach4 controllers using M67 for spindle
+speed (laser power) control.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="platform-updates">Platform Updates<a href="https://rayforge.org/es/blog/rayforge-1.2-addons-camera-ai#platform-updates" class="hash-link" aria-label="Enlace directo al Platform Updates" title="Enlace directo al Platform Updates" translate="no">​</a></h3>
+<ul>
+<li class="">Updated macOS support thanks to <strong>Pablo Gil</strong></li>
+<li class="">Flatpak updates thanks to <strong>fllmn</strong></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/es/blog/rayforge-1.2-addons-camera-ai#bug-fixes" class="hash-link" aria-label="Enlace directo al Bug Fixes" title="Enlace directo al Bug Fixes" translate="no">​</a></h2>
+<p>This release addresses many issues:</p>
+<ul>
+<li class="">Add-on not enabled immediately after installation</li>
+<li class="">macOS bundle issues with GTK modules and built-in add-ons</li>
+<li class="">Tasker startup crash with DictProxy type annotations</li>
+<li class="">Old project files not showing new transformers</li>
+<li class="">SVG exporter stacking multiple workpieces on top of each other</li>
+<li class="">Auto layout for rotated stock</li>
+<li class="">Windows build using wrong version string on forks</li>
+<li class="">Mac and Windows builds not finding icon</li>
+</ul>
+<p>See the CHANGELOG on GitHub for the complete list.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="special-thanks">Special Thanks<a href="https://rayforge.org/es/blog/rayforge-1.2-addons-camera-ai#special-thanks" class="hash-link" aria-label="Enlace directo al Special Thanks" title="Enlace directo al Special Thanks" translate="no">​</a></h2>
+<p>This release was made possible with the support of our Patreon supporters:</p>
+<ul>
+<li class="">2 anonymous contributors</li>
+<li class="">Amsel</li>
+<li class="">froqstar</li>
+</ul>
+<p>And thanks to <strong>MausRundung</strong> for the camera enhancements, <strong>Pablo Gil</strong> for
+macOS updates, and <strong>fllmn</strong> for Flatpak updates!</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-12">Download Rayforge 1.2<a href="https://rayforge.org/es/blog/rayforge-1.2-addons-camera-ai#download-rayforge-12" class="hash-link" aria-label="Enlace directo al Download Rayforge 1.2" title="Enlace directo al Download Rayforge 1.2" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://github.com/barebaric/rayforge/releases" target="_blank" rel="noopener noreferrer" class="">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/es/blog/rayforge-1.2-addons-camera-ai#join-the-community" class="hash-link" aria-label="Enlace directo al Join the Community" title="Enlace directo al Join the Community" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content:encoded>
+            <category>release</category>
+            <category>1.2</category>
+            <category>addons</category>
+            <category>camera</category>
+            <category>ai</category>
+        </item>
         <item>
             <title><![CDATA[Rayforge 1.1 - MacOS Support, Pipeline Rewrite, G-code Console, and Unified Raster]]></title>
             <link>https://rayforge.org/es/blog/rayforge-1.1-pipeline-rewrite</link>

@@ -2,11 +2,149 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rayforge.org/uk/blog</id>
     <title>Rayforge Blog</title>
-    <updated>2026-02-27T00:00:00.000Z</updated>
+    <updated>2026-03-10T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rayforge.org/uk/blog"/>
     <subtitle>Rayforge Blog</subtitle>
     <icon>https://rayforge.org/uk/images/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Rayforge 1.2 - AI Generator, Camera Enhancements, and Improved Add-ons]]></title>
+        <id>https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai</id>
+        <link href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai"/>
+        <updated>2026-03-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Rayforge 1.2 brings an AI workpiece generator, significant camera]]></summary>
+        <content type="html"><![CDATA[<p>Rayforge 1.2 brings an AI workpiece generator, significant camera
+enhancements, and a completely revamped add-on system with core
+functionality now available as optional modules.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ai-workpiece-generator-add-on">AI Workpiece Generator Add-on<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#ai-workpiece-generator-add-on" class="hash-link" aria-label="Пряме посилання на AI Workpiece Generator Add-on" title="Пряме посилання на AI Workpiece Generator Add-on" translate="no">​</a></h2>
+<p>A new experimental add-on allows generating workpieces from text prompts.
+This is great for quickly creating simple designs or getting inspiration
+for new projects.</p>
+<p>This is a first step, and we're excited about the possibilities this
+opens up for the future!</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="camera-enhancements">Camera Enhancements<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#camera-enhancements" class="hash-link" aria-label="Пряме посилання на Camera Enhancements" title="Пряме посилання на Camera Enhancements" translate="no">​</a></h2>
+<p>Thanks to the incredible work of <strong>MausRundung</strong>, the camera system has
+received a major overhaul:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="image-enhancement">Image Enhancement<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#image-enhancement" class="hash-link" aria-label="Пряме посилання на Image Enhancement" title="Пряме посилання на Image Enhancement" translate="no">​</a></h3>
+<ul>
+<li class="">Temporal noise reduction with configurable strength</li>
+<li class="">Cleaner preview images, especially in low-light conditions</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fisheye-distortion-correction">Fisheye Distortion Correction<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#fisheye-distortion-correction" class="hash-link" aria-label="Пряме посилання на Fisheye Distortion Correction" title="Пряме посилання на Fisheye Distortion Correction" translate="no">​</a></h3>
+<ul>
+<li class="">Radial distortion correction (k1, k2 parameters)</li>
+<li class="">Tangential distortion correction (p1, p2 parameters)</li>
+<li class="">Perfect for wide-angle lenses</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="improved-alignment-ui">Improved Alignment UI<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#improved-alignment-ui" class="hash-link" aria-label="Пряме посилання на Improved Alignment UI" title="Пряме посилання на Improved Alignment UI" translate="no">​</a></h3>
+<ul>
+<li class="">Zoom, pan, and keyboard navigation in the alignment dialog</li>
+<li class="">Better point dragging with visual feedback</li>
+<li class="">Image stretching and positioning controls with offsets</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="improved-add-on-system">Improved Add-on System<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#improved-add-on-system" class="hash-link" aria-label="Пряме посилання на Improved Add-on System" title="Пряме посилання на Improved Add-on System" translate="no">​</a></h2>
+<p>The add-on system has been greatly improved. The main change is that much
+of the core functionality has been moved into add-ons that are installed
+by default, but can be disabled or enabled as needed:</p>
+<p><strong>Core as Add-ons</strong>
+The built-in transformers and laser essentials have been converted to
+add-ons. This makes Rayforge more modular - you can disable features you
+don't need or enable only what you want.</p>
+<p><strong>Add-on Capabilities</strong>
+Add-ons can now:</p>
+<ul>
+<li class="">Register transformers (post-processors) for custom G-code manipulation</li>
+<li class="">Register keyboard shortcuts for custom workflows</li>
+<li class="">Hook into the backend and frontend independently</li>
+</ul>
+<p><strong>Commercial Support</strong>
+The system now supports paid and third-party add-ons, enabling developers
+to create commercial extensions for Rayforge.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="stock-improvements">Stock Improvements<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#stock-improvements" class="hash-link" aria-label="Пряме посилання на Stock Improvements" title="Пряме посилання на Stock Improvements" translate="no">​</a></h2>
+<p>Stock handling is now more flexible:</p>
+<ul>
+<li class=""><strong>Document-level stock</strong> - stock is no longer tied to individual layers</li>
+<li class=""><strong>Duplicate stock</strong> using Ctrl+D</li>
+<li class=""><strong>Non-rectangular stock</strong> - convert any workpiece to stock for irregular
+materials</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-improvements">Sketcher Improvements<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#sketcher-improvements" class="hash-link" aria-label="Пряме посилання на Sketcher Improvements" title="Пряме посилання на Sketcher Improvements" translate="no">​</a></h2>
+<p>The parametric sketcher received several quality-of-life improvements in
+this release:</p>
+<ul>
+<li class=""><strong>Live preview for line tool</strong> - see the line before you commit</li>
+<li class=""><strong>Dimension display</strong> - shows dimensions while adding geometry</li>
+<li class=""><strong>Snap-to-grid</strong> - hold Ctrl to snap to the grid</li>
+<li class=""><strong>Entity highlighting</strong> - hovered entities and constraints are highlighted</li>
+<li class=""><strong>Toolbar shortcuts</strong> - shows currently available keyboard shortcuts</li>
+<li class=""><strong>Connected selection</strong> - Shift+Double click selects connected geometry</li>
+<li class=""><strong>Arc radius adjustment</strong> - change arc radius while adding the second endpoint</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="more-new-features">More New Features<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#more-new-features" class="hash-link" aria-label="Пряме посилання на More New Features" title="Пряме посилання на More New Features" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="crop-to-stock-post-processor">Crop to Stock Post-Processor<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#crop-to-stock-post-processor" class="hash-link" aria-label="Пряме посилання на Crop to Stock Post-Processor" title="Пряме посилання на Crop to Stock Post-Processor" translate="no">​</a></h3>
+<p>A new post-processor that automatically crops operations to your stock
+boundaries, saving time and material.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="inter-workpiece-path-optimization">Inter-Workpiece Path Optimization<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#inter-workpiece-path-optimization" class="hash-link" aria-label="Пряме посилання на Inter-Workpiece Path Optimization" title="Пряме посилання на Inter-Workpiece Path Optimization" translate="no">​</a></h3>
+<p>The path optimizer now also optimizes the workpiece order, reducing travel
+distance when working with multiple workpieces in a single job. Previously,
+Rayforge only optimized travel paths within individual workpieces.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="configurable-cutraster-colors">Configurable Cut/Raster Colors<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#configurable-cutraster-colors" class="hash-link" aria-label="Пряме посилання на Configurable Cut/Raster Colors" title="Пряме посилання на Configurable Cut/Raster Colors" translate="no">​</a></h3>
+<p>Each laser can now have its own cut and raster colors, making it easier
+to distinguish between different laser heads.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="quick-wcs-positioning">Quick WCS Positioning<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#quick-wcs-positioning" class="hash-link" aria-label="Пряме посилання на Quick WCS Positioning" title="Пряме посилання на Quick WCS Positioning" translate="no">​</a></h3>
+<p>Click anywhere on the canvas to set the work coordinate system origin.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="omtech-k40-profile">OMTech K40+ Profile<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#omtech-k40-profile" class="hash-link" aria-label="Пряме посилання на OMTech K40+ Profile" title="Пряме посилання на OMTech K40+ Profile" translate="no">​</a></h3>
+<p>New machine profile for the popular OMTech K40+ laser cutter.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mach4-g-code-dialect">Mach4 G-code Dialect<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#mach4-g-code-dialect" class="hash-link" aria-label="Пряме посилання на Mach4 G-code Dialect" title="Пряме посилання на Mach4 G-code Dialect" translate="no">​</a></h3>
+<p>New built-in G-code dialect for Mach4 controllers using M67 for spindle
+speed (laser power) control.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="platform-updates">Platform Updates<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#platform-updates" class="hash-link" aria-label="Пряме посилання на Platform Updates" title="Пряме посилання на Platform Updates" translate="no">​</a></h3>
+<ul>
+<li class="">Updated macOS support thanks to <strong>Pablo Gil</strong></li>
+<li class="">Flatpak updates thanks to <strong>fllmn</strong></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#bug-fixes" class="hash-link" aria-label="Пряме посилання на Bug Fixes" title="Пряме посилання на Bug Fixes" translate="no">​</a></h2>
+<p>This release addresses many issues:</p>
+<ul>
+<li class="">Add-on not enabled immediately after installation</li>
+<li class="">macOS bundle issues with GTK modules and built-in add-ons</li>
+<li class="">Tasker startup crash with DictProxy type annotations</li>
+<li class="">Old project files not showing new transformers</li>
+<li class="">SVG exporter stacking multiple workpieces on top of each other</li>
+<li class="">Auto layout for rotated stock</li>
+<li class="">Windows build using wrong version string on forks</li>
+<li class="">Mac and Windows builds not finding icon</li>
+</ul>
+<p>See the CHANGELOG on GitHub for the complete list.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="special-thanks">Special Thanks<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#special-thanks" class="hash-link" aria-label="Пряме посилання на Special Thanks" title="Пряме посилання на Special Thanks" translate="no">​</a></h2>
+<p>This release was made possible with the support of our Patreon supporters:</p>
+<ul>
+<li class="">2 anonymous contributors</li>
+<li class="">Amsel</li>
+<li class="">froqstar</li>
+</ul>
+<p>And thanks to <strong>MausRundung</strong> for the camera enhancements, <strong>Pablo Gil</strong> for
+macOS updates, and <strong>fllmn</strong> for Flatpak updates!</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-12">Download Rayforge 1.2<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#download-rayforge-12" class="hash-link" aria-label="Пряме посилання на Download Rayforge 1.2" title="Пряме посилання на Download Rayforge 1.2" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://github.com/barebaric/rayforge/releases" target="_blank" rel="noopener noreferrer" class="">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#join-the-community" class="hash-link" aria-label="Пряме посилання на Join the Community" title="Пряме посилання на Join the Community" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content>
+        <author>
+            <name>Rayforge Team</name>
+            <uri>https://github.com/barebaric/rayforge</uri>
+        </author>
+        <category label="release" term="release"/>
+        <category label="1.2" term="1.2"/>
+        <category label="addons" term="addons"/>
+        <category label="camera" term="camera"/>
+        <category label="ai" term="ai"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Rayforge 1.1 - MacOS Support, Pipeline Rewrite, G-code Console, and Unified Raster]]></title>
         <id>https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite</id>
@@ -211,7 +349,7 @@ keyboard shortcuts</li>
 <li class="">Побудували спільноту користувачів та учасників</li>
 <li class="">Створили інсталятори для Windows, Linux (deb, snap, flatpak) та macOS</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="що-далі">Що далі?<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D1%89%D0%BE-%D0%B4%D0%B0%D0%BB%D1%96" class="hash-link" aria-label="Пряме посилання на Що далі?" title="Пряме посилання на Що далі?" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="що-далі">Що далі?<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D1%89%D0%BE-%D0%B4%EF%BF%BD%D0%B0%D0%BB%D1%96" class="hash-link" aria-label="Пряме посилання на Що далі?" title="Пряме посилання на Що далі?" translate="no">​</a></h2>
 <p>Версія 1.0 - це етап, а не пункт призначення. Дорожня карта попереду
 включає:</p>
 <ul>
@@ -386,7 +524,7 @@ Rayforge та пресети операцій щоб зберегти ваші �
 </ol>
 <p>З Rayforge ви просто призначаєте кожну операцію відповідному лазеру
 у вашому профілі машини, і програмне забезпечення обробляє решту.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="оптимізація-для-конкретних-матеріалів">Оптимізація для конкретних матеріалів<a href="https://rayforge.org/uk/blog/multi-laser-support#%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D1%96%D0%B7%D0%B0%D1%86%D1%96%D1%8F-%D0%B4%D0%BB%D1%8F-%D0%BA%D0%BE%D0%BD%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D0%B8%D1%85-%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D1%96%D0%B0%D0%BB%D1%96%D0%B2" class="hash-link" aria-label="Пряме посилання на Оптимізація для конкретних матеріалів" title="Пряме посилання на Оптимізація для конкретних матеріалів" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="оптимізація-для-конкретних-матеріалів">Оптимізація для конкретних матеріалів<a href="https://rayforge.org/uk/blog/multi-laser-support#%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D1%96%D0%B7%D0%B0%D1%86%D1%96%D1%8F-%D0%B4%D0%BB%D1%8F-%D0%BA%D0%BE%D0%BD%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D0%B8%D1%85-%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D1%96%D0%B0%D0%BB%D1%96%D0%B2" class="hash-link" aria-label="Пряме посилання �на Оптимізація для конкретних матеріалів" title="Пряме посилання на Оптимізація для конкретних матеріалів" translate="no">​</a></h3>
 <p>Різні типи лазерів відмінно працюють з різними матеріалами:</p>
 <ul>
 <li class=""><strong>Діодні лазері</strong>: Чудові для гравірування по дереву, шкіри та деяких пластиків</li>
@@ -398,7 +536,7 @@ Rayforge та пресети операцій щоб зберегти ваші �
 кількох лазерів Rayforge дозволяє використовувати оптимальний інструмент для кожної частини вашого
 проекту.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="як-це-налаштувати">Як це налаштувати<a href="https://rayforge.org/uk/blog/multi-laser-support#%D1%8F%D0%BA-%D1%86%D0%B5-%D0%BD%D0%B0%D0%BB%D0%B0%D1%88%D1%82%D1%83%D0%B2%D0%B0%D1%82%D0%B8" class="hash-link" aria-label="Пряме посилання на Як це налаштувати" title="Пряме посилання на Як це налаштувати" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-налаштуйте-кілька-лазерів-у-вашому-профілі-машини">1. Налаштуйте кілька лазерів у вашому профілі машини<a href="https://rayforge.org/uk/blog/multi-laser-support#1-%D0%BD%D0%B0%D0%BB%D0%B0%D1%88%D1%82%D1%83%D0%B9%D1%82%D0%B5-%D0%BA%D1%96%D0%BB%D1%8C%D0%BA%D0%B0-%D0%BB%D0%B0%D0%B7%D0%B5%D1%80%D1%96%D0%B2-%D1%83-%D0%B2%D0%B0%D1%88%D0%BE%D0%BC%D1%83-%D0%BF%D1%80%D0%BE%D1%84%D1%96%D0%BB%D1%96-%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B8" class="hash-link" aria-label="Пряме посилання на 1. Налаштуйте кілька лазерів у вашому профілі машини" title="Пряме посилання на 1. Налаштуйте кілька лазерів у вашому профілі машини" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-налаштуйте-кілька-лазерів-у-вашому-профілі-машини">1. Налаштуйте кілька лазерів у вашому профілі машини<a href="https://rayforge.org/uk/blog/multi-laser-support#1-%D0%BD%D0%B0%D0%BB%D0%B0%D1%88%D1%82%D1%83%D0%B9%D1%82%D0%B5-%D0%BA%D1%96%D0%BB%D1%8C%D0%BA%D0%B0-%D0%BB%D0%B0%D0%B7%D0%B5%D1%80%D1%96%D0%B2-%D1%83-%D0%B2%D0%B0%D1%88%D0%BE%D0%BC%D1%83-%D0%BF%D1%80%D0%BE%D1%84%D1%96%D0%BB%D1%96-%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B8" class="hash-link" aria-label="Пряме посилання на 1. Налаштуйте кілька лазерів у вашому профілі машини" title="Пряме пос�илання на 1. Налаштуйте кілька лазерів у вашому профілі машини" translate="no">​</a></h3>
 <p>Перейдіть до <strong>Налаштування машини → Кілька лазерів</strong> та визначте кожен лазерний модуль
 у вашій системі. Ви можете вказати:</p>
 <ul>

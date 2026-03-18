@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite_new=self.webpackChunkwebsite_new||[]).push([[1634],{7541(e){e.exports=JSON.parse('{"metadata":{"permalink":"/pt-BR/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":6,"blogDescription":"Not\xedcias, atualiza\xe7\xf5es, tutoriais e dicas sobre o Rayforge","blogTitle":"Blog do Rayforge"}}')}}]);
