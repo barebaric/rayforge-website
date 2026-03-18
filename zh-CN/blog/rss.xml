@@ -355,7 +355,7 @@ keyboard shortcuts</li>
             <guid>https://rayforge.org/zh-CN/blog/welcome-to-rayforge</guid>
             <pubDate>Sun, 15 Dec 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Rayforge 主窗口]]></description>
-            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 主窗口" src="https://rayforge.org/zh-CN/assets/images/main-standard-cd07481f65c3f08a7a4fcaeb62c54e0a.png" width="2522" height="1772" class="img_ev3q"></p>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 主窗口" src="https://rayforge.org/zh-CN/assets/images/main-standard-df5521fba47fe4528c713f32d8915bb5.png" width="2522" height="1772" class="img_ev3q"></p>
 <p>我们很高兴向您介绍 Rayforge，这是一款专为基于 GRBL 的激光切割机和雕刻机设计的现代化开源 G-code 发送器和控制软件。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="为什么�选择-rayforge">为什么选择 Rayforge？<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-rayforge" class="hash-link" aria-label="为什么选择 Rayforge？ 的直接链接" title="为什么选择 Rayforge？ 的直接链接" translate="no">​</a></h2>
 <p>在激光切割和雕刻的世界中，拥有可靠、直观的软件与拥有优质硬件同样重要。Rayforge 从零开始构建，专注于：</p>
