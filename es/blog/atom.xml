@@ -432,9 +432,8 @@ keyboard shortcuts</li>
         <id>https://rayforge.org/es/blog/multi-laser-support</id>
         <link href="https://rayforge.org/es/blog/multi-laser-support"/>
         <updated>2025-01-10T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Camera Overlay]]></summary>
-        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="Camera Overlay" src="https://rayforge.org/es/assets/images/camera-overlay-9f900a6a0a1cf06b93ce089eb4ad5173.png" width="2426" height="1418" class="img_ev3q"></p>
-<p>Una de las funciones más potentes de Rayforge es la capacidad de asignar diferentes láseres a diferentes operaciones dentro de un solo trabajo. Esto abre posibilidades emocionantes para configuraciones de múltiples herramientas y flujos de trabajo especializados.</p>
+        <summary type="html"><![CDATA[Una de las funciones más potentes de Rayforge es la capacidad de asignar diferentes láseres a diferentes operaciones dentro de un solo trabajo. Esto abre posibilidades emocionantes para configuraciones de múltiples herramientas y flujos de trabajo especializados.]]></summary>
+        <content type="html"><![CDATA[<p>Una de las funciones más potentes de Rayforge es la capacidad de asignar diferentes láseres a diferentes operaciones dentro de un solo trabajo. Esto abre posibilidades emocionantes para configuraciones de múltiples herramientas y flujos de trabajo especializados.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="qué-es-el-soporte-multi-láser">¿Qué es el Soporte Multi-Láser?<a href="https://rayforge.org/es/blog/multi-laser-support#qu%C3%A9-es-el-soporte-multi-l%C3%A1ser" class="hash-link" aria-label="Enlace directo al ¿Qué es el Soporte Multi-Láser?" title="Enlace directo al ¿Qué es el Soporte Multi-Láser?" translate="no">​</a></h2>
 <p>Si tu máquina está equipada con múltiples módulos láser—por ejemplo, un láser de diodo para grabar y un láser CO2 para cortar, o diferentes láseres de diodo de potencia optimizados para diferentes materiales—Rayforge te permite aprovechar al máximo esta configuración.</p>
 <p>Con el soporte multi-láser, puedes:</p>

@@ -499,9 +499,8 @@ la communauté sur <a href="https://github.com/barebaric/rayforge/discussions" t
             <link>https://rayforge.org/fr/blog/multi-laser-support</link>
             <guid>https://rayforge.org/fr/blog/multi-laser-support</guid>
             <pubDate>Fri, 10 Jan 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[Superposition de caméra]]></description>
-            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Superposition de caméra" src="https://rayforge.org/fr/assets/images/camera-overlay-9f900a6a0a1cf06b93ce089eb4ad5173.png" width="2426" height="1418" class="img_ev3q"></p>
-<p>L'une des fonctionnalités les plus puissantes de Rayforge est la capacité
+            <description><![CDATA[L'une des fonctionnalités les plus puissantes de Rayforge est la capacité]]></description>
+            <content:encoded><![CDATA[<p>L'une des fonctionnalités les plus puissantes de Rayforge est la capacité
 d'assigner différents lasers à différentes opérations au sein d'une même
 tâche. Cela ouvre des possibilités passionnantes pour les configurations
 multi-outils et les flux de travail spécialisés.</p>

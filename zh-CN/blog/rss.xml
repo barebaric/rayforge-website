@@ -417,10 +417,9 @@ keyboard shortcuts</li>
             <link>https://rayforge.org/zh-CN/blog/multi-laser-support</link>
             <guid>https://rayforge.org/zh-CN/blog/multi-laser-support</guid>
             <pubDate>Fri, 10 Jan 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[相机叠加]]></description>
-            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="相机叠加" src="https://rayforge.org/zh-CN/assets/images/camera-overlay-9f900a6a0a1cf06b93ce089eb4ad5173.png" width="2426" height="1418" class="img_ev3q"></p>
-<p>Rayforge 最强大的功能之一是能够在单个作业中为不同操作分配不同的激光器。这为多工具设置和专业化工作流程开启了令人兴奋的可能性。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="什么是多激光支持">什么是多激光支持？<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#%E4%BB%80%EF%BF%BD%E4%B9%88%E6%98%AF%E5%A4%9A%E6%BF%80%E5%85%89%E6%94%AF%E6%8C%81" class="hash-link" aria-label="什么是多激光支持？ 的直接链接" title="什么是多激光支持？ 的直接链接" translate="no">​</a></h2>
+            <description><![CDATA[Rayforge 最强大的功能之一是能够在单个作业中为不同操作分配不同的激光器。这为多工具设置和专业化工作流程开启了令人兴奋的可能性。]]></description>
+            <content:encoded><![CDATA[<p>Rayforge 最强大的功能之一是能够在单个作业中为不同操作分配不同的激光器。这为多工具设置和专业化工作流程开启了令人兴奋的可能性。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="什么是多激光支持">什么是多激光支持？<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%9A%E6%BF%80%E5%85%89%E6%94%AF%E6%8C%81" class="hash-link" aria-label="什么是多激光支持？ 的直接链接" title="什么是多激光支持？ 的直接链接" translate="no">​</a></h2>
 <p>如果您的机器配备多个激光模块——例如，一个用于雕刻的二极管激光器和一个用于切割的 CO2 激光器，或者针对不同材料优化的不同功率二极管激光器——Rayforge 让您充分利用这种设置。</p>
 <p>通过多激光支持，您可以：</p>
 <ul>

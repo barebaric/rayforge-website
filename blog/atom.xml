@@ -496,9 +496,8 @@ on <a href="https://github.com/barebaric/rayforge/discussions" target="_blank" r
         <id>https://rayforge.org/blog/multi-laser-support</id>
         <link href="https://rayforge.org/blog/multi-laser-support"/>
         <updated>2025-01-10T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Camera Overlay]]></summary>
-        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="Camera Overlay" src="https://rayforge.org/assets/images/camera-overlay-9f900a6a0a1cf06b93ce089eb4ad5173.png" width="2426" height="1418" class="img_ev3q"></p>
-<p>One of the most powerful features in Rayforge is the ability to assign
+        <summary type="html"><![CDATA[One of the most powerful features in Rayforge is the ability to assign]]></summary>
+        <content type="html"><![CDATA[<p>One of the most powerful features in Rayforge is the ability to assign
 different lasers to different operations within a single job. This opens
 up exciting possibilities for multi-tool setups and specialized
 workflows.</p>

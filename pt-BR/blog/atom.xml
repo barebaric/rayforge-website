@@ -503,9 +503,8 @@ nas <a href="https://github.com/barebaric/rayforge/discussions" target="_blank" 
         <id>https://rayforge.org/pt-BR/blog/multi-laser-support</id>
         <link href="https://rayforge.org/pt-BR/blog/multi-laser-support"/>
         <updated>2025-01-10T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Sobreposição de Câmera]]></summary>
-        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="Sobreposição de Câmera" src="https://rayforge.org/pt-BR/assets/images/camera-overlay-9f900a6a0a1cf06b93ce089eb4ad5173.png" width="2426" height="1418" class="img_ev3q"></p>
-<p>Um dos recursos mais poderosos no Rayforge é a capacidade de atribuir
+        <summary type="html"><![CDATA[Um dos recursos mais poderosos no Rayforge é a capacidade de atribuir]]></summary>
+        <content type="html"><![CDATA[<p>Um dos recursos mais poderosos no Rayforge é a capacidade de atribuir
 diferentes lasers a diferentes operações dentro de um único trabalho. Isso
 abre possibilidades emocionantes para configurações multi-ferramentas e
 fluxos de trabalho especializados.</p>
