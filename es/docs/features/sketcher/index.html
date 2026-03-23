@@ -12,8 +12,8 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/es/assets/css/styles.a1195d80.css">
-<script src="/es/assets/js/runtime~main.c2fcb7c3.js" defer="defer"></script>
-<script src="/es/assets/js/main.bec551c8.js" defer="defer"></script>
+<script src="/es/assets/js/runtime~main.1cc37695.js" defer="defer"></script>
+<script src="/es/assets/js/main.13b64766.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -42,15 +42,37 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="crear-geometría-2d">Crear Geometría 2D<a href="#crear-geometría-2d" class="hash-link" aria-label="Enlace directo al Crear Geometría 2D" title="Enlace directo al Crear Geometría 2D" translate="no">​</a></h2>
 <p>El dibujador soporta crear los siguientes elementos geométricos básicos:</p>
 <ul>
-<li class=""><strong>Líneas</strong>: Dibuja segmentos de línea recta entre puntos</li>
-<li class=""><strong>Círculos</strong>: Crea círculos definiendo un punto central y radio</li>
+<li class=""><strong>Trayectos (Líneas y Curvas Bezier)</strong>: Dibuja líneas rectas y curvas bezier suaves
+usando la herramienta de trayecto unificada. Haz clic para colocar puntos, arrastra para crear manipuladores bezier.</li>
 <li class=""><strong>Arcos</strong>: Dibuja arcos especificando un punto central, punto inicial y punto final</li>
+<li class=""><strong>Círculos</strong>: Crea círculos definiendo un punto central y radio</li>
 <li class=""><strong>Rectángulos</strong>: Dibuja rectángulos especificando dos esquinas opuestas</li>
 <li class=""><strong>Rectángulos Redondeados</strong>: Dibuja rectángulos con esquinas redondeadas</li>
 <li class=""><strong>Cajas de Texto</strong>: Añade elementos de texto a tu boceto</li>
 <li class=""><strong>Rellenos</strong>: Rellena regiones cerradas para crear áreas sólidas</li>
 </ul>
 <p>Estos elementos forman la base de tus diseños 2D y pueden combinarse para crear formas complejas. Los rellenos son particularmente útiles para crear regiones sólidas que serán grabadas o cortadas como una sola pieza.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="trabajando-con-curvas-bezier">Trabajando con Curvas Bezier<a href="#trabajando-con-curvas-bezier" class="hash-link" aria-label="Enlace directo al Trabajando con Curvas Bezier" title="Enlace directo al Trabajando con Curvas Bezier" translate="no">​</a></h2>
+<p>La herramienta de trayecto soporta curvas bezier para crear formas suaves y orgánicas:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dibujando-curvas-bezier">Dibujando Curvas Bezier<a href="#dibujando-curvas-bezier" class="hash-link" aria-label="Enlace directo al Dibujando Curvas Bezier" title="Enlace directo al Dibujando Curvas Bezier" translate="no">​</a></h3>
+<ol>
+<li class="">Selecciona la herramienta de trayecto desde el menú circular o usa el atajo de teclado</li>
+<li class="">Haz clic para colocar puntos - cada clic crea un nuevo punto</li>
+<li class="">Arrastra después de hacer clic para crear manipuladores bezier para curvas suaves</li>
+<li class="">Continúa añadiendo puntos para construir tu trayecto</li>
+<li class="">Presiona Escape o doble clic para finalizar el trayecto</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="editando-curvas-bezier">Editando Curvas Bezier<a href="#editando-curvas-bezier" class="hash-link" aria-label="Enlace directo al Editando Curvas Bezier" title="Enlace directo al Editando Curvas Bezier" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Mover puntos</strong>: Haz clic y arrastra cualquier punto para reposicionarlo</li>
+<li class=""><strong>Ajustar manipuladores</strong>: Arrastra los extremos de los manipuladores para modificar la forma de la curva</li>
+<li class=""><strong>Conectar a puntos existentes</strong>: Al editar un trayecto, puedes ajustar a puntos existentes en tu boceto</li>
+<li class=""><strong>Hacer suave/simétrico</strong>: Los puntos conectados por una restricción coincidente pueden hacerse suaves (tangente continua) o simétricos (manipuladores reflejados)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="convertir-curvas-a-líneas">Convertir Curvas a Líneas<a href="#convertir-curvas-a-líneas" class="hash-link" aria-label="Enlace directo al Convertir Curvas a Líneas" title="Enlace directo al Convertir Curvas a Líneas" translate="no">​</a></h3>
+<p>Usa la <strong>herramienta de enderezar</strong> para convertir curvas bezier de vuelta a líneas rectas.
+Esto es útil cuando necesitas geometría limpia y simple. Selecciona los segmentos bezier
+que quieres convertir y aplica la acción de enderezar.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sistema-de-restricciones-paramétricas">Sistema de Restricciones Paramétricas<a href="#sistema-de-restricciones-paramétricas" class="hash-link" aria-label="Enlace directo al Sistema de Restricciones Paramétricas" title="Enlace directo al Sistema de Restricciones Paramétricas" translate="no">​</a></h2>
 <p>El sistema de restricciones es el núcleo del dibujador paramétrico, permitiéndote definir relaciones geométricas precisas:</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="restricciones-geométricas">Restricciones Geométricas<a href="#restricciones-geométricas" class="hash-link" aria-label="Enlace directo al Restricciones Geométricas" title="Enlace directo al Restricciones Geométricas" translate="no">​</a></h3>
@@ -81,26 +103,28 @@
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="interfaz-de-menú-circular">Interfaz de Menú Circular<a href="#interfaz-de-menú-circular" class="hash-link" aria-label="Enlace directo al Interfaz de Menú Circular" title="Enlace directo al Interfaz de Menú Circular" translate="no">​</a></h2>
 <p>El dibujador cuenta con un menú circular sensible al contexto que proporciona acceso rápido a todas las herramientas de dibujo y restricciones. Este menú radial aparece cuando haces clic derecho en el espacio de trabajo del boceto y se adapta basándose en tu contexto y selección actual.</p>
-<p>Los elementos del menú circular muestran dinámicamente las opciones disponibles basándose en lo que tienes seleccionado. Por ejemplo, al hacer clic en espacio vac ío, verás herramientas de dibujo. Al hacer clic en geometría seleccionada, verás restricciones aplicables.</p>
+<p>Los elementos del menú circular muestran dinámicamente las opciones disponibles basándose en lo que tienes seleccionado. Por ejemplo, al hacer clic en espacio vacío, verás herramientas de dibujo. Al hacer clic en geometría seleccionada, verás restricciones aplicables.</p>
 <p><img decoding="async" loading="lazy" alt="Menú Circular del Dibujador" src="/es/assets/images/sketcher-pie-menu-a3332c447ad5789c22d9bf91c0859075.png" width="458" height="325" class="img_ev3q"></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="atajos-de-teclado">Atajos de Teclado<a href="#atajos-de-teclado" class="hash-link" aria-label="Enlace directo al Atajos de Teclado" title="Enlace directo al Atajos de Teclado" translate="no">​</a></h2>
 <p>El dibujador proporciona atajos de teclado para un flujo de trabajo eficiente:</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="atajos-de-herramientas">Atajos de Herramientas<a href="#atajos-de-herramientas" class="hash-link" aria-label="Enlace directo al Atajos de Herramientas" title="Enlace directo al Atajos de Herramientas" translate="no">​</a></h3>
 <ul>
 <li class=""><code>Espacio</code>: Herramienta de selección</li>
-<li class=""><code>G+L</code>: Herramienta de línea</li>
+<li class=""><code>G+P</code>: Herramienta de trayecto (líneas y curvas bezier)</li>
 <li class=""><code>G+A</code>: Herramienta de arco</li>
 <li class=""><code>G+C</code>: Herramienta de círculo</li>
 <li class=""><code>G+R</code>: Herramienta de rectángulo</li>
 <li class=""><code>G+O</code>: Herramienta de rectángulo redondeado</li>
 <li class=""><code>G+F</code>: Herramienta de relleno de área</li>
 <li class=""><code>G+T</code>: Herramienta de caja de texto</li>
+<li class=""><code>G+G</code>: Herramienta de cuadrícula (alternar visibilidad de cuadrícula)</li>
 <li class=""><code>G+N</code>: Alternar modo construcción en la selección</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="atajos-de-acción">Atajos de Acción<a href="#atajos-de-acción" class="hash-link" aria-label="Enlace directo al Atajos de Acción" title="Enlace directo al Atajos de Acción" translate="no">​</a></h3>
 <ul>
 <li class=""><code>C+H</code>: Añadir chaflán en esquina</li>
 <li class=""><code>C+F</code>: Añadir redondeo en esquina</li>
+<li class=""><code>C+S</code>: Enderezar curvas bezier seleccionadas a líneas</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="atajos-de-restricciones">Atajos de Restricciones<a href="#atajos-de-restricciones" class="hash-link" aria-label="Enlace directo al Atajos de Restricciones" title="Enlace directo al Atajos de Restricciones" translate="no">​</a></h3>
 <ul>
@@ -138,6 +162,25 @@
 <li class="">Definir geometría temporal para alineación</li>
 <li class="">Construir formas complejas a partir de un marco de guías</li>
 </ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="cuadrícula-y-controles-de-visibilidad">Cuadrícula y Controles de Visibilidad<a href="#cuadrícula-y-controles-de-visibilidad" class="hash-link" aria-label="Enlace directo al Cuadrícula y Controles de Visibilidad" title="Enlace directo al Cuadrícula y Controles de Visibilidad" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="herramienta-de-cuadrícula">Herramienta de Cuadrícula<a href="#herramienta-de-cuadrícula" class="hash-link" aria-label="Enlace directo al Herramienta de Cuadrícula" title="Enlace directo al Herramienta de Cuadrícula" translate="no">​</a></h3>
+<p>La herramienta de cuadrícula proporciona una referencia visual para alineación y dimensionado:</p>
+<ul>
+<li class="">Alterna la cuadrícula on/off usando el botón de herramienta de cuadrícula o <code>G+G</code></li>
+<li class="">La cuadrícula se adapta a tu nivel de zoom para espaciado consistente</li>
+<li class="">Mantén <code>Ctrl</code> mientras colocas o mueves puntos para ajustar a la cuadrícula</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="controles-de-mostrarocultar">Controles de Mostrar/Ocultar<a href="#controles-de-mostrarocultar" class="hash-link" aria-label="Enlace directo al Controles de Mostrar/Ocultar" title="Enlace directo al Controles de Mostrar/Ocultar" translate="no">​</a></h3>
+<p>La barra de herramientas del dibujante incluye botones de alternar para controlar visibilidad:</p>
+<ul>
+<li class=""><strong>Mostrar/ocultar geometría de construcción</strong>: Alterna visibilidad de entidades de construcción</li>
+<li class=""><strong>Mostrar/ocultar restricciones</strong>: Alterna visibilidad de marcadores de restricciones</li>
+</ul>
+<p>Estos controles ayudan a reducir el desorden visual cuando trabajas en bocetos complejos.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="movimiento-restringido-a-eje">Movimiento Restringido a Eje<a href="#movimiento-restringido-a-eje" class="hash-link" aria-label="Enlace directo al Movimiento Restringido a Eje" title="Enlace directo al Movimiento Restringido a Eje" translate="no">​</a></h3>
+<p>Al arrastrar puntos o geometría, mantén <code>Shift</code> para restringir el movimiento al
+eje más cercano (horizontal o vertical). Esto es útil para mantener la alineación
+mientras haces ajustes.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="chaflán-y-redondeo">Chaflán y Redondeo<a href="#chaflán-y-redondeo" class="hash-link" aria-label="Enlace directo al Chaflán y Redondeo" title="Enlace directo al Chaflán y Redondeo" translate="no">​</a></h2>
 <p>El dibujador proporciona herramientas para modificar esquinas de tu geometría:</p>
 <ul>
@@ -173,8 +216,9 @@
 <li class=""><strong>Comienza con Geometría Básica</strong>: Crea formas básicas primero, luego refina con restricciones</li>
 <li class=""><strong>Usa Restricciones Temprano</strong>: Aplica restricciones mientras construyes para mantener la intención del diseño</li>
 <li class=""><strong>Verifica Estado de Restricciones</strong>: El sistema indica cuándo los bocetos están completamente restringidos</li>
-<li class=""><strong>Observa Conflictos</strong>: Las restricciones que entran en conflicto entre sí se resaltan en rojo</li>
+<li class=""><strong>Observa Conflictos</strong>: Las restricciones que entran en conflicto entre sí se resaltan en rojo y se muestran en el panel de restricciones para fácil identificaci ón</li>
 <li class=""><strong>Utiliza Simetría</strong>: Las restricciones de simetría pueden acelerar significativamente diseños complejos</li>
+<li class=""><strong>Usa la Cuadrícula</strong>: Habilita la cuadrícula para alineación precisa, y usa Ctrl para ajustar a la cuadrícula</li>
 <li class=""><strong>Itera y Refina</strong>: No dudes en modificar restricciones para lograr el resultado deseado</li>
 </ol>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="funciones-de-edición">Funciones de Edición<a href="#funciones-de-edición" class="hash-link" aria-label="Enlace directo al Funciones de Edición" title="Enlace directo al Funciones de Edición" translate="no">​</a></h2>
@@ -185,6 +229,6 @@
 <li class=""><strong>Actualizaciones en Tiempo Real</strong>: Los cambios en restricciones actualizan inmediatamente la geometría</li>
 <li class=""><strong>Edición con Doble Clic</strong>: Doble clic en restricciones dimensionales (Distancia, Radio, Diámetro, Ángulo, Relación de Aspecto) abre un diálogo para editar sus valores</li>
 <li class=""><strong>Expresiones Paramétricas</strong>: Las restricciones dimensionales soportan expresiones, permitiendo que los valores se calculen desde otros parámetros (ej., <code>ancho/2</code> para un radio que es la mitad del ancho)</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/features/sketcher.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Página del documento"><a class="pagination-nav__link pagination-nav__link--prev" href="/es/docs/features/holding-tabs"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Pestañas de Sujeción</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/es/docs/features/multi-layer"><div class="pagination-nav__sublabel">Siguiente</div><div class="pagination-nav__label">Flujo de Trabajo Multi-Capa</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#resumen" class="table-of-contents__link toc-highlight">Resumen</a></li><li><a href="#crear-y-editar-bocetos" class="table-of-contents__link toc-highlight">Crear y Editar Bocetos</a><ul><li><a href="#crear-un-nuevo-boceto" class="table-of-contents__link toc-highlight">Crear un Nuevo Boceto</a></li><li><a href="#editar-bocetos-existentes" class="table-of-contents__link toc-highlight">Editar Bocetos Existentes</a></li></ul></li><li><a href="#crear-geometría-2d" class="table-of-contents__link toc-highlight">Crear Geometría 2D</a></li><li><a href="#sistema-de-restricciones-paramétricas" class="table-of-contents__link toc-highlight">Sistema de Restricciones Paramétricas</a><ul><li><a href="#restricciones-geométricas" class="table-of-contents__link toc-highlight">Restricciones Geométricas</a></li><li><a href="#restricciones-dimensionales" class="table-of-contents__link toc-highlight">Restricciones Dimensionales</a></li></ul></li><li><a href="#interfaz-de-menú-circular" class="table-of-contents__link toc-highlight">Interfaz de Menú Circular</a></li><li><a href="#atajos-de-teclado" class="table-of-contents__link toc-highlight">Atajos de Teclado</a><ul><li><a href="#atajos-de-herramientas" class="table-of-contents__link toc-highlight">Atajos de Herramientas</a></li><li><a href="#atajos-de-acción" class="table-of-contents__link toc-highlight">Atajos de Acción</a></li><li><a href="#atajos-de-restricciones" class="table-of-contents__link toc-highlight">Atajos de Restricciones</a></li><li><a href="#atajos-generales" class="table-of-contents__link toc-highlight">Atajos Generales</a></li></ul></li><li><a href="#modo-construcción" class="table-of-contents__link toc-highlight">Modo Construcción</a></li><li><a href="#chaflán-y-redondeo" class="table-of-contents__link toc-highlight">Chaflán y Redondeo</a></li><li><a href="#importar-y-exportar" class="table-of-contents__link toc-highlight">Importar y Exportar</a><ul><li><a href="#exportar-objetos" class="table-of-contents__link toc-highlight">Exportar Objetos</a></li><li><a href="#guardar-bocetos" class="table-of-contents__link toc-highlight">Guardar Bocetos</a></li><li><a href="#importar-bocetos" class="table-of-contents__link toc-highlight">Importar Bocetos</a></li></ul></li><li><a href="#consejos-de-flujo-de-trabajo" class="table-of-contents__link toc-highlight">Consejos de Flujo de Trabajo</a></li><li><a href="#funciones-de-edición" class="table-of-contents__link toc-highlight">Funciones de Edición</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/features/sketcher.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Página del documento"><a class="pagination-nav__link pagination-nav__link--prev" href="/es/docs/features/holding-tabs"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Pestañas de Sujeción</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/es/docs/features/multi-layer"><div class="pagination-nav__sublabel">Siguiente</div><div class="pagination-nav__label">Flujo de Trabajo Multi-Capa</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#resumen" class="table-of-contents__link toc-highlight">Resumen</a></li><li><a href="#crear-y-editar-bocetos" class="table-of-contents__link toc-highlight">Crear y Editar Bocetos</a><ul><li><a href="#crear-un-nuevo-boceto" class="table-of-contents__link toc-highlight">Crear un Nuevo Boceto</a></li><li><a href="#editar-bocetos-existentes" class="table-of-contents__link toc-highlight">Editar Bocetos Existentes</a></li></ul></li><li><a href="#crear-geometría-2d" class="table-of-contents__link toc-highlight">Crear Geometría 2D</a></li><li><a href="#trabajando-con-curvas-bezier" class="table-of-contents__link toc-highlight">Trabajando con Curvas Bezier</a><ul><li><a href="#dibujando-curvas-bezier" class="table-of-contents__link toc-highlight">Dibujando Curvas Bezier</a></li><li><a href="#editando-curvas-bezier" class="table-of-contents__link toc-highlight">Editando Curvas Bezier</a></li><li><a href="#convertir-curvas-a-líneas" class="table-of-contents__link toc-highlight">Convertir Curvas a Líneas</a></li></ul></li><li><a href="#sistema-de-restricciones-paramétricas" class="table-of-contents__link toc-highlight">Sistema de Restricciones Paramétricas</a><ul><li><a href="#restricciones-geométricas" class="table-of-contents__link toc-highlight">Restricciones Geométricas</a></li><li><a href="#restricciones-dimensionales" class="table-of-contents__link toc-highlight">Restricciones Dimensionales</a></li></ul></li><li><a href="#interfaz-de-menú-circular" class="table-of-contents__link toc-highlight">Interfaz de Menú Circular</a></li><li><a href="#atajos-de-teclado" class="table-of-contents__link toc-highlight">Atajos de Teclado</a><ul><li><a href="#atajos-de-herramientas" class="table-of-contents__link toc-highlight">Atajos de Herramientas</a></li><li><a href="#atajos-de-acción" class="table-of-contents__link toc-highlight">Atajos de Acción</a></li><li><a href="#atajos-de-restricciones" class="table-of-contents__link toc-highlight">Atajos de Restricciones</a></li><li><a href="#atajos-generales" class="table-of-contents__link toc-highlight">Atajos Generales</a></li></ul></li><li><a href="#modo-construcción" class="table-of-contents__link toc-highlight">Modo Construcción</a></li><li><a href="#cuadrícula-y-controles-de-visibilidad" class="table-of-contents__link toc-highlight">Cuadrícula y Controles de Visibilidad</a><ul><li><a href="#herramienta-de-cuadrícula" class="table-of-contents__link toc-highlight">Herramienta de Cuadrícula</a></li><li><a href="#controles-de-mostrarocultar" class="table-of-contents__link toc-highlight">Controles de Mostrar/Ocultar</a></li><li><a href="#movimiento-restringido-a-eje" class="table-of-contents__link toc-highlight">Movimiento Restringido a Eje</a></li></ul></li><li><a href="#chaflán-y-redondeo" class="table-of-contents__link toc-highlight">Chaflán y Redondeo</a></li><li><a href="#importar-y-exportar" class="table-of-contents__link toc-highlight">Importar y Exportar</a><ul><li><a href="#exportar-objetos" class="table-of-contents__link toc-highlight">Exportar Objetos</a></li><li><a href="#guardar-bocetos" class="table-of-contents__link toc-highlight">Guardar Bocetos</a></li><li><a href="#importar-bocetos" class="table-of-contents__link toc-highlight">Importar Bocetos</a></li></ul></li><li><a href="#consejos-de-flujo-de-trabajo" class="table-of-contents__link toc-highlight">Consejos de Flujo de Trabajo</a></li><li><a href="#funciones-de-edición" class="table-of-contents__link toc-highlight">Funciones de Edición</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

@@ -12,8 +12,8 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.4e9e11c4.css">
-<script src="/assets/js/runtime~main.2dcfd8d4.js" defer="defer"></script>
-<script src="/assets/js/main.c4795150.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.9aae419f.js" defer="defer"></script>
+<script src="/assets/js/main.9ad36581.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -48,9 +48,10 @@ shortcuts</li>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="creating-2d-geometry">Creating 2D Geometry<a href="#creating-2d-geometry" class="hash-link" aria-label="Direct link to Creating 2D Geometry" title="Direct link to Creating 2D Geometry" translate="no">​</a></h2>
 <p>The sketcher supports creating the following basic geometric elements:</p>
 <ul>
-<li class=""><strong>Lines</strong>: Draw straight line segments between points</li>
-<li class=""><strong>Circles</strong>: Create circles by defining a center point and radius</li>
+<li class=""><strong>Paths (Lines and Bezier Curves)</strong>: Draw straight lines and smooth bezier curves
+using the unified path tool. Click to place points, drag to create bezier handles.</li>
 <li class=""><strong>Arcs</strong>: Draw arcs by specifying a center point, start point, and end point</li>
+<li class=""><strong>Circles</strong>: Create circles by defining a center point and radius</li>
 <li class=""><strong>Rectangles</strong>: Draw rectangles by specifying two opposite corners</li>
 <li class=""><strong>Rounded Rectangles</strong>: Draw rectangles with rounded corners</li>
 <li class=""><strong>Text Boxes</strong>: Add text elements to your sketch</li>
@@ -59,6 +60,29 @@ shortcuts</li>
 <p>These elements form the foundation of your 2D designs and can be combined to create
 complex shapes. Fills are particularly useful for creating solid regions that will
 be engraved or cut as a single piece.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="working-with-bezier-curves">Working with Bezier Curves<a href="#working-with-bezier-curves" class="hash-link" aria-label="Direct link to Working with Bezier Curves" title="Direct link to Working with Bezier Curves" translate="no">​</a></h2>
+<p>The path tool supports bezier curves for creating smooth, organic shapes:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="drawing-bezier-curves">Drawing Bezier Curves<a href="#drawing-bezier-curves" class="hash-link" aria-label="Direct link to Drawing Bezier Curves" title="Direct link to Drawing Bezier Curves" translate="no">​</a></h3>
+<ol>
+<li class="">Select the path tool from the pie menu or use the keyboard shortcut</li>
+<li class="">Click to place points - each click creates a new point</li>
+<li class="">Drag after clicking to create bezier handles for smooth curves</li>
+<li class="">Continue adding points to build your path</li>
+<li class="">Press Escape or double-click to finish the path</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="editing-bezier-curves">Editing Bezier Curves<a href="#editing-bezier-curves" class="hash-link" aria-label="Direct link to Editing Bezier Curves" title="Direct link to Editing Bezier Curves" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Move points</strong>: Click and drag any point to reposition it</li>
+<li class=""><strong>Adjust handles</strong>: Drag the handle endpoints to modify the curve shape</li>
+<li class=""><strong>Connect to existing points</strong>: When editing a path, you can snap to existing
+points in your sketch</li>
+<li class=""><strong>Make smooth/symmetric</strong>: Points connected by a coincident constraint can be
+made smooth (continuous tangent) or symmetric (mirrored handles)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="converting-curves-to-lines">Converting Curves to Lines<a href="#converting-curves-to-lines" class="hash-link" aria-label="Direct link to Converting Curves to Lines" title="Direct link to Converting Curves to Lines" translate="no">​</a></h3>
+<p>Use the <strong>straighten tool</strong> to convert bezier curves back to straight lines.
+This is useful when you need clean, simple geometry. Select the bezier segments
+you want to convert and apply the straighten action.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="parametric-constraint-system">Parametric Constraint System<a href="#parametric-constraint-system" class="hash-link" aria-label="Direct link to Parametric Constraint System" title="Direct link to Parametric Constraint System" translate="no">​</a></h2>
 <p>The constraint system is the core of the parametric sketcher, allowing you to define
 precise geometric relationships:</p>
@@ -105,19 +129,21 @@ selected geometry, you&#x27;ll see applicable constraints.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tool-shortcuts">Tool Shortcuts<a href="#tool-shortcuts" class="hash-link" aria-label="Direct link to Tool Shortcuts" title="Direct link to Tool Shortcuts" translate="no">​</a></h3>
 <ul>
 <li class=""><code>Space</code>: Select tool</li>
-<li class=""><code>G+L</code>: Line tool</li>
+<li class=""><code>G+P</code>: Path tool (lines and bezier curves)</li>
 <li class=""><code>G+A</code>: Arc tool</li>
 <li class=""><code>G+C</code>: Circle tool</li>
 <li class=""><code>G+R</code>: Rectangle tool</li>
 <li class=""><code>G+O</code>: Rounded Rectangle tool</li>
 <li class=""><code>G+F</code>: Fill Area tool</li>
 <li class=""><code>G+T</code>: Text Box tool</li>
+<li class=""><code>G+G</code>: Grid tool (toggle grid visibility)</li>
 <li class=""><code>G+N</code>: Toggle construction mode on selection</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="action-shortcuts">Action Shortcuts<a href="#action-shortcuts" class="hash-link" aria-label="Direct link to Action Shortcuts" title="Direct link to Action Shortcuts" translate="no">​</a></h3>
 <ul>
 <li class=""><code>C+H</code>: Add Chamfer corner</li>
 <li class=""><code>C+F</code>: Add Fillet corner</li>
+<li class=""><code>C+S</code>: Straighten selected bezier curves to lines</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="constraint-shortcuts">Constraint Shortcuts<a href="#constraint-shortcuts" class="hash-link" aria-label="Direct link to Constraint Shortcuts" title="Direct link to Constraint Shortcuts" translate="no">​</a></h3>
 <ul>
@@ -134,7 +160,7 @@ selected geometry, you&#x27;ll see applicable constraints.</p>
 <li class=""><code>K+A</code>: Apply Angle constraint</li>
 <li class=""><code>K+X</code>: Apply Aspect Ratio constraint</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="general-shortcuts">General Shortcuts<a href="#general-shortcuts" class="hash-link" aria-label="Direct link to General Shortcuts" title="Direct link to General Shortcuts" translate="no">  ​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="general-shortcuts">General Shortcuts<a href="#general-shortcuts" class="hash-link" aria-label="Direct link to General Shortcuts" title="Direct link to General Shortcuts" translate="no">​</a></h3>
 <ul>
 <li class=""><code>Ctrl+Z</code>: Undo</li>
 <li class=""><code>Ctrl+Y</code> or <code>Ctrl+Shift+Z</code>: Redo</li>
@@ -158,6 +184,25 @@ the sketch is used for laser cutting or engraving.</p>
 <li class="">Defining temporary geometry for alignment</li>
 <li class="">Building complex shapes from a framework of guides</li>
 </ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="grid-and-visibility-controls">Grid and Visibility Controls<a href="#grid-and-visibility-controls" class="hash-link" aria-label="Direct link to Grid and Visibility Controls" title="Direct link to Grid and Visibility Controls" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="grid-tool">Grid Tool<a href="#grid-tool" class="hash-link" aria-label="Direct link to Grid Tool" title="Direct link to Grid Tool" translate="no">​</a></h3>
+<p>The grid tool provides a visual reference for alignment and sizing:</p>
+<ul>
+<li class="">Toggle the grid on/off using the grid tool button or <code>G+G</code></li>
+<li class="">The grid adapts to your zoom level for consistent spacing</li>
+<li class="">Hold <code>Ctrl</code> while placing or moving points to snap to the grid</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="showhide-controls">Show/Hide Controls<a href="#showhide-controls" class="hash-link" aria-label="Direct link to Show/Hide Controls" title="Direct link to Show/Hide Controls" translate="no">​</a></h3>
+<p>The sketcher toolbar includes toggle buttons to control visibility:</p>
+<ul>
+<li class=""><strong>Show/hide construction geometry</strong>: Toggle visibility of construction entities</li>
+<li class=""><strong>Show/hide constraints</strong>: Toggle visibility of constraint markers</li>
+</ul>
+<p>These controls help reduce visual clutter when working on complex sketches.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="axis-constrained-movement">Axis-Constrained Movement<a href="#axis-constrained-movement" class="hash-link" aria-label="Direct link to Axis-Constrained Movement" title="Direct link to Axis-Constrained Movement" translate="no">​</a></h3>
+<p>When dragging points or geometry, hold <code>Shift</code> to constrain movement to the
+nearest axis (horizontal or vertical). This is useful for maintaining alignment
+while making adjustments.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="chamfer-and-fillet">Chamfer and Fillet<a href="#chamfer-and-fillet" class="hash-link" aria-label="Direct link to Chamfer and Fillet" title="Direct link to Chamfer and Fillet" translate="no">​</a></h2>
 <p>The sketcher provides tools to modify corners of your geometry:</p>
 <ul>
@@ -200,8 +245,10 @@ dimensional relationships.</p>
 <li class=""><strong>Start with Rough Geometry</strong>: Create basic shapes first, then refine with constraints</li>
 <li class=""><strong>Use Constraints Early</strong>: Apply constraints as you build to maintain design intent</li>
 <li class=""><strong>Check Constraint Status</strong>: The system indicates when sketches are fully constrained</li>
-<li class=""><strong>Watch for Conflicts</strong>: Constraints that conflict with each other are highlighted in red</li>
+<li class=""><strong>Watch for Conflicts</strong>: Constraints that conflict with each other are highlighted in
+red and shown in the constraints panel for easy identification</li>
 <li class=""><strong>Utilize Symmetry</strong>: Symmetry constraints can significantly speed up complex designs</li>
+<li class=""><strong>Use the Grid</strong>: Enable the grid for precise alignment, and use Ctrl to snap to grid</li>
 <li class=""><strong>Iterate and Refine</strong>: Don&#x27;t hesitate to modify constraints to achieve the desired
 result</li>
 </ol>
@@ -216,6 +263,6 @@ Angle, Aspect Ratio) opens a dialog to edit their values</li>
 <li class=""><strong>Parametric Expressions</strong>: Dimensional constraints support expressions, allowing values to be
 calculated from other parameters (e.g., <code>width/2</code> for a radius that&#x27;s half the
 width)</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/features/sketcher.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/features/holding-tabs"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Holding Tabs</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/features/multi-layer"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Multi-Layer Workflow</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#creating-and-editing-sketches" class="table-of-contents__link toc-highlight">Creating and Editing Sketches</a><ul><li><a href="#creating-a-new-sketch" class="table-of-contents__link toc-highlight">Creating a New Sketch</a></li><li><a href="#editing-existing-sketches" class="table-of-contents__link toc-highlight">Editing Existing Sketches</a></li></ul></li><li><a href="#creating-2d-geometry" class="table-of-contents__link toc-highlight">Creating 2D Geometry</a></li><li><a href="#parametric-constraint-system" class="table-of-contents__link toc-highlight">Parametric Constraint System</a><ul><li><a href="#geometric-constraints" class="table-of-contents__link toc-highlight">Geometric Constraints</a></li><li><a href="#dimensional-constraints" class="table-of-contents__link toc-highlight">Dimensional Constraints</a></li></ul></li><li><a href="#pie-menu-interface" class="table-of-contents__link toc-highlight">Pie Menu Interface</a></li><li><a href="#keyboard-shortcuts" class="table-of-contents__link toc-highlight">Keyboard Shortcuts</a><ul><li><a href="#tool-shortcuts" class="table-of-contents__link toc-highlight">Tool Shortcuts</a></li><li><a href="#action-shortcuts" class="table-of-contents__link toc-highlight">Action Shortcuts</a></li><li><a href="#constraint-shortcuts" class="table-of-contents__link toc-highlight">Constraint Shortcuts</a></li><li><a href="#general-shortcuts" class="table-of-contents__link toc-highlight">General Shortcuts</a></li></ul></li><li><a href="#construction-mode" class="table-of-contents__link toc-highlight">Construction Mode</a></li><li><a href="#chamfer-and-fillet" class="table-of-contents__link toc-highlight">Chamfer and Fillet</a></li><li><a href="#import-and-export" class="table-of-contents__link toc-highlight">Import and Export</a><ul><li><a href="#exporting-objects" class="table-of-contents__link toc-highlight">Exporting Objects</a></li><li><a href="#saving-sketches" class="table-of-contents__link toc-highlight">Saving Sketches</a></li><li><a href="#importing-sketches" class="table-of-contents__link toc-highlight">Importing Sketches</a></li></ul></li><li><a href="#workflow-tips" class="table-of-contents__link toc-highlight">Workflow Tips</a></li><li><a href="#editing-features" class="table-of-contents__link toc-highlight">Editing Features</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/features/sketcher.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/features/holding-tabs"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Holding Tabs</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/features/multi-layer"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Multi-Layer Workflow</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#creating-and-editing-sketches" class="table-of-contents__link toc-highlight">Creating and Editing Sketches</a><ul><li><a href="#creating-a-new-sketch" class="table-of-contents__link toc-highlight">Creating a New Sketch</a></li><li><a href="#editing-existing-sketches" class="table-of-contents__link toc-highlight">Editing Existing Sketches</a></li></ul></li><li><a href="#creating-2d-geometry" class="table-of-contents__link toc-highlight">Creating 2D Geometry</a></li><li><a href="#working-with-bezier-curves" class="table-of-contents__link toc-highlight">Working with Bezier Curves</a><ul><li><a href="#drawing-bezier-curves" class="table-of-contents__link toc-highlight">Drawing Bezier Curves</a></li><li><a href="#editing-bezier-curves" class="table-of-contents__link toc-highlight">Editing Bezier Curves</a></li><li><a href="#converting-curves-to-lines" class="table-of-contents__link toc-highlight">Converting Curves to Lines</a></li></ul></li><li><a href="#parametric-constraint-system" class="table-of-contents__link toc-highlight">Parametric Constraint System</a><ul><li><a href="#geometric-constraints" class="table-of-contents__link toc-highlight">Geometric Constraints</a></li><li><a href="#dimensional-constraints" class="table-of-contents__link toc-highlight">Dimensional Constraints</a></li></ul></li><li><a href="#pie-menu-interface" class="table-of-contents__link toc-highlight">Pie Menu Interface</a></li><li><a href="#keyboard-shortcuts" class="table-of-contents__link toc-highlight">Keyboard Shortcuts</a><ul><li><a href="#tool-shortcuts" class="table-of-contents__link toc-highlight">Tool Shortcuts</a></li><li><a href="#action-shortcuts" class="table-of-contents__link toc-highlight">Action Shortcuts</a></li><li><a href="#constraint-shortcuts" class="table-of-contents__link toc-highlight">Constraint Shortcuts</a></li><li><a href="#general-shortcuts" class="table-of-contents__link toc-highlight">General Shortcuts</a></li></ul></li><li><a href="#construction-mode" class="table-of-contents__link toc-highlight">Construction Mode</a></li><li><a href="#grid-and-visibility-controls" class="table-of-contents__link toc-highlight">Grid and Visibility Controls</a><ul><li><a href="#grid-tool" class="table-of-contents__link toc-highlight">Grid Tool</a></li><li><a href="#showhide-controls" class="table-of-contents__link toc-highlight">Show/Hide Controls</a></li><li><a href="#axis-constrained-movement" class="table-of-contents__link toc-highlight">Axis-Constrained Movement</a></li></ul></li><li><a href="#chamfer-and-fillet" class="table-of-contents__link toc-highlight">Chamfer and Fillet</a></li><li><a href="#import-and-export" class="table-of-contents__link toc-highlight">Import and Export</a><ul><li><a href="#exporting-objects" class="table-of-contents__link toc-highlight">Exporting Objects</a></li><li><a href="#saving-sketches" class="table-of-contents__link toc-highlight">Saving Sketches</a></li><li><a href="#importing-sketches" class="table-of-contents__link toc-highlight">Importing Sketches</a></li></ul></li><li><a href="#workflow-tips" class="table-of-contents__link toc-highlight">Workflow Tips</a></li><li><a href="#editing-features" class="table-of-contents__link toc-highlight">Editing Features</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

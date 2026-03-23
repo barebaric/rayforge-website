@@ -12,8 +12,8 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/fr/assets/css/styles.4e9e11c4.css">
-<script src="/fr/assets/js/runtime~main.f87a9b3d.js" defer="defer"></script>
-<script src="/fr/assets/js/main.82c61649.js" defer="defer"></script>
+<script src="/fr/assets/js/runtime~main.b89d8bb6.js" defer="defer"></script>
+<script src="/fr/assets/js/main.6566d3ba.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -42,16 +42,39 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="créer-de-la-géométrie-2d">Créer de la Géométrie 2D<a href="#créer-de-la-géométrie-2d" class="hash-link" aria-label="Lien direct vers Créer de la Géométrie 2D" title="Lien direct vers Créer de la Géométrie 2D" translate="no">​</a></h2>
 <p>Le dessinateur supporte la création des éléments géométriques de base suivants :</p>
 <ul>
-<li class=""><strong>Lignes</strong> : Dessinez des segments de ligne droite entre des points</li>
-<li class=""><strong>Cercles</strong> : Créez des cercles en définissant un point central et un rayon</li>
+<li class=""><strong>Tracés (Lignes et Courbes de Bézier)</strong> : Dessinez des lignes droites et des courbes
+de bézier fluides avec l&#x27;outil de tracé unifié. Cliquez pour placer des points,
+glissez pour créer des poignées de bézier.</li>
 <li class=""><strong>Arcs</strong> : Dessinez des arcs en spécifiant un point central, un point de départ et un point de fin</li>
+<li class=""><strong>Cercles</strong> : Créez des cercles en définissant un point central et un rayon</li>
 <li class=""><strong>Rectangles</strong> : Dessinez des rectangles en spécifiant deux coins opposés</li>
 <li class=""><strong>Rectangles Arrondis</strong> : Dessinez des rectangles avec des coins arrondis</li>
 <li class=""><strong>Zones de Texte</strong> : Ajoutez des éléments de texte à votre esquisse</li>
 <li class=""><strong>Remplissages</strong> : Remplissez des régions fermées pour créer des zones solides</li>
 </ul>
 <p>Ces éléments forment la base de vos designs 2D et peuvent être combinés pour créer des formes complexes. Les remplissages sont particulièrement utiles pour créer des régions solides qui seront gravées ou coupées comme une seule pièce.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="système-de-contraintes-paramétriques">Système de Contraintes Paramétriques<a href="#système-de-contraintes-paramétriques" class="hash-link" aria-label="Lien direct vers Système de Contraintes Paramétriques" title="Lien direct vers Système de Contraintes Paramétriques" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="travailler-avec-les-courbes-de-bézier">Travailler avec les Courbes de Bézier<a href="#travailler-avec-les-courbes-de-bézier" class="hash-link" aria-label="Lien direct vers Travailler avec les Courbes de Bézier" title="Lien direct vers Travailler avec les Courbes de Bézier" translate="no">​</a></h2>
+<p>L&#x27;outil de tracé supporte les courbes de bézier pour créer des formes fluides et organiques :</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dessiner-des-courbes-de-bézier">Dessiner des Courbes de Bézier<a href="#dessiner-des-courbes-de-bézier" class="hash-link" aria-label="Lien direct vers Dessiner des Courbes de Bézier" title="Lien direct vers Dessiner des Courbes de Bézier" translate="no">​</a></h3>
+<ol>
+<li class="">Sélectionnez l&#x27;outil de tracé depuis le menu circulaire ou utilisez le raccourci clavier</li>
+<li class="">Cliquez pour placer des points - chaque clic crée un nouveau point</li>
+<li class="">Glissez après avoir cliqué pour créer des poignées de bézier pour des courbes fluides</li>
+<li class="">Continuez à ajouter des points pour construire votre tracé</li>
+<li class="">Pressez Échap ou double-cliquez pour terminer le tracé</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="éditer-des-courbes-de-bézier">Éditer des Courbes de Bézier<a href="#éditer-des-courbes-de-bézier" class="hash-link" aria-label="Lien direct vers Éditer des Courbes de Bézier" title="Lien direct vers Éditer des Courbes de Bézier" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Déplacer des points</strong> : Cliquez et glissez n&#x27;importe quel point pour le repositionner</li>
+<li class=""><strong>Ajuster les poignées</strong> : Glissez les extrémités des poignées pour modifier la forme de la courbe</li>
+<li class=""><strong>Connecter à des points existants</strong> : Lors de l&#x27;édition d&#x27;un tracé, vous pouvez vous aligner sur des points existants dans votre esquisse</li>
+<li class=""><strong>Rendre fluide/symétrique</strong> : Les points connectés par une contrainte coïncidente peuvent être rendus fluides (tangente continue) ou symétriques (poignées en miroir)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="convertir-des-courbes-en-lignes">Convertir des Courbes en Lignes<a href="#convertir-des-courbes-en-lignes" class="hash-link" aria-label="Lien direct vers Convertir des Courbes en Lignes" title="Lien direct vers Convertir des Courbes en Lignes" translate="no">​</a></h3>
+<p>Utilisez l&#x27;<strong>outil de redressement</strong> pour convertir les courbes de bézier en lignes droites.
+Ceci est utile lorsque vous avez besoin d&#x27;une géométrie simple et propre. Sélectionnez les segments
+de bézier que vous souhaitez convertir et appliquez l&#x27;action de redressement.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="système-de-contraintes-paramétriques">Système de Contraintes Paramétriques<a href="#système-de-contraintes-paramétriques" class="hash-link" aria-label="Lien direct vers Système de Contraintes Paramétriques" title="Lien direct vers Syst ème de Contraintes Paramétriques" translate="no">​</a></h2>
 <p>Le système de contraintes est le cœur du dessinateur paramétrique, vous permettant de définir des relations géométriques précises :</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="contraintes-géométriques">Contraintes Géométriques<a href="#contraintes-géométriques" class="hash-link" aria-label="Lien direct vers Contraintes Géométriques" title="Lien direct vers Contraintes Géométriques" translate="no">​</a></h3>
 <ul>
@@ -87,19 +110,21 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="raccourcis-doutils">Raccourcis d&#x27;Outils<a href="#raccourcis-doutils" class="hash-link" aria-label="Lien direct vers Raccourcis d&#x27;Outils" title="Lien direct vers Raccourcis d&#x27;Outils" translate="no">​</a></h3>
 <ul>
 <li class=""><code>Espace</code> : Outil de sélection</li>
-<li class=""><code>G+L</code> : Outil ligne</li>
+<li class=""><code>G+P</code> : Outil tracé (lignes et courbes de bézier)</li>
 <li class=""><code>G+A</code> : Outil arc</li>
 <li class=""><code>G+C</code> : Outil cercle</li>
 <li class=""><code>G+R</code> : Outil rectangle</li>
 <li class=""><code>G+O</code> : Outil rectangle arrondi</li>
 <li class=""><code>G+F</code> : Outil zone de remplissage</li>
 <li class=""><code>G+T</code> : Outil zone de texte</li>
+<li class=""><code>G+G</code> : Outil grille (basculer la visibilité de la grille)</li>
 <li class=""><code>G+N</code> : Basculer le mode construction sur la sélection</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="raccourcis-daction">Raccourcis d&#x27;Action<a href="#raccourcis-daction" class="hash-link" aria-label="Lien direct vers Raccourcis d&#x27;Action" title="Lien direct vers Raccourcis d&#x27;Action" translate="no">​</a></h3>
 <ul>
 <li class=""><code>C+H</code> : Ajouter un coin de chanfrein</li>
 <li class=""><code>C+F</code> : Ajouter un coin de congé</li>
+<li class=""><code>C+S</code> : Redresser les courbes de bézier sélectionnées en lignes</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="raccourcis-de-contrainte">Raccourcis de Contrainte<a href="#raccourcis-de-contrainte" class="hash-link" aria-label="Lien direct vers Raccourcis de Contrainte" title="Lien direct vers Raccourcis de Contrainte" translate="no">​</a></h3>
 <ul>
@@ -137,6 +162,25 @@
 <li class="">Définir une géométrie temporaire pour l&#x27;alignement</li>
 <li class="">Construire des formes complexes à partir d&#x27;un cadre de guides</li>
 </ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="grille-et-contrôles-de-visibilité">Grille et Contrôles de Visibilité<a href="#grille-et-contrôles-de-visibilité" class="hash-link" aria-label="Lien direct vers Grille et Contrôles de Visibilité" title="Lien direct vers Grille et Contrôles de Visibilité" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="outil-grille">Outil Grille<a href="#outil-grille" class="hash-link" aria-label="Lien direct vers Outil Grille" title="Lien direct vers Outil Grille" translate="no">​</a></h3>
+<p>L&#x27;outil grille fournit une référence visuelle pour l&#x27;alignement et le dimensionnement :</p>
+<ul>
+<li class="">Basculer la grille on/off en utilisant le bouton de l&#x27;outil grille ou <code>G+G</code></li>
+<li class="">La grille s&#x27;adapte à votre niveau de zoom pour un espacement constant</li>
+<li class="">Maintenez <code>Ctrl</code> en plaçant ou déplaçant des points pour s&#x27;aligner sur la grille</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="contrôles-affichermasquer">Contrôles Afficher/Masquer<a href="#contrôles-affichermasquer" class="hash-link" aria-label="Lien direct vers Contrôles Afficher/Masquer" title="Lien direct vers Contrôles Afficher/Masquer" translate="no">​</a></h3>
+<p>La barre d&#x27;outils du dessinateur inclut des boutons de basculement pour contrôler la visibilité :</p>
+<ul>
+<li class=""><strong>Afficher/masquer la géométrie de construction</strong> : Basculer la visibilité des entités de construction</li>
+<li class=""><strong>Afficher/masquer les contraintes</strong> : Basculer la visibilité des marqueurs de contraintes</li>
+</ul>
+<p>Ces contrôles aident à réduire l&#x27;encombrement visuel lors du travail sur des esquisses complexes.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mouvement-contraint-à-laxe">Mouvement Contraint à l&#x27;Axe<a href="#mouvement-contraint-à-laxe" class="hash-link" aria-label="Lien direct vers Mouvement Contraint à l&#x27;Axe" title="Lien direct vers Mouvement Contraint à l&#x27;Axe" translate="no">​</a></h3>
+<p>Lors du déplacement de points ou de géométrie, maintenez <code>Maj</code> pour contraindre le mouvement
+à l&#x27;axe le plus proche (horizontal ou vertical). Ceci est utile pour maintenir l&#x27;alignement
+lors des ajustements.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="chanfrein-et-congé">Chanfrein et Congé<a href="#chanfrein-et-congé" class="hash-link" aria-label="Lien direct vers Chanfrein et Congé" title="Lien direct vers Chanfrein et Congé" translate="no">​</a></h2>
 <p>Le dessinateur fournit des outils pour modifier les coins de votre géométrie :</p>
 <ul>
@@ -172,8 +216,9 @@
 <li class=""><strong>Commencez avec une Géométrie Approximative</strong> : Créez d&#x27;abord des formes de base, puis affinez avec des contraintes</li>
 <li class=""><strong>Utilisez les Contraintes Tôt</strong> : Appliquez des contraintes pendant que vous construisez pour maintenir l&#x27;intention du design</li>
 <li class=""><strong>Vérifiez le Statut des Contraintes</strong> : Le système indique quand les esquisses sont totalement contraintes</li>
-<li class=""><strong>Surveillez les Conflits</strong> : Les contraintes qui entrent en conflit les unes avec les autres sont surlignées en rouge</li>
+<li class=""><strong>Surveillez les Conflits</strong> : Les contraintes qui entrent en conflit les unes avec les autres sont surlignées en rouge et affichées dans le panneau des contraintes pour une identification facile</li>
 <li class=""><strong>Utilisez la Symétrie</strong> : Les contraintes de symétrie peuvent accélérer significativement les designs complexes</li>
+<li class=""><strong>Utilisez la Grille</strong> : Activez la grille pour un alignement précis, et utilisez Ctrl pour s&#x27;aligner sur la grille</li>
 <li class=""><strong>Itérez et Affinez</strong> : N&#x27;hésitez pas à modifier les contraintes pour obtenir le résultat souhaité</li>
 </ol>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="fonctionnalités-dédition">Fonctionnalités d&#x27;Édition<a href="#fonctionnalités-dédition" class="hash-link" aria-label="Lien direct vers Fonctionnalités d&#x27;Édition" title="Lien direct vers Fonctionnalités d&#x27;Édition" translate="no">​</a></h2>
@@ -184,6 +229,6 @@
 <li class=""><strong>Mises à Jour en Temps Réel</strong> : Les changements de contraintes mettent à jour immédiatement la géométrie</li>
 <li class=""><strong>Édition par Double-Clic</strong> : Double-cliquer sur les contraintes dimensionnelles (Distance, Rayon, Diamètre, Angle, Ratio d&#x27;Aspect) ouvre une boîte de dialogue pour éditer leurs valeurs</li>
 <li class=""><strong>Expressions Paramétriques</strong> : Les contraintes dimensionnelles supportent les expressions, permettant aux valeurs d&#x27;être calculées à partir d&#x27;autres paramètres (ex : <code>largeur/2</code> pour un rayon qui est la moitié de la largeur)</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/features/sketcher.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Modifier cette page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Pages de documentation"><a class="pagination-nav__link pagination-nav__link--prev" href="/fr/docs/features/holding-tabs"><div class="pagination-nav__sublabel">Précédent</div><div class="pagination-nav__label">Ponts de Maintien</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/fr/docs/features/multi-layer"><div class="pagination-nav__sublabel">Suivant</div><div class="pagination-nav__label">Flux de Travail Multi-Couches</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#aperçu" class="table-of-contents__link toc-highlight">Aperçu</a></li><li><a href="#créer-et-éditer-des-esquisses" class="table-of-contents__link toc-highlight">Créer et Éditer des Esquisses</a><ul><li><a href="#créer-une-nouvelle-esquisse" class="table-of-contents__link toc-highlight">Créer une Nouvelle Esquisse</a></li><li><a href="#éditer-des-esquisses-existantes" class="table-of-contents__link toc-highlight">Éditer des Esquisses Existantes</a></li></ul></li><li><a href="#créer-de-la-géométrie-2d" class="table-of-contents__link toc-highlight">Créer de la Géométrie 2D</a></li><li><a href="#système-de-contraintes-paramétriques" class="table-of-contents__link toc-highlight">Système de Contraintes Paramétriques</a><ul><li><a href="#contraintes-géométriques" class="table-of-contents__link toc-highlight">Contraintes Géométriques</a></li><li><a href="#contraintes-dimensionnelles" class="table-of-contents__link toc-highlight">Contraintes Dimensionnelles</a></li></ul></li><li><a href="#interface-du-menu-circulaire" class="table-of-contents__link toc-highlight">Interface du Menu Circulaire</a></li><li><a href="#raccourcis-clavier" class="table-of-contents__link toc-highlight">Raccourcis Clavier</a><ul><li><a href="#raccourcis-doutils" class="table-of-contents__link toc-highlight">Raccourcis d&#39;Outils</a></li><li><a href="#raccourcis-daction" class="table-of-contents__link toc-highlight">Raccourcis d&#39;Action</a></li><li><a href="#raccourcis-de-contrainte" class="table-of-contents__link toc-highlight">Raccourcis de Contrainte</a></li><li><a href="#raccourcis-généraux" class="table-of-contents__link toc-highlight">Raccourcis Généraux</a></li></ul></li><li><a href="#mode-construction" class="table-of-contents__link toc-highlight">Mode Construction</a></li><li><a href="#chanfrein-et-congé" class="table-of-contents__link toc-highlight">Chanfrein et Congé</a></li><li><a href="#import-et-export" class="table-of-contents__link toc-highlight">Import et Export</a><ul><li><a href="#exporter-des-objets" class="table-of-contents__link toc-highlight">Exporter des Objets</a></li><li><a href="#sauvegarder-des-esquisses" class="table-of-contents__link toc-highlight">Sauvegarder des Esquisses</a></li><li><a href="#importer-des-esquisses" class="table-of-contents__link toc-highlight">Importer des Esquisses</a></li></ul></li><li><a href="#conseils-de-flux-de-travail" class="table-of-contents__link toc-highlight">Conseils de Flux de Travail</a></li><li><a href="#fonctionnalités-dédition" class="table-of-contents__link toc-highlight">Fonctionnalités d&#39;Édition</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/features/sketcher.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Modifier cette page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Pages de documentation"><a class="pagination-nav__link pagination-nav__link--prev" href="/fr/docs/features/holding-tabs"><div class="pagination-nav__sublabel">Précédent</div><div class="pagination-nav__label">Ponts de Maintien</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/fr/docs/features/multi-layer"><div class="pagination-nav__sublabel">Suivant</div><div class="pagination-nav__label">Flux de Travail Multi-Couches</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#aperçu" class="table-of-contents__link toc-highlight">Aperçu</a></li><li><a href="#créer-et-éditer-des-esquisses" class="table-of-contents__link toc-highlight">Créer et Éditer des Esquisses</a><ul><li><a href="#créer-une-nouvelle-esquisse" class="table-of-contents__link toc-highlight">Créer une Nouvelle Esquisse</a></li><li><a href="#éditer-des-esquisses-existantes" class="table-of-contents__link toc-highlight">Éditer des Esquisses Existantes</a></li></ul></li><li><a href="#créer-de-la-géométrie-2d" class="table-of-contents__link toc-highlight">Créer de la Géométrie 2D</a></li><li><a href="#travailler-avec-les-courbes-de-bézier" class="table-of-contents__link toc-highlight">Travailler avec les Courbes de Bézier</a><ul><li><a href="#dessiner-des-courbes-de-bézier" class="table-of-contents__link toc-highlight">Dessiner des Courbes de Bézier</a></li><li><a href="#éditer-des-courbes-de-bézier" class="table-of-contents__link toc-highlight">Éditer des Courbes de Bézier</a></li><li><a href="#convertir-des-courbes-en-lignes" class="table-of-contents__link toc-highlight">Convertir des Courbes en Lignes</a></li></ul></li><li><a href="#système-de-contraintes-paramétriques" class="table-of-contents__link toc-highlight">Système de Contraintes Paramétriques</a><ul><li><a href="#contraintes-géométriques" class="table-of-contents__link toc-highlight">Contraintes Géométriques</a></li><li><a href="#contraintes-dimensionnelles" class="table-of-contents__link toc-highlight">Contraintes Dimensionnelles</a></li></ul></li><li><a href="#interface-du-menu-circulaire" class="table-of-contents__link toc-highlight">Interface du Menu Circulaire</a></li><li><a href="#raccourcis-clavier" class="table-of-contents__link toc-highlight">Raccourcis Clavier</a><ul><li><a href="#raccourcis-doutils" class="table-of-contents__link toc-highlight">Raccourcis d&#39;Outils</a></li><li><a href="#raccourcis-daction" class="table-of-contents__link toc-highlight">Raccourcis d&#39;Action</a></li><li><a href="#raccourcis-de-contrainte" class="table-of-contents__link toc-highlight">Raccourcis de Contrainte</a></li><li><a href="#raccourcis-généraux" class="table-of-contents__link toc-highlight">Raccourcis Généraux</a></li></ul></li><li><a href="#mode-construction" class="table-of-contents__link toc-highlight">Mode Construction</a></li><li><a href="#grille-et-contrôles-de-visibilité" class="table-of-contents__link toc-highlight">Grille et Contrôles de Visibilité</a><ul><li><a href="#outil-grille" class="table-of-contents__link toc-highlight">Outil Grille</a></li><li><a href="#contrôles-affichermasquer" class="table-of-contents__link toc-highlight">Contrôles Afficher/Masquer</a></li><li><a href="#mouvement-contraint-à-laxe" class="table-of-contents__link toc-highlight">Mouvement Contraint à l&#39;Axe</a></li></ul></li><li><a href="#chanfrein-et-congé" class="table-of-contents__link toc-highlight">Chanfrein et Congé</a></li><li><a href="#import-et-export" class="table-of-contents__link toc-highlight">Import et Export</a><ul><li><a href="#exporter-des-objets" class="table-of-contents__link toc-highlight">Exporter des Objets</a></li><li><a href="#sauvegarder-des-esquisses" class="table-of-contents__link toc-highlight">Sauvegarder des Esquisses</a></li><li><a href="#importer-des-esquisses" class="table-of-contents__link toc-highlight">Importer des Esquisses</a></li></ul></li><li><a href="#conseils-de-flux-de-travail" class="table-of-contents__link toc-highlight">Conseils de Flux de Travail</a></li><li><a href="#fonctionnalités-dédition" class="table-of-contents__link toc-highlight">Fonctionnalités d&#39;Édition</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

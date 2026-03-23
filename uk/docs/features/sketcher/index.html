@@ -12,8 +12,8 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.43b0ad27.css">
-<script src="/uk/assets/js/runtime~main.5991ec5a.js" defer="defer"></script>
-<script src="/uk/assets/js/main.9966e1fc.js" defer="defer"></script>
+<script src="/uk/assets/js/runtime~main.dd881423.js" defer="defer"></script>
+<script src="/uk/assets/js/main.22a6ff08.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -48,9 +48,10 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="створення-2d-геометрії">Створення 2D геометрії<a href="#створення-2d-геометрії" class="hash-link" aria-label="Пряме посилання на Створення 2D геометрії" title="Пряме посилання на Створення 2D геометрії" translate="no">​</a></h2>
 <p>Ескізник підтримує створення наступних базових геометричних елементів:</p>
 <ul>
-<li class=""><strong>Лінії</strong>: Малювати прямі відрізки між точками</li>
-<li class=""><strong>Кола</strong>: Створювати ко ла шляхом визначення центральної точки та радіуса</li>
+<li class=""><strong>Шляхи (Лінії та Криві Без&#x27;є)</strong>: Малюйте прямі лінії та плавні криві без&#x27;є
+викори стовуючи уніфікований інструмент шляху. Клікніть щоб розмістити точки, перетягніть щоб створити маркери без&#x27;є.</li>
 <li class=""><strong>Дуги</strong>: Малювати дуги шляхом визначення центральної точки, початкової та кінцевої точки</li>
+<li class=""><strong>Кола</strong>: Створювати кола шляхом визначення центральної точки та радіуса</li>
 <li class=""><strong>Прямокутники</strong>: Малювати прямокутники шляхом визначення двох протилежних кутів</li>
 <li class=""><strong>Прямокутники із заокругленням</strong>: Малювати прямокутники із заокругленими кутами</li>
 <li class=""><strong>Текстові поля</strong>: Додати текстові елементи до вашого ескізу</li>
@@ -59,9 +60,30 @@
 <p>Ці елементи формують основу ваших 2D-дизайнів і можуть бути об&#x27;єднані для створення
 складних форм. Заливки особливо корисні для створення суцільних областей, які будуть
 гравіюватися або вирізатися як єдине ціле.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="робота-з-кривими-безє">Робота з Кривими Без&#x27;є<a href="#робота-з-кривими-безє" class="hash-link" aria-label="Пряме посилання на Робота з Кривими Без&#x27;є" title="Пряме посилання на Робота з Кривими Без&#x27;є" translate="no">  ​</a></h2>
+<p>Інструмент шляху підтримує криві без&#x27;є для створення плавних, органічних форм:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="малювання-кривих-безє">Малювання Кривих Без&#x27;є<a href="#малювання-кривих-безє" class="hash-link" aria-label="Пряме посилання на Малювання Кривих Без&#x27;є" title="Пряме посилання на Малювання Кривих Без&#x27;є" translate="no">​</a></h3>
+<ol>
+<li class="">Виберіть інструмент шляху з кругового меню або використовуйте гарячу клавішу</li>
+<li class="">Клікніть щоб розмістити точки - кожен клік створює нову точку</li>
+<li class="">Перетягніть після кліку щоб створити маркери без&#x27;є для плавних кривих</li>
+<li class="">Продовжуйте додавати точки для побудови вашого шляху</li>
+<li class="">Натисніть Escape або двічі клікніть щоб завершити шлях</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="редагування-кривих-безє">Редагування Кривих Без&#x27;є<a href="#редагування-кривих-безє" class="hash-link" aria-label="Пряме посилання на Редагування Кривих Без&#x27;є" title="Пряме посилання на Редагування Кривих Без&#x27;є" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Переміщення точок</strong>: Клікніть та перетягніть будь-яку точку щоб перепозиціонувати її</li>
+<li class=""><strong>Налаштування маркерів</strong>: Перетягніть кінці маркерів що б змінити форму кривої</li>
+<li class=""><strong>Підключення до існуючих точок</strong>: При редагуванні шляху ви можете приєднуватися до існуючих точок у вашому ескізі</li>
+<li class=""><strong>Зробити плавним/симетричним</strong>: Точки, з&#x27;єднані співпадаючим обмеженням, можуть бути зроблені плавними (безперервна дотична) або симетричними (дзеркальні маркери)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="перетворення-кривих-у-лінії">Перетворення Кривих у Лінії<a href="#перетворення-кривих-у-лінії" class="hash-link" aria-label="Пряме посилання на Перетворення Кривих у Лінії" title="Пряме посилання на Перетворення Кривих у Лінії" translate="no">​</a></h3>
+<p>Використовуйте <strong>інструмент випрямлення</strong> щоб перетворити криві без&#x27;є назад у прямі лінії.
+Це корисно коли вам потрібна чиста, проста геометрія. Виберіть сегменти без&#x27;є
+які ви хочете перетворити та застосуйте дію випрямлення.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="система-параметричних-обмежень">Система параметричних обмежень<a href="#система-параметричних-обмежень" class="hash-link" aria-label="Пряме посилання на Система параметричних обмежень" title="Пряме посилання на Система параметричних обмежень" translate="no">​</a></h2>
-<p>Система обмежень — це ядро параметричного ескізника, яке дозволяє визначати
-точні геометричні віднос ини:</p>
+<p>Система о бмежень — це ядро параметричного ескізника, яке дозволяє визначати
+точні геометричні відносини:</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="геометричні-обмеження">Геометричні обмеження<a href="#геометричні-обмеження" class="hash-link" aria-label="Пряме посилання на Геометричні обмеження" title="Пряме посилання на Геометричні обмеження" translate="no">​</a></h3>
 <ul>
 <li class=""><strong>Збіг (Coincident)</strong>: Змушує дві точки займати одне й те саме місце</li>
@@ -78,7 +100,7 @@
 </ul>
 </li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="розмірні-обмеження">Розмірні обмеження<a href="#розмірні-обмеження" class="hash-link" aria-label="Пряме посилання на Розмірні обмеження" title="Пряме посилання на Розмірні обмеження" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="р озмірні-обмеження">Розмірні обмеження<a href="#розмірні-обмеження" class="hash-link" aria-label="Пряме посилання на Розмірні обмеження" title="Пряме посилання на Розмірні обмеження" translate="no">​</a></h3>
 <ul>
 <li class=""><strong>Відстань</strong>: Встановлює точну відстань між двома точками або вздовж лінії</li>
 <li class=""><strong>Діаметр</strong>: Визначає діаметр кола</li>
@@ -88,7 +110,7 @@
 значенню</li>
 <li class=""><strong>Рівна довжина/радіус</strong>: Змушує кілька елементів (лінії, дуги або кола) мати
 однакову довжину або радіус</li>
-<li class=""><strong>Рівна відстань</strong>: Робить два відрізки лінії однакової довжини (відрізня від Рівна довжина/радіус, який також може для дуг і кіл)</li>
+<li class=""><strong>Рівна відстань</strong>: Робить два відрізки лінії однакової довжини</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="інтерфейс-кругового-меню">Інтерфейс кругового меню<a href="#інтерфейс-кругового-меню" class="hash-link" aria-label="Пряме посилання на Інтерфейс кругового меню" title="Пряме посилання на Інтерфейс кругового меню" translate="no">​</a></h2>
 <p>Ескізник має контекстне кругове меню, яке надає швидкий доступ до всіх інструментів
@@ -103,19 +125,21 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="гарячі-клавіші-інструментів">Гарячі клавіші інструментів<a href="#гарячі-клавіші-інструментів" class="hash-link" aria-label="Пряме посилання на Гарячі клавіші інструментів" title="Пряме посилання на Гарячі клавіші інструментів" translate="no">​</a></h3>
 <ul>
 <li class=""><code>Пробіл</code>: Інструмент виділення</li>
-<li class=""><code>G+L</code>: Інструмент лінії</li>
+<li class=""><code>G+P</code>: Інструмент шляху (лінії та кр иві без&#x27;є)</li>
 <li class=""><code>G+A</code>: Інструмент дуги</li>
 <li class=""><code>G+C</code>: Інструмент кола</li>
 <li class=""><code>G+R</code>: Інструмент прямокутника</li>
 <li class=""><code>G+O</code>: Інструмент прямокутника із заокругленням</li>
 <li class=""><code>G+F</code>: Інструмент заливки області</li>
 <li class=""><code>G+T</code>: Інструмент текстового поля</li>
+<li class=""><code>G+G</code>: Інструмент сітки (перемкнути видимість сітки)</li>
 <li class=""><code>G+N</code>: Перемкнути режим конструювання для виділення</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="гарячі-клавіші-дій">Гарячі клавіші дій<a href="#гарячі-клавіші-дій" class="hash-link" aria-label="Пряме посилання на Гарячі клавіші дій" title="Пряме посилання на Гарячі клавіші дій" translate="no">​</a></h3>
 <ul>
 <li class=""><code>C+H</code>: Додати фаску на куті</li>
 <li class=""><code>C+F</code>: Додати скруглення на куті</li>
+<li class=""><code>C+S</code>: Випрямити вибрані криві без&#x27;є у лінії</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="гарячі-клавіші-обмежень">Гарячі клавіші обмежень<a href="#гарячі-клавіші-обмежень" class="hash-link" aria-label="Пряме посилання на Гарячі клавіші обмежень" title="Пряме посилання на Гарячі клавіші обмежень" translate="no">​</a></h3>
 <ul>
@@ -156,11 +180,30 @@
 <li class="">Визначення тимчасової геометрії для вирівнювання</li>
 <li class="">Побудови складних форм з каркасу направляючих</li>
 </ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="сітка-та-елементи-керування-видимістю">Сітка та Елементи керування видимістю<a href="#сітка-та-елементи-керування-видимістю" class="hash-link" aria-label="Пряме посилання на Сітка та Елементи керування видиміс тю" title="Пряме посилання на Сітка та Елементи керування видимістю" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="інструмент-сітки">Інструмент сітки<a href="#інструмент-сітки" class="hash-link" aria-label="Пряме посилання на Інструмент сітки" title="Пряме посилання на Інструмент сітки" translate="no">​</a></h3>
+<p>Інструмент сітки надає візуальну довідку для вирівнювання та розмірів:</p>
+<ul>
+<li class="">Перемкнути сітку on/off використовуючи кнопку інструменту сітки або <code>G+G</code></li>
+<li class="">Сітка адаптується до вашого рівня масштабування для послідовного інтервалу</li>
+<li class="">Утримуйте <code>Ctrl</code> при розміщенні або переміщенні точок щоб прилипати до сітки</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="елементи-керування-показатисховати">Елементи керування Показати/Сховати<a href="#елементи-керування-показатисховати" class="hash-link" aria-label="Пряме посилання на Елементи керування Показати/Сховати" title="Пряме посилання на Елементи керування Показати/Сховати" translate="no">​</a></h3>
+<p>Панель інструментів ескізника містить кнопки перемикання для керування видимістю:</p>
+<ul>
+<li class=""><strong>Показати/сховати геометрію конструювання</strong>: Перемкнути видимість сутностей конструювання</li>
+<li class=""><strong>Показати/сховати обмеження</strong>: Перемкнути видимість маркерів обмежень</li>
+</ul>
+<p>Ці елементи керування допомагають зменшити візуальний безлад при роботі над складними ескізами.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="рух-обмежений-віссю">Рух обмежений віссю<a href="#рух-обмежений-віссю" class="hash-link" aria-label="Пряме посилання на Рух обмежений віссю" title="Пряме посилання на Рух обмежений віссю" translate="no">​</a></h3>
+<p>При перетягуванні точок або геометрії, утримуйте <code>Shift</code> щоб обмежити рух до
+найближчої осі (горизонтальної або вертикальної). Це корисно для підтримки вирівнювання
+під час коригувань.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="фаска-та-скруглення">Фаска та скруглення<a href="#фаска-та-скруглення" class="hash-link" aria-label="Пряме посилання на Фаска та скруглення" title="Пряме посилання на Фаска та скруглення" translate="no">​</a></h2>
 <p>Ескізник надає інструменти для модифікації кутів вашої геометрії:</p>
 <ul>
 <li class=""><strong>Фаска (Chamfer)</strong>: Замінює гострий кут на скошену край. Виберіть точку з&#x27;єднання
-(де дві лінії зустрічають ся) і застосуйте дію фаски.</li>
+(де дві лінії зустрічаються) і застосуйте дію фаски.</li>
 <li class=""><strong>Скруглення (Fillet)</strong>: Замінює гострий кут на заокруглену край. Виберіть точку з&#x27;єднання
 (де дві лінії зустрічаються) і застосуйте дію скруглення.</li>
 </ul>
@@ -179,7 +222,7 @@
 <li class="">Виберіть формат експорту:
 <ul>
 <li class=""><strong>RFS (.rfs)</strong>: Власний параметричний формат ескізу Rayforge - зберігає всі
-обмеження і може бути повторно імпортований для редагування</li>
+обме ження і може бути повторно імпортований для редагування</li>
 <li class=""><strong>SVG (.svg)</strong>: Стандартний векторний формат - широко сумісний з дизайнерським ПЗ</li>
 <li class=""><strong>DXF (.dxf)</strong>: CAD формат обміну - сумісний з більшістю CAD-додатків</li>
 </ul>
@@ -198,12 +241,13 @@
 <li class=""><strong>Почніть з грубої геометрії</strong>: Створіть базові форми спочатку, потім уточніть обмеженнями</li>
 <li class=""><strong>Використовуйте обмеження на ранніх етапах</strong>: Застосовуйте обмеження під час побудови для збереження задуму дизайну</li>
 <li class=""><strong>Перевіряйте статус обмежень</strong>: Система вказує, коли ескізи повністю обмежені</li>
-<li class=""><strong>Слідкуйте за конфліктами</strong>: Обмеження, що конфліктують одне з одним, підсвічуються червоним</li>
+<li class=""><strong>Слідкуйте за конфліктами</strong>: Обмеження, що конфліктують одне з одним, підсвічуються червоним і показуються в панелі обмежень для легкої ідентифікації</li>
 <li class=""><strong>Використовуйте симетрію</strong>: Обмеження симетрії можуть значно прискорити складні дизайни</li>
+<li class=""><strong>Використовуйте сітку</strong>: Увімкніть сітку для точного вирівнювання, і використовуйте Ctrl для прилипання до сітки</li>
 <li class=""><strong>Ітеруйте та уточнюйте</strong>: Не соромтеся модифікувати обмеження для досягнення бажаного
 результату</li>
 </ol>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="функції-редагування">Функції редагування<a href="#функції-редагування" class="hash-link" aria-label="Пряме п осилання на Функції редагування" title="Пряме посилання на Функції редагування" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="функції-редагування">Функції редагування<a href="#функції-редагування" class="hash-link" aria-label="Пряме посилання на Функції редагування" title="Пряме посилання на Функції редагування" translate="no">​</a></h2>
 <ul>
 <li class=""><strong>Повна підтримка Скасувати/Повторити</strong>: Весь стан ескізу зберігається з кожною операцією</li>
 <li class=""><strong>Динамічний курсор</strong>: Курсор змінюється, відображаючи активний інструмент малювання</li>
@@ -214,6 +258,6 @@
 <li class=""><strong>Параметричні вирази</strong>: Розмірні обмеження підтримують вирази, дозволяючи значенням бути
 обчисленими з інших параметрів (наприклад, <code>ширина/2</code> для радіуса, що є половиною
 ширини)</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/features/sketcher.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Відредагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="сторінка документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/features/holding-tabs"><div class="pagination-nav__sublabel">Попередня сторінка</div><div class="pagination-nav__label">Утримуючі лапки</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/uk/docs/features/multi-layer"><div class="pagination-nav__sublabel">Наступна сторінка</div><div class="pagination-nav__label">Багатошаровий робочий процес</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#огляд" class="table-of-contents__link toc-highlight">Огляд</a></li><li><a href="#створення-та-редагування-ескізів" class="table-of-contents__link toc-highlight">Створення та редагування ескізів</a><ul><li><a href="#створення-нового-ескізу" class="table-of-contents__link toc-highlight">Створення нового ескізу</a></li><li><a href="#редагування-існуючих-ескізів" class="table-of-contents__link toc-highlight">Редагування існуючих ескізів</a></li></ul></li><li><a href="#створення-2d-геометрії" class="table-of-contents__link toc-highlight">Створення 2D геометрії</a></li><li><a href="#система-параметричних-обмежень" class="table-of-contents__link toc-highlight">Система параметричних обмежень</a><ul><li><a href="#геометричні-обмеження" class="table-of-contents__link toc-highlight">Геометричні обмеження</a></li><li><a href="#розмірні-обмеження" class="table-of-contents__link toc-highlight">Розмірні обмеження</a></li></ul></li><li><a href="#інтерфейс-кругового-меню" class="table-of-contents__link toc-highlight">Інтерфейс кругового меню</a></li><li><a href="#гарячі-клавіші" class="table-of-contents__link toc-highlight">Гарячі клавіші</a><ul><li><a href="#гарячі-клавіші-інструментів" class="table-of-contents__link toc-highlight">Гарячі клавіші інструментів</a></li><li><a href="#гарячі-клавіші-дій" class="table-of-contents__link toc-highlight">Гарячі клавіші дій</a></li><li><a href="#гарячі-клавіші-обмежень" class="table-of-contents__link toc-highlight">Гарячі клавіші обмежень</a></li><li><a href="#загальні-гарячі-клавіші" class="table-of-contents__link toc-highlight">Загальні гарячі клавіші</a></li></ul></li><li><a href="#режим-конструювання" class="table-of-contents__link toc-highlight">Режим конструювання</a></li><li><a href="#фаска-та-скруглення" class="table-of-contents__link toc-highlight">Фаска та скруглення</a></li><li><a href="#імпорт-та-експорт" class="table-of-contents__link toc-highlight">Імпорт та експорт</a><ul><li><a href="#експорт-обєктів" class="table-of-contents__link toc-highlight">Експорт об&#39;єктів</a></li><li><a href="#збереження-ескізів" class="table-of-contents__link toc-highlight">Збереження ескізів</a></li><li><a href="#імпорт-ескізів" class="table-of-contents__link toc-highlight">Імпорт ескізів</a></li></ul></li><li><a href="#поради-щодо-робочого-процесу" class="table-of-contents__link toc-highlight">Поради щодо робочого процесу</a></li><li><a href="#функції-редагування" class="table-of-contents__link toc-highlight">Функції редагування</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/features/sketcher.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Відредагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="сторінка документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/features/holding-tabs"><div class="pagination-nav__sublabel">Попередня сторінка</div><div class="pagination-nav__label">Утримуючі лапки</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/uk/docs/features/multi-layer"><div class="pagination-nav__sublabel">Наступна сторінка</div><div class="pagination-nav__label">Багатошаровий робочий процес</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#огляд" class="table-of-contents__link toc-highlight">Огляд</a></li><li><a href="#створення-та-редагування-ескізів" class="table-of-contents__link toc-highlight">Створення та редагування ескізів</a><ul><li><a href="#створення-нового-ескізу" class="table-of-contents__link toc-highlight">Створення нового ескізу</a></li><li><a href="#редагування-існуючих-ескізів" class="table-of-contents__link toc-highlight">Редагування існуючих ескізів</a></li></ul></li><li><a href="#створення-2d-геометрії" class="table-of-contents__link toc-highlight">Створення 2D геометрії</a></li><li><a href="#робота-з-кривими-безє" class="table-of-contents__link toc-highlight">Робота з Кривими Без&#39;є</a><ul><li><a href="#малювання-кривих-безє" class="table-of-contents__link toc-highlight">Малювання Кривих Без&#39;є</a></li><li><a href="#редагування-кривих-безє" class="table-of-contents__link toc-highlight">Редагування Кривих Без&#39;є</a></li><li><a href="#перетворення-кривих-у-лінії" class="table-of-contents__link toc-highlight">Перетворення Кривих у Лінії</a></li></ul></li><li><a href="#система-параметричних-обмежень" class="table-of-contents__link toc-highlight">Система параметричних обмежень</a><ul><li><a href="#геометричні-обмеження" class="table-of-contents__link toc-highlight">Геометричні обмеження</a></li><li><a href="#розмірні-обмеження" class="table-of-contents__link toc-highlight">Розмірні обмеження</a></li></ul></li><li><a href="#інтерфейс-кругового-меню" class="table-of-contents__link toc-highlight">Інтерфейс кругового меню</a></li><li><a href="#гарячі-клавіші" class="table-of-contents__link toc-highlight">Гарячі клавіші</a><ul><li><a href="#гарячі-клавіші-інструментів" class="table-of-contents__link toc-highlight">Гарячі клавіші інструментів</a></li><li><a href="#гарячі-клавіші-дій" class="table-of-contents__link toc-highlight">Гарячі клавіші дій</a></li><li><a href="#гарячі-клавіші-обмежень" class="table-of-contents__link toc-highlight">Гарячі клавіші обмежень</a></li><li><a href="#загальні-гарячі-клавіші" class="table-of-contents__link toc-highlight">Загальні гарячі клавіші</a></li></ul></li><li><a href="#режим-к онструювання" class="table-of-contents__link toc-highlight">Режим конструювання</a></li><li><a href="#сітка-та-елементи-керування-видимістю" class="table-of-contents__link toc-highlight">Сітка та Елементи керування видимістю</a><ul><li><a href="#інструмент-сітки" class="table-of-contents__link toc-highlight">Інструмент сітки</a></li><li><a href="#елементи-керування-показатисховати" class="table-of-contents__link toc-highlight">Елементи керування Показати/Сховати</a></li><li><a href="#рух-обмежений-віссю" class="table-of-contents__link toc-highlight">Рух обмежений віссю</a></li></ul></li><li><a href="#фаска-та-скруглення" class="table-of-contents__link toc-highlight">Фаска та скруглення</a></li><li><a href="#імпорт-та-експорт" class="table-of-contents__link toc-highlight">Імпорт та експорт</a><ul><li><a href="#експорт-обєктів" class="table-of-contents__link toc-highlight">Експорт об&#39;єктів</a></li><li><a href="#збереження-ескізів" class="table-of-contents__link toc-highlight">Збереження ескізів</a></li><li><a href="#імпорт-ескізів" class="table-of-contents__link toc-highlight">Імпорт ескізів</a></li></ul></li><li><a href="#поради-щодо-робочого-процесу" class="table-of-contents__link toc-highlight">Поради щодо робочого процесу</a></li><li><a href="#функції-редагування" class="table-of-contents__link toc-highlight">Функції редагування</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

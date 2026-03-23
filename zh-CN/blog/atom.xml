@@ -2,11 +2,108 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rayforge.org/zh-CN/blog</id>
     <title>Rayforge Blog</title>
-    <updated>2026-03-10T00:00:00.000Z</updated>
+    <updated>2026-03-23T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rayforge.org/zh-CN/blog"/>
     <subtitle>Rayforge Blog</subtitle>
     <icon>https://rayforge.org/zh-CN/images/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Rayforge 1.3 - Bezier Curves in Sketcher, Modular Architecture]]></title>
+        <id>https://rayforge.org/zh-CN/blog/rayforge-1.3-bezier-curves-sketcher-addon</id>
+        <link href="https://rayforge.org/zh-CN/blog/rayforge-1.3-bezier-curves-sketcher-addon"/>
+        <updated>2026-03-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Rayforge 1.3 brings bezier curve support to the parametric sketcher, a new]]></summary>
+        <content type="html"><![CDATA[<p>Rayforge 1.3 brings bezier curve support to the parametric sketcher, a new
+unified path tool, more efficient G-code output, and moves the sketcher to
+an optional add-on.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bezier-curves-in-the-sketcher">Bezier Curves in the Sketcher<a href="https://rayforge.org/zh-CN/blog/rayforge-1.3-bezier-curves-sketcher-addon#bezier-curves-in-the-sketcher" class="hash-link" aria-label="Bezier Curves in the Sketcher 的直接链接" title="Bezier Curves in the Sketcher 的直接链接" translate="no">​</a></h2>
+<p>The headline feature for this release is full support for bezier curves in
+the parametric sketcher. The old line tool has been replaced with a new
+unified <strong>path tool</strong> that seamlessly combines lines and curves.</p>
+<p>You can now:</p>
+<ul>
+<li class="">Draw smooth bezier curves with intuitive handle-based editing</li>
+<li class="">Connect curves to existing geometry - the path edit tool can snap to
+existing points in your sketch</li>
+<li class="">Make endpoints smooth or symmetric when they're connected by a coincident
+constraint - perfect for creating seamless curves</li>
+<li class="">Convert bezier curves back to straight lines with the new "straighten"
+tool</li>
+</ul>
+<p>This has been one of the most requested features, and we're excited to see
+what you create with it.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-is-now-an-add-on">Sketcher is Now an Add-on<a href="https://rayforge.org/zh-CN/blog/rayforge-1.3-bezier-curves-sketcher-addon#sketcher-is-now-an-add-on" class="hash-link" aria-label="Sketcher is Now an Add-on 的直接链接" title="Sketcher is Now an Add-on 的直接链接" translate="no">​</a></h2>
+<p>Continuing the modularization work from version 1.2, the sketcher has been
+moved to an add-on. It's installed and enabled by default, so existing users
+won't notice any difference. But if you prefer a minimal setup without
+parametric sketching, you can now disable it.</p>
+<p>This change also comes with new extension registries that make it easier for
+add-on developers to extend Rayforge.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-quality-of-life-improvements">Sketcher Quality-of-Life Improvements<a href="https://rayforge.org/zh-CN/blog/rayforge-1.3-bezier-curves-sketcher-addon#sketcher-quality-of-life-improvements" class="hash-link" aria-label="Sketcher Quality-of-Life Improvements 的直接链接" title="Sketcher Quality-of-Life Improvements 的直接链接" translate="no">​</a></h2>
+<p>The sketcher received several smaller but impactful improvements:</p>
+<p><strong>Grid Tool</strong>
+A new tool to toggle grid visibility for better alignment.</p>
+<p><strong>Conflicting Constraints</strong>
+When constraints conflict with each other, they're now highlighted in the
+panel so you can quickly identify and fix the problem.</p>
+<p><strong>Show/Hide Controls</strong>
+New toggle buttons let you show or hide construction geometry and constraints
+individually.</p>
+<p><strong>Shift Constrains Movement</strong>
+Hold Shift while dragging to constrain movement to the nearest axis - great
+for keeping things aligned.</p>
+<p><strong>Cleaner Background</strong>
+The gray background area is now hidden for a cleaner editing experience.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="more-efficient-g-code">More Efficient G-code<a href="https://rayforge.org/zh-CN/blog/rayforge-1.3-bezier-curves-sketcher-addon#more-efficient-g-code" class="hash-link" aria-label="More Efficient G-code 的直接链接" title="More Efficient G-code 的直接链接" translate="no">​</a></h2>
+<p>Rayforge now produces more compact G-code by omitting unchanged coordinates.
+If you're cutting along the X-axis, for example, only the X coordinate will
+be emitted on each line. This makes files smaller and cleaner, and makes
+the old "no-Z" dialect variants obsolete (they've been removed).</p>
+<p>The G-code viewer also got some updates:</p>
+<ul>
+<li class="">Shows line count and byte size</li>
+<li class="">Always displays at least the first 20,000 lines</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="raster-operation-enhancements">Raster Operation Enhancements<a href="https://rayforge.org/zh-CN/blog/rayforge-1.3-bezier-curves-sketcher-addon#raster-operation-enhancements" class="hash-link" aria-label="Raster Operation Enhancements 的直接链接" title="Raster Operation Enhancements 的直接链接" translate="no">​</a></h2>
+<p>New settings for sample interval and power levels give you more control over
+your raster operations. These are particularly useful for fine-tuning results
+on materials that need precise power management.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/zh-CN/blog/rayforge-1.3-bezier-curves-sketcher-addon#other-improvements" class="hash-link" aria-label="Other Improvements 的直接链接" title="Other Improvements 的直接链接" translate="no">​</a></h2>
+<ul>
+<li class="">All icons normalized to 32x32 viewbox for consistent appearance</li>
+<li class="">AI workpiece generator now creates sketches when the geometry can be mapped</li>
+<li class="">Updated translations</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/zh-CN/blog/rayforge-1.3-bezier-curves-sketcher-addon#bug-fixes" class="hash-link" aria-label="Bug Fixes 的直接链接" title="Bug Fixes 的直接链接" translate="no">​</a></h2>
+<p>This release fixes many issues:</p>
+<ul>
+<li class="">Fixed fillet and chamfer tools not working correctly</li>
+<li class="">Fixed texture encoder drawing spaced dots instead of lines in some cases</li>
+<li class="">Fixed G1 being emitted without coordinates when all coordinates were unchanged</li>
+<li class="">Fixed loading project files with unknown assets</li>
+<li class="">Fixed issues when disabling and re-enabling add-ons at runtime</li>
+</ul>
+<p>See the CHANGELOG on GitHub for the complete list.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-13">Download Rayforge 1.3<a href="https://rayforge.org/zh-CN/blog/rayforge-1.3-bezier-curves-sketcher-addon#download-rayforge-13" class="hash-link" aria-label="Download Rayforge 1.3 的直接链接" title="Download Rayforge 1.3 的直接链接" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="https://rayforge.org/zh-CN/blog/getting-started/installation">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/zh-CN/blog/rayforge-1.3-bezier-curves-sketcher-addon#join-the-community" class="hash-link" aria-label="Join the Community 的直接链接" title="Join the Community 的直接链接" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content>
+        <author>
+            <name>Rayforge Team</name>
+            <uri>https://github.com/barebaric/rayforge</uri>
+        </author>
+        <category label="release" term="release"/>
+        <category label="1.3" term="1.3"/>
+        <category label="sketcher" term="sketcher"/>
+        <category label="bezier" term="bezier"/>
+        <category label="addons" term="addons"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Rayforge 1.2 - AI Generator, Camera Enhancements, and Improved Add-ons]]></title>
         <id>https://rayforge.org/zh-CN/blog/rayforge-1.2-addons-camera-ai</id>
@@ -16,7 +113,7 @@
         <content type="html"><![CDATA[<p>Rayforge 1.2 brings an AI workpiece generator, significant camera
 enhancements, and a completely revamped add-on system with core
 functionality now available as optional modules.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ai-workpiece-generator-add-on">AI Workpiece Generator Add-on<a href="https://rayforge.org/zh-CN/blog/rayforge-1.2-addons-camera-ai#ai-workpiece-generator-add-on" class="hash-link" aria-label="AI Workpiece Generator Add-on 的直接链接" title="AI Workpiece Generator Add-on 的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ai-workpiece-generator-add-on">AI Workpiece Generator Add-on<a href="https://rayforge.org/zh-CN/blog/rayforge-1.2-addons-camera-ai#ai-workpiece-generator-add-on" class="hash-link" aria-label="AI Workpiece Generator Add-on 的直接链接" title="AI Workpiece Generator Add-on 的��直接链接" translate="no">​</a></h2>
 <p>A new experimental add-on allows generating workpieces from text prompts.
 This is great for quickly creating simple designs or getting inspiration
 for new projects.</p>
@@ -130,7 +227,7 @@ macOS updates, and <strong>fllmn</strong> for Flatpak updates!</p>
 <li class=""><a href="https://github.com/barebaric/rayforge/releases" target="_blank" rel="noopener noreferrer" class="">GitHub Releases</a></li>
 <li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/zh-CN/blog/rayforge-1.2-addons-camera-ai#join-the-community" class="hash-link" aria-label="Join the Community 的直接链�接" title="Join the Community 的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/zh-CN/blog/rayforge-1.2-addons-camera-ai#join-the-community" class="hash-link" aria-label="Join the Community 的直接链接" title="Join the Community 的直接链接" translate="no">​</a></h2>
 <ul>
 <li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
 <li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
@@ -362,7 +459,7 @@ keyboard shortcuts</li>
         <link href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving"/>
         <updated>2025-02-20T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[3D 预览]]></summary>
-        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="3D 预览" src="https://rayforge.org/zh-CN/assets/images/main-3d-f5bba1fd405746a3a93194fe739447be.png" width="2522" height="1772" class="img_ev3q"></p>
+        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="3D 预览" src="https://rayforge.org/zh-CN/assets/images/main-3d-2c694fed2ff3aeb03fd6e81965aeb033.png" width="2522" height="1772" class="img_ev3q"></p>
 <p>获得专业品质的激光雕刻效果不仅需要好的硬件——您的软件设置和工作流程也很重要。以下是帮助您充分利用 Rayforge 的五个技巧。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-使用过扫描获得更平滑的光栅雕刻">1. 使用过扫描获得更平滑的光栅雕刻<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#1-%E4%BD%BF%E7%94%A8%E8%BF%87%E6%89%AB%E6%8F%8F%E8%8E%B7%E5%BE%97%E6%9B%B4%E5%B9%B3%E6%BB%91%E7%9A%84%E5%85%89%E6%A0%85%E9%9B%95%E5%88%BB" class="hash-link" aria-label="1. 使用过扫描获得更平滑的光栅雕刻 的直接链接" title="1. 使用过扫描获得更平滑的光栅雕刻 的直接链接" translate="no">​</a></h2>
 <p>在进行光栅雕刻时，一个常见问题是在激光改变方向的边缘处出现可见的线条或不一致。这是因为激光头需要减速和加速，这会影响雕刻质量。</p>
@@ -380,7 +477,7 @@ keyboard shortcuts</li>
 <p><strong>解决方案</strong>：使用 Rayforge 内置的 <strong>移动时间优化</strong>。</p>
 <p>Rayforge 可以自动重新排序路径，以最大限度地减少非切割移动时间。这对于具有许多小对象或多个字母的文本的作业特别有用。</p>
 <p>路径优化通常默认启用，但您可以在轮廓操作设置中验证和调整它。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-添加固定标签防�止零件移动">3. 添加固定标签防止零件移动<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#3-%E6%B7%BB%E5%8A%A0%E5%9B%BA%E5%AE%9A%E6%A0%87%E7%AD%BE%E9%98%B2%E6%AD%A2%E9%9B%B6%E4%BB%B6%E7%A7%BB%E5%8A%A8" class="hash-link" aria-label="3. 添加固定标签防止零件移动 的直接链接" title="3. 添加固定标签防止零件移动 的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-添加固定标签防止零件移动">3. 添加固定标签防止零件移动<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#3-%E6%B7%BB%E5%8A%A0%E5%9B%BA%E5%AE%9A%E6%A0%87%E7%AD%BE%E9%98%B2%E6%AD%A2%E9%9B%B6%E4%BB%B6%E7%A7%BB%E5%8A%A8" class="hash-link" aria-label="3. 添加固定标签防止零件移动 的直接链接" title="3. 添加固定标签防止零件移动 的直接链接" translate="no">​</a></h2>
 <p>没有什么比几乎完成的切割作业在最后一刻因为零件移动或从机床床身上掉落而毁掉更令人沮丧的了。</p>
 <p><strong>解决方案</strong>：使用 <strong>固定标签</strong> 将零件保持在原位，直到作业完成。</p>
 <p>固定标签是保持零件与周围材料连接的小型未切割部分。作业完成后，您可以轻松取出零件，并用刀或砂纸清理标签。</p>
@@ -507,7 +604,7 @@ keyboard shortcuts</li>
         <link href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge"/>
         <updated>2024-12-15T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Rayforge 主窗口]]></summary>
-        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 主窗口" src="https://rayforge.org/zh-CN/assets/images/main-standard-df5521fba47fe4528c713f32d8915bb5.png" width="2522" height="1772" class="img_ev3q"></p>
+        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 主窗口" src="https://rayforge.org/zh-CN/assets/images/main-standard-4c442cacdeb6c3c6d31e2f3a8b14e659.png" width="2522" height="1772" class="img_ev3q"></p>
 <p>我们很高兴向您介绍 Rayforge，这是一款专为基于 GRBL 的激光切割机和雕刻机设计的现代化开源 G-code 发送器和控制软件。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="为什么选择-rayforge">为什么选择 Rayforge？<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-rayforge" class="hash-link" aria-label="为什么选择 Rayforge？ 的直接链接" title="为什么选择 Rayforge？ 的直接链接" translate="no">​</a></h2>
 <p>在激光切割和雕刻的世界中，拥有可靠、直观的软件与拥有优质硬件同样重要。Rayforge 从零开始构建，专注于：</p>
