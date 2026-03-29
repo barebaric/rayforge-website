@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
-<title data-rh="true">Importando Archivos | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://rayforge.org/es/docs/files/importing"><meta data-rh="true" property="og:locale" content="es"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="pt_BR"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="de"><meta data-rh="true" property="og:locale:alternate" content="zh_CN"><meta data-rh="true" property="og:locale:alternate" content="uk"><meta data-rh="true" name="docusaurus_locale" content="es"><meta data-rh="true" name="docsearch:language" content="es"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Importando Archivos | Rayforge"><meta data-rh="true" name="description" content="Rayforge soporta importar varios formatos de archivo, tanto vectoriales como rasterizados. Esta página explica cómo importar archivos y optimizarlos para obtener mejores resultados."><meta data-rh="true" property="og:description" content="Rayforge soporta importar varios formatos de archivo, tanto vectoriales como rasterizados. Esta página explica cómo importar archivos y optimizarlos para obtener mejores resultados."><link data-rh="true" rel="icon" href="/es/images/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/es/docs/files/importing"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/files/importing" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/pt-BR/docs/files/importing" hreflang="pt-BR"><link data-rh="true" rel="alternate" href="https://rayforge.org/es/docs/files/importing" hreflang="es"><link data-rh="true" rel="alternate" href="https://rayforge.org/fr/docs/files/importing" hreflang="fr"><link data-rh="true" rel="alternate" href="https://rayforge.org/de/docs/files/importing" hreflang="de"><link data-rh="true" rel="alternate" href="https://rayforge.org/zh-CN/docs/files/importing" hreflang="zh-CN"><link data-rh="true" rel="alternate" href="https://rayforge.org/uk/docs/files/importing" hreflang="uk"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/files/importing" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Importando Archivos","item":"https://rayforge.org/es/docs/files/importing"}]}</script><link rel="alternate" type="application/rss+xml" href="/es/blog/rss.xml" title="Rayforge RSS Feed">
+<title data-rh="true">Importar archivos | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://rayforge.org/es/docs/files/importing"><meta data-rh="true" property="og:locale" content="es"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="pt_BR"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="de"><meta data-rh="true" property="og:locale:alternate" content="zh_CN"><meta data-rh="true" property="og:locale:alternate" content="uk"><meta data-rh="true" name="docusaurus_locale" content="es"><meta data-rh="true" name="docsearch:language" content="es"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Importar archivos | Rayforge"><meta data-rh="true" name="description" content="Rayforge admite la importación de varios formatos de archivo, tanto vectoriales"><meta data-rh="true" property="og:description" content="Rayforge admite la importación de varios formatos de archivo, tanto vectoriales"><link data-rh="true" rel="icon" href="/es/images/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/es/docs/files/importing"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/files/importing" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/pt-BR/docs/files/importing" hreflang="pt-BR"><link data-rh="true" rel="alternate" href="https://rayforge.org/es/docs/files/importing" hreflang="es"><link data-rh="true" rel="alternate" href="https://rayforge.org/fr/docs/files/importing" hreflang="fr"><link data-rh="true" rel="alternate" href="https://rayforge.org/de/docs/files/importing" hreflang="de"><link data-rh="true" rel="alternate" href="https://rayforge.org/zh-CN/docs/files/importing" hreflang="zh-CN"><link data-rh="true" rel="alternate" href="https://rayforge.org/uk/docs/files/importing" hreflang="uk"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/files/importing" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Importar archivos","item":"https://rayforge.org/es/docs/files/importing"}]}</script><link rel="alternate" type="application/rss+xml" href="/es/blog/rss.xml" title="Rayforge RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/es/blog/atom.xml" title="Rayforge Atom Feed">
 
 
@@ -12,17 +12,19 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/es/assets/css/styles.a1195d80.css">
-<script src="/es/assets/js/runtime~main.d9e9f6ed.js" defer="defer"></script>
-<script src="/es/assets/js/main.462e5b69.js" defer="defer"></script>
+<script src="/es/assets/js/runtime~main.cfa1dfd0.js" defer="defer"></script>
+<script src="/es/assets/js/main.a5956785.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
 <symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
-<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Saltar al contenido principal"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Saltar al contenido principal</a></div><nav aria-label="Principal" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Alternar barra lateral" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/es/"><div class="navbar__logo"><img src="/es/images/icon.svg" alt="Logotipo de Rayforge" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/es/images/icon.svg" alt="Logotipo de Rayforge" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Rayforge</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/es/docs/getting-started/installation">Documentación</a><a class="navbar__item navbar__link" href="/es/docs/developer/getting-started/">Desarrollador</a><a class="navbar__item navbar__link" href="/es/contributing">Contribuir</a><a class="navbar__item navbar__link" href="/es/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>Español</a><ul class="dropdown__menu"><li><a href="/docs/files/importing" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="en">English</a></li><li><a href="/pt-BR/docs/files/importing" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="pt-BR">Português (Brasil)</a></li><li><a href="/es/docs/files/importing" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="es">Español</a></li><li><a href="/fr/docs/files/importing" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="fr">Français</a></li><li><a href="/de/docs/files/importing" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="de">Deutsch</a></li><li><a href="/zh-CN/docs/files/importing" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="zh-CN">中文（中国）</a></li><li><a href="/uk/docs/files/importing" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="uk">Українська</a></li></ul></div><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="patreonLink_HbXT"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" class="patreonImg_dUDi"></a><span class="githubWrapper_c8Sl"><a href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><span class="discordWrapper_j0RJ"><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Cambiar entre modo oscuro y claro (actualmente system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Volver al principio" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Barra lateral de Documentos" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/es/docs/getting-started/installation"><span title="Primeros Pasos" class="categoryLinkLabel_W154">Primeros Pasos</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/getting-started/installation"><span title="Instalación" class="linkLabel_WmDU">Instalación</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/getting-started/first-time-setup"><span title="Configuración Inicial" class="linkLabel_WmDU">Configuración Inicial</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/getting-started/quick-start"><span title="Guía de Inicio Rápido" class="linkLabel_WmDU">Guía de Inicio Rápido</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/ui/settings"><span title="Configuración de la Aplicación" class="categoryLinkLabel_W154">Configuración de la Aplicación</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/machine/general"><span title="Configuración de la Máquina" class="categoryLinkLabel_W154">Configuración de la Máquina</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/ui/main-window"><span title="Interfaz de Usuario" class="categoryLinkLabel_W154">Interfaz de Usuario</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/features/operations/contour"><span title="Características" class="categoryLinkLabel_W154">Características</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/addons/ai-workpiece-generator"><span title="Addons" class="categoryLinkLabel_W154">Addons</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/es/docs/files/importing"><span title="Archivos" class="categoryLinkLabel_W154">Archivos</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/es/docs/files/importing"><span title="Importando Archivos" class="linkLabel_WmDU">Importando Archivos</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/files/formats"><span title="Formatos de Archivo Soportados" class="linkLabel_WmDU">Formatos de Archivo Soportados</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/files/exporting"><span title="Exportando desde Rayforge" class="linkLabel_WmDU">Exportando desde Rayforge</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/general-info/laser-safety"><span title="Información General" class="categoryLinkLabel_W154">Información General</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/troubleshooting/connection"><span title="Solución de Problemas" class="categoryLinkLabel_W154">Solución de Problemas</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/reference/shortcuts"><span title="Referencia" class="categoryLinkLabel_W154">Referencia</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Rastro de navegación"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Página de Inicio" class="breadcrumbs__link" href="/es/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Archivos</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Importando Archivos</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">En esta página</button></div><div class="theme-doc-markdown markdown"><header><h1>Importando Archivos</h1></header>
-<p>Rayforge soporta importar varios formatos de archivo, tanto vectoriales como rasterizados. Esta página explica cómo importar archivos y optimizarlos para obtener mejores resultados.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="formatos-de-archivo-soportados">Formatos de Archivo Soportados<a href="#formatos-de-archivo-soportados" class="hash-link" aria-label="Enlace directo al Formatos de Archivo Soportados" title="Enlace directo al Formatos de Archivo Soportados" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="formatos-vectoriales">Formatos Vectoriales<a href="#formatos-vectoriales" class="hash-link" aria-label="Enlace directo al Formatos Vectoriales" title="Enlace directo al Formatos Vectoriales" translate="no">​</a></h3>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Saltar al contenido principal"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Saltar al contenido principal</a></div><nav aria-label="Principal" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Alternar barra lateral" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/es/"><div class="navbar__logo"><img src="/es/images/icon.svg" alt="Logotipo de Rayforge" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/es/images/icon.svg" alt="Logotipo de Rayforge" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Rayforge</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/es/docs/getting-started/installation">Documentación</a><a class="navbar__item navbar__link" href="/es/docs/developer/getting-started/">Desarrollador</a><a class="navbar__item navbar__link" href="/es/contributing">Contribuir</a><a class="navbar__item navbar__link" href="/es/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>Español</a><ul class="dropdown__menu"><li><a href="/docs/files/importing" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="en">English</a></li><li><a href="/pt-BR/docs/files/importing" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="pt-BR">Português (Brasil)</a></li><li><a href="/es/docs/files/importing" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="es">Español</a></li><li><a href="/fr/docs/files/importing" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="fr">Français</a></li><li><a href="/de/docs/files/importing" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="de">Deutsch</a></li><li><a href="/zh-CN/docs/files/importing" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="zh-CN">中文（中国）</a></li><li><a href="/uk/docs/files/importing" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="uk">Українська</a></li></ul></div><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="patreonLink_HbXT"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" class="patreonImg_dUDi"></a><span class="githubWrapper_c8Sl"><a href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><span class="discordWrapper_j0RJ"><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></span><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Cambiar entre modo oscuro y claro (actualmente system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Volver al principio" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Barra lateral de Documentos" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/es/docs/getting-started/installation"><span title="Primeros Pasos" class="categoryLinkLabel_W154">Primeros Pasos</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/getting-started/installation"><span title="Instalación" class="linkLabel_WmDU">Instalación</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/getting-started/first-time-setup"><span title="Configuración Inicial" class="linkLabel_WmDU">Configuración Inicial</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/getting-started/quick-start"><span title="Guía de Inicio Rápido" class="linkLabel_WmDU">Guía de Inicio Rápido</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/ui/settings"><span title="Configuración de la Aplicación" class="categoryLinkLabel_W154">Configuración de la Aplicación</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/machine/general"><span title="Configuración de la Máquina" class="categoryLinkLabel_W154">Configuración de la Máquina</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/ui/main-window"><span title="Interfaz de Usuario" class="categoryLinkLabel_W154">Interfaz de Usuario</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/features/operations/contour"><span title="Características" class="categoryLinkLabel_W154">Características</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/addons/ai-workpiece-generator"><span title="Addons" class="categoryLinkLabel_W154">Addons</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/es/docs/files/importing"><span title="Archivos" class="categoryLinkLabel_W154">Archivos</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/es/docs/files/importing"><span title="Importar archivos" class="linkLabel_WmDU">Importar archivos</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/files/formats"><span title="Formatos de archivo compatibles" class="linkLabel_WmDU">Formatos de archivo compatibles</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/files/exporting"><span title="Exportando desde Rayforge" class="linkLabel_WmDU">Exportando desde Rayforge</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/general-info/laser-safety"><span title="Información General" class="categoryLinkLabel_W154">Información General</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/troubleshooting/connection"><span title="Solución de Problemas" class="categoryLinkLabel_W154">Solución de Problemas</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/reference/shortcuts"><span title="Referencia" class="categoryLinkLabel_W154">Referencia</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Rastro de navegación"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Página de Inicio" class="breadcrumbs__link" href="/es/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Archivos</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Importar archivos</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">En esta página</button></div><div class="theme-doc-markdown markdown"><header><h1>Importar archivos</h1></header>
+<p>Rayforge admite la importación de varios formatos de archivo, tanto vectoriales
+como de mapa de bits. Esta página explica cómo importar archivos y optimizarlos
+para obtener los mejores resultados.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="formatos-de-archivo-admitidos">Formatos de archivo admitidos<a href="#formatos-de-archivo-admitidos" class="hash-link" aria-label="Enlace directo al Formatos de archivo admitidos" title="Enlace directo al Formatos de archivo admitidos" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="formatos-vectoriales">Formatos vectoriales<a href="#formatos-vectoriales" class="hash-link" aria-label="Enlace directo al Formatos vectoriales" title="Enlace directo al Formatos vectoriales" translate="no">​</a></h3>
 
 
 
@@ -58,8 +60,8 @@
 
 
 
-<table><thead><tr><th>Formato</th><th>Extensión</th><th>Método de Importación</th><th>Mejor Para</th></tr></thead><tbody><tr><td><strong>SVG</strong></td><td><code>.svg</code></td><td>Vectores directos o trazar</td><td>Gráficos vectoriales, logos, diseños</td></tr><tr><td><strong>DXF</strong></td><td><code>.dxf</code></td><td>Vectores directos</td><td>Dibujos CAD, diseños técnicos</td></tr><tr><td><strong>PDF</strong></td><td><code>.pdf</code></td><td>Renderizar y trazar</td><td>Documentos con contenido vectorial</td></tr><tr><td><strong>Ruida</strong></td><td><code>.rd</code></td><td>Vectores directos</td><td>Archivos de trabajo de controlador Ruida</td></tr></tbody></table>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="formatos-rasterizados">Formatos Rasterizados<a href="#formatos-rasterizados" class="hash-link" aria-label="Enlace directo al Formatos Rasterizados" title="Enlace directo al Formatos Rasterizados" translate="no">​</a></h3>
+<table><thead><tr><th>Formato</th><th>Extensión</th><th>Método de importación</th><th>Mejor para</th></tr></thead><tbody><tr><td><strong>SVG</strong></td><td><code>.svg</code></td><td>Vectores directos o trazo</td><td>Gráficos vectoriales, logos, diseños</td></tr><tr><td><strong>DXF</strong></td><td><code>.dxf</code></td><td>Vectores directos</td><td>Planos CAD, diseños técnicos</td></tr><tr><td><strong>PDF</strong></td><td><code>.pdf</code></td><td>Vectores directos o trazo</td><td>Documentos con contenido vectorial</td></tr><tr><td><strong>Ruida</strong></td><td><code>.rd</code></td><td>Vectores directos</td><td>Archivos de trabajo controlador Ruida</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="formatos-de-mapa-de-bits">Formatos de mapa de bits<a href="#formatos-de-mapa-de-bits" class="hash-link" aria-label="Enlace directo al Formatos de mapa de bits" title="Enlace directo al Formatos de mapa de bits" translate="no">​</a></h3>
 
 
 
@@ -89,92 +91,100 @@
 
 
 
-<table><thead><tr><th>Formato</th><th>Extensión</th><th>Método de Importación</th><th>Mejor Para</th></tr></thead><tbody><tr><td><strong>PNG</strong></td><td><code>.png</code></td><td>Trazar a vectores</td><td>Fotos, imágenes con transparencia</td></tr><tr><td><strong>JPEG</strong></td><td><code>.jpg</code>, <code>.jpeg</code></td><td>Trazar a vectores</td><td>Fotos, imágenes de tono continuo</td></tr><tr><td><strong>BMP</strong></td><td><code>.bmp</code></td><td>Trazar a vectores</td><td>Gráficos simples, capturas de pantalla</td></tr></tbody></table>
-<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>Importación de Rasterizados</div></div>
-<p>Todas las imágenes rasterizadas se <strong>trazan</strong> para crear trayectorias vectoriales que pueden usarse para operaciones láser. La calidad depende de la configuración de trazado.</p>
+<table><thead><tr><th>Formato</th><th>Extensión</th><th>Método de importación</th><th>Mejor para</th></tr></thead><tbody><tr><td><strong>PNG</strong></td><td><code>.png</code></td><td>Trazo a vectores</td><td>Fotos, imágenes con transparencia</td></tr><tr><td><strong>JPEG</strong></td><td><code>.jpg</code>, <code>.jpeg</code></td><td>Trazo a vectores</td><td>Fotos, imágenes de tono continuo</td></tr><tr><td><strong>BMP</strong></td><td><code>.bmp</code></td><td>Trazo a vectores</td><td>Gráficos simples, capturas de pantalla</td></tr></tbody></table>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>Importación de mapa de bits</div></div>
+<p>Todas las imágenes de mapa de bits se <strong>trazan</strong> para crear trazados vectoriales
+que pueden utilizarse en operaciones láser. La calidad depende de la
+configuración del trazado.</p>
 <hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="importando-archivos-1">Importando Archivos<a href="#importando-archivos-1" class="hash-link" aria-label="Enlace directo al Importando Archivos" title="Enlace directo al Importando Archivos" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="el-diálogo-de-importación">El Diálogo de Importación<a href="#el-diálogo-de-importación" class="hash-link" aria-label="Enlace directo al El Diálogo de Importación" title="Enlace directo al El Diálogo de Importación" translate="no">​</a></h3>
-<p>Rayforge presenta un diálogo de importación unificado que proporciona vista previa en vivo y
-opciones de configuración para todos los tipos de archivo soportados. El diálogo te permite:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="importar-archivos-1">Importar archivos<a href="#importar-archivos-1" class="hash-link" aria-label="Enlace directo al Importar archivos" title="Enlace directo al Importar archivos" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="el-diálogo-de-importación">El diálogo de importación<a href="#el-diálogo-de-importación" class="hash-link" aria-label="Enlace directo al El diálogo de importación" title="Enlace directo al El diálogo de importación" translate="no">​</a></h3>
+<p>Rayforge cuenta con un diálogo de importación unificado que proporciona vista
+previa en tiempo real y opciones de configuración para todos los tipos de
+archivo admitidos. El diálogo permite:</p>
 <ul>
-<li class=""><strong>Previsualizar tu importación</strong> antes de añadirla al documento</li>
-<li class=""><strong>Configurar ajustes de trazado</strong> para imágenes rasterizadas</li>
-<li class=""><strong>Elegir el método de importación</strong> para archivos SVG (vectores directos o trazar)</li>
-<li class=""><strong>Ajustar parámetros</strong> como umbral, invertir, y auto-umbral</li>
+<li class=""><strong>Vista previa de la importación</strong> antes de añadirla al documento</li>
+<li class=""><strong>Configurar los ajustes de trazado</strong> para imágenes de mapa de bits</li>
+<li class=""><strong>Elegir el método de importación</strong> para archivos SVG (vectores directos o
+trazo)</li>
+<li class=""><strong>Ajustar parámetros</strong> como umbral, invertir y umbral automático</li>
 </ul>
-<p><img decoding="async" loading="lazy" alt="Diálogo de Importación" src="/es/assets/images/import-dialog-5fcce300fd08f82614a8b24e669d4614.png" width="1222" height="922" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Diálogo de importación" src="/es/assets/images/import-dialog-2e41d0b35b837ec937a7030accb21ffb.png" width="1222" height="922" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="método-1-menú-archivo">Método 1: Menú Archivo<a href="#método-1-menú-archivo" class="hash-link" aria-label="Enlace directo al Método 1: Menú Archivo" title="Enlace directo al Método 1: Menú Archivo" translate="no">​</a></h3>
 <ol>
-<li class=""><strong>Archivo Importar</strong> (o Ctrl+I)</li>
-<li class=""><strong>Selecciona tu archivo</strong> del selector de archivos</li>
-<li class=""><strong>Configura los ajustes de importación</strong> en el diálogo de importación</li>
-<li class=""><strong>Previsualiza</strong> el resultado antes de importar</li>
-<li class=""><strong>Haz clic en Importar</strong> para añadir al lienzo y árbol del documento</li>
+<li class=""><strong>Importar archivo</strong> (o Ctrl+I)</li>
+<li class=""><strong>Seleccionar el archivo</strong> desde el selector de archivos</li>
+<li class=""><strong>Configurar los ajustes de importación</strong> en el diálogo de importación</li>
+<li class=""><strong>Vista previa</strong> del resultado antes de importar</li>
+<li class=""><strong>Pulsar Importar</strong> para añadir al lienzo y al árbol del documento</li>
 </ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="método-2-arrastrar-y-soltar">Método 2: Arrastrar y Soltar<a href="#método-2-arrastrar-y-soltar" class="hash-link" aria-label="Enlace directo al Método 2: Arrastrar y Soltar" title="Enlace directo al Método 2: Arrastrar y Soltar" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="método-2-arrastrar-y-soltar">Método 2: Arrastrar y soltar<a href="#método-2-arrastrar-y-soltar" class="hash-link" aria-label="Enlace directo al Método 2: Arrastrar y soltar" title="Enlace directo al Método 2: Arrastrar y soltar" translate="no">​</a></h3>
 <ol>
-<li class=""><strong>Arrastra el archivo</strong> desde tu gestor de archivos</li>
-<li class=""><strong>Suelta en</strong> el lienzo de Rayforge</li>
-<li class=""><strong>Configura los ajustes de importación</strong> en el diálogo de importación</li>
-<li class=""><strong>Previsualiza</strong> el resultado antes de importar</li>
-<li class=""><strong>Haz clic en Importar</strong> para añadir al lienzo y árbol del documento</li>
+<li class=""><strong>Arrastrar el archivo</strong> desde el gestor de archivos</li>
+<li class=""><strong>Soltar sobre</strong> el lienzo de Rayforge</li>
+<li class=""><strong>Configurar los ajustes de importación</strong> en el diálogo de importación</li>
+<li class=""><strong>Vista previa</strong> del resultado antes de importar</li>
+<li class=""><strong>Pulsar Importar</strong> para añadir al lienzo y al árbol del documento</li>
 </ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="método-3-línea-de-comandos">Método 3: Línea de Comandos<a href="#método-3-línea-de-comandos" class="hash-link" aria-label="Enlace directo al Método 3: Línea de Comandos" title="Enlace directo al Método 3: Línea de Comandos" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="método-3-línea-de-comandos">Método 3: Línea de comandos<a href="#método-3-línea-de-comandos" class="hash-link" aria-label="Enlace directo al Método 3: Línea de comandos" title="Enlace directo al Método 3: Línea de comandos" translate="no">​</a></h3>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Abrir Rayforge con un archivo</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">rayforge myfile.svg</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Múltiples archivos</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">rayforge file1.svg file2.dxf</span><br></span></code></pre></div></div>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="auto-redimensionar-al-importar">Auto-Redimensionar al Importar<a href="#auto-redimensionar-al-importar" class="hash-link" aria-label="Enlace directo al Auto-Redimensionar al Importar" title="Enlace directo al Auto-Redimensionar al Importar" translate="no">​</a></h3>
-<p>Al importar archivos que son más grandes que el área de trabajo de tu máquina, Rayforge
-automáticamente:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="auto-redimensionar-al-importar">Auto-Redimensionar al importar<a href="#auto-redimensionar-al-importar" class="hash-link" aria-label="Enlace directo al Auto-Redimensionar al importar" title="Enlace directo al Auto-Redimensionar al importar" translate="no">​</a></h3>
+<p>Al importar archivos más grandes que el área de trabajo de la máquina,
+Rayforge automáticamente:</p>
 <ol>
-<li class=""><strong>Escala hacia abajo</strong> el contenido importado para que quepa dentro de los límites de la máquina</li>
+<li class=""><strong>Reduce la escala</strong> del contenido importado para que quepa dentro de los
+límites de la máquina</li>
 <li class=""><strong>Preserva la relación de aspecto</strong> durante el escalado</li>
 <li class=""><strong>Centra</strong> el contenido escalado en el espacio de trabajo</li>
-<li class=""><strong>Muestra una notificación</strong> con la opción de deshacer el redimensionamiento</li>
+<li class=""><strong>Muestra una notificación</strong> con la opción de deshacer el redimensionado</li>
 </ol>
-<p>La notificación de redimensionamiento aparece como un mensaje emergente:</p>
+<p>La notificación de redimensionado aparece como un mensaje emergente:</p>
 <ul>
-<li class="">⚠️ &quot;El elemento importado era más grande que el área de trabajo y ha sido escalado para ajustarse.&quot;</li>
-<li class="">Incluye un botón <strong>&quot;Restablecer&quot;</strong> para deshacer el auto-redimensionamiento</li>
-<li class="">El mensaje permanece visible hasta que se descarta o se toma la acción de restablecimiento</li>
+<li class="">⚠️ &quot;El elemento importado era más grande que el área de trabajo y se ha
+reducido de escala para ajustarse.&quot;</li>
+<li class="">Incluye un botón <strong>&quot;Restablecer&quot;</strong> para deshacer el auto-redimensionado</li>
+<li class="">El mensaje permanece visible hasta que se descarta o se ejecuta la acción de
+restablecimiento</li>
 </ul>
-<p>Esto asegura que tus diseños siempre quepan dentro de las capacidades de tu máquina mientras te da
-la flexibilidad de restaurar el tamaño original si es necesario.</p>
+<p>Esto garantiza que sus diseños siempre se ajusten a las capacidades de su
+máquina, dándole la flexibilidad de restaurar el tamaño original si es necesario.</p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="importación-svg">Importación SVG<a href="#importación-svg" class="hash-link" aria-label="Enlace directo al Importación SVG" title="Enlace directo al Importación SVG" translate="no">​</a></h2>
-<p>SVG (Gráficos Vectoriales Escalables) es el <strong>formato recomendado</strong> para diseños vectoriales.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="opciones-de-importación-en-el-diálogo">Opciones de Importación en el Diálogo<a href="#opciones-de-importación-en-el-diálogo" class="hash-link" aria-label="Enlace directo al Opciones de Importación en el Diálogo" title="Enlace directo al Opciones de Importación en el Diálogo" translate="no">​</a></h3>
-<p>Al importar SVG, el diálogo de importación proporciona un interruptor para elegir
-entre dos métodos:</p>
-<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-usar-vectores-originales-recomendado">1. Usar Vectores Originales (Recomendado)<a href="#1-usar-vectores-originales-recomendado" class="hash-link" aria-label="Enlace directo al 1. Usar Vectores Originales (Recomendado)" title="Enlace directo al 1. Usar Vectores Originales (Recomendado)" translate="no">​</a></h4>
+<p>SVG (Scalable Vector Graphics) es el <strong>formato recomendado</strong> para diseños
+vectoriales.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="opciones-de-importación-en-el-diálogo">Opciones de importación en el diálogo<a href="#opciones-de-importación-en-el-diálogo" class="hash-link" aria-label="Enlace directo al Opciones de importación en el diálogo" title="Enlace directo al Opciones de importación en el diálogo" translate="no">​</a></h3>
+<p>Al importar SVG, el diálogo de importación proporciona un interruptor para
+elegir entre dos métodos:</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-usar-vectores-originales-recomendado">1. Usar vectores originales (Recomendado)<a href="#1-usar-vectores-originales-recomendado" class="hash-link" aria-label="Enlace directo al 1. Usar vectores originales (Recomendado)" title="Enlace directo al 1. Usar vectores originales (Recomendado)" translate="no">​</a></h4>
 <p>Esta opción está habilitada por defecto en el diálogo de importación.</p>
 <p><strong>Cómo funciona:</strong></p>
 <ul>
-<li class="">Analiza SVG y convierte trayectorias directamente a geometría de Rayforge</li>
+<li class="">Analiza el SVG y convierte los trazados directamente a geometría de Rayforge</li>
 <li class="">Preservación de alta fidelidad de curvas y formas</li>
-<li class="">Mantiene datos vectoriales exactos</li>
+<li class="">Mantiene los datos vectoriales exactos</li>
 </ul>
 <p><strong>Ventajas:</strong></p>
 <ul>
 <li class="">Mejor calidad y precisión</li>
-<li class="">Trayectorias editables</li>
-<li class="">Tamaño de archivo pequeño</li>
+<li class="">Trazados editables</li>
+<li class="">Tamaño de archivo reducido</li>
 </ul>
 <p><strong>Desventajas:</strong></p>
 <ul>
-<li class="">Algunas funciones SVG avanzadas no soportadas</li>
-<li class="">SVGs complejos pueden tener problemas</li>
+<li class="">Algunas funciones avanzadas de SVG no son compatibles</li>
+<li class="">Los SVG complejos pueden tener problemas</li>
 </ul>
 <p><strong>Usar para:</strong></p>
 <ul>
 <li class="">Diseños vectoriales limpios de Inkscape, Illustrator</li>
-<li class="">Complejidad simple a moderada</li>
-<li class="">Diseños sin funciones SVG avanzadas</li>
+<li class="">Complejidad de simple a moderada</li>
+<li class="">Diseños sin funciones avanzadas de SVG</li>
 </ul>
-<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-trazar-mapa-de-bits">2. Trazar Mapa de Bits<a href="#2-trazar-mapa-de-bits" class="hash-link" aria-label="Enlace directo al 2. Trazar Mapa de Bits" title="Enlace directo al 2. Trazar Mapa de Bits" translate="no">​</a></h4>
-<p>Deshabilita &quot;Usar Vectores Originales&quot; para usar este método.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-trazar-mapa-de-bits">2. Trazar mapa de bits<a href="#2-trazar-mapa-de-bits" class="hash-link" aria-label="Enlace directo al 2. Trazar mapa de bits" title="Enlace directo al 2. Trazar mapa de bits" translate="no">​</a></h4>
+<p>Desactive &quot;Usar vectores originales&quot; para utilizar este método.</p>
 <p><strong>Cómo funciona:</strong></p>
 <ul>
-<li class="">Renderiza SVG a una imagen rasterizada primero</li>
+<li class="">Renderiza el SVG primero como imagen de mapa de bits</li>
 <li class="">Traza la imagen renderizada para crear vectores</li>
 <li class="">Más compatible pero menos preciso</li>
 </ul>
@@ -182,211 +192,211 @@ entre dos métodos:</p>
 <ul>
 <li class="">Maneja funciones SVG complejas</li>
 <li class="">Método de respaldo robusto</li>
-<li class="">Soporta efectos y filtros</li>
+<li class="">Admite efectos y filtros</li>
 </ul>
 <p><strong>Desventajas:</strong></p>
 <ul>
 <li class="">Pérdida de calidad por rasterización</li>
-<li class="">Tamaños de archivo más grandes</li>
-<li class="">No tan preciso</li>
+<li class="">Tamaños de archivo mayores</li>
+<li class="">Menos preciso</li>
 </ul>
 <p><strong>Usar para:</strong></p>
 <ul>
-<li class="">SVGs que fallan en la importación directa</li>
-<li class="">SVGs con efectos, filtros, degradados</li>
+<li class="">SVG que fallan en la importación directa</li>
+<li class="">SVG con efectos, filtros, degradados</li>
 <li class="">Cuando la importación directa produce errores</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="vista-previa-en-vivo">Vista Previa en Vivo<a href="#vista-previa-en-vivo" class="hash-link" aria-label="Enlace directo al Vista Previa en Vivo" title="Enlace directo al Vista Previa en Vivo" translate="no">​</a></h3>
-<p>El diálogo de importación muestra una vista previa en vivo de cómo se importará tu SVG:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="vista-previa-en-tiempo-real">Vista previa en tiempo real<a href="#vista-previa-en-tiempo-real" class="hash-link" aria-label="Enlace directo al Vista previa en tiempo real" title="Enlace directo al Vista previa en tiempo real" translate="no">​</a></h3>
+<p>El diálogo de importación muestra una vista previa en tiempo real de cómo se
+importará su SVG:</p>
 <ul>
-<li class="">Las trayectorias vectoriales se muestran en superposición azul</li>
-<li class="">Para el modo de trazo, la imagen original se muestra con las trayectorias trazadas</li>
-<li class="">La vista previa se actualiza en tiempo real a medida que cambias los ajustes</li>
+<li class="">Los trazados vectoriales se muestran en una superposición azul</li>
+<li class="">En modo de trazo, se muestra la imagen original con los trazados trazados</li>
+<li class="">La vista previa se actualiza en tiempo real al cambiar los ajustes</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mejores-prácticas-svg">Mejores Prácticas SVG<a href="#mejores-prácticas-svg" class="hash-link" aria-label="Enlace directo al Mejores Prácticas SVG" title="Enlace directo al Mejores Prácticas SVG" translate="no">​</a></h3>
-<p><strong>Prepara tu SVG para mejores resultados:</strong></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="buenas-prácticas-svg">Buenas prácticas SVG<a href="#buenas-prácticas-svg" class="hash-link" aria-label="Enlace directo al Buenas prácticas SVG" title="Enlace directo al Buenas prácticas SVG" translate="no">​</a></h3>
+<p><strong>Prepare su SVG para obtener los mejores resultados:</strong></p>
 <ol>
 <li class="">
-<p><strong>Convertir texto a trayectorias:</strong></p>
+<p><strong>Convertir texto a trazados:</strong></p>
 <ul>
-<li class="">Inkscape: <code>Trayectoria → Objeto a Trayectoria</code></li>
-<li class="">Illustrator: <code>Tipo → Crear Contornos</code></li>
+<li class="">Inkscape: <code>Trazado → Objeto a trazado</code></li>
+<li class="">Illustrator: <code>Texto → Crear contornos</code></li>
 </ul>
 </li>
 <li class="">
-<p><strong>Simplificar trayectorias complejas:</strong></p>
+<p><strong>Simplificar trazados complejos:</strong></p>
 <ul>
-<li class="">Inkscape: <code>Trayectoria → Simplificar</code> (Ctrl+L)</li>
+<li class="">Inkscape: <code>Trazado → Simplificar</code> (Ctrl+L)</li>
 <li class="">Eliminar nodos innecesarios</li>
 </ul>
 </li>
 <li class="">
 <p><strong>Desagrupar grupos anidados:</strong></p>
 <ul>
-<li class="">Aplanar jerarquía donde sea posible</li>
+<li class="">Aplanar la jerarquía donde sea posible</li>
 <li class=""><code>Objeto → Desagrupar</code> (Ctrl+Shift+G)</li>
 </ul>
 </li>
 <li class="">
 <p><strong>Eliminar elementos ocultos:</strong></p>
 <ul>
-<li class="">Eliminar guías, cuadrículas, líneas de construcción</li>
+<li class="">Borrar guías, cuadrículas, líneas de construcción</li>
 <li class="">Eliminar objetos invisibles/transparentes</li>
 </ul>
 </li>
 <li class="">
-<p><strong>Guardar como SVG Simple:</strong></p>
+<p><strong>Guardar como SVG simple:</strong></p>
 <ul>
-<li class="">Inkscape: &quot;SVG Simple&quot; o &quot;SVG Optimizado&quot;</li>
-<li class="">No &quot;SVG Inkscape&quot; (tiene metadatos extra)</li>
+<li class="">Inkscape: &quot;SVG simple&quot; o &quot;SVG optimizado&quot;</li>
+<li class="">No &quot;SVG de Inkscape&quot; (contiene metadatos adicionales)</li>
 </ul>
 </li>
 <li class="">
-<p><strong>Verificar unidades del documento:</strong></p>
+<p><strong>Verificar las unidades del documento:</strong></p>
 <ul>
-<li class="">Establecer a mm o pulgadas según sea apropiado</li>
-<li class="">Rayforge usa mm internamente</li>
+<li class="">Establecer en mm o pulgadas según corresponda</li>
+<li class="">Rayforge utiliza mm internamente</li>
 </ul>
 </li>
 </ol>
-<p><strong>Funciones SVG comunes que pueden no importar:</strong></p>
+<p><strong>Funciones SVG comunes que pueden no importarse:</strong></p>
 <ul>
-<li class="">Degradados (convertir a rellenos sólidos o raster)</li>
-<li class="">Filtros y efectos (aplanar a trayectorias)</li>
-<li class="">Máscaras y trayectorias de recorte (expandir/aplanar)</li>
-<li class="">Imágenes rasterizadas embebidas (exportar separadamente)</li>
-<li class="">Texto (convertir a trayectorias primero)</li>
+<li class="">Degradados (convertir a rellenos sólidos o mapa de bits)</li>
+<li class="">Filtros y efectos (aplanar a trazados)</li>
+<li class="">Máscaras y trazados de recorte (expandir/aplanar)</li>
+<li class="">Imágenes de mapa de bits incrustadas (exportar por separado)</li>
+<li class="">Texto (convertir a trazados primero)</li>
 </ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="importación-dxf">Importación DXF<a href="#importación-dxf" class="hash-link" aria-label="Enlace directo al Importación DXF" title="Enlace directo al Importación DXF" translate="no">​</a></h2>
-<p>DXF (Formato de Intercambio de Dibujos) es común para software CAD.</p>
+<p>DXF (Drawing Exchange Format) es común en software CAD.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="versiones-dxf">Versiones DXF<a href="#versiones-dxf" class="hash-link" aria-label="Enlace directo al Versiones DXF" title="Enlace directo al Versiones DXF" translate="no">​</a></h3>
-<p>Rayforge soporta formatos DXF estándar:</p>
+<p>Rayforge admite formatos DXF estándar:</p>
 <ul>
 <li class=""><strong>R12/LT2</strong> (recomendado) - Mejor compatibilidad</li>
 <li class=""><strong>R13, R14</strong> - Buen soporte</li>
 <li class=""><strong>R2000+</strong> - Generalmente funciona, pero R12 es más seguro</li>
 </ul>
-<p><strong>Consejo:</strong> Exporta como DXF R12/LT2 para máxima compatibilidad.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="consejos-de-importación-dxf">Consejos de Importación DXF<a href="#consejos-de-importación-dxf" class="hash-link" aria-label="Enlace directo al Consejos de Importación DXF" title="Enlace directo al Consejos de Importación DXF" translate="no">​</a></h3>
+<p><strong>Consejo:</strong> Exporte como DXF R12/LT2 para máxima compatibilidad.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="consejos-para-importación-dxf">Consejos para importación DXF<a href="#consejos-para-importación-dxf" class="hash-link" aria-label="Enlace directo al Consejos para importación DXF" title="Enlace directo al Consejos para importación DXF" translate="no">​</a></h3>
 <p><strong>Antes de exportar desde CAD:</strong></p>
 <ol>
 <li class="">
 <p><strong>Simplificar el dibujo:</strong></p>
 <ul>
 <li class="">Eliminar capas innecesarias</li>
-<li class="">Eliminar cotas y anotaciones</li>
+<li class="">Borrar cotas y anotaciones</li>
 <li class="">Eliminar objetos 3D (usar proyección 2D)</li>
 </ul>
 </li>
 <li class="">
 <p><strong>Verificar unidades:</strong></p>
 <ul>
-<li class="">Verificar unidades del dibujo (mm vs pulgadas)</li>
+<li class="">Comprobar las unidades del dibujo (mm vs pulgadas)</li>
 <li class="">Rayforge asume mm por defecto</li>
 </ul>
 </li>
 <li class="">
 <p><strong>Aplanar capas:</strong></p>
 <ul>
-<li class="">Considera exportar solo capas relevantes</li>
+<li class="">Considerar exportar solo las capas relevantes</li>
 <li class="">Ocultar o eliminar capas de construcción</li>
 </ul>
 </li>
 <li class="">
-<p><strong>Usar precisión apropiada:</strong></p>
+<p><strong>Usar precisión adecuada:</strong></p>
 <ul>
-<li class="">La precisión láser es típicamente 0.1mm</li>
-<li class="">No sobre-especifiques precisión</li>
+<li class="">La precisión láser es típicamente de 0,1 mm</li>
+<li class="">No especifique demasiada precisión</li>
 </ul>
 </li>
 </ol>
 <p><strong>Después de importar:</strong></p>
 <ul>
-<li class="">Verifica la escala (las unidades DXF pueden necesitar ajuste)</li>
-<li class="">Verifica que todas las trayectorias se importaron correctamente</li>
-<li class="">Elimina cualquier elemento de construcción no deseado</li>
+<li class="">Verificar la escala (las unidades DXF pueden necesitar ajuste)</li>
+<li class="">Comprobar que todos los trazados se importaron correctamente</li>
+<li class="">Eliminar elementos de construcción no deseados</li>
 </ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="importación-pdf">Importación PDF<a href="#importación-pdf" class="hash-link" aria-label="Enlace directo al Importación PDF" title="Enlace directo al Importación PDF" translate="no">​</a></h2>
-<p>Los archivos PDF pueden contener gráficos vectoriales, imágenes rasterizadas, o ambos.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cómo-funciona-la-importación-pdf">Cómo Funciona la Importación PDF<a href="#cómo-funciona-la-importación-pdf" class="hash-link" aria-label="Enlace directo al Cómo Funciona la Importación PDF" title="Enlace directo al Cómo Funciona la Importación PDF" translate="no">​</a></h3>
-<p>Al importar archivos PDF a través del diálogo de importación, Rayforge <strong>renderiza el PDF</strong>
-a una imagen, luego lo <strong>traza</strong> para crear vectores.</p>
-<p><strong>Proceso:</strong></p>
-<ol>
-<li class="">El PDF se renderiza y muestra en la vista previa del diálogo de importación</li>
-<li class="">Puedes ajustar los ajustes de trazado en tiempo real</li>
-<li class="">La imagen renderizada se traza usando vectorización con tus ajustes</li>
-<li class="">Las trayectorias resultantes se añaden al documento cuando haces clic en Importar</li>
-</ol>
-<p><strong>Limitaciones:</strong></p>
-<ul>
-<li class="">El texto se rasteriza (no editable como trayectorias)</li>
-<li class="">La calidad vectorial depende del DPI de renderizado</li>
-<li class="">PDFs de múltiples páginas: solo la primera página se importa</li>
-</ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="consejos-de-importación-pdf">Consejos de Importación PDF<a href="#consejos-de-importación-pdf" class="hash-link" aria-label="Enlace directo al Consejos de Importación PDF" title="Enlace directo al Consejos de Importación PDF" translate="no">​</a></h3>
+<p>Los archivos PDF pueden contener gráficos vectoriales, imágenes de mapa de
+bits, o ambos.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="importación-directa-de-vectores">Importación directa de vectores<a href="#importación-directa-de-vectores" class="hash-link" aria-label="Enlace directo al Importación directa de vectores" title="Enlace directo al Importación directa de vectores" translate="no">​</a></h3>
+<p>Al importar un PDF que contiene trazados vectoriales, Rayforge puede importarlos
+directamente, igual que archivos SVG o DXF. Esto proporciona geometría limpia y
+escalable sin pérdida de calidad por rasterización.</p>
+<p>Si el PDF contiene capas, Rayforge las detecta y permite seleccionar cuáles
+importar. Cada capa se convierte en una pieza de trabajo separada en su
+documento. Esto funciona de la misma manera que la importación de capas SVG:
+habilite o deshabilite capas individuales en el diálogo de importación antes de
+importar.</p>
+<p>Esto es especialmente útil para PDF exportados desde software de diseño como
+Illustrator o Inkscape, donde los trazados vectoriales son limpios y están bien
+organizados.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="alternativa-renderizar-y-trazar">Alternativa: Renderizar y trazar<a href="#alternativa-renderizar-y-trazar" class="hash-link" aria-label="Enlace directo al Alternativa: Renderizar y trazar" title="Enlace directo al Alternativa: Renderizar y trazar" translate="no">​</a></h3>
+<p>Para PDF que no contienen datos vectoriales utilizables — documentos escaneados,
+fotos incrustadas, o PDF donde el texto no se ha convertido a contornos —
+Rayforge puede recurrir a renderizar el PDF como imagen y trazarlo. Esto
+funciona igual que la importación de imágenes de mapa de bits.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="consejos-para-importación-pdf">Consejos para importación PDF<a href="#consejos-para-importación-pdf" class="hash-link" aria-label="Enlace directo al Consejos para importación PDF" title="Enlace directo al Consejos para importación PDF" translate="no">​</a></h3>
 <p><strong>Mejores resultados:</strong></p>
 <ol>
 <li class="">
-<p><strong>Usar PDFs vectoriales:</strong></p>
-<ul>
-<li class="">PDFs creados desde software vectorial (Illustrator, Inkscape)</li>
-<li class="">No documentos escaneados o imágenes embebidas</li>
-</ul>
+<p><strong>Usar PDF vectoriales</strong>: Los PDF creados desde software vectorial (Illustrator,
+Inkscape) producen los resultados más limpios con importación directa.</p>
 </li>
 <li class="">
-<p><strong>Exportar SVG en su lugar si es posible:</strong></p>
-<ul>
-<li class="">La mayoría del software de diseño puede exportar SVG directamente</li>
-<li class="">SVG tendrá mejor calidad que la importación PDF</li>
-</ul>
+<p><strong>Verificar capas</strong>: Si su PDF tiene capas, las verá listadas en el diálogo
+de importación. Seleccione solo las capas que necesite.</p>
 </li>
 <li class="">
-<p><strong>Para documentos con texto:</strong></p>
-<ul>
-<li class="">Exportar como SVG con fuentes convertidas a trayectorias</li>
-<li class="">O renderizar PDF a alto DPI (600+) y trazar</li>
-</ul>
+<p><strong>Para documentos con texto</strong>: Exporte como SVG con fuentes convertidas a
+trazados para la mejor calidad, o use la alternativa de renderizar y trazar.</p>
 </li>
 <li class="">
-<p><strong>Usar la vista previa del diálogo de importación:</strong></p>
-<ul>
-<li class="">Ajusta los ajustes de umbral e invertir para mejores resultados</li>
-<li class="">La vista previa muestra exactamente cómo se trazará el PDF</li>
-</ul>
+<p><strong>Usar la vista previa del diálogo de importación</strong>: Ajuste los ajustes de
+umbral e invertir al usar el modo de trazo. La vista previa muestra
+exactamente cómo se trazará el PDF.</p>
 </li>
 </ol>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="importación-ruida">Importación Ruida<a href="#importación-ruida" class="hash-link" aria-label="Enlace directo al Importación Ruida" title="Enlace directo al Importación Ruida" translate="no">​</a></h2>
-<p>Los archivos Ruida (.rd) son archivos de trabajo binarios propietarios usados por controladores Ruida en muchas máquinas de corte láser. Estos archivos contienen tanto geometría vectorial como ajustes de láser
-organizados en capas (colores).</p>
+<p>Los archivos Ruida (.rd) son archivos de trabajo binarios propietarios utilizados
+por los controladores Ruida en muchas máquinas de corte láser. Estos archivos
+contienen tanto geometría vectorial como ajustes del láser organizados en capas
+(colores).</p>
 <p><strong>Después de importar:</strong></p>
 <ul>
-<li class=""><strong>Verifica la escala</strong> - Confirma que las dimensiones coinciden con el tamaño esperado</li>
-<li class=""><strong>Revisa las capas</strong> - Asegúrate de que todas las capas se importaron correctamente</li>
-<li class=""><strong>Valida trayectorias</strong> - Confirma que todas las trayectorias de corte están presentes</li>
+<li class=""><strong>Verificar escala</strong> - Comprobar que las dimensiones coinciden con el tamaño
+esperado</li>
+<li class=""><strong>Revisar capas</strong> - Asegurar que todas las capas se importaron correctamente</li>
+<li class=""><strong>Validar trazados</strong> - Confirmar que todos los trazados de corte están
+presentes</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="limitaciones">Limitaciones<a href="#limitaciones" class="hash-link" aria-label="Enlace directo al Limitaciones" title="Enlace directo al Limitaciones" translate="no">​</a></h3>
 <ul>
-<li class=""><strong>Importación solo lectura</strong> - Los archivos Ruida solo pueden importarse, no exportarse</li>
-<li class=""><strong>Formato binario</strong> - La edición directa de archivos .rd originales no soportada</li>
-<li class=""><strong>Funciones propietarias</strong> - Algunas funciones avanzadas de Ruida pueden no estar completamente soportadas</li>
+<li class=""><strong>Importación de solo lectura</strong> - Los archivos Ruida solo pueden importarse,
+no exportarse</li>
+<li class=""><strong>Formato binario</strong> - La edición directa de archivos .rd originales no es
+compatible</li>
+<li class=""><strong>Funciones propietarias</strong> - Algunas funciones avanzadas de Ruida pueden no ser
+totalmente compatibles</li>
 </ul>
 <hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="importación-de-imágenes-rasterizadas-png-jpg-bmp">Importación de Imágenes Rasterizadas (PNG, JPG, BMP)<a href="#importación-de-imágenes-rasterizadas-png-jpg-bmp" class="hash-link" aria-label="Enlace directo al Importación de Imágenes Rasterizadas (PNG, JPG, BMP)" title="Enlace directo al Importación de Imágenes Rasterizadas (PNG, JPG, BMP)" translate="no">​</a></h2>
-<p>Las imágenes rasterizadas se <strong>trazan</strong> para crear trayectorias vectoriales usando el diálogo de importación.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="proceso-de-trazado-en-el-diálogo">Proceso de Trazado en el Diálogo<a href="#proceso-de-trazado-en-el-diálogo" class="hash-link" aria-label="Enlace directo al Proceso de Trazado en el Diálogo" title="Enlace directo al Proceso de Trazado en el Diálogo" translate="no">​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="importación-de-imágenes-de-mapa-de-bits-png-jpg-bmp">Importación de imágenes de mapa de bits (PNG, JPG, BMP)<a href="#importación-de-imágenes-de-mapa-de-bits-png-jpg-bmp" class="hash-link" aria-label="Enlace directo al Importación de imágenes de mapa de bits (PNG, JPG, BMP)" title="Enlace directo al Importación de imágenes de mapa de bits (PNG, JPG, BMP)" translate="no">​</a></h2>
+<p>Las imágenes de mapa de bits se <strong>trazan</strong> para crear trazados vectoriales
+utilizando el diálogo de importación.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="proceso-de-trazado-en-el-diálogo">Proceso de trazado en el diálogo<a href="#proceso-de-trazado-en-el-diálogo" class="hash-link" aria-label="Enlace directo al Proceso de trazado en el diálogo" title="Enlace directo al Proceso de trazado en el diálogo" translate="no">​</a></h3>
 <p><strong>Cómo funciona:</strong></p>
 <ol>
 <li class=""><strong>Imagen cargada</strong> en el diálogo de importación</li>
-<li class=""><strong>Vista previa en vivo</strong> muestra el resultado trazado</li>
-<li class=""><strong>Ajustes de trazado</strong> pueden ajustarse en tiempo real</li>
-<li class=""><strong>Trayectorias vectoriales creadas</strong> desde los bordes trazados</li>
-<li class=""><strong>Trayectorias añadidas</strong> al documento como piezas cuando se importan</li>
+<li class=""><strong>Vista previa en tiempo real</strong> muestra el resultado del trazado</li>
+<li class=""><strong>Ajustes de trazado</strong> pueden modificarse en tiempo real</li>
+<li class=""><strong>Trazados vectoriales creados</strong> a partir de los bordes trazados</li>
+<li class=""><strong>Trazados añadidos</strong> al documento como piezas de trabajo al importar</li>
 </ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="configuración-de-trazado-en-el-diálogo">Configuración de Trazado en el Diálogo<a href="#configuración-de-trazado-en-el-diálogo" class="hash-link" aria-label="Enlace directo al Configuración de Trazado en el Diálogo" title="Enlace directo al Configuración de Trazado en el Diálogo" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="configuración-de-trazado-en-el-diálogo">Configuración de trazado en el diálogo<a href="#configuración-de-trazado-en-el-diálogo" class="hash-link" aria-label="Enlace directo al Configuración de trazado en el diálogo" title="Enlace directo al Configuración de trazado en el diálogo" translate="no">​</a></h3>
 <p>El diálogo de importación proporciona estos parámetros ajustables:</p>
 
 
@@ -413,46 +423,46 @@ organizados en capas (colores).</p>
 
 
 
-<table><thead><tr><th>Parámetro</th><th>Descripción</th><th>Efecto</th></tr></thead><tbody><tr><td><strong>Auto Umbral</strong></td><td>Detección automática</td><td>Cuando está habilitado, encuentra automáticamente el umbral óptimo</td></tr><tr><td><strong>Umbral</strong></td><td>Corte negro/blanco</td><td>Menor = más detalle, mayor = más simple</td></tr><tr><td><strong>Invertir</strong></td><td>Invertir colores</td><td>Trazar objetos claros sobre fondo oscuro</td></tr></tbody></table>
-<p>Los <strong>ajustes predeterminados</strong> funcionan bien para la mayoría de las imágenes. El diálogo muestra una vista previa en vivo
-que se actualiza a medida que ajustas estos ajustes, permitiéndote afinar el trazo
-antes de importar.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="preparando-imágenes-para-trazado">Preparando Imágenes para Trazado<a href="#preparando-imágenes-para-trazado" class="hash-link" aria-label="Enlace directo al Preparando Imágenes para Trazado" title="Enlace directo al Preparando Imágenes para Trazado" translate="no">​</a></h3>
-<p><strong>Para mejores resultados:</strong></p>
+<table><thead><tr><th>Parámetro</th><th>Descripción</th><th>Efecto</th></tr></thead><tbody><tr><td><strong>Umbral automático</strong></td><td>Detección automática</td><td>Al habilitarse, encuentra automáticamente el umbral óptimo</td></tr><tr><td><strong>Umbral</strong></td><td>Corte blanco/negro</td><td>Menor = más detalle, mayor = más simple</td></tr><tr><td><strong>Invertir</strong></td><td>Invertir colores</td><td>Traza objetos claros sobre fondo oscuro</td></tr></tbody></table>
+<p><strong>Los ajustes predeterminados</strong> funcionan bien para la mayoría de las imágenes.
+El diálogo muestra una vista previa en tiempo real que se actualiza al ajustar
+estos parámetros, permitiéndole afinar el trazado antes de importar.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="preparar-imágenes-para-trazado">Preparar imágenes para trazado<a href="#preparar-imágenes-para-trazado" class="hash-link" aria-label="Enlace directo al Preparar imágenes para trazado" title="Enlace directo al Preparar imágenes para trazado" translate="no">​</a></h3>
+<p><strong>Para obtener los mejores resultados:</strong></p>
 <ol>
 <li class="">
 <p><strong>Alto contraste:</strong></p>
 <ul>
-<li class="">Ajusta brillo/contraste en editor de imágenes</li>
+<li class="">Ajustar brillo/contraste en un editor de imágenes</li>
 <li class="">Distinción clara entre primer plano y fondo</li>
 </ul>
 </li>
 <li class="">
 <p><strong>Fondo limpio:</strong></p>
 <ul>
-<li class="">Elimina ruido y artefactos</li>
+<li class="">Eliminar ruido y artefactos</li>
 <li class="">Fondo blanco sólido o transparente</li>
 </ul>
 </li>
 <li class="">
-<p><strong>Resolución apropiada:</strong></p>
+<p><strong>Resolución adecuada:</strong></p>
 <ul>
-<li class="">300-500 DPI para fotos</li>
-<li class="">Demasiado alto = trazado lento, demasiado bajo = calidad pobre</li>
+<li class="">300-500 PPP para fotos</li>
+<li class="">Demasiado alta = trazado lento, demasiado baja = mala calidad</li>
 </ul>
 </li>
 <li class="">
 <p><strong>Recortar al contenido:</strong></p>
 <ul>
-<li class="">Elimina bordes innecesarios</li>
-<li class="">Enfócate en el área a grabar/cortar</li>
+<li class="">Eliminar bordes innecesarios</li>
+<li class="">Enfocarse en el área a grabar/cortar</li>
 </ul>
 </li>
 <li class="">
 <p><strong>Convertir a blanco y negro:</strong></p>
 <ul>
-<li class="">Para corte: B&amp;W puro</li>
-<li class="">Para grabado: escala de grises está bien</li>
+<li class="">Para corte: blanco y negro puro</li>
+<li class="">Para grabado: escala de grises es aceptable</li>
 </ul>
 </li>
 </ol>
@@ -463,15 +473,15 @@ antes de importar.</p>
 <li class="">Krita (gratuito)</li>
 <li class="">Paint.NET (gratuito, Windows)</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="calidad-del-trazado">Calidad del Trazado<a href="#calidad-del-trazado" class="hash-link" aria-label="Enlace directo al Calidad del Trazado" title="Enlace directo al Calidad del Trazado" translate="no">​</a></h3>
-<p><strong>Buenos candidatos para trazar:</strong></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="calidad-del-trazado">Calidad del trazado<a href="#calidad-del-trazado" class="hash-link" aria-label="Enlace directo al Calidad del trazado" title="Enlace directo al Calidad del trazado" translate="no">​</a></h3>
+<p><strong>Buenos candidatos para trazo:</strong></p>
 <ul>
-<li class="">Logos con bordes claros</li>
+<li class="">Logos con bordes definidos</li>
 <li class="">Imágenes de alto contraste</li>
 <li class="">Arte lineal y dibujos</li>
-<li class="">Texto (aunque mejor como vector)</li>
+<li class="">Texto (aunque es mejor como vector)</li>
 </ul>
-<p><strong>Malos candidatos para trazar:</strong></p>
+<p><strong>Malos candidatos para trazo:</strong></p>
 <ul>
 <li class="">Imágenes de baja resolución</li>
 <li class="">Fotos con bordes suaves</li>
@@ -479,11 +489,11 @@ antes de importar.</p>
 <li class="">Fotos muy detalladas o complejas</li>
 </ul>
 <hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="páginas-relacionadas">Páginas Relacionadas<a href="#páginas-relacionadas" class="hash-link" aria-label="Enlace directo al Páginas Relacionadas" title="Enlace directo al Páginas Relacionadas" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="páginas-relacionadas">Páginas relacionadas<a href="#páginas-relacionadas" class="hash-link" aria-label="Enlace directo al Páginas relacionadas" title="Enlace directo al Páginas relacionadas" translate="no">​</a></h2>
 <ul>
-<li class=""><a class="" href="/es/docs/files/formats">Formatos Soportados</a> - Especificaciones detalladas de formatos</li>
-<li class=""><a class="" href="/es/docs/files/exporting">Exportando Código G</a> - Opciones de salida</li>
-<li class=""><a class="" href="/es/docs/getting-started/quick-start">Inicio Rápido</a> - Tutorial de primera importación</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/files/importing.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Página del documento"><a class="pagination-nav__link pagination-nav__link--prev" href="/es/docs/addons/ai-workpiece-generator"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Generador de Piezas por IA</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/es/docs/files/formats"><div class="pagination-nav__sublabel">Siguiente</div><div class="pagination-nav__label">Formatos de Archivo Soportados</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#formatos-de-archivo-soportados" class="table-of-contents__link toc-highlight">Formatos de Archivo Soportados</a><ul><li><a href="#formatos-vectoriales" class="table-of-contents__link toc-highlight">Formatos Vectoriales</a></li><li><a href="#formatos-rasterizados" class="table-of-contents__link toc-highlight">Formatos Rasterizados</a></li></ul></li><li><a href="#importando-archivos-1" class="table-of-contents__link toc-highlight">Importando Archivos</a><ul><li><a href="#el-diálogo-de-importación" class="table-of-contents__link toc-highlight">El Diálogo de Importación</a></li><li><a href="#método-1-menú-archivo" class="table-of-contents__link toc-highlight">Método 1: Menú Archivo</a></li><li><a href="#método-2-arrastrar-y-soltar" class="table-of-contents__link toc-highlight">Método 2: Arrastrar y Soltar</a></li><li><a href="#método-3-línea-de-comandos" class="table-of-contents__link toc-highlight">Método 3: Línea de Comandos</a></li><li><a href="#auto-redimensionar-al-importar" class="table-of-contents__link toc-highlight">Auto-Redimensionar al Importar</a></li></ul></li><li><a href="#importación-svg" class="table-of-contents__link toc-highlight">Importación SVG</a><ul><li><a href="#opciones-de-importación-en-el-diálogo" class="table-of-contents__link toc-highlight">Opciones de Importación en el Diálogo</a></li><li><a href="#vista-previa-en-vivo" class="table-of-contents__link toc-highlight">Vista Previa en Vivo</a></li><li><a href="#mejores-prácticas-svg" class="table-of-contents__link toc-highlight">Mejores Prácticas SVG</a></li></ul></li><li><a href="#importación-dxf" class="table-of-contents__link toc-highlight">Importación DXF</a><ul><li><a href="#versiones-dxf" class="table-of-contents__link toc-highlight">Versiones DXF</a></li><li><a href="#consejos-de-importación-dxf" class="table-of-contents__link toc-highlight">Consejos de Importación DXF</a></li></ul></li><li><a href="#importación-pdf" class="table-of-contents__link toc-highlight">Importación PDF</a><ul><li><a href="#cómo-funciona-la-importación-pdf" class="table-of-contents__link toc-highlight">Cómo Funciona la Importación PDF</a></li><li><a href="#consejos-de-importación-pdf" class="table-of-contents__link toc-highlight">Consejos de Importación PDF</a></li></ul></li><li><a href="#importación-ruida" class="table-of-contents__link toc-highlight">Importación Ruida</a><ul><li><a href="#limitaciones" class="table-of-contents__link toc-highlight">Limitaciones</a></li></ul></li><li><a href="#importación-de-imágenes-rasterizadas-png-jpg-bmp" class="table-of-contents__link toc-highlight">Importación de Imágenes Rasterizadas (PNG, JPG, BMP)</a><ul><li><a href="#proceso-de-trazado-en-el-diálogo" class="table-of-contents__link toc-highlight">Proceso de Trazado en el Diálogo</a></li><li><a href="#configuración-de-trazado-en-el-diálogo" class="table-of-contents__link toc-highlight">Configuración de Trazado en el Diálogo</a></li><li><a href="#preparando-imágenes-para-trazado" class="table-of-contents__link toc-highlight">Preparando Imágenes para Trazado</a></li><li><a href="#calidad-del-trazado" class="table-of-contents__link toc-highlight">Calidad del Trazado</a></li></ul></li><li><a href="#páginas-relacionadas" class="table-of-contents__link toc-highlight">Páginas Relacionadas</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+<li class=""><a class="" href="/es/docs/files/formats">Formatos admitidos</a> - Especificaciones detalladas de formatos</li>
+<li class=""><a class="" href="/es/docs/files/exporting">Exportar G-code</a> - Opciones de salida</li>
+<li class=""><a class="" href="/es/docs/getting-started/quick-start">Inicio rápido</a> - Tutorial de primera importación</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/files/importing.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Página del documento"><a class="pagination-nav__link pagination-nav__link--prev" href="/es/docs/addons/ai-workpiece-generator"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Generador de Piezas por IA</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/es/docs/files/formats"><div class="pagination-nav__sublabel">Siguiente</div><div class="pagination-nav__label">Formatos de archivo compatibles</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#formatos-de-archivo-admitidos" class="table-of-contents__link toc-highlight">Formatos de archivo admitidos</a><ul><li><a href="#formatos-vectoriales" class="table-of-contents__link toc-highlight">Formatos vectoriales</a></li><li><a href="#formatos-de-mapa-de-bits" class="table-of-contents__link toc-highlight">Formatos de mapa de bits</a></li></ul></li><li><a href="#importar-archivos-1" class="table-of-contents__link toc-highlight">Importar archivos</a><ul><li><a href="#el-diálogo-de-importación" class="table-of-contents__link toc-highlight">El diálogo de importación</a></li><li><a href="#método-1-menú-archivo" class="table-of-contents__link toc-highlight">Método 1: Menú Archivo</a></li><li><a href="#método-2-arrastrar-y-soltar" class="table-of-contents__link toc-highlight">Método 2: Arrastrar y soltar</a></li><li><a href="#método-3-línea-de-comandos" class="table-of-contents__link toc-highlight">Método 3: Línea de comandos</a></li><li><a href="#auto-redimensionar-al-importar" class="table-of-contents__link toc-highlight">Auto-Redimensionar al importar</a></li></ul></li><li><a href="#importación-svg" class="table-of-contents__link toc-highlight">Importación SVG</a><ul><li><a href="#opciones-de-importación-en-el-diálogo" class="table-of-contents__link toc-highlight">Opciones de importación en el diálogo</a></li><li><a href="#vista-previa-en-tiempo-real" class="table-of-contents__link toc-highlight">Vista previa en tiempo real</a></li><li><a href="#buenas-prácticas-svg" class="table-of-contents__link toc-highlight">Buenas prácticas SVG</a></li></ul></li><li><a href="#importación-dxf" class="table-of-contents__link toc-highlight">Importación DXF</a><ul><li><a href="#versiones-dxf" class="table-of-contents__link toc-highlight">Versiones DXF</a></li><li><a href="#consejos-para-importación-dxf" class="table-of-contents__link toc-highlight">Consejos para importación DXF</a></li></ul></li><li><a href="#importación-pdf" class="table-of-contents__link toc-highlight">Importación PDF</a><ul><li><a href="#importación-directa-de-vectores" class="table-of-contents__link toc-highlight">Importación directa de vectores</a></li><li><a href="#alternativa-renderizar-y-trazar" class="table-of-contents__link toc-highlight">Alternativa: Renderizar y trazar</a></li><li><a href="#consejos-para-importación-pdf" class="table-of-contents__link toc-highlight">Consejos para importación PDF</a></li></ul></li><li><a href="#importación-ruida" class="table-of-contents__link toc-highlight">Importación Ruida</a><ul><li><a href="#limitaciones" class="table-of-contents__link toc-highlight">Limitaciones</a></li></ul></li><li><a href="#importación-de-imágenes-de-mapa-de-bits-png-jpg-bmp" class="table-of-contents__link toc-highlight">Importación de imágenes de mapa de bits (PNG, JPG, BMP)</a><ul><li><a href="#proceso-de-trazado-en-el-diálogo" class="table-of-contents__link toc-highlight">Proceso de trazado en el diálogo</a></li><li><a href="#configuración-de-trazado-en-el-diálogo" class="table-of-contents__link toc-highlight">Configuración de trazado en el diálogo</a></li><li><a href="#preparar-imágenes-para-trazado" class="table-of-contents__link toc-highlight">Preparar imágenes para trazado</a></li><li><a href="#calidad-del-trazado" class="table-of-contents__link toc-highlight">Calidad del trazado</a></li></ul></li><li><a href="#páginas-relacionadas" class="table-of-contents__link toc-highlight">Páginas relacionadas</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>
