@@ -4,10 +4,99 @@
         <title>Rayforge Blog</title>
         <link>https://rayforge.org/pt-BR/blog</link>
         <description>Rayforge Blog</description>
-        <lastBuildDate>Mon, 23 Mar 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 29 Mar 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>pt-BR</language>
+        <item>
+            <title><![CDATA[Rayforge 1.4 - Rotary Axis, PDF Layers, Camera Calibration]]></title>
+            <link>https://rayforge.org/pt-BR/blog/rayforge-1.4-rotary-pdf-camera</link>
+            <guid>https://rayforge.org/pt-BR/blog/rayforge-1.4-rotary-pdf-camera</guid>
+            <pubDate>Sun, 29 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Rayforge 1.4 adds rotary axis support for cylindrical workpieces, direct]]></description>
+            <content:encoded><![CDATA[<p>Rayforge 1.4 adds rotary axis support for cylindrical workpieces, direct
+vector import for PDF files with layers, a guided camera calibration wizard,
+and an improved sketcher with ellipse tools and smarter snapping.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="rotary-axis-support">Rotary Axis Support<a href="https://rayforge.org/pt-BR/blog/rayforge-1.4-rotary-pdf-camera#rotary-axis-support" class="hash-link" aria-label="Link direto para Rotary Axis Support" title="Link direto para Rotary Axis Support" translate="no">​</a></h2>
+<p>You can now engrave and cut cylindrical objects like tumblers, glasses, and
+pens. Rayforge wraps your design around the cylinder surface and shows a 3D
+preview so you know exactly what the result will look like before you start.</p>
+<p>Rotary mode can be toggled per layer, which means you can combine flat and
+cylindrical work in a single project. A small rotary icon next to each layer
+makes it easy to see which layers will run on the rotary attachment.</p>
+<p>Head over to the <a class="" href="https://rayforge.org/pt-BR/docs/machine/rotary">Rotary Setup</a> page for details on
+configuring your module.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pdf-import-with-layers">PDF Import with Layers<a href="https://rayforge.org/pt-BR/blog/rayforge-1.4-rotary-pdf-camera#pdf-import-with-layers" class="hash-link" aria-label="Link direto para PDF Import with Layers" title="Link direto para PDF Import with Layers" translate="no">​</a></h2>
+<p>PDF files can now be imported as vector paths instead of being rasterized
+first. This means cleaner lines, no quality loss, and — if the PDF contains
+layers — you can pick which layers to import, just like with SVG files.</p>
+<p>This is especially handy when someone sends you a PDF that was exported from
+Illustrator or Inkscape and you need clean cutting paths without re-drawing
+anything.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="camera-calibration-wizard">Camera Calibration Wizard<a href="https://rayforge.org/pt-BR/blog/rayforge-1.4-rotary-pdf-camera#camera-calibration-wizard" class="hash-link" aria-label="Link direto para Camera Calibration Wizard" title="Link direto para Camera Calibration Wizard" translate="no">​</a></h2>
+<p>Getting a camera aligned to your laser bed just got easier. The new guided
+calibration wizard walks you through the process step by step using a printed
+calibration card. Rayforge computes a full distortion model from the card
+images, correcting for barrel distortion and perspective errors automatically.</p>
+<p>The result is noticeably better alignment accuracy, especially with wide-angle
+lenses or cameras mounted at an angle.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-improvements">Sketcher Improvements<a href="https://rayforge.org/pt-BR/blog/rayforge-1.4-rotary-pdf-camera#sketcher-improvements" class="hash-link" aria-label="Link direto para Sketcher Improvements" title="Link direto para Sketcher Improvements" translate="no">​</a></h2>
+<p>The circle tool has been replaced with a more general <strong>ellipse tool</strong> that
+handles both circles and ellipses. The equality constraint now works on
+ellipses too.</p>
+<p>Drawing geometry also feels smoother now: many tools automatically apply
+constraints as you create shapes, and a new <strong>magnetic snap</strong> system replaces
+the old snap-to-grid behavior. Instead of locking to a fixed grid, magnetic
+snap pulls your cursor toward nearby geometry — points, lines, and endpoints —
+making it much easier to connect shapes precisely.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="better-framing-controls">Better Framing Controls<a href="https://rayforge.org/pt-BR/blog/rayforge-1.4-rotary-pdf-camera#better-framing-controls" class="hash-link" aria-label="Link direto para Better Framing Controls" title="Link direto para Better Framing Controls" translate="no">​</a></h2>
+<p>The framing feature has new settings for finer control:</p>
+<ul>
+<li class=""><strong>Frame speed</strong> is now configured per laser head</li>
+<li class=""><strong>Corner dwell time</strong> lets the laser pause briefly at each corner so you can
+see exactly where the boundary is</li>
+<li class=""><strong>Repeat count</strong> traces the outline multiple times for better visibility</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="merge-lines-post-processor">Merge Lines Post-Processor<a href="https://rayforge.org/pt-BR/blog/rayforge-1.4-rotary-pdf-camera#merge-lines-post-processor" class="hash-link" aria-label="Link direto para Merge Lines Post-Processor" title="Link direto para Merge Lines Post-Processor" translate="no">​</a></h2>
+<p>A new post-processor called <strong>Merge Lines</strong> detects overlapping path segments
+and merges them into a single pass. This is useful when you import designs
+where shapes share edges — think grid patterns or tessellations — and you want
+to avoid cutting the same line twice.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/pt-BR/blog/rayforge-1.4-rotary-pdf-camera#other-improvements" class="hash-link" aria-label="Link direto para Other Improvements" title="Link direto para Other Improvements" translate="no">​</a></h2>
+<ul>
+<li class="">Machine profile for the Acmer S1 has been added</li>
+<li class="">G-code dialects are now independent copies, so customizing one never affects
+others</li>
+<li class="">Dialects support a separate laser-on command for focusing</li>
+<li class="">Large images are handled more safely to prevent running out of memory</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/pt-BR/blog/rayforge-1.4-rotary-pdf-camera#bug-fixes" class="hash-link" aria-label="Link direto para Bug Fixes" title="Link direto para Bug Fixes" translate="no">​</a></h2>
+<ul>
+<li class="">Fixed material test producer issues</li>
+<li class="">Fixed position reporting for machines with only X and Y axes</li>
+<li class="">Fixed a sketcher issue where distance constraints could shadow the line
+underneath</li>
+<li class="">Fixed memory exhaustion when importing very large images</li>
+<li class="">Fixed a race condition during worker initialization</li>
+</ul>
+<p>See the CHANGELOG on GitHub for the complete list.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-14">Download Rayforge 1.4<a href="https://rayforge.org/pt-BR/blog/rayforge-1.4-rotary-pdf-camera#download-rayforge-14" class="hash-link" aria-label="Link direto para Download Rayforge 1.4" title="Link direto para Download Rayforge 1.4" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="https://rayforge.org/pt-BR/docs/getting-started/installation">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/pt-BR/blog/rayforge-1.4-rotary-pdf-camera#join-the-community" class="hash-link" aria-label="Link direto para Join the Community" title="Link direto para Join the Community" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content:encoded>
+            <category>release</category>
+            <category>1.4</category>
+            <category>rotary</category>
+            <category>camera</category>
+            <category>pdf</category>
+            <category>sketcher</category>
+        </item>
         <item>
             <title><![CDATA[Rayforge 1.3 - Bezier Curves in Sketcher, Modular Architecture]]></title>
             <link>https://rayforge.org/pt-BR/blog/rayforge-1.3-bezier-curves-sketcher-addon</link>
@@ -87,7 +176,7 @@ on materials that need precise power management.</p>
 <p>See the CHANGELOG on GitHub for the complete list.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-13">Download Rayforge 1.3<a href="https://rayforge.org/pt-BR/blog/rayforge-1.3-bezier-curves-sketcher-addon#download-rayforge-13" class="hash-link" aria-label="Link direto para Download Rayforge 1.3" title="Link direto para Download Rayforge 1.3" translate="no">​</a></h2>
 <ul>
-<li class=""><a class="" href="https://rayforge.org/pt-BR/blog/getting-started/installation">GitHub Releases</a></li>
+<li class=""><a class="" href="https://rayforge.org/pt-BR/docs/getting-started/installation">GitHub Releases</a></li>
 <li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/pt-BR/blog/rayforge-1.3-bezier-curves-sketcher-addon#join-the-community" class="hash-link" aria-label="Link direto para Join the Community" title="Link direto para Join the Community" translate="no">​</a></h2>
@@ -474,7 +563,7 @@ outro ano construindo o futuro da manufatura de código aberto!</p>
             <guid>https://rayforge.org/pt-BR/blog/5-tips-better-engraving</guid>
             <pubDate>Thu, 20 Feb 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[Visualização 3D]]></description>
-            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Visualização 3D" src="https://rayforge.org/pt-BR/assets/images/main-3d-2c694fed2ff3aeb03fd6e81965aeb033.png" width="2522" height="1772" class="img_ev3q"></p>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Visualização 3D" src="https://rayforge.org/pt-BR/assets/images/main-3d-1f5d905c45adafc3e53256551f56922e.png" width="2522" height="1772" class="img_ev3q"></p>
 <p>Obter resultados de gravação a laser de qualidade profissional requer mais
 do que apenas bom hardware — suas configurações de software e fluxo de
 trabalho também importam. Aqui estão cinco dicas para ajudá-lo a aproveitar
@@ -680,7 +769,7 @@ Compartilhe seus projetos e feedback no
             <guid>https://rayforge.org/pt-BR/blog/welcome-to-rayforge</guid>
             <pubDate>Sun, 15 Dec 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Janela Principal do Rayforge]]></description>
-            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Janela Principal do Rayforge" src="https://rayforge.org/pt-BR/assets/images/main-standard-4c442cacdeb6c3c6d31e2f3a8b14e659.png" width="2522" height="1772" class="img_ev3q"></p>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Janela Principal do Rayforge" src="https://rayforge.org/pt-BR/assets/images/main-standard-7377b74f9c2b093d9f6a56716bd84a3d.png" width="2522" height="1772" class="img_ev3q"></p>
 <p>Estamos entusiasmados em apresentar o Rayforge, um enviador de G-code moderno
 e software de controle de código aberto, projetado especificamente para
 cortadoras e gravadoras a laser baseadas em GRBL.</p>

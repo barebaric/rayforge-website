@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite_new=self.webpackChunkwebsite_new||[]).push([[7968],{1671(e){e.exports=JSON.parse('{"metadata":{"permalink":"/zh-CN/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":7,"blogDescription":"Rayforge \u7684\u65b0\u95fb\u3001\u66f4\u65b0\u3001\u6559\u7a0b\u548c\u6280\u5de7","blogTitle":"Rayforge \u535a\u5ba2"}}')}}]);

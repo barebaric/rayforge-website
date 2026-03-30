@@ -2,11 +2,104 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rayforge.org/zh-CN/blog</id>
     <title>Rayforge Blog</title>
-    <updated>2026-03-23T00:00:00.000Z</updated>
+    <updated>2026-03-29T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rayforge.org/zh-CN/blog"/>
     <subtitle>Rayforge Blog</subtitle>
     <icon>https://rayforge.org/zh-CN/images/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Rayforge 1.4 - Rotary Axis, PDF Layers, Camera Calibration]]></title>
+        <id>https://rayforge.org/zh-CN/blog/rayforge-1.4-rotary-pdf-camera</id>
+        <link href="https://rayforge.org/zh-CN/blog/rayforge-1.4-rotary-pdf-camera"/>
+        <updated>2026-03-29T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Rayforge 1.4 adds rotary axis support for cylindrical workpieces, direct]]></summary>
+        <content type="html"><![CDATA[<p>Rayforge 1.4 adds rotary axis support for cylindrical workpieces, direct
+vector import for PDF files with layers, a guided camera calibration wizard,
+and an improved sketcher with ellipse tools and smarter snapping.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="rotary-axis-support">Rotary Axis Support<a href="https://rayforge.org/zh-CN/blog/rayforge-1.4-rotary-pdf-camera#rotary-axis-support" class="hash-link" aria-label="Rotary Axis Support 的直接链接" title="Rotary Axis Support 的直接链接" translate="no">​</a></h2>
+<p>You can now engrave and cut cylindrical objects like tumblers, glasses, and
+pens. Rayforge wraps your design around the cylinder surface and shows a 3D
+preview so you know exactly what the result will look like before you start.</p>
+<p>Rotary mode can be toggled per layer, which means you can combine flat and
+cylindrical work in a single project. A small rotary icon next to each layer
+makes it easy to see which layers will run on the rotary attachment.</p>
+<p>Head over to the <a class="" href="https://rayforge.org/zh-CN/docs/machine/rotary">Rotary Setup</a> page for details on
+configuring your module.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pdf-import-with-layers">PDF Import with Layers<a href="https://rayforge.org/zh-CN/blog/rayforge-1.4-rotary-pdf-camera#pdf-import-with-layers" class="hash-link" aria-label="PDF Import with Layers 的直接链接" title="PDF Import with Layers 的直接链接" translate="no">​</a></h2>
+<p>PDF files can now be imported as vector paths instead of being rasterized
+first. This means cleaner lines, no quality loss, and — if the PDF contains
+layers — you can pick which layers to import, just like with SVG files.</p>
+<p>This is especially handy when someone sends you a PDF that was exported from
+Illustrator or Inkscape and you need clean cutting paths without re-drawing
+anything.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="camera-calibration-wizard">Camera Calibration Wizard<a href="https://rayforge.org/zh-CN/blog/rayforge-1.4-rotary-pdf-camera#camera-calibration-wizard" class="hash-link" aria-label="Camera Calibration Wizard 的直接链接" title="Camera Calibration Wizard 的直接链接" translate="no">​</a></h2>
+<p>Getting a camera aligned to your laser bed just got easier. The new guided
+calibration wizard walks you through the process step by step using a printed
+calibration card. Rayforge computes a full distortion model from the card
+images, correcting for barrel distortion and perspective errors automatically.</p>
+<p>The result is noticeably better alignment accuracy, especially with wide-angle
+lenses or cameras mounted at an angle.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-improvements">Sketcher Improvements<a href="https://rayforge.org/zh-CN/blog/rayforge-1.4-rotary-pdf-camera#sketcher-improvements" class="hash-link" aria-label="Sketcher Improvements 的直接链接" title="Sketcher Improvements 的直接链接" translate="no">​</a></h2>
+<p>The circle tool has been replaced with a more general <strong>ellipse tool</strong> that
+handles both circles and ellipses. The equality constraint now works on
+ellipses too.</p>
+<p>Drawing geometry also feels smoother now: many tools automatically apply
+constraints as you create shapes, and a new <strong>magnetic snap</strong> system replaces
+the old snap-to-grid behavior. Instead of locking to a fixed grid, magnetic
+snap pulls your cursor toward nearby geometry — points, lines, and endpoints —
+making it much easier to connect shapes precisely.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="better-framing-controls">Better Framing Controls<a href="https://rayforge.org/zh-CN/blog/rayforge-1.4-rotary-pdf-camera#better-framing-controls" class="hash-link" aria-label="Better Framing Controls 的直接链接" title="Better Framing Controls 的直接链接" translate="no">​</a></h2>
+<p>The framing feature has new settings for finer control:</p>
+<ul>
+<li class=""><strong>Frame speed</strong> is now configured per laser head</li>
+<li class=""><strong>Corner dwell time</strong> lets the laser pause briefly at each corner so you can
+see exactly where the boundary is</li>
+<li class=""><strong>Repeat count</strong> traces the outline multiple times for better visibility</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="merge-lines-post-processor">Merge Lines Post-Processor<a href="https://rayforge.org/zh-CN/blog/rayforge-1.4-rotary-pdf-camera#merge-lines-post-processor" class="hash-link" aria-label="Merge Lines Post-Processor 的直接链接" title="Merge Lines Post-Processor 的直接链接" translate="no">​</a></h2>
+<p>A new post-processor called <strong>Merge Lines</strong> detects overlapping path segments
+and merges them into a single pass. This is useful when you import designs
+where shapes share edges — think grid patterns or tessellations — and you want
+to avoid cutting the same line twice.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/zh-CN/blog/rayforge-1.4-rotary-pdf-camera#other-improvements" class="hash-link" aria-label="Other Improvements 的直接链接" title="Other Improvements 的直接链接" translate="no">​</a></h2>
+<ul>
+<li class="">Machine profile for the Acmer S1 has been added</li>
+<li class="">G-code dialects are now independent copies, so customizing one never affects
+others</li>
+<li class="">Dialects support a separate laser-on command for focusing</li>
+<li class="">Large images are handled more safely to prevent running out of memory</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/zh-CN/blog/rayforge-1.4-rotary-pdf-camera#bug-fixes" class="hash-link" aria-label="Bug Fixes 的直接链接" title="Bug Fixes 的直接链接" translate="no">​</a></h2>
+<ul>
+<li class="">Fixed material test producer issues</li>
+<li class="">Fixed position reporting for machines with only X and Y axes</li>
+<li class="">Fixed a sketcher issue where distance constraints could shadow the line
+underneath</li>
+<li class="">Fixed memory exhaustion when importing very large images</li>
+<li class="">Fixed a race condition during worker initialization</li>
+</ul>
+<p>See the CHANGELOG on GitHub for the complete list.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-14">Download Rayforge 1.4<a href="https://rayforge.org/zh-CN/blog/rayforge-1.4-rotary-pdf-camera#download-rayforge-14" class="hash-link" aria-label="Download Rayforge 1.4 的直接链接" title="Download Rayforge 1.4 的直接链接" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="https://rayforge.org/zh-CN/docs/getting-started/installation">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/zh-CN/blog/rayforge-1.4-rotary-pdf-camera#join-the-community" class="hash-link" aria-label="Join the Community 的直接链接" title="Join the Community 的直接链接" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content>
+        <author>
+            <name>Rayforge Team</name>
+            <uri>https://github.com/barebaric/rayforge</uri>
+        </author>
+        <category label="release" term="release"/>
+        <category label="1.4" term="1.4"/>
+        <category label="rotary" term="rotary"/>
+        <category label="camera" term="camera"/>
+        <category label="pdf" term="pdf"/>
+        <category label="sketcher" term="sketcher"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Rayforge 1.3 - Bezier Curves in Sketcher, Modular Architecture]]></title>
         <id>https://rayforge.org/zh-CN/blog/rayforge-1.3-bezier-curves-sketcher-addon</id>
@@ -86,7 +179,7 @@ on materials that need precise power management.</p>
 <p>See the CHANGELOG on GitHub for the complete list.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-13">Download Rayforge 1.3<a href="https://rayforge.org/zh-CN/blog/rayforge-1.3-bezier-curves-sketcher-addon#download-rayforge-13" class="hash-link" aria-label="Download Rayforge 1.3 的直接链接" title="Download Rayforge 1.3 的直接链接" translate="no">​</a></h2>
 <ul>
-<li class=""><a class="" href="https://rayforge.org/zh-CN/blog/getting-started/installation">GitHub Releases</a></li>
+<li class=""><a class="" href="https://rayforge.org/zh-CN/docs/getting-started/installation">GitHub Releases</a></li>
 <li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/zh-CN/blog/rayforge-1.3-bezier-curves-sketcher-addon#join-the-community" class="hash-link" aria-label="Join the Community 的直接链接" title="Join the Community 的直接链接" translate="no">​</a></h2>
@@ -113,7 +206,7 @@ on materials that need precise power management.</p>
         <content type="html"><![CDATA[<p>Rayforge 1.2 brings an AI workpiece generator, significant camera
 enhancements, and a completely revamped add-on system with core
 functionality now available as optional modules.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ai-workpiece-generator-add-on">AI Workpiece Generator Add-on<a href="https://rayforge.org/zh-CN/blog/rayforge-1.2-addons-camera-ai#ai-workpiece-generator-add-on" class="hash-link" aria-label="AI Workpiece Generator Add-on 的直接链接" title="AI Workpiece Generator Add-on 的��直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ai-workpiece-generator-add-on">AI Workpiece Generator Add-on<a href="https://rayforge.org/zh-CN/blog/rayforge-1.2-addons-camera-ai#ai-workpiece-generator-add-on" class="hash-link" aria-label="AI Workpiece Generator Add-on 的直接链接" title="AI Workpiece Generator Add-on 的直接链接" translate="no">​</a></h2>
 <p>A new experimental add-on allows generating workpieces from text prompts.
 This is great for quickly creating simple designs or getting inspiration
 for new projects.</p>
@@ -354,7 +447,7 @@ keyboard shortcuts</li>
         <summary type="html"><![CDATA[Rayforge 1.0]]></summary>
         <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 1.0" src="https://rayforge.org/zh-CN/assets/images/rayforge-1.0-95669e0bab418ed91ad92eb5532ec092.png" width="1920" height="1024" class="img_ev3q"></p>
 <p>今天标志着 Rayforge 的一个特殊里程碑——我们在项目的一周岁生日当天发布 1.0 版本！从 2025 年 2 月 1 日的第一次提交开始，这已经发展成为一个功能齐全的激光切割和雕刻平台。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="迄今为止的旅程">迄今为止的旅程<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E8%BF%84%E4%BB%8A%E4%B8%BA%E6%AD%A2%E7%9A%84%E6%97%85%E7%A8%8B" class="hash-link" aria-label="迄今为止的旅程 的直接链接" title="迄今为止的旅程 的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="迄今为止的旅程">迄今为止的旅程<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E8%BF%84%E4%BB%8A%E4%B8%BA%E6%AD%A2%E7%9A%84%E6%97%85%E7%A8%8B" class="hash-link" aria-label="迄今为止的旅程 �的直接链接" title="迄今为止的旅程 的直接链接" translate="no">​</a></h2>
 <p>在过去的一年里，Rayforge 已从一个基本的激光控制工具演变为一个综合性的设计和制造平台。我们从零开始构建了一切：参数化 2D CAD 系统、3D G-code 预览、多图层支持、多激光支持、相机对齐、工作坐标系等等。</p>
 <p>此次发布代表了这一愿景的顶点——一个稳定、可用于生产的工具，能够处理现实世界的激光切割和雕刻工作流程。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="10-版本的新功能">1.0 版本的新功能<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#10-%E7%89%88%E6%9C%AC%E7%9A%84%E6%96%B0%E5%8A%9F%E8%83%BD" class="hash-link" aria-label="1.0 版本的新功能 的直接链接" title="1.0 版本的新功能 的直接链接" translate="no">​</a></h2>
@@ -362,7 +455,7 @@ keyboard shortcuts</li>
 <p>最受请求的功能终于来了。您现在可以保存完整的工作流程并在以后恢复。<code>.ryp</code>（项目）和 <code>.rfs</code>（草图）文件扩展名已在系统范围内注册，因此您可以双击项目直接打开它们。最近文件菜单可让您快速访问您的工作。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="带文本支持的参数化草图器">带文本支持的参数化草图器<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E5%B8%A6%E6%96%87%E6%9C%AC%E6%94%AF%E6%8C%81%E7%9A%84%E5%8F%82%E6%95%B0%E5%8C%96%E8%8D%89%E5%9B%BE%E5%99%A8" class="hash-link" aria-label="带文本支持的参数化草图器 的直接链接" title="带文本支持的参数化草图器 的直接链接" translate="no">​</a></h3>
 <p>草图器现在支持具有完整约束集成的文本。在草图中添加文本、应用纵横比约束，并通过参数控制位置和大小。这为激光雕刻标牌、标签和装饰元素开辟了一个全新的设计可能性世界。</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="统一底部面板">统一底部面板<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E7%BB%9F%E4%B8%80%E5%BA%95%E9%83%A8%E9%9D%A2%E6%9D%BF" class="hash-link" aria-label="统一底部面板 的直接链接" title="统一底部面板 的直接链接" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="统�一底部面板">统一底部面板<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E7%BB%9F%E4%B8%80%E5%BA%95%E9%83%A8%E9%9D%A2%E6%9D%BF" class="hash-link" aria-label="统一底部面板 的直接链接" title="统一底部面板 的直接链接" translate="no">​</a></h3>
 <p>点动对话框和日志视图已合并为一个统一的底部面板。这种整合提供了更简洁的工作空间，同时保持基本的机器控制和监控工具易于访问。该面板具有标签式访问点动控制和日志输出的功能，使切换操作变得容易，而不会损失屏幕空间。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="其他改进">其他改进<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E5%85%B6%E4%BB%96%E6%94%B9%E8%BF%9B" class="hash-link" aria-label="其他改进 的直接链接" title="其他改进 的直接链接" translate="no">​</a></h3>
 <ul>
@@ -459,7 +552,7 @@ keyboard shortcuts</li>
         <link href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving"/>
         <updated>2025-02-20T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[3D 预览]]></summary>
-        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="3D 预览" src="https://rayforge.org/zh-CN/assets/images/main-3d-2c694fed2ff3aeb03fd6e81965aeb033.png" width="2522" height="1772" class="img_ev3q"></p>
+        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="3D 预览" src="https://rayforge.org/zh-CN/assets/images/main-3d-1f5d905c45adafc3e53256551f56922e.png" width="2522" height="1772" class="img_ev3q"></p>
 <p>获得专业品质的激光雕刻效果不仅需要好的硬件——您的软件设置和工作流程也很重要。以下是帮助您充分利用 Rayforge 的五个技巧。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-使用过扫描获得更平滑的光栅雕刻">1. 使用过扫描获得更平滑的光栅雕刻<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#1-%E4%BD%BF%E7%94%A8%E8%BF%87%E6%89%AB%E6%8F%8F%E8%8E%B7%E5%BE%97%E6%9B%B4%E5%B9%B3%E6%BB%91%E7%9A%84%E5%85%89%E6%A0%85%E9%9B%95%E5%88%BB" class="hash-link" aria-label="1. 使用过扫描获得更平滑的光栅雕刻 的直接链接" title="1. 使用过扫描获得更平滑的光栅雕刻 的直接链接" translate="no">​</a></h2>
 <p>在进行光栅雕刻时，一个常见问题是在激光改变方向的边缘处出现可见的线条或不一致。这是因为激光头需要减速和加速，这会影响雕刻质量。</p>
@@ -604,7 +697,7 @@ keyboard shortcuts</li>
         <link href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge"/>
         <updated>2024-12-15T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Rayforge 主窗口]]></summary>
-        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 主窗口" src="https://rayforge.org/zh-CN/assets/images/main-standard-4c442cacdeb6c3c6d31e2f3a8b14e659.png" width="2522" height="1772" class="img_ev3q"></p>
+        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 主窗口" src="https://rayforge.org/zh-CN/assets/images/main-standard-7377b74f9c2b093d9f6a56716bd84a3d.png" width="2522" height="1772" class="img_ev3q"></p>
 <p>我们很高兴向您介绍 Rayforge，这是一款专为基于 GRBL 的激光切割机和雕刻机设计的现代化开源 G-code 发送器和控制软件。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="为什么选择-rayforge">为什么选择 Rayforge？<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-rayforge" class="hash-link" aria-label="为什么选择 Rayforge？ 的直接链接" title="为什么选择 Rayforge？ 的直接链接" translate="no">​</a></h2>
 <p>在激光切割和雕刻的世界中，拥有可靠、直观的软件与拥有优质硬件同样重要。Rayforge 从零开始构建，专注于：</p>
