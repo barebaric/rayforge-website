@@ -12,8 +12,8 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/fr/assets/css/styles.4e9e11c4.css">
-<script src="/fr/assets/js/runtime~main.66aa9188.js" defer="defer"></script>
-<script src="/fr/assets/js/main.ee0482fd.js" defer="defer"></script>
+<script src="/fr/assets/js/runtime~main.3d89bec9.js" defer="defer"></script>
+<script src="/fr/assets/js/main.e623e299.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -109,11 +109,25 @@ pris en charge. La boîte de dialogue permet de :</p>
 ou vectorisation)</li>
 <li class=""><strong>Ajuster les paramètres</strong> comme le seuil, l&#x27;inversion et le seuil automatique</li>
 </ul>
-<p><img decoding="async" loading="lazy" alt="Boîte de dialogue d&amp;#39;importation" src="/fr/assets/images/import-dialog-2e41d0b35b837ec937a7030accb21ffb.png" width="1222" height="922" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Boîte de dialogue d&amp;#39;importation" src="/fr/assets/images/import-dialog-a2fb798fabe9c3424934ef7d9bff198b.png" width="1222" height="922" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mode-dimportation-des-calques">Mode d&#x27;importation des calques<a href="#mode-dimportation-des-calques" class="hash-link" aria-label="Lien direct vers Mode d&#x27;importation des calques" title="Lien direct vers Mode d&#x27;importation des calques" translate="no">​</a></h3>
+<p>Lors de l&#x27;importation de fichiers contenant plusieurs calques (comme les fichiers SVG ou PDF
+avec des calques nommés), la boîte de dialogue offre trois façons de les gérer :</p>
+<ul>
+<li class=""><strong>Mapper vers l&#x27;existant</strong> : Fait correspondre les calques importés aux calques existants du document.
+Le premier calque du document source est placé dans le premier calque
+de ton projet, le deuxième dans le deuxième, et ainsi de suite.
+C&#x27;est le mode par défaut et il fonctionne bien lorsque ton document a déjà
+des calques configurés.</li>
+<li class=""><strong>Nouveaux calques</strong> : Crée un nouveau calque dans le document pour chaque calque importé.
+Cela garde le contenu importé séparé du travail existant.</li>
+<li class=""><strong>Aplatir</strong> : Fusionne tous les calques importés en un seul calque. Utile lorsque
+tu veux tout sur un seul calque quelle que soit la structure d&#x27;origine.</li>
+</ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="méthode-1--menu-fichier">Méthode 1 : Menu Fichier<a href="#méthode-1--menu-fichier" class="hash-link" aria-label="Lien direct vers Méthode 1 : Menu Fichier" title="Lien direct vers Méthode 1 : Menu Fichier" translate="no">​</a></h3>
 <ol>
 <li class=""><strong>Importer un fichier</strong> (ou Ctrl+I)</li>
-<li class=""><strong>Sélectionner votre fichier</strong> dans le sélecteur de fichiers</li>
+<li class=""><strong>Sélectionner ton fichier</strong> dans le sélecteur de fichiers</li>
 <li class=""><strong>Configurer les paramètres d&#x27;importation</strong> dans la boîte de dialogue</li>
 <li class=""><strong>Prévisualiser</strong> le résultat avant l&#x27;importation</li>
 <li class=""><strong>Cliquer sur Importer</strong> pour ajouter au canevas et à l&#x27;arborescence du
@@ -131,7 +145,7 @@ document</li>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="méthode-3--ligne-de-commande">Méthode 3 : Ligne de commande<a href="#méthode-3--ligne-de-commande" class="hash-link" aria-label="Lien direct vers Méthode 3 : Ligne de commande" title="Lien direct vers Méthode 3 : Ligne de commande" translate="no">​</a></h3>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Ouvrir Rayforge avec un fichier</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">rayforge myfile.svg</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"># Plusieurs fichiers</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">rayforge file1.svg file2.dxf</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="redimensionnement-automatique-à-limportation">Redimensionnement automatique à l&#x27;importation<a href="#redimensionnement-automatique-à-limportation" class="hash-link" aria-label="Lien direct vers Redimensionnement automatique à l&#x27;importation" title="Lien direct vers Redimensionnement automatique à l&#x27;importation" translate="no">​</a></h3>
-<p>Lors de l&#x27;importation de fichiers plus grands que la zone de travail de votre
+<p>Lors de l&#x27;importation de fichiers plus grands que la zone de travail de ta
 machine, Rayforge effectuera automatiquement les actions suivantes :</p>
 <ol>
 <li class=""><strong>Réduire</strong> le contenu importé pour qu&#x27;il tienne dans les limites de la
@@ -150,8 +164,8 @@ automatique</li>
 <li class="">Le toast reste visible jusqu&#x27;à ce qu&#x27;il soit ignoré ou que l&#x27;action de
 réinitialisation soit effectuée</li>
 </ul>
-<p>Cela garantit que vos dessins s&#x27;adaptent toujours aux capacités de votre machine
-tout en vous offrant la flexibilité de restaurer la taille d&#x27;origine si
+<p>Cela garantit que tes dessins s&#x27;adaptent toujours aux capacités de ta machine
+tout en t&#x27;offrant la flexibilité de restaurer la taille d&#x27;origine si
 nécessaire.</p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="importation-svg">Importation SVG<a href="#importation-svg" class="hash-link" aria-label="Lien direct vers Importation SVG" title="Lien direct vers Importation SVG" translate="no">​</a></h2>
@@ -186,7 +200,7 @@ choisir entre deux méthodes :</p>
 <li class="">Dessins sans fonctionnalités SVG avancées</li>
 </ul>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-vectoriser-limage">2. Vectoriser l&#x27;image<a href="#2-vectoriser-limage" class="hash-link" aria-label="Lien direct vers 2. Vectoriser l&#x27;image" title="Lien direct vers 2. Vectoriser l&#x27;image" translate="no">​</a></h4>
-<p>Désactivez « Utiliser les vecteurs originaux » pour utiliser cette méthode.</p>
+<p>Désactive « Utiliser les vecteurs originaux » pour utiliser cette méthode.</p>
 <p><strong>Fonctionnement :</strong></p>
 <ul>
 <li class="">Rend d&#x27;abord le SVG en image matricielle</li>
@@ -213,15 +227,15 @@ choisir entre deux méthodes :</p>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="aperçu-en-direct">Aperçu en direct<a href="#aperçu-en-direct" class="hash-link" aria-label="Lien direct vers Aperçu en direct" title="Lien direct vers Aperçu en direct" translate="no">​</a></h3>
 <p>La boîte de dialogue d&#x27;importation affiche un aperçu en direct de l&#x27;importation
-de votre SVG :</p>
+de ton SVG :</p>
 <ul>
 <li class="">Les tracés vectoriels sont affichés en surbrillance bleue</li>
 <li class="">En mode vectorisation, l&#x27;image originale est montrée avec les tracés
 vectorisés</li>
-<li class="">L&#x27;aperçu se met à jour en temps réel lorsque vous modifiez les paramètres</li>
+<li class="">L&#x27;aperçu se met à jour en temps réel lorsque tu modifies les paramètres</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="bonnes-pratiques-svg">Bonnes pratiques SVG<a href="#bonnes-pratiques-svg" class="hash-link" aria-label="Lien direct vers Bonnes pratiques SVG" title="Lien direct vers Bonnes pratiques SVG" translate="no">​</a></h3>
-<p><strong>Préparez votre SVG pour obtenir les meilleurs résultats :</strong></p>
+<p><strong>Prépare ton SVG pour obtenir les meilleurs résultats :</strong></p>
 <ol>
 <li class="">
 <p><strong>Convertir le texte en tracés :</strong></p>
@@ -284,7 +298,7 @@ vectorisés</li>
 <li class=""><strong>R13, R14</strong> - Bonne prise en charge</li>
 <li class=""><strong>R2000+</strong> - Fonctionne généralement, mais R12 est plus sûr</li>
 </ul>
-<p><strong>Astuce :</strong> Exportez en DXF R12/LT2 pour une compatibilité maximale.</p>
+<p><strong>Astuce :</strong> Exporte en DXF R12/LT2 pour une compatibilité maximale.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="conseils-pour-limportation-dxf">Conseils pour l&#x27;importation DXF<a href="#conseils-pour-limportation-dxf" class="hash-link" aria-label="Lien direct vers Conseils pour l&#x27;importation DXF" title="Lien direct vers Conseils pour l&#x27;importation DXF" translate="no">​</a></h3>
 <p><strong>Avant d&#x27;exporter depuis la CAO :</strong></p>
 <ol>
@@ -330,13 +344,13 @@ vectorisés</li>
 matricielles, ou les deux.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="importation-vectorielle-directe">Importation vectorielle directe<a href="#importation-vectorielle-directe" class="hash-link" aria-label="Lien direct vers Importation vectorielle directe" title="Lien direct vers Importation vectorielle directe" translate="no">​</a></h3>
 <p>Lors de l&#x27;importation d&#x27;un PDF contenant des tracés vectoriels, Rayforge peut
-les importer directement — tout comme les fichiers SVG ou DXF. Cela vous donne
+les importer directement — tout comme les fichiers SVG ou DXF. Cela te donne
 une géométrie propre et redimensionnable sans perte de qualité due à la
 rastérisation.</p>
-<p>Si le PDF contient des calques, Rayforge les détecte et vous permet de choisir
-lesquels importer. Chaque calque devient une pièce distincte dans votre
+<p>Si le PDF contient des calques, Rayforge les détecte et te permet de choisir
+lesquels importer. Chaque calque devient une pièce distincte dans ton
 document. Cela fonctionne de la même manière que l&#x27;importation de calques SVG :
-activez ou désactivez les calques individuels dans la boîte de dialogue
+active ou désactive les calques individuels dans la boîte de dialogue
 d&#x27;importation avant d&#x27;importer.</p>
 <p>Ceci est particulièrement utile pour les PDF exportés depuis des logiciels de
 conception comme Illustrator ou Inkscape, où les tracés vectoriels sont propres
@@ -355,17 +369,17 @@ vectoriels (Illustrator, Inkscape) donnent les résultats les plus propres
 avec l&#x27;importation directe.</p>
 </li>
 <li class="">
-<p><strong>Vérifier les calques</strong> : Si votre PDF comporte des calques, ils seront
-listés dans la boîte de dialogue d&#x27;importation. Sélectionnez uniquement les
-calques dont vous avez besoin.</p>
+<p><strong>Vérifier les calques</strong> : Si ton PDF comporte des calques, ils seront
+listés dans la boîte de dialogue d&#x27;importation. Sélectionne uniquement les
+calques dont tu as besoin.</p>
 </li>
 <li class="">
-<p><strong>Pour les documents avec du texte</strong> : Exportez en SVG avec les polices
-converties en tracés pour une qualité optimale, ou utilisez le repli rendu et
+<p><strong>Pour les documents avec du texte</strong> : Exporte en SVG avec les polices
+converties en tracés pour une qualité optimale, ou utilise le repli rendu et
 vectorisation.</p>
 </li>
 <li class="">
-<p><strong>Utiliser l&#x27;aperçu de la boîte de dialogue</strong> : Ajustez les paramètres de
+<p><strong>Utiliser l&#x27;aperçu de la boîte de dialogue</strong> : Ajuste les paramètres de
 seuil et d&#x27;inversion en mode vectorisation. L&#x27;aperçu montre exactement
 comment le PDF sera vectorisé.</p>
 </li>
@@ -435,8 +449,8 @@ la boîte de dialogue d&#x27;importation.</p>
 
 <table><thead><tr><th>Paramètre</th><th>Description</th><th>Effet</th></tr></thead><tbody><tr><td><strong>Seuil automatique</strong></td><td>Détection automatique</td><td>Activé, trouve automatiquement le seuil optimal</td></tr><tr><td><strong>Seuil</strong></td><td>Coupure noir/blanc</td><td>Plus bas = plus de détails, plus haut = plus simple</td></tr><tr><td><strong>Inverser</strong></td><td>Inverser les couleurs</td><td>Vectorise les objets clairs sur fond sombre</td></tr></tbody></table>
 <p><strong>Les paramètres par défaut</strong> fonctionnent bien pour la plupart des images. La
-boîte de dialogue affiche un aperçu en direct qui se met à jour lorsque vous
-ajustez ces paramètres, vous permettant d&#x27;affiner la vectorisation avant
+boîte de dialogue affiche un aperçu en direct qui se met à jour lorsque tu
+ajustes ces paramètres, te permettant d&#x27;affiner la vectorisation avant
 l&#x27;importation.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="préparer-les-images-pour-la-vectorisation">Préparer les images pour la vectorisation<a href="#préparer-les-images-pour-la-vectorisation" class="hash-link" aria-label="Lien direct vers Préparer les images pour la vectorisation" title="Lien direct vers Préparer les images pour la vectorisation" translate="no">​</a></h3>
 <p><strong>Pour de meilleurs résultats :</strong></p>
@@ -505,6 +519,6 @@ l&#x27;importation.</p>
 <li class=""><a class="" href="/fr/docs/files/formats">Formats pris en charge</a> - Spécifications détaillées des formats</li>
 <li class=""><a class="" href="/fr/docs/files/exporting">Exporter du G-code</a> - Options de sortie</li>
 <li class=""><a class="" href="/fr/docs/getting-started/quick-start">Démarrage rapide</a> - Tutoriel de première importation</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/files/importing.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Modifier cette page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Pages de documentation"><a class="pagination-nav__link pagination-nav__link--prev" href="/fr/docs/addons/ai-workpiece-generator"><div class="pagination-nav__sublabel">Précédent</div><div class="pagination-nav__label">Générateur de Pièces IA</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/fr/docs/files/formats"><div class="pagination-nav__sublabel">Suivant</div><div class="pagination-nav__label">Formats de fichier pris en charge</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#formats-de-fichiers-pris-en-charge" class="table-of-contents__link toc-highlight">Formats de fichiers pris en charge</a><ul><li><a href="#formats-vectoriels" class="table-of-contents__link toc-highlight">Formats vectoriels</a></li><li><a href="#formats-matriciels" class="table-of-contents__link toc-highlight">Formats matriciels</a></li></ul></li><li><a href="#importer-des-fichiers-1" class="table-of-contents__link toc-highlight">Importer des fichiers</a><ul><li><a href="#la-boîte-de-dialogue-dimportation" class="table-of-contents__link toc-highlight">La boîte de dialogue d&#39;importation</a></li><li><a href="#méthode-1--menu-fichier" class="table-of-contents__link toc-highlight">Méthode 1 : Menu Fichier</a></li><li><a href="#méthode-2--glisser-déposer" class="table-of-contents__link toc-highlight">Méthode 2 : Glisser-déposer</a></li><li><a href="#méthode-3--ligne-de-commande" class="table-of-contents__link toc-highlight">Méthode 3 : Ligne de commande</a></li><li><a href="#redimensionnement-automatique-à-limportation" class="table-of-contents__link toc-highlight">Redimensionnement automatique à l&#39;importation</a></li></ul></li><li><a href="#importation-svg" class="table-of-contents__link toc-highlight">Importation SVG</a><ul><li><a href="#options-dimportation-dans-la-boîte-de-dialogue" class="table-of-contents__link toc-highlight">Options d&#39;importation dans la boîte de dialogue</a></li><li><a href="#aperçu-en-direct" class="table-of-contents__link toc-highlight">Aperçu en direct</a></li><li><a href="#bonnes-pratiques-svg" class="table-of-contents__link toc-highlight">Bonnes pratiques SVG</a></li></ul></li><li><a href="#importation-dxf" class="table-of-contents__link toc-highlight">Importation DXF</a><ul><li><a href="#versions-dxf" class="table-of-contents__link toc-highlight">Versions DXF</a></li><li><a href="#conseils-pour-limportation-dxf" class="table-of-contents__link toc-highlight">Conseils pour l&#39;importation DXF</a></li></ul></li><li><a href="#importation-pdf" class="table-of-contents__link toc-highlight">Importation PDF</a><ul><li><a href="#importation-vectorielle-directe" class="table-of-contents__link toc-highlight">Importation vectorielle directe</a></li><li><a href="#repli--rendu-et-vectorisation" class="table-of-contents__link toc-highlight">Repli : Rendu et vectorisation</a></li><li><a href="#conseils-pour-limportation-pdf" class="table-of-contents__link toc-highlight">Conseils pour l&#39;importation PDF</a></li></ul></li><li><a href="#importation-ruida" class="table-of-contents__link toc-highlight">Importation Ruida</a><ul><li><a href="#limitations" class="table-of-contents__link toc-highlight">Limitations</a></li></ul></li><li><a href="#importation-dimages-matricielles-png-jpg-bmp" class="table-of-contents__link toc-highlight">Importation d&#39;images matricielles (PNG, JPG, BMP)</a><ul><li><a href="#processus-de-vectorisation-dans-la-boîte-de-dialogue" class="table-of-contents__link toc-highlight">Processus de vectorisation dans la boîte de dialogue</a></li><li><a href="#configuration-de-la-vectorisation-dans-la-boîte-de-dialogue" class="table-of-contents__link toc-highlight">Configuration de la vectorisation dans la boîte de dialogue</a></li><li><a href="#préparer-les-images-pour-la-vectorisation" class="table-of-contents__link toc-highlight">Préparer les images pour la vectorisation</a></li><li><a href="#qualité-de-la-vectorisation" class="table-of-contents__link toc-highlight">Qualité de la vectorisation</a></li></ul></li><li><a href="#pages-connexes" class="table-of-contents__link toc-highlight">Pages connexes</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/files/importing.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Modifier cette page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Pages de documentation"><a class="pagination-nav__link pagination-nav__link--prev" href="/fr/docs/addons/ai-workpiece-generator"><div class="pagination-nav__sublabel">Précédent</div><div class="pagination-nav__label">Générateur de Pièces IA</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/fr/docs/files/formats"><div class="pagination-nav__sublabel">Suivant</div><div class="pagination-nav__label">Formats de fichier pris en charge</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#formats-de-fichiers-pris-en-charge" class="table-of-contents__link toc-highlight">Formats de fichiers pris en charge</a><ul><li><a href="#formats-vectoriels" class="table-of-contents__link toc-highlight">Formats vectoriels</a></li><li><a href="#formats-matriciels" class="table-of-contents__link toc-highlight">Formats matriciels</a></li></ul></li><li><a href="#importer-des-fichiers-1" class="table-of-contents__link toc-highlight">Importer des fichiers</a><ul><li><a href="#la-boîte-de-dialogue-dimportation" class="table-of-contents__link toc-highlight">La boîte de dialogue d&#39;importation</a></li><li><a href="#mode-dimportation-des-calques" class="table-of-contents__link toc-highlight">Mode d&#39;importation des calques</a></li><li><a href="#méthode-1--menu-fichier" class="table-of-contents__link toc-highlight">Méthode 1 : Menu Fichier</a></li><li><a href="#méthode-2--glisser-déposer" class="table-of-contents__link toc-highlight">Méthode 2 : Glisser-déposer</a></li><li><a href="#méthode-3--ligne-de-commande" class="table-of-contents__link toc-highlight">Méthode 3 : Ligne de commande</a></li><li><a href="#redimensionnement-automatique-à-limportation" class="table-of-contents__link toc-highlight">Redimensionnement automatique à l&#39;importation</a></li></ul></li><li><a href="#importation-svg" class="table-of-contents__link toc-highlight">Importation SVG</a><ul><li><a href="#options-dimportation-dans-la-boîte-de-dialogue" class="table-of-contents__link toc-highlight">Options d&#39;importation dans la boîte de dialogue</a></li><li><a href="#aperçu-en-direct" class="table-of-contents__link toc-highlight">Aperçu en direct</a></li><li><a href="#bonnes-pratiques-svg" class="table-of-contents__link toc-highlight">Bonnes pratiques SVG</a></li></ul></li><li><a href="#importation-dxf" class="table-of-contents__link toc-highlight">Importation DXF</a><ul><li><a href="#versions-dxf" class="table-of-contents__link toc-highlight">Versions DXF</a></li><li><a href="#conseils-pour-limportation-dxf" class="table-of-contents__link toc-highlight">Conseils pour l&#39;importation DXF</a></li></ul></li><li><a href="#importation-pdf" class="table-of-contents__link toc-highlight">Importation PDF</a><ul><li><a href="#importation-vectorielle-directe" class="table-of-contents__link toc-highlight">Importation vectorielle directe</a></li><li><a href="#repli--rendu-et-vectorisation" class="table-of-contents__link toc-highlight">Repli : Rendu et vectorisation</a></li><li><a href="#conseils-pour-limportation-pdf" class="table-of-contents__link toc-highlight">Conseils pour l&#39;importation PDF</a></li></ul></li><li><a href="#importation-ruida" class="table-of-contents__link toc-highlight">Importation Ruida</a><ul><li><a href="#limitations" class="table-of-contents__link toc-highlight">Limitations</a></li></ul></li><li><a href="#importation-dimages-matricielles-png-jpg-bmp" class="table-of-contents__link toc-highlight">Importation d&#39;images matricielles (PNG, JPG, BMP)</a><ul><li><a href="#processus-de-vectorisation-dans-la-boîte-de-dialogue" class="table-of-contents__link toc-highlight">Processus de vectorisation dans la boîte de dialogue</a></li><li><a href="#configuration-de-la-vectorisation-dans-la-boîte-de-dialogue" class="table-of-contents__link toc-highlight">Configuration de la vectorisation dans la boîte de dialogue</a></li><li><a href="#préparer-les-images-pour-la-vectorisation" class="table-of-contents__link toc-highlight">Préparer les images pour la vectorisation</a></li><li><a href="#qualité-de-la-vectorisation" class="table-of-contents__link toc-highlight">Qualité de la vectorisation</a></li></ul></li><li><a href="#pages-connexes" class="table-of-contents__link toc-highlight">Pages connexes</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

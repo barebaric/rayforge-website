@@ -12,8 +12,8 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.4e9e11c4.css">
-<script src="/assets/js/runtime~main.38399a3b.js" defer="defer"></script>
-<script src="/assets/js/main.73a389f1.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.c1b5a22f.js" defer="defer"></script>
+<script src="/assets/js/main.0dc4ed9a.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -23,7 +23,7 @@
 <p>The Rayforge main window is your primary workspace for creating and managing
 laser jobs.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="window-layout">Window Layout<a href="#window-layout" class="hash-link" aria-label="Direct link to Window Layout" title="Direct link to Window Layout" translate="no">​</a></h2>
-<p><img decoding="async" loading="lazy" alt="Main Window" src="/assets/images/main-standard-7377b74f9c2b093d9f6a56716bd84a3d.png" width="2522" height="1772" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Main Window" src="/assets/images/main-standard-3b9547a7897b429d63276dece4b47c8b.png" width="2522" height="1772" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-menu-bar">1. Menu Bar<a href="#1-menu-bar" class="hash-link" aria-label="Direct link to 1. Menu Bar" title="Direct link to 1. Menu Bar" translate="no">​</a></h3>
 <p>Access all Rayforge functions through organized menus:</p>
 <ul>
@@ -37,18 +37,22 @@ laser jobs.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-toolbar">2. Toolbar<a href="#2-toolbar" class="hash-link" aria-label="Direct link to 2. Toolbar" title="Direct link to 2. Toolbar" translate="no">​</a></h3>
 <p>Quick access to frequently used controls:</p>
 <ul>
+<li class=""><strong>Machine dropdown</strong>: Select your machine, view connection status, and see
+ETA during jobs</li>
 <li class=""><strong>WCS dropdown</strong>: Select the active Work Coordinate System (G53-G59)</li>
 <li class=""><strong>Simulation toggle</strong>: Enable/disable job simulation mode</li>
-<li class=""><strong>Travel moves</strong>: Toggle visibility of rapid travel moves</li>
-<li class=""><strong>Workpiece</strong>: Toggle workpiece visibility</li>
-<li class=""><strong>Camera</strong>: Toggle camera feed visibility</li>
-<li class=""><strong>Tabs</strong>: Toggle tab visibility</li>
 <li class=""><strong>Focus laser</strong>: Toggle laser focusing mode</li>
 <li class=""><strong>Job controls</strong>: Home, Frame, Send, Hold, and Cancel buttons</li>
 </ul>
+<p>The machine dropdown shows your machine&#x27;s connection status and current state
+(e.g. Idle, Run) directly in the toolbar. During job execution, it also
+displays an estimated time remaining.</p>
 <p>The WCS dropdown allows you to quickly switch between coordinate systems.
 See <a class="" href="/docs/general-info/coordinate-systems">Work Coordinate Systems</a> for
 more information.</p>
+<p>Visibility toggles for workpieces, tabs, camera feed, travel moves, and
+other elements have moved to overlay buttons on the canvas itself, so they
+are always close at hand while you work.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-canvas">3. Canvas<a href="#3-canvas" class="hash-link" aria-label="Direct link to 3. Canvas" title="Direct link to 3. Canvas" translate="no">​</a></h3>
 <p>The main workspace where you:</p>
 <ul>
@@ -81,13 +85,10 @@ more information.</p>
 <li class="">Advanced options (overscan, kerf, tabs)</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-bottom-panel">6. Bottom Panel<a href="#6-bottom-panel" class="hash-link" aria-label="Direct link to 6. Bottom Panel" title="Direct link to 6. Bottom Panel" translate="no">​</a></h3>
-<p>The Bottom Panel at the bottom of the window provides:</p>
-<ul>
-<li class=""><strong>Tabbed View</strong>: Switch between Console and G-code Viewer via the icon strip</li>
-<li class=""><strong>Jog Controls</strong>: Manual machine movement and positioning (always visible)</li>
-<li class=""><strong>Machine Status</strong>: Real-time position and connection state</li>
-<li class=""><strong>WCS Management</strong>: Work coordinate system selection and zeroing</li>
-</ul>
+<p>The Bottom Panel provides tabs for the Console, G-code Viewer, and your
+document assets (stock and sketches). Jog controls and WCS management are
+always visible on the right side. The estimated job time is shown in the
+layer list header above the layers panel.</p>
 <p>See <a class="" href="/docs/ui/bottom-panel">Bottom Panel</a> for detailed information.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="window-management">Window Management<a href="#window-management" class="hash-link" aria-label="Direct link to Window Management" title="Direct link to Window Management" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="panels">Panels<a href="#panels" class="hash-link" aria-label="Direct link to Panels" title="Direct link to Panels" translate="no">​</a></h3>
@@ -102,13 +103,12 @@ more information.</p>
 <li class="">Exit: <kbd>f11</kbd> or <kbd>esc</kbd></li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="customization">Customization<a href="#customization" class="hash-link" aria-label="Direct link to Customization" title="Direct link to Customization" translate="no">​</a></h2>
-<p>Customize the interface in <strong>Edit → Preferences</strong>:</p>
+<p>Customize the interface in <strong>Edit → Settings</strong>:</p>
 <ul>
 <li class=""><strong>Theme</strong>: Light, dark, or system</li>
 <li class=""><strong>Units</strong>: Millimeters or inches</li>
 <li class=""><strong>Grid</strong>: Show/hide and configure grid spacing</li>
 <li class=""><strong>Rulers</strong>: Show/hide rulers on canvas</li>
-<li class=""><strong>Toolbar</strong>: Customize visible buttons</li>
 </ul>
 <hr>
 <p><strong>Related Pages:</strong></p>

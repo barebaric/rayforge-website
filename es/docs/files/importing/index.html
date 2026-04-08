@@ -12,8 +12,8 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/es/assets/css/styles.a1195d80.css">
-<script src="/es/assets/js/runtime~main.ec29c5de.js" defer="defer"></script>
-<script src="/es/assets/js/main.aed471c1.js" defer="defer"></script>
+<script src="/es/assets/js/runtime~main.df42c7c9.js" defer="defer"></script>
+<script src="/es/assets/js/main.13e9aee4.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -109,7 +109,21 @@ archivo admitidos. El diálogo permite:</p>
 trazo)</li>
 <li class=""><strong>Ajustar parámetros</strong> como umbral, invertir y umbral automático</li>
 </ul>
-<p><img decoding="async" loading="lazy" alt="Diálogo de importación" src="/es/assets/images/import-dialog-2e41d0b35b837ec937a7030accb21ffb.png" width="1222" height="922" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Diálogo de importación" src="/es/assets/images/import-dialog-a2fb798fabe9c3424934ef7d9bff198b.png" width="1222" height="922" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="modo-de-importación-de-capas">Modo de importación de capas<a href="#modo-de-importación-de-capas" class="hash-link" aria-label="Enlace directo al Modo de importación de capas" title="Enlace directo al Modo de importación de capas" translate="no">​</a></h3>
+<p>Al importar archivos que contienen múltiples capas (como archivos SVG o PDF
+con capas nombradas), el diálogo ofrece tres formas de manejarlas:</p>
+<ul>
+<li class=""><strong>Mapear a existentes</strong>: Coincidir las capas importadas con las capas existentes del
+documento. La primera capa del documento fuente se coloca en la primera capa
+de tu proyecto, la segunda en la segunda y así sucesivamente.
+Esta es la opción por defecto y funciona bien cuando tu documento ya tiene
+capas configuradas.</li>
+<li class=""><strong>Nuevas capas</strong>: Crear una nueva capa en el documento por cada capa importada.
+Esto mantiene el contenido importado separado del trabajo existente.</li>
+<li class=""><strong>Aplanar</strong>: Combinar todas las capas importadas en una sola capa. Útil cuando
+quieres todo en una capa independientemente de la estructura original.</li>
+</ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="método-1-menú-archivo">Método 1: Menú Archivo<a href="#método-1-menú-archivo" class="hash-link" aria-label="Enlace directo al Método 1: Menú Archivo" title="Enlace directo al Método 1: Menú Archivo" translate="no">​</a></h3>
 <ol>
 <li class=""><strong>Importar archivo</strong> (o Ctrl+I)</li>
@@ -146,8 +160,8 @@ reducido de escala para ajustarse.&quot;</li>
 <li class="">El mensaje permanece visible hasta que se descarta o se ejecuta la acción de
 restablecimiento</li>
 </ul>
-<p>Esto garantiza que sus diseños siempre se ajusten a las capacidades de su
-máquina, dándole la flexibilidad de restaurar el tamaño original si es necesario.</p>
+<p>Esto garantiza que tus diseños siempre se ajusten a las capacidades de tu
+máquina, dándote la flexibilidad de restaurar el tamaño original si es necesario.</p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="importación-svg">Importación SVG<a href="#importación-svg" class="hash-link" aria-label="Enlace directo al Importación SVG" title="Enlace directo al Importación SVG" translate="no">​</a></h2>
 <p>SVG (Scalable Vector Graphics) es el <strong>formato recomendado</strong> para diseños
@@ -181,7 +195,7 @@ elegir entre dos métodos:</p>
 <li class="">Diseños sin funciones avanzadas de SVG</li>
 </ul>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-trazar-mapa-de-bits">2. Trazar mapa de bits<a href="#2-trazar-mapa-de-bits" class="hash-link" aria-label="Enlace directo al 2. Trazar mapa de bits" title="Enlace directo al 2. Trazar mapa de bits" translate="no">​</a></h4>
-<p>Desactive &quot;Usar vectores originales&quot; para utilizar este método.</p>
+<p>Desactiva &quot;Usar vectores originales&quot; para utilizar este método.</p>
 <p><strong>Cómo funciona:</strong></p>
 <ul>
 <li class="">Renderiza el SVG primero como imagen de mapa de bits</li>
@@ -208,14 +222,14 @@ elegir entre dos métodos:</p>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="vista-previa-en-tiempo-real">Vista previa en tiempo real<a href="#vista-previa-en-tiempo-real" class="hash-link" aria-label="Enlace directo al Vista previa en tiempo real" title="Enlace directo al Vista previa en tiempo real" translate="no">​</a></h3>
 <p>El diálogo de importación muestra una vista previa en tiempo real de cómo se
-importará su SVG:</p>
+importará tu SVG:</p>
 <ul>
 <li class="">Los trazados vectoriales se muestran en una superposición azul</li>
 <li class="">En modo de trazo, se muestra la imagen original con los trazados trazados</li>
 <li class="">La vista previa se actualiza en tiempo real al cambiar los ajustes</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="buenas-prácticas-svg">Buenas prácticas SVG<a href="#buenas-prácticas-svg" class="hash-link" aria-label="Enlace directo al Buenas prácticas SVG" title="Enlace directo al Buenas prácticas SVG" translate="no">​</a></h3>
-<p><strong>Prepare su SVG para obtener los mejores resultados:</strong></p>
+<p><strong>Prepara tu SVG para obtener los mejores resultados:</strong></p>
 <ol>
 <li class="">
 <p><strong>Convertir texto a trazados:</strong></p>
@@ -278,7 +292,7 @@ importará su SVG:</p>
 <li class=""><strong>R13, R14</strong> - Buen soporte</li>
 <li class=""><strong>R2000+</strong> - Generalmente funciona, pero R12 es más seguro</li>
 </ul>
-<p><strong>Consejo:</strong> Exporte como DXF R12/LT2 para máxima compatibilidad.</p>
+<p><strong>Consejo:</strong> Exporta como DXF R12/LT2 para máxima compatibilidad.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="consejos-para-importación-dxf">Consejos para importación DXF<a href="#consejos-para-importación-dxf" class="hash-link" aria-label="Enlace directo al Consejos para importación DXF" title="Enlace directo al Consejos para importación DXF" translate="no">​</a></h3>
 <p><strong>Antes de exportar desde CAD:</strong></p>
 <ol>
@@ -308,7 +322,7 @@ importará su SVG:</p>
 <p><strong>Usar precisión adecuada:</strong></p>
 <ul>
 <li class="">La precisión láser es típicamente de 0,1 mm</li>
-<li class="">No especifique demasiada precisión</li>
+<li class="">No especifiques demasiada precisión</li>
 </ul>
 </li>
 </ol>
@@ -327,9 +341,9 @@ bits, o ambos.</p>
 directamente, igual que archivos SVG o DXF. Esto proporciona geometría limpia y
 escalable sin pérdida de calidad por rasterización.</p>
 <p>Si el PDF contiene capas, Rayforge las detecta y permite seleccionar cuáles
-importar. Cada capa se convierte en una pieza de trabajo separada en su
+importar. Cada capa se convierte en una pieza de trabajo separada en tu
 documento. Esto funciona de la misma manera que la importación de capas SVG:
-habilite o deshabilite capas individuales en el diálogo de importación antes de
+habilita o deshabilita capas individuales en el diálogo de importación antes de
 importar.</p>
 <p>Esto es especialmente útil para PDF exportados desde software de diseño como
 Illustrator o Inkscape, donde los trazados vectoriales son limpios y están bien
@@ -347,15 +361,15 @@ funciona igual que la importación de imágenes de mapa de bits.</p>
 Inkscape) producen los resultados más limpios con importación directa.</p>
 </li>
 <li class="">
-<p><strong>Verificar capas</strong>: Si su PDF tiene capas, las verá listadas en el diálogo
-de importación. Seleccione solo las capas que necesite.</p>
+<p><strong>Verificar capas</strong>: Si tu PDF tiene capas, las verás listadas en el diálogo
+de importación. Selecciona solo las capas que necesites.</p>
 </li>
 <li class="">
-<p><strong>Para documentos con texto</strong>: Exporte como SVG con fuentes convertidas a
-trazados para la mejor calidad, o use la alternativa de renderizar y trazar.</p>
+<p><strong>Para documentos con texto</strong>: Exporta como SVG con fuentes convertidas a
+trazados para la mejor calidad, o usa la alternativa de renderizar y trazar.</p>
 </li>
 <li class="">
-<p><strong>Usar la vista previa del diálogo de importación</strong>: Ajuste los ajustes de
+<p><strong>Usar la vista previa del diálogo de importación</strong>: Ajusta los ajustes de
 umbral e invertir al usar el modo de trazo. La vista previa muestra
 exactamente cómo se trazará el PDF.</p>
 </li>
@@ -426,7 +440,7 @@ utilizando el diálogo de importación.</p>
 <table><thead><tr><th>Parámetro</th><th>Descripción</th><th>Efecto</th></tr></thead><tbody><tr><td><strong>Umbral automático</strong></td><td>Detección automática</td><td>Al habilitarse, encuentra automáticamente el umbral óptimo</td></tr><tr><td><strong>Umbral</strong></td><td>Corte blanco/negro</td><td>Menor = más detalle, mayor = más simple</td></tr><tr><td><strong>Invertir</strong></td><td>Invertir colores</td><td>Traza objetos claros sobre fondo oscuro</td></tr></tbody></table>
 <p><strong>Los ajustes predeterminados</strong> funcionan bien para la mayoría de las imágenes.
 El diálogo muestra una vista previa en tiempo real que se actualiza al ajustar
-estos parámetros, permitiéndole afinar el trazado antes de importar.</p>
+estos parámetros, permitiéndote afinar el trazado antes de importar.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="preparar-imágenes-para-trazado">Preparar imágenes para trazado<a href="#preparar-imágenes-para-trazado" class="hash-link" aria-label="Enlace directo al Preparar imágenes para trazado" title="Enlace directo al Preparar imágenes para trazado" translate="no">​</a></h3>
 <p><strong>Para obtener los mejores resultados:</strong></p>
 <ol>
@@ -494,6 +508,6 @@ estos parámetros, permitiéndole afinar el trazado antes de importar.</p>
 <li class=""><a class="" href="/es/docs/files/formats">Formatos admitidos</a> - Especificaciones detalladas de formatos</li>
 <li class=""><a class="" href="/es/docs/files/exporting">Exportar G-code</a> - Opciones de salida</li>
 <li class=""><a class="" href="/es/docs/getting-started/quick-start">Inicio rápido</a> - Tutorial de primera importación</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/files/importing.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Página del documento"><a class="pagination-nav__link pagination-nav__link--prev" href="/es/docs/addons/ai-workpiece-generator"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Generador de Piezas por IA</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/es/docs/files/formats"><div class="pagination-nav__sublabel">Siguiente</div><div class="pagination-nav__label">Formatos de archivo compatibles</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#formatos-de-archivo-admitidos" class="table-of-contents__link toc-highlight">Formatos de archivo admitidos</a><ul><li><a href="#formatos-vectoriales" class="table-of-contents__link toc-highlight">Formatos vectoriales</a></li><li><a href="#formatos-de-mapa-de-bits" class="table-of-contents__link toc-highlight">Formatos de mapa de bits</a></li></ul></li><li><a href="#importar-archivos-1" class="table-of-contents__link toc-highlight">Importar archivos</a><ul><li><a href="#el-diálogo-de-importación" class="table-of-contents__link toc-highlight">El diálogo de importación</a></li><li><a href="#método-1-menú-archivo" class="table-of-contents__link toc-highlight">Método 1: Menú Archivo</a></li><li><a href="#método-2-arrastrar-y-soltar" class="table-of-contents__link toc-highlight">Método 2: Arrastrar y soltar</a></li><li><a href="#método-3-línea-de-comandos" class="table-of-contents__link toc-highlight">Método 3: Línea de comandos</a></li><li><a href="#auto-redimensionar-al-importar" class="table-of-contents__link toc-highlight">Auto-Redimensionar al importar</a></li></ul></li><li><a href="#importación-svg" class="table-of-contents__link toc-highlight">Importación SVG</a><ul><li><a href="#opciones-de-importación-en-el-diálogo" class="table-of-contents__link toc-highlight">Opciones de importación en el diálogo</a></li><li><a href="#vista-previa-en-tiempo-real" class="table-of-contents__link toc-highlight">Vista previa en tiempo real</a></li><li><a href="#buenas-prácticas-svg" class="table-of-contents__link toc-highlight">Buenas prácticas SVG</a></li></ul></li><li><a href="#importación-dxf" class="table-of-contents__link toc-highlight">Importación DXF</a><ul><li><a href="#versiones-dxf" class="table-of-contents__link toc-highlight">Versiones DXF</a></li><li><a href="#consejos-para-importación-dxf" class="table-of-contents__link toc-highlight">Consejos para importación DXF</a></li></ul></li><li><a href="#importación-pdf" class="table-of-contents__link toc-highlight">Importación PDF</a><ul><li><a href="#importación-directa-de-vectores" class="table-of-contents__link toc-highlight">Importación directa de vectores</a></li><li><a href="#alternativa-renderizar-y-trazar" class="table-of-contents__link toc-highlight">Alternativa: Renderizar y trazar</a></li><li><a href="#consejos-para-importación-pdf" class="table-of-contents__link toc-highlight">Consejos para importación PDF</a></li></ul></li><li><a href="#importación-ruida" class="table-of-contents__link toc-highlight">Importación Ruida</a><ul><li><a href="#limitaciones" class="table-of-contents__link toc-highlight">Limitaciones</a></li></ul></li><li><a href="#importación-de-imágenes-de-mapa-de-bits-png-jpg-bmp" class="table-of-contents__link toc-highlight">Importación de imágenes de mapa de bits (PNG, JPG, BMP)</a><ul><li><a href="#proceso-de-trazado-en-el-diálogo" class="table-of-contents__link toc-highlight">Proceso de trazado en el diálogo</a></li><li><a href="#configuración-de-trazado-en-el-diálogo" class="table-of-contents__link toc-highlight">Configuración de trazado en el diálogo</a></li><li><a href="#preparar-imágenes-para-trazado" class="table-of-contents__link toc-highlight">Preparar imágenes para trazado</a></li><li><a href="#calidad-del-trazado" class="table-of-contents__link toc-highlight">Calidad del trazado</a></li></ul></li><li><a href="#páginas-relacionadas" class="table-of-contents__link toc-highlight">Páginas relacionadas</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/files/importing.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Página del documento"><a class="pagination-nav__link pagination-nav__link--prev" href="/es/docs/addons/ai-workpiece-generator"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Generador de Piezas por IA</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/es/docs/files/formats"><div class="pagination-nav__sublabel">Siguiente</div><div class="pagination-nav__label">Formatos de archivo compatibles</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#formatos-de-archivo-admitidos" class="table-of-contents__link toc-highlight">Formatos de archivo admitidos</a><ul><li><a href="#formatos-vectoriales" class="table-of-contents__link toc-highlight">Formatos vectoriales</a></li><li><a href="#formatos-de-mapa-de-bits" class="table-of-contents__link toc-highlight">Formatos de mapa de bits</a></li></ul></li><li><a href="#importar-archivos-1" class="table-of-contents__link toc-highlight">Importar archivos</a><ul><li><a href="#el-diálogo-de-importación" class="table-of-contents__link toc-highlight">El diálogo de importación</a></li><li><a href="#modo-de-importación-de-capas" class="table-of-contents__link toc-highlight">Modo de importación de capas</a></li><li><a href="#método-1-menú-archivo" class="table-of-contents__link toc-highlight">Método 1: Menú Archivo</a></li><li><a href="#método-2-arrastrar-y-soltar" class="table-of-contents__link toc-highlight">Método 2: Arrastrar y soltar</a></li><li><a href="#método-3-línea-de-comandos" class="table-of-contents__link toc-highlight">Método 3: Línea de comandos</a></li><li><a href="#auto-redimensionar-al-importar" class="table-of-contents__link toc-highlight">Auto-Redimensionar al importar</a></li></ul></li><li><a href="#importación-svg" class="table-of-contents__link toc-highlight">Importación SVG</a><ul><li><a href="#opciones-de-importación-en-el-diálogo" class="table-of-contents__link toc-highlight">Opciones de importación en el diálogo</a></li><li><a href="#vista-previa-en-tiempo-real" class="table-of-contents__link toc-highlight">Vista previa en tiempo real</a></li><li><a href="#buenas-prácticas-svg" class="table-of-contents__link toc-highlight">Buenas prácticas SVG</a></li></ul></li><li><a href="#importación-dxf" class="table-of-contents__link toc-highlight">Importación DXF</a><ul><li><a href="#versiones-dxf" class="table-of-contents__link toc-highlight">Versiones DXF</a></li><li><a href="#consejos-para-importación-dxf" class="table-of-contents__link toc-highlight">Consejos para importación DXF</a></li></ul></li><li><a href="#importación-pdf" class="table-of-contents__link toc-highlight">Importación PDF</a><ul><li><a href="#importación-directa-de-vectores" class="table-of-contents__link toc-highlight">Importación directa de vectores</a></li><li><a href="#alternativa-renderizar-y-trazar" class="table-of-contents__link toc-highlight">Alternativa: Renderizar y trazar</a></li><li><a href="#consejos-para-importación-pdf" class="table-of-contents__link toc-highlight">Consejos para importación PDF</a></li></ul></li><li><a href="#importación-ruida" class="table-of-contents__link toc-highlight">Importación Ruida</a><ul><li><a href="#limitaciones" class="table-of-contents__link toc-highlight">Limitaciones</a></li></ul></li><li><a href="#importación-de-imágenes-de-mapa-de-bits-png-jpg-bmp" class="table-of-contents__link toc-highlight">Importación de imágenes de mapa de bits (PNG, JPG, BMP)</a><ul><li><a href="#proceso-de-trazado-en-el-diálogo" class="table-of-contents__link toc-highlight">Proceso de trazado en el diálogo</a></li><li><a href="#configuración-de-trazado-en-el-diálogo" class="table-of-contents__link toc-highlight">Configuración de trazado en el diálogo</a></li><li><a href="#preparar-imágenes-para-trazado" class="table-of-contents__link toc-highlight">Preparar imágenes para trazado</a></li><li><a href="#calidad-del-trazado" class="table-of-contents__link toc-highlight">Calidad del trazado</a></li></ul></li><li><a href="#páginas-relacionadas" class="table-of-contents__link toc-highlight">Páginas relacionadas</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

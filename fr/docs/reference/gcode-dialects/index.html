@@ -12,8 +12,8 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/fr/assets/css/styles.4e9e11c4.css">
-<script src="/fr/assets/js/runtime~main.66aa9188.js" defer="defer"></script>
-<script src="/fr/assets/js/main.ee0482fd.js" defer="defer"></script>
+<script src="/fr/assets/js/runtime~main.3d89bec9.js" defer="defer"></script>
+<script src="/fr/assets/js/main.e623e299.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -69,10 +69,18 @@ différents firmwares de contrôleur.</p>
 
 
 
-<table><thead><tr><th>Dialecte</th><th>Firmware</th><th>Utilisation courante</th></tr></thead><tbody><tr><td><strong>GRBL (universel)</strong></td><td>GRBL 1.1+</td><td>Lasers à diode, CNC de loisir</td></tr><tr><td><strong>GRBL (sans axe Z)</strong></td><td>GRBL 1.1+</td><td>Découpeurs laser 2D sans Z</td></tr><tr><td><strong>GRBL Dynamique (sensible à la profondeur)</strong></td><td>GRBL 1.1+</td><td>Gravure laser sensible à la profondeur</td></tr><tr><td><strong>GRBL Dynamique (sans axe Z)</strong></td><td>GRBL 1.1+</td><td>Gravure laser sensible à la profondeur</td></tr><tr><td><strong>Mach4 (M67 Analog)</strong></td><td>Mach4</td><td>Gravure raster haute vitesse</td></tr><tr><td><strong>Smoothieware</strong></td><td>Smoothieware</td><td>Découpeurs laser, CNC</td></tr><tr><td><strong>Marlin</strong></td><td>Marlin 2.0+</td><td>Imprimantes 3D avec laser</td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Dialecte</th><th>Firmware</th><th>Utilisation courante</th></tr></thead><tbody><tr><td><strong>Grbl (Compat)</strong></td><td>GRBL 1.1+</td><td>Lasers à diode, CNC de loisir</td></tr><tr><td><strong>Grbl (Compat, sans axe Z)</strong></td><td>GRBL 1.1+</td><td>Découpeurs laser 2D sans Z</td></tr><tr><td><strong>Grbl Raster</strong></td><td>GRBL 1.1+</td><td>Optimisé pour le travail raster</td></tr><tr><td><strong>GRBL Dynamique (sensible à la profondeur)</strong></td><td>GRBL 1.1+</td><td>Gravure laser sensible à la profondeur</td></tr><tr><td><strong>GRBL Dynamique (sans axe Z)</strong></td><td>GRBL 1.1+</td><td>Gravure laser sensible à la profondeur</td></tr><tr><td><strong>Mach4 (M67 Analog)</strong></td><td>Mach4</td><td>Gravure raster haute vitesse</td></tr><tr><td><strong>Smoothieware</strong></td><td>Smoothieware</td><td>Découpeurs laser, CNC</td></tr><tr><td><strong>Marlin</strong></td><td>Marlin 2.0+</td><td>Imprimantes 3D avec laser</td></tr></tbody></table>
 <div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>Dialectes recommandés</div></div>
-<p><strong>GRBL (universel)</strong> est le dialecte le plus testé et recommandé pour les
+<p><strong>Grbl (Compat)</strong> est le dialecte le plus testé et recommandé pour les
 applications laser standard.</p>
+<p><strong>Grbl Raster</strong> est optimisé pour la gravure raster sur les contrôleurs GRBL. Il garde
+le laser en mode de puissance dynamique (M4) en continu et omet les commandes de vitesse
+redondantes, ce qui produit un G-code plus fluide et plus compact.</p>
 <p><strong>GRBL Dynamique (sensible à la profondeur)</strong> est recommandé pour la gravure
 laser sensible à la profondeur où la puissance varie pendant les coupes
 (par exemple, gravure à profondeur variable).</p>
@@ -92,11 +100,11 @@ les opérations haute vitesse</li>
 rapides</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="quand-lutiliser">Quand l&#x27;utiliser<a href="#quand-lutiliser" class="hash-link" aria-label="Lien direct vers Quand l&#x27;utiliser" title="Lien direct vers Quand l&#x27;utiliser" translate="no">​</a></h3>
-<p>Utilisez ce dialecte lorsque :</p>
+<p>Utilise ce dialecte lorsque :</p>
 <ul>
-<li class="">Vous avez un contrôleur Mach4 avec capacité de sortie analogique</li>
-<li class="">Vous avez besoin de gravure raster haute vitesse</li>
-<li class="">Votre contrôleur subit des débordements de tampon avec les commandes S en
+<li class="">Tu as un contrôleur Mach4 avec capacité de sortie analogique</li>
+<li class="">Tu as besoin de gravure raster haute vitesse</li>
+<li class="">Ton contrôleur subit des débordements de tampon avec les commandes S en
 ligne standard</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="format-de-commande">Format de commande<a href="#format-de-commande" class="hash-link" aria-label="Lien direct vers Format de commande" title="Lien direct vers Format de commande" translate="no">​</a></h3>
@@ -113,16 +121,25 @@ dialecte personnalisé</li>
 <li class="">Enregistrez votre dialecte personnalisé</li>
 </ol>
 <p>Chaque dialecte personnalisé est une copie indépendante. La modification d&#x27;un
-dialecte n&#x27;affecte jamais les autres, vous pouvez donc expérimenter librement
+dialecte n&#x27;affecte jamais les autres, tu peux donc expérimenter librement
 sans risquer de perturber une configuration existante. Les dialectes
-personnalisés sont stockés dans votre répertoire de configuration et peuvent
+personnalisés sont stockés dans ton répertoire de configuration et peuvent
 être partagés.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="paramètres-du-dialecte">Paramètres du dialecte<a href="#paramètres-du-dialecte" class="hash-link" aria-label="Lien direct vers Paramètres du dialecte" title="Lien direct vers Paramètres du dialecte" translate="no">​</a></h3>
+<p>Lors de l&#x27;édition d&#x27;un dialecte personnalisé, la page Paramètres offre ces options :</p>
+<p><strong>Mode laser continu</strong> garde le laser en mode de puissance dynamique (M4) actif
+pendant tout le travail au lieu de basculer M4/M5 entre les segments. C&#x27;est
+utile pour la gravure raster où le laser doit rester allumé en continu
+pendant les lignes de balayage.</p>
+<p><strong>Vitesse modale</strong> omet le paramètre de vitesse (F) des commandes de mouvement lorsqu&#x27;il
+n&#x27;a pas changé depuis la dernière commande. Cela produit un G-code plus compact
+et réduit la quantité de données envoyées au contrôleur.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="commande-dallumage-laser-séparée-pour-la-mise-au-point">Commande d&#x27;allumage laser séparée pour la mise au point<a href="#commande-dallumage-laser-séparée-pour-la-mise-au-point" class="hash-link" aria-label="Lien direct vers Commande d&#x27;allumage laser séparée pour la mise au point" title="Lien direct vers Commande d&#x27;allumage laser séparée pour la mise au point" translate="no">​</a></h3>
 <p>Certains dialectes prennent en charge la configuration d&#x27;une commande séparée
 pour allumer le laser à faible puissance, ce qui est utile pour le mode mise au
-point. Cela vous permet d&#x27;utiliser une commande différente pour le comportement
+point. Cela te permet d&#x27;utiliser une commande différente pour le comportement
 visuel de « pointeur laser » que celle utilisée pendant la découpe ou la gravure
-réelle. Consultez la page des paramètres de votre dialecte pour cette option.</p>
+réelle. Consulte la page des paramètres de ton dialecte pour cette option.</p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pages-connexes">Pages connexes<a href="#pages-connexes" class="hash-link" aria-label="Lien direct vers Pages connexes" title="Lien direct vers Pages connexes" translate="no">​</a></h2>
 <ul>
@@ -130,6 +147,6 @@ réelle. Consultez la page des paramètres de votre dialecte pour cette option.<
 <li class=""><a class="" href="/fr/docs/reference/firmware">Compatibilité des firmwares</a> - Versions de firmware</li>
 <li class=""><a class="" href="/fr/docs/machine/device">Paramètres de l&#x27;appareil</a> - Configuration GRBL</li>
 <li class=""><a class="" href="/fr/docs/machine/hooks-macros">Macros et Hooks</a> - Injection de G-code personnalisé</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/reference/gcode-dialects.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Modifier cette page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Pages de documentation"><a class="pagination-nav__link pagination-nav__link--prev" href="/fr/docs/reference/shortcuts"><div class="pagination-nav__sublabel">Précédent</div><div class="pagination-nav__label">Raccourcis clavier</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/fr/docs/reference/firmware"><div class="pagination-nav__sublabel">Suivant</div><div class="pagination-nav__label">Compatibilité des firmwares</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#dialectes-pris-en-charge" class="table-of-contents__link toc-highlight">Dialectes pris en charge</a></li><li><a href="#mach4-m67-analog" class="table-of-contents__link toc-highlight">Mach4 (M67 Analog)</a><ul><li><a href="#caractéristiques-principales" class="table-of-contents__link toc-highlight">Caractéristiques principales</a></li><li><a href="#quand-lutiliser" class="table-of-contents__link toc-highlight">Quand l&#39;utiliser</a></li><li><a href="#format-de-commande" class="table-of-contents__link toc-highlight">Format de commande</a></li></ul></li><li><a href="#créer-un-dialecte-personnalisé" class="table-of-contents__link toc-highlight">Créer un dialecte personnalisé</a><ul><li><a href="#commande-dallumage-laser-séparée-pour-la-mise-au-point" class="table-of-contents__link toc-highlight">Commande d&#39;allumage laser séparée pour la mise au point</a></li></ul></li><li><a href="#pages-connexes" class="table-of-contents__link toc-highlight">Pages connexes</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/reference/gcode-dialects.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Modifier cette page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Pages de documentation"><a class="pagination-nav__link pagination-nav__link--prev" href="/fr/docs/reference/shortcuts"><div class="pagination-nav__sublabel">Précédent</div><div class="pagination-nav__label">Raccourcis clavier</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/fr/docs/reference/firmware"><div class="pagination-nav__sublabel">Suivant</div><div class="pagination-nav__label">Compatibilité des firmwares</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#dialectes-pris-en-charge" class="table-of-contents__link toc-highlight">Dialectes pris en charge</a></li><li><a href="#mach4-m67-analog" class="table-of-contents__link toc-highlight">Mach4 (M67 Analog)</a><ul><li><a href="#caractéristiques-principales" class="table-of-contents__link toc-highlight">Caractéristiques principales</a></li><li><a href="#quand-lutiliser" class="table-of-contents__link toc-highlight">Quand l&#39;utiliser</a></li><li><a href="#format-de-commande" class="table-of-contents__link toc-highlight">Format de commande</a></li></ul></li><li><a href="#créer-un-dialecte-personnalisé" class="table-of-contents__link toc-highlight">Créer un dialecte personnalisé</a><ul><li><a href="#paramètres-du-dialecte" class="table-of-contents__link toc-highlight">Param ètres du dialecte</a></li><li><a href="#commande-dallumage-laser-séparée-pour-la-mise-au-point" class="table-of-contents__link toc-highlight">Commande d&#39;allumage laser séparée pour la mise au point</a></li></ul></li><li><a href="#pages-connexes" class="table-of-contents__link toc-highlight">Pages connexes</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

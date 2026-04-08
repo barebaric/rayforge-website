@@ -12,8 +12,8 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.43b0ad27.css">
-<script src="/uk/assets/js/runtime~main.5a9f7104.js" defer="defer"></script>
-<script src="/uk/assets/js/main.f8651acd.js" defer="defer"></script>
+<script src="/uk/assets/js/runtime~main.f2574a9c.js" defer="defer"></script>
+<script src="/uk/assets/js/main.5ee4d38c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -69,12 +69,20 @@
 
 
 
-<table><thead><tr><th>Діалект</th><th>Прошивка</th><th>Поширене використання</th></tr></thead><tbody><tr><td><strong>GRBL (універсальний)</strong></td><td>GRBL 1.1+</td><td>Діодні лазери, хобі CNC</td></tr><tr><td><strong>GRBL (без осі Z)</strong></td><td>GRBL 1.1+</td><td>2D лазерні різаки без Z</td></tr><tr><td><strong>GRBL Dynamic (з урахуванням глибини)</strong></td><td>GRBL 1.1+</td><td>Гравірування лазером з урахуванням глибини</td></tr><tr><td><strong>GRBL Dynamic (без осі Z)</strong></td><td>GRBL 1.1+</td><td>Гравірування лазером з урахуванням глибини</td></tr><tr><td><strong>Mach4 (M67 Analog)</strong></td><td>Mach4</td><td>Високошвидкісне растрове гравірування</td></tr><tr><td><strong>Smoothieware</strong></td><td>Smoothieware</td><td>Лазерні різаки, CNC</td></tr><tr><td><strong>Marlin</strong></td><td>Marlin 2.0+</td><td>3D-принтери з лазером</td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Діалект</th><th>Прошивка</th><th>Поширене використання</th></tr></thead><tbody><tr><td><strong>Grbl (Compat)</strong></td><td>GRBL 1.1+</td><td>Діодні лазери, хобі CNC</td></tr><tr><td><strong>Grbl (Compat, no Z axis)</strong></td><td>GRBL 1.1+</td><td>2D лазерні різаки без Z</td></tr><tr><td><strong>Grbl Raster</strong></td><td>GRBL 1.1+</td><td>Оптимізований для растрової роботи</td></tr><tr><td><strong>GRBL Dynamic (Depth-Aware)</strong></td><td>GRBL 1.1+</td><td>Гравірування лазером з урахуванням глибини</td></tr><tr><td><strong>GRBL Dynamic (no Z axis)</strong></td><td>GRBL 1.1+</td><td>Гравірування лазером з урахуванням глибини</td></tr><tr><td><strong>Mach4 (M67 Analog)</strong></td><td>Mach4</td><td>Високошвидкісне растрове гравірування</td></tr><tr><td><strong>Smoothieware</strong></td><td>Smoothieware</td><td>Лазерні різаки, CNC</td></tr><tr><td><strong>Marlin</strong></td><td>Marlin 2.0+</td><td>3D-принтери з лазером</td></tr></tbody></table>
 <div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>Рекомендовані діалекти</div></div>
-<p><strong>GRBL (універсальний)</strong> — найбільш перевірений і рекомендований діалект для
+<p><strong>Grbl (Compat)</strong> — найбільш перевірений і рекомендований діалект для
 стандартних лазерних застосувань.</p>
-<p><strong>GRBL Dynamic (з урахуванням глибини)</strong> рекомендується для гравірування
-лазером  з урахуванням глибини, де потужність змінюється під час різання
+<p><strong>Grbl Raster</strong> оптимізований для растрово го гравірування на контролерах GRBL.
+Він утримує лазер у режимі динамічної потужності (M4) безперервно і пропускає
+зайві команди подачі, що дає більш плавний та компактний G-code.</p>
+<p><strong>GRBL Dynamic (Depth-Aware)</strong> рекомендується для гравірування
+лазером з урахуванням глибини, де потужність змінюється під час різання
 (наприклад, гравірування зі змінною глибиною).</p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="mach4-m67-analog">Mach4 (M67 Analog)<a href="#mach4-m67-analog" class="hash-link" aria-label="Пряме посилання на Mach4 (M67 Analog)" title="Пряме посилання на Mach4 (M67 Analog)" translate="no">​</a></h2>
@@ -114,7 +122,16 @@
 впливає на інші, тому ви можете вільно експериментувати, не побоюючись
 пошкодити існуючі налаштування. Власні діалекти зберігаються у вашому каталозі
 конфігурації і можуть бути спільними.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="окрема-команда-вмикання-лазера-для-фокусування">Окрема команда вмикання лазера для фокусування<a href="#окрема-команда-вмикання-лазера-для-фокусування" class="hash-link" aria-label="Пряме посилання на Окрема команда вмикання лазера для фокусування" title="Пряме посилання на Окрема команда вмикання лазера для фокусування" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="налаштування-діалекту">Налаштування діалекту<a href="#налаштування-діалекту" class="hash-link" aria-label="Пряме посилання на Налаштування діалекту" title="Пряме посилання на Налаштування діалекту" translate="no">​</a></h3>
+<p>При редагуванні власного діалекту сторінка Налаштування пропонує такі опції:</p>
+<p><strong>Безперервний лазерний режим</strong> утримує лазер у режимі динамічної потужності
+(M4) активним протягом усієї роботи замість перемикання M4/M5 між сегментами.
+Це корисно для растрового гравірування, де лазер повинен залишатися ввімкненим
+безперервно під час ліній сканування.</p>
+<p><strong>Модальна подача</strong> пропускає параметр подачі (F) з команд руху, коли він
+не змінився з моменту останньої команди. Це дає більш компактний G-code
+і зменшує обсяг даних, що надсилаються контролеру.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="окрема-команда-вмикання-лазера-для-фокусування">Окрема команда вмикання лазера для фокусування<a href="#окрема-команда-вмикання-лазера-для-фокусування" class="hash-link" aria-label="Пряме посилання на Окрема команда вмикання лазера для фокусування" title="Пряме посилання на Окрема команда вмикання лазера для фокусуван ня" translate="no">​</a></h3>
 <p>Деякі діалекти підтримують налаштування окремої команди для вмикання лазера на
 низькій потужності, що корисно для режиму фокусування. Це дозволяє
 використовувати іншу команду для візуальної поведінки «лазерного вказівника»,
@@ -127,6 +144,6 @@
 <li class=""><a class="" href="/uk/docs/reference/firmware">Сумісність прошивки</a> - Версії прошивок</li>
 <li class=""><a class="" href="/uk/docs/machine/device">Налаштування пристрою</a> - Конфігурація GRBL</li>
 <li class=""><a class="" href="/uk/docs/machine/hooks-macros">Макроси та хуки</a> - Вставка власного G-code</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/reference/gcode-dialects.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Відредагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="сторінка документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/reference/shortcuts"><div class="pagination-nav__sublabel">Попередня сторінка</div><div class="pagination-nav__label">Клавіатурні скорочення</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/uk/docs/reference/firmware"><div class="pagination-nav__sublabel">Наступна сторінка</div><div class="pagination-nav__label">Сумісність прошивки</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#підтримувані-діалекти" class="table-of-contents__link toc-highlight">Підтримувані діалекти</a></li><li><a href="#mach4-m67-analog" class="table-of-contents__link toc-highlight">Mach4 (M67 Analog)</a><ul><li><a href="#основні-характеристики" class="table-of-contents__link toc-highlight">Основні характеристики</a></li><li><a href="#коли-використовувати" class="table-of-contents__link toc-highlight">Коли використовувати</a></li><li><a href="#формат-команди" class="table-of-contents__link toc-highlight">Формат команди</a></li></ul></li><li><a href="#створення-власного-ді алекту" class="table-of-contents__link toc-highlight">Створення власного діалекту</a><ul><li><a href="#окрема-команда-вмикання-лазера-для-фокусування" class="table-of-contents__link toc-highlight">Окрема команда вмикання лазера для фокусування</a></li></ul></li><li><a href="#повязані-сторінки" class="table-of-contents__link toc-highlight">Пов&#39;язані сторінки</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/reference/gcode-dialects.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Відредагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="сторінка документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/reference/shortcuts"><div class="pagination-nav__sublabel">Попередня сторінка</div><div class="pagination-nav__label">Клавіатурні скорочення</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/uk/docs/reference/firmware"><div class="pagination-nav__sublabel">Наступна сторінка</div><div class="pagination-nav__label">Сумісність прошивки</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#підтримувані-діалекти" class="table-of-contents__link toc-highlight">Підтримувані діалекти</a></li><li><a href="#mach4-m67-analog" class="table-of-contents__link toc-highlight">Mach4 (M67 Analog)</a><ul><li><a href="#основні-характеристики" class="table-of-contents__link toc-highlight">Основні характеристики</a></li><li><a href="#коли-використовувати" class="table-of-contents__link toc-highlight">Коли використовувати</a></li><li><a href="#формат-команди" class="table-of-contents__link toc-highlight">Формат команди</a></li></ul></li><li><a href="#створення-власного-діалекту" class="table-of-contents__link toc-highlight">Створення власного діалекту</a><ul><li><a href="#налаштування- діалекту" class="table-of-contents__link toc-highlight">Налаштування діалекту</a></li><li><a href="#окрема-команда-вмикання-лазера-для-фокусування" class="table-of-contents__link toc-highlight">Окрема команда вмикання лазера для фокусування</a></li></ul></li><li><a href="#повязані-сторінки" class="table-of-contents__link toc-highlight">Пов&#39;язані сторінки</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

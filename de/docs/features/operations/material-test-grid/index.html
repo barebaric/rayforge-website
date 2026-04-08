@@ -12,8 +12,8 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/de/assets/css/styles.43b0ad27.css">
-<script src="/de/assets/js/runtime~main.e91be799.js" defer="defer"></script>
-<script src="/de/assets/js/main.27530cc2.js" defer="defer"></script>
+<script src="/de/assets/js/runtime~main.1869a030.js" defer="defer"></script>
+<script src="/de/assets/js/main.95be4f71.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -77,7 +77,7 @@
 <p>Presets sind Startpunkte - du kannst alle Parameter nach Auswahl anpassen.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="schritt-3-parameter-konfigurieren">Schritt 3: Parameter konfigurieren<a href="#schritt-3-parameter-konfigurieren" class="hash-link" aria-label="Direkter Link zur Schritt 3: Parameter konfigurieren" title="Direkter Link zur Schritt 3: Parameter konfigurieren" translate="no">​</a></h3>
 <p>Passe die Testraster-Parameter im Einstellungsdialog an:</p>
-<p><img decoding="async" loading="lazy" alt="Materialtest-Raster-Einstellungen" src="/de/assets/images/material-test-grid-5ae892ca989014f0e277341a6cc6e88c.png" width="722" height="1022" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Materialtest-Raster-Einstellungen" src="/de/assets/images/material-test-grid-9081335c7251557bfc444de757d9be35.png" width="722" height="1022" class="img_ev3q"></p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="testtyp">Testtyp<a href="#testtyp" class="hash-link" aria-label="Direkter Link zur Testtyp" title="Direkter Link zur Testtyp" translate="no">​</a></h4>
 <ul>
 <li class=""><strong>Gravur</strong>: Füllt Quadrate mit Rastermuster</li>
@@ -109,12 +109,20 @@
 <ul>
 <li class=""><strong>Beschriftungen einschließen</strong>: Achsenbeschriftungen ein/aus, die Geschwindigkeits- und Leistungswerte anzeigen</li>
 <li class="">Beschriftungen erscheinen an linken und oberen Kanten</li>
-<li class="">Beschriftungen werden bei 10% Leistung, 1000 mm/min graviert</li>
+<li class=""><strong>Beschriftungs-Leistung (%)</strong>: Leistungseinstellung zum Gravieren der Beschriftungen</li>
+<li class=""><strong>Beschriftungs-Geschwindigkeit (mm/min)</strong>: Geschwindigkeit zum Gravieren der Beschriftungen (Standard: 1000 mm/min)</li>
+</ul>
+<p>Beschriftungen werden zuerst graviert, vor dem Testraster, sodass sie nicht vom Testmuster verdeckt werden.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="zeilenabstand-nur-gravurtest">Zeilenabstand (nur Gravurtest)<a href="#zeilenabstand-nur-gravurtest" class="hash-link" aria-label="Direkter Link zur Zeilenabstand (nur Gravurtest)" title="Direkter Link zur Zeilenabstand (nur Gravurtest)" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Zeilenabstand (mm)</strong>: Abstand zwischen den Scan-Zeilen bei Verwendung des Gravurtesttyps</li>
+<li class="">Kleinere Werte erzeugen dichtere Füllungen, dauern aber länger</li>
+<li class="">Typische Werte: 0,1-0,3mm</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="schritt-4-das-raster-generieren">Schritt 4: Das Raster generieren<a href="#schritt-4-das-raster-generieren" class="hash-link" aria-label="Direkter Link zur Schritt 4: Das Raster generieren" title="Direkter Link zur Schritt 4: Das Raster generieren" translate="no">​</a></h3>
 <p>Klicke auf <strong>Generieren</strong>, um das Testmuster zu erstellen. Das Raster erscheint auf deiner Arbeitsfläche als spezielles Werkstück.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="das-raster-layout-verstehen">Das Raster-Layout verstehen<a href="#das-raster-layout-verstehen" class="hash-link" aria-label="Direkter Link zur Das Raster-Layout verstehen" title="Direkter Link zur Das Raster-Layout verstehen" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="raster-organisation">Raster-Organisation<a href="#raster-organisation" class="hash-link" aria-label="Direkter Link zur Raster-Organisation" title="Direkter Link zur Raster-Organisation" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="raster-organisation">Raster-Organisation<a href="#raster-organisation" class="hash-link" aria-label="Direkter Link zur Raster-Organisation" title="Direkter Link zur Raster-Organisation" translate="no"> ​</a></h3>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">Leistung (%)     Geschwindigkeit (mm/min) →</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    ↓      1000   2500   5000   7500   10000</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">  100%     [  ]   [  ]   [  ]   [  ]   [  ]</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">   75%     [  ]   [  ]   [  ]   [  ]   [  ]</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">   50%     [  ]   [  ]   [  ]   [  ]   [  ]</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">   25%     [  ]   [  ]   [  ]   [  ]   [  ]</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">   10%     [  ]   [  ]   [  ]   [  ]   [  ]</span><br></span></code></pre></div></div>
 <ul>
 <li class=""><strong>Spalten</strong>: Geschwindigkeit nimmt von links nach rechts zu</li>
@@ -125,7 +133,7 @@
 <p><strong>Ohne Beschriftungen:</strong></p>
 <ul>
 <li class="">Breite = Spalten × (form_größe + abstand) - abstand</li>
-<li class="">Höhe = Zeilen × (form_größe + abstand) - abstand</li>
+<li class="">Höhe = Zeilen  × (form_größe + abstand) - abstand</li>
 </ul>
 <p><strong>Mit Beschriftungen:</strong></p>
 <ul>
@@ -181,7 +189,7 @@
 </ol>
 <p>Dies ist nützlich, um das Teststück aus Rohmaterial zu schneiden.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="benutzerdefinierte-test-bereiche">Benutzerdefinierte Test-Bereiche<a href="#benutzerdefinierte-test-bereiche" class="hash-link" aria-label="Direkter Link zur Benutzerdefinierte Test-Bereiche" title="Direkter Link zur Benutzerdefinierte Test-Bereiche" translate="no">​</a></h3>
-<p>Für Feinabstimmung erstellen Sie Testbereiche mit engen Grenzen:</p>
+<p>Für Feinabstimmung erstelle Testbereiche mit engen Grenzen:</p>
 <p><strong>Grobtest</strong> (Bereich finden):</p>
 <ul>
 <li class="">Geschwindigkeit: 1000-10000 mm/min (5 Spalten)</li>
@@ -208,7 +216,7 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sicherheit">Sicherheit<a href="#sicherheit" class="hash-link" aria-label="Direkter Link zur Sicherheit" title="Direkter Link zur Sicherheit" translate="no">​</a></h3>
 <p>⚠️ <strong>Tests überwachen</strong> - Laufende Tests niemals unbeaufsichtigt lassen
 ⚠️ <strong>Konservativ beginnen</strong> - Mit niedrigeren Leistungsbereichen beginnen
-⚠️ <strong>Belüftung überprüfen</strong> - Sicherstellen, dassproper Rauchabsaugung vorhanden ist
+⚠️ <strong>Belüftung überprüfen</strong> - Sicherstellen, dass ordnungsgemäße Rauchabsaugung vorhanden ist
 ⚠️ <strong>Feuerwache</strong> - Feuerlöscher bereit haben</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="fehlerbehebung">Fehlerbehebung<a href="#fehlerbehebung" class="hash-link" aria-label="Direkter Link zur Fehlerbehebung" title="Direkter Link zur Fehlerbehebung" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="testzellen-werden-in-falscher-reihenfolge-ausgeführt">Testzellen werden in falscher Reihenfolge ausgeführt<a href="#testzellen-werden-in-falscher-reihenfolge-ausgeführt" class="hash-link" aria-label="Direkter Link zur Testzellen werden in falscher Reihenfolge ausgeführt" title="Direkter Link zur Testzellen werden in falscher Reihenfolge ausgeführt" translate="no">​</a></h3>
