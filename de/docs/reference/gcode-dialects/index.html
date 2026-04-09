@@ -12,8 +12,8 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/de/assets/css/styles.43b0ad27.css">
-<script src="/de/assets/js/runtime~main.1869a030.js" defer="defer"></script>
-<script src="/de/assets/js/main.3ce5c8d1.js" defer="defer"></script>
+<script src="/de/assets/js/runtime~main.ff77c94c.js" defer="defer"></script>
+<script src="/de/assets/js/main.146671e7.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -73,7 +73,12 @@
 
 
 
-<table><thead><tr><th>Dialekt</th><th>Firmware</th><th>Häufige Verwendung</th></tr></thead><tbody><tr><td><strong>Grbl (Compat)</strong></td><td>GRBL 1.1+</td><td>Diodenlaser, Hobby-CNC</td></tr><tr><td><strong>Grbl (Compat, keine Z-Achse)</strong></td><td>GRBL 1.1+</td><td>2D-Laserschneider ohne Z</td></tr><tr><td><strong>Grbl Raster</strong></td><td>GRBL 1.1+</td><td>Optimiert für Rasterarbeit</td></tr><tr><td><strong>GRBL Dynamic (Tiefenbewusst)</strong></td><td>GRBL 1.1+</td><td>Tiefenbewusstes Lasergravieren</td></tr><tr><td><strong>GRBL Dynamic (keine Z-Achse)</strong></td><td>GRBL 1.1+</td><td>Tiefenbewusstes Lasergravieren</td></tr><tr><td><strong>Mach4 (M67 Analog)</strong></td><td>Mach4</td><td>Hochgeschwindigkeits-Rastergravur</td></tr><tr><td><strong>Smoothieware</strong></td><td>Smoothieware</td><td>Laserschneider, CNC</td></tr><tr><td><strong>Marlin</strong></td><td>Marlin 2.0+</td><td>3D-Drucker mit Laser</td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Dialekt</th><th>Firmware</th><th>Häufige Verwendung</th></tr></thead><tbody><tr><td><strong>Grbl (Compat)</strong></td><td>GRBL 1.1+</td><td>Diodenlaser, Hobby-CNC</td></tr><tr><td><strong>Grbl (Compat, keine Z-Achse)</strong></td><td>GRBL 1.1+</td><td>2D-Laserschneider ohne Z</td></tr><tr><td><strong>Grbl Raster</strong></td><td>GRBL 1.1+</td><td>Optimiert für Rasterarbeit</td></tr><tr><td><strong>GRBL Dynamic (Tiefenbewusst)</strong></td><td>GRBL 1.1+</td><td>Tiefenbewusstes Lasergravieren</td></tr><tr><td><strong>GRBL Dynamic (keine Z-Achse)</strong></td><td>GRBL 1.1+</td><td>Tiefenbewusstes Lasergravieren</td></tr><tr><td><strong>LinuxCNC</strong></td><td>LinuxCNC</td><td>Native Bézier-Unterstützung (G5)</td></tr><tr><td><strong>Mach4 (M67 Analog)</strong></td><td>Mach4</td><td>Hochgeschwindigkeits-Rastergravur</td></tr><tr><td><strong>Smoothieware</strong></td><td>Smoothieware</td><td>Laserschneider, CNC</td></tr><tr><td><strong>Marlin</strong></td><td>Marlin 2.0+</td><td>3D-Drucker mit Laser</td></tr></tbody></table>
 <div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>Empfohlene Dialekte</div></div>
 <p><strong>Grbl (Compat)</strong> ist der am besten getestete und empfohlene Dialekt für
 Standard-Laseranwendungen.</p>
@@ -83,6 +88,10 @@ redundante Vorschubbefehle aus, was zu glatterem und kompakterem G-Code führt.<
 <p><strong>GRBL Dynamic (Tiefenbewusst)</strong> wird für tiefenbewusstes Lasergravieren
 empfohlen, bei dem die Leistung während der Schnitte variiert (z.B. Gravur
 mit variabler Tiefe).</p>
+<p><strong>LinuxCNC</strong> unterstützt native kubische Bézier-Kurven über den G5-Befehl, was
+sehr glatten und kompakten G-Code für Kurvenpfade erzeugt. Wenn du diesen
+Dialekt verwendest, aktiviere die Option „Bézier-Kurven unterstützen&quot; in den
+Erweiterten Maschineneinstellungen, um die G5-Ausgabe zu nutzen.</p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="mach4-m67-analog">Mach4 (M67 Analog)<a href="#mach4-m67-analog" class="hash-link" aria-label="Direkter Link zur Mach4 (M67 Analog)" title="Direkter Link zur Mach4 (M67 Analog)" translate="no">​</a></h2>
 <p>Der <strong>Mach4 (M67 Analog)</strong>-Dialekt ist für Hochgeschwindigkeits-Rastergravur mit Mach4-Controllern konzipiert. Er verwendet den M67-Befehl mit Analogausgabe zur präzisen Laserleistungssteuerung.</p>

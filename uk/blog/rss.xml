@@ -4,10 +4,104 @@
         <title>Rayforge Blog</title>
         <link>https://rayforge.org/uk/blog</link>
         <description>Rayforge Blog</description>
-        <lastBuildDate>Sun, 29 Mar 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 09 Apr 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>uk</language>
+        <item>
+            <title><![CDATA[Rayforge 1.5 - 3D Simulator, Bezier Curves, No-Go Zones]]></title>
+            <link>https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones</link>
+            <guid>https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones</guid>
+            <pubDate>Thu, 09 Apr 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Rayforge 1.5 adds a full 3D job simulator with playback controls, native]]></description>
+            <content:encoded><![CDATA[<p>Rayforge 1.5 adds a full 3D job simulator with playback controls, native
+cubic bezier curve support (G5), no-go zones with collision checking, and
+significant performance and memory improvements.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3d-simulator">3D Simulator<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#3d-simulator" class="hash-link" aria-label="Пряме посилання на 3D Simulator" title="Пряме посилання на 3D Simulator" translate="no">​</a></h2>
+<p>The 3D canvas now has a complete job simulator. You can watch your job execute
+step by step -- the laser head moves along the toolpath, the beam appears when
+the laser fires, and bitmap engravings are progressively revealed as the
+playhead advances.</p>
+<p>Playback controls sit at the bottom of the canvas: play/pause, step forward
+and backward, a scrubber slider, and a speed button that cycles through 1x
+to 16x. Rotary mode works too -- the cylinder rotates along with the
+simulation. All of this runs without blocking the rest of the interface, even
+on complex jobs.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bezier-curves-g5">Bezier Curves (G5)<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#bezier-curves-g5" class="hash-link" aria-label="Пряме посилання на Bezier Curves (G5)" title="Пряме посилання на Bezier Curves (G5)" translate="no">​</a></h2>
+<p>Rayforge now supports native cubic bezier curves through the entire pipeline --
+from import all the way to G-code output. For machines running LinuxCNC or
+Marlin, curves are emitted as G5 commands instead of thousands of tiny line
+segments. The result is smoother cuts, smaller G-code files, and faster
+execution. For machines that don't support G5 (Grbl, Smoothieware, and
+others), curves are automatically linearized -- no configuration needed.</p>
+<p>This touched nearly every part of the system. Tabs, cropping, smoothing,
+multi-pass, and path optimization all handle curves properly now.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="no-go-zones">No-Go Zones<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#no-go-zones" class="hash-link" aria-label="Пряме посилання на No-Go Zones" title="Пряме посилання на No-Go Zones" translate="no">​</a></h2>
+<p>You can now define restricted areas in your machine settings. These mark areas
+on the bed where the laser should not cut -- clamps, fixtures, or that corner
+where the hose always gets in the way. Rayforge checks for collisions and warns
+you before sending G-code.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance-and-memory">Performance and Memory<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#performance-and-memory" class="hash-link" aria-label="Пряме посилання на Performance and Memory" title="Пряме посилання на Performance and Memory" translate="no">​</a></h2>
+<p>The canvas is significantly more responsive. When you drag, pan, or zoom,
+expensive laser-path rendering is suppressed until you stop moving -- no more
+stuttering while repositioning a workpiece. Multi-step workflows render faster
+because all visible steps are composited into a single surface.</p>
+<p>Large images that used to cause multi-gigabyte memory spikes are now
+automatically scaled to sensible limits. The image handling was rewritten to
+avoid unnecessary copies, and caching is smarter -- shared images are rendered
+once and reused across workpieces. Two memory leaks in the 3D simulator were
+also fixed.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="dockable-bottom-panel">Dockable Bottom Panel<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#dockable-bottom-panel" class="hash-link" aria-label="Пряме посилання на Dockable Bottom Panel" title="Пряме посилання на Dockable Bottom Panel" translate="no">​</a></h2>
+<p>The bottom panel tabs can now be rearranged freely. Drag a tab onto the divider
+between columns to split it off into its own column. You can keep the layer
+list and G-code viewer visible side by side, for example. The layout persists
+between sessions.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="asset-browser">Asset Browser<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#asset-browser" class="hash-link" aria-label="Пряме посилання на Asset Browser" title="Пряме посилання на Asset Browser" translate="no">​</a></h2>
+<p>The asset browser has been overhauled. All assets are visible and can be
+dragged to the canvas or to a specific layer. Multi-selection works for
+drag-and-drop and bulk deletion. Thumbnails are generated for most image
+formats, and when the browser is empty it shows a helpful placeholder with
+buttons to add stock or a sketch.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-import-options">New Import Options<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#new-import-options" class="hash-link" aria-label="Пряме посилання на New Import Options" title="Пряме посилання на New Import Options" translate="no">​</a></h2>
+<p>The import dialog offers three layer modes: flatten into the current layer,
+create new layers from the file, or map imported layers onto existing ones.
+After import, Rayforge adds sensible default workflow steps -- a Contour step
+for vector layers and an Engrave step for layers with fills.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="lead-in--lead-out">Lead-In / Lead-Out<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#lead-in--lead-out" class="hash-link" aria-label="Пряме посилання на Lead-In / Lead-Out" title="Пряме посилання на Lead-In / Lead-Out" translate="no">​</a></h2>
+<p>A new lead-in/lead-out postprocessor adds zero-power approach and exit moves
+at the start and end of each contour. This helps the laser reach constant
+velocity before the actual cut begins, improving cut quality at entry and exit
+points.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#other-improvements" class="hash-link" aria-label="Пряме посилання на Other Improvements" title="Пряме посилання на Other Improvements" translate="no">​</a></h2>
+<ul>
+<li class="">3D model support for rotary axes (GLB format)</li>
+<li class="">Continuous laser mode and modal feedrate G-code options</li>
+<li class="">GRBL raster dialect with cleaner M4/M5 handling</li>
+<li class="">Grbl MKS DLC32 machine profile</li>
+<li class="">Material test: labels engraved first, overscan support, label speed setting</li>
+<li class="">Ctrl+F search in console and G-code viewer</li>
+<li class="">YUYV camera protocol support</li>
+<li class="">Addons can register toggles in the View menu</li>
+<li class="">Status bar removed, info moved to contextual locations</li>
+<li class="">Single instance lock</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-15">Download Rayforge 1.5<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#download-rayforge-15" class="hash-link" aria-label="Пряме посилання на Download Rayforge 1.5" title="Пряме посилання на Download Rayforge 1.5" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="https://rayforge.org/uk/docs/getting-started/installation">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#join-the-community" class="hash-link" aria-label="Пряме посилання на Join the Community" title="Пряме посилання на Join the Community" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content:encoded>
+            <category>release</category>
+            <category>1.5</category>
+            <category>simulator</category>
+            <category>bezier</category>
+            <category>nogozones</category>
+            <category>performance</category>
+        </item>
         <item>
             <title><![CDATA[Rayforge 1.4 - Rotary Axis, PDF Layers, Camera Calibration]]></title>
             <link>https://rayforge.org/uk/blog/rayforge-1.4-rotary-pdf-camera</link>
@@ -445,7 +539,7 @@ keyboard shortcuts</li>
 готовий до виробництва інструмент, який може впоратися з реальними робочими процесами лазерного різання та
 гравірування.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="що-нового-в-10">Що нового в 1.0<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D1%89%D0%BE-%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D0%B2-10" class="hash-link" aria-label="Пряме посилання на Що нового в 1.0" title="Пряме посилання на Що нового в 1.0" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="збереженнязавантаження-проектів">Збереження/завантаження проектів<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D0%B7%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F%D0%B7%D0%B0%D0%B2%D0%B0%D0%BD%D1%82%D0%B0%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%96%D0%B2" class="hash-link" aria-label="Прям�е посилання на Збереження/завантаження проектів" title="Пряме посилання на Збереження/завантаження проектів" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="збереженнязавантаження-проектів">Збереження/завантаження проектів<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D0%B7%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F%D0%B7%D0%B0%D0%B2%D0%B0%D0%BD%D1%82%D0%B0%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%96%D0%B2" class="hash-link" aria-label="Пряме посилання на Збереження/завантаження проектів" title="Пряме посилання на Збереження/завантаження проектів" translate="no">​</a></h3>
 <p>Найбільш запитувана функція нарешті тут. Тепер ви можете зберігати ваші
 повні робочі процеси і відновлювати їх пізніше. Розширення файлів <code>.ryp</code> (проект) та
 <code>.rfs</code> (ескіз) зареєстровані на рівні системи, тому ви можете
@@ -563,7 +657,7 @@ keyboard shortcuts</li>
             <guid>https://rayforge.org/uk/blog/5-tips-better-engraving</guid>
             <pubDate>Thu, 20 Feb 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[3D попередній перегляд]]></description>
-            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="3D попередній перегляд" src="https://rayforge.org/uk/assets/images/main-3d-16a0d16667890acf6d3d01a0edc7121f.png" width="3194" height="1850" class="img_ev3q"></p>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="3D попередній перегляд" src="https://rayforge.org/uk/assets/images/main-3d-a978c60b3c35b4668bc99c7c9c10ed0b.png" width="2522" height="1772" class="img_ev3q"></p>
 <p>Отримання результатів лазерного гравірування професійної якості вимагає більше, ніж
 просто good hardware—ваші налаштування програмного забезпечення та робочий процес теж мають значення. Ось
 п'ять порад, які допоможуть вам отримати максимум з Rayforge.</p>
@@ -760,7 +854,7 @@ Rayforge та пресети операцій щоб зберегти ваші �
             <guid>https://rayforge.org/uk/blog/welcome-to-rayforge</guid>
             <pubDate>Sun, 15 Dec 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Головне вікно Rayforge]]></description>
-            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Головне вікно Rayforge" src="https://rayforge.org/uk/assets/images/main-standard-3b9547a7897b429d63276dece4b47c8b.png" width="2522" height="1772" class="img_ev3q"></p>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Головне вікно Rayforge" src="https://rayforge.org/uk/assets/images/main-standard-7453c6a857a2b073312389233117e2c6.png" width="2522" height="1772" class="img_ev3q"></p>
 <p>Ми раді представити Rayforge, сучасний відкритий відправник G-code та
 програмне забезпечення керування, розроблене спеціально для лазерних різаків
 та граверів на базі GRBL.</p>

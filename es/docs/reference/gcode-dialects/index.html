@@ -12,8 +12,8 @@
 
 
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/es/assets/css/styles.a1195d80.css">
-<script src="/es/assets/js/runtime~main.df42c7c9.js" defer="defer"></script>
-<script src="/es/assets/js/main.13e9aee4.js" defer="defer"></script>
+<script src="/es/assets/js/runtime~main.f9318f7b.js" defer="defer"></script>
+<script src="/es/assets/js/main.60a6d969.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -74,7 +74,12 @@ firmware de controlador.</p>
 
 
 
-<table><thead><tr><th>Dialecto</th><th>Firmware</th><th>Uso Común</th></tr></thead><tbody><tr><td><strong>Grbl (Compat)</strong></td><td>GRBL 1.1+</td><td>Láseres de diodo, CNC de aficionado</td></tr><tr><td><strong>Grbl (Compat, sin eje Z)</strong></td><td>GRBL 1.1+</td><td>Cortadores láser 2D sin Z</td></tr><tr><td><strong>Grbl Raster</strong></td><td>GRBL 1.1+</td><td>Optimizado para trabajo raster</td></tr><tr><td><strong>GRBL Dinámico (Consciente de Profundidad)</strong></td><td>GRBL 1.1+</td><td>Grabado láser consciente de profundidad</td></tr><tr><td><strong>GRBL Dinámico (sin eje Z)</strong></td><td>GRBL 1.1+</td><td>Grabado láser consciente de profundidad</td></tr><tr><td><strong>Mach4 (M67 Analog)</strong></td><td>Mach4</td><td>Grabado ráster de alta velocidad</td></tr><tr><td><strong>Smoothieware</strong></td><td>Smoothieware</td><td>Cortadores láser, CNC</td></tr><tr><td><strong>Marlin</strong></td><td>Marlin 2.0+</td><td>Impresoras 3D con láser</td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Dialecto</th><th>Firmware</th><th>Uso Común</th></tr></thead><tbody><tr><td><strong>Grbl (Compat)</strong></td><td>GRBL 1.1+</td><td>Láseres de diodo, CNC de aficionado</td></tr><tr><td><strong>Grbl (Compat, sin eje Z)</strong></td><td>GRBL 1.1+</td><td>Cortadores láser 2D sin Z</td></tr><tr><td><strong>Grbl Raster</strong></td><td>GRBL 1.1+</td><td>Optimizado para trabajo raster</td></tr><tr><td><strong>GRBL Dinámico (Consciente de Profundidad)</strong></td><td>GRBL 1.1+</td><td>Grabado láser consciente de profundidad</td></tr><tr><td><strong>GRBL Dinámico (sin eje Z)</strong></td><td>GRBL 1.1+</td><td>Grabado láser consciente de profundidad</td></tr><tr><td><strong>LinuxCNC</strong></td><td>LinuxCNC</td><td>Soporte nativo de Bézier (G5)</td></tr><tr><td><strong>Mach4 (M67 Analog)</strong></td><td>Mach4</td><td>Grabado ráster de alta velocidad</td></tr><tr><td><strong>Smoothieware</strong></td><td>Smoothieware</td><td>Cortadores láser, CNC</td></tr><tr><td><strong>Marlin</strong></td><td>Marlin 2.0+</td><td>Impresoras 3D con láser</td></tr></tbody></table>
 <div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>Dialectos Recomendados</div></div>
 <p><strong>Grbl (Compat)</strong> es el dialecto más probado y recomendado para aplicaciones
 láser estándar.</p>
@@ -85,6 +90,10 @@ y compacta.</p>
 <p><strong>GRBL Dinámico (Consciente de Profundidad)</strong> es recomendado para grabado láser
 consciente de profundidad donde la potencia varía durante los cortes (ej.,
 grabado de profundidad variable).</p>
+<p><strong>LinuxCNC</strong> admite curvas Bézier cúbicas nativas a través del comando G5, lo
+que produce un código G muy suave y compacto para caminos curvos. Cuando uses
+este dialecto, activa la opción «Soportar curvas Bézier» en Ajustes Avanzados
+de Máquina para aprovechar la salida G5.</p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="mach4-m67-analog">Mach4 (M67 Analog)<a href="#mach4-m67-analog" class="hash-link" aria-label="Enlace directo al Mach4 (M67 Analog)" title="Enlace directo al Mach4 (M67 Analog)" translate="no">​</a></h2>
 <p>El dialecto <strong>Mach4 (M67 Analog)</strong> está diseñado para grabado ráster de alta
