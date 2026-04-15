@@ -13,7 +13,7 @@
             <link>https://rayforge.org/blog/rayforge-1.5-3d-simulator-bezier-nogozones</link>
             <guid>https://rayforge.org/blog/rayforge-1.5-3d-simulator-bezier-nogozones</guid>
             <pubDate>Thu, 09 Apr 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Rayforge 1.5 adds a full 3D job simulator with playback controls, native]]></description>
+            <description><![CDATA[Rayforge 1.5 adds a full 3D job simulator with playback controls, native cubic bezier G5 support, no-go zones with collision checking, and major performance gains.]]></description>
             <content:encoded><![CDATA[<p>Rayforge 1.5 adds a full 3D job simulator with playback controls, native
 cubic bezier curve support (G5), no-go zones with collision checking, and
 significant performance and memory improvements.</p>
@@ -107,7 +107,7 @@ points.</p>
             <link>https://rayforge.org/blog/rayforge-1.4-rotary-pdf-camera</link>
             <guid>https://rayforge.org/blog/rayforge-1.4-rotary-pdf-camera</guid>
             <pubDate>Sun, 29 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Rayforge 1.4 adds rotary axis support for cylindrical workpieces, direct]]></description>
+            <description><![CDATA[Rayforge 1.4 adds rotary axis support for cylindrical workpieces, PDF vector import with layers, camera calibration, and improved sketcher tools.]]></description>
             <content:encoded><![CDATA[<p>Rayforge 1.4 adds rotary axis support for cylindrical workpieces, direct
 vector import for PDF files with layers, a guided camera calibration wizard,
 and an improved sketcher with ellipse tools and smarter snapping.</p>
@@ -196,7 +196,7 @@ underneath</li>
             <link>https://rayforge.org/blog/rayforge-1.3-bezier-curves-sketcher-addon</link>
             <guid>https://rayforge.org/blog/rayforge-1.3-bezier-curves-sketcher-addon</guid>
             <pubDate>Mon, 23 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Rayforge 1.3 brings bezier curve support to the parametric sketcher, a new]]></description>
+            <description><![CDATA[Rayforge 1.3 adds bezier curve support in the sketcher, a unified path tool, more efficient G-code output, and moves the sketcher to an add-on.]]></description>
             <content:encoded><![CDATA[<p>Rayforge 1.3 brings bezier curve support to the parametric sketcher, a new
 unified path tool, more efficient G-code output, and moves the sketcher to
 an optional add-on.</p>
@@ -289,7 +289,7 @@ on materials that need precise power management.</p>
             <link>https://rayforge.org/blog/rayforge-1.2-addons-camera-ai</link>
             <guid>https://rayforge.org/blog/rayforge-1.2-addons-camera-ai</guid>
             <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Rayforge 1.2 brings an AI workpiece generator, significant camera]]></description>
+            <description><![CDATA[Rayforge 1.2 adds an AI workpiece generator for laser design, camera calibration improvements, and a modular add-on system for laser cutting workflows.]]></description>
             <content:encoded><![CDATA[<p>Rayforge 1.2 brings an AI workpiece generator, significant camera
 enhancements, and a completely revamped add-on system with core
 functionality now available as optional modules.</p>
@@ -423,7 +423,7 @@ macOS updates, and <strong>fllmn</strong> for Flatpak updates!</p>
             <link>https://rayforge.org/blog/rayforge-1.1-pipeline-rewrite</link>
             <guid>https://rayforge.org/blog/rayforge-1.1-pipeline-rewrite</guid>
             <pubDate>Fri, 27 Feb 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Rayforge 1.1]]></description>
+            <description><![CDATA[Rayforge 1.1 brings macOS support, a new G-code console, unified raster operations, and a rewritten pipeline for better laser cutting performance.]]></description>
             <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 1.1" src="https://rayforge.org/assets/images/rayforge-1.1-7e0d0638da78baa86b6281fa7f32df3b.png" width="1344" height="768" class="img_ev3q"></p>
 <p>Rayforge 1.1 brings a powerful new G-code console, unified raster operations,
 and a completely rebuilt data pipeline for improved performance and stability.</p>
@@ -523,7 +523,7 @@ keyboard shortcuts</li>
             <link>https://rayforge.org/blog/rayforge-1.0-first-birthday</link>
             <guid>https://rayforge.org/blog/rayforge-1.0-first-birthday</guid>
             <pubDate>Thu, 29 Jan 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Rayforge 1.0]]></description>
+            <description><![CDATA[Rayforge 1.0 is here — free open-source laser cutting and engraving software that grew from a single commit into a fully-featured LightBurn alternative.]]></description>
             <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 1.0" src="https://rayforge.org/assets/images/rayforge-1.0-95669e0bab418ed91ad92eb5532ec092.png" width="1920" height="1024" class="img_ev3q"></p>
 <p>Today marks a special milestone for Rayforge - we're releasing version
 1.0 exactly on the project's first birthday! What started as a single
@@ -656,7 +656,7 @@ building the future of open-source manufacturing!</p>
             <link>https://rayforge.org/blog/5-tips-better-engraving</link>
             <guid>https://rayforge.org/blog/5-tips-better-engraving</guid>
             <pubDate>Thu, 20 Feb 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[3D Preview]]></description>
+            <description><![CDATA[Improve your laser engraving results with these 5 practical tips using Rayforge — free laser engraving software for better quality, speed, and consistency.]]></description>
             <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="3D Preview" src="https://rayforge.org/assets/images/main-3d-a978c60b3c35b4668bc99c7c9c10ed0b.png" width="2522" height="1772" class="img_ev3q"></p>
 <p>Getting professional-quality laser engraving results requires more than
 just good hardware—your software settings and workflow matter too. Here
@@ -753,11 +753,11 @@ on <a href="https://github.com/barebaric/rayforge/discussions" target="_blank" r
             <category>workflow</category>
         </item>
         <item>
-            <title><![CDATA[Multi-Laser Support - Choose Different Lasers for Each Operation]]></title>
+            <title><![CDATA[Multi-Laser Support in Rayforge]]></title>
             <link>https://rayforge.org/blog/multi-laser-support</link>
             <guid>https://rayforge.org/blog/multi-laser-support</guid>
             <pubDate>Fri, 10 Jan 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[One of the most powerful features in Rayforge is the ability to assign]]></description>
+            <description><![CDATA[Rayforge now supports multiple lasers on a single machine. Configure and switch between different laser heads for cutting and engraving workflows.]]></description>
             <content:encoded><![CDATA[<p>One of the most powerful features in Rayforge is the ability to assign
 different lasers to different operations within a single job. This opens
 up exciting possibilities for multi-tool setups and specialized
@@ -845,16 +845,15 @@ for more details.</p>
 <p><em>Have a multi-laser setup? We'd love to hear about your experience!
 Share your projects and feedback on
 <a href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" class="">GitHub</a>.</em></p>]]></content:encoded>
+            <category>features</category>
             <category>multi-laser</category>
-            <category>operations</category>
-            <category>workflow</category>
         </item>
         <item>
             <title><![CDATA[Welcome to Rayforge: Modern Laser Control Software]]></title>
             <link>https://rayforge.org/blog/welcome-to-rayforge</link>
             <guid>https://rayforge.org/blog/welcome-to-rayforge</guid>
             <pubDate>Sun, 15 Dec 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[Rayforge Main Window]]></description>
+            <description><![CDATA[Introducing Rayforge — a modern, open-source G-code sender and control software for GRBL-based laser cutters and engravers. Free laser cutting software for makers.]]></description>
             <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge Main Window" src="https://rayforge.org/assets/images/main-standard-7453c6a857a2b073312389233117e2c6.png" width="2522" height="1772" class="img_ev3q"></p>
 <p>We're excited to introduce Rayforge, a modern, open-source G-code sender
 and control software designed specifically for GRBL-based laser cutters

@@ -13,7 +13,7 @@
             <link>https://rayforge.org/fr/blog/rayforge-1.5-3d-simulator-bezier-nogozones</link>
             <guid>https://rayforge.org/fr/blog/rayforge-1.5-3d-simulator-bezier-nogozones</guid>
             <pubDate>Thu, 09 Apr 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Rayforge 1.5 adds a full 3D job simulator with playback controls, native]]></description>
+            <description><![CDATA[Rayforge 1.5 adds a full 3D job simulator with playback controls, native cubic bezier G5 support, no-go zones with collision checking, and major performance gains.]]></description>
             <content:encoded><![CDATA[<p>Rayforge 1.5 adds a full 3D job simulator with playback controls, native
 cubic bezier curve support (G5), no-go zones with collision checking, and
 significant performance and memory improvements.</p>
@@ -107,7 +107,7 @@ points.</p>
             <link>https://rayforge.org/fr/blog/rayforge-1.4-rotary-pdf-camera</link>
             <guid>https://rayforge.org/fr/blog/rayforge-1.4-rotary-pdf-camera</guid>
             <pubDate>Sun, 29 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Rayforge 1.4 adds rotary axis support for cylindrical workpieces, direct]]></description>
+            <description><![CDATA[Rayforge 1.4 adds rotary axis support for cylindrical workpieces, PDF vector import with layers, camera calibration, and improved sketcher tools.]]></description>
             <content:encoded><![CDATA[<p>Rayforge 1.4 adds rotary axis support for cylindrical workpieces, direct
 vector import for PDF files with layers, a guided camera calibration wizard,
 and an improved sketcher with ellipse tools and smarter snapping.</p>
@@ -196,7 +196,7 @@ underneath</li>
             <link>https://rayforge.org/fr/blog/rayforge-1.3-bezier-curves-sketcher-addon</link>
             <guid>https://rayforge.org/fr/blog/rayforge-1.3-bezier-curves-sketcher-addon</guid>
             <pubDate>Mon, 23 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Rayforge 1.3 brings bezier curve support to the parametric sketcher, a new]]></description>
+            <description><![CDATA[Rayforge 1.3 adds bezier curve support in the sketcher, a unified path tool, more efficient G-code output, and moves the sketcher to an add-on.]]></description>
             <content:encoded><![CDATA[<p>Rayforge 1.3 brings bezier curve support to the parametric sketcher, a new
 unified path tool, more efficient G-code output, and moves the sketcher to
 an optional add-on.</p>
@@ -289,7 +289,7 @@ on materials that need precise power management.</p>
             <link>https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai</link>
             <guid>https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai</guid>
             <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Rayforge 1.2 brings an AI workpiece generator, significant camera]]></description>
+            <description><![CDATA[Rayforge 1.2 adds an AI workpiece generator for laser design, camera calibration improvements, and a modular add-on system for laser cutting workflows.]]></description>
             <content:encoded><![CDATA[<p>Rayforge 1.2 brings an AI workpiece generator, significant camera
 enhancements, and a completely revamped add-on system with core
 functionality now available as optional modules.</p>
@@ -423,7 +423,7 @@ macOS updates, and <strong>fllmn</strong> for Flatpak updates!</p>
             <link>https://rayforge.org/fr/blog/rayforge-1.1-pipeline-rewrite</link>
             <guid>https://rayforge.org/fr/blog/rayforge-1.1-pipeline-rewrite</guid>
             <pubDate>Fri, 27 Feb 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Rayforge 1.1]]></description>
+            <description><![CDATA[Rayforge 1.1 brings macOS support, a new G-code console, unified raster operations, and a rewritten pipeline for better laser cutting performance.]]></description>
             <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 1.1" src="https://rayforge.org/fr/assets/images/rayforge-1.1-7e0d0638da78baa86b6281fa7f32df3b.png" width="1344" height="768" class="img_ev3q"></p>
 <p>Rayforge 1.1 brings a powerful new G-code console, unified raster operations,
 and a completely rebuilt data pipeline for improved performance and stability.</p>
