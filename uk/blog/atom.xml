@@ -16,7 +16,7 @@
         <content type="html"><![CDATA[<p>Rayforge 1.5 adds a full 3D job simulator with playback controls, native
 cubic bezier curve support (G5), no-go zones with collision checking, and
 significant performance and memory improvements.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3d-simulator">3D Simulator<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#3d-simulator" class="hash-link" aria-label="Пряме посилання на 3D Simulator" title="Пряме посилання на 3D Simulator" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3d-simulator">3D Simulator<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#3d-simulator" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>The 3D canvas now has a complete job simulator. You can watch your job execute
 step by step -- the laser head moves along the toolpath, the beam appears when
 the laser fires, and bitmap engravings are progressively revealed as the
@@ -26,7 +26,7 @@ and backward, a scrubber slider, and a speed button that cycles through 1x
 to 16x. Rotary mode works too -- the cylinder rotates along with the
 simulation. All of this runs without blocking the rest of the interface, even
 on complex jobs.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bezier-curves-g5">Bezier Curves (G5)<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#bezier-curves-g5" class="hash-link" aria-label="Пряме посилання на Bezier Curves (G5)" title="Пряме посилання на Bezier Curves (G5)" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bezier-curves-g5">Bezier Curves (G5)<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#bezier-curves-g5" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Rayforge now supports native cubic bezier curves through the entire pipeline --
 from import all the way to G-code output. For machines running LinuxCNC or
 Marlin, curves are emitted as G5 commands instead of thousands of tiny line
@@ -35,12 +35,12 @@ execution. For machines that don't support G5 (Grbl, Smoothieware, and
 others), curves are automatically linearized -- no configuration needed.</p>
 <p>This touched nearly every part of the system. Tabs, cropping, smoothing,
 multi-pass, and path optimization all handle curves properly now.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="no-go-zones">No-Go Zones<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#no-go-zones" class="hash-link" aria-label="Пряме посилання на No-Go Zones" title="Пряме посилання на No-Go Zones" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="no-go-zones">No-Go Zones<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#no-go-zones" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>You can now define restricted areas in your machine settings. These mark areas
 on the bed where the laser should not cut -- clamps, fixtures, or that corner
 where the hose always gets in the way. Rayforge checks for collisions and warns
 you before sending G-code.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance-and-memory">Performance and Memory<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#performance-and-memory" class="hash-link" aria-label="Пряме посилання на Performance and Memory" title="Пряме посилання на Performance and Memory" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance-and-memory">Performance and Memory<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#performance-and-memory" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>The canvas is significantly more responsive. When you drag, pan, or zoom,
 expensive laser-path rendering is suppressed until you stop moving -- no more
 stuttering while repositioning a workpiece. Multi-step workflows render faster
@@ -50,28 +50,28 @@ automatically scaled to sensible limits. The image handling was rewritten to
 avoid unnecessary copies, and caching is smarter -- shared images are rendered
 once and reused across workpieces. Two memory leaks in the 3D simulator were
 also fixed.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="dockable-bottom-panel">Dockable Bottom Panel<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#dockable-bottom-panel" class="hash-link" aria-label="Пряме посилання на Dockable Bottom Panel" title="Пряме посилання на Dockable Bottom Panel" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="dockable-bottom-panel">Dockable Bottom Panel<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#dockable-bottom-panel" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>The bottom panel tabs can now be rearranged freely. Drag a tab onto the divider
 between columns to split it off into its own column. You can keep the layer
 list and G-code viewer visible side by side, for example. The layout persists
 between sessions.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="asset-browser">Asset Browser<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#asset-browser" class="hash-link" aria-label="Пряме посилання на Asset Browser" title="Пряме посилання на Asset Browser" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="asset-browser">Asset Browser<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#asset-browser" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>The asset browser has been overhauled. All assets are visible and can be
 dragged to the canvas or to a specific layer. Multi-selection works for
 drag-and-drop and bulk deletion. Thumbnails are generated for most image
 formats, and when the browser is empty it shows a helpful placeholder with
 buttons to add stock or a sketch.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-import-options">New Import Options<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#new-import-options" class="hash-link" aria-label="Пряме посилання на New Import Options" title="Пряме посилання на New Import Options" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-import-options">New Import Options<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#new-import-options" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>The import dialog offers three layer modes: flatten into the current layer,
 create new layers from the file, or map imported layers onto existing ones.
 After import, Rayforge adds sensible default workflow steps -- a Contour step
 for vector layers and an Engrave step for layers with fills.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="lead-in--lead-out">Lead-In / Lead-Out<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#lead-in--lead-out" class="hash-link" aria-label="Пряме посилання на Lead-In / Lead-Out" title="Пряме посилання на Lead-In / Lead-Out" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="lead-in--lead-out">Lead-In / Lead-Out<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#lead-in--lead-out" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>A new lead-in/lead-out postprocessor adds zero-power approach and exit moves
 at the start and end of each contour. This helps the laser reach constant
 velocity before the actual cut begins, improving cut quality at entry and exit
 points.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#other-improvements" class="hash-link" aria-label="Пряме посилання на Other Improvements" title="Пряме посилання на Other Improvements" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#other-improvements" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <ul>
 <li class="">3D model support for rotary axes (GLB format)</li>
 <li class="">Continuous laser mode and modal feedrate G-code options</li>
@@ -84,12 +84,12 @@ points.</p>
 <li class="">Status bar removed, info moved to contextual locations</li>
 <li class="">Single instance lock</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-15">Download Rayforge 1.5<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#download-rayforge-15" class="hash-link" aria-label="Пряме посилання на Download Rayforge 1.5" title="Пряме посилання на Download Rayforge 1.5" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-15">Download Rayforge 1.5<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#download-rayforge-15" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <ul>
 <li class=""><a class="" href="https://rayforge.org/uk/docs/getting-started/installation">GitHub Releases</a></li>
 <li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#join-the-community" class="hash-link" aria-label="Пряме посилання на Join the Community" title="Пряме посилання на Join the Community" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#join-the-community" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <ul>
 <li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
 <li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
@@ -114,7 +114,7 @@ points.</p>
         <content type="html"><![CDATA[<p>Rayforge 1.4 adds rotary axis support for cylindrical workpieces, direct
 vector import for PDF files with layers, a guided camera calibration wizard,
 and an improved sketcher with ellipse tools and smarter snapping.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="rotary-axis-support">Rotary Axis Support<a href="https://rayforge.org/uk/blog/rayforge-1.4-rotary-pdf-camera#rotary-axis-support" class="hash-link" aria-label="Пряме посилання на Rotary Axis Support" title="Пряме посилання на Rotary Axis Support" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="rotary-axis-support">Rotary Axis Support<a href="https://rayforge.org/uk/blog/rayforge-1.4-rotary-pdf-camera#rotary-axis-support" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>You can now engrave and cut cylindrical objects like tumblers, glasses, and
 pens. Rayforge wraps your design around the cylinder surface and shows a 3D
 preview so you know exactly what the result will look like before you start.</p>
@@ -123,21 +123,21 @@ cylindrical work in a single project. A small rotary icon next to each layer
 makes it easy to see which layers will run on the rotary attachment.</p>
 <p>Head over to the <a class="" href="https://rayforge.org/uk/docs/machine/rotary">Rotary Setup</a> page for details on
 configuring your module.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pdf-import-with-layers">PDF Import with Layers<a href="https://rayforge.org/uk/blog/rayforge-1.4-rotary-pdf-camera#pdf-import-with-layers" class="hash-link" aria-label="Пряме посилання на PDF Import with Layers" title="Пряме посилання на PDF Import with Layers" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pdf-import-with-layers">PDF Import with Layers<a href="https://rayforge.org/uk/blog/rayforge-1.4-rotary-pdf-camera#pdf-import-with-layers" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>PDF files can now be imported as vector paths instead of being rasterized
 first. This means cleaner lines, no quality loss, and — if the PDF contains
 layers — you can pick which layers to import, just like with SVG files.</p>
 <p>This is especially handy when someone sends you a PDF that was exported from
 Illustrator or Inkscape and you need clean cutting paths without re-drawing
 anything.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="camera-calibration-wizard">Camera Calibration Wizard<a href="https://rayforge.org/uk/blog/rayforge-1.4-rotary-pdf-camera#camera-calibration-wizard" class="hash-link" aria-label="Пряме посилання на Camera Calibration Wizard" title="Пряме посилання на Camera Calibration Wizard" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="camera-calibration-wizard">Camera Calibration Wizard<a href="https://rayforge.org/uk/blog/rayforge-1.4-rotary-pdf-camera#camera-calibration-wizard" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Getting a camera aligned to your laser bed just got easier. The new guided
 calibration wizard walks you through the process step by step using a printed
 calibration card. Rayforge computes a full distortion model from the card
 images, correcting for barrel distortion and perspective errors automatically.</p>
 <p>The result is noticeably better alignment accuracy, especially with wide-angle
 lenses or cameras mounted at an angle.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-improvements">Sketcher Improvements<a href="https://rayforge.org/uk/blog/rayforge-1.4-rotary-pdf-camera#sketcher-improvements" class="hash-link" aria-label="Пряме посилання на Sketcher Improvements" title="Пряме посилання на Sketcher Improvements" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-improvements">Sketcher Improvements<a href="https://rayforge.org/uk/blog/rayforge-1.4-rotary-pdf-camera#sketcher-improvements" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>The circle tool has been replaced with a more general <strong>ellipse tool</strong> that
 handles both circles and ellipses. The equality constraint now works on
 ellipses too.</p>
@@ -146,7 +146,7 @@ constraints as you create shapes, and a new <strong>magnetic snap</strong> syste
 the old snap-to-grid behavior. Instead of locking to a fixed grid, magnetic
 snap pulls your cursor toward nearby geometry — points, lines, and endpoints —
 making it much easier to connect shapes precisely.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="better-framing-controls">Better Framing Controls<a href="https://rayforge.org/uk/blog/rayforge-1.4-rotary-pdf-camera#better-framing-controls" class="hash-link" aria-label="Пряме посилання на Better Framing Controls" title="Пряме посилання на Better Framing Controls" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="better-framing-controls">Better Framing Controls<a href="https://rayforge.org/uk/blog/rayforge-1.4-rotary-pdf-camera#better-framing-controls" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>The framing feature has new settings for finer control:</p>
 <ul>
 <li class=""><strong>Frame speed</strong> is now configured per laser head</li>
@@ -154,12 +154,12 @@ making it much easier to connect shapes precisely.</p>
 see exactly where the boundary is</li>
 <li class=""><strong>Repeat count</strong> traces the outline multiple times for better visibility</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="merge-lines-post-processor">Merge Lines Post-Processor<a href="https://rayforge.org/uk/blog/rayforge-1.4-rotary-pdf-camera#merge-lines-post-processor" class="hash-link" aria-label="Пряме посилання на Merge Lines Post-Processor" title="Пряме посилання на Merge Lines Post-Processor" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="merge-lines-post-processor">Merge Lines Post-Processor<a href="https://rayforge.org/uk/blog/rayforge-1.4-rotary-pdf-camera#merge-lines-post-processor" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>A new post-processor called <strong>Merge Lines</strong> detects overlapping path segments
 and merges them into a single pass. This is useful when you import designs
 where shapes share edges — think grid patterns or tessellations — and you want
 to avoid cutting the same line twice.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/uk/blog/rayforge-1.4-rotary-pdf-camera#other-improvements" class="hash-link" aria-label="Пряме посилання на Other Improvements" title="Пряме посилання на Other Improvements" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/uk/blog/rayforge-1.4-rotary-pdf-camera#other-improvements" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <ul>
 <li class="">Machine profile for the Acmer S1 has been added</li>
 <li class="">G-code dialects are now independent copies, so customizing one never affects
@@ -167,7 +167,7 @@ others</li>
 <li class="">Dialects support a separate laser-on command for focusing</li>
 <li class="">Large images are handled more safely to prevent running out of memory</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/uk/blog/rayforge-1.4-rotary-pdf-camera#bug-fixes" class="hash-link" aria-label="Пряме посилання на Bug Fixes" title="Пряме посилання на Bug Fixes" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/uk/blog/rayforge-1.4-rotary-pdf-camera#bug-fixes" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <ul>
 <li class="">Fixed material test producer issues</li>
 <li class="">Fixed position reporting for machines with only X and Y axes</li>
@@ -177,12 +177,12 @@ underneath</li>
 <li class="">Fixed a race condition during worker initialization</li>
 </ul>
 <p>See the CHANGELOG on GitHub for the complete list.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-14">Download Rayforge 1.4<a href="https://rayforge.org/uk/blog/rayforge-1.4-rotary-pdf-camera#download-rayforge-14" class="hash-link" aria-label="Пряме посилання на Download Rayforge 1.4" title="Пряме посилання на Download Rayforge 1.4" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-14">Download Rayforge 1.4<a href="https://rayforge.org/uk/blog/rayforge-1.4-rotary-pdf-camera#download-rayforge-14" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <ul>
 <li class=""><a class="" href="https://rayforge.org/uk/docs/getting-started/installation">GitHub Releases</a></li>
 <li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/uk/blog/rayforge-1.4-rotary-pdf-camera#join-the-community" class="hash-link" aria-label="Пряме посилання на Join the Community" title="Пряме посилання на Join the Community" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/uk/blog/rayforge-1.4-rotary-pdf-camera#join-the-community" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <ul>
 <li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
 <li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
@@ -207,7 +207,7 @@ underneath</li>
         <content type="html"><![CDATA[<p>Rayforge 1.3 brings bezier curve support to the parametric sketcher, a new
 unified path tool, more efficient G-code output, and moves the sketcher to
 an optional add-on.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bezier-curves-in-the-sketcher">Bezier Curves in the Sketcher<a href="https://rayforge.org/uk/blog/rayforge-1.3-bezier-curves-sketcher-addon#bezier-curves-in-the-sketcher" class="hash-link" aria-label="Пряме посилання на Bezier Curves in the Sketcher" title="Пряме посилання на Bezier Curves in the Sketcher" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bezier-curves-in-the-sketcher">Bezier Curves in the Sketcher<a href="https://rayforge.org/uk/blog/rayforge-1.3-bezier-curves-sketcher-addon#bezier-curves-in-the-sketcher" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>The headline feature for this release is full support for bezier curves in
 the parametric sketcher. The old line tool has been replaced with a new
 unified <strong>path tool</strong> that seamlessly combines lines and curves.</p>
@@ -223,14 +223,14 @@ tool</li>
 </ul>
 <p>This has been one of the most requested features, and we're excited to see
 what you create with it.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-is-now-an-add-on">Sketcher is Now an Add-on<a href="https://rayforge.org/uk/blog/rayforge-1.3-bezier-curves-sketcher-addon#sketcher-is-now-an-add-on" class="hash-link" aria-label="Пряме посилання на Sketcher is Now an Add-on" title="Пряме посилання на Sketcher is Now an Add-on" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-is-now-an-add-on">Sketcher is Now an Add-on<a href="https://rayforge.org/uk/blog/rayforge-1.3-bezier-curves-sketcher-addon#sketcher-is-now-an-add-on" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Continuing the modularization work from version 1.2, the sketcher has been
 moved to an add-on. It's installed and enabled by default, so existing users
 won't notice any difference. But if you prefer a minimal setup without
 parametric sketching, you can now disable it.</p>
 <p>This change also comes with new extension registries that make it easier for
 add-on developers to extend Rayforge.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-quality-of-life-improvements">Sketcher Quality-of-Life Improvements<a href="https://rayforge.org/uk/blog/rayforge-1.3-bezier-curves-sketcher-addon#sketcher-quality-of-life-improvements" class="hash-link" aria-label="Пряме посилання на Sketcher Quality-of-Life Improvements" title="Пряме посилання на Sketcher Quality-of-Life Improvements" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-quality-of-life-improvements">Sketcher Quality-of-Life Improvements<a href="https://rayforge.org/uk/blog/rayforge-1.3-bezier-curves-sketcher-addon#sketcher-quality-of-life-improvements" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>The sketcher received several smaller but impactful improvements:</p>
 <p><strong>Grid Tool</strong>
 A new tool to toggle grid visibility for better alignment.</p>
@@ -245,7 +245,7 @@ Hold Shift while dragging to constrain movement to the nearest axis - great
 for keeping things aligned.</p>
 <p><strong>Cleaner Background</strong>
 The gray background area is now hidden for a cleaner editing experience.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="more-efficient-g-code">More Efficient G-code<a href="https://rayforge.org/uk/blog/rayforge-1.3-bezier-curves-sketcher-addon#more-efficient-g-code" class="hash-link" aria-label="Пряме посилання на More Efficient G-code" title="Пряме посилання на More Efficient G-code" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="more-efficient-g-code">More Efficient G-code<a href="https://rayforge.org/uk/blog/rayforge-1.3-bezier-curves-sketcher-addon#more-efficient-g-code" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Rayforge now produces more compact G-code by omitting unchanged coordinates.
 If you're cutting along the X-axis, for example, only the X coordinate will
 be emitted on each line. This makes files smaller and cleaner, and makes
@@ -255,17 +255,17 @@ the old "no-Z" dialect variants obsolete (they've been removed).</p>
 <li class="">Shows line count and byte size</li>
 <li class="">Always displays at least the first 20,000 lines</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="raster-operation-enhancements">Raster Operation Enhancements<a href="https://rayforge.org/uk/blog/rayforge-1.3-bezier-curves-sketcher-addon#raster-operation-enhancements" class="hash-link" aria-label="Пряме посилання на Raster Operation Enhancements" title="Пряме посилання на Raster Operation Enhancements" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="raster-operation-enhancements">Raster Operation Enhancements<a href="https://rayforge.org/uk/blog/rayforge-1.3-bezier-curves-sketcher-addon#raster-operation-enhancements" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>New settings for sample interval and power levels give you more control over
 your raster operations. These are particularly useful for fine-tuning results
 on materials that need precise power management.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/uk/blog/rayforge-1.3-bezier-curves-sketcher-addon#other-improvements" class="hash-link" aria-label="Пряме посилання на Other Improvements" title="Пряме посилання на Other Improvements" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/uk/blog/rayforge-1.3-bezier-curves-sketcher-addon#other-improvements" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <ul>
 <li class="">All icons normalized to 32x32 viewbox for consistent appearance</li>
 <li class="">AI workpiece generator now creates sketches when the geometry can be mapped</li>
 <li class="">Updated translations</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/uk/blog/rayforge-1.3-bezier-curves-sketcher-addon#bug-fixes" class="hash-link" aria-label="Пряме посилання на Bug Fixes" title="Пряме посилання на Bug Fixes" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/uk/blog/rayforge-1.3-bezier-curves-sketcher-addon#bug-fixes" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>This release fixes many issues:</p>
 <ul>
 <li class="">Fixed fillet and chamfer tools not working correctly</li>
@@ -275,12 +275,12 @@ on materials that need precise power management.</p>
 <li class="">Fixed issues when disabling and re-enabling add-ons at runtime</li>
 </ul>
 <p>See the CHANGELOG on GitHub for the complete list.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-13">Download Rayforge 1.3<a href="https://rayforge.org/uk/blog/rayforge-1.3-bezier-curves-sketcher-addon#download-rayforge-13" class="hash-link" aria-label="Пряме посилання на Download Rayforge 1.3" title="Пряме посилання на Download Rayforge 1.3" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-13">Download Rayforge 1.3<a href="https://rayforge.org/uk/blog/rayforge-1.3-bezier-curves-sketcher-addon#download-rayforge-13" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <ul>
 <li class=""><a class="" href="https://rayforge.org/uk/docs/getting-started/installation">GitHub Releases</a></li>
 <li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/uk/blog/rayforge-1.3-bezier-curves-sketcher-addon#join-the-community" class="hash-link" aria-label="Пряме посилання на Join the Community" title="Пряме посилання на Join the Community" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/uk/blog/rayforge-1.3-bezier-curves-sketcher-addon#join-the-community" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <ul>
 <li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
 <li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
@@ -304,33 +304,33 @@ on materials that need precise power management.</p>
         <content type="html"><![CDATA[<p>Rayforge 1.2 brings an AI workpiece generator, significant camera
 enhancements, and a completely revamped add-on system with core
 functionality now available as optional modules.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ai-workpiece-generator-add-on">AI Workpiece Generator Add-on<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#ai-workpiece-generator-add-on" class="hash-link" aria-label="Пряме посилання на AI Workpiece Generator Add-on" title="Пряме посилання на AI Workpiece Generator Add-on" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ai-workpiece-generator-add-on">AI Workpiece Generator Add-on<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#ai-workpiece-generator-add-on" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>A new experimental add-on allows generating workpieces from text prompts.
 This is great for quickly creating simple designs or getting inspiration
 for new projects.</p>
 <p>This is a first step, and we're excited about the possibilities this
 opens up for the future!</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="camera-enhancements">Camera Enhancements<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#camera-enhancements" class="hash-link" aria-label="Пряме посилання на Camera Enhancements" title="Пряме посилання на Camera Enhancements" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="camera-enhancements">Camera Enhancements<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#camera-enhancements" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Thanks to the incredible work of <strong>MausRundung</strong>, the camera system has
 received a major overhaul:</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="image-enhancement">Image Enhancement<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#image-enhancement" class="hash-link" aria-label="Пряме посилання на Image Enhancement" title="Пряме посилання на Image Enhancement" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="image-enhancement">Image Enhancement<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#image-enhancement" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <ul>
 <li class="">Temporal noise reduction with configurable strength</li>
 <li class="">Cleaner preview images, especially in low-light conditions</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fisheye-distortion-correction">Fisheye Distortion Correction<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#fisheye-distortion-correction" class="hash-link" aria-label="Пряме посилання на Fisheye Distortion Correction" title="Пряме посилання на Fisheye Distortion Correction" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fisheye-distortion-correction">Fisheye Distortion Correction<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#fisheye-distortion-correction" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <ul>
 <li class="">Radial distortion correction (k1, k2 parameters)</li>
 <li class="">Tangential distortion correction (p1, p2 parameters)</li>
 <li class="">Perfect for wide-angle lenses</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="improved-alignment-ui">Improved Alignment UI<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#improved-alignment-ui" class="hash-link" aria-label="Пряме посилання на Improved Alignment UI" title="Пряме посилання на Improved Alignment UI" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="improved-alignment-ui">Improved Alignment UI<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#improved-alignment-ui" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <ul>
 <li class="">Zoom, pan, and keyboard navigation in the alignment dialog</li>
 <li class="">Better point dragging with visual feedback</li>
 <li class="">Image stretching and positioning controls with offsets</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="improved-add-on-system">Improved Add-on System<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#improved-add-on-system" class="hash-link" aria-label="Пряме посилання на Improved Add-on System" title="Пряме посилання на Improved Add-on System" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="improved-add-on-system">Improved Add-on System<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#improved-add-on-system" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>The add-on system has been greatly improved. The main change is that much
 of the core functionality has been moved into add-ons that are installed
 by default, but can be disabled or enabled as needed:</p>
@@ -348,7 +348,7 @@ Add-ons can now:</p>
 <p><strong>Commercial Support</strong>
 The system now supports paid and third-party add-ons, enabling developers
 to create commercial extensions for Rayforge.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="stock-improvements">Stock Improvements<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#stock-improvements" class="hash-link" aria-label="Пряме посилання на Stock Improvements" title="Пряме посилання на Stock Improvements" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="stock-improvements">Stock Improvements<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#stock-improvements" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Stock handling is now more flexible:</p>
 <ul>
 <li class=""><strong>Document-level stock</strong> - stock is no longer tied to individual layers</li>
@@ -356,7 +356,7 @@ to create commercial extensions for Rayforge.</p>
 <li class=""><strong>Non-rectangular stock</strong> - convert any workpiece to stock for irregular
 materials</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-improvements">Sketcher Improvements<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#sketcher-improvements" class="hash-link" aria-label="Пряме посилання на Sketcher Improvements" title="Пряме посилання на Sketcher Improvements" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-improvements">Sketcher Improvements<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#sketcher-improvements" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>The parametric sketcher received several quality-of-life improvements in
 this release:</p>
 <ul>
@@ -368,30 +368,30 @@ this release:</p>
 <li class=""><strong>Connected selection</strong> - Shift+Double click selects connected geometry</li>
 <li class=""><strong>Arc radius adjustment</strong> - change arc radius while adding the second endpoint</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="more-new-features">More New Features<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#more-new-features" class="hash-link" aria-label="Пряме посилання на More New Features" title="Пряме посилання на More New Features" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="crop-to-stock-post-processor">Crop to Stock Post-Processor<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#crop-to-stock-post-processor" class="hash-link" aria-label="Пряме посилання на Crop to Stock Post-Processor" title="Пряме посилання на Crop to Stock Post-Processor" translate="no">​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="more-new-features">More New Features<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#more-new-features" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="crop-to-stock-post-processor">Crop to Stock Post-Processor<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#crop-to-stock-post-processor" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>A new post-processor that automatically crops operations to your stock
 boundaries, saving time and material.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="inter-workpiece-path-optimization">Inter-Workpiece Path Optimization<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#inter-workpiece-path-optimization" class="hash-link" aria-label="Пряме посилання на Inter-Workpiece Path Optimization" title="Пряме посилання на Inter-Workpiece Path Optimization" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="inter-workpiece-path-optimization">Inter-Workpiece Path Optimization<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#inter-workpiece-path-optimization" class="hash-link" aria-label="Пряме посилання �на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>The path optimizer now also optimizes the workpiece order, reducing travel
 distance when working with multiple workpieces in a single job. Previously,
 Rayforge only optimized travel paths within individual workpieces.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="configurable-cutraster-colors">Configurable Cut/Raster Colors<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#configurable-cutraster-colors" class="hash-link" aria-label="Пряме посилання на Configurable Cut/Raster Colors" title="Пряме посилання на Configurable Cut/Raster Colors" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="configurable-cutraster-colors">Configurable Cut/Raster Colors<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#configurable-cutraster-colors" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>Each laser can now have its own cut and raster colors, making it easier
 to distinguish between different laser heads.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="quick-wcs-positioning">Quick WCS Positioning<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#quick-wcs-positioning" class="hash-link" aria-label="Пряме посилання на Quick WCS Positioning" title="Пряме посилання на Quick WCS Positioning" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="quick-wcs-positioning">Quick WCS Positioning<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#quick-wcs-positioning" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>Click anywhere on the canvas to set the work coordinate system origin.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="omtech-k40-profile">OMTech K40+ Profile<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#omtech-k40-profile" class="hash-link" aria-label="Пряме посилання на OMTech K40+ Profile" title="Пряме посилання на OMTech K40+ Profile" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="omtech-k40-profile">OMTech K40+ Profile<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#omtech-k40-profile" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>New machine profile for the popular OMTech K40+ laser cutter.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mach4-g-code-dialect">Mach4 G-code Dialect<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#mach4-g-code-dialect" class="hash-link" aria-label="Пряме посилання на Mach4 G-code Dialect" title="Пряме посилання на Mach4 G-code Dialect" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mach4-g-code-dialect">Mach4 G-code Dialect<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#mach4-g-code-dialect" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>New built-in G-code dialect for Mach4 controllers using M67 for spindle
 speed (laser power) control.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="platform-updates">Platform Updates<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#platform-updates" class="hash-link" aria-label="Пряме посилання на Platform Updates" title="Пряме посилання на Platform Updates" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="platform-updates">Platform Updates<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#platform-updates" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <ul>
 <li class="">Updated macOS support thanks to <strong>Pablo Gil</strong></li>
 <li class="">Flatpak updates thanks to <strong>fllmn</strong></li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#bug-fixes" class="hash-link" aria-label="Пряме посилання на Bug Fixes" title="Пряме посилання на Bug Fixes" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#bug-fixes" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>This release addresses many issues:</p>
 <ul>
 <li class="">Add-on not enabled immediately after installation</li>
@@ -404,7 +404,7 @@ speed (laser power) control.</p>
 <li class="">Mac and Windows builds not finding icon</li>
 </ul>
 <p>See the CHANGELOG on GitHub for the complete list.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="special-thanks">Special Thanks<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#special-thanks" class="hash-link" aria-label="Пряме посилання на Special Thanks" title="Пряме посилання на Special Thanks" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="special-thanks">Special Thanks<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#special-thanks" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>This release was made possible with the support of our Patreon supporters:</p>
 <ul>
 <li class="">2 anonymous contributors</li>
@@ -413,12 +413,12 @@ speed (laser power) control.</p>
 </ul>
 <p>And thanks to <strong>MausRundung</strong> for the camera enhancements, <strong>Pablo Gil</strong> for
 macOS updates, and <strong>fllmn</strong> for Flatpak updates!</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-12">Download Rayforge 1.2<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#download-rayforge-12" class="hash-link" aria-label="Пряме посилання на Download Rayforge 1.2" title="Пряме посилання на Download Rayforge 1.2" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-12">Download Rayforge 1.2<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#download-rayforge-12" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <ul>
 <li class=""><a href="https://github.com/barebaric/rayforge/releases" target="_blank" rel="noopener noreferrer" class="">GitHub Releases</a></li>
 <li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#join-the-community" class="hash-link" aria-label="Пряме посилання на Join the Community" title="Пряме посилання на Join the Community" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#join-the-community" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <ul>
 <li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
 <li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
@@ -442,12 +442,12 @@ macOS updates, and <strong>fllmn</strong> for Flatpak updates!</p>
         <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 1.1" src="https://rayforge.org/uk/assets/images/rayforge-1.1-7e0d0638da78baa86b6281fa7f32df3b.png" width="1344" height="768" class="img_ev3q"></p>
 <p>Rayforge 1.1 brings a powerful new G-code console, unified raster operations,
 and a completely rebuilt data pipeline for improved performance and stability.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="macos-support">MacOS Support<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#macos-support" class="hash-link" aria-label="Пряме посилання на MacOS Support" title="Пряме посилання на MacOS Support" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="macos-support">MacOS Support<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#macos-support" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Thanks to the incredible work of GitHub user <strong>pgilfernandez</strong>, Rayforge
 now officially supports macOS! Both Intel and Apple Silicon Macs are
 supported. This has been a long-requested feature, and we're thrilled to
 welcome Mac users to the Rayforge community.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-big-story-complete-pipeline-rewrite">The Big Story: Complete Pipeline Rewrite<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#the-big-story-complete-pipeline-rewrite" class="hash-link" aria-label="Пряме посилання на The Big Story: Complete Pipeline Rewrite" title="Пряме посилання на The Big Story: Complete Pipeline Rewrite" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-big-story-complete-pipeline-rewrite">The Big Story: Complete Pipeline Rewrite<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#the-big-story-complete-pipeline-rewrite" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>The headline feature of this release is a complete rewrite of the data
 pipeline backend. The new architecture is based on a Directed Acyclic Graph
 (DAG), which brings significant improvements:</p>
@@ -459,7 +459,7 @@ pipeline backend. The new architecture is based on a Directed Acyclic Graph
 </ul>
 <p>This foundational upgrade makes Rayforge more robust and prepares the
 codebase for future features.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="unified-raster-operations">Unified Raster Operations<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#unified-raster-operations" class="hash-link" aria-label="Пряме посилання на Unified Raster Operations" title="Пряме посилання на Unified Raster Operations" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="unified-raster-operations">Unified Raster Operations<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#unified-raster-operations" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>The old "raster", "depth", and "dither" operations have been merged into a
 single, unified raster operation. This simplifies the workflow while giving
 you more control:</p>
@@ -470,32 +470,32 @@ you more control:</p>
 <li class=""><strong>Histogram</strong> in the raster engraver for visual threshold setting</li>
 <li class=""><strong>Symbolic visualization</strong> of raster direction in the rasterizer</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="g-code-console">G-code Console<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#g-code-console" class="hash-link" aria-label="Пряме посилання на G-code Console" title="Пряме посилання на G-code Console" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="g-code-console">G-code Console<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#g-code-console" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>The log view has been replaced with a fully-featured G-code terminal. You can
 now send commands directly to your machine, view responses in real-time, and
 interact with your laser cutter more directly than ever before.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="more-new-features">More New Features<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#more-new-features" class="hash-link" aria-label="Пряме посилання на More New Features" title="Пряме посилання на More New Features" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="export-support">Export Support<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#export-support" class="hash-link" aria-label="Пряме посилання на Export Support" title="Пряме посилання на Export Support" translate="no">​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="more-new-features">More New Features<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#more-new-features" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="export-support">Export Support<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#export-support" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>You can now export your documents or selected objects to SVG and DXF formats.
 This is great for sharing designs or using them in other software.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-improvements">Sketcher Improvements<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#sketcher-improvements" class="hash-link" aria-label="Пряме посилання на Sketcher Improvements" title="Пряме посилання на Sketcher Improvements" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-improvements">Sketcher Improvements<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#sketcher-improvements" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <ul>
 <li class=""><strong>Angle constraints</strong> are now available in the parametric sketcher</li>
 <li class=""><strong>Conflicting constraints</strong> are highlighted in red for easier debugging</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="machine-configuration">Machine Configuration<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#machine-configuration" class="hash-link" aria-label="Пряме посилання на Machine Configuration" title="Пряме посилання на Machine Configuration" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="machine-configuration">Machine Configuration<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#machine-configuration" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <ul>
 <li class="">Axis extents, work surface, and soft limits can now be configured per machine</li>
 <li class="">Built-in G-code dialect supporting dynamic power mode</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-additions">Other Additions<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#other-additions" class="hash-link" aria-label="Пряме посилання на Other Additions" title="Пряме посилання на Other Additions" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-additions">Other Additions<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#other-additions" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <ul>
 <li class="">Increased maximum laser spot size to 10 mm</li>
 <li class=""><code>RAYFORGE_MAX_WORKERS</code> environment variable to limit processes</li>
 <li class="">macOS packaging scripts and resources for better platform support</li>
 <li class=""><code>--uiscript</code> CLI argument for executing scripts after the UI is up</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#bug-fixes" class="hash-link" aria-label="Пряме посилання на Bug Fixes" title="Пряме посилання на Bug Fixes" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#bug-fixes" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>This release addresses many issues:</p>
 <ul>
 <li class="">Multiple memory leaks in the data pipeline</li>
@@ -510,19 +510,19 @@ keyboard shortcuts</li>
 <li class="">Blurry view overlay on startup</li>
 <li class="">Unresponsive serial ports now handled gracefully</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="special-thanks">Special Thanks<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#special-thanks" class="hash-link" aria-label="Пряме посилання на Special Thanks" title="Пряме посилання на Special Thanks" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="special-thanks">Special Thanks<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#special-thanks" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>This release was made possible with the support of our Patreon supporters:</p>
 <ul>
 <li class="">2 anonymous contributors</li>
 <li class="">Amsel</li>
 </ul>
 <p>Thank you for supporting Rayforge development!</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-11">Download Rayforge 1.1<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#download-rayforge-11" class="hash-link" aria-label="Пряме посилання на Download Rayforge 1.1" title="Пряме посилання на Download Rayforge 1.1" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-11">Download Rayforge 1.1<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#download-rayforge-11" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <ul>
 <li class=""><a href="https://github.com/barebaric/rayforge/releases" target="_blank" rel="noopener noreferrer" class="">GitHub Releases</a></li>
 <li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#join-the-community" class="hash-link" aria-label="Пряме посилання на Join the Community" title="Пряме посилання на Join the Community" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/uk/blog/rayforge-1.1-pipeline-rewrite#join-the-community" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <ul>
 <li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
 <li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
@@ -548,7 +548,7 @@ keyboard shortcuts</li>
 1.0 точно в день першого народження проекту! Те, що почалося як один
 коміт 1 лютого 2025 року, виросло в повнофункціональну платформу лазерного
 різання та гравірування.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="шлях-дотепер">Шлях дотепер<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D1%88%D0%BB%D1%8F%D1%85-%D0%B4%D0%BE%D1%82%D0%B5%D0%BF%D0%B5%D1%80" class="hash-link" aria-label="Пряме посилання на Шлях дотепер" title="Пряме посилання на Шлях дотепер" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="шлях-дотепер">Шлях дотепер<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D1%88%D0%BB%D1%8F%D1%85-%D0%B4%D0%BE%D1%82%D0%B5%D0%BF%D0%B5%D1%80" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Протягом минулого року Rayforge еволюціонував з базового інструменту керування лазером
 в комплексну платформу дизайну та виробництва. Ми побудували
 все з нуля: параметричну 2D CAD систему, 3D попередній перегляд G-code,
@@ -557,27 +557,27 @@ keyboard shortcuts</li>
 <p>Цей випуск представляє кульмінацію цього бачення - стабільний,
 готовий до виробництва інструмент, який може впоратися з реальними робочими процесами лазерного різання та
 гравірування.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="що-нового-в-10">Що нового в 1.0<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D1%89%D0%BE-%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D0%B2-10" class="hash-link" aria-label="Пряме посилання на Що нового в 1.0" title="Пряме посилання на Що нового в 1.0" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="збереженнязавантаження-проектів">Збереження/завантаження проектів<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D0%B7%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F%D0%B7%D0%B0%D0%B2%D0%B0%D0%BD%D1%82%D0%B0%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%96%D0%B2" class="hash-link" aria-label="Пряме посилання на Збереження/завантаження проектів" title="Пряме посилання на Збереження/завантаження проектів" translate="no">​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="що-нового-в-10">Що нового в 1.0<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D1%89%D0%BE-%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D0%B2-10" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="збереженнязавантаження-проектів">Збереження/завантаження проектів<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D0%B7%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F%D0%B7%D0%B0%D0%B2%D0%B0%D0%BD%D1%82%D0%B0%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%96%D0%B2" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посила�ння на заголовок" translate="no">​</a></h3>
 <p>Найбільш запитувана функція нарешті тут. Тепер ви можете зберігати ваші
 повні робочі процеси і відновлювати їх пізніше. Розширення файлів <code>.ryp</code> (проект) та
 <code>.rfs</code> (ескіз) зареєстровані на рівні системи, тому ви можете
 двічі клацнути на ваших проектах щоб відкрити їх безпосередньо. Меню нещодавніх файлів
 забезпечує швидкий доступ до вашої роботи.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметричний-скетчер-з-підтримкою-тексту">Параметричний скетчер з підтримкою тексту<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%BD%D0%B8%D0%B9-%D1%81%D0%BA%D0%B5%D1%82%D1%87%D0%B5%D1%80-%D0%B7-%D0%BF%D1%96%D0%B4%D1%82%D1%80%D0%B8%D0%BC%D0%BA%D0%BE%D1%8E-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D1%83" class="hash-link" aria-label="Пряме посилання на Параметричний скетчер з підтримкою тексту" title="Пряме посилання на Параметричний скетчер з підтримкою тексту" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметричний-скетчер-з-підтримкою-тексту">Параметричний скетчер з підтримкою тексту<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%BD%D0%B8%D0%B9-%D1%81%D0%BA%D0%B5%D1%82%D1%87%D0%B5%D1%80-%D0%B7-%D0%BF%D1%96%D0%B4%D1%82%D1%80%D0%B8%D0%BC%D0%BA%D0%BE%D1%8E-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D1%83" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>Скетчер тепер підтримує текст з повною інтеграцією обмежень. Додавайте
 текст до ваших скетчів, застосовуйте обмеження співвідношення сторін та керуйте
 розміщенням та розміром параметрично. Це відкриває зовсім новий світ
 дизайнерських можливостей для лазерно гравіруваних вивісок, етикеток та декоративних
 елементів.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="уніфікована-нижня-панель">Уніфікована нижня панель<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D1%83%D0%BD%D1%96%D1%84%D1%96%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD%D0%B0-%D0%BD%D0%B8%D0%B6%D0%BD%D1%8F-%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C" class="hash-link" aria-label="Пряме посилання на Уніфікована нижня панель" title="Пряме посилання на Уніфікована нижня панель" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="уніфікована-нижня-панель">Уніфікована нижня панель<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D1%83%D0%BD%D1%96%D1%84%D1%96%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD%D0%B0-%D0%BD%D0%B8%D0%B6%D0%BD%D1%8F-%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C" class="hash-link" aria-label="Пряме посила�ння на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>Діалог jog та перегляд логів були об'єднані в єдину, уніфіковану
 нижню панель. Це об'єднання забезпечує чистіше робоче простір, зберігаючи
 суттєві інструменти керування машиною та моніторингу легкодоступними.
 Панель має вкладковий доступ до елементів керування jog та виводу логів,
 полегшуючи перемикання між операціями без втрати
 екранного простору.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="інші-покращення">Інші покращення<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D1%96%D0%BD%D1%88%D1%96-%D0%BF%D0%BE%D0%BA%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%BD%D1%8F" class="hash-link" aria-label="Пряме посилання на Інші покращення" title="Пряме посилання на Інші покращення" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="інші-покращення">Інші покращення<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D1%96%D0%BD%D1%88%D1%96-%D0%BF%D0%BE%D0%BA%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%BD%D1%8F" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <ul>
 <li class=""><strong>Нижня панель</strong>: Діалог jog та перегляд логів тепер об'єднані в
 уніфіковану нижню панель</li>
@@ -588,7 +588,7 @@ keyboard shortcuts</li>
 <li class=""><strong>Виправлення помилок</strong>: Імпорт багатошарових DXF, помилки вирівнювання, проблеми центрування
 та більше</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="основні-функції">Основні функції<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%96-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D1%96%D1%97" class="hash-link" aria-label="Пряме посилання на Основні функції" title="Пряме посилання на Основні функції" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="основні-функції">Основні функції<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%96-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D1%96%D1%97" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Rayforge 1.0 включає понад 60 функцій:</p>
 <p><strong>Інструменти дизайну</strong></p>
 <ul>
@@ -626,7 +626,7 @@ keyboard shortcuts</li>
 <li class="">Темна та світла теми</li>
 <li class="">Підтримка кількох мов</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="погляд-назад">Погляд назад<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D0%BF%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4-%D0%BD%D0%B0%D0%B7%D0%B0%D0%B4" class="hash-link" aria-label="Пряме посилання на Погляд назад" title="Пряме посилання на Погляд назад" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="погляд-назад">Погляд назад<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D0%BF%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4-%D0%BD%D0%B0%D0%B7%D0%B0%D0%B4" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Перший коміт був зроблений 1 лютого 2025 року о 19:37:27. Це був
 простий "початковий імпорт" з базовою підтримкою рендерингу SVG. З того часу
 ми:</p>
@@ -637,7 +637,7 @@ keyboard shortcuts</li>
 <li class="">Побудували спільноту користувачів та учасників</li>
 <li class="">Створили інсталятори для Windows, Linux (deb, snap, flatpak) та macOS</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="що-далі">Що далі?<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D1%89%D0%BE-%D0%B4%D0%B0%D0%BB%D1%96" class="hash-link" aria-label="Пряме посилання на Що далі?" title="Пряме посилання на Що далі?" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="що-далі">Що далі?<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D1%89%D0%BE-%D0%B4%D0%B0%D0%BB%D1%96" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Версія 1.0 - це етап, а не пункт призначення. Дорожня карта попереду
 включає:</p>
 <ul>
@@ -647,7 +647,7 @@ keyboard shortcuts</li>
 <li class="">Більше профілів машин та діалектів</li>
 <li class="">Екосистему пакетів, керовану спільнотою</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="завантажити-rayforge-10">Завантажити Rayforge 1.0<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D0%B7%D0%B0%D0%B2%D0%B0%D0%BD%D1%82%D0%B0%D0%B6%D0%B8%D1%82%D0%B8-rayforge-10" class="hash-link" aria-label="Пряме посилання на Завантажити Rayforge 1.0" title="Пряме посилання на Завантажити Rayforge 1.0" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="завантажити-rayforge-10">Завантажити Rayforge 1.0<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D0%B7%D0%B0%D0%B2%D0%B0%D0%BD%D1%82%D0%B0%D0%B6%D0%B8%D1%82%D0%B8-rayforge-10" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Отримайте останню версію з нашого веб-сайту: <a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">https://rayforge.org/</a></p>
 <p>Інсталятори доступні для:</p>
 <ul>
@@ -655,7 +655,7 @@ keyboard shortcuts</li>
 <li class="">Linux (deb, snap, flatpak)</li>
 <li class="">macOS (dmg)</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="приєднуйтесь-до-спільноти">Приєднуйтесь до спільноти<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D0%BF%D1%80%D0%B8%D1%94%D0%B4%D0%BD%D1%83%D0%B9%D1%82%D0%B5%D1%81%D1%8C-%D0%B4%D0%BE-%D1%81%D0%BF%D1%96%D0%BB%D1%8C%D0%BD%D0%BE%D1%82%D0%B8" class="hash-link" aria-label="Пряме посилання на Приєднуйтесь до спільноти" title="Пряме посилання на Приєднуйтесь до спільноти" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="приєднуйтесь-до-спільноти">Приєднуйтесь до спільноти<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D0%BF%D1%80%D0%B8%D1%94%D0%B4%D0%BD%D1%83%D0%B9%D1%82%D0%B5%D1%81%D1%8C-%D0%B4%D0%BE-%D1%81%D0%BF%D1%96%D0%BB%D1%8C%D0%BD%D0%BE%D1%82%D0%B8" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <ul>
 <li class=""><strong>GitHub</strong>: <a href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" class="">https://github.com/barebaric/rayforge</a></li>
 <li class=""><strong>Discord</strong>: <a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">https://discord.gg/sTHNdTtpQJ</a></li>
@@ -684,7 +684,7 @@ keyboard shortcuts</li>
 <p>Отримання результатів лазерного гравірування професійної якості вимагає більше, ніж
 просто good hardware—ваші налаштування програмного забезпечення та робочий процес теж мають значення. Ось
 п'ять порад, які допоможуть вам отримати максимум з Rayforge.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-використовуйте-overscan-для-плавнішого-растрового-гравірування">1. Використовуйте Overscan для плавнішого растрового гравірування<a href="https://rayforge.org/uk/blog/5-tips-better-engraving#1-%D0%B2%D0%B8%D0%BA%D0%BE%D1%80%D0%B8%D1%81%D1%82%D0%BE%D0%B2%D1%83%D0%B9%D1%82%D0%B5-overscan-%D0%B4%D0%BB%D1%8F-%D0%BF%D0%BB%D0%B0%D0%B2%D0%BD%D1%96%D1%88%D0%BE%D0%B3%D0%BE-%D1%80%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D0%B3%D1%80%D0%B0%D0%B2%D1%96%D1%80%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F" class="hash-link" aria-label="Пряме посилання на 1. Використовуйте Overscan для плавнішого растрового гравірування" title="Пряме посилання на 1. Використовуйте Overscan для плавнішого растрового гравірування" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-використовуйте-overscan-для-плавнішого-растрового-гравірування">1. Використовуйте Overscan для плавнішого растрового гравірування<a href="https://rayforge.org/uk/blog/5-tips-better-engraving#1-%D0%B2%D0%B8%D0%BA%D0%BE%D1%80%D0%B8%D1%81%D1%82%D0%BE%D0%B2%D1%83%D0%B9%D1%82%D0%B5-overscan-%D0%B4%D0%BB%D1%8F-%D0%BF%D0%BB%D0%B0%D0%B2%D0%BD%D1%96%D1%88%D0%BE%D0%B3%D0%BE-%D1%80%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D0%B3%D1%80%D0%B0%D0%B2%D1%96%D1%80%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>При виконанні растрового гравірування одна поширена проблема - видимі лінії або
 невідповідності на краях, де лазер змінює напрямок. Це
 відбувається тому, що лазерна головка повинна сповільнюватися та прискорюватися, що
@@ -701,7 +701,7 @@ keyboard shortcuts</li>
 <li class="">Увімкніть "Overscan" і встановіть відстань (зазвичай 3-5мм добре працює)</li>
 </ol>
 <p>Дізнайтеся більше в нашому <a class="" href="https://rayforge.org/uk/docs/features/overscan">посібнику з Overscan</a>.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-оптимізуйте-час-переміщення-з-впорядкуванням-шляхів">2. Оптимізуйте час переміщення з впорядкуванням шляхів<a href="https://rayforge.org/uk/blog/5-tips-better-engraving#2-%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D1%96%D0%B7%D1%83%D0%B9%D1%82%D0%B5-%D1%87%D0%B0%D1%81-%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D1%96%D1%89%D0%B5%D0%BD%D0%BD%D1%8F-%D0%B7-%D0%B2%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BA%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F%D0%BC-%D1%88%D0%BB%D1%8F%D1%85%D1%96%D0%B2" class="hash-link" aria-label="Пряме посилання на 2. Оптимізуйте час переміщення з впорядкуванням шляхів" title="Пряме посилання на 2. Оптимізуйте час переміщення з впорядкуванням шляхів" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-оптимізуйте-час-переміщення-з-впорядкуванням-шляхів">2. Оптимізуйте час переміщення з впорядкуванням шляхів<a href="https://rayforge.org/uk/blog/5-tips-better-engraving#2-%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D1%96%D0%B7%D1%83%D0%B9%D1%82%D0%B5-%D1%87%D0%B0%D1%81-%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D1%96%D1%89%D0%B5%D0%BD%D0%BD%D1%8F-%D0%B7-%D0%B2%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BA%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F%D0%BC-%D1%88%D0%BB%D1%8F%D1%85%D1%96%D0%B2" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Для контурних операцій з багатьма окремими шляхами порядок, в якому
 лазер відвідує кожну форму, може значно вплинути на загальний час завдання.</p>
 <p><strong>Рішення</strong>: Використовуйте вбудовану в Rayforge <strong>оптимізацію часу переміщення</strong>.</p>
@@ -710,7 +710,7 @@ keyboard shortcuts</li>
 з кількома літерами.</p>
 <p>Оптимізація шляхів зазвичай увімкнена за замовчуванням, але ви можете
 перевірити та налаштувати її в налаштуваннях операції Contour.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-додайте-утримуючі-вкладки-щоб-запобігти-переміщенню-деталі">3. Додайте утримуючі вкладки щоб запобігти переміщенню деталі<a href="https://rayforge.org/uk/blog/5-tips-better-engraving#3-%D0%B4%D0%BE%D0%B4%D0%B0%D0%B9%D1%82%D0%B5-%D1%83%D1%82%D1%80%D0%B8%D0%BC%D1%83%D1%8E%D1%87%D1%96-%D0%B2%D0%BA%D0%BB%D0%B0%D0%B4%D0%BA%D0%B8-%D1%89%D0%BE%D0%B1-%D0%B7%D0%B0%D0%BF%D0%BE%D0%B1%D1%96%D0%B3%D1%82%D0%B8-%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D1%96%D1%89%D0%B5%D0%BD%D0%BD%D1%8E-%D0%B4%D0%B5%D1%82%D0%B0%D0%BB%D1%96" class="hash-link" aria-label="Пряме посилання на 3. Додайте утримуючі вкладки щоб запобігти переміщенню деталі" title="Пряме посилання на 3. Додайте утримуючі вкладки щоб запобігти переміщенню деталі" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-додайте-утримуючі-вкладки-щоб-запобігти-переміщенню-деталі">3. Додайте утримуючі вкладки щоб запобігти переміщенню деталі<a href="https://rayforge.org/uk/blog/5-tips-better-engraving#3-%D0%B4%D0%BE%D0%B4%D0%B0%D0%B9%D1%82%D0%B5-%D1%83%D1%82%D1%80%D0%B8%D0%BC%D1%83%D1%8E%D1%87%D1%96-%D0%B2%D0%BA%D0%BB%D0%B0%D0%B4%D0%BA%D0%B8-%D1%89%D0%BE%D0%B1-%D0%B7%D0%B0%D0%BF%D0%BE%D0%B1%D1%96%D0%B3%D1%82%D0%B8-%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D1%96%D1%89%D0%B5%D0%BD%D0%BD%D1%8E-%D0%B4%D0%B5%D1%82%D0%B0%D0%BB%D1%96" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Ніщо не є більш розчаровуючим, ніж майже завершене завдання різання, зіпсоване
 тому що деталь змістилася або впала через стіл машини в останній
 момент.</p>
@@ -726,7 +726,7 @@ keyboard shortcuts</li>
 </ul>
 <p>Перегляньте <a class="" href="https://rayforge.org/uk/docs/features/holding-tabs">документацію по утримуючих вкладках</a>
 для повного посібника.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-попередньо-перегляньте-ваше-завдання-в-3d-перед-запуском">4. Попередньо перегляньте ваше завдання в 3D перед запуском<a href="https://rayforge.org/uk/blog/5-tips-better-engraving#4-%D0%BF%D0%BE%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%BD%D1%8C%D0%BE-%D0%BF%D0%B5%D1%80%D0%B5%D0%B3%D0%BB%D1%8F%D0%BD%D1%8C%D1%82%D0%B5-%D0%B2%D0%B0%D1%88%D0%B5-%D0%B7%D0%B0%D0%B2%D0%B4%D0%B0%D0%BD%D0%BD%D1%8F-%D0%B2-3d-%D0%BF%D0%B5%D1%80%D0%B5%D0%B4-%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA%D0%BE%D0%BC" class="hash-link" aria-label="Пряме посилання на 4. Попередньо перегляньте ваше завдання в 3D перед запуском" title="Пряме посилання на 4. Попередньо перегляньте ваше завдання в 3D перед запуском" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-попередньо-перегляньте-ваше-завдання-в-3d-перед-запуском">4. Попередньо перегляньте ваше завдання в 3D перед запуском<a href="https://rayforge.org/uk/blog/5-tips-better-engraving#4-%D0%BF%D0%BE%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%BD%D1%8C%D0%BE-%D0%BF%D0%B5%D1%80%D0%B5%D0%B3%D0%BB%D1%8F%D0%BD%D1%8C%D1%82%D0%B5-%D0%B2%D0%B0%D1%88%D0%B5-%D0%B7%D0%B0%D0%B2%D0%B4%D0%B0%D0%BD%D0%BD%D1%8F-%D0%B2-3d-%D0%BF%D0%B5%D1%80%D0%B5%D0%B4-%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA%D0%BE%D0%BC" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Одна з найцінніших функцій Rayforge - це 3D попередній перегляд G-code. Це
 спокуше пропустити цей крок і надіслати завдання напряму на машину, але
 виділення моменту на попередній перегляд може заощадити вам час і матеріали.</p>
@@ -741,7 +741,7 @@ keyboard shortcuts</li>
 панелі інструментів після генерації вашого G-code.</p>
 <p>Дізнайтеся більше про 3D попередній перегляд в нашій
 <a class="" href="https://rayforge.org/uk/docs/ui/3d-preview">документації UI</a>.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-використовуйте-власні-хуки-g-code-для-узгоджених-робочих-процесів">5. Використовуйте власні хуки G-code для узгоджених робочих процесів<a href="https://rayforge.org/uk/blog/5-tips-better-engraving#5-%D0%B2%D0%B8%D0%BA%D0%BE%D1%80%D0%B8%D1%81%D1%82%D0%BE%D0%B2%D1%83%D0%B9%D1%82%D0%B5-%D0%B2%D0%BB%D0%B0%D1%81%D0%BD%D1%96-%D1%85%D1%83%D0%BA%D0%B8-g-code-%D0%B4%D0%BB%D1%8F-%D1%83%D0%B7%D0%B3%D0%BE%D0%B4%D0%B6%D0%B5%D0%BD%D0%B8%D1%85-%D1%80%D0%BE%D0%B1%D0%BE%D1%87%D0%B8%D1%85-%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%96%D0%B2" class="hash-link" aria-label="Пряме посилання на 5. Використовуйте власні хуки G-code для узгоджених робочих процесів" title="Пряме посилання на 5. Використовуйте власні хуки G-code для узгоджених робочих процесів" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-використовуйте-власні-хуки-g-code-для-узгоджених-робочих-процесів">5. Використовуйте власні хуки G-code для узгоджених робочих процесів<a href="https://rayforge.org/uk/blog/5-tips-better-engraving#5-%D0%B2%D0%B8%D0%BA%D0%BE%D1%80%D0%B8%D1%81%D1%82%D0%BE%D0%B2%D1%83%D0%B9%D1%82%D0%B5-%D0%B2%D0%BB%D0%B0%D1%81%D0%BD%D1%96-%D1%85%D1%83%D0%BA%D0%B8-g-code-%D0%B4%D0%BB%D1%8F-%D1%83%D0%B7%D0%B3%D0%BE%D0%B4%D0%B6%D0%B5%D0%BD%D0%B8%D1%85-%D1%80%D0%BE%D0%B1%D0%BE%D1%87%D0%B8%D1%85-%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%96%D0%B2" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Якщо ви виявите, що запускаєте ті самі команди G-code перед або після
 кожного завдання—як homing, увімкнення повітряного помічника або запуск процедури фокусу
 —ви можете автоматизувати це з <strong>G-code макросами та хуками</strong>.</p>
@@ -761,7 +761,7 @@ keyboard shortcuts</li>
 <p>Див. наш <a class="" href="https://rayforge.org/uk/docs/machine/hooks-macros">посібник з G-code макросів та хуків</a> для
 детальних прикладів та довідника змінних.</p>
 <hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="бонусна-порада-тестуйте-на-відходах-спочатку">Бонусна порада: Тестуйте на відходах спочатку<a href="https://rayforge.org/uk/blog/5-tips-better-engraving#%D0%B1%D0%BE%D0%BD%D1%83%D1%81%D0%BD%D0%B0-%D0%BF%D0%BE%D1%80%D0%B0%D0%B4%D0%B0-%D1%82%D0%B5%D1%81%D1%82%D1%83%D0%B9%D1%82%D0%B5-%D0%BD%D0%B0-%D0%B2%D1%96%D0%B4%D1%85%D0%BE%D0%B4%D0%B0%D1%85-%D1%81%D0%BF%D0%BE%D1%87%D0%B0%D1%82%D0%BA%D1%83" class="hash-link" aria-label="Пряме посилання на Бонусна порада: Тестуйте на відходах спочатку" title="Пряме посилання на Бонусна порада: Тестуйте на відходах спочатку" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="бонусна-порада-тестуйте-на-відходах-спочатку">Бонусна порада: Тестуйте на відходах спочатку<a href="https://rayforge.org/uk/blog/5-tips-better-engraving#%D0%B1%D0%BE%D0%BD%D1%83%D1%81%D0%BD%D0%B0-%D0%BF%D0%BE%D1%80%D0%B0%D0%B4%D0%B0-%D1%82%D0%B5%D1%81%D1%82%D1%83%D0%B9%D1%82%D0%B5-%D0%BD%D0%B0-%D0%B2%D1%96%D0%B4%D1%85%D0%BE%D0%B4%D0%B0%D1%85-%D1%81%D0%BF%D0%BE%D1%87%D0%B0%D1%82%D0%BA%D1%83" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Хоча це не специфічне для Rayforge, варто повторити: завжди тестуйте
 нові налаштування, операції або матеріали на відходах спочатку. Використовуйте профілі матеріалів
 Rayforge та пресети операцій щоб зберегти ваші перевірені налаштування для
@@ -788,7 +788,7 @@ Rayforge та пресети операцій щоб зберегти ваші �
 різні лазери різним операціям в межах одного завдання. Це відкриває
 хвилюючі можливості для налаштувань з кількома інструментами та спеціалізованих
 робочих процесів.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="що-таке-підтримка-кількох-лазерів">Що таке підтримка кількох лазерів?<a href="https://rayforge.org/uk/blog/multi-laser-support#%D1%89%D0%BE-%D1%82%D0%B0%D0%BA%D0%B5-%D0%BF%D1%96%D0%B4%D1%82%D1%80%D0%B8%D0%BC%D0%BA%D0%B0-%D0%BA%D1%96%D0%BB%D1%8C%D0%BA%D0%BE%D1%85-%D0%BB%D0%B0%D0%B7%D0%B5%D1%80%D1%96%D0%B2" class="hash-link" aria-label="Пряме посилання на Що таке підтримка кількох лазерів?" title="Пряме посилання на Що таке підтримка кількох лазерів?" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="що-таке-підтримка-кількох-лазерів">Що таке підтримка кількох лазерів?<a href="https://rayforge.org/uk/blog/multi-laser-support#%D1%89%D0%BE-%D1%82%D0%B0%D0%BA%D0%B5-%D0%BF%D1%96%D0%B4%D1%82%D1%80%D0%B8%D0%BC%D0%BA%D0%B0-%D0%BA%D1%96%D0%BB%D1%8C%D0%BA%D0%BE%D1%85-%D0%BB%D0%B0%D0%B7%D0%B5%D1%80%D1%96%D0%B2" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Якщо ваша машина оснащена кількома лазерними модулями—скажімо, діодний
 лазер для гравірування та CO2 лазер для різання, або діодні лазери різної потужності,
 оптимізовані для різних матеріалів—Rayforge дозволяє повністю
@@ -800,8 +800,8 @@ Rayforge та пресети операцій щоб зберегти ваші �
 <li class=""><strong>Оптимізувати для матеріалу та завдання</strong> використовуючи правильний інструмент для кожної
 операції</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="випадки-використання">Випадки використання<a href="https://rayforge.org/uk/blog/multi-laser-support#%D0%B2%D0%B8%D0%BF%D0%B0%D0%B4%D0%BA%D0%B8-%D0%B2%D0%B8%D0%BA%D0%BE%D1%80%D0%B8%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%8F" class="hash-link" aria-label="Пряме посилання на Випадки використання" title="Пряме посилання на Випадки використання" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="гібридне-гравірування-та-різання">Гібридне гравірування та різання<a href="https://rayforge.org/uk/blog/multi-laser-support#%D0%B3%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B5-%D0%B3%D1%80%D0%B0%D0%B2%D1%96%D1%80%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F-%D1%82%D0%B0-%D1%80%D1%96%D0%B7%D0%B0%D0%BD%D0%BD%D1%8F" class="hash-link" aria-label="Пряме посилання на Гібридне гравірування та різання" title="Пряме посилання на Гібридне гравірування та різання" translate="no">​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="випадки-використання">Випадки використання<a href="https://rayforge.org/uk/blog/multi-laser-support#%D0%B2%D0%B8%D0%BF%D0%B0%D0%B4%D0%BA%D0%B8-%D0%B2%D0%B8%D0%BA%D0%BE%D1%80%D0%B8%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%8F" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="гібридне-гравірування-та-різання">Гібридне гравірування та різання<a href="https://rayforge.org/uk/blog/multi-laser-support#%D0%B3%D1%96%D0%B1%D1%80%D0%B8%D0%B4%D0%BD%D0%B5-%D0%B3%D1%80%D0%B0%D0%B2%D1%96%D1%80%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F-%D1%82%D0%B0-%D1%80%D1%96%D0%B7%D0%B0%D0%BD%D0%BD%D1%8F" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>Уявіть, що ви працюєте над проектом дерев'яної вивіски:</p>
 <ol>
 <li class=""><strong>Операція 1</strong>: Використовуйте низькопотужний діодний лазер для гравірування дрібного тексту
@@ -811,7 +811,7 @@ Rayforge та пресети операцій щоб зберегти ваші �
 </ol>
 <p>З Rayforge ви просто призначаєте кожну операцію відповідному лазеру
 у вашому профілі машини, і програмне забезпечення обробляє решту.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="оптимізація-для-конкретних-матеріалів">Оптимізація для конкретних матеріалів<a href="https://rayforge.org/uk/blog/multi-laser-support#%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D1%96%D0%B7%D0%B0%D1%86%D1%96%D1%8F-%D0%B4%D0%BB%D1%8F-%D0%BA%D0%BE%D0%BD%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D0%B8%D1%85-%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D1%96%D0%B0%D0%BB%D1%96%D0%B2" class="hash-link" aria-label="Пряме посилання на Оптимізація для конкретних матеріалів" title="Пряме посилання на Оптимізація для конкретних матеріалів" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="оптимізація-для-конкретних-матеріалів">Оптимізація для конкретних матеріалів<a href="https://rayforge.org/uk/blog/multi-laser-support#%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D1%96%D0%B7%D0%B0%D1%86%D1%96%D1%8F-%D0%B4%D0%BB%D1%8F-%D0%BA%D0%BE%D0%BD%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D0%B8%D1%85-%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D1%96%D0%B0%D0%BB%D1%96%D0%B2" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>Різні типи лазерів відмінно працюють з різними матеріалами:</p>
 <ul>
 <li class=""><strong>Діодні лазері</strong>: Чудові для гравірування по дереву, шкіри та деяких пластиків</li>
@@ -822,8 +822,8 @@ Rayforge та пресети операцій щоб зберегти ваші �
 <p>Якщо у вас є кілька типів лазерів на гантрі-системі, підтримка
 кількох лазерів Rayforge дозволяє використовувати оптимальний інструмент для кожної частини вашого
 проекту.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="як-це-налаштувати">Як це налаштувати<a href="https://rayforge.org/uk/blog/multi-laser-support#%D1%8F%D0%BA-%D1%86%D0%B5-%D0%BD%D0%B0%D0%BB%D0%B0%D1%88%D1%82%D1%83%D0%B2%D0%B0%D1%82%D0%B8" class="hash-link" aria-label="Пряме посилання на Як це налаштувати" title="Пряме посилання на Як це налаштувати" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-налаштуйте-кілька-лазерів-у-вашому-профілі-машини">1. Налаштуйте кілька лазерів у вашому профілі машини<a href="https://rayforge.org/uk/blog/multi-laser-support#1-%D0%BD%D0%B0%D0%BB%D0%B0%D1%88%D1%82%D1%83%D0%B9%D1%82%D0%B5-%D0%BA%D1%96%D0%BB%D1%8C%D0%BA%D0%B0-%D0%BB%D0%B0%D0%B7%D0%B5%D1%80%D1%96%D0%B2-%D1%83-%D0%B2%D0%B0%D1%88%D0%BE%D0%BC%D1%83-%D0%BF%D1%80%D0%BE%D1%84%D1%96%D0%BB%D1%96-%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B8" class="hash-link" aria-label="Пряме посилання на 1. Налаштуйте кілька лазерів у вашому профілі машини" title="Пряме посилання на 1. Налаштуйте кілька лазерів у вашому профілі машини" translate="no">​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="як-це-налаштувати">Як це налаштувати<a href="https://rayforge.org/uk/blog/multi-laser-support#%D1%8F%D0%BA-%D1%86%D0%B5-%D0%BD%D0%B0%D0%BB%D0%B0%D1%88%D1%82%D1%83%D0%B2%D0%B0%D1%82%D0%B8" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-налаштуйте-кілька-лазерів-у-вашому-профілі-машини">1. Налаштуйте кілька лазерів у вашому профілі машини<a href="https://rayforge.org/uk/blog/multi-laser-support#1-%D0%BD%D0%B0%D0%BB%D0%B0%D1%88%D1%82%D1%83%D0%B9%D1%82%D0%B5-%D0%BA%D1%96%D0%BB%D1%8C%D0%BA%D0%B0-%D0%BB%D0%B0%D0%B7%D0%B5%D1%80%D1%96%D0%B2-%D1%83-%D0%B2%D0%B0%D1%88%D0%BE%D0%BC%D1%83-%D0%BF%D1%80%D0%BE%D1%84%D1%96%D0%BB%D1%96-%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B8" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>Перейдіть до <strong>Налаштування машини → Кілька лазерів</strong> та визначте кожен лазерний модуль
 у вашій системі. Ви можете вказати:</p>
 <ul>
@@ -833,7 +833,7 @@ Rayforge та пресети операцій щоб зберегти ваші �
 </ul>
 <p>Див. наш <a class="" href="https://rayforge.org/uk/docs/machine/laser">Посібник з конфігурації лазера</a>
 для детальних інструкцій.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-призначте-лазери-операціям">2. Призначте лазери операціям<a href="https://rayforge.org/uk/blog/multi-laser-support#2-%D0%BF%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D1%87%D1%82%D0%B5-%D0%BB%D0%B0%D0%B7%D0%B5%D1%80%D0%B8-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D1%96%D1%8F%D0%BC" class="hash-link" aria-label="Пряме посилання на 2. Призначте лазери операціям" title="Пряме посилання на 2. Призначте лазери операціям" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-призначте-лазери-операціям">2. Призначте лазери операціям<a href="https://rayforge.org/uk/blog/multi-laser-support#2-%D0%BF%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D1%87%D1%82%D0%B5-%D0%BB%D0%B0%D0%B7%D0%B5%D1%80%D0%B8-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D1%96%D1%8F%D0%BC" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>При створенні операцій у вашому проекті:</p>
 <ol>
 <li class="">Виберіть операцію (Contour, Raster тощо.)</li>
@@ -841,11 +841,11 @@ Rayforge та пресети операцій щоб зберегти ваші �
 випадаючого списку</li>
 <li class="">Налаштуйте параметри операції специфічні для цього лазера</li>
 </ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-попередній-перегляд-та-запуск">3. Попередній перегляд та запуск<a href="https://rayforge.org/uk/blog/multi-laser-support#3-%D0%BF%D0%BE%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%BD%D1%96%D0%B9-%D0%BF%D0%B5%D1%80%D0%B5%D0%B3%D0%BB%D1%8F%D0%B4-%D1%82%D0%B0-%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA" class="hash-link" aria-label="Пряме посилання на 3. Попередній перегляд та запуск" title="Пряме посилання на 3. Попередній перегляд та запуск" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-попередній-перегляд-та-запуск">3. Попередній перегляд та запуск<a href="https://rayforge.org/uk/blog/multi-laser-support#3-%D0%BF%D0%BE%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%BD%D1%96%D0%B9-%D0%BF%D0%B5%D1%80%D0%B5%D0%B3%D0%BB%D1%8F%D0%B4-%D1%82%D0%B0-%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>Використовуйте 3D попередній перегляд щоб перевірити ваші інструментальні шляхи, потім надішліть завдання на вашу
 машину. Rayforge автоматично згенерує відповідні G-code
 команди для перемикання між лазерами за потреби.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="технічні-деталі">Технічні деталі<a href="https://rayforge.org/uk/blog/multi-laser-support#%D1%82%D0%B5%D1%85%D0%BD%D1%96%D1%87%D0%BD%D1%96-%D0%B4%D0%B5%D1%82%D0%B0%D0%BB%D1%96" class="hash-link" aria-label="Пряме посилання на Технічні деталі" title="Пряме посилання на Технічні деталі" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="технічні-деталі">Технічні деталі<a href="https://rayforge.org/uk/blog/multi-laser-support#%D1%82%D0%B5%D1%85%D0%BD%D1%96%D1%87%D0%BD%D1%96-%D0%B4%D0%B5%D1%82%D0%B0%D0%BB%D1%96" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Під капотом Rayforge використовує G-code команди для перемикання між лазерними
 модулями. Точна реалізація залежить від вашої прошивки та апаратного
 налаштування, але поширені підходи включають:</p>
@@ -857,7 +857,7 @@ Rayforge та пресети операцій щоб зберегти ваші �
 <li class=""><strong>Власні макроси</strong>: Визначення макросів до та після операцій для перемикання
 лазера</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="початок-роботи">Початок роботи<a href="https://rayforge.org/uk/blog/multi-laser-support#%D0%BF%D0%BE%D1%87%D0%B0%D1%82%D0%BE%D0%BA-%D1%80%D0%BE%D0%B1%D0%BE%D1%82%D0%B8" class="hash-link" aria-label="Пряме посилання на Початок роботи" title="Пряме посилання на Початок роботи" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="початок-роботи">Початок роботи<a href="https://rayforge.org/uk/blog/multi-laser-support#%D0%BF%D0%BE%D1%87%D0%B0%D1%82%D0%BE%D0%BA-%D1%80%D0%BE%D0%B1%D0%BE%D1%82%D0%B8" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Підтримка кількох лазерів доступна в Rayforge 0.15 та пізніших версіях. Щоб
 почати:</p>
 <ol>
@@ -889,7 +889,7 @@ Rayforge та пресети операцій щоб зберегти ваші �
 <p>Ми раді представити Rayforge, сучасний відкритий відправник G-code та
 програмне забезпечення керування, розроблене спеціально для лазерних різаків
 та граверів на базі GRBL.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="чому-rayforge">Чому Rayforge?<a href="https://rayforge.org/uk/blog/welcome-to-rayforge#%D1%87%D0%BE%D0%BC%D1%83-rayforge" class="hash-link" aria-label="Пряме посилання на Чому Rayforge?" title="Пряме посилання на Чому Rayforge?" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="чому-rayforge">Чому Rayforge?<a href="https://rayforge.org/uk/blog/welcome-to-rayforge#%D1%87%D0%BE%D0%BC%D1%83-rayforge" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>У світі лазерного різання та гравірування наявність надійного, інтуїтивного
 програмного забезпечення так само важливо, як і якісне обладнання. Rayforge був
 створений з нуля з фокусом на:</p>
@@ -903,30 +903,30 @@ Windows</li>
 та розширені параметри конфігурації</li>
 <li class=""><strong>Відкрита розробка</strong>: Керований спільнотою з привітними внесками</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="що-робить-rayforge-іншим">Що робить Rayforge іншим?<a href="https://rayforge.org/uk/blog/welcome-to-rayforge#%D1%89%D0%BE-%D1%80%D0%BE%D0%B1%D0%B8%D1%82%D1%8C-rayforge-%D1%96%D0%BD%D1%88%D0%B8%D0%BC" class="hash-link" aria-label="Пряме посилання на Що робить Rayforge іншим?" title="Пряме посилання на Що робить Rayforge іншим?" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="багатошарові-операції">Багатошарові операції<a href="https://rayforge.org/uk/blog/welcome-to-rayforge#%D0%B1%D0%B0%D0%B3%D0%B0%D1%82%D0%BE%D1%88%D0%B0%D1%80%D0%BE%D0%B2%D1%96-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D1%96%D1%97" class="hash-link" aria-label="Пряме посилання на Багатошарові операції" title="Пряме посилання на Багатошарові операції" translate="no">​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="що-робить-rayforge-іншим">Що робить Rayforge іншим?<a href="https://rayforge.org/uk/blog/welcome-to-rayforge#%D1%89%D0%BE-%D1%80%D0%BE%D0%B1%D0%B8%D1%82%D1%8C-rayforge-%D1%96%D0%BD%D1%88%D0%B8%D0%BC" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="багатошарові-операції">Багатошарові операції<a href="https://rayforge.org/uk/blog/welcome-to-rayforge#%D0%B1%D0%B0%D0%B3%D0%B0%D1%82%D0%BE%D1%88%D0%B0%D1%80%D0%BE%D0%B2%D1%96-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D1%96%D1%97" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>Одна з видатних функцій Rayforge - це багатошаровий робочий процес. Призначте
 різні операції різним шарам у вашому дизайні—гравіруйте дрібні
 деталі на одному шарі, потім виріжте деталь на іншому. Все керується
 безшовно в одному інтерфейсі.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3d-попередній-перегляд-g-code">3D попередній перегляд G-code<a href="https://rayforge.org/uk/blog/welcome-to-rayforge#3d-%D0%BF%D0%BE%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%BD%D1%96%D0%B9-%D0%BF%D0%B5%D1%80%D0%B5%D0%B3%D0%BB%D1%8F%D0%B4-g-code" class="hash-link" aria-label="Пряме посилання на 3D попередній перегляд G-code" title="Пряме посилання на 3D попередній перегляд G-code" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3d-попередній-перегляд-g-code">3D попередній перегляд G-code<a href="https://rayforge.org/uk/blog/welcome-to-rayforge#3d-%D0%BF%D0%BE%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%BD%D1%96%D0%B9-%D0%BF%D0%B5%D1%80%D0%B5%D0%B3%D0%BB%D1%8F%D0%B4-g-code" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>Перед надсиланням вашого завдання на машину, візуалізуйте точно, що буде
 відбуватися з нашим 3D попереднім переглядом G-code. Виявіть потенційні проблеми до того, як вони
 стануться, та заощадіть час і матеріали.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="інтеграція-камери">Інтеграція камери<a href="https://rayforge.org/uk/blog/welcome-to-rayforge#%D1%96%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D1%96%D1%8F-%D0%BA%D0%B0%D0%BC%D0%B5%D1%80%D0%B8" class="hash-link" aria-label="Пряме посилання на Інтеграція камери" title="Пряме посилання на Інтеграція камери" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="інтеграція-камери">Інтеграція камери<a href="https://rayforge.org/uk/blog/welcome-to-rayforge#%D1%96%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D1%96%D1%8F-%D0%BA%D0%B0%D0%BC%D0%B5%D1%80%D0%B8" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>Використовуйте USB-камеру для точного вирівнювання деталі, позиціонування та навіть
 трасування фону. Ідеально для позиціонування дизайнів на вже існуючих
 матеріалах або створення пристосувань.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="просунута-генерація-шляхів">Просунута генерація шляхів<a href="https://rayforge.org/uk/blog/welcome-to-rayforge#%D0%BF%D1%80%D0%BE%D1%81%D1%83%D0%BD%D1%83%D1%82%D0%B0-%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%86%D1%96%D1%8F-%D1%88%D0%BB%D1%8F%D1%85%D1%96%D0%B2" class="hash-link" aria-label="Пряме посилання на Просунута генерація шляхів" title="Пряме посилання на Просунута генерація шляхів" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="просунута-генерація-шляхів">Просунута генерація шляхів<a href="https://rayforge.org/uk/blog/welcome-to-rayforge#%D0%BF%D1%80%D0%BE%D1%81%D1%83%D0%BD%D1%83%D1%82%D0%B0-%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%86%D1%96%D1%8F-%D1%88%D0%BB%D1%8F%D1%85%D1%96%D0%B2" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>Rayforge включає високоякісне трасування зображень, оптимізацію часу переміщення,
 згладжування шляхів та інтерполяцію розміру плями щоб ваші проекти
 вийшли точно як заплановано.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="початок-роботи">Початок роботи<a href="https://rayforge.org/uk/blog/welcome-to-rayforge#%D0%BF%D0%BE%D1%87%D0%B0%D1%82%D0%BE%D0%BA-%D1%80%D0%BE%D0%B1%D0%BE%D1%82%D0%B8" class="hash-link" aria-label="Пряме посилання на Початок роботи" title="Пряме посилання на Початок роботи" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="початок-роботи">Початок роботи<a href="https://rayforge.org/uk/blog/welcome-to-rayforge#%D0%BF%D0%BE%D1%87%D0%B0%D1%82%D0%BE%D0%BA-%D1%80%D0%BE%D0%B1%D0%BE%D1%82%D0%B8" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Готові спробувати Rayforge? Перегляньте наш
 <a class="" href="https://rayforge.org/uk/docs/getting-started/installation">Посібник з встановлення</a> щоб почати.
 Незалежно від того, чи використовуєте ви Ubuntu, інший дистрибутив Linux через Snap, або
 Windows, ми вас забезпечимо.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="приєднуйтесь-до-спільноти">Приєднуйтесь до спільноти<a href="https://rayforge.org/uk/blog/welcome-to-rayforge#%D0%BF%D1%80%D0%B8%D1%94%D0%B4%D0%BD%D1%83%D0%B9%D1%82%D0%B5%D1%81%D1%8C-%D0%B4%D0%BE-%D1%81%D0%BF%D1%96%D0%BB%D1%8C%D0%BD%D0%BE%D1%82%D0%B8" class="hash-link" aria-label="Пряме посилання на Приєднуйтесь до спільноти" title="Пряме посилання на Приєднуйтесь до спільноти" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="приєднуйтесь-до-спільноти">Приєднуйтесь до спільноти<a href="https://rayforge.org/uk/blog/welcome-to-rayforge#%D0%BF%D1%80%D0%B8%D1%94%D0%B4%D0%BD%D1%83%D0%B9%D1%82%D0%B5%D1%81%D1%8C-%D0%B4%D0%BE-%D1%81%D0%BF%D1%96%D0%BB%D1%8C%D0%BD%D0%BE%D1%82%D0%B8" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Rayforge - це відкрите програмне забезпечення, кероване спільнотою. Ми вітаємо внески
 будь-якого роду:</p>
 <ul>
