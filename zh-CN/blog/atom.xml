@@ -650,7 +650,7 @@ keyboard shortcuts</li>
         <link href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving"/>
         <updated>2025-02-20T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[3D 预览]]></summary>
-        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="3D 预览" src="https://rayforge.org/zh-CN/assets/images/main-3d-a978c60b3c35b4668bc99c7c9c10ed0b.png" width="2522" height="1772" class="img_ev3q"></p>
+        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="3D 预览" src="https://rayforge.org/zh-CN/assets/images/main-3d-036a64ba4ce8c629a8e9c123a8a8c11d.png" width="2450" height="1700" class="img_ev3q"></p>
 <p>获得专业品质的激光雕刻效果不仅需要好的硬件——您的软件设置和工作流程也很重要。以下是帮助您充分利用 Rayforge 的五个技巧。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-使用过扫描获得更平滑的光栅雕刻">1. 使用过扫描获得更平滑的光栅雕刻<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#1-%E4%BD%BF%E7%94%A8%E8%BF%87%E6%89%AB%E6%8F%8F%E8%8E%B7%E5%BE%97%E6%9B%B4%E5%B9%B3%E6%BB%91%E7%9A%84%E5%85%89%E6%A0%85%E9%9B%95%E5%88%BB" class="hash-link" aria-label="1. 使用过扫描获得更平滑的光栅雕刻 的直接链接" title="1. 使用过扫描获得更平滑的光栅雕刻 的直接链接" translate="no">​</a></h2>
 <p>在进行光栅雕刻时，一个常见问题是在激光改变方向的边缘处出现可见的线条或不一致。这是因为激光头需要减速和加速，这会影响雕刻质量。</p>
@@ -795,7 +795,7 @@ keyboard shortcuts</li>
         <link href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge"/>
         <updated>2024-12-15T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Rayforge 主窗口]]></summary>
-        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 主窗口" src="https://rayforge.org/zh-CN/assets/images/main-standard-7453c6a857a2b073312389233117e2c6.png" width="2522" height="1772" class="img_ev3q"></p>
+        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 主窗口" src="https://rayforge.org/zh-CN/assets/images/main-standard-05f7c4dbfcf029bf132c55381b529297.png" width="2450" height="1700" class="img_ev3q"></p>
 <p>我们很高兴向您介绍 Rayforge，这是一款专为基于 GRBL 的激光切割机和雕刻机设计的现代化开源 G-code 发送器和控制软件。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="为什么选择-rayforge">为什么选择 Rayforge？<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-rayforge" class="hash-link" aria-label="为什么选择 Rayforge？ 的直接链接" title="为什么选�择 Rayforge？ 的直接链接" translate="no">​</a></h2>
 <p>在激光切割和雕刻的世界中，拥有可靠、直观的软件与拥有优质硬件同样重要。Rayforge 从零开始构建，专注于：</p>
