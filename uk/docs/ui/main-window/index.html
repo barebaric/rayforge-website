@@ -16,7 +16,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.18a0caa8.css">
-<script src="/uk/assets/js/runtime~main.e416d125.js" defer="defer"></script>
+<script src="/uk/assets/js/runtime~main.bf6ea316.js" defer="defer"></script>
 <script src="/uk/assets/js/main.d262f454.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -70,28 +70,32 @@
 <li class=""><strong>Масштаб</strong>: Колесо миші або <kbd>ctrl+&quot;+&quot;</kbd> / <kbd>ctrl+&quot;-&quot;</kbd></li>
 <li class=""><strong>Скинути вид</strong>: <kbd>ctrl+0</kbd> або Вид → Скинути масштаб</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-панель-шарів">4. Панель шарів<a href="#4-панель-шарів" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
-<p>Керування операціями та призначення шарів:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-бічна-панель">4. Бічна панель<a href="#4-бічна-панель" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
+<p>Бічна панель — це плаваючий оверлей з правого боку полотна. Вона відображає робочий
+процес активного шару у вигляді вертикального списку кроків. Кожен крок показує свою
+назву, короткий опис (наприклад, потужність та швидкість) і кнопки для видимості,
+налаштувань та видалення. Використовуйте кнопку <strong>+</strong> для додавання нових кроків.
+Кроки можна переставляти перетягув анням.</p>
+<p>Натиснувши кнопку налаштувань на кроці, відкривається діалогове вікно, де ви можете
+налаштувати тип операції, потужність лазера, швидкість різання, повітряне обдування,
+ширину променя та параметри постобробки. Значення повзунків можна редагувати —
+натисніть на значення поруч із повзунком і введіть точне число, яке вам потрібне.</p>
+<p>Панель можна відсунути, коли вона не потрібна.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-нижня-панель">5. Нижня панель<a href="#5-нижня-панель" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
+<p>Нижня панель надає вкладки, що причіплюються, які можна переставляти перетягуванням
+та розділяти на кілька колонок. Доступні вкладки:</p>
 <ul>
-<li class="">Перегляд усіх операцій у вашому проекті</li>
-<li class="">Призначення операцій елементам дизайну</li>
-<li class="">Зміна порядку виконання операцій</li>
-<li class="">Увімкнення/вимкнення окремих операцій</li>
-<li class="">Налаштування параметрів операцій</li>
+<li class=""><strong>Шари</strong>: Показує всі шари як колонки поруч одна з одною. Кожна колонка має
+заголовок з назвою шару та елементами керування, компактний горизонтальний
+конвеєр іконок кроків, що представляють робочий процес, та список заготовок.
+Шари та заготовки можна переставляти перетягуванням.</li>
+<li class=""><strong>Активи</strong>: Список матеріалів та ескізів у вашому документі.</li>
+<li class=""><strong>Консоль</strong>: Інтерактивний термінал для надсилання G-code та моніторингу зв&#x27;язку з
+машиною.</li>
+<li class=""><strong>Перегляд G-code</strong>: Відображає згенерований G-code з підсвіткою синтаксису.</li>
+<li class=""><strong>Керування</strong>: Контролі переміщення для ручного позиціонування та керування WCS.</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-панель-властивостей">5. Панель властивостей<a href="#5-панель-властивостей" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
-<p>Налаштування параметрів для виділених об&#x27;єктів або операцій:</p>
-<ul>
-<li class="">Тип операції (Контур, Растр тощо)</li>
-<li class="">Налаштування потужності та швидкості</li>
-<li class="">Кількість проходів</li>
-<li class="">Розширені параметри (оверкан, керф, лапки)</li>
-</ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-нижня-панель">6. Нижня панель<a href="#6-нижня-панель" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
-<p>Нижня панель надає вкладки для Консолі, Перегляду G-code та ваших
-ресурсів документа (заготовки та ескізи). Контролі переміщення та керування WCS
-завжди видимі з правого боку. Орієнтовний час роботи відображається
-у заголовку списку шарів над панеллю шарів.</p>
+<p>Орієнтовний час роботи відображається у заголовку списку шарів.</p>
 <p>Дивіться <a class="" href="/uk/docs/ui/bottom-panel">Нижня панель</a> для детальної інформації.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="керування-вікном">Керування вікном<a href="#керування-вікном" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="панелі">Панелі<a href="#панелі" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
@@ -120,6 +124,6 @@
 <li class=""><a class="" href="/uk/docs/ui/canvas-tools">Інструменти полотна</a> - Інструменти для маніпулювання дизайнами</li>
 <li class=""><a class="" href="/uk/docs/ui/bottom-panel">Нижня панель</a> - Ручне керування машиною, статус та журнали</li>
 <li class=""><a class="" href="/uk/docs/ui/3d-preview">3D вид</a> - Візуалізація траєкторій у 3D</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/ui/main-window.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Редагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Навігація по документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/machine/maintenance"><div class="pagination-nav__sublabel">Назад</div><div class="pagination-nav__label">Технічне обслуговування</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/uk/docs/ui/canvas-tools"><div class="pagination-nav__sublabel">Далі</div><div class="pagination-nav__label">Інструменти полотна</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#макет-вікна" class="table-of-contents__link toc-highlight">Ма кет вікна</a><ul><li><a href="#1-рядок-меню" class="table-of-contents__link toc-highlight">1. Рядок меню</a></li><li><a href="#2-панель-інструментів" class="table-of-contents__link toc-highlight">2. Панель інструментів</a></li><li><a href="#3-полотно" class="table-of-contents__link toc-highlight">3. Полотно</a></li><li><a href="#4-панель-шарів" class="table-of-contents__link toc-highlight">4. Панель шарів</a></li><li><a href="#5-панель-властивостей" class="table-of-contents__link toc-highlight">5. Панель властивостей</a></li><li><a href="#6-нижня-панель" class="table-of-contents__link toc-highlight">6. Нижня панель</a></li></ul></li><li><a href="#керування-вікном" class="table-of-contents__link toc-highlight">Керування вікном</a><ul><li><a href="#панелі" class="table-of-contents__link toc-highlight">Панелі</a></li><li><a href="#повноекранний-режим" class="table-of-contents__link toc-highlight">Повноекранний режим</a></li></ul></li><li><a href="#налаштування" class="table-of-contents__link toc-highlight">Налаштування</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/ui/main-window.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Редагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Навігація по документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/machine/maintenance"><div class="pagination-nav__sublabel">Назад</div><div class="pagination-nav__label">Технічне обслуговування</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/uk/docs/ui/canvas-tools"><div class="pagination-nav__sublabel">Далі</div><div class="pagination-nav__label">Інструменти полотна</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#макет-вікна" class="table-of-contents__link toc-highlight">Макет вікна</a><ul><li><a href="#1-рядок-меню" class="table-of-contents__link toc-highlight">1. Рядок меню</a></li><li><a href="#2-панель-інструментів" class="table-of-contents__link toc-highlight">2. Панель інструментів</a></li><li><a href="#3-полотно" class="table-of-contents__link toc-highlight">3. Полотно</a></li><li><a href="#4-бічна-панель" class="table-of-contents__link toc-highlight">4. Бічна панель</a></li><li><a href="#5-нижня-панель" class="table-of-contents__link toc-highlight">5. Нижня панель</a></li></ul></li><li><a href="#керування-вікном" class="table-of-contents__link toc-highlight">Керування вікном</a><ul><li><a href="#панелі" class="table-of-contents__link toc-highlight">Панелі</a></li><li><a href="#повноекранний-режим" class="table-of-contents__link toc-highlight">Повноекранний режим</a></li></ul></li><li><a href="#налаштування" class="table-of-contents__link toc-highlight">Налаштування</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

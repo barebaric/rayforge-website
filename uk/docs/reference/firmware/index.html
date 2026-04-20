@@ -16,7 +16,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.18a0caa8.css">
-<script src="/uk/assets/js/runtime~main.e416d125.js" defer="defer"></script>
+<script src="/uk/assets/js/runtime~main.bf6ea316.js" defer="defer"></script>
 <script src="/uk/assets/js/main.d262f454.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -82,7 +82,14 @@
 
 
 
-<table><thead><tr><th>Прошивка</th><th>Версія</th><th>Статус</th><th>Драйвер</th><th>Примітки</th></tr></thead><tbody><tr><td><strong>GRBL</strong></td><td>1.1+</td><td>Повністю підтримується</td><td>GRBL Serial</td><td>Рекомендується</td></tr><tr><td><strong>grblHAL</strong></td><td>2023+</td><td>Сумісний</td><td>GRBL Serial</td><td>Сучасний форк GRBL</td></tr><tr><td><strong>GRBL</strong></td><td>0.9</td><td>Обмежений</td><td>GRBL Serial</td><td>Старіший, можуть бути проблеми</td></tr><tr><td><strong>Smoothieware</strong></td><td>Всі</td><td>Експериментальний</td><td>Немає (використовуйте драйвер GRBL)</td><td>Не тестувалося</td></tr><tr><td><strong>Marlin</strong></td><td>2.0+</td><td>Експериментальний</td><td>Немає (використовуйте драйвер GRBL)</td><td>Потрібен режим лазера</td></tr><tr><td><strong>Інші</strong></td><td>-</td><td>Не підтримується</td><td>-</td><td>Запросіть підтримку</td></tr></tbody></table>
+
+
+
+
+
+
+
+<table><thead><tr><th>Прошивка</th><th>Версія</th><th>Статус</th><th>Драйвер</th><th>Примітки</th></tr></thead><tbody><tr><td><strong>GRBL</strong></td><td>1.1+</td><td>Повністю підтримується</td><td>GRBL Serial</td><td>Рекомендується</td></tr><tr><td><strong>grblHAL</strong></td><td>2023+</td><td>Сумісний</td><td>GRBL Serial / GRBL Telnet</td><td>Сучасний форк GRBL</td></tr><tr><td><strong>GRBL</strong></td><td>0.9</td><td>Обмежений</td><td>GRBL Serial</td><td>Старіший, можуть бути проблеми</td></tr><tr><td><strong>Smoothieware</strong></td><td>Всі</td><td>Сумісний</td><td>SmoothieDriver (Telnet)</td><td>На базі мережі</td></tr><tr><td><strong>Marlin</strong></td><td>2.0+</td><td>Сумісний</td><td>Використовуйте драйвер GRBL</td><td>Потрібен режим лазера</td></tr><tr><td><strong>ESP3D</strong></td><td>Всі</td><td>Сумісний</td><td>GRBL Telnet</td><td>На базі мережі</td></tr><tr><td><strong>Інші</strong></td><td>-</td><td>Не підтримується</td><td>-</td><td>Запросіть підтримку</td></tr></tbody></table>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="прошивка-grbl">Прошивка GRBL<a href="#прошивка-grbl" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p><strong>Статус:</strong>  Повністю підтримується
@@ -125,7 +132,7 @@
 <p>GRBL 0.9 - це старіша версія з деякими проблемами сумісності:</p>
 <p><strong>Відмінності:</strong></p>
 <ul>
-<li class="">Інший  формат звіту про статус</li>
+<li class="">Інший формат звіту про статус</li>
 <li class="">Немає режиму лазера (M4) - використовує тільки M3</li>
 <li class="">Менше налаштувань</li>
 <li class="">Інший синтаксис переміщення</li>
@@ -166,9 +173,36 @@
 </ol>
 <p><strong>Майбутнє:</strong> Rayforge може додати підтримку специфічних функцій grblHAL (мережа тощо.)</p>
 <hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="драйвер-grbl-telnet">Драйвер GRBL Telnet<a href="#драйвер-grbl-telnet" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<p><strong>Статус:</strong> Підтримується
+<strong>Прошивка:</strong> grblHAL, ESP3D та інші мережеві GRBL контролери
+<strong>Драйвер:</strong> GRBL Telnet</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="про-драйвер-grbl-telnet">Про драйвер GRBL Telnet<a href="#про-драйвер-grbl-telnet" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
+<p>Драйвер GRBL Telnet підключається до GRBL-контролерів чер ез мережу через
+інтерфейс Telnet. Це ідеально для плат із вбудованим WiFi або Ethernet —
+USB-кабель не потрібен.</p>
+<p><strong>Функції:</strong></p>
+<ul>
+<li class="">Мережеве підключення (Ethernet/WiFi)</li>
+<li class="">Сумісний з платами на базі grblHAL та ESP3D</li>
+<li class="">Той самий протокол GRBL, що й у послідовного драйвера</li>
+</ul>
+<p><strong>Використання драйвера GRBL Telnet:</strong></p>
+<ol>
+<li class=""><strong>Налаштуйте мережу</strong> на вашому контролері (WiFi або Ethernet)</li>
+<li class=""><strong>Виберіть &quot;GRBL Telnet&quot;</strong> у налаштуваннях машини</li>
+<li class=""><strong>Введіть IP-адресу</strong> та порт вашого контролера</li>
+<li class=""><strong>Підключіться</strong> — драйвер спілкується через Telnet</li>
+</ol>
+<p><strong>Вимоги:</strong></p>
+<ul>
+<li class="">Мережевий GRBL-сумісний контролер (grblHAL, ESP3D тощо)</li>
+<li class="">Контролер і комп&#x27;ютер в одній мережі</li>
+<li class="">Інтерфейс Telnet увімкнено на контролері</li>
+</ul>
+<hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="smoothieware">Smoothieware<a href="#smoothieware" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
-<p><strong>Версії:</strong> Всі
-<strong>Драйвер:</strong> GRBL Serial (режим сумісності)</p>
+<p><strong>Драйвер:</strong> GRBL Serial (режим сумісності)</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="примітки-до-сумісності">Примітки до сумісності<a href="#примітки-до-сумісності" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>Smoothieware використовує інший синтаксис G-code:</p>
 <p><strong>Ключові відмінності:</strong></p>
@@ -246,7 +280,7 @@
 </ol>
 <p><strong>Краща альтернатива:</strong> Використовуйте прошивку GRBL на лазерних машинах.</p>
 <hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="посібник-з-оновлення-прошивки">Посібник з оновлення прошивки<a href="#посібник-з-оновлення-прошивки" class="hash-link" aria-label="Пряме пос илання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="посібник-з-оновлення-прошивки">Посібник з оновлення прошивки<a href="#посібник-з-оновлення-прошивки" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="оновлення-до-grbl-11">Оновлення до GRBL 1.1<a href="#оновлення-до-grbl-11" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p><strong>Чому оновлювати?</strong></p>
 <ul>
@@ -288,7 +322,7 @@
 </ul>
 </li>
 </ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="резервне-копіювання-перед-оновленням">Резервне копіювання перед оновленням<a href="#резервне-копіювання-перед-оновленням" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="резервне-копіювання-перед-оновленням">Резервне копіювання перед оновленням<a href="#резервне-копію вання-перед-оновленням" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p><strong>Збережіть ваші налаштування:</strong></p>
 <ol>
 <li class="">Підключіться до контролера</li>
@@ -349,7 +383,7 @@
 
 
 
-<table><thead><tr><th>Плата</th><th>Типова прошивка</th><th>Підтримка Rayforge</th></tr></thead><tbody><tr><td><strong>Arduino CNC Shield</strong></td><td>GRBL 1.1</td><td>Відмінна</td></tr><tr><td><strong>MKS DLC32</strong></td><td>grblHAL</td><td>Відмінна</td></tr><tr><td><strong>Cohesion3D</strong></td><td>Smoothieware</td><td>Обмежена</td></tr><tr><td><strong>Плати SKR</strong></td><td>Marlin/grblHAL</td><td>Змінюється</td></tr><tr><td><strong>Ruida</strong></td><td>Власна</td><td>Не підтримується</td></tr><tr><td><strong>Trocen</strong></td><td>Власна</td><td>Не підтримує ться</td></tr><tr><td><strong>TopWisdom</strong></td><td>Власна</td><td>Не підтримується</td></tr></tbody></table>
+<table><thead><tr><th>Плата</th><th>Типова прошивка</th><th>Підтримка Rayforge</th></tr></thead><tbody><tr><td><strong>Arduino CNC Shield</strong></td><td>GRBL 1.1</td><td>Відмінна</td></tr><tr><td><strong>MKS DLC32</strong></td><td>grblHAL</td><td>Відмінна</td></tr><tr><td><strong>Cohesion3D</strong></td><td>Smoothieware</td><td>Обмежена</td></tr><tr><td><strong>Плати SKR</strong></td><td>Marlin/grblHAL</td><td>Змінюється</td></tr><tr><td><strong>Ruida</strong></td><td>Власна</td><td>Не підтримується</td></tr><tr><td><strong>Trocen</strong></td><td>Власна</td><td>Не підтримується</td></tr><tr><td><strong>TopWisdom</strong></td><td>Власна</td><td>Не підтримується</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="рекомендовані-контролери">Рекомендовані контролери<a href="#рекомендовані-контролери" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>Для найкращої сумісності з Rayforge:</p>
 <ol>
@@ -456,7 +490,7 @@
 <p><strong>Симптоми:</strong></p>
 <ul>
 <li class="">Контролер зависає під час завдання</li>
-<li class="">Випадкові в ідключення</li>
+<li class="">Випадкові відключення</li>
 <li class="">Нестабільна поведінка</li>
 </ul>
 <p><strong>Можливі причини:</strong></p>
@@ -487,7 +521,7 @@
 <li class="">Оновіть або виберіть правильний діалект</li>
 </ol>
 <hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="май бутня-підтримка-прошивок">Майбутня підтримка прошивок<a href="#майбутня-підтримка-прошивок" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="майбутня-підтримка-прошивок">Майбутня підтримка прошивок<a href="#майбутня-підтримка-прошивок" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p><strong>Запитані функції:</strong></p>
 <p>Користувачі просили підтримку:</p>
 <ul>
@@ -502,7 +536,7 @@
 <ol>
 <li class="">Реалізуйте драйвер у <code>rayforge/machine/driver/</code></li>
 <li class="">Визначте діалект G-code у <code>rayforge/machine/models/dialect.py</code></li>
-<li class="">Ретельно протестуйте на реальному обладнанні</li>
+<li class="">Ретельно протестуйте на реальному  обладнанні</li>
 <li class="">Надішліть pull request з документацією</li>
 </ol>
 <hr>
@@ -512,6 +546,6 @@
 <li class=""><a class="" href="/uk/docs/machine/device">Налаштування пристрою</a> - Конфігурація GRBL</li>
 <li class=""><a class="" href="/uk/docs/troubleshooting/connection">Проблеми підключення</a> - Виправлення проблем підключення</li>
 <li class=""><a class="" href="/uk/docs/machine/general">Загальні налаштування</a> - Налаштування машини</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/reference/firmware.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Редагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Навігація по документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/reference/gcode-dialects"><div class="pagination-nav__sublabel">Назад</div><div class="pagination-nav__label">Підтримка діалектів G-code</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#огляд" class="table-of-contents__link toc-highlight">Огляд</a><ul><li><a href="#матриця-сумісності" class="table-of-contents__link toc-highlight">Матриця сумісності</a></li></ul></li><li><a href="#прошивка-grbl" class="table-of-contents__link toc-highlight">Прошивка GRBL</a><ul><li><a href="#grbl-11-рекомендовано" class="table-of-contents__link toc-highlight">GRBL 1.1 (Рекомендовано)</a></li><li><a href="#перевірка-версії-grbl" class="table-of-contents__link toc-highlight">Перевірка версії GRBL</a></li><li><a href="#grbl-09-старіший" class="table-of-contents__link toc-highlight">GRBL 0.9 (Старіший)</a></li></ul></li><li><a href="#grblhal" class="table-of-contents__link toc-highlight">grblHAL</a><ul><li><a href="#що-таке-grblhal" class="table-of-contents__link toc-highlight">Що таке grblHAL?</a></li></ul></li><li><a href="#smoothieware" class="table-of-contents__link toc-highlight">Smoothieware</a><ul><li><a href="#примітки-до-сумісності" class="table-of-contents__link toc-highlight">Примітки до сумісності</a></li></ul></li><li><a href="#marlin" class="table-of-contents__link toc-highlight">Marlin</a><ul><li><a href="#marlin-для-лазера" class="table-of-contents__link toc-highlight">Marlin для лазера</a></li></ul></li><li><a href="#посібник-з-оновлення-прошивки" class="table-of-contents__link toc-highlight">Посібник з оновлення прошивки</a><ul><li><a href="#оновлення-до-grbl-11" class="table-of-contents__link toc-highlight">Оновлення до GRBL 1.1</a></li><li><a href="#резервне-копіювання-перед-оновленням" class="table-of-contents__link toc-highlight">Резервне копіювання перед оновленням</a></li></ul></li><li><a href="#апаратне-забезпечення-контролера" class="table-of-contents__link toc-highlight">Апаратне забезпечення конт ролера</a><ul><li><a href="#поширені-контролери" class="table-of-contents__link toc-highlight">Поширені контролери</a></li><li><a href="#рекомендовані-контролери" class="table-of-contents__link toc-highlight">Рекомендовані контролери</a></li></ul></li><li><a href="#конфігурація-прошивки" class="table-of-contents__link toc-highlight">Конфігурація прошивки</a><ul><li><a href="#налаштування-grbl-для-лазера" class="table-of-contents__link toc-highlight">Налаштування GRBL для лазера</a></li><li><a href="#тестування-прошивки" class="table-of-contents__link toc-highlight">Тестування прошивки</a></li></ul></li><li><a href="#виправлення-проблем-прошивки" class="table-of-contents__link toc-highlight">Виправлення проблем прошивки</a><ul><li><a href="#прошивка-не-відповідає" class="table-of-contents__link toc-highlight">Прошивка не відповідає</a></li><li><a href="#збої-прошивки" class="table-of-contents__link toc-highlight">Збої прошивки</a></li><li><a href="#неправильна-прошивка" class="table-of-contents__link toc-highlight">Неправильна прошивка</a></li></ul></li><li><a href="#майбутня-підтримка-прошивок" class="table-of-contents__link toc-highlight">Майбутня підтримка прошивок</a><ul><li><a href="#внесок" class="table-of-contents__link toc-highlight">Внесок</a></li></ul></li><li><a href="#повязані-сторінки" class="table-of-contents__link toc-highlight">Пов&#39;язані сторінки</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/reference/firmware.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Редагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Навігація по документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/reference/gcode-dialects"><div class="pagination-nav__sublabel">Назад</div><div class="pagination-nav__label">Підтримка діалектів G-code</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#огляд" class="table-of-contents__link toc-highlight">Огляд</a><ul><li><a href="#матриця-сумісності" class="table-of-contents__link toc-highlight">Матриця сумісності</a></li></ul></li><li><a href="#прошивка-grbl" class="table-of-contents__link toc-highlight">Прошивка GRBL</a><ul><li><a href="#grbl-11-рекомендовано" class="table-of-contents__link toc-highlight">GRBL 1.1 (Рекомендовано)</a></li><li><a href="#перевірка-версії-grbl" class="table-of-contents__link toc-highlight">Перевірка версії GRBL</a></li><li><a href="#grbl-09-старіший" class="table-of-contents__link toc-highlight">GRBL 0.9 (Старіший)</a></li></ul></li><li><a href="#grblhal" class="table-of-contents__link toc-highlight">grblHAL</a><ul><li><a href="#що-таке-grblhal" class="table-of-contents__link toc-highlight">Що таке grblHAL?</a></li></ul></li><li><a href="#драйвер-grbl-telnet" class="table-of-contents__link toc-highlight">Драйвер GRBL Telnet</a><ul><li><a href="#про-драйвер-grbl-telnet" class="table-of-contents__link toc-highlight">Про драйвер GRBL Telnet</a></li></ul></li><li><a href="#smoothieware" class="table-of-contents__link toc-highlight">Smoothieware</a><ul><li><a href="#примітки-до-сумісності" class="table-of-contents__link toc-highlight">Примітки до сумісності</a></li></ul></li><li><a href="#marlin" class="table-of-contents__link toc-highlight">Marlin</a><ul><li><a href="#marlin-для-лазера" class="table-of-contents__link toc-highlight">Marlin для лазера</a></li></ul></li><li><a href="#посібник-з-оновлення-прошивки" class="table-of-contents__link toc-highlight">Посібник з оновлення прошивки</a><ul><li><a href="#оновлення-до-grbl-11" class="table-of-contents__link toc-highlight">Оновлення до GRBL 1.1</a></li><li><a href="#резервне-копіювання-перед-оновленням" class="table-of-contents__link toc-highlight">Резервне копіювання перед оновленням</a></li></ul></li><li><a href="#апаратне-забезпечення-контролера" class="table-of-contents__link toc-highlight">Апаратне забезпечення контролера</a><ul><li><a href="#поширені-контролери" class="table-of-contents__link toc-highlight">Поширені контролери</a></li><li><a href="#рекомендовані-контролери" class="table-of-contents__link toc-highlight">Рекомендовані контролери</a></li></ul></li><li><a href="#конфігурація-прошивки" class="table-of-contents__link toc-highlight">Конфігурація прошивки</a><ul><li><a href="#налаштування-grbl-для-лазера" class="table-of-contents__link toc-highlight">Налаштування GRBL для лазера</a></li><li><a href="#тестування-прошивки" class="table-of-contents__link toc-highlight">Тестування прошивки</a></li></ul></li><li><a href="#виправлення-проблем-прошивки" class="table-of-contents__link toc-highlight">Виправлення проблем прошивки</a><ul><li><a href="#прошивка-не-відповідає" class="table-of-contents__link toc-highlight">Прошивка не відповідає</a></li><li><a href="#збої-прошивки" class="table-of-contents__link toc-highlight">Збої прошивки</a></li><li><a href="#неправильна-прошивка" class="table-of-contents__link toc-highlight">Неправильна прошивка</a></li></ul></li><li><a href="#майбутня-підтримка-прошивок" class="table-of-contents__link toc-highlight">Майбутня підтримка прошивок</a><ul><li><a href="#внесок" class="table-of-contents__link toc-highlight">Внесок</a></li></ul></li><li><a href="#повязані-сторінки" class="table-of-contents__link toc-highlight">Пов&#39;язані сторінки</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

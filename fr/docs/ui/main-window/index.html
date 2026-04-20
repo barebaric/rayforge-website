@@ -16,7 +16,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/fr/assets/css/styles.8f2e3623.css">
-<script src="/fr/assets/js/runtime~main.036d2401.js" defer="defer"></script>
+<script src="/fr/assets/js/runtime~main.73e8b09d.js" defer="defer"></script>
 <script src="/fr/assets/js/main.8d473d8c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -71,28 +71,34 @@ lui-même, pour qu&#x27;ils soient toujours à portée de main pendant que tu tr
 <li class=""><strong>Zoom</strong> : Molette de souris ou <kbd>ctrl+&quot;+&quot;</kbd> / <kbd>ctrl+&quot;-&quot;</kbd></li>
 <li class=""><strong>Réinitialiser la vue</strong> : <kbd>ctrl+0</kbd> ou Affichage → Réinitialiser le zoom</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-panneau-calques">4. Panneau Calques<a href="#4-panneau-calques" class="hash-link" aria-label="Lien direct vers 4. Panneau Calques" title="Lien direct vers 4. Panneau Calques" translate="no">​</a></h3>
-<p>Gère les opérations et les affectations de calques :</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-panneau-latéral">4. Panneau latéral<a href="#4-panneau-latéral" class="hash-link" aria-label="Lien direct vers 4. Panneau latéral" title="Lien direct vers 4. Panneau latéral" translate="no">​</a></h3>
+<p>Le panneau latéral est un panneau flottant sur le côté droit du canevas. Il affiche
+le flux de travail du calque actif sous forme de liste verticale d&#x27;étapes. Chaque
+étape affiche son nom, un résumé (p. ex. puissance et vitesse), et des boutons pour
+la visibilité, les paramètres et la suppression. Utilisez le bouton <strong>+</strong> pour ajouter
+de nouvelles étapes. Les étapes peuvent être réorganisées par glisser-déposer.</p>
+<p>En cliquant sur le bouton des paramètres d&#x27;une étape, une boîte de dialogue s&#x27;ouvre
+vous permettant de configurer le type d&#x27;opération, la puissance du laser, la vitesse
+de coupe, l&#x27;assistance par air, la largeur du faisceau et les options de
+post-traitement. Les valeurs des curseurs sont modifiables — cliquez sur une valeur à
+côté d&#x27;un curseur et tapez le nombre exact que vous souhaitez.</p>
+<p>Le panneau peut être déplacé lorsqu&#x27;il n&#x27;est pas nécessaire.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-panneau-inférieur">5. Panneau inférieur<a href="#5-panneau-inférieur" class="hash-link" aria-label="Lien direct vers 5. Panneau inférieur" title="Lien direct vers 5. Panneau inférieur" translate="no">​</a></h3>
+<p>Le panneau inférieur fournit des onglets ancrables qui peuvent être réorganisés par
+glisser-déposer et divisés en plusieurs colonnes. Les onglets disponibles sont :</p>
 <ul>
-<li class="">Visualise toutes les opérations dans ton projet</li>
-<li class="">Affecte des opérations aux éléments de conception</li>
-<li class="">Réorganise l&#x27;exécution des opérations</li>
-<li class="">Active/désactive des opérations individuelles</li>
-<li class="">Configure les paramètres des opérations</li>
+<li class=""><strong>Calques</strong> : Affiche tous les calques sous forme de colonnes côte à côte. Chaque
+colonne possède un en-tête avec le nom du calque et des contrôles, un pipeline
+horizontal compact d&#x27;icônes d&#x27;étapes représentant le flux de travail, et une liste
+de pièces. Les calques et les pièces peuvent être réorganisés par glisser-déposer.</li>
+<li class=""><strong>Actifs</strong> : Liste les éléments de stock et les croquis de votre document.</li>
+<li class=""><strong>Console</strong> : Terminal interactif pour envoyer du G-code et surveiller la
+communication de la machine.</li>
+<li class=""><strong>Visualiseur G-code</strong> : Affiche le G-code généré avec coloration syntaxique.</li>
+<li class=""><strong>Contrôles</strong> : Contrôles de déplacement pour le positionnement manuel et la gestion
+du WCS.</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-panneau-propriétés">5. Panneau Propriétés<a href="#5-panneau-propriétés" class="hash-link" aria-label="Lien direct vers 5. Panneau Propriétés" title="Lien direct vers 5. Panneau Propriétés" translate="no">​</a></h3>
-<p>Configure les paramètres pour les objets ou opérations sélectionnés :</p>
-<ul>
-<li class="">Type d&#x27;opération (Contour, Raster, etc.)</li>
-<li class="">Paramètres de puissance et de vitesse</li>
-<li class="">Nombre de passes</li>
-<li class="">Options avancées (overscan, kerf, onglets)</li>
-</ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-panneau-inférieur">6. Panneau inférieur<a href="#6-panneau-inférieur" class="hash-link" aria-label="Lien direct vers 6. Panneau inférieur" title="Lien direct vers 6. Panneau inférieur" translate="no">​</a></h3>
-<p>Le panneau inférieur fournit des onglets pour la Console, le Visualiseur G-code et
-les actifs de ton document (stock et croquis). Les contrôles de déplacement et la gestion
-du WCS sont toujours visibles sur le côté droit. Le temps estimé du travail est affiché
-dans l&#x27;en-tête de la liste des calques au-dessus du panneau des calques.</p>
+<p>Le temps estimé du travail est affiché dans l&#x27;en-tête de la liste des calques.</p>
 <p>Voir <a class="" href="/fr/docs/ui/bottom-panel">Panneau inférieur</a> pour des informations détaillées.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="gestion-des-fenêtres">Gestion des fenêtres<a href="#gestion-des-fenêtres" class="hash-link" aria-label="Lien direct vers Gestion des fenêtres" title="Lien direct vers Gestion des fenêtres" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="panneaux">Panneaux<a href="#panneaux" class="hash-link" aria-label="Lien direct vers Panneaux" title="Lien direct vers Panneaux" translate="no">​</a></h3>
@@ -101,13 +107,13 @@ dans l&#x27;en-tête de la liste des calques au-dessus du panneau des calques.</
 <li class=""><strong>Panneau inférieur</strong> : Affichage → Panneau inférieur (<kbd>ctrl+l</kbd>)</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mode-plein-écran">Mode plein écran<a href="#mode-plein-écran" class="hash-link" aria-label="Lien direct vers Mode plein écran" title="Lien direct vers Mode plein écran" translate="no">​</a></h3>
-<p>Concentre-toi sur ton travail en plein écran :</p>
+<p>Concentrez-vous sur votre travail en plein écran :</p>
 <ul>
 <li class="">Entrer : <kbd>f11</kbd> ou Affichage → Plein écran</li>
 <li class="">Quitter : <kbd>f11</kbd> ou <kbd>échappe</kbd></li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="personnalisation">Personnalisation<a href="#personnalisation" class="hash-link" aria-label="Lien direct vers Personnalisation" title="Lien direct vers Personnalisation" translate="no">​</a></h2>
-<p>Personnalise l&#x27;interface dans <strong>Édition → Paramètres</strong> :</p>
+<p>Personnalisez l&#x27;interface dans <strong>Édition → Paramètres</strong> :</p>
 <ul>
 <li class=""><strong>Thème</strong> : Clair, sombre ou système</li>
 <li class=""><strong>Unités</strong> : Millimètres ou pouces</li>
@@ -121,6 +127,6 @@ dans l&#x27;en-tête de la liste des calques au-dessus du panneau des calques.</
 <li class=""><a class="" href="/fr/docs/ui/canvas-tools">Outils du canevas</a> - Outils pour manipuler les conceptions</li>
 <li class=""><a class="" href="/fr/docs/ui/bottom-panel">Panneau inférieur</a> - Contrôle manuel de la machine, état et journaux</li>
 <li class=""><a class="" href="/fr/docs/ui/3d-preview">Prévisualisation 3D</a> - Visualiser les trajets d&#x27;outil en 3D</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/ui/main-window.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Modifier cette page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Pages de documentation"><a class="pagination-nav__link pagination-nav__link--prev" href="/fr/docs/machine/maintenance"><div class="pagination-nav__sublabel">Précédent</div><div class="pagination-nav__label">Maintenance</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/fr/docs/ui/canvas-tools"><div class="pagination-nav__sublabel">Suivant</div><div class="pagination-nav__label">Outils du canevas</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#disposition-de-la-fenêtre" class="table-of-contents__link toc-highlight">Disposition de la fenêtre</a><ul><li><a href="#1-barre-de-menu" class="table-of-contents__link toc-highlight">1. Barre de menu</a></li><li><a href="#2-barre-doutils" class="table-of-contents__link toc-highlight">2. Barre d&#39;outils</a></li><li><a href="#3-canevas" class="table-of-contents__link toc-highlight">3. Canevas</a></li><li><a href="#4-panneau-calques" class="table-of-contents__link toc-highlight">4. Panneau Calques</a></li><li><a href="#5-panneau-propriétés" class="table-of-contents__link toc-highlight">5. Panneau Propriétés</a></li><li><a href="#6-panneau-inférieur" class="table-of-contents__link toc-highlight">6. Panneau inférieur</a></li></ul></li><li><a href="#gestion-des-fenêtres" class="table-of-contents__link toc-highlight">Gestion des fenêtres</a><ul><li><a href="#panneaux" class="table-of-contents__link toc-highlight">Panneaux</a></li><li><a href="#mode-plein-écran" class="table-of-contents__link toc-highlight">Mode plein écran</a></li></ul></li><li><a href="#personnalisation" class="table-of-contents__link toc-highlight">Personnalisation</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/ui/main-window.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Modifier cette page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Pages de documentation"><a class="pagination-nav__link pagination-nav__link--prev" href="/fr/docs/machine/maintenance"><div class="pagination-nav__sublabel">Précédent</div><div class="pagination-nav__label">Maintenance</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/fr/docs/ui/canvas-tools"><div class="pagination-nav__sublabel">Suivant</div><div class="pagination-nav__label">Outils du canevas</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#disposition-de-la-fenêtre" class="table-of-contents__link toc-highlight">Disposition de la fenêtre</a><ul><li><a href="#1-barre-de-menu" class="table-of-contents__link toc-highlight">1. Barre de menu</a></li><li><a href="#2-barre-doutils" class="table-of-contents__link toc-highlight">2. Barre d&#39;outils</a></li><li><a href="#3-canevas" class="table-of-contents__link toc-highlight">3. Canevas</a></li><li><a href="#4-panneau-latéral" class="table-of-contents__link toc-highlight">4. Panneau latéral</a></li><li><a href="#5-panneau-inférieur" class="table-of-contents__link toc-highlight">5. Panneau inférieur</a></li></ul></li><li><a href="#gestion-des-fenêtres" class="table-of-contents__link toc-highlight">Gestion des fenêtres</a><ul><li><a href="#panneaux" class="table-of-contents__link toc-highlight">Panneaux</a></li><li><a href="#mode-plein-écran" class="table-of-contents__link toc-highlight">Mode plein écran</a></li></ul></li><li><a href="#personnalisation" class="table-of-contents__link toc-highlight">Personnalisation</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

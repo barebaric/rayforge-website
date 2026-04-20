@@ -16,7 +16,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.18a0caa8.css">
-<script src="/uk/assets/js/runtime~main.e416d125.js" defer="defer"></script>
+<script src="/uk/assets/js/runtime~main.bf6ea316.js" defer="defer"></script>
 <script src="/uk/assets/js/main.d262f454.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -55,7 +55,22 @@
 для одного повного оберту. Перевірте документацію вашого поворотного модуля,
 щоб знайти це значення.</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="поворотний-режим-за-шарами">Поворотний режим за шарами<a href="#поворотний-режим-за-шарами" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="поворотні-режими">Поворотні режими<a href="#поворотні-режими" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
+<p>Rayforge підтримує два поворотні режими:</p>
+<ul>
+<li class=""><strong>Справжня 4-та вісь</strong>: Поворотна вісь працює як незалежна четверта вісь поряд із
+X, Y та Z. Це кращий режим, коли ваш контролер його підтримує.</li>
+<li class=""><strong>Заміщення осі</strong>: Поворотна вісь бере на себе вісь Y або Z. Це традиційний режим,
+який використовується більшістю хобі-контролерів, де поворотний модуль підключається
+до існуючого порту драйвера крокового двигуна.</li>
+</ul>
+<p>Ви можете вибрати режим на сторінці налаштувань Поворотна вісь.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="поворотні-насадки-роликового-типу">Поворотні насадки роликового типу<a href="#поворотні-насадки-роликового-типу" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
+<p>Поворотні насадки роликового типу (де об&#x27;єкт лежить на роликах замість закріплення
+в патроні) мають власну сторінку налаштувань. Якщо ваш поворотний модуль використовує
+ролики замість патрона, виберіть тип роликів у конфігурації поворотної осі та введіть
+параметри роликів.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="поворотний-режим-за-шарами">Поворотний режим за шарами<a href="#поворотний-режим-за-шарами" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилан ня на заголовок" translate="no">​</a></h2>
 <p>Якщо ваш документ має кілька шарів, ви можете вмикати або вимикати поворотний режим
 незалежно для кожного шару. Це корисно, коли ви хочете поєднати плоску та
 циліндричну обробку в одному проєкті, або коли у вас різні поворотні налаштування
@@ -65,7 +80,10 @@
 виконані в поворотному режимі.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3d-перегляд-у-поворотному-режимі">3D-перегляд у поворотному режимі<a href="#3d-перегляд-у-поворотному-режимі" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Коли поворотний режим активний, <a class="" href="/uk/docs/ui/3d-preview">3D-перегляд</a> показує ваш шлях
-інструменту, обгорнутий навколо циліндра замість плоскої поверхні.</p>
+інструменту, обгорнутий навколо циліндра замість плоскої поверхні. 2D полотно
+також автоматично адаптується до поворотного режиму, а 3D полотно точно відображає
+поворотні шляхи інструменту в кожній конфігурації — включаючи під час відтворення
+симуляції.</p>
 <p><img decoding="async" loading="lazy" alt="3D-перегляд у поворотному режимі" src="/uk/assets/images/main-3d-rotary-c49c87e8443ae275b31896f5905fe5c0.png" width="2450" height="1700" class="img_ev3q"></p>
 <p>Це дає вам реалістичний попередній перегляд того, як дизайн виглядатиме на реальному
 об&#x27;єкті, полегшуючи виявлення проблем із розміром або розміщенням до початку різання.</p>
@@ -93,6 +111,6 @@
 <li class=""><a class="" href="/uk/docs/features/multi-layer">Багатошарова робота</a> - Налаштування за шарами, включно з поворотом</li>
 <li class=""><a class="" href="/uk/docs/ui/3d-preview">3D-перегляд</a> - Перегляд шляхів інструменту в 3D</li>
 <li class=""><a class="" href="/uk/docs/machine/general">Налаштування машини</a> - Загальна конфігурація машини</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/machine/rotary.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Редагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Навігація по документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/machine/laser"><div class="pagination-nav__sublabel">Назад</div><div class="pagination-nav__label">Налаштування лазера</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/uk/docs/machine/nogo-zones"><div class="pagination-nav__sublabel">Далі</div><div class="pagination-nav__label">Зони обмеження</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#коли-потрібен-поворотний-режим" class="table-of-contents__link toc-highlight">Коли потрібен поворотний режим</a></li><li><a href="#налаштування-поворотного-модуля" class="table-of-contents__link toc-highlight">Налаштування поворотного модуля</a></li><li><a href="#поворотний-режим-за-шарами" class="table-of-contents__link toc-highlight">Поворотний режим за шарами</a></li><li><a href="#3d-перегляд-у-поворотному-режимі" class="table-of-contents__link toc-highlight">3D-перегляд у поворотному режимі</a><ul><li><a href="#3d-модель-поворотного-модуля" class="table-of-contents__link toc-highlight">3D модель поворотного модуля</a></li><li><a href="#z-заглиблення" class="table-of-contents__link toc-highlight">Z-заглиблення</a></li></ul></li><li><a href="#поради-для-хороших-результатів" class="table-of-contents__link toc-highlight">Поради для хороших результатів</a></li><li><a href="#повязані-сторінки" class="table-of-contents__link toc-highlight">Пов&#39;язані сторінки</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/machine/rotary.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Редагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Навігація по документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/machine/laser"><div class="pagination-nav__sublabel">Назад</div><div class="pagination-nav__label">Налаштування лазера</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/uk/docs/machine/nogo-zones"><div class="pagination-nav__sublabel">Далі</div><div class="pagination-nav__label">Зони обмеження</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#коли-потрібен-поворотний-режим" class="table-of-contents__link toc-highlight">Коли потрібен поворотний режим</a></li><li><a href="#налаштування-поворотного-модуля" class="table-of-contents__link toc-highlight">Налаштування поворотного модуля</a><ul><li><a href="#поворо тні-режими" class="table-of-contents__link toc-highlight">Поворотні режими</a></li><li><a href="#поворотні-насадки-роликового-типу" class="table-of-contents__link toc-highlight">Поворотні насадки роликового типу</a></li></ul></li><li><a href="#поворотний-режим-за-шарами" class="table-of-contents__link toc-highlight">Поворотний режим за шарами</a></li><li><a href="#3d-перегляд-у-поворотному-режимі" class="table-of-contents__link toc-highlight">3D-перегляд у поворотному режимі</a><ul><li><a href="#3d-модель-поворотного-модуля" class="table-of-contents__link toc-highlight">3D модель поворотного модуля</a></li><li><a href="#z-заглиблення" class="table-of-contents__link toc-highlight">Z-заглиблення</a></li></ul></li><li><a href="#поради-для-хороших-результатів" class="table-of-contents__link toc-highlight">Поради для хороших результатів</a></li><li><a href="#повязані-сторінки" class="table-of-contents__link toc-highlight">Пов&#39;язані сторінки</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

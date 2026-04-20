@@ -16,7 +16,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/de/assets/css/styles.18a0caa8.css">
-<script src="/de/assets/js/runtime~main.8a9176a1.js" defer="defer"></script>
+<script src="/de/assets/js/runtime~main.99049d9d.js" defer="defer"></script>
 <script src="/de/assets/js/main.5506060f.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -72,28 +72,34 @@ Canvas verfügbar, sodass sie immer griffbereit sind, während du arbeitest.</p>
 <li class=""><strong>Zoom</strong>: Mausrad oder <kbd>Strg+&quot;+&quot;</kbd> / <kbd>Strg+&quot;-&quot;</kbd></li>
 <li class=""><strong>Ansicht zurücksetzen</strong>: <kbd>Strg+0</kbd> oder Ansicht → Zoom zurücksetzen</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-ebenen-panel">4. Ebenen-Panel<a href="#4-ebenen-panel" class="hash-link" aria-label="Direkter Link zur 4. Ebenen-Panel" title="Direkter Link zur 4. Ebenen-Panel" translate="no">​</a></h3>
-<p>Operationen und Ebenenzuweisungen verwalten:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-seitenpanel">4. Seitenpanel<a href="#4-seitenpanel" class="hash-link" aria-label="Direkter Link zur 4. Seitenpanel" title="Direkter Link zur 4. Seitenpanel" translate="no">​</a></h3>
+<p>Das Seitenpanel ist ein schwebendes Overlay auf der rechten Seite der Canvas. Es
+zeigt den Workflow der aktiven Ebene als vertikale Liste von Schritten an. Jeder
+Schritt zeigt seinen Namen, eine Zusammenfassung (z.B. Leistung und Geschwindigkeit)
+und Schaltflächen für Sichtbarkeit, Einstellungen und Löschung. Verwende die <strong>+</strong>-
+Schaltfläche, um neue Schritte hinzuzufügen. Schritte können per Drag-and-Drop
+neu angeordnet werden.</p>
+<p>Ein Klick auf die Einstellungen-Schaltfläche eines Schritts öffnet einen Dialog, in dem
+du den Operationstyp, Laserleistung, Schnittgeschwindigkeit, Air Assist, Strahlbreite
+und Nachbearbeitungsoptionen konfigurierst. Schieberegler-Werte sind bearbeitbar —
+klicke auf einen Wert neben einem Schieberegler und gib die genaue Zahl ein, die du
+möchtest.</p>
+<p>Das Panel kann beiseitegeschoben werden, wenn es nicht benötigt wird.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-unteres-panel">5. Unteres Panel<a href="#5-unteres-panel" class="hash-link" aria-label="Direkter Link zur 5. Unteres Panel" title="Direkter Link zur 5. Unteres Panel" translate="no">​</a></h3>
+<p>Das untere Panel bietet andockbare Tabs, die durch Ziehen neu angeordnet und in
+mehrere Spalten aufgeteilt werden können. Die verfügbaren Tabs sind:</p>
 <ul>
-<li class="">Alle Operationen in deinem Projekt anzeigen</li>
-<li class="">Operationen zu Design-Elementen zuweisen</li>
-<li class="">Reihenfolge der Operationsausführung ändern</li>
-<li class="">Einzelne Operationen aktivieren/deaktivieren</li>
-<li class="">Operationsparameter konfigurieren</li>
+<li class=""><strong>Ebenen</strong>: Zeigt alle Ebenen als nebeneinanderliegende Spalten an. Jede Spalte hat
+eine Kopfzeile mit dem Ebenennamen und Steuerungen, eine kompakte horizontale
+Pipeline von Schritt-Symbolen, die den Workflow darstellen, und eine Liste von
+Werkstücken. Ebenen und Werkstücke können per Drag-and-Drop neu angeordnet werden.</li>
+<li class=""><strong>Assets</strong>: Listet Rohmaterial und Skizzen in deinem Dokument auf.</li>
+<li class=""><strong>Konsole</strong>: Interaktives Terminal zum Senden von G-code und Überwachen der
+Maschinenkommunikation.</li>
+<li class=""><strong>G-code-Viewer</strong>: Zeigt den generierten G-code mit Syntaxhervorhebung an.</li>
+<li class=""><strong>Steuerungen</strong>: Jog-Steuerungen zur manuellen Positionierung und WCS-Verwaltung.</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-eigenschaften-panel">5. Eigenschaften-Panel<a href="#5-eigenschaften-panel" class="hash-link" aria-label="Direkter Link zur 5. Eigenschaften-Panel" title="Direkter Link zur 5. Eigenschaften-Panel" translate="no">​</a></h3>
-<p>Einstellungen für ausgewählte Objekte oder Operationen konfigurieren:</p>
-<ul>
-<li class="">Operationstyp (Kontur, Raster usw.)</li>
-<li class="">Leistungs- und Geschwindigkeitseinstellungen</li>
-<li class="">Anzahl der Durchgänge</li>
-<li class="">Erweiterte Optionen (Overscan, Schnittfuge, Halterungen)</li>
-</ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-unteres-panel">6. Unteres Panel<a href="#6-unteres-panel" class="hash-link" aria-label="Direkter Link zur 6. Unteres Panel" title="Direkter Link zur 6. Unteres Panel" translate="no">​</a></h3>
-<p>Das untere Panel bietet Tabs für die Konsole, den G-Code-Viewer und deine
-Dokument-Assets (Rohmaterial und Skizzen). Jog-Steuerung und WCS-Verwaltung
-sind auf der rechten Seite immer sichtbar. Die geschätzte Auftragszeit wird
-in der Ebenenlistenüberschrift über dem Ebenen-Panel angezeigt.</p>
+<p>Die geschätzte Auftragszeit wird in der Kopfzeile der Ebenenliste angezeigt.</p>
 <p>Siehe <a class="" href="/de/docs/ui/bottom-panel">Unteres Panel</a> für detaillierte Informationen.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="fensterverwaltung">Fensterverwaltung<a href="#fensterverwaltung" class="hash-link" aria-label="Direkter Link zur Fensterverwaltung" title="Direkter Link zur Fensterverwaltung" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="panels">Panels<a href="#panels" class="hash-link" aria-label="Direkter Link zur Panels" title="Direkter Link zur Panels" translate="no">​</a></h3>
@@ -122,6 +128,6 @@ in der Ebenenlistenüberschrift über dem Ebenen-Panel angezeigt.</p>
 <li class=""><a class="" href="/de/docs/ui/canvas-tools">Canvas-Werkzeuge</a> - Werkzeuge zum Bearbeiten von Designs</li>
 <li class=""><a class="" href="/de/docs/ui/bottom-panel">Unteres Panel</a> - Manuelle Maschinensteuerung, Status und Protokolle</li>
 <li class=""><a class="" href="/de/docs/ui/3d-preview">3D-Vorschau</a> - Werkzeugwege in 3D visualisieren</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/ui/main-window.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Diese Seite bearbeiten</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Dokumentation Seiten"><a class="pagination-nav__link pagination-nav__link--prev" href="/de/docs/machine/maintenance"><div class="pagination-nav__sublabel">Zurück</div><div class="pagination-nav__label">Wartung</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/de/docs/ui/canvas-tools"><div class="pagination-nav__sublabel">Weiter</div><div class="pagination-nav__label">Canvas-Werkzeuge</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#fensterlayout" class="table-of-contents__link toc-highlight">Fensterlayout</a><ul><li><a href="#1-menüleiste" class="table-of-contents__link toc-highlight">1. Menüleiste</a></li><li><a href="#2-symbolleiste" class="table-of-contents__link toc-highlight">2. Symbolleiste</a></li><li><a href="#3-canvas" class="table-of-contents__link toc-highlight">3. Canvas</a></li><li><a href="#4-ebenen-panel" class="table-of-contents__link toc-highlight">4. Ebenen-Panel</a></li><li><a href="#5-eigenschaften-panel" class="table-of-contents__link toc-highlight">5. Eigenschaften-Panel</a></li><li><a href="#6-unteres-panel" class="table-of-contents__link toc-highlight">6. Unteres Panel</a></li></ul></li><li><a href="#fensterverwaltung" class="table-of-contents__link toc-highlight">Fensterverwaltung</a><ul><li><a href="#panels" class="table-of-contents__link toc-highlight">Panels</a></li><li><a href="#vollbildmodus" class="table-of-contents__link toc-highlight">Vollbildmodus</a></li></ul></li><li><a href="#anpassung" class="table-of-contents__link toc-highlight">Anpassung</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/ui/main-window.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Diese Seite bearbeiten</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Dokumentation Seiten"><a class="pagination-nav__link pagination-nav__link--prev" href="/de/docs/machine/maintenance"><div class="pagination-nav__sublabel">Zurück</div><div class="pagination-nav__label">Wartung</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/de/docs/ui/canvas-tools"><div class="pagination-nav__sublabel">Weiter</div><div class="pagination-nav__label">Canvas-Werkzeuge</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#fensterlayout" class="table-of-contents__link toc-highlight">Fensterlayout</a><ul><li><a href="#1-menüleiste" class="table-of-contents__link toc-highlight">1. Menüleiste</a></li><li><a href="#2-symbolleiste" class="table-of-contents__link toc-highlight">2. Symbolleiste</a></li><li><a href="#3-canvas" class="table-of-contents__link toc-highlight">3. Canvas</a></li><li><a href="#4-seitenpanel" class="table-of-contents__link toc-highlight">4. Seitenpanel</a></li><li><a href="#5-unteres-panel" class="table-of-contents__link toc-highlight">5. Unteres Panel</a></li></ul></li><li><a href="#fensterverwaltung" class="table-of-contents__link toc-highlight">Fensterverwaltung</a><ul><li><a href="#panels" class="table-of-contents__link toc-highlight">Panels</a></li><li><a href="#vollbildmodus" class="table-of-contents__link toc-highlight">Vollbildmodus</a></li></ul></li><li><a href="#anpassung" class="table-of-contents__link toc-highlight">Anpassung</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>
