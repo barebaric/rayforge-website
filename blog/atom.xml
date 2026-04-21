@@ -758,7 +758,7 @@ switch laser modules</li>
 <p>Hooks support variable substitution, so you can reference job properties
 like material thickness, operation type, and more.</p>
 <p>Example pre-job hook:</p>
-<div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">G28 ; Home all axes</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">M8 ; Turn on air assist</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">G0 Z{focus_height} ; Move to focus height</span><br></span></code></pre></div></div>
+<div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">G28 ; Home all axes</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">M8 ; Turn on air assist</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">G0 Z{focus_height} ; Move to focus height</span><br></div></code></pre></div></div>
 <p>See our <a class="" href="https://rayforge.org/docs/machine/hooks-macros">G-code Macros &amp; Hooks guide</a> for
 detailed examples and variable reference.</p>
 <hr>
