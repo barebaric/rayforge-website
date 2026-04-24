@@ -2,11 +2,92 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rayforge.org/blog</id>
     <title>Rayforge Blog</title>
-    <updated>2026-04-09T00:00:00.000Z</updated>
+    <updated>2026-04-24T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rayforge.org/blog"/>
     <subtitle>Rayforge Blog</subtitle>
     <icon>https://rayforge.org/images/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Rayforge 1.6 - Device Profiles, Rotary Overhaul, Print & Cut]]></title>
+        <id>https://rayforge.org/blog/rayforge-1.6-device-profiles-rotary-print-cut</id>
+        <link href="https://rayforge.org/blog/rayforge-1.6-device-profiles-rotary-print-cut"/>
+        <updated>2026-04-24T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Rayforge 1.6 brings a complete rotary overhaul, device profiles, a redesigned layer system, per-layer WCS, and a Print and Cut addon.]]></summary>
+        <content type="html"><![CDATA[<p>Rayforge 1.6 brings a complete rotary axis overhaul, a new device profile
+system, a redesigned layer system with per-layer WCS, and a Print and Cut addon
+for aligning laser cuts with printed material.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="device-profiles">Device Profiles<a href="https://rayforge.org/blog/rayforge-1.6-device-profiles-rotary-print-cut#device-profiles" class="hash-link" aria-label="Direct link to Device Profiles" title="Direct link to Device Profiles" translate="no">​</a></h2>
+<p>Machine profiles have been replaced by <strong>device profiles</strong> -- declarative
+packages that bundle your work area, axis setup, laser settings, and G-code
+dialect into a single file. Pick your device and everything is pre-configured.
+You can export and import profiles to share setups between machines or back up
+your configuration.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="rotary-axis-overhaul">Rotary Axis Overhaul<a href="https://rayforge.org/blog/rayforge-1.6-device-profiles-rotary-print-cut#rotary-axis-overhaul" class="hash-link" aria-label="Direct link to Rotary Axis Overhaul" title="Direct link to Rotary Axis Overhaul" translate="no">​</a></h2>
+<p>Rotary support was rewritten from the ground up with proper kinematics. The new
+system supports a <strong>true 4th axis</strong> alongside your existing X, Y, and Z axes,
+as well as <strong>axis replacement mode</strong> for setups where the rotary takes over X
+or Y. Roller-type rotary attachments get their own dedicated settings.</p>
+<p>The 2D canvas adapts to rotary mode automatically, and the 3D canvas renders
+rotary toolpaths correctly in every configuration -- including during simulation
+playback. The kinematics engine was refactored to build dynamically from an axis
+set and mapper, making it far more flexible and correct.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="print-and-cut">Print and Cut<a href="https://rayforge.org/blog/rayforge-1.6-device-profiles-rotary-print-cut#print-and-cut" class="hash-link" aria-label="Direct link to Print and Cut" title="Direct link to Print and Cut" translate="no">​</a></h2>
+<p>A new addon helps you align laser cuts with pre-printed material. Register
+reference points on your print, let Rayforge calculate the offset and rotation,
+and your cuts land exactly where they should. Perfect for making stickers,
+labels, or anything that needs to line up with an existing print.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="redesigned-layer-system">Redesigned Layer System<a href="https://rayforge.org/blog/rayforge-1.6-device-profiles-rotary-print-cut#redesigned-layer-system" class="hash-link" aria-label="Direct link to Redesigned Layer System" title="Direct link to Redesigned Layer System" translate="no">​</a></h2>
+<p>The layer panel got a complete overhaul. Each layer column now shows a visual
+workflow so you can see your operations at a glance. You can reorder layers and
+workpieces with drag-and-drop. Each layer can be assigned its own Work
+Coordinate System (G54-G59) for multi-fixture setups, with a quick edit button
+right in the layer settings. The settings dialog is non-modal, so you can keep
+it open while working on the canvas.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="material-test-grid">Material Test Grid<a href="https://rayforge.org/blog/rayforge-1.6-device-profiles-rotary-print-cut#material-test-grid" class="hash-link" aria-label="Direct link to Material Test Grid" title="Direct link to Material Test Grid" translate="no">​</a></h2>
+<p>New parameter combinations are available, and multipass mode now shows extra
+speed or power labels so you can tell exactly what each cell represents.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="grbl-telnet-driver">GRBL Telnet Driver<a href="https://rayforge.org/blog/rayforge-1.6-device-profiles-rotary-print-cut#grbl-telnet-driver" class="hash-link" aria-label="Direct link to GRBL Telnet Driver" title="Direct link to GRBL Telnet Driver" translate="no">​</a></h2>
+<p>Community contributor gyordanov built a new driver that connects to GRBL
+controllers over the network via Telnet. It works with grblHAL and ESP3D-based
+boards -- no USB cable needed.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/blog/rayforge-1.6-device-profiles-rotary-print-cut#other-improvements" class="hash-link" aria-label="Direct link to Other Improvements" title="Direct link to Other Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Update checker</strong> notifies you when a new version is available</li>
+<li class=""><strong>Floating properties panel</strong> gives you more canvas space</li>
+<li class=""><strong>Editable slider values</strong> -- click and type the exact number you want</li>
+<li class=""><strong>Ops color setting</strong> -- choose layer color or laser color for rendering</li>
+<li class=""><strong>Creality Falcon A1</strong> device profile</li>
+<li class=""><strong>Massively reduced memory</strong> usage for multi-layer PDFs</li>
+<li class=""><strong>GRBL serial improvements</strong> with deadlock recovery and comment stripping</li>
+<li class=""><strong>Sketcher</strong> -- support changing text color using the fill tool</li>
+<li class=""><strong>Canvas</strong> -- right-click context menu for empty space</li>
+<li class=""><strong>Windows</strong> -- terminal window no longer appears on startup</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="special-thanks">Special Thanks<a href="https://rayforge.org/blog/rayforge-1.6-device-profiles-rotary-print-cut#special-thanks" class="hash-link" aria-label="Direct link to Special Thanks" title="Direct link to Special Thanks" translate="no">​</a></h2>
+<p>This release was made possible with the support of our Patreon supporters:
+old-man-and-the-seam, Amsel, froqstar, pghpete, Derek McTavish, and four
+anonymous supporters.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-16">Download Rayforge 1.6<a href="https://rayforge.org/blog/rayforge-1.6-device-profiles-rotary-print-cut#download-rayforge-16" class="hash-link" aria-label="Direct link to Download Rayforge 1.6" title="Direct link to Download Rayforge 1.6" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="https://rayforge.org/docs/getting-started/installation">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/blog/rayforge-1.6-device-profiles-rotary-print-cut#join-the-community" class="hash-link" aria-label="Direct link to Join the Community" title="Direct link to Join the Community" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content>
+        <author>
+            <name>Rayforge Team</name>
+            <uri>https://github.com/barebaric/rayforge</uri>
+        </author>
+        <category label="release" term="release"/>
+        <category label="1.6" term="1.6"/>
+        <category label="rotary" term="rotary"/>
+        <category label="device-profiles" term="device-profiles"/>
+        <category label="print-and-cut" term="print-and-cut"/>
+        <category label="layers" term="layers"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Rayforge 1.5 - 3D Simulator, Bezier Curves, No-Go Zones]]></title>
         <id>https://rayforge.org/blog/rayforge-1.5-3d-simulator-bezier-nogozones</id>

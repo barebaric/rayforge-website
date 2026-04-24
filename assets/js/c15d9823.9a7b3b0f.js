@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite_new=self.webpackChunkwebsite_new||[]).push([[8146],{29328(e){e.exports=JSON.parse('{"metadata":{"permalink":"/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":9,"blogDescription":"News, release notes, tutorials, and tips about Rayforge \u2014 free laser cutting and engraving software","blogTitle":"Rayforge Blog"}}')}}]);
