@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/pt-BR/assets/css/styles.2faab74b.css">
-<script src="/pt-BR/assets/js/runtime~main.1edfc103.js" defer="defer"></script>
-<script src="/pt-BR/assets/js/main.e1aaa798.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/runtime~main.fcff9352.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/main.b2e03ae5.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -363,27 +363,7 @@ sem necessidade de cabo USB.</p>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>Placa</th><th>Firmware Típico</th><th>Suporte Rayforge</th></tr></thead><tbody><tr><td><strong>Arduino CNC Shield</strong></td><td>GRBL 1.1</td><td>Excelente</td></tr><tr><td><strong>MKS DLC32</strong></td><td>grblHAL</td><td>Excelente</td></tr><tr><td><strong>Cohesion3D</strong></td><td>Smoothieware</td><td>Limitado</td></tr><tr><td><strong>Placas SKR</strong></td><td>Marlin/grblHAL</td><td>Varia</td></tr><tr><td><strong>Ruida</strong></td><td>Proprietário</td><td>Não suportado</td></tr><tr><td><strong>Trocen</strong></td><td>Proprietário</td><td>Não suportado</td></tr><tr><td><strong>TopWisdom</strong></td><td>Proprietário</td><td>Não suportado</td></tr></tbody></table>
+<table><thead><tr><th>Placa</th><th>Firmware Típico</th><th>Suporte Rayforge</th></tr></thead><tbody><tr><td><strong>Arduino CNC Shield</strong></td><td>GRBL 1.1</td><td>Excelente</td></tr><tr><td><strong>MKS DLC32</strong></td><td>grblHAL</td><td>Excelente</td></tr><tr><td><strong>Ruida</strong></td><td>Proprietário</td><td>Experimental</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="controladores-recomendados">Controladores Recomendados<a href="#controladores-recomendados" class="hash-link" aria-label="Link direto para Controladores Recomendados" title="Link direto para Controladores Recomendados" translate="no">​</a></h3>
 <p>Para melhor compatibilidade com Rayforge:</p>
 <ol>
@@ -522,10 +502,29 @@ sem necessidade de cabo USB.</p>
 </ol>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="suporte-futuro-de-firmware">Suporte Futuro de Firmware<a href="#suporte-futuro-de-firmware" class="hash-link" aria-label="Link direto para Suporte Futuro de Firmware" title="Link direto para Suporte Futuro de Firmware" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="recursos-solicitados">Recursos Solicitados<a href="#recursos-solicitados" class="hash-link" aria-label="Link direto para Recursos Solicitados" title="Link direto para Recursos Solicitados" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="controladores-ruida">Controladores Ruida<a href="#controladores-ruida" class="hash-link" aria-label="Link direto para Controladores Ruida" title="Link direto para Controladores Ruida" translate="no">​</a></h3>
+<p>O Rayforge inclui suporte experimental para controladores baseados em Ruida (ex.
+RDC6442, RDC6445, Ruida R5). O driver Ruida conecta via rede e suporta jogging,
+relatório de posição, controle de ar assistido, seleção de camada, auto-conexão e
+sondagem de status.</p>
+<p><strong>Funcionalidades:</strong></p>
+<ul>
+<li class="">Conectividade de rede (Ethernet/WiFi)</li>
+<li class="">Relatório de posição</li>
+<li class="">Controles de jogging</li>
+<li class="">Ar assistido e seleção de camada</li>
+<li class="">Suporte a pontos de referência</li>
+</ul>
+<p><strong>Limitações:</strong></p>
+<ul>
+<li class="">Experimental — ainda não totalmente estável</li>
+<li class="">Sem geração de G-code; Ruida usa seu próprio protocolo proprietário</li>
+<li class="">Envio de trabalhos ainda não suportado</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="outros-recursos-solicitados">Outros Recursos Solicitados<a href="#outros-recursos-solicitados" class="hash-link" aria-label="Link direto para Outros Recursos Solicitados" title="Link direto para Outros Recursos Solicitados" translate="no">​</a></h3>
 <p>Usuários solicitaram suporte para:</p>
 <ul>
-<li class=""><strong>Controladores Ruida</strong> - Controladores de laser chineses</li>
 <li class=""><strong>Trocen/AWC</strong> - Controladores de laser comerciais</li>
 <li class=""><strong>ESP32 WiFi</strong> - Conectividade de rede para grblHAL</li>
 <li class=""><strong>API Laser</strong> - API direta da máquina (sem G-code)</li>
@@ -546,6 +545,6 @@ sem necessidade de cabo USB.</p>
 <li class=""><a class="" href="/pt-BR/docs/machine/device">Configurações de Dispositivo</a> - Configuração GRBL</li>
 <li class=""><a class="" href="/pt-BR/docs/troubleshooting/connection">Problemas de Conexão</a> - Solução de problemas de conexão</li>
 <li class=""><a class="" href="/pt-BR/docs/machine/general">Configurações Gerais</a> - Configuração da máquina</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/reference/firmware.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Páginas de documentação"><a class="pagination-nav__link pagination-nav__link--prev" href="/pt-BR/docs/reference/gcode-dialects"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Suporte a Dialeto G-code</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#visão-geral" class="table-of-contents__link toc-highlight">Visão Geral</a><ul><li><a href="#matriz-de-compatibilidade" class="table-of-contents__link toc-highlight">Matriz de Compatibilidade</a></li></ul></li><li><a href="#firmware-grbl" class="table-of-contents__link toc-highlight">Firmware GRBL</a><ul><li><a href="#grbl-11-recomendado" class="table-of-contents__link toc-highlight">GRBL 1.1 (Recomendado)</a></li><li><a href="#verificando-a-versão-do-grbl" class="table-of-contents__link toc-highlight">Verificando a Versão do GRBL</a></li><li><a href="#grbl-09-antigo" class="table-of-contents__link toc-highlight">GRBL 0.9 (Antigo)</a></li></ul></li><li><a href="#grblhal" class="table-of-contents__link toc-highlight">grblHAL</a><ul><li><a href="#o-que-é-grblhal" class="table-of-contents__link toc-highlight">O que é grblHAL?</a></li></ul></li><li><a href="#driver-grbl-telnet" class="table-of-contents__link toc-highlight">Driver GRBL Telnet</a><ul><li><a href="#sobre-o-driver-grbl-telnet" class="table-of-contents__link toc-highlight">Sobre o Driver GRBL Telnet</a></li></ul></li><li><a href="#smoothieware" class="table-of-contents__link toc-highlight">Smoothieware</a><ul><li><a href="#notas-de-compatibilidade" class="table-of-contents__link toc-highlight">Notas de Compatibilidade</a></li></ul></li><li><a href="#marlin" class="table-of-contents__link toc-highlight">Marlin</a><ul><li><a href="#marlin-para-laser" class="table-of-contents__link toc-highlight">Marlin para Laser</a></li></ul></li><li><a href="#guia-de-atualização-de-firmware" class="table-of-contents__link toc-highlight">Guia de Atualização de Firmware</a><ul><li><a href="#atualizando-para-grbl-11" class="table-of-contents__link toc-highlight">Atualizando para GRBL 1.1</a></li><li><a href="#backup-antes-de-atualizar" class="table-of-contents__link toc-highlight">Backup Antes de Atualizar</a></li></ul></li><li><a href="#hardware-do-controlador" class="table-of-contents__link toc-highlight">Hardware do Controlador</a><ul><li><a href="#controladores-comuns" class="table-of-contents__link toc-highlight">Controladores Comuns</a></li><li><a href="#controladores-recomendados" class="table-of-contents__link toc-highlight">Controladores Recomendados</a></li></ul></li><li><a href="#configuração-de-firmware" class="table-of-contents__link toc-highlight">Configuração de Firmware</a><ul><li><a href="#configurações-grbl-para-laser" class="table-of-contents__link toc-highlight">Configurações GRBL para Laser</a></li><li><a href="#testando-o-firmware" class="table-of-contents__link toc-highlight">Testando o Firmware</a></li></ul></li><li><a href="#solução-de-problemas-de-firmware" class="table-of-contents__link toc-highlight">Solução de Problemas de Firmware</a><ul><li><a href="#firmware-não-responde" class="table-of-contents__link toc-highlight">Firmware Não Responde</a></li><li><a href="#falhas-do-firmware" class="table-of-contents__link toc-highlight">Falhas do Firmware</a></li><li><a href="#firmware-errado" class="table-of-contents__link toc-highlight">Firmware Errado</a></li></ul></li><li><a href="#suporte-futuro-de-firmware" class="table-of-contents__link toc-highlight">Suporte Futuro de Firmware</a><ul><li><a href="#recursos-solicitados" class="table-of-contents__link toc-highlight">Recursos Solicitados</a></li><li><a href="#contribuindo" class="table-of-contents__link toc-highlight">Contribuindo</a></li></ul></li><li><a href="#páginas-relacionadas" class="table-of-contents__link toc-highlight">Páginas Relacionadas</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/reference/firmware.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Páginas de documentação"><a class="pagination-nav__link pagination-nav__link--prev" href="/pt-BR/docs/reference/gcode-dialects"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Suporte a Dialeto G-code</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#visão-geral" class="table-of-contents__link toc-highlight">Visão Geral</a><ul><li><a href="#matriz-de-compatibilidade" class="table-of-contents__link toc-highlight">Matriz de Compatibilidade</a></li></ul></li><li><a href="#firmware-grbl" class="table-of-contents__link toc-highlight">Firmware GRBL</a><ul><li><a href="#grbl-11-recomendado" class="table-of-contents__link toc-highlight">GRBL 1.1 (Recomendado)</a></li><li><a href="#verificando-a-versão-do-grbl" class="table-of-contents__link toc-highlight">Verificando a Versão do GRBL</a></li><li><a href="#grbl-09-antigo" class="table-of-contents__link toc-highlight">GRBL 0.9 (Antigo)</a></li></ul></li><li><a href="#grblhal" class="table-of-contents__link toc-highlight">grblHAL</a><ul><li><a href="#o-que-é-grblhal" class="table-of-contents__link toc-highlight">O que é grblHAL?</a></li></ul></li><li><a href="#driver-grbl-telnet" class="table-of-contents__link toc-highlight">Driver GRBL Telnet</a><ul><li><a href="#sobre-o-driver-grbl-telnet" class="table-of-contents__link toc-highlight">Sobre o Driver GRBL Telnet</a></li></ul></li><li><a href="#smoothieware" class="table-of-contents__link toc-highlight">Smoothieware</a><ul><li><a href="#notas-de-compatibilidade" class="table-of-contents__link toc-highlight">Notas de Compatibilidade</a></li></ul></li><li><a href="#marlin" class="table-of-contents__link toc-highlight">Marlin</a><ul><li><a href="#marlin-para-laser" class="table-of-contents__link toc-highlight">Marlin para Laser</a></li></ul></li><li><a href="#guia-de-atualização-de-firmware" class="table-of-contents__link toc-highlight">Guia de Atualização de Firmware</a><ul><li><a href="#atualizando-para-grbl-11" class="table-of-contents__link toc-highlight">Atualizando para GRBL 1.1</a></li><li><a href="#backup-antes-de-atualizar" class="table-of-contents__link toc-highlight">Backup Antes de Atualizar</a></li></ul></li><li><a href="#hardware-do-controlador" class="table-of-contents__link toc-highlight">Hardware do Controlador</a><ul><li><a href="#controladores-comuns" class="table-of-contents__link toc-highlight">Controladores Comuns</a></li><li><a href="#controladores-recomendados" class="table-of-contents__link toc-highlight">Controladores Recomendados</a></li></ul></li><li><a href="#configuração-de-firmware" class="table-of-contents__link toc-highlight">Configuração de Firmware</a><ul><li><a href="#configurações-grbl-para-laser" class="table-of-contents__link toc-highlight">Configurações GRBL para Laser</a></li><li><a href="#testando-o-firmware" class="table-of-contents__link toc-highlight">Testando o Firmware</a></li></ul></li><li><a href="#solução-de-problemas-de-firmware" class="table-of-contents__link toc-highlight">Solução de Problemas de Firmware</a><ul><li><a href="#firmware-não-responde" class="table-of-contents__link toc-highlight">Firmware Não Responde</a></li><li><a href="#falhas-do-firmware" class="table-of-contents__link toc-highlight">Falhas do Firmware</a></li><li><a href="#firmware-errado" class="table-of-contents__link toc-highlight">Firmware Errado</a></li></ul></li><li><a href="#suporte-futuro-de-firmware" class="table-of-contents__link toc-highlight">Suporte Futuro de Firmware</a><ul><li><a href="#controladores-ruida" class="table-of-contents__link toc-highlight">Controladores Ruida</a></li><li><a href="#outros-recursos-solicitados" class="table-of-contents__link toc-highlight">Outros Recursos Solicitados</a></li><li><a href="#contribuindo" class="table-of-contents__link toc-highlight">Contribuindo</a></li></ul></li><li><a href="#páginas-relacionadas" class="table-of-contents__link toc-highlight">Páginas Relacionadas</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>
