@@ -15,8 +15,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rayforge","description":"Free open-source laser cutter software for GRBL-based machines. Design, simulate, and control your laser cutter or engraver with AI-powered tools, 3D preview, and a built-in sketcher.","url":"https://rayforge.org","applicationCategory":"DesignApplication","operatingSystem":"Linux, Windows, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"barebaric","url":"https://github.com/barebaric"},"screenshot":"https://rayforge.org/screenshots/main-standard.png","featureList":"AI-powered design generation, 3D simulation and preview, Parametric 2D sketcher, GRBL and Smoothieware support, Rotary axis support, Material and recipe management, Path optimization, Multi-layer support, Camera calibration","license":"https://github.com/barebaric/rayforge/blob/main/LICENSE","programmingLanguage":"Python","installUrl":"https://rayforge.org/docs/getting-started/installation"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
-<script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.25fb0f8e.css">
-<script src="/assets/js/runtime~main.d9d3fe10.js" defer="defer"></script>
+<script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.56913914.css">
+<script src="/assets/js/runtime~main.1f49b7e5.js" defer="defer"></script>
 <script src="/assets/js/main.1e485e37.js" defer="defer"></script>
 </head>
 <body>
@@ -39,12 +39,14 @@ graph.</p>
 <ul>
 <li class=""><strong>ArtifactKey</strong>: A unique identifier consisting of an ID and a group type
 (<code>workpiece</code>, <code>step</code>, <code>job</code>, or <code>view</code>)</li>
-<li class=""><strong>State</strong>: The current lifecycle state of the node</li>
 <li class=""><strong>Dependencies</strong>: List of nodes this node depends on (children)</li>
 <li class=""><strong>Dependents</strong>: List of nodes that depend on this node (parents)</li>
 </ul>
+<p>Nodes do not store state directly. Instead, they delegate state reads and
+writes to the <code>ArtifactManager</code>, which maintains a ledger of all artifacts
+and their states.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="node-states">Node States<a href="#node-states" class="hash-link" aria-label="Direct link to Node States" title="Direct link to Node States" translate="no">​</a></h3>
-<p>Nodes progress through four states:</p>
+<p>Nodes progress through five states:</p>
 
 
 
@@ -70,7 +72,11 @@ graph.</p>
 
 
 
-<table><thead><tr><th>State</th><th>Description</th></tr></thead><tbody><tr><td><code>DIRTY</code></td><td>The artifact needs to be regenerated</td></tr><tr><td><code>PROCESSING</code></td><td>A task is currently generating the artifact</td></tr><tr><td><code>VALID</code></td><td>The artifact is ready and up-to-date</td></tr><tr><td><code>ERROR</code></td><td>Generation failed</td></tr></tbody></table>
+
+
+
+
+<table><thead><tr><th>State</th><th>Description</th></tr></thead><tbody><tr><td><code>DIRTY</code></td><td>The artifact needs to be (re)generated</td></tr><tr><td><code>PROCESSING</code></td><td>A task is currently generating the artifact</td></tr><tr><td><code>VALID</code></td><td>The artifact is ready and up-to-date</td></tr><tr><td><code>ERROR</code></td><td>Generation failed</td></tr><tr><td><code>CANCELLED</code></td><td>Generation was cancelled; will be retried if still needed</td></tr></tbody></table>
 <p>When a node is marked as dirty, all its dependents are also marked dirty,
 propagating invalidation up the graph.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pipelinegraph">PipelineGraph<a href="#pipelinegraph" class="hash-link" aria-label="Direct link to PipelineGraph" title="Direct link to PipelineGraph" translate="no">​</a></h3>
@@ -91,7 +97,7 @@ propagating invalidation up the graph.</p>
 <ol>
 <li class=""><strong>Building the graph</strong> from the Doc model</li>
 <li class=""><strong>Identifying ready nodes</strong> (DIRTY with all VALID dependencies)</li>
-<li class=""><strong>Launching tasks</strong> to generate artifacts</li>
+<li class=""><strong>Triggering task launches</strong> via the appropriate pipeline stages</li>
 <li class=""><strong>Tracking state</strong> through the generation process</li>
 <li class=""><strong>Notifying consumers</strong> when artifacts are ready</li>
 </ol>
@@ -102,18 +108,29 @@ which document version, allowing reuse of valid artifacts across generations.</p
 <li class="">When the graph is built, the scheduler syncs node states with the
 artifact manager to identify cached artifacts that can be reused</li>
 <li class="">Artifacts from the previous generation can be reused if they remain valid</li>
-<li class="">The scheduler tracks which generation IDs have running tasks to preserve
-artifacts during generation transitions</li>
 <li class="">Invalidations are tracked even before graph rebuild and re-applied after</li>
+<li class="">The scheduler delegates actual task creation to stages but controls
+<strong>when</strong> tasks are launched based on dependency readiness</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="artifactmanager">ArtifactManager<a href="#artifactmanager" class="hash-link" aria-label="Direct link to ArtifactManager" title="Direct link to ArtifactManager" translate="no">​</a></h2>
-<p>The <code>ArtifactManager</code> is a pure cache manager for artifact handles. It:</p>
+<p>The <code>ArtifactManager</code> serves as both a cache and the single source of truth
+for artifact state. It:</p>
 <ul>
-<li class="">Stores and retrieves artifact handles</li>
-<li class="">Manages reference counting for cleanup</li>
-<li class="">Handles lifecycle (creation, retention, release)</li>
-<li class="">Does NOT track state (state is managed by the DAG scheduler)</li>
+<li class="">Stores and retrieves artifact handles via a <strong>ledger</strong> (keyed by
+<code>ArtifactKey</code> + generation ID)</li>
+<li class="">Tracks state (<code>DIRTY</code>, <code>VALID</code>, <code>ERROR</code>, etc.) in ledger entries</li>
+<li class="">Manages reference counting for shared memory cleanup</li>
+<li class="">Handles lifecycle (creation, retention, release, pruning)</li>
+<li class="">Provides context managers for safe artifact adoption, completion,
+failure, and cancellation reporting</li>
 </ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="generationcontext">GenerationContext<a href="#generationcontext" class="hash-link" aria-label="Direct link to GenerationContext" title="Direct link to GenerationContext" translate="no">​</a></h2>
+<p>Each reconciliation cycle creates a <code>GenerationContext</code> that tracks all
+active tasks for that generation. It ensures that shared memory resources
+remain valid until all in-flight tasks for a generation have completed,
+even if a newer generation has already started. When a context is
+superseded and all its tasks finish, it automatically releases its
+resources.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="shared-memory-lifecycle">Shared Memory Lifecycle<a href="#shared-memory-lifecycle" class="hash-link" aria-label="Direct link to Shared Memory Lifecycle" title="Direct link to Shared Memory Lifecycle" translate="no">​</a></h2>
 <p>Artifacts are stored in shared memory (<code>multiprocessing.shared_memory</code>) for
 efficient inter-process communication between worker processes and the main
@@ -125,23 +142,25 @@ when done. This is the simplest pattern.</p>
 main process via IPC, and transfers ownership. The worker &quot;forgets&quot; the
 handle (closes its file descriptor without unlinking the memory), while
 the main process &quot;adopts&quot; it and becomes responsible for eventual release.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="reference-counting">Reference Counting<a href="#reference-counting" class="hash-link" aria-label="Direct link to Reference Counting" title="Direct link to Reference Counting" translate="no">​</a></h3>
-<p>The <code>ArtifactStore</code> maintains reference counts for each shared memory block.
-Multiple callers can <code>retain()</code> a handle, and the block is only unlinked
-when the count reaches zero. This is used by the <code>ViewManager</code> for
-progressive rendering where multiple callbacks may access the same artifact.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stale-artifact-detection">Stale Artifact Detection<a href="#stale-artifact-detection" class="hash-link" aria-label="Direct link to Stale Artifact Detection" title="Direct link to Stale Artifact Detection" translate="no">​</a></h3>
+<p>The <code>StaleGenerationError</code> mechanism prevents artifacts from superseded
+generations from being adopted. When a newer generation has started, the
+manager detects stale artifacts during adoption and silently discards them.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pipeline-stages">Pipeline Stages<a href="#pipeline-stages" class="hash-link" aria-label="Direct link to Pipeline Stages" title="Direct link to Pipeline Stages" translate="no">​</a></h2>
 <p>The pipeline stages (<code>WorkPiecePipelineStage</code>, <code>StepPipelineStage</code>,
-<code>JobPipelineStage</code>) now serve as interfaces rather than task launchers:</p>
+<code>JobPipelineStage</code>) are responsible for the <strong>mechanics</strong> of task execution:</p>
 <ul>
-<li class="">They handle invalidation requests from the UI</li>
-<li class="">They delegate task launching to the DagScheduler</li>
-<li class="">They provide access to cached artifacts</li>
-<li class="">They forward signals from the scheduler to the UI</li>
+<li class="">They create and register subprocess tasks via the <code>TaskManager</code></li>
+<li class="">They handle task events (progressive chunks, intermediate results)</li>
+<li class="">They manage artifact adoption and caching upon task completion</li>
+<li class="">They emit signals to notify the pipeline of state changes</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="invalidationscope">InvalidationScope<a href="#invalidationscope" class="hash-link" aria-label="Direct link to InvalidationScope" title="Direct link to InvalidationScope" translate="no">​</a></h2>
-<p>The <code>InvalidationScope</code> enum defines the scope of invalidation for downstream
-artifacts:</p>
+<p>The <strong>DagScheduler</strong> decides <strong>when</strong> to trigger each stage, but the
+stages handle the actual subprocess spawning, event handling, and
+result adoption.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="invalidation-strategy">Invalidation Strategy<a href="#invalidation-strategy" class="hash-link" aria-label="Direct link to Invalidation Strategy" title="Direct link to Invalidation Strategy" translate="no">​</a></h2>
+<p>Invalidation is triggered by changes to the Doc model, with different
+strategies depending on what changed:</p>
 
 
 
@@ -159,78 +178,97 @@ artifacts:</p>
 
 
 
-<table><thead><tr><th>Scope</th><th>Description</th></tr></thead><tbody><tr><td><code>FULL_REPRODUCTION</code></td><td>Invalidates workpieces, which cascades to steps and then to the job. Used for changes that require artifact regeneration (geometry, parameters, size changes).</td></tr><tr><td><code>STEP_ONLY</code></td><td>Invalidates steps directly, which cascades to the job. Used for position/rotation-only transform changes where workpiece geometry remains unchanged.</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Change Type</th><th>Behavior</th></tr></thead><tbody><tr><td>Geometry/parameters</td><td>Workpiece-step pairs invalidated, cascading to steps and job</td></tr><tr><td>Position/rotation</td><td>Steps invalidated directly (cascading to job); workpieces skipped unless position-sensitive</td></tr><tr><td>Size change</td><td>Same as geometry: full cascade from workpiece-step pairs upward</td></tr><tr><td>Machine config</td><td>All artifacts force-invalidated across all generations</td></tr></tbody></table>
+<p>Position-sensitive steps (e.g., those with crop-to-stock enabled) trigger
+workpiece invalidation even for pure position changes.</p>
 <h1>Detailed Breakdown</h1>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="input">Input<a href="#input" class="hash-link" aria-label="Direct link to Input" title="Direct link to Input" translate="no">​</a></h2>
 <p>The process begins with the <strong>Doc Model</strong>, which contains:</p>
 <ul>
 <li class=""><strong>WorkPieces:</strong> Individual design elements (SVGs, images) placed on canvas</li>
-<li class=""><strong>Steps:</strong> Processing instructions (Contour, Raster) with settings</li>
+<li class=""><strong>Steps:</strong> Processing instructions (Contour, Raster, etc.) with settings</li>
+<li class=""><strong>Layers:</strong> Grouping of workpieces, each with its own workflow</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pipeline-core">Pipeline Core<a href="#pipeline-core" class="hash-link" aria-label="Direct link to Pipeline Core" title="Direct link to Pipeline Core" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pipeline-orchestrator">Pipeline (Orchestrator)<a href="#pipeline-orchestrator" class="hash-link" aria-label="Direct link to Pipeline (Orchestrator)" title="Direct link to Pipeline (Orchestrator)" translate="no">​</a></h3>
 <p>The <code>Pipeline</code> class is the high-level conductor that:</p>
 <ul>
-<li class="">Listens to the Doc model for changes</li>
+<li class="">Listens to the Doc model for changes via signals</li>
+<li class=""><strong>Debounces</strong> changes (200ms reconciliation delay, 50ms removal delay)</li>
 <li class="">Coordinates with the DagScheduler to trigger regeneration</li>
-<li class="">Manages the overall processing state</li>
-<li class="">Connects signals between components</li>
+<li class="">Manages the overall processing state and busy detection</li>
+<li class="">Supports <strong>pause/resume</strong> for batch operations</li>
+<li class="">Supports <strong>manual mode</strong> (<code>auto_pipeline=False</code>) where recalculation
+is triggered explicitly rather than automatically</li>
+<li class="">Connects signals between components and relays them to consumers</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dagscheduler-1">DagScheduler<a href="#dagscheduler-1" class="hash-link" aria-label="Direct link to DagScheduler" title="Direct link to DagScheduler" translate="no">​</a></h3>
 <p>The <code>DagScheduler</code>:</p>
 <ul>
 <li class="">Builds and maintains the <code>PipelineGraph</code></li>
 <li class="">Identifies nodes ready for processing</li>
-<li class="">Launches tasks via the TaskManager</li>
-<li class="">Tracks node state transitions</li>
+<li class="">Triggers task launches via stage <code>launch_task()</code> methods</li>
+<li class="">Tracks node state transitions through the ledger</li>
 <li class="">Emits signals when artifacts are ready</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="artifactmanager-1">ArtifactManager<a href="#artifactmanager-1" class="hash-link" aria-label="Direct link to ArtifactManager" title="Direct link to ArtifactManager" translate="no">​</a></h3>
 <p>The <code>ArtifactManager</code>:</p>
 <ul>
+<li class="">Maintains a <strong>ledger</strong> of <code>LedgerEntry</code> objects, each tracking a handle,
+generation ID, and node state</li>
 <li class="">Caches artifact handles in shared memory</li>
 <li class="">Manages reference counting for cleanup</li>
 <li class="">Provides lookup by ArtifactKey and generation ID</li>
+<li class="">Prunes obsolete generations to keep the ledger clean</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="generationcontext-1">GenerationContext<a href="#generationcontext-1" class="hash-link" aria-label="Direct link to GenerationContext" title="Direct link to GenerationContext" translate="no">​</a></h3>
+<p>Each reconciliation creates a new <code>GenerationContext</code> that:</p>
+<ul>
+<li class="">Tracks active tasks via reference-counted keys</li>
+<li class="">Owns shared memory resources for its generation</li>
+<li class="">Auto-shuts down when superseded and all tasks complete</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="artifact-generation">Artifact Generation<a href="#artifact-generation" class="hash-link" aria-label="Direct link to Artifact Generation" title="Direct link to Artifact Generation" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="workpieceartifacts">WorkPieceArtifacts<a href="#workpieceartifacts" class="hash-link" aria-label="Direct link to WorkPieceArtifacts" title="Direct link to WorkPieceArtifacts" translate="no">​</a></h3>
-<p>Generated for each <code>(WorkPiece, Step)</code> combination, containing:</p>
+<p>Generated for each <code>(WorkPiece, Step)</code> combination. Contains:</p>
 <ul>
-<li class="">Toolpaths (<code>Ops</code>) in local coordinate system</li>
-<li class="">Vertex data for lines</li>
-<li class="">Texture data for raster fills</li>
+<li class="">Toolpaths (<code>Ops</code>) in the workpiece&#x27;s local coordinate system</li>
+<li class="">Scalability flag and source dimensions for resolution-independent ops</li>
+<li class="">Coordinate system and generation metadata</li>
 </ul>
 <p>Processing sequence:</p>
 <ol>
-<li class=""><strong>Modifiers:</strong> (Optional) Image conditioning (grayscale, etc.)</li>
-<li class=""><strong>Producer:</strong> Creates raw toolpaths (<code>Ops</code>)</li>
-<li class=""><strong>Transformers:</strong> Per-workpiece modifications (Tabs, Smooth)</li>
-<li class=""><strong>Vertex Encoder:</strong> Creates GPU-friendly data</li>
+<li class=""><strong>Producer:</strong> Creates raw toolpaths (<code>Ops</code>) from the workpiece data</li>
+<li class=""><strong>Transformers:</strong> Per-workpiece modifications applied in ordered phases
+(Geometry Refinement → Path Interruption → Post Processing)</li>
 </ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stepartifacts">StepArtifacts<a href="#stepartifacts" class="hash-link" aria-label="Direct link to StepArtifacts" title="Direct link to StepArtifacts" translate="no">​</a></h3>
+<p>Large raster workpieces are processed incrementally in chunks, enabling
+progressive visual feedback during generation.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stepopsartifacts">StepOpsArtifacts<a href="#stepopsartifacts" class="hash-link" aria-label="Direct link to StepOpsArtifacts" title="Direct link to StepOpsArtifacts" translate="no">​</a></h3>
 <p>Generated for each Step, consuming all related WorkPieceArtifacts:</p>
-<p>**StepRenderArtifact:</p>
 <ul>
-<li class="">Combined vertex and texture data for all workpieces</li>
-<li class="">Transformed to world-space coordinates</li>
-<li class="">Optimized for 3D canvas rendering</li>
+<li class="">Combined Ops for all workpieces in world-space coordinates</li>
+<li class="">Per-step transformers applied (Optimize, Multi-Pass, etc.)</li>
 </ul>
-<p>**StepOpsArtifact:</p>
-<ul>
-<li class="">Combined Ops for all workpieces</li>
-<li class="">Transformed to world-space coordinates</li>
-<li class="">Includes per-step transformers (Optimize, Multi-Pass)</li>
-</ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="jobartifact">JobArtifact<a href="#jobartifact" class="hash-link" aria-label="Direct link to JobArtifact" title="Direct link to JobArtifact" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="jobartifact">JobArtifact<a href="#jobartifact" class="hash-link" aria-label="Direct link to JobArtifact" title="Direct link to JobArtifact" translate="no"> ​</a></h3>
 <p>Generated on demand when G-code is needed, consuming all StepOpsArtifacts:</p>
 <ul>
-<li class="">Final G-code for the entire job</li>
-<li class="">Complete vertex data for simulation</li>
-<li class="">High-fidelity time estimate</li>
+<li class="">Final machine code (G-code or driver-specific format)</li>
+<li class="">Complete ops for simulation and playback</li>
+<li class="">High-fidelity time estimate and total distance</li>
+<li class="">Rotary-mapped ops for 3D preview</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="viewmanager-separated">ViewManager (Separated)<a href="#viewmanager-separated" class="hash-link" aria-label="Direct link to ViewManager (Separated)" title="Direct link to ViewManager (Separated)" translate="no">​</a></h2>
-<p>The <code>ViewManager</code> is <strong>decoupled</strong> from the data pipeline. It handles rendering
-for the 2D canvas based on UI state:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2d-view-layer-separated">2D View Layer (Separated)<a href="#2d-view-layer-separated" class="hash-link" aria-label="Direct link to 2D View Layer (Separated)" title="Direct link to 2D View Layer (Separated)" translate="no">​</a></h2>
+<p>The <code>ViewManager</code> is <strong>decoupled</strong> from the data pipeline. It handles
+rendering for the 2D canvas based on UI state:</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rendercontext">RenderContext<a href="#rendercontext" class="hash-link" aria-label="Direct link to RenderContext" title="Direct link to RenderContext" translate="no">​</a></h3>
 <p>Contains the current view parameters:</p>
 <ul>
@@ -250,10 +288,48 @@ for the 2D canvas based on UI state:</p>
 <li class="">ViewManager tracks source <code>WorkPieceArtifact</code> handles</li>
 <li class="">When render context changes, ViewManager triggers re-rendering</li>
 <li class="">When source artifact changes, ViewManager triggers re-rendering</li>
-<li class="">Throttling prevents excessive updates during continuous changes</li>
+<li class="">Re-rendering is throttled (33ms interval) and concurrency-limited</li>
+<li class="">Progressive chunk stitching provides incremental visual updates</li>
 </ol>
 <p>The ViewManager indexes views by <code>(workpiece_uid, step_uid)</code> to support
 visualizing intermediate states of a workpiece across multiple steps.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3d--simulator-layer-separated">3D / Simulator Layer (Separated)<a href="#3d--simulator-layer-separated" class="hash-link" aria-label="Direct link to 3D / Simulator Layer (Separated)" title="Direct link to 3D / Simulator Layer (Separated)" translate="no">​</a></h2>
+<p>The 3D visualization and simulation system is <strong>decoupled</strong> from the data
+pipeline, following a similar pattern to the ViewManager. It consists of:</p>
+<ul>
+<li class="">A <strong>Scene Compiler</strong> that runs in a subprocess to convert <code>JobArtifact</code>
+ops into GPU-ready vertex data</li>
+<li class="">An <strong>OpPlayer</strong> that replays the job&#x27;s ops for real-time machine
+simulation with playback controls</li>
+</ul>
+<p>Both consume the <code>JobArtifact</code> produced by the pipeline&#x27;s job stage.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="compiledsceneartifact">CompiledSceneArtifact<a href="#compiledsceneartifact" class="hash-link" aria-label="Direct link to CompiledSceneArtifact" title="Direct link to CompiledSceneArtifact" translate="no">​</a></h3>
+<p>The Scene Compiler produces a <code>CompiledSceneArtifact</code> containing:</p>
+<ul>
+<li class=""><strong>Vertex layers:</strong> Powered/travel/zero-power vertex buffers with
+per-command offsets for progressive reveal</li>
+<li class=""><strong>Texture layers:</strong> Rasterized scanline power maps for engraving preview</li>
+<li class=""><strong>Overlay layers:</strong> Scanline power segments for real-time highlight</li>
+<li class="">Support for rotary (cylinder-wrapped) geometry</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="compilation-pipeline">Compilation Pipeline<a href="#compilation-pipeline" class="hash-link" aria-label="Direct link to Compilation Pipeline" title="Direct link to Compilation Pipeline" translate="no">​</a></h3>
+<ol>
+<li class="">Canvas3D listens for <code>job_generation_finished</code> signals</li>
+<li class="">When a new job is ready, it schedules scene compilation in a subprocess</li>
+<li class="">The subprocess reads the <code>JobArtifact</code> from shared memory and compiles
+ops into GPU vertex data</li>
+<li class="">The compiled scene is adopted back into shared memory and uploaded to
+GPU renderers</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="opplayer-simulator-backend">OpPlayer (Simulator Backend)<a href="#opplayer-simulator-backend" class="hash-link" aria-label="Direct link to OpPlayer (Simulator Backend)" title="Direct link to OpPlayer (Simulator Backend)" translate="no">​</a></h3>
+<p>The <code>OpPlayer</code> walks through the job&#x27;s ops command-by-command, maintaining
+a <code>MachineState</code> that tracks position, laser state, and auxiliary axes.
+This drives:</p>
+<ul>
+<li class="">The 3D canvas playback (progressive reveal of the toolpath)</li>
+<li class="">Machine head position and laser beam visualization</li>
+<li class="">Per-command stepping for the playback slider</li>
+</ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="consumers">Consumers<a href="#consumers" class="hash-link" aria-label="Direct link to Consumers" title="Direct link to Consumers" translate="no">​</a></h2>
 
 
@@ -280,46 +356,44 @@ visualizing intermediate states of a workpiece across multiple steps.</p>
 
 
 
-
-
-
-
-
-<table><thead><tr><th>Consumer</th><th>Uses</th><th>Purpose</th></tr></thead><tbody><tr><td>2D Canvas</td><td>WorkPieceViewArtifacts</td><td>Renders workpieces in screen space</td></tr><tr><td>3D Canvas</td><td>StepRenderArtifacts</td><td>Renders full step in world space</td></tr><tr><td>Simulator</td><td>JobArtifact</td><td>Accurate simulation of machine path</td></tr><tr><td>Machine</td><td>JobArtifact G-code</td><td>Manufacturing output</td></tr></tbody></table>
-<h1>Key Differences from Previous Architecture</h1>
+<table><thead><tr><th>Consumer</th><th>Uses</th><th>Purpose</th></tr></thead><tbody><tr><td>2D Canvas</td><td>WorkPieceViewArtifacts</td><td>Renders workpieces in screen space</td></tr><tr><td>3D Canvas</td><td>CompiledSceneArtifact</td><td>Renders full job in 3D with playback</td></tr><tr><td>Machine</td><td>JobArtifact (machine code)</td><td>Manufacturing output</td></tr></tbody></table>
+<h1>Key Architectural Decisions</h1>
 <ol>
 <li class="">
 <p><strong>DAG-based Scheduling:</strong> Instead of sequential stages, artifacts are
-generated as their dependencies become available.</p>
+generated as their dependencies become available, enabling parallelism.</p>
 </li>
 <li class="">
-<p><strong>State Management:</strong> Node state is tracked in the DAG graph, not in
-individual components.</p>
+<p><strong>Ledger-based State:</strong> Node state is tracked in the ArtifactManager&#x27;s
+ledger entries rather than in the graph nodes themselves, providing a
+single source of truth for both state and handle storage.</p>
 </li>
 <li class="">
-<p><strong>ViewManager Separation:</strong> Rendering for the 2D canvas is now handled
-by a separate ViewManager, not as part of the data pipeline.</p>
+<p><strong>View Layer Separation:</strong> Both the 2D canvas (ViewManager) and 3D
+canvas (Scene Compiler) are decoupled from the data pipeline. Each
+runs its own subprocess-based rendering and is driven by pipeline
+signals rather than being part of the DAG.</p>
 </li>
 <li class="">
 <p><strong>Generation IDs:</strong> Artifacts are tracked with generation IDs, allowing
-efficient reuse across document versions.</p>
+efficient reuse across document versions and stale artifact detection.</p>
 </li>
 <li class="">
 <p><strong>Centralized Orchestration:</strong> The DagScheduler is the single point of
-control for task launching and state tracking.</p>
+control for task scheduling; stages handle the mechanics of execution.</p>
 </li>
 <li class="">
-<p><strong>Pure Cache Manager:</strong> The ArtifactManager is now a simple cache,
-delegating all state management to the DAG scheduler.</p>
+<p><strong>GenerationContext Isolation:</strong> Each generation has its own context,
+ensuring resources stay alive until all in-flight tasks complete.</p>
 </li>
 <li class="">
 <p><strong>Invalidation Tracking:</strong> Keys marked dirty before graph rebuild are
 preserved and re-applied after rebuild.</p>
 </li>
 <li class="">
-<p><strong>Pending Work Detection:</strong> Only <code>PROCESSING</code> nodes count as pending work;
-<code>DIRTY</code> nodes may have unsatisfied dependencies (e.g., no view context).</p>
+<p><strong>Debounced Reconciliation:</strong> Changes are batched with configurable
+delays to avoid excessive pipeline cycles during rapid edits.</p>
 </li>
-</ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/pipeline.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/developer/importer"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Importer Architecture</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/developer/tasker"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Tasker: Background Task Management</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#artifact-nodes-and-the-dependency-graph" class="table-of-contents__link toc-highlight">Artifact Nodes and the Dependency Graph</a><ul><li><a href="#artifactnode" class="table-of-contents__link toc-highlight">ArtifactNode</a></li><li><a href="#node-states" class="table-of-contents__link toc-highlight">Node States</a></li><li><a href="#pipelinegraph" class="table-of-contents__link toc-highlight">PipelineGraph</a></li></ul></li><li><a href="#dagscheduler" class="table-of-contents__link toc-highlight">DagScheduler</a></li><li><a href="#artifactmanager" class="table-of-contents__link toc-highlight">ArtifactManager</a></li><li><a href="#shared-memory-lifecycle" class="table-of-contents__link toc-highlight">Shared Memory Lifecycle</a><ul><li><a href="#ownership-patterns" class="table-of-contents__link toc-highlight">Ownership Patterns</a></li><li><a href="#reference-counting" class="table-of-contents__link toc-highlight">Reference Counting</a></li></ul></li><li><a href="#pipeline-stages" class="table-of-contents__link toc-highlight">Pipeline Stages</a></li><li><a href="#invalidationscope" class="table-of-contents__link toc-highlight">InvalidationScope</a></li><li><a href="#input" class="table-of-contents__link toc-highlight">Input</a></li><li><a href="#pipeline-core" class="table-of-contents__link toc-highlight">Pipeline Core</a><ul><li><a href="#pipeline-orchestrator" class="table-of-contents__link toc-highlight">Pipeline (Orchestrator)</a></li><li><a href="#dagscheduler-1" class="table-of-contents__link toc-highlight">DagScheduler</a></li><li><a href="#artifactmanager-1" class="table-of-contents__link toc-highlight">ArtifactManager</a></li></ul></li><li><a href="#artifact-generation" class="table-of-contents__link toc-highlight">Artifact Generation</a><ul><li><a href="#workpieceartifacts" class="table-of-contents__link toc-highlight">WorkPieceArtifacts</a></li><li><a href="#stepartifacts" class="table-of-contents__link toc-highlight">StepArtifacts</a></li><li><a href="#jobartifact" class="table-of-contents__link toc-highlight">JobArtifact</a></li></ul></li><li><a href="#viewmanager-separated" class="table-of-contents__link toc-highlight">ViewManager (Separated)</a><ul><li><a href="#rendercontext" class="table-of-contents__link toc-highlight">RenderContext</a></li><li><a href="#workpieceviewartifacts" class="table-of-contents__link toc-highlight">WorkPieceViewArtifacts</a></li><li><a href="#lifecycle" class="table-of-contents__link toc-highlight">Lifecycle</a></li></ul></li><li><a href="#consumers" class="table-of-contents__link toc-highlight">Consumers</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/pipeline.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/developer/importer"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Importer Architecture</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/developer/tasker"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Tasker: Background Task Management</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#artifact-nodes-and-the-dependency-graph" class="table-of-contents__link toc-highlight">Artifact Nodes and the Dependency Graph</a><ul><li><a href="#artifactnode" class="table-of-contents__link toc-highlight">ArtifactNode</a></li><li><a href="#node-states" class="table-of-contents__link toc-highlight">Node States</a></li><li><a href="#pipelinegraph" class="table-of-contents__link toc-highlight">PipelineGraph</a></li></ul></li><li><a href="#dagscheduler" class="table-of-contents__link toc-highlight">DagScheduler</a></li><li><a href="#artifactmanager" class="table-of-contents__link toc-highlight">ArtifactManager</a></li><li><a href="#generationcontext" class="table-of-contents__link toc-highlight">GenerationContext</a></li><li><a href="#shared-memory-lifecycle" class="table-of-contents__link toc-highlight">Shared Memory Lifecycle</a><ul><li><a href="#ownership-patterns" class="table-of-contents__link toc-highlight">Ownership Patterns</a></li><li><a href="#stale-artifact-detection" class="table-of-contents__link toc-highlight">Stale Artifact Detection</a></li></ul></li><li><a href="#pipeline-stages" class="table-of-contents__link toc-highlight">Pipeline Stages</a></li><li><a href="#invalidation-strategy" class="table-of-contents__link toc-highlight">Invalidation Strategy</a></li><li><a href="#input" class="table-of-contents__link toc-highlight">Input</a></li><li><a href="#pipeline-core" class="table-of-contents__link toc-highlight">Pipeline Core</a><ul><li><a href="#pipeline-orchestrator" class="table-of-contents__link toc-highlight">Pipeline (Orchestrator)</a></li><li><a href="#dagscheduler-1" class="table-of-contents__link toc-highlight">DagScheduler</a></li><li><a href="#artifactmanager-1" class="table-of-contents__link toc-highlight">ArtifactManager</a></li><li><a href="#generationcontext-1" class="table-of-contents__link toc-highlight">GenerationContext</a></li></ul></li><li><a href="#artifact-generation" class="table-of-contents__link toc-highlight">Artifact Generation</a><ul><li><a href="#workpieceartifacts" class="table-of-contents__link toc-highlight">WorkPieceArtifacts</a></li><li><a href="#stepopsartifacts" class="table-of-contents__link toc-highlight">StepOpsArtifacts</a></li><li><a href="#jobartifact" class="table-of-contents__link toc-highlight">JobArtifact</a></li></ul></li><li><a href="#2d-view-layer-separated" class="table-of-contents__link toc-highlight">2D View Layer (Separated)</a><ul><li><a href="#rendercontext" class="table-of-contents__link toc-highlight">RenderContext</a></li><li><a href="#workpieceviewartifacts" class="table-of-contents__link toc-highlight">WorkPieceViewArtifacts</a></li><li><a href="#lifecycle" class="table-of-contents__link toc-highlight">Lifecycle</a></li></ul></li><li><a href="#3d--simulator-layer-separated" class="table-of-contents__link toc-highlight">3D / Simulator Layer (Separated)</a><ul><li><a href="#compiledsceneartifact" class="table-of-contents__link toc-highlight">CompiledSceneArtifact</a></li><li><a href="#compilation-pipeline" class="table-of-contents__link toc-highlight">Compilation Pipeline</a></li><li><a href="#opplayer-simulator-backend" class="table-of-contents__link toc-highlight">OpPlayer (Simulator Backend)</a></li></ul></li><li><a href="#consumers" class="table-of-contents__link toc-highlight">Consumers</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

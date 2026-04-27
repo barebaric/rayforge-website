@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.0">
-<title data-rh="true">Архітектура конвеєра | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" property="og:url" content="https://rayforge.org/uk/docs/developer/pipeline"><meta data-rh="true" property="og:locale" content="uk"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="pt_BR"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="de"><meta data-rh="true" property="og:locale:alternate" content="zh_CN"><meta data-rh="true" name="docusaurus_locale" content="uk"><meta data-rh="true" name="docsearch:language" content="uk"><meta data-rh="true" name="keywords" content="laser cutter software, laser engraving software, LightBurn alternative, free laser software, open source laser software, GRBL, laser cutting software, laser control software, G-code sender, Rayforge"><meta data-rh="true" name="author" content="Rayforge Contributors"><meta data-rh="true" name="robots" content="index, follow"><meta data-rh="true" property="og:type" content="website"><meta data-rh="true" property="og:site_name" content="Rayforge"><meta data-rh="true" property="og:image" content="https://rayforge.org/images/social.png"><meta data-rh="true" property="og:image:width" content="1200"><meta data-rh="true" property="og:image:height" content="630"><meta data-rh="true" property="og:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" name="twitter:title" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:description" content="The complete creative studio for your laser cutter. Design, simulate, and control — with AI-powered tools, 3D preview, and a built-in sketcher."><meta data-rh="true" name="twitter:image" content="https://rayforge.org/images/social.png"><meta data-rh="true" name="twitter:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Архітектура конвеєра | Rayforge"><meta data-rh="true" name="description" content="Цей документ описує архітектуру конвеєра, яка використовує орієнтований ациклічний"><meta data-rh="true" property="og:description" content="Цей документ описує архітектуру конвеєра, яка використовує орієнтований ациклічний"><link data-rh="true" rel="icon" href="/uk/images/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/uk/docs/developer/pipeline"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/developer/pipeline" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/pt-BR/docs/developer/pipeline" hreflang="pt-BR"><link data-rh="true" rel="alternate" href="https://rayforge.org/es/docs/developer/pipeline" hreflang="es"><link data-rh="true" rel="alternate" href="https://rayforge.org/fr/docs/developer/pipeline" hreflang="fr"><link data-rh="true" rel="alternate" href="https://rayforge.org/de/docs/developer/pipeline" hreflang="de"><link data-rh="true" rel="alternate" href="https://rayforge.org/zh-CN/docs/developer/pipeline" hreflang="zh-CN"><link data-rh="true" rel="alternate" href="https://rayforge.org/uk/docs/developer/pipeline" hreflang="uk"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/developer/pipeline" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Архітектура конвеєра","item":"https://rayforge.org/uk/docs/developer/pipeline"}]}</script><link rel="alternate" type="application/rss+xml" href="/uk/blog/rss.xml" title="Rayforge RSS Feed">
+<title data-rh="true">Архітектура конвеєра | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" property="og:url" content="https://rayforge.org/uk/docs/developer/pipeline"><meta data-rh="true" property="og:locale" content="uk"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="pt_BR"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="de"><meta data-rh="true" property="og:locale:alternate" content="zh_CN"><meta data-rh="true" name="docusaurus_locale" content="uk"><meta data-rh="true" name="docsearch:language" content="uk"><meta data-rh="true" name="keywords" content="laser cutter software, laser engraving software, LightBurn alternative, free laser software, open source laser software, GRBL, laser cutting software, laser control software, G-code sender, Rayforge"><meta data-rh="true" name="author" content="Rayforge Contributors"><meta data-rh="true" name="robots" content="index, follow"><meta data-rh="true" property="og:type" content="website"><meta data-rh="true" property="og:site_name" content="Rayforge"><meta data-rh="true" property="og:image" content="https://rayforge.org/images/social.png"><meta data-rh="true" property="og:image:width" content="1200"><meta data-rh="true" property="og:image:height" content="630"><meta data-rh="true" property="og:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" name="twitter:title" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:description" content="The complete creative studio for your laser cutter. Design, simulate, and control — with AI-powered tools, 3D preview, and a built-in sketcher."><meta data-rh="true" name="twitter:image" content="https://rayforge.org/images/social.png"><meta data-rh="true" name="twitter:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Архітектура конвеєра | Rayforge"><meta data-rh="true" name="description" content="Конвеєр обробки Rayforge — як дизайни проходять від імпорту через операції до генерації G-code."><meta data-rh="true" property="og:description" content="Конвеєр обробки Rayforge — як дизайни проходять від імпорту через операції до генерації G-code."><link data-rh="true" rel="icon" href="/uk/images/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/uk/docs/developer/pipeline"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/developer/pipeline" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/pt-BR/docs/developer/pipeline" hreflang="pt-BR"><link data-rh="true" rel="alternate" href="https://rayforge.org/es/docs/developer/pipeline" hreflang="es"><link data-rh="true" rel="alternate" href="https://rayforge.org/fr/docs/developer/pipeline" hreflang="fr"><link data-rh="true" rel="alternate" href="https://rayforge.org/de/docs/developer/pipeline" hreflang="de"><link data-rh="true" rel="alternate" href="https://rayforge.org/zh-CN/docs/developer/pipeline" hreflang="zh-CN"><link data-rh="true" rel="alternate" href="https://rayforge.org/uk/docs/developer/pipeline" hreflang="uk"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/developer/pipeline" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Архітектура конвеєра","item":"https://rayforge.org/uk/docs/developer/pipeline"}]}</script><link rel="alternate" type="application/rss+xml" href="/uk/blog/rss.xml" title="Rayforge RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/uk/blog/atom.xml" title="Rayforge Atom Feed">
 
 
@@ -15,8 +15,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rayforge","description":"Free open-source laser cutter software for GRBL-based machines. Design, simulate, and control your laser cutter or engraver with AI-powered tools, 3D preview, and a built-in sketcher.","url":"https://rayforge.org","applicationCategory":"DesignApplication","operatingSystem":"Linux, Windows, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"barebaric","url":"https://github.com/barebaric"},"screenshot":"https://rayforge.org/screenshots/main-standard.png","featureList":"AI-powered design generation, 3D simulation and preview, Parametric 2D sketcher, GRBL and Smoothieware support, Rotary axis support, Material and recipe management, Path optimization, Multi-layer support, Camera calibration","license":"https://github.com/barebaric/rayforge/blob/main/LICENSE","programmingLanguage":"Python","installUrl":"https://rayforge.org/docs/getting-started/installation"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
-<script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.b6a80633.css">
-<script src="/uk/assets/js/runtime~main.44f33b75.js" defer="defer"></script>
+<script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.13467667.css">
+<script src="/uk/assets/js/runtime~main.4e1f52f2.js" defer="defer"></script>
 <script src="/uk/assets/js/main.f350628b.js" defer="defer"></script>
 </head>
 <body>
@@ -27,7 +27,7 @@
 <p>Цей документ описує архітектуру конвеєра, яка використовує орієнтований ациклічний
 граф (DAG) для оркестрації генерації артефактів. Конвеєр трансформує сирі
 дані дизайну у фінальні виходи для візуалізації та виробництва, з
-плануванням залежностей та ефективним кешуванням артефактів.</p>
+плануванням з урахуванням залежностей та ефективним кешуванням артефактів.</p>
 <!-- -->
 <h1>Основні концепції</h1>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="вузли-артефактів-та-граф-залежностей">Вузли артефактів та граф залежностей<a href="#вузли-артефактів-та-граф-залежностей" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
@@ -39,12 +39,14 @@
 <ul>
 <li class=""><strong>ArtifactKey</strong>: Унікальний ідентифікатор, що складається з ID та типу групи
 (<code>workpiece</code>, <code>step</code>, <code>job</code> або <code>view</code>)</li>
-<li class=""><strong>Стан</strong>: Поточний стан життєвого циклу вузла</li>
 <li class=""><strong>Залежності</strong>: Список вузлів, від яких залежить цей вузол (нащадки)</li>
 <li class=""><strong>Залежні</strong>: Список вузлів, що залежать від цього вузла (предки)</li>
 </ul>
+<p>Вузли не зберігають стан безпосередньо. Замість цього вони делегують читання та
+запис стану до <code>ArtifactManager</code>, який веде реєстр усіх артефактів
+та їхніх станів.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="стани-вузлів">Стани вузлів<a href="#стани-вузлів" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
-<p>Вузли проходять через чотири стани:</p>
+<p>Вузли проходять через п&#x27;ять станів:</p>
 
 
 
@@ -70,7 +72,11 @@
 
 
 
-<table><thead><tr><th>Стан</th><th>Опис</th></tr></thead><tbody><tr><td><code>DIRTY</code></td><td>Артефакт потребує регенерації</td></tr><tr><td><code>PROCESSING</code></td><td>Завдання наразі генерує артефакт</td></tr><tr><td><code>VALID</code></td><td>Артефакт готовий та актуальний</td></tr><tr><td><code>ERROR</code></td><td>Генерація не вдалася</td></tr></tbody></table>
+
+
+
+
+<table><thead><tr><th>Стан</th><th>Опис</th></tr></thead><tbody><tr><td><code>DIRTY</code></td><td>Артефакт потребує (пере)генерації</td></tr><tr><td><code>PROCESSING</code></td><td>Завдання наразі генерує артефакт</td></tr><tr><td><code>VALID</code></td><td>Артефакт готовий та актуальний</td></tr><tr><td><code>ERROR</code></td><td>Генерація не вдалася</td></tr><tr><td><code>CANCELLED</code></td><td>Генерацію скасовано; буде повторено, якщо все ще потрібно</td></tr></tbody></table>
 <p>Коли вузол позначається як брудний, всі його залежні також позначаються брудними,
 поширюючи інвалідацію вгору по графу.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pipelinegraph">PipelineGraph<a href="#pipelinegraph" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
@@ -91,7 +97,7 @@
 <ol>
 <li class=""><strong>Побудову графа</strong> з моделі Doc</li>
 <li class=""><strong>Виявлення готових вузлів</strong> (DIRTY з усіма VALID залежностями)</li>
-<li class=""><strong>Запуск завдань</strong> для генерації артефактів</li>
+<li class=""><strong>Запуск завдань</strong> через відповідні стадії конвеєра</li>
 <li class=""><strong>Відстеження стану</strong> через процес генерації</li>
 <li class=""><strong>Повідомлення споживачів</strong> коли артефакти готові</li>
 </ol>
@@ -102,18 +108,28 @@
 <li class="">Коли граф побудовано, планувальник синхронізує стани вузлів з
 менеджером артефактів щоб виявити кешовані артефакти, які можна повторно використати</li>
 <li class="">Артефакти з попередньої генерації можуть бути повторно використані, якщо вони залишаються дійсними</li>
-<li class="">Планувальник відстежує, які ID генерацій мають запущені завдання щоб зберегти
-артефакти під час переходів генерацій</li>
 <li class="">Інвалідації відстежуються навіть перед перебудовою графа і повторно застосовуються після</li>
+<li class="">Планувальник делегує фактичне створення завдань стадіям, але контролює
+<strong>коли</strong> завдання запускаються на основі готовності залежносте й</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="artifactmanager">ArtifactManager<a href="#artifactmanager" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
-<p><code>ArtifactManager</code> - це чистий менеджер кешу для дескрипторів артефактів. Він:</p>
+<p><code>ArtifactManager</code> слугує як кеш та єдине джерело істини
+для стану артефактів. Він:</p>
 <ul>
-<li class="">Зберігає та отримує дескриптори артефактів</li>
-<li class="">Керує підрахунком посилань для очищення</li>
-<li class="">Обробляє життєвий цикл (створення, утримання, звільнення)</li>
-<li class="">НЕ відстежує стан (станом керує планувальник DAG)</li>
+<li class="">Зберігає та отримує дескриптори артефактів через <strong>реєстр</strong> (ключований за
+<code>ArtifactKey</code> + ID генерації)</li>
+<li class="">Відстежує стан (<code>DIRTY</code>, <code>VALID</code>, <code>ERROR</code> тощо) у записах реєстру</li>
+<li class="">Керує підрахунком посилань для очищення спільної пам&#x27;яті</li>
+<li class="">Обробляє життєвий цикл (створення, утримання, звільнення, видалення)</li>
+<li class="">Надає менеджери контексту для безпечного усиновлення, завершення,
+обробки помилок та скасування артефактів</li>
 </ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="generationcontext">GenerationContext<a href="#generationcontext" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<p>Кожен цикл узгодження створює <code>GenerationContext</code>, який відстежує всі
+активні завдання для цієї генерації. Він гарантує, що ресурси спільної пам&#x27;яті
+залишаються дійсними, поки всі виконувані завдання для генерації не завершаться,
+навіть якщо новіша генерація вже розпочалась. Коли контекст заміщено
+і всі його завдання завершено, він автоматично звільняє свої ресурси.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="життєвий-цикл-спільної-памяті">Життєвий цикл спільної пам&#x27;яті<a href="#життєвий-цикл-спільної-памяті" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Артефакти зберігаються у спільній пам&#x27;яті (<code>multiprocessing.shared_memory</code>) для
 ефективної міжпроцесної комунікації між робочими процесами та основним
@@ -125,23 +141,25 @@
 основного процесу через IPC, і передає володіння. Робочий &quot;забуває&quot;
 дескриптор (закриває його файловий дескриптор без відключення пам&#x27;яті), тоді як
 основний процес &quot;усиновлює&quot; його і стає відповідальним за кінцеве звільнення.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="підрахунок-посилань">Підрахунок посилань<a href="#підрахунок-посилань" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
-<p><code>ArtifactStore</code> підтримує підрахунок посилань для кожного блоку спільної пам&#x27;яті.
-Кілька викликівців можуть <code>retain()</code> дескриптор, і блок відключається
-лише коли лічильник досягає нуля. Це використовується <code>ViewManager</code> для
-прогресивного рендерингу, де кілька зворотних викликів можуть отримувати доступ до одного й того ж артефакту.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="виявлення-застарілих-артефактів">Виявлення застарілих артефактів<a href="#виявлення-застарілих-артефактів" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
+<p>Механізм <code>StaleGenerationError</code> запобігає усиновленню артефактів із заміщених
+поколінь. Коли розпочато нову генерацію, менеджер виявляє застарілі артефакти
+під час усиновлення та мовчки відкидає їх.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="стадії-конвеєра">Стадії конвеєра<a href="#стадії-конвеєра" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Стадії конвеєра (<code>WorkPiecePipelineStage</code>, <code>StepPipelineStage</code>,
-<code>JobPipelineStage</code>) тепер служать інтерфейсами, а не запускавчами завдань:</p>
+<code>JobPipelineStage</code>) відповідають за <strong>механіку</strong> виконання завдань:</p>
 <ul>
-<li class="">Вони обробляють запити інвалідації від UI</li>
-<li class="">Вони делегують за пуск завдань DagScheduler</li>
-<li class="">Вони надають доступ до кешованих артефактів</li>
-<li class="">Вони пересилають сигнали від планувальника до UI</li>
+<li class="">Вони створюють та реєструють завдання підпроцесів через <code>TaskManager</code></li>
+<li class="">Вони обробляють події завдань (прогресивні фрагменти, проміжні результати)</li>
+<li class="">Вони керують усиновленням артефактів та кешуванням після завершення завдання</li>
+<li class="">Вони емітять с  игнали для повідомлення конвеєра про зміни стану</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="invalidationscope">InvalidationScope<a href="#invalidationscope" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
-<p>Енум <code>InvalidationScope</code> визначає область інвалідації для downstream
-артефактів:</p>
+<p><strong>DagScheduler</strong> вирішує <strong>коли</strong> запускати кожну стадію, але стадії
+обробляють фактичне породження підпроцесів, обробку подій та
+усиновлення результатів.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="стратегія-інвалідації">Стратегія інвалідації<a href="#стратегія-інвалідації" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<p>Інвалідація викликається змінами в моделі Doc з різними стратегіями
+залежно від того, що змінилося:</p>
 
 
 
@@ -159,78 +177,97 @@
 
 
 
-<table><thead><tr><th>Область</th><th>Опис</th></tr></thead><tbody><tr><td><code>FULL_REPRODUCTION</code></td><td>Інвалідує деталі, що каскадує до кроків, а потім до завдання. Використовується для змін, що потребують регенерації артефактів (геометрія, параметри, зміни розміру).</td></tr><tr><td><code>STEP_ONLY</code></td><td>Інвалідує кроки напряму, що каскадує до завдання. Використовується для змін трансформації лише позиція/обертання, де геометрія деталі залишається незмінною.</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Тип зміни</th><th>Поведінка</th></tr></thead><tbody><tr><td>Геометрія/параметри</td><td>Пари деталь-крок інвалідуються, каскадуючи до кроків та завдання</td></tr><tr><td>Позиція/обертання</td><td>Кроки інвалідуються напряму (каскадуючи до завдання); деталі пропускаються за винятком чутливих до позиції</td></tr><tr><td>Зміна розміру</td><td>Як геометрія: повний каскад від пар деталь-крок вгору</td></tr><tr><td>Конфігурація машини</td><td>Усі артефакти примусово інвалідуються для всіх генерацій</td></tr></tbody></table>
+<p>Кроки, чутливі до позиції (наприклад, з увімкненим обрізанням по заготівці),
+викликають інвалідацію детал  ей навіть для чистих змін позиції.</p>
 <h1>Детальний розбір</h1>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="вхід">Вхід<a href="#вхід" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Процес починається з <strong>Моделі Doc</strong>, яка містить:</p>
 <ul>
-<li class=""><strong>WorkPieces:</strong> Окремі елементи дизайну (SVG, зображення) розміщені  на полотні</li>
-<li class=""><strong>Steps:</strong> Інструкції обробки (Contour, Raster) з налаштуваннями</li>
+<li class=""><strong>WorkPieces:</strong> Окремі елементи дизайну (SVG, зображення) розміщені на полотні</li>
+<li class=""><strong>Steps:</strong> Інструкції обробки (Contour, Raster тощо) з налаштуваннями</li>
+<li class=""><strong>Layers:</strong> Групування деталей, кожна з власним робочим процесом</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ядро-конвеєра">Ядро конвеєра<a href="#ядро-конвеєра" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pipeline-оркестратор">Pipeline (Оркестратор)<a href="#pipeline-оркестратор" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>Клас <code>Pipeline</code> - це високорівневий диригент, який:</p>
 <ul>
-<li class="">Слухає модель Doc на зміни</li>
+<li class="">Слухає модель Doc на зміни через сигнали</li>
+<li class=""><strong>Дебажить</strong> зміни (затримка узгодження 200мс, затримка видалення 50мс)</li>
 <li class="">Координує з DagScheduler для тригера регенерації</li>
-<li class="">Керує загальним станом обробки</li>
-<li class="">З&#x27;єднує сигнали між компонентами</li>
+<li class="">Ке рує загальним станом обробки та виявленням зайнятості</li>
+<li class="">Підтримує <strong>паузу/відновлення</strong> для пакетних операцій</li>
+<li class="">Підтримує <strong>ручний режим</strong> (<code>auto_pipeline=False</code>), де перерахунок
+запускається явно, а не автоматично</li>
+<li class="">З&#x27;єднує сигнали між компонентами та передає їх споживачам</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dagscheduler-1">DagScheduler<a href="#dagscheduler-1" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p><code>DagScheduler</code>:</p>
 <ul>
 <li class="">Будує та підтримує <code>PipelineGraph</code></li>
 <li class="">Виявляє вузли, готові до обробки</li>
-<li class="">Запускає завдання через TaskManager</li>
-<li class="">Відстежує переходи станів вузлів</li>
+<li class="">Запускає завдання через методи <code>launch_task()</code> стадій</li>
+<li class="">Відстежує переходи станів вузлів через реєстр</li>
 <li class="">Емітує сигнали коли артефакти готові</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="artifactmanager-1">ArtifactManager<a href="#artifactmanager-1" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p><code>ArtifactManager</code>:</p>
 <ul>
+<li class="">Веде <strong>реєстр</strong> об&#x27;єктів <code>LedgerEntry</code>, кожен з яких відстежує дескриптор,
+ID генерації та стан вузла</li>
 <li class="">Кешує дескриптори артефактів у спільній пам&#x27;яті</li>
-<li class="">Керує підрахунком посилань для очищення</li>
+<li class="">К  ерує підрахунком посилань для очищення</li>
 <li class="">Надає пошук за ArtifactKey та ID генерації</li>
+<li class="">Видаляє застарілі генерації для підтримки реєстру в чистоті</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="generationcontext-1">GenerationContext<a href="#generationcontext-1" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
+<p>Кожне узгодження створює новий <code>GenerationContext</code>, який:</p>
+<ul>
+<li class="">Відстежує активні завдання через ключі з підрахунком посилань</li>
+<li class="">Володіє ресурсами спільної пам&#x27;яті для своєї генерації</li>
+<li class="">Автоматично завершується коли заміщено і всі завдання виконано</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="генерація-артефактів">Генерація артефактів<a href="#генерація-артефактів" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="workpieceartifacts">WorkPieceArtifacts<a href="#workpieceartifacts" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
-<p>Генеруються для кожної комбінації <code>(WorkPiece, Step)</code>, містять:</p>
+<p>Генеруються для кожної комбінації <code>(WorkPiece, Step)</code>. Містять:</p>
 <ul>
-<li class="">Інструментальні шляхи (<code>Ops</code>) у локальній системі координат</li>
-<li class="">Дані вершин для ліній</li>
-<li class="">Дані текстур для растрових заливок</li>
+<li class="">Інструментальні шляхи (<code>Ops</code>) у локальній системі координат деталі</li>
+<li class="">Прапор масштабованості та вихідні розміри для незалежних від роздільної здатності ops</li>
+<li class="">Систему координат та метадані генерації</li>
 </ul>
 <p>Послідовність обробки:</p>
 <ol>
-<li class=""><strong>Модифікатори:</strong> (Опціонально) Кондиціонування зображення (градації сірого тощо.)</li>
-<li class=""><strong>Продюсер:</strong> Створює сирі інструментальні шляхи (<code>Ops</code>)</li>
-<li class=""><strong>Трансформери:</strong> М одифікації на рівні деталі (Tabs, Smooth)</li>
-<li class=""><strong>Енкодер вершин:</strong> Створює GPU-friendly дані</li>
+<li class=""><strong>Продюсер:</strong> Створює сирі інструментальні шляхи (<code>Ops</code>) з даних деталі</li>
+<li class=""><strong>Трансформери:</strong> Модифікації на рівні деталі, застосовані в впорядкованих фазах
+(Удосконалення геометрії → Переривання шляху → Постобробка)</li>
 </ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stepartifacts">StepArtifacts<a href="#stepartifacts" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
+<p>Великі растрові деталі обробляються інкрементально фрагментами, забезпечуючи
+прогресивний візуальний зворотний зв&#x27;язок під час генерації.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stepopsartifacts">StepOpsArtifacts<a href="#stepopsartifacts" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>Генеруються для кожного Step, споживаючи всі пов&#x27;язані WorkPieceArtifacts:</p>
-<p>**StepRenderArtifact:</p>
 <ul>
-<li class="">Комбіновані дані вершин та текстур для всіх деталей</li>
-<li class="">Трансформовані в координати світового простору</li>
-<li class="">Оптимізовані для рендерингу 3D полотна</li>
-</ul>
-<p>**StepOpsArtifact:</p>
-<ul>
-<li class="">Комбіновані Ops для всіх деталей</li>
-<li class="">Трансформовані в координати світового простору</li>
-<li class="">Включають трансформери на рівні кроку (Optimize, Multi-Pass)</li>
+<li class="">Комбіновані Ops для всіх деталей у координатах світового простору</li>
+<li class="">Застосовані трансформери на рівні кроку (Optimize, Multi-Pass тощо)</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="jobartifact">JobArtifact<a href="#jobartifact" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
-<p>Генерується за запитом коли потрібен G-code, споживаючи всі StepOpsArtifacts:</p>
+<p>Генерується з  а запитом коли потрібен G-code, споживаючи всі StepOpsArtifacts:</p>
 <ul>
-<li class="">Фінальний G-code для всього завдання</li>
-<li class="">Повні дані вершин для симуляції</li>
-<li class="">Високоточна оцінка часу</li>
+<li class="">Фінальний машинний код (G-code або специфічний для драйвера формат)</li>
+<li class="">Повні ops для симуляції та відтворення</li>
+<li class="">Високоточна оцінка часу та загальна відстань</li>
+<li class="">Ops з_rotary-відображенням для 3D перегляду</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="viewmanager-розділений">ViewManager (Розділений)<a href="#viewmanager-розділений" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
-<p><code>ViewManager</code> <strong>розв&#x27;язаний</strong> з конвеєра даних. Він обробляє рендеринг
-для 2D полотна на основі стану UI:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="шар-2d-вигляду-розділений">Шар 2D вигляду (Розділений)<a href="#шар-2d-вигляду-розділений" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<p><code>ViewManager</code> <strong>розв&#x27;язаний</strong> з конвеєра даних. Він обробляє
+рендеринг для 2D полотна на основі стану UI:</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rendercontext">RenderContext<a href="#rendercontext" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>Містить поточні параметри вигляду:</p>
 <ul>
@@ -238,22 +275,60 @@
 <li class="">Зсув вікна перегляду (панорама)</li>
 <li class="">Опції відображення (показувати холості переміщення тощо.)</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="workpieceviewartifacts">WorkPieceViewArtifacts<a href="#workpieceviewartifacts" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="workpieceviewartifacts">WorkPieceViewArtifacts<a href="#workpieceviewartifacts" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заго ловок" translate="no">​</a></h3>
 <p>ViewManager створює <code>WorkPieceViewArtifacts</code>, які:</p>
 <ul>
 <li class="">Растеризують WorkPieceArtifacts у простір екрану</li>
 <li class="">Застосовують поточний RenderContext</li>
 <li class="">Кешуються та оновлюються коли контекст або джерело змінюється</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="життєвий-цикл">Життєвий цикл<a href="#життєвий-цикл" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заго ловок" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="життєвий-цикл">Життєвий цикл<a href="#життєвий-цикл" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <ol>
 <li class="">ViewManager відстежує дескриптори вихідних <code>WorkPieceArtifact</code></li>
 <li class="">Коли контекст рендерингу змінюється, ViewManager тригерить повторний рендеринг</li>
 <li class="">Коли вихідний артефакт змінюється, ViewManager тригерить повторний рендеринг</li>
-<li class="">Дроселювання запобігає надмірним оновленням під час безперервних змін</li>
+<li class="">Повторний рендеринг дроселюється (інтервал 33мс) з обмеженням паралельності</li>
+<li class="">Прогресивне зшивання фрагментів забезпечує інкрементальні візуальні оновлення</li>
 </ol>
 <p>ViewManager індексує вигляди за <code>(workpiece_uid, step_uid)</code> щоб підтримувати
 візуалізацію проміжних станів деталі через кілька кроків.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="шар-3d--симулятора-розділений">Шар 3D / Симулятора (Розділений)<a href="#шар-3d--симулятора-розділений" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<p>Система 3D візуалізації та симуляції <strong>розв&#x27;язана</strong> з конвеєра
+даних, дотримуючись подібного патерну до ViewManager. Вона складається з:</p>
+<ul>
+<li class=""><strong>Компілятора сцени</strong>, що працює у підпроцесі для конвертації <code>JobArtifact</code>
+ops у вершинні дані, готові для GPU</li>
+<li class=""><strong>OpPlayer</strong>, що відтворює ops завдання для симуляції роботи машини
+в реальному часі з елементами керування відтворенням</li>
+</ul>
+<p>Обидва споживають <code>JobArtifact</code>, створений стадією завдання конвеєра.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="compiledsceneartifact">CompiledSceneArtifact<a href="#compiledsceneartifact" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
+<p>Компілятор сцени створює <code>CompiledSceneArtifact</code>, що містить:</p>
+<ul>
+<li class=""><strong>Шари вершин:</strong> Буфери вершин з живленням/холостим ходом/нульовою потужністю з
+зсувами на рівні команд для прогресивного відкриття</li>
+<li class=""><strong>Шари текстур:</strong> Растеровані карти потужності рядків сканування для перегляду гравіювання</li>
+<li class=""><strong>Шари накладання:</strong> Сегменти потужності рядків сканування для підсвічування в реальн ому часі</li>
+<li class="">Підтримка rotary-геометрії (обгорнутого циліндра)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="конвеєр-компіляції">Конвеєр компіляції<a href="#конвеєр-компіляції" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
+<ol>
+<li class="">Canvas3D слухає сигнали <code>job_generation_finished</code></li>
+<li class="">Коли нове завдання готове, він планує компіляцію сцени у підпроцесі</li>
+<li class="">Підпроцес читає <code>JobArtifact</code> зі спільної пам&#x27;яті та компілює
+ops у вершинні дані GPU</li>
+<li class="">Скомпільована сцена усиновлюється назад у спільну пам&#x27;ять та завантажується у
+рендерери GPU</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="opplayer-бекенд-симулятора">OpPlayer (Бекенд симулятора)<a href="#opplayer-бекенд-симулятора" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
+<p><code>OpPlayer</code> проходить через ops завдання команда за командою, підтримуючи
+<code>MachineState</code>, який відстежує позицію, стан лазера та допоміжні осі.
+Це керує:</p>
+<ul>
+<li class="">Відтворенням на 3D полотні (прогресивне відкриття інструментального шляху)</li>
+<li class="">Позицією головки машини та візуалізацією лазерного променя</li>
+<li class="">П окроковим виконанням команд для повзунка відтворення</li>
+</ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="споживачі">Споживачі<a href="#споживачі" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 
 
@@ -280,46 +355,44 @@
 
 
 
-
-
-
-
-
-<table><thead><tr><th>Споживач</th><th>Використовує</th><th>Призначення</th></tr></thead><tbody><tr><td>2D полотно</td><td>WorkPieceViewArtifacts</td><td>Рендерить деталі у просторі екрану</td></tr><tr><td>3D полотно</td><td>StepRenderArtifacts</td><td>Рендерить повний крок у світовому просторі</td></tr><tr><td>Симулятор</td><td>JobArtifact</td><td>Точна симуляція машинного шляху</td></tr><tr><td>Машина</td><td>JobArtifact G-code</td><td>Виробничий вивід</td></tr></tbody></table>
-<h1>Ключові відмінності від попередньої архітектури</h1>
+<table><thead><tr><th>Споживач</th><th>Використовує</th><th>Призначення</th></tr></thead><tbody><tr><td>2D полотно</td><td>WorkPieceViewArtifacts</td><td>Рендерить деталі у просторі екрану</td></tr><tr><td>3D полотно</td><td>CompiledSceneArtifact</td><td>Рендерить повне завдання у 3D з відтворенням</td></tr><tr><td>Машина</td><td>JobArtifact (машинний код)</td><td>Виробничий вивід</td></tr></tbody></table>
+<h1>Ключові архітектурні рішення</h1>
 <ol>
 <li class="">
-<p><strong>Планування на основі DAG:</strong> Замість по слідовних стадій, артефакти
-генеруються коли їхні залежності стають доступними.</p>
+<p><strong>Планування на основі DAG:</strong> Замість послідовних стадій, артефакти
+генеруються коли їхні залежності стають доступними, забезпечуючи паралелізм.</p>
 </li>
 <li class="">
-<p><strong>Керування станом:</strong> Стан вузла відстежується в графі DAG, не в
-окремих компонентах.</p>
+<p><strong>Стан на основі реєстру:</strong> Стан вузла відстежується у записах реєстру
+ArtifactManager, а не у самих вузлах графа, забезпечуючи єдине
+джерело істини як для стану, так і для зберігання дескрипторів.</p>
 </li>
 <li class="">
-<p><strong>Розділення ViewManager:</strong> Рендеринг для 2D полотна тепер обробляється
-окремим ViewManager, не як частина конвеєра даних.</p>
+<p><strong>Розділення шару вигляду:</strong> Як 2D полотно (ViewManager), так і 3D
+полотно (Компілятор сцени) розв&#x27;язані з конвеєра даних. Кожен
+виконує власний рендеринг на основі підпроцесів і керується сигналами
+конвеєра, а не є частиною DAG.</p>
 </li>
 <li class="">
 <p><strong>ID генерацій:</strong> Артефакти відстежуються з ID генерацій, дозволяючи
-ефективне повторне використання між версіями документа.</p>
+ефективне повторне використання між версіями документа та виявлення застарілих артефактів.</p>
 </li>
 <li class="">
 <p><strong>Централізована оркестрація:</strong> DagScheduler - єдина точка
-контролю для запуску завдань та відстеження стану.</p>
+контролю для планування завдань; стадії обробляють механіку виконання.</p>
 </li>
 <li class="">
-<p><strong>Чистий менеджер кешу:</strong> ArtifactManager тепер простий кеш,
-делегуючи все керування станом планувальнику DAG.</p>
+<p><strong>Ізоляція GenerationContext:</strong> Кожна генерація має власний контекст,
+гарантуючи, що ресурси залишаються активними до завершення всіх виконуваних завдань.</p>
 </li>
 <li class="">
 <p><strong>Відстеження інвалідації:</strong> Ключі, позначені брудними перед перебудовою графа,
 зберігаються і повторно застосовуються після перебудови.</p>
 </li>
 <li class="">
-<p><strong>Виявлення очікуваної роботи:</strong> Тільки вузли <code>PROCESSING</code> рахуються як очікувана робота;
-вузли <code>DIRTY</code> можуть мати незадоволені залежності (наприклад, немає контексту вигляду).</p>
+<p><strong>Дебажене узгодження:</strong> Зміни групуються з налаштовуваними
+затримками щоб уникнути надмірних циклів конвеєра під час швидкого редагування.</p>
 </li>
-</ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/pipeline.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Редагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Навігація по документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/developer/importer"><div class="pagination-nav__sublabel">Назад</div><div class="pagination-nav__label">Архітектура імпортера</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/uk/docs/developer/tasker"><div class="pagination-nav__sublabel">Далі</div><div class="pagination-nav__label">Tasker: Керування фоновими завданнями</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#вузли-артефактів-та-граф-залежностей" class="table-of-contents__link toc-highlight">Вузли артефактів та граф залежностей</a><ul><li><a href="#artifactnode" class="table-of-contents__link toc-highlight">ArtifactNode</a></li><li><a href="#стани-вузлів" class="table-of-contents__link toc-highlight">Стани вузлів</a></li><li><a href="#pipelinegraph" class="table-of-contents__link toc-highlight">PipelineGraph</a></li></ul></li><li><a href="#dagscheduler" class="table-of-contents__link toc-highlight">DagScheduler</a></li><li><a href="#artifactmanager" class="table-of-contents__link toc-highlight">ArtifactManager</a></li><li><a href="#життєвий-цикл-спільної-памяті" class="table-of-contents__link toc-highlight">Життєвий цикл спільної пам&#39;яті</a><ul><li><a href="#патерни-володіння" class="table-of-contents__link toc-highlight">Патерни володіння</a></li><li><a href="#підрахунок-посилань" class="table-of-contents__link toc-highlight">Підрахунок посилань</a></li></ul></li><li><a href="#стадії-конвеєра" class="table-of-contents__link toc-highlight">Стадії конвеєра</a></li><li><a href="#invalidationscope" class="table-of-contents__link toc-highlight">InvalidationScope</a></li><li><a href="#вхід" class="table-of-contents__link toc-highlight">Вхід</a></li><li><a href="#ядро-конвеєра" class="table-of-contents__link toc-highlight">Ядро конвеєра</a><ul><li><a href="#pipeline-оркестратор" class="table-of-contents__link toc-highlight">Pipeline (Оркестратор)</a></li><li><a href="#dagscheduler-1" class="table-of-contents__link toc-highlight">DagScheduler</a></li><li><a href="#artifactmanager-1" class="table-of-contents__link toc-highlight">ArtifactManager</a></li></ul></li><li><a href="#генерація-артефактів" class="table-of-contents__link toc-highlight">Генерація артефактів</a><ul><li><a href="#workpieceartifacts" class="table-of-contents__link toc-highlight">WorkPieceArtifacts</a></li><li><a href="#stepartifacts" class="table-of-contents__link toc-highlight">StepArtifacts</a></li><li><a href="#jobartifact" class="table-of-contents__link toc-highlight">JobArtifact</a></li></ul></li><li><a href="#viewmanager-розділений" class="table-of-contents__link toc-highlight">ViewManager (Розділений)</a><ul><li><a href="#rendercontext" class="table-of-contents__link toc-highlight">RenderContext</a></li><li><a href="#workpieceviewartifacts" class="table-of-contents__link toc-highlight">WorkPieceViewArtifacts</a></li><li><a href="#життєвий-цикл" class="table-of-contents__link toc-highlight">Життєвий цикл</a></li></ul></li><li><a href="#споживачі" class="table-of-contents__link toc-highlight">Споживачі</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/pipeline.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Редагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Навігація по документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/developer/importer"><div class="pagination-nav__sublabel">Назад</div><div class="pagination-nav__label">Архітектура імпортера</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/uk/docs/developer/tasker"><div class="pagination-nav__sublabel">Далі</div><div class="pagination-nav__label">Tasker: Керування фоновими завданнями</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#вузли-артефактів-та-граф-залежностей" class="table-of-contents__link toc-highlight">Вузли артефактів та граф залежностей</a><ul><li><a href="#artifactnode" class="table-of-contents__link toc-highlight">ArtifactNode</a></li><li><a href="#стани-вузлів" class="table-of-contents__link toc-highlight">Стани вузлів</a></li><li><a href="#pipelinegraph" class="table-of-contents__link toc-highlight">PipelineGraph</a></li></ul></li><li><a href="#dagscheduler" class="table-of-contents__link toc-highlight">DagScheduler</a></li><li><a href="#artifactmanager" class="table-of-contents__link toc-highlight">ArtifactManager</a></li><li><a href="#generationcontext" class="table-of-contents__link toc-highlight">GenerationContext</a></li><li><a href="#життєвий-цикл-спільної-памяті" class="table-of-contents__link toc-highlight">Життєвий цикл спіль  ної пам&#39;яті</a><ul><li><a href="#патерни-володіння" class="table-of-contents__link toc-highlight">Патерни володіння</a></li><li><a href="#виявлення-застарілих-артефактів" class="table-of-contents__link toc-highlight">Виявлення застарілих артефактів</a></li></ul></li><li><a href="#стадії-конвеєра" class="table-of-contents__link toc-highlight">Стадії конвеєра</a></li><li><a href="#стратегія-інвалідації" class="table-of-contents__link toc-highlight">Стратегія інвалідації</a></li><li><a href="#вхід" class="table-of-contents__link toc-highlight">Вхід</a></li><li><a href="#ядро-конвеєра" class="table-of-contents__link toc-highlight">Ядро конвеєра</a><ul><li><a href="#pipeline-оркестратор" class="table-of-contents__link toc-highlight">Pipeline (Оркестратор)</a></li><li><a href="#dagscheduler-1" class="table-of-contents__link toc-highlight">DagScheduler</a></li><li><a href="#artifactmanager-1" class="table-of-contents__link toc-highlight">ArtifactManager</a></li><li><a href="#generationcontext-1" class="table-of-contents__link toc-highlight">GenerationContext</a></li></ul></li><li><a href="#генерація-артефактів" class="table-of-contents__link toc-highlight">Генерація артефактів</a><ul><li><a href="#workpieceartifacts" class="table-of-contents__link toc-highlight">WorkPieceArtifacts</a></li><li><a href="#stepopsartifacts" class="table-of-contents__link toc-highlight">StepOpsArtifacts</a></li><li><a href="#jobartifact" class="table-of-contents__link toc-highlight">JobArtifact</a></li></ul></li><li><a href="#шар-2d-вигляду-розділений" class="table-of-contents__link toc-highlight">Шар 2D вигляду (Розділений)</a><ul><li><a href="#rendercontext" class="table-of-contents__link toc-highlight">RenderContext</a></li><li><a href="#workpieceviewartifacts" class="table-of-contents__link toc-highlight">WorkPieceViewArtifacts</a></li><li><a href="#життєвий-цикл" class="table-of-contents__link toc-highlight">Життєвий цикл</a></li></ul></li><li><a href="#шар-3d--симулятора-розділений" class="table-of-contents__link toc-highlight">Шар 3D / Симулятора (Розділений)</a><ul><li><a href="#compiledsceneartifact" class="table-of-contents__link toc-highlight">CompiledSceneArtifact</a></li><li><a href="#конвеєр-компіляції" class="table-of-contents__link toc-highlight">Конвеєр компіляції</a></li><li><a href="#opplayer-бекенд-симулятора" class="table-of-contents__link toc-highlight">OpPlayer (Бекенд симулятора)</a></li></ul></li><li><a href="#споживачі" class="table-of-contents__link toc-highlight">Споживачі</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>
