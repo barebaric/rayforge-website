@@ -4,10 +4,90 @@
         <title>Rayforge Blog</title>
         <link>https://rayforge.org/zh-CN/blog</link>
         <description>Rayforge Blog</description>
-        <lastBuildDate>Fri, 24 Apr 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 01 May 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh-CN</language>
+        <item>
+            <title><![CDATA[Rayforge 1.7 Beta - CO2 Laser Support, OctoPrint, Parametric Text]]></title>
+            <link>https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-octoprint-parametric-text</link>
+            <guid>https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-octoprint-parametric-text</guid>
+            <pubDate>Fri, 01 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Rayforge 1.7 beta brings CO2 and fiber laser PWM settings, an experimental OctoPrint driver, parametric text templates in the sketcher, and linear light image processing.]]></description>
+            <content:encoded><![CDATA[<p>Rayforge 1.7 beta expands hardware support to CO2 and fiber lasers, adds an
+experimental OctoPrint driver, brings template expressions to the sketcher text
+tool, and improves image processing accuracy across the board.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="co2-and-fiber-laser-pwm-settings">CO2 and Fiber Laser PWM Settings<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-octoprint-parametric-text#co2-and-fiber-laser-pwm-settings" class="hash-link" aria-label="CO2 and Fiber Laser PWM Settings 的直接链接" title="CO2 and Fiber Laser PWM Settings 的直接链接" translate="no">​</a></h2>
+<p>Rayforge now understands that not all lasers are diodes. A new <strong>Laser Type</strong>
+dropdown in the laser head settings lets you choose between Diode, CO2, and
+Fiber. When you select CO2 or Fiber, a dedicated PWM section appears with
+controls for frequency and pulse width -- including configurable min/max bounds.</p>
+<p>These settings flow through the pipeline, so each operation step can use or
+override the defaults. The Ruida driver already leverages them for native
+frequency and pulse width commands.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="octoprint-driver-experimental">OctoPrint Driver (Experimental)<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-octoprint-parametric-text#octoprint-driver-experimental" class="hash-link" aria-label="OctoPrint Driver (Experimental) 的直接链接" title="OctoPrint Driver (Experimental) 的直接链接" translate="no">​</a></h2>
+<p>A new driver lets you submit G-code directly to an OctoPrint server over the
+network. It connects via WebSocket for real-time status updates and falls back
+to REST polling when needed. Setup requires just a hostname and an API key, and
+the driver includes a "Request Access" flow that walks you through OctoPrint's
+application key system.</p>
+<p>This driver is labeled experimental and has not been tested on real hardware
+yet. If you have an OctoPrint setup, your feedback would be invaluable.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="parametric-text-templates">Parametric Text Templates<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-octoprint-parametric-text#parametric-text-templates" class="hash-link" aria-label="Parametric Text Templates 的直接链接" title="Parametric Text Templates 的直接链接" translate="no">​</a></h2>
+<p>Text boxes in the sketcher now support template expressions using curly braces.
+Any sketch parameter or input variable can be referenced:</p>
+<ul>
+<li class=""><code>{width}</code> resolves to the current width value</li>
+<li class=""><code>{name}</code> resolves to a string input parameter</li>
+<li class=""><code>{sqrt(area):.1f}</code> evaluates math and formats the result</li>
+</ul>
+<p>Built-in functions include <code>{today()}</code> for the current date, <code>{now()}</code> for a
+full timestamp, and <code>{uuid4()}</code> for a unique 8-character identifier. This makes
+it easy to label parts with live dimensions, date-stamp production pieces, or
+generate serial numbers.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="linear-light-image-processing">Linear Light Image Processing<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-octoprint-parametric-text#linear-light-image-processing" class="hash-link" aria-label="Linear Light Image Processing 的直接链接" title="Linear Light Image Processing 的直接链接" translate="no">​</a></h2>
+<p>All image processing -- resizing, grayscale conversion, dithering, and color
+LUT gradients -- now operates in linear light instead of sRGB. This produces
+more accurate interpolation when scaling and better dithering quality,
+especially for gradients and fine detail where sRGB's nonlinear curve used to
+cause banding.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-octoprint-parametric-text#other-improvements" class="hash-link" aria-label="Other Improvements 的直接链接" title="Other Improvements 的直接链接" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Sculpfun iCube Ultra</strong> device profile added</li>
+<li class=""><strong>Grid toggle</strong> in the 3D canvas visibility overlay</li>
+<li class=""><strong>Debug log</strong> can optionally include the project file</li>
+<li class=""><strong>Device profile selector</strong> received visual improvements</li>
+<li class=""><strong>Tab power slider</strong> is now hidden for non-cut steps</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-octoprint-parametric-text#bug-fixes" class="hash-link" aria-label="Bug Fixes 的直接链接" title="Bug Fixes 的直接链接" translate="no">​</a></h2>
+<ul>
+<li class="">Fixed GRBL buffer overflow on devices with smaller RX buffers</li>
+<li class="">Fixed parametric text not updating correctly with volatile expressions</li>
+<li class="">Fixed crash in MergeLinesTransformer when a cutting command appeared before
+any positioning command</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="special-thanks">Special Thanks<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-octoprint-parametric-text#special-thanks" class="hash-link" aria-label="Special Thanks 的直接链接" title="Special Thanks 的直接链接" translate="no">​</a></h2>
+<p>This release was made possible with the support of our Patreon supporters:
+Amsel, froqstar, old-man-and-the-seam, pghpete, Derek McTavish, and four
+anonymous supporters.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-17-beta">Download Rayforge 1.7 Beta<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-octoprint-parametric-text#download-rayforge-17-beta" class="hash-link" aria-label="Download Rayforge 1.7 Beta 的直接链接" title="Download Rayforge 1.7 Beta 的直接链接" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="https://rayforge.org/zh-CN/docs/getting-started/installation">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-octoprint-parametric-text#join-the-community" class="hash-link" aria-label="Join the Community 的直接链接" title="Join the Community 的直接链接" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content:encoded>
+            <category>release</category>
+            <category>1.7</category>
+            <category>co2</category>
+            <category>octoprint</category>
+            <category>pwm</category>
+            <category>sketcher</category>
+            <category>image-processing</category>
+        </item>
         <item>
             <title><![CDATA[Rayforge 1.6 - Device Profiles, Rotary Overhaul, Print & Cut]]></title>
             <link>https://rayforge.org/zh-CN/blog/rayforge-1.6-device-profiles-rotary-print-cut</link>
@@ -329,7 +409,7 @@ the old "no-Z" dialect variants obsolete (they've been removed).</p>
 <p>New settings for sample interval and power levels give you more control over
 your raster operations. These are particularly useful for fine-tuning results
 on materials that need precise power management.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/zh-CN/blog/rayforge-1.3-bezier-curves-sketcher-addon#other-improvements" class="hash-link" aria-label="Other Improvements 的直接链接" title="Other Improvements 的直接��链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/zh-CN/blog/rayforge-1.3-bezier-curves-sketcher-addon#other-improvements" class="hash-link" aria-label="Other Improvements 的直接链接" title="Other Improvements 的直接链接" translate="no">​</a></h2>
 <ul>
 <li class="">All icons normalized to 32x32 viewbox for consistent appearance</li>
 <li class="">AI workpiece generator now creates sketches when the geometry can be mapped</li>
@@ -457,7 +537,7 @@ speed (laser power) control.</p>
 <li class="">Updated macOS support thanks to <strong>Pablo Gil</strong></li>
 <li class="">Flatpak updates thanks to <strong>fllmn</strong></li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/zh-CN/blog/rayforge-1.2-addons-camera-ai#bug-fixes" class="hash-link" aria-label="Bug Fixes 的直接链接" title="Bug Fixes 的直接�链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/zh-CN/blog/rayforge-1.2-addons-camera-ai#bug-fixes" class="hash-link" aria-label="Bug Fixes 的直接链接" title="Bug Fixes 的直接链接" translate="no">​</a></h2>
 <p>This release addresses many issues:</p>
 <ul>
 <li class="">Add-on not enabled immediately after installation</li>
@@ -484,7 +564,7 @@ macOS updates, and <strong>fllmn</strong> for Flatpak updates!</p>
 <li class=""><a href="https://github.com/barebaric/rayforge/releases" target="_blank" rel="noopener noreferrer" class="">GitHub Releases</a></li>
 <li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/zh-CN/blog/rayforge-1.2-addons-camera-ai#join-the-community" class="hash-link" aria-label="Join the Community 的直接链接" title="Join the Community 的直接链�接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/zh-CN/blog/rayforge-1.2-addons-camera-ai#join-the-community" class="hash-link" aria-label="Join the Community 的直接链接" title="Join the Community 的直接链接" translate="no">​</a></h2>
 <ul>
 <li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
 <li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
@@ -603,7 +683,7 @@ keyboard shortcuts</li>
             <description><![CDATA[Rayforge 1.0]]></description>
             <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 1.0" src="https://rayforge.org/zh-CN/assets/images/rayforge-1.0-95669e0bab418ed91ad92eb5532ec092.png" width="1920" height="1024" class="img_ev3q"></p>
 <p>今天标志着 Rayforge 的一个特殊里程碑——我们在项目的一周岁生日当天发布 1.0 版本！从 2025 年 2 月 1 日的第一次提交开始，这已经发展成为一个功能齐全的激光切割和雕刻平台。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="迄今为止的旅程">迄今为止的旅程<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E8%BF%84%E4%BB%8A%E4%B8%BA%E6%AD%A2%E7%9A%84%E6%97%85%E7%A8%8B" class="hash-link" aria-label="迄今为止的旅程 的直�接链接" title="迄今为止的旅程 的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="迄今为止的旅程">迄今为止的旅程<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E8%BF%84%E4%BB%8A%E4%B8%BA%E6%AD%A2%E7%9A%84%E6%97%85%E7%A8%8B" class="hash-link" aria-label="迄今为止的旅程 的直接链接" title="迄今为止的旅程 的直接链接" translate="no">​</a></h2>
 <p>在过去的一年里，Rayforge 已从一个基本的激光控制工具演变为一个综合性的设计和制造平台。我们从零开始构建了一切：参数化 2D CAD 系统、3D G-code 预览、多图层支持、多激光支持、相机对齐、工作坐标系等等。</p>
 <p>此次发布代表了这一愿景的顶点——一个稳定、可用于生产的工具，能够处理现实世界的激光切割和雕刻工作流程。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="10-版本的新功能">1.0 版本的新功能<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#10-%E7%89%88%E6%9C%AC%E7%9A%84%E6%96%B0%E5%8A%9F%E8%83%BD" class="hash-link" aria-label="1.0 版本的新功能 的直接链接" title="1.0 版本的新功能 的直接链接" translate="no">​</a></h2>
@@ -611,7 +691,7 @@ keyboard shortcuts</li>
 <p>最受请求的功能终于来了。您现在可以保存完整的工作流程并在以后恢复。<code>.ryp</code>（项目）和 <code>.rfs</code>（草图）文件扩展名已在系统范围内注册，因此您可以双击项目直接打开它们。最近文件菜单可让您快速访问您的工作。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="带文本支持的参数化草图器">带文本支持的参数化草图器<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E5%B8%A6%E6%96%87%E6%9C%AC%E6%94%AF%E6%8C%81%E7%9A%84%E5%8F%82%E6%95%B0%E5%8C%96%E8%8D%89%E5%9B%BE%E5%99%A8" class="hash-link" aria-label="带文本支持的参数化草图器 的直接链接" title="带文本支持的参数化草图器 的直接链接" translate="no">​</a></h3>
 <p>草图器现在支持具有完整约束集成的文本。在草图中添加文本、应用纵横比约束，并通过参数控制位置和大小。这为激光雕刻标牌、标签和装饰元素开辟了一个全新的设计可能性世界。</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="统一底�部面板">统一底部面板<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E7%BB%9F%E4%B8%80%E5%BA%95%E9%83%A8%E9%9D%A2%E6%9D%BF" class="hash-link" aria-label="统一底部面板 的直接链接" title="统一底部面板 的直接链接" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="统一底部面板">统一底部面板<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E7%BB%9F%E4%B8%80%E5%BA%95%E9%83%A8%E9%9D%A2%E6%9D%BF" class="hash-link" aria-label="统一底部面板 的直接链接" title="统一底部面板 的直接链接" translate="no">​</a></h3>
 <p>点动对话框和日志视图已合并为一个统一的底部面板。这种整合提供了更简洁的工作空间，同时保持基本的机器控制和监控工具易于访问。该面板具有标签式访问点动控制和日志输出的功能，使切换操作变得容易，而不会损失屏幕空间。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="其他改进">其他改进<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E5%85%B6%E4%BB%96%E6%94%B9%E8%BF%9B" class="hash-link" aria-label="其他改进 的直接链接" title="其他改进 的直接链接" translate="no">​</a></h3>
 <ul>
@@ -722,7 +802,7 @@ keyboard shortcuts</li>
 <p><strong>解决方案</strong>：使用 Rayforge 内置的 <strong>移动时间优化</strong>。</p>
 <p>Rayforge 可以自动重新排序路径，以最大限度地减少非切割移动时间。这对于具有许多小对象或多个字母的文本的作业特别有用。</p>
 <p>路径优化通常默认启用，但您可以在轮廓操作设置中验证和调整它。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-添加固定标签防止零件移动">3. 添加固定标签防止零件移动<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#3-%E6%B7%BB%E5%8A%A0%E5%9B%BA%E5%AE%9A%E6%A0%87%E7%AD%BE%E9%98%B2%E6%AD%A2%EF%BF%BD%EF%BF%BD%E9%9B%B6%E4%BB%B6%E7%A7%BB%E5%8A%A8" class="hash-link" aria-label="3. 添加固定标签防止零件移动 的直接链接" title="3. 添加固定标签防止零件移动 的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-添加固定标签防止零件移动">3. 添加固定标签防止零件移动<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#3-%E6%B7%BB%E5%8A%A0%E5%9B%BA%E5%AE%9A%E6%A0%87%E7%AD%BE%E9%98%B2%E6%AD%A2%E9%9B%B6%E4%BB%B6%E7%A7%BB%E5%8A%A8" class="hash-link" aria-label="3. 添加固定标签防止零件移动 的直接链接" title="3. 添加固定标签防止零件移动 的直接链接" translate="no">​</a></h2>
 <p>没有什么比几乎完成的切割作业在最后一刻因为零件移动或从机床床身上掉落而毁掉更令人沮丧的了。</p>
 <p><strong>解决方案</strong>：使用 <strong>固定标签</strong> 将零件保持在原位，直到作业完成。</p>
 <p>固定标签是保持零件与周围材料连接的小型未切割部分。作业完成后，您可以轻松取出零件，并用刀或砂纸清理标签。</p>
@@ -843,7 +923,7 @@ keyboard shortcuts</li>
             <description><![CDATA[Rayforge 主窗口]]></description>
             <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 主窗口" src="https://rayforge.org/zh-CN/assets/images/main-standard-05f7c4dbfcf029bf132c55381b529297.png" width="2450" height="1700" class="img_ev3q"></p>
 <p>我们很高兴向您介绍 Rayforge，这是一款专为基于 GRBL 的激光切割机和雕刻机设计的现代化开源 G-code 发送器和控制软件。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="为什么选择-rayforge">为什么选择 Rayforge？<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-rayforge" class="hash-link" aria-label="为什么选择 Rayforge？ 的直接链接" title="为什么选择 Rayforge？ 的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="为什么选择-rayforge">为什么选择 Rayforge？<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-rayforge" class="hash-link" aria-label="为什么选择 Rayforge？ 的直接链接" title="为什�么选择 Rayforge？ 的直接链接" translate="no">​</a></h2>
 <p>在激光切割和雕刻的世界中，拥有可靠、直观的软件与拥有优质硬件同样重要。Rayforge 从零开始构建，专注于：</p>
 <ul>
 <li class=""><strong>现代用户体验</strong>：基于 Gtk4 和 Libadwaita 构建，Rayforge 提供简洁的原生界面，在 Linux 和 Windows 上都能完美运行</li>

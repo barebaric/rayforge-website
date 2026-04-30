@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.c4435ba3.css">
-<script src="/zh-CN/assets/js/runtime~main.0f308f05.js" defer="defer"></script>
-<script src="/zh-CN/assets/js/main.db931163.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.b57f3db8.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.da8c69da.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -89,7 +89,14 @@
 
 
 
-<table><thead><tr><th>固件</th><th>版本</th><th>状态</th><th>驱动程序</th><th>备注</th></tr></thead><tbody><tr><td><strong>GRBL</strong></td><td>1.1+</td><td>完全支持</td><td>GRBL 串口</td><td>推荐</td></tr><tr><td><strong>grblHAL</strong></td><td>2023+</td><td>兼容</td><td>GRBL 串口 / GRBL Telnet</td><td>现代 GRBL 分支</td></tr><tr><td><strong>GRBL</strong></td><td>0.9</td><td>有限</td><td>GRBL 串口</td><td>较旧，可能有问题</td></tr><tr><td><strong>Smoothieware</strong></td><td>全部</td><td>兼容</td><td>SmoothieDriver (Telnet)</td><td>基于网络</td></tr><tr><td><strong>Marlin</strong></td><td>2.0+</td><td>兼容</td><td>使用 GRBL 驱动</td><td>需要激光模式</td></tr><tr><td><strong>ESP3D</strong></td><td>全部</td><td>兼容</td><td>GRBL Telnet</td><td>基于网络</td></tr><tr><td><strong>其他</strong></td><td>-</td><td>不支持</td><td>-</td><td>请求支持</td></tr></tbody></table>
+
+
+
+
+
+
+
+<table><thead><tr><th>固件</th><th>版本</th><th>状态</th><th>驱动程序</th><th>备注</th></tr></thead><tbody><tr><td><strong>GRBL</strong></td><td>1.1+</td><td>完全支持</td><td>GRBL 串口</td><td>推荐</td></tr><tr><td><strong>grblHAL</strong></td><td>2023+</td><td>兼容</td><td>GRBL 串口 / GRBL Telnet</td><td>现代 GRBL 分支</td></tr><tr><td><strong>GRBL</strong></td><td>0.9</td><td>有限</td><td>GRBL 串口</td><td>较旧，可能有问题</td></tr><tr><td><strong>Smoothieware</strong></td><td>全部</td><td>兼容</td><td>SmoothieDriver (Telnet)</td><td>基于网络</td></tr><tr><td><strong>Marlin</strong></td><td>2.0+</td><td>兼容</td><td>使用 GRBL 驱动</td><td>需要激光模式</td></tr><tr><td><strong>ESP3D</strong></td><td>全部</td><td>兼容</td><td>GRBL Telnet</td><td>基于网络</td></tr><tr><td><strong>OctoPrint</strong></td><td>全部</td><td>实验性</td><td>OctoPrint</td><td>见下方说明</td></tr><tr><td><strong>其他</strong></td><td>-</td><td>不支持</td><td>-</td><td>请求支持</td></tr></tbody></table>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="grbl-固件">GRBL 固件<a href="#grbl-固件" class="hash-link" aria-label="GRBL 固件 的直接链接" title="GRBL 固件 的直接链接" translate="no">​</a></h2>
 <p><strong>状态：</strong> 完全支持
@@ -140,10 +147,10 @@
 <p><strong>如果您有 GRBL 0.9：</strong></p>
 <ol>
 <li class=""><strong>升级到 GRBL 1.1</strong>（如果可能）（推荐）</li>
-<li class=""><strong>使用 M3 而不是 M4</strong>（功率不太可预测）</li>
+<li class=""><strong>使用 M3 而不是 M4</strong>（功率不太 可预测）</li>
 <li class=""><strong>彻底测试</strong> - 某些功能可能无法工作</li>
 </ol>
-<p><strong>升级说  明：</strong> 参见 <a href="https://github.com/gnea/grbl/wiki" target="_blank" rel="noopener noreferrer" class="">GRBL Wiki</a></p>
+<p><strong>升级说明：</strong> 参见 <a href="https://github.com/gnea/grbl/wiki" target="_blank" rel="noopener noreferrer" class="">GRBL Wiki</a></p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="grblhal">grblHAL<a href="#grblhal" class="hash-link" aria-label="grblHAL 的直接链接" title="grblHAL 的直接链接" translate="no">​</a></h2>
 <p><strong>状态：</strong> 兼容
@@ -271,7 +278,7 @@
 </ul>
 <p><strong>在 Rayforge 中使用 Marlin：</strong></p>
 <ol>
-<li class="">在机器设  置 &gt; G 代码 &gt; 方言中<strong>选择 Marlin 方言</strong></li>
+<li class="">在机器设置 &gt; G 代码 &gt; 方言中<strong>选择 Marlin 方言</strong></li>
 <li class=""><strong>为激光使用配置 Marlin</strong></li>
 <li class=""><strong>测试功率范围</strong>匹配（0-1000 或 0-255）</li>
 <li class=""><strong>有限测试</strong> - 谨慎使用</li>
@@ -361,7 +368,12 @@
 
 
 
-<table><thead><tr><th>板</th><th>典型固件</th><th>Rayforge 支持</th></tr></thead><tbody><tr><td><strong>Arduino CNC Shield</strong></td><td>GRBL 1.1</td><td>优秀</td></tr><tr><td><strong>MKS DLC32</strong></td><td>grblHAL</td><td>优秀</td></tr><tr><td><strong>Ruida</strong></td><td>专有</td><td>实验性</td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>板</th><th>典型固件</th><th>Rayforge 支持</th></tr></thead><tbody><tr><td><strong>Arduino CNC Shield</strong></td><td>GRBL 1.1</td><td>优秀</td></tr><tr><td><strong>MKS DLC32</strong></td><td>grblHAL</td><td>优秀</td></tr><tr><td><strong>Ruida</strong></td><td>专有</td><td>实验性</td></tr><tr><td><strong>OctoPrint (Pi)</strong></td><td>多种</td><td>实验性</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="推荐控制器">推荐控制器<a href="#推荐控制器" class="hash-link" aria-label="推荐控制器 的直接链接" title="推荐控制器 的直接链接" translate="no">​</a></h3>
 <p>为了最佳的 Rayforge 兼容性：</p>
 <ol>
@@ -517,6 +529,35 @@
 <li class="">尚不支持发送作业</li>
 </ul>
 <hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="octoprint">OctoPrint<a href="#octoprint" class="hash-link" aria-label="OctoPrint 的直接链接" title="OctoPrint 的直接链接" translate="no">​</a></h3>
+<p>Rayforge 包含一个实验性的 OctoPrint 驱动程序，可通过网络直接向 OctoPrint
+服务器提交 G 代码。如果您的激光器连接到运行 OctoPrint 的 Raspberry Pi 或其他
+计算机上，这将非常有用。</p>
+<p><strong>功能：</strong></p>
+<ul>
+<li class="">WebSocket 连接用于实时状态更新</li>
+<li class="">当 WebSocket 不可用时回退到 REST 轮询</li>
+<li class="">连接丢失时自动重连</li>
+<li class="">提交作业并自动开始打印</li>
+<li class="">点动、回零和暂停/恢复控制</li>
+<li class="">OctoPrint 应用密钥的&quot;请求访问&quot;流程</li>
+</ul>
+<p><strong>使用 OctoPrint 驱动程序：</strong></p>
+<ol>
+<li class="">在机器设置中选择&quot;OctoPrint&quot;驱动程序</li>
+<li class="">输入您的 OctoPrint 服务器的主机名或 IP 地址</li>
+<li class="">设置端口（默认：80）</li>
+<li class="">点击&quot;请求访问&quot;通过 OctoPrint 的应用密钥系统获取 API 密钥</li>
+<li class="">连接 — Rayforge 将建立 WebSocket 连接</li>
+</ol>
+<p><strong>限制：</strong></p>
+<ul>
+<li class="">实验性，未在真实硬件上测试 — 欢迎反馈</li>
+<li class="">无法通过 OctoPrint 读取或写入固件设置</li>
+<li class="">OctoPrint 不报告探针结果</li>
+<li class="">不支持读取 WCS 偏移</li>
+</ul>
+<hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="其他请求的功能">其他请求的功能<a href="#其他请求的功能" class="hash-link" aria-label="其他请求的功能 的直接链接" title="其他请求的功能 的直接链接" translate="no">​</a></h3>
 <p>用户已请求支持：</p>
 <ul>
@@ -540,6 +581,6 @@
 <li class=""><a class="" href="/zh-CN/docs/machine/device">设备设置</a> - GRBL 配置</li>
 <li class=""><a class="" href="/zh-CN/docs/troubleshooting/connection">连接问题</a> - 连接故障排除</li>
 <li class=""><a class="" href="/zh-CN/docs/machine/general">常规设置</a> - 机器设置</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/reference/firmware.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>编辑此页</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文档页面导航"><a class="pagination-nav__link pagination-nav__link--prev" href="/zh-CN/docs/reference/gcode-dialects"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">G 代码方言支持</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#概述" class="table-of-contents__link toc-highlight">概述</a><ul><li><a href="#兼容性矩阵" class="table-of-contents__link toc-highlight">兼容性矩阵</a></li></ul></li><li><a href="#grbl-固件" class="table-of-contents__link toc-highlight">GRBL 固件</a><ul><li><a href="#grbl-11推荐" class="table-of-contents__link toc-highlight">GRBL 1.1（推荐）</a></li><li><a href="#检查-grbl-版本" class="table-of-contents__link toc-highlight">检查 GRBL 版本</a></li><li><a href="#grbl-09较旧" class="table-of-contents__link toc-highlight">GRBL 0.9（较旧）</a></li></ul></li><li><a href="#grblhal" class="table-of-contents__link toc-highlight">grblHAL</a><ul><li><a href="#什么是-grblhal" class="table-of-contents__link toc-highlight">什么是 grblHAL？</a></li></ul></li><li><a href="#grbl-telnet-驱动" class="table-of-contents__link toc-highlight">GRBL Telnet 驱动</a><ul><li><a href="#关于-grbl-telnet-驱动" class="table-of-contents__link toc-highlight">关于 GRBL Telnet 驱动</a></li></ul></li><li><a href="#smoothieware" class="table-of-contents__link toc-highlight">Smoothieware</a><ul><li><a href="#兼容性说明" class="table-of-contents__link toc-highlight">兼容性说明</a></li></ul></li><li><a href="#marlin" class="table-of-contents__link toc-highlight">Marlin</a><ul><li><a href="#marlin-激光" class="table-of-contents__link toc-highlight">Marlin 激光</a></li></ul></li><li><a href="#固件升级指南" class="table-of-contents__link toc-highlight">固件升级指南</a><ul><li><a href="#升级到-grbl-11" class="table-of-contents__link toc-highlight">升级到 GRBL 1.1</a></li><li><a href="#升级前备份" class="table-of-contents__link toc-highlight">升级前备份</a></li></ul></li><li><a href="#控制器硬件" class="table-of-contents__link toc-highlight">控制器硬件</a><ul><li><a href="#常见控制器" class="table-of-contents__link toc-highlight">常见控制器</a></li><li><a href="#推荐控制器" class="table-of-contents__link toc-highlight">推荐控制器</a></li></ul></li><li><a href="#固件配置" class="table-of-contents__link toc-highlight">固件配置</a><ul><li><a href="#激光的-grbl-设置" class="table-of-contents__link toc-highlight">激光的 GRBL 设置</a></li><li><a href="#测试固件" class="table-of-contents__link toc-highlight">测试固件</a></li></ul></li><li><a href="#固件问题故障排除" class="table-of-contents__link toc-highlight">固件问题故障排除</a><ul><li><a href="#固件无响应" class="table-of-contents__link toc-highlight">固件无响应</a></li><li><a href="#固件崩溃" class="table-of-contents__link toc-highlight">固件崩溃</a></li><li><a href="#固件错误" class="table-of-contents__link toc-highlight">固件错误</a></li></ul></li><li><a href="#未来的固件支持" class="table-of-contents__link toc-highlight">未来的固件支持</a><ul><li><a href="#ruida-控制器" class="table-of-contents__link toc-highlight">Ruida 控制器</a></li><li><a href="#其他请求的功能" class="table-of-contents__link toc-highlight">其他请求的功能</a></li><li><a href="#贡献" class="table-of-contents__link toc-highlight">贡献</a></li></ul></li><li><a href="#相关页面" class="table-of-contents__link toc-highlight">相关页面</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge 贡献者</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/reference/firmware.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>编辑此页</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文档页面导航"><a class="pagination-nav__link pagination-nav__link--prev" href="/zh-CN/docs/reference/gcode-dialects"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">G 代码方言支持</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#概述" class="table-of-contents__link toc-highlight">概述</a><ul><li><a href="#兼容性矩阵" class="table-of-contents__link toc-highlight">兼容性矩阵</a></li></ul></li><li><a href="#grbl-固件" class="table-of-contents__link toc-highlight">GRBL 固件</a><ul><li><a href="#grbl-11推荐" class="table-of-contents__link toc-highlight">GRBL 1.1（推荐）</a></li><li><a href="#检查-grbl-版本" class="table-of-contents__link toc-highlight">检查 GRBL 版本</a></li><li><a href="#grbl-09较旧" class="table-of-contents__link toc-highlight">GRBL 0.9（较旧）</a></li></ul></li><li><a href="#grblhal" class="table-of-contents__link toc-highlight">grblHAL</a><ul><li><a href="#什么是-grblhal" class="table-of-contents__link toc-highlight">什么是 grblHAL？</a></li></ul></li><li><a href="#grbl-telnet-驱动" class="table-of-contents__link toc-highlight">GRBL Telnet 驱动</a><ul><li><a href="#关于-grbl-telnet-驱动" class="table-of-contents__link toc-highlight">关于 GRBL Telnet 驱动</a></li></ul></li><li><a href="#smoothieware" class="table-of-contents__link toc-highlight">Smoothieware</a><ul><li><a href="#兼容性说明" class="table-of-contents__link toc-highlight">兼容性说明</a></li></ul></li><li><a href="#marlin" class="table-of-contents__link toc-highlight">Marlin</a><ul><li><a href="#marlin-激光" class="table-of-contents__link toc-highlight">Marlin 激光</a></li></ul></li><li><a href="#固件升级指南" class="table-of-contents__link toc-highlight">固件升级指南</a><ul><li><a href="#升级到-grbl-11" class="table-of-contents__link toc-highlight">升级到 GRBL 1.1</a></li><li><a href="#升级前备份" class="table-of-contents__link toc-highlight">升级前备份</a></li></ul></li><li><a href="#控制器硬件" class="table-of-contents__link toc-highlight">控制器硬件</a><ul><li><a href="#常见控制器" class="table-of-contents__link toc-highlight">常见控制器</a></li><li><a href="#推荐控制器" class="table-of-contents__link toc-highlight">推荐控制器</a></li></ul></li><li><a href="#固件配置" class="table-of-contents__link toc-highlight">固件配置</a><ul><li><a href="#激光的-grbl-设置" class="table-of-contents__link toc-highlight">激光的 GRBL 设置</a></li><li><a href="#测试固件" class="table-of-contents__link toc-highlight">测试固件</a></li></ul></li><li><a href="#固件问题故障排除" class="table-of-contents__link toc-highlight">固件问题故障排除</a><ul><li><a href="#固件无响应" class="table-of-contents__link toc-highlight">固件无响应</a></li><li><a href="#固件崩溃" class="table-of-contents__link toc-highlight">固件崩溃</a></li><li><a href="#固件错误" class="table-of-contents__link toc-highlight">固件错误</a></li></ul></li><li><a href="#未来的固件支持" class="table-of-contents__link toc-highlight">未来的固件支持</a><ul><li><a href="#ruida-控制器" class="table-of-contents__link toc-highlight">Ruida 控制器</a></li><li><a href="#octoprint" class="table-of-contents__link toc-highlight">OctoPrint</a></li><li><a href="#其他请求的功能" class="table-of-contents__link toc-highlight">其他请求的功能</a></li><li><a href="#贡献" class="table-of-contents__link toc-highlight">贡献</a></li></ul></li><li><a href="#相关页面" class="table-of-contents__link toc-highlight">相关页面</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge 贡献者</div></div></div></footer></div>
 </body>
 </html>

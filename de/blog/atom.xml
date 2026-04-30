@@ -2,11 +2,95 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rayforge.org/de/blog</id>
     <title>Rayforge Blog</title>
-    <updated>2026-04-24T00:00:00.000Z</updated>
+    <updated>2026-05-01T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rayforge.org/de/blog"/>
     <subtitle>Rayforge Blog</subtitle>
     <icon>https://rayforge.org/de/images/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Rayforge 1.7 Beta - CO2 Laser Support, OctoPrint, Parametric Text]]></title>
+        <id>https://rayforge.org/de/blog/rayforge-1.7-co2-octoprint-parametric-text</id>
+        <link href="https://rayforge.org/de/blog/rayforge-1.7-co2-octoprint-parametric-text"/>
+        <updated>2026-05-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Rayforge 1.7 beta brings CO2 and fiber laser PWM settings, an experimental OctoPrint driver, parametric text templates in the sketcher, and linear light image processing.]]></summary>
+        <content type="html"><![CDATA[<p>Rayforge 1.7 beta expands hardware support to CO2 and fiber lasers, adds an
+experimental OctoPrint driver, brings template expressions to the sketcher text
+tool, and improves image processing accuracy across the board.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="co2-and-fiber-laser-pwm-settings">CO2 and Fiber Laser PWM Settings<a href="https://rayforge.org/de/blog/rayforge-1.7-co2-octoprint-parametric-text#co2-and-fiber-laser-pwm-settings" class="hash-link" aria-label="Direkter Link zur CO2 and Fiber Laser PWM Settings" title="Direkter Link zur CO2 and Fiber Laser PWM Settings" translate="no">​</a></h2>
+<p>Rayforge now understands that not all lasers are diodes. A new <strong>Laser Type</strong>
+dropdown in the laser head settings lets you choose between Diode, CO2, and
+Fiber. When you select CO2 or Fiber, a dedicated PWM section appears with
+controls for frequency and pulse width -- including configurable min/max bounds.</p>
+<p>These settings flow through the pipeline, so each operation step can use or
+override the defaults. The Ruida driver already leverages them for native
+frequency and pulse width commands.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="octoprint-driver-experimental">OctoPrint Driver (Experimental)<a href="https://rayforge.org/de/blog/rayforge-1.7-co2-octoprint-parametric-text#octoprint-driver-experimental" class="hash-link" aria-label="Direkter Link zur OctoPrint Driver (Experimental)" title="Direkter Link zur OctoPrint Driver (Experimental)" translate="no">​</a></h2>
+<p>A new driver lets you submit G-code directly to an OctoPrint server over the
+network. It connects via WebSocket for real-time status updates and falls back
+to REST polling when needed. Setup requires just a hostname and an API key, and
+the driver includes a "Request Access" flow that walks you through OctoPrint's
+application key system.</p>
+<p>This driver is labeled experimental and has not been tested on real hardware
+yet. If you have an OctoPrint setup, your feedback would be invaluable.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="parametric-text-templates">Parametric Text Templates<a href="https://rayforge.org/de/blog/rayforge-1.7-co2-octoprint-parametric-text#parametric-text-templates" class="hash-link" aria-label="Direkter Link zur Parametric Text Templates" title="Direkter Link zur Parametric Text Templates" translate="no">​</a></h2>
+<p>Text boxes in the sketcher now support template expressions using curly braces.
+Any sketch parameter or input variable can be referenced:</p>
+<ul>
+<li class=""><code>{width}</code> resolves to the current width value</li>
+<li class=""><code>{name}</code> resolves to a string input parameter</li>
+<li class=""><code>{sqrt(area):.1f}</code> evaluates math and formats the result</li>
+</ul>
+<p>Built-in functions include <code>{today()}</code> for the current date, <code>{now()}</code> for a
+full timestamp, and <code>{uuid4()}</code> for a unique 8-character identifier. This makes
+it easy to label parts with live dimensions, date-stamp production pieces, or
+generate serial numbers.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="linear-light-image-processing">Linear Light Image Processing<a href="https://rayforge.org/de/blog/rayforge-1.7-co2-octoprint-parametric-text#linear-light-image-processing" class="hash-link" aria-label="Direkter Link zur Linear Light Image Processing" title="Direkter Link zur Linear Light Image Processing" translate="no">​</a></h2>
+<p>All image processing -- resizing, grayscale conversion, dithering, and color
+LUT gradients -- now operates in linear light instead of sRGB. This produces
+more accurate interpolation when scaling and better dithering quality,
+especially for gradients and fine detail where sRGB's nonlinear curve used to
+cause banding.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/de/blog/rayforge-1.7-co2-octoprint-parametric-text#other-improvements" class="hash-link" aria-label="Direkter Link zur Other Improvements" title="Direkter Link zur Other Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Sculpfun iCube Ultra</strong> device profile added</li>
+<li class=""><strong>Grid toggle</strong> in the 3D canvas visibility overlay</li>
+<li class=""><strong>Debug log</strong> can optionally include the project file</li>
+<li class=""><strong>Device profile selector</strong> received visual improvements</li>
+<li class=""><strong>Tab power slider</strong> is now hidden for non-cut steps</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/de/blog/rayforge-1.7-co2-octoprint-parametric-text#bug-fixes" class="hash-link" aria-label="Direkter Link zur Bug Fixes" title="Direkter Link zur Bug Fixes" translate="no">​</a></h2>
+<ul>
+<li class="">Fixed GRBL buffer overflow on devices with smaller RX buffers</li>
+<li class="">Fixed parametric text not updating correctly with volatile expressions</li>
+<li class="">Fixed crash in MergeLinesTransformer when a cutting command appeared before
+any positioning command</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="special-thanks">Special Thanks<a href="https://rayforge.org/de/blog/rayforge-1.7-co2-octoprint-parametric-text#special-thanks" class="hash-link" aria-label="Direkter Link zur Special Thanks" title="Direkter Link zur Special Thanks" translate="no">​</a></h2>
+<p>This release was made possible with the support of our Patreon supporters:
+Amsel, froqstar, old-man-and-the-seam, pghpete, Derek McTavish, and four
+anonymous supporters.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-17-beta">Download Rayforge 1.7 Beta<a href="https://rayforge.org/de/blog/rayforge-1.7-co2-octoprint-parametric-text#download-rayforge-17-beta" class="hash-link" aria-label="Direkter Link zur Download Rayforge 1.7 Beta" title="Direkter Link zur Download Rayforge 1.7 Beta" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="https://rayforge.org/de/docs/getting-started/installation">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/de/blog/rayforge-1.7-co2-octoprint-parametric-text#join-the-community" class="hash-link" aria-label="Direkter Link zur Join the Community" title="Direkter Link zur Join the Community" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content>
+        <author>
+            <name>Rayforge Team</name>
+            <uri>https://github.com/barebaric/rayforge</uri>
+        </author>
+        <category label="release" term="release"/>
+        <category label="1.7" term="1.7"/>
+        <category label="co2" term="co2"/>
+        <category label="octoprint" term="octoprint"/>
+        <category label="pwm" term="pwm"/>
+        <category label="sketcher" term="sketcher"/>
+        <category label="image-processing" term="image-processing"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Rayforge 1.6 - Device Profiles, Rotary Overhaul, Print & Cut]]></title>
         <id>https://rayforge.org/de/blog/rayforge-1.6-device-profiles-rotary-print-cut</id>
@@ -763,7 +847,7 @@ Open-Source-Fertigung!</p>
 <p>Professionelle Lasergravierergebnisse erfordern mehr als nur gute Hardware –
 auch deine Software-Einstellungen und dein Workflow sind wichtig. Hier sind fünf
 Tipps, die dir helfen, das Beste aus Rayforge herauszuholen.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-verwende-overscan-für-glattere-rastergravur">1. Verwende Overscan für glattere Rastergravur<a href="https://rayforge.org/de/blog/5-tips-better-engraving#1-verwende-overscan-f%C3%BCr-glattere-rastergravur" class="hash-link" aria-label="Direkter Link zur 1. Verwende Overscan für glattere Rastergravur" title="Direkter Link zur 1. Verwende Overscan für glattere Rastergravur" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-verwende-overscan-für-glattere-rastergravur">1. Verwende Overscan für glattere Rastergravur<a href="https://rayforge.org/de/blog/5-tips-better-engraving#1-verwende-overscan-f%EF%BF%BD%EF%BF%BD%C3%BCr-glattere-rastergravur" class="hash-link" aria-label="Direkter Link zur 1. Verwende Overscan für glattere Rastergravur" title="Direkter Link zur 1. Verwende Overscan für glattere Rastergravur" translate="no">​</a></h2>
 <p>Bei der Rastergravur ist ein häufiges Problem sichtbare Linien oder
 Unregelmäßigkeiten an den Rändern, wo der Laser die Richtung wechselt. Dies
 passiert, weil der Laserkopf abbremsen und beschleunigen muss, was die

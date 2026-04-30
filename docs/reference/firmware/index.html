@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.a0b27f44.css">
-<script src="/assets/js/runtime~main.1f49b7e5.js" defer="defer"></script>
-<script src="/assets/js/main.006bc327.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.79204884.js" defer="defer"></script>
+<script src="/assets/js/main.554f606b.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -89,7 +89,14 @@
 
 
 
-<table><thead><tr><th>Firmware</th><th>Version</th><th>Status</th><th>Driver</th><th>Notes</th></tr></thead><tbody><tr><td><strong>GRBL</strong></td><td>1.1+</td><td>Compatible</td><td>GRBL Serial</td><td>Recommended</td></tr><tr><td><strong>grblHAL</strong></td><td>2023+</td><td>Compatible</td><td>GRBL Serial / GRBL Telnet</td><td>Modern GRBL fork</td></tr><tr><td><strong>GRBL</strong></td><td>0.9</td><td>Limited</td><td>GRBL Serial</td><td>Older, may have issues</td></tr><tr><td><strong>Smoothieware</strong></td><td>All</td><td>Compatible</td><td>SmoothieDriver (Telnet)</td><td>Network-based</td></tr><tr><td><strong>Marlin</strong></td><td>2.0+</td><td>Compatible</td><td>use GRBL driver</td><td>Laser mode required</td></tr><tr><td><strong>ESP3D</strong></td><td>All</td><td>Compatible</td><td>GRBL Telnet</td><td>Network-based</td></tr><tr><td><strong>Other</strong></td><td>-</td><td>Not supported</td><td>-</td><td>Request support</td></tr></tbody></table>
+
+
+
+
+
+
+
+<table><thead><tr><th>Firmware</th><th>Version</th><th>Status</th><th>Driver</th><th>Notes</th></tr></thead><tbody><tr><td><strong>GRBL</strong></td><td>1.1+</td><td>Compatible</td><td>GRBL Serial</td><td>Recommended</td></tr><tr><td><strong>grblHAL</strong></td><td>2023+</td><td>Compatible</td><td>GRBL Serial / GRBL Telnet</td><td>Modern GRBL fork</td></tr><tr><td><strong>GRBL</strong></td><td>0.9</td><td>Limited</td><td>GRBL Serial</td><td>Older, may have issues</td></tr><tr><td><strong>Smoothieware</strong></td><td>All</td><td>Compatible</td><td>SmoothieDriver (Telnet)</td><td>Network-based</td></tr><tr><td><strong>Marlin</strong></td><td>2.0+</td><td>Compatible</td><td>use GRBL driver</td><td>Laser mode required</td></tr><tr><td><strong>ESP3D</strong></td><td>All</td><td>Compatible</td><td>GRBL Telnet</td><td>Network-based</td></tr><tr><td><strong>OctoPrint</strong></td><td>All</td><td>Experimental</td><td>OctoPrint</td><td>See notes below</td></tr><tr><td><strong>Other</strong></td><td>-</td><td>Not supported</td><td>-</td><td>Request support</td></tr></tbody></table>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="grbl-firmware">GRBL Firmware<a href="#grbl-firmware" class="hash-link" aria-label="Direct link to GRBL Firmware" title="Direct link to GRBL Firmware" translate="no">​</a></h2>
 <p><strong>Status:</strong> Fully Supported
@@ -346,7 +353,12 @@ Ethernet — no USB cable required.</p>
 
 
 
-<table><thead><tr><th>Board</th><th>Typical Firmware</th><th>Rayforge Support</th></tr></thead><tbody><tr><td><strong>Arduino CNC Shield</strong></td><td>GRBL 1.1</td><td>Excellent</td></tr><tr><td><strong>MKS DLC32</strong></td><td>grblHAL</td><td>Excellent</td></tr><tr><td><strong>Ruida</strong></td><td>Proprietary</td><td>Experimental</td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Board</th><th>Typical Firmware</th><th>Rayforge Support</th></tr></thead><tbody><tr><td><strong>Arduino CNC Shield</strong></td><td>GRBL 1.1</td><td>Excellent</td></tr><tr><td><strong>MKS DLC32</strong></td><td>grblHAL</td><td>Excellent</td></tr><tr><td><strong>Ruida</strong></td><td>Proprietary</td><td>Experimental</td></tr><tr><td><strong>OctoPrint (Pi)</strong></td><td>Various</td><td>Experimental</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="recommended-controllers">Recommended Controllers<a href="#recommended-controllers" class="hash-link" aria-label="Direct link to Recommended Controllers" title="Direct link to Recommended Controllers" translate="no">​</a></h3>
 <p>For best Rayforge compatibility:</p>
 <ol>
@@ -471,6 +483,36 @@ auto-connect, and status polling.</p>
 <li class="">Job sending is not yet supported</li>
 </ul>
 <hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="octoprint">OctoPrint<a href="#octoprint" class="hash-link" aria-label="Direct link to OctoPrint" title="Direct link to OctoPrint" translate="no">​</a></h3>
+<p>Rayforge includes an experimental OctoPrint driver that submits G-code directly
+to an OctoPrint server over the network. This is useful if your laser is
+connected to a Raspberry Pi or other machine running OctoPrint.</p>
+<p><strong>Features:</strong></p>
+<ul>
+<li class="">WebSocket connection for real-time status updates</li>
+<li class="">REST polling fallback when WebSocket is unavailable</li>
+<li class="">Auto-reconnect on connection loss</li>
+<li class="">Job submission with automatic print start</li>
+<li class="">Jogging, homing, and pause/resume controls</li>
+<li class="">&quot;Request Access&quot; flow for OctoPrint application keys</li>
+</ul>
+<p><strong>Using the OctoPrint driver:</strong></p>
+<ol>
+<li class="">Select &quot;OctoPrint&quot; driver in machine settings</li>
+<li class="">Enter the hostname or IP address of your OctoPrint server</li>
+<li class="">Set the port (default: 80)</li>
+<li class="">Click &quot;Request Access&quot; to obtain an API key through OctoPrint&#x27;s
+application key flow</li>
+<li class="">Connect -- Rayforge will establish a WebSocket connection</li>
+</ol>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li class="">Experimental and untested on real hardware -- feedback welcome</li>
+<li class="">Cannot read or write firmware settings through OctoPrint</li>
+<li class="">Probe results are not reported by OctoPrint</li>
+<li class="">WCS offset reads are not supported</li>
+</ul>
+<hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="contributing">Contributing<a href="#contributing" class="hash-link" aria-label="Direct link to Contributing" title="Direct link to Contributing" translate="no">​</a></h3>
 <p>To add firmware support:</p>
 <ol>
@@ -486,6 +528,6 @@ auto-connect, and status polling.</p>
 <li class=""><a class="" href="/docs/machine/device">Device Settings</a> - GRBL configuration</li>
 <li class=""><a class="" href="/docs/troubleshooting/connection">Connection Issues</a> - Connection troubleshooting</li>
 <li class=""><a class="" href="/docs/machine/general">General Settings</a> - Machine setup</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/reference/firmware.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/reference/gcode-dialects"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">G-code Dialect Support</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a><ul><li><a href="#compatibility-matrix" class="table-of-contents__link toc-highlight">Compatibility Matrix</a></li></ul></li><li><a href="#grbl-firmware" class="table-of-contents__link toc-highlight">GRBL Firmware</a><ul><li><a href="#grbl-11-recommended" class="table-of-contents__link toc-highlight">GRBL 1.1 (Recommended)</a></li><li><a href="#checking-grbl-version" class="table-of-contents__link toc-highlight">Checking GRBL Version</a></li><li><a href="#grbl-09-older" class="table-of-contents__link toc-highlight">GRBL 0.9 (Older)</a></li></ul></li><li><a href="#grblhal" class="table-of-contents__link toc-highlight">grblHAL</a><ul><li><a href="#what-is-grblhal" class="table-of-contents__link toc-highlight">What is grblHAL?</a></li></ul></li><li><a href="#grbl-telnet-driver" class="table-of-contents__link toc-highlight">GRBL Telnet Driver</a><ul><li><a href="#about-the-grbl-telnet-driver" class="table-of-contents__link toc-highlight">About the GRBL Telnet Driver</a></li></ul></li><li><a href="#smoothieware" class="table-of-contents__link toc-highlight">Smoothieware</a><ul><li><a href="#about-smoothiedriver" class="table-of-contents__link toc-highlight">About SmoothieDriver</a></li></ul></li><li><a href="#marlin" class="table-of-contents__link toc-highlight">Marlin</a><ul><li><a href="#marlin-for-laser" class="table-of-contents__link toc-highlight">Marlin for Laser</a></li></ul></li><li><a href="#firmware-upgrade-guide" class="table-of-contents__link toc-highlight">Firmware Upgrade Guide</a><ul><li><a href="#upgrading-to-grbl-11" class="table-of-contents__link toc-highlight">Upgrading to GRBL 1.1</a></li><li><a href="#backup-before-upgrade" class="table-of-contents__link toc-highlight">Backup Before Upgrade</a></li></ul></li><li><a href="#controller-hardware" class="table-of-contents__link toc-highlight">Controller Hardware</a><ul><li><a href="#common-controllers" class="table-of-contents__link toc-highlight">Common Controllers</a></li><li><a href="#recommended-controllers" class="table-of-contents__link toc-highlight">Recommended Controllers</a></li></ul></li><li><a href="#firmware-configuration" class="table-of-contents__link toc-highlight">Firmware Configuration</a><ul><li><a href="#grbl-settings-for-laser" class="table-of-contents__link toc-highlight">GRBL Settings for Laser</a></li><li><a href="#testing-firmware" class="table-of-contents__link toc-highlight">Testing Firmware</a></li></ul></li><li><a href="#troubleshooting-firmware-issues" class="table-of-contents__link toc-highlight">Troubleshooting Firmware Issues</a><ul><li><a href="#firmware-not-responding" class="table-of-contents__link toc-highlight">Firmware Not Responding</a></li></ul></li><li><a href="#future-firmware-support" class="table-of-contents__link toc-highlight">Future Firmware Support</a><ul><li><a href="#ruida-controllers" class="table-of-contents__link toc-highlight">Ruida Controllers</a></li><li><a href="#contributing" class="table-of-contents__link toc-highlight">Contributing</a></li></ul></li><li><a href="#related-pages" class="table-of-contents__link toc-highlight">Related Pages</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/reference/firmware.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/reference/gcode-dialects"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">G-code Dialect Support</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a><ul><li><a href="#compatibility-matrix" class="table-of-contents__link toc-highlight">Compatibility Matrix</a></li></ul></li><li><a href="#grbl-firmware" class="table-of-contents__link toc-highlight">GRBL Firmware</a><ul><li><a href="#grbl-11-recommended" class="table-of-contents__link toc-highlight">GRBL 1.1 (Recommended)</a></li><li><a href="#checking-grbl-version" class="table-of-contents__link toc-highlight">Checking GRBL Version</a></li><li><a href="#grbl-09-older" class="table-of-contents__link toc-highlight">GRBL 0.9 (Older)</a></li></ul></li><li><a href="#grblhal" class="table-of-contents__link toc-highlight">grblHAL</a><ul><li><a href="#what-is-grblhal" class="table-of-contents__link toc-highlight">What is grblHAL?</a></li></ul></li><li><a href="#grbl-telnet-driver" class="table-of-contents__link toc-highlight">GRBL Telnet Driver</a><ul><li><a href="#about-the-grbl-telnet-driver" class="table-of-contents__link toc-highlight">About the GRBL Telnet Driver</a></li></ul></li><li><a href="#smoothieware" class="table-of-contents__link toc-highlight">Smoothieware</a><ul><li><a href="#about-smoothiedriver" class="table-of-contents__link toc-highlight">About SmoothieDriver</a></li></ul></li><li><a href="#marlin" class="table-of-contents__link toc-highlight">Marlin</a><ul><li><a href="#marlin-for-laser" class="table-of-contents__link toc-highlight">Marlin for Laser</a></li></ul></li><li><a href="#firmware-upgrade-guide" class="table-of-contents__link toc-highlight">Firmware Upgrade Guide</a><ul><li><a href="#upgrading-to-grbl-11" class="table-of-contents__link toc-highlight">Upgrading to GRBL 1.1</a></li><li><a href="#backup-before-upgrade" class="table-of-contents__link toc-highlight">Backup Before Upgrade</a></li></ul></li><li><a href="#controller-hardware" class="table-of-contents__link toc-highlight">Controller Hardware</a><ul><li><a href="#common-controllers" class="table-of-contents__link toc-highlight">Common Controllers</a></li><li><a href="#recommended-controllers" class="table-of-contents__link toc-highlight">Recommended Controllers</a></li></ul></li><li><a href="#firmware-configuration" class="table-of-contents__link toc-highlight">Firmware Configuration</a><ul><li><a href="#grbl-settings-for-laser" class="table-of-contents__link toc-highlight">GRBL Settings for Laser</a></li><li><a href="#testing-firmware" class="table-of-contents__link toc-highlight">Testing Firmware</a></li></ul></li><li><a href="#troubleshooting-firmware-issues" class="table-of-contents__link toc-highlight">Troubleshooting Firmware Issues</a><ul><li><a href="#firmware-not-responding" class="table-of-contents__link toc-highlight">Firmware Not Responding</a></li></ul></li><li><a href="#future-firmware-support" class="table-of-contents__link toc-highlight">Future Firmware Support</a><ul><li><a href="#ruida-controllers" class="table-of-contents__link toc-highlight">Ruida Controllers</a></li><li><a href="#octoprint" class="table-of-contents__link toc-highlight">OctoPrint</a></li><li><a href="#contributing" class="table-of-contents__link toc-highlight">Contributing</a></li></ul></li><li><a href="#related-pages" class="table-of-contents__link toc-highlight">Related Pages</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>
