@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/fr/assets/css/styles.a0b27f44.css">
-<script src="/fr/assets/js/runtime~main.c11c3b88.js" defer="defer"></script>
-<script src="/fr/assets/js/main.e3d11835.js" defer="defer"></script>
+<script src="/fr/assets/js/runtime~main.9aee0dee.js" defer="defer"></script>
+<script src="/fr/assets/js/main.daad2142.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -127,12 +127,15 @@ la simulation à ce point.</p>
 <p>Avant d&#x27;envoyer à la machine, vérifie :</p>
 <ul class="contains-task-list containsTaskList_mC6p">
 <li class="task-list-item"><input type="checkbox" disabled=""> Le trajet d&#x27;outil est complet sans segments manquants</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> Les parcours restent dans la zone de travail de la machine</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> Les opérations de gravure s&#x27;exécutent avant les coupes</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> Aucun trajet d&#x27;outil n&#x27;entre dans une zone interdite</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> Le travail commence à la position attendue</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> Les onglets de maintien sont aux bons emplacements</li>
 </ul>
+<p>Certaines vérifications supplémentaires sont effectuées automatiquement.
+Lorsque tu exécutes ou exportes un travail, Rayforge effectue des
+<a class="" href="/fr/docs/features/sanity-checks">vérifications de cohérence</a> qui vérifient les
+limites de la machine, les contours de la zone de travail et les collisions
+avec les zones interdites.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="conseils-de-performance">Conseils de performance<a href="#conseils-de-performance" class="hash-link" aria-label="Lien direct vers Conseils de performance" title="Lien direct vers Conseils de performance" translate="no">​</a></h2>
 <p>Pour les travaux volumineux ou complexes :</p>
 <ol>

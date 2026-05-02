@@ -2,11 +2,112 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rayforge.org/uk/blog</id>
     <title>Rayforge Blog</title>
-    <updated>2026-05-01T00:00:00.000Z</updated>
+    <updated>2026-05-02T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rayforge.org/uk/blog"/>
     <subtitle>Rayforge Blog</subtitle>
     <icon>https://rayforge.org/uk/images/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Rayforge 1.7 Beta 2 - Job Sanity Checks, 10 New Device Profiles, Better Layers]]></title>
+        <id>https://rayforge.org/uk/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers</id>
+        <link href="https://rayforge.org/uk/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers"/>
+        <updated>2026-05-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Rayforge 1.7 beta 2 adds job sanity checks, 10 new device profiles, improved layer interaction with multi-selection and context menus, and sketcher auto-constraints.]]></summary>
+        <content type="html"><![CDATA[<p>Rayforge 1.7 beta 2 brings a new safety net for your jobs, profiles for ten
+more popular laser cutters, and a significantly improved layer interaction
+experience.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="job-sanity-checks">Job Sanity Checks<a href="https://rayforge.org/uk/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#job-sanity-checks" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<p>Before sending or exporting a job, Rayforge now runs a set of composable
+sanity checks and presents the results in a structured dialog. The system
+catches three categories of problems:</p>
+<ul>
+<li class=""><strong>Machine extent violations</strong> -- geometry extending beyond what your machine
+can physically reach, reported per axis and direction</li>
+<li class=""><strong>Workarea violations</strong> -- workpieces outside the configured workarea
+boundaries</li>
+<li class=""><strong>No-go zone collisions</strong> -- geometry overlapping restricted areas defined
+in machine settings</li>
+</ul>
+<p>Each check produces at most one issue per unique violation, keeping the
+dialog readable even for complex projects. Errors and warnings are clearly
+separated so you can make an informed decision before proceeding.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="10-new-device-profiles">10 New Device Profiles<a href="https://rayforge.org/uk/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#10-new-device-profiles" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<p>This release adds out-of-the-box support for some of the most popular laser
+cutters in the community:</p>
+<ul>
+<li class=""><strong>Ortur</strong> Laser Master 3 and Laser Master 4</li>
+<li class=""><strong>Atomstack</strong> X40 Pro and A70</li>
+<li class=""><strong>TwoTrees</strong> TTS-55</li>
+<li class=""><strong>NEJE</strong> Master 3 Max</li>
+<li class=""><strong>Creality</strong> Falcon 2 Pro</li>
+<li class=""><strong>OMTech</strong> Polar 50W</li>
+<li class=""><strong>Longer</strong> Ray5</li>
+<li class=""><strong>Thunder Laser</strong> Nova 35</li>
+</ul>
+<p>GRBL-based devices in this batch use the raster dialect for cleaner G-code
+output. If your machine isn't listed yet, open an issue on GitHub and we'll
+get it added.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="better-layer-interaction">Better Layer Interaction<a href="https://rayforge.org/uk/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#better-layer-interaction" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<p>Layer columns now highlight selected workpieces and stay in sync with the
+canvas selection. This makes it much easier to see what you're working with:</p>
+<ul>
+<li class=""><strong>Single click</strong> selects one item</li>
+<li class=""><strong>Ctrl-click</strong> toggles individual items in a multi-selection</li>
+<li class=""><strong>Shift-click</strong> selects a range within a column</li>
+<li class=""><strong>Drag</strong> moves selected items between layers, including across multiple
+layers at once</li>
+</ul>
+<p>Right-clicking a workpiece in the layer tab opens a context menu with move,
+delete, and properties actions. The asset browser also received context menus
+with copy, cut, paste, and duplicate operations.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-auto-constraints">Sketcher Auto-Constraints<a href="https://rayforge.org/uk/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#sketcher-auto-constraints" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<p>The path tool now automatically creates horizontal and vertical constraints
+when the snap engine shows alignment guides during drawing. Your geometry
+comes out more precise with less manual constraint management. This also
+fixes a bug where snap-derived constraints could reference wrong point IDs
+and cause solver failures.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/uk/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#other-improvements" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Sketch parameters</strong> displayed as a separate preferences group in the
+properties panel</li>
+<li class=""><strong>Locale-aware number formatting</strong> in sliders (proper decimal separators)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/uk/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#bug-fixes" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<ul>
+<li class="">Fixed GRBL buffer deadlock from lost ok responses on \r\r\n line endings</li>
+<li class="">Fixed wrong visibility icon for initially invisible layers</li>
+<li class="">Fixed IndexError when laser combo selection is out of sync with machine
+heads</li>
+<li class="">Fixed AttributeError on startup from early view_stack signal connection</li>
+<li class="">Fixed circle and ellipse sketches missing preview thumbnails</li>
+<li class="">Fixed canvas stuck in shift-pressed state after layer interaction</li>
+<li class="">Fixed incorrect 3D view mouse controls in the documentation (#229)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="special-thanks">Special Thanks<a href="https://rayforge.org/uk/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#special-thanks" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<p>This release was made possible with the support of our Patreon supporters:
+Amsel, froqstar, old-man-and-the-seam, pghpete, Derek McTavish, and four
+anonymous supporters.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-17-beta-2">Download Rayforge 1.7 Beta 2<a href="https://rayforge.org/uk/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#download-rayforge-17-beta-2" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="https://rayforge.org/uk/docs/getting-started/installation">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/uk/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#join-the-community" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content>
+        <author>
+            <name>Rayforge Team</name>
+            <uri>https://github.com/barebaric/rayforge</uri>
+        </author>
+        <category label="release" term="release"/>
+        <category label="1.7" term="1.7"/>
+        <category label="sanity-checks" term="sanity-checks"/>
+        <category label="device-profiles" term="device-profiles"/>
+        <category label="layers" term="layers"/>
+        <category label="sketcher" term="sketcher"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Rayforge 1.7 Beta - CO2 Laser Support, OctoPrint, Parametric Text]]></title>
         <id>https://rayforge.org/uk/blog/rayforge-1.7-co2-octoprint-parametric-text</id>
@@ -58,7 +159,7 @@ cause banding.</p>
 <li class=""><strong>Device profile selector</strong> received visual improvements</li>
 <li class=""><strong>Tab power slider</strong> is now hidden for non-cut steps</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/uk/blog/rayforge-1.7-co2-octoprint-parametric-text#bug-fixes" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголово�к" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/uk/blog/rayforge-1.7-co2-octoprint-parametric-text#bug-fixes" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посил�ання на заголовок" translate="no">​</a></h2>
 <ul>
 <li class="">Fixed GRBL buffer overflow on devices with smaller RX buffers</li>
 <li class="">Fixed parametric text not updating correctly with volatile expressions</li>
@@ -100,7 +201,7 @@ anonymous supporters.</p>
         <content type="html"><![CDATA[<p>Rayforge 1.6 brings a complete rotary axis overhaul, a new device profile
 system, a redesigned layer system with per-layer WCS, and a Print and Cut addon
 for aligning laser cuts with printed material.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="device-profiles">Device Profiles<a href="https://rayforge.org/uk/blog/rayforge-1.6-device-profiles-rotary-print-cut#device-profiles" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="device-profiles">Device Profiles<a href="https://rayforge.org/uk/blog/rayforge-1.6-device-profiles-rotary-print-cut#device-profiles" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилан�ня на заголовок" translate="no">​</a></h2>
 <p>Machine profiles have been replaced by <strong>device profiles</strong> -- declarative
 packages that bundle your work area, axis setup, laser settings, and G-code
 dialect into a single file. Pick your device and everything is pre-configured.
@@ -181,7 +282,7 @@ anonymous supporters.</p>
         <content type="html"><![CDATA[<p>Rayforge 1.5 adds a full 3D job simulator with playback controls, native
 cubic bezier curve support (G5), no-go zones with collision checking, and
 significant performance and memory improvements.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3d-simulator">3D Simulator<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#3d-simulator" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3d-simulator">3D Simulator<a href="https://rayforge.org/uk/blog/rayforge-1.5-3d-simulator-bezier-nogozones#3d-simulator" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголов�ок" translate="no">​</a></h2>
 <p>The 3D canvas now has a complete job simulator. You can watch your job execute
 step by step -- the laser head moves along the toolpath, the beam appears when
 the laser fires, and bitmap engravings are progressively revealed as the
@@ -279,7 +380,7 @@ points.</p>
         <content type="html"><![CDATA[<p>Rayforge 1.4 adds rotary axis support for cylindrical workpieces, direct
 vector import for PDF files with layers, a guided camera calibration wizard,
 and an improved sketcher with ellipse tools and smarter snapping.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="rotary-axis-support">Rotary Axis Support<a href="https://rayforge.org/uk/blog/rayforge-1.4-rotary-pdf-camera#rotary-axis-support" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання н�а заголовок" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="rotary-axis-support">Rotary Axis Support<a href="https://rayforge.org/uk/blog/rayforge-1.4-rotary-pdf-camera#rotary-axis-support" class="hash-link" aria-label="Пряме посилання на заголовок" title="П�ряме посилання на заголовок" translate="no">​</a></h2>
 <p>You can now engrave and cut cylindrical objects like tumblers, glasses, and
 pens. Rayforge wraps your design around the cylinder surface and shows a 3D
 preview so you know exactly what the result will look like before you start.</p>
@@ -537,7 +638,7 @@ this release:</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="crop-to-stock-post-processor">Crop to Stock Post-Processor<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#crop-to-stock-post-processor" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>A new post-processor that automatically crops operations to your stock
 boundaries, saving time and material.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="inter-workpiece-path-optimization">Inter-Workpiece Path Optimization<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#inter-workpiece-path-optimization" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="inter-workpiece-path-optimization">Inter-Workpiece Path Optimization<a href="https://rayforge.org/uk/blog/rayforge-1.2-addons-camera-ai#inter-workpiece-path-optimization" class="hash-link" aria-label="Пряме посилання на заг�оловок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>The path optimizer now also optimizes the workpiece order, reducing travel
 distance when working with multiple workpieces in a single job. Previously,
 Rayforge only optimized travel paths within individual workpieces.</p>
@@ -723,7 +824,7 @@ keyboard shortcuts</li>
 готовий до виробництва інструмент, який може впоратися з реальними робочими процесами лазерного різання та
 гравірування.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="що-нового-в-10">Що нового в 1.0<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D1%89%D0%BE-%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D0%B2-10" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="збереженнязавантаження-проектів">Збереження/завантаження проектів<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D0%B7%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F%D0%B7%D0%B0%D0%B2%D0%B0%D0%BD%D1%82%D0%B0%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%96%D0%B2" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме по�силання на заголовок" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="збереженнязавантаження-проектів">Збереження/завантаження проектів<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D0%B7%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F%D0%B7%D0%B0%D0%B2%D0%B0%D0%BD%D1%82%D0%B0%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%96%D0%B2" class="hash-link" aria-label="Пряме посилання на заголо�вок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>Найбільш запитувана функція нарешті тут. Тепер ви можете зберігати ваші
 повні робочі процеси і відновлювати їх пізніше. Розширення файлів <code>.ryp</code> (проект) та
 <code>.rfs</code> (ескіз) зареєстровані на рівні системи, тому ви можете
@@ -735,7 +836,7 @@ keyboard shortcuts</li>
 розміщенням та розміром параметрично. Це відкриває зовсім новий світ
 дизайнерських можливостей для лазерно гравіруваних вивісок, етикеток та декоративних
 елементів.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="уніфікована-нижня-панель">Уніфікована нижня панель<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D1%83%D0%BD%D1%96%D1%84%D1%96%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD%D0%B0-%D0%BD%D0%B8%D0%B6%D0%BD%D1%8F-%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C" class="hash-link" aria-label="Пряме по�силання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="уніфікована-нижня-панель">Уніфікована нижня панель<a href="https://rayforge.org/uk/blog/rayforge-1.0-first-birthday#%D1%83%D0%BD%D1%96%D1%84%D1%96%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD%D0%B0-%D0%BD%D0%B8%D0%B6%D0%BD%D1%8F-%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>Діалог jog та перегляд логів були об'єднані в єдину, уніфіковану
 нижню панель. Це об'єднання забезпечує чистіше робоче простір, зберігаючи
 суттєві інструменти керування машиною та моніторингу легкодоступними.
@@ -875,7 +976,7 @@ keyboard shortcuts</li>
 з кількома літерами.</p>
 <p>Оптимізація шляхів зазвичай увімкнена за замовчуванням, але ви можете
 перевірити та налаштувати її в налаштуваннях операції Contour.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-додайте�-утримуючі-вкладки-щоб-запобігти-переміщенню-деталі">3. Додайте утримуючі вкладки щоб запобігти переміщенню деталі<a href="https://rayforge.org/uk/blog/5-tips-better-engraving#3-%D0%B4%D0%BE%D0%B4%D0%B0%D0%B9%D1%82%D0%B5-%D1%83%D1%82%D1%80%D0%B8%D0%BC%D1%83%D1%8E%D1%87%D1%96-%D0%B2%D0%BA%D0%BB%D0%B0%D0%B4%D0%BA%D0%B8-%D1%89%D0%BE%D0%B1-%D0%B7%D0%B0%D0%BF%D0%BE%D0%B1%D1%96%D0%B3%D1%82%D0%B8-%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D1%96%D1%89%D0%B5%D0%BD%D0%BD%D1%8E-%D0%B4%D0%B5%D1%82%D0%B0%D0%BB%D1%96" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-додайте-утримуючі-вкладки-щоб-запобігти-переміщенню-деталі">3. Додайте утримуючі вкладки щоб запобігти переміщенню деталі<a href="https://rayforge.org/uk/blog/5-tips-better-engraving#3-%D0%B4%D0%BE%D0%B4%D0%B0%D0%B9%D1%82%D0%B5-%D1%83%D1%82%D1%80%D0%B8%D0%BC%D1%83%D1%8E%D1%87%D1%96-%D0%B2%D0%BA%D0%BB%D0%B0%D0%B4%D0%BA%D0%B8-%D1%89%D0%BE%D0%B1-%D0%B7%D0%B0%D0%BF%D0%BE%D0%B1%D1%96%D0%B3%D1%82%D0%B8-%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D1%96%D1%89%D0%B5%D0%BD%D0%BD%D1%8E-%D0%B4%D0%B5%D1%82%D0%B0%D0%BB%D1%96" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Ніщо не є більш розчаровуючим, ніж майже завершене завдання різання, зіпсоване
 тому що деталь змістилася або впала через стіл машини в останній
 момент.</p>
@@ -998,7 +1099,7 @@ Rayforge та пресети операцій щоб зберегти ваші �
 </ul>
 <p>Див. наш <a class="" href="https://rayforge.org/uk/docs/machine/laser">Посібник з конфігурації лазера</a>
 для детальних інструкцій.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-призначте-лазери-операціям">2. Призначте лазери операціям<a href="https://rayforge.org/uk/blog/multi-laser-support#2-%D0%BF%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D1%87%D1%82%D0%B5-%D0%BB%D0%B0%D0%B7%D0%B5%D1%80%D0%B8-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D1%96%D1%8F%D0%BC" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-призначте-лазери-опера�ціям">2. Призначте лазери операціям<a href="https://rayforge.org/uk/blog/multi-laser-support#2-%D0%BF%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D1%87%D1%82%D0%B5-%D0%BB%D0%B0%D0%B7%D0%B5%D1%80%D0%B8-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D1%96%D1%8F%D0%BC" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>При створенні операцій у вашому проекті:</p>
 <ol>
 <li class="">Виберіть операцію (Contour, Raster тощо.)</li>

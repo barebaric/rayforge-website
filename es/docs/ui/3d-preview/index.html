@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/es/assets/css/styles.b4d8838d.css">
-<script src="/es/assets/js/runtime~main.4cae03f2.js" defer="defer"></script>
-<script src="/es/assets/js/main.80ab6f1d.js" defer="defer"></script>
+<script src="/es/assets/js/runtime~main.96d7fea4.js" defer="defer"></script>
+<script src="/es/assets/js/main.35264d5f.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -125,12 +125,14 @@ y hacer clic en una línea en el visor de código G salta la simulación a ese p
 <p>Antes de enviar a la máquina, verifica:</p>
 <ul class="contains-task-list containsTaskList_mC6p">
 <li class="task-list-item"><input type="checkbox" disabled=""> La trayectoria está completa sin segmentos faltantes</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> Las trayectorias permanecen dentro del área de trabajo de la máquina</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> Las operaciones de grabado se ejecutan antes que los cortes</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> Ninguna trayectoria entra en una zona prohibida</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> El trabajo comienza en la posición esperada</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> Las pestañas de sujeción están en las ubicaciones correctas</li>
 </ul>
+<p>Algunas comprobaciones adicionales se realizan automáticamente. Cuando ejecutas o
+exportas un trabajo, Rayforge ejecuta <a class="" href="/es/docs/features/sanity-checks">comprobaciones de sanity</a>
+que verifican los límites de la máquina, las fronteras del área de trabajo y las
+colisiones con zonas prohibidas.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="consejos-de-rendimiento">Consejos de Rendimiento<a href="#consejos-de-rendimiento" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
 <p>Para trabajos grandes o complejos:</p>
 <ol>

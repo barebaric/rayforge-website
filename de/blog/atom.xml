@@ -2,11 +2,112 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rayforge.org/de/blog</id>
     <title>Rayforge Blog</title>
-    <updated>2026-05-01T00:00:00.000Z</updated>
+    <updated>2026-05-02T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rayforge.org/de/blog"/>
     <subtitle>Rayforge Blog</subtitle>
     <icon>https://rayforge.org/de/images/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Rayforge 1.7 Beta 2 - Job Sanity Checks, 10 New Device Profiles, Better Layers]]></title>
+        <id>https://rayforge.org/de/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers</id>
+        <link href="https://rayforge.org/de/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers"/>
+        <updated>2026-05-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Rayforge 1.7 beta 2 adds job sanity checks, 10 new device profiles, improved layer interaction with multi-selection and context menus, and sketcher auto-constraints.]]></summary>
+        <content type="html"><![CDATA[<p>Rayforge 1.7 beta 2 brings a new safety net for your jobs, profiles for ten
+more popular laser cutters, and a significantly improved layer interaction
+experience.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="job-sanity-checks">Job Sanity Checks<a href="https://rayforge.org/de/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#job-sanity-checks" class="hash-link" aria-label="Direkter Link zur Job Sanity Checks" title="Direkter Link zur Job Sanity Checks" translate="no">​</a></h2>
+<p>Before sending or exporting a job, Rayforge now runs a set of composable
+sanity checks and presents the results in a structured dialog. The system
+catches three categories of problems:</p>
+<ul>
+<li class=""><strong>Machine extent violations</strong> -- geometry extending beyond what your machine
+can physically reach, reported per axis and direction</li>
+<li class=""><strong>Workarea violations</strong> -- workpieces outside the configured workarea
+boundaries</li>
+<li class=""><strong>No-go zone collisions</strong> -- geometry overlapping restricted areas defined
+in machine settings</li>
+</ul>
+<p>Each check produces at most one issue per unique violation, keeping the
+dialog readable even for complex projects. Errors and warnings are clearly
+separated so you can make an informed decision before proceeding.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="10-new-device-profiles">10 New Device Profiles<a href="https://rayforge.org/de/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#10-new-device-profiles" class="hash-link" aria-label="Direkter Link zur 10 New Device Profiles" title="Direkter Link zur 10 New Device Profiles" translate="no">​</a></h2>
+<p>This release adds out-of-the-box support for some of the most popular laser
+cutters in the community:</p>
+<ul>
+<li class=""><strong>Ortur</strong> Laser Master 3 and Laser Master 4</li>
+<li class=""><strong>Atomstack</strong> X40 Pro and A70</li>
+<li class=""><strong>TwoTrees</strong> TTS-55</li>
+<li class=""><strong>NEJE</strong> Master 3 Max</li>
+<li class=""><strong>Creality</strong> Falcon 2 Pro</li>
+<li class=""><strong>OMTech</strong> Polar 50W</li>
+<li class=""><strong>Longer</strong> Ray5</li>
+<li class=""><strong>Thunder Laser</strong> Nova 35</li>
+</ul>
+<p>GRBL-based devices in this batch use the raster dialect for cleaner G-code
+output. If your machine isn't listed yet, open an issue on GitHub and we'll
+get it added.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="better-layer-interaction">Better Layer Interaction<a href="https://rayforge.org/de/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#better-layer-interaction" class="hash-link" aria-label="Direkter Link zur Better Layer Interaction" title="Direkter Link zur Better Layer Interaction" translate="no">​</a></h2>
+<p>Layer columns now highlight selected workpieces and stay in sync with the
+canvas selection. This makes it much easier to see what you're working with:</p>
+<ul>
+<li class=""><strong>Single click</strong> selects one item</li>
+<li class=""><strong>Ctrl-click</strong> toggles individual items in a multi-selection</li>
+<li class=""><strong>Shift-click</strong> selects a range within a column</li>
+<li class=""><strong>Drag</strong> moves selected items between layers, including across multiple
+layers at once</li>
+</ul>
+<p>Right-clicking a workpiece in the layer tab opens a context menu with move,
+delete, and properties actions. The asset browser also received context menus
+with copy, cut, paste, and duplicate operations.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-auto-constraints">Sketcher Auto-Constraints<a href="https://rayforge.org/de/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#sketcher-auto-constraints" class="hash-link" aria-label="Direkter Link zur Sketcher Auto-Constraints" title="Direkter Link zur Sketcher Auto-Constraints" translate="no">​</a></h2>
+<p>The path tool now automatically creates horizontal and vertical constraints
+when the snap engine shows alignment guides during drawing. Your geometry
+comes out more precise with less manual constraint management. This also
+fixes a bug where snap-derived constraints could reference wrong point IDs
+and cause solver failures.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/de/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#other-improvements" class="hash-link" aria-label="Direkter Link zur Other Improvements" title="Direkter Link zur Other Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Sketch parameters</strong> displayed as a separate preferences group in the
+properties panel</li>
+<li class=""><strong>Locale-aware number formatting</strong> in sliders (proper decimal separators)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/de/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#bug-fixes" class="hash-link" aria-label="Direkter Link zur Bug Fixes" title="Direkter Link zur Bug Fixes" translate="no">​</a></h2>
+<ul>
+<li class="">Fixed GRBL buffer deadlock from lost ok responses on \r\r\n line endings</li>
+<li class="">Fixed wrong visibility icon for initially invisible layers</li>
+<li class="">Fixed IndexError when laser combo selection is out of sync with machine
+heads</li>
+<li class="">Fixed AttributeError on startup from early view_stack signal connection</li>
+<li class="">Fixed circle and ellipse sketches missing preview thumbnails</li>
+<li class="">Fixed canvas stuck in shift-pressed state after layer interaction</li>
+<li class="">Fixed incorrect 3D view mouse controls in the documentation (#229)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="special-thanks">Special Thanks<a href="https://rayforge.org/de/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#special-thanks" class="hash-link" aria-label="Direkter Link zur Special Thanks" title="Direkter Link zur Special Thanks" translate="no">​</a></h2>
+<p>This release was made possible with the support of our Patreon supporters:
+Amsel, froqstar, old-man-and-the-seam, pghpete, Derek McTavish, and four
+anonymous supporters.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-17-beta-2">Download Rayforge 1.7 Beta 2<a href="https://rayforge.org/de/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#download-rayforge-17-beta-2" class="hash-link" aria-label="Direkter Link zur Download Rayforge 1.7 Beta 2" title="Direkter Link zur Download Rayforge 1.7 Beta 2" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="https://rayforge.org/de/docs/getting-started/installation">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/de/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#join-the-community" class="hash-link" aria-label="Direkter Link zur Join the Community" title="Direkter Link zur Join the Community" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content>
+        <author>
+            <name>Rayforge Team</name>
+            <uri>https://github.com/barebaric/rayforge</uri>
+        </author>
+        <category label="release" term="release"/>
+        <category label="1.7" term="1.7"/>
+        <category label="sanity-checks" term="sanity-checks"/>
+        <category label="device-profiles" term="device-profiles"/>
+        <category label="layers" term="layers"/>
+        <category label="sketcher" term="sketcher"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Rayforge 1.7 Beta - CO2 Laser Support, OctoPrint, Parametric Text]]></title>
         <id>https://rayforge.org/de/blog/rayforge-1.7-co2-octoprint-parametric-text</id>
@@ -847,7 +948,7 @@ Open-Source-Fertigung!</p>
 <p>Professionelle Lasergravierergebnisse erfordern mehr als nur gute Hardware –
 auch deine Software-Einstellungen und dein Workflow sind wichtig. Hier sind fünf
 Tipps, die dir helfen, das Beste aus Rayforge herauszuholen.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-verwende-overscan-für-glattere-rastergravur">1. Verwende Overscan für glattere Rastergravur<a href="https://rayforge.org/de/blog/5-tips-better-engraving#1-verwende-overscan-f%EF%BF%BD%EF%BF%BD%C3%BCr-glattere-rastergravur" class="hash-link" aria-label="Direkter Link zur 1. Verwende Overscan für glattere Rastergravur" title="Direkter Link zur 1. Verwende Overscan für glattere Rastergravur" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-verwende-overscan-für-glattere-rastergravur">1. Verwende Overscan für glattere Rastergravur<a href="https://rayforge.org/de/blog/5-tips-better-engraving#1-verwende-overscan-f%C3%BCr-glattere-rastergravur" class="hash-link" aria-label="Direkter Link zur 1. Verwende Overscan für glattere Rastergravur" title="Direkter Link zur 1. Verwende Overscan für glattere Rastergravur" translate="no">​</a></h2>
 <p>Bei der Rastergravur ist ein häufiges Problem sichtbare Linien oder
 Unregelmäßigkeiten an den Rändern, wo der Laser die Richtung wechselt. Dies
 passiert, weil der Laserkopf abbremsen und beschleunigen muss, was die

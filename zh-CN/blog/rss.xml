@@ -4,10 +4,107 @@
         <title>Rayforge Blog</title>
         <link>https://rayforge.org/zh-CN/blog</link>
         <description>Rayforge Blog</description>
-        <lastBuildDate>Fri, 01 May 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 02 May 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh-CN</language>
+        <item>
+            <title><![CDATA[Rayforge 1.7 Beta 2 - Job Sanity Checks, 10 New Device Profiles, Better Layers]]></title>
+            <link>https://rayforge.org/zh-CN/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers</link>
+            <guid>https://rayforge.org/zh-CN/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers</guid>
+            <pubDate>Sat, 02 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Rayforge 1.7 beta 2 adds job sanity checks, 10 new device profiles, improved layer interaction with multi-selection and context menus, and sketcher auto-constraints.]]></description>
+            <content:encoded><![CDATA[<p>Rayforge 1.7 beta 2 brings a new safety net for your jobs, profiles for ten
+more popular laser cutters, and a significantly improved layer interaction
+experience.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="job-sanity-checks">Job Sanity Checks<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#job-sanity-checks" class="hash-link" aria-label="Job Sanity Checks 的直接链接" title="Job Sanity Checks 的直接链接" translate="no">​</a></h2>
+<p>Before sending or exporting a job, Rayforge now runs a set of composable
+sanity checks and presents the results in a structured dialog. The system
+catches three categories of problems:</p>
+<ul>
+<li class=""><strong>Machine extent violations</strong> -- geometry extending beyond what your machine
+can physically reach, reported per axis and direction</li>
+<li class=""><strong>Workarea violations</strong> -- workpieces outside the configured workarea
+boundaries</li>
+<li class=""><strong>No-go zone collisions</strong> -- geometry overlapping restricted areas defined
+in machine settings</li>
+</ul>
+<p>Each check produces at most one issue per unique violation, keeping the
+dialog readable even for complex projects. Errors and warnings are clearly
+separated so you can make an informed decision before proceeding.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="10-new-device-profiles">10 New Device Profiles<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#10-new-device-profiles" class="hash-link" aria-label="10 New Device Profiles 的直接链接" title="10 New Device Profiles 的直接链接" translate="no">​</a></h2>
+<p>This release adds out-of-the-box support for some of the most popular laser
+cutters in the community:</p>
+<ul>
+<li class=""><strong>Ortur</strong> Laser Master 3 and Laser Master 4</li>
+<li class=""><strong>Atomstack</strong> X40 Pro and A70</li>
+<li class=""><strong>TwoTrees</strong> TTS-55</li>
+<li class=""><strong>NEJE</strong> Master 3 Max</li>
+<li class=""><strong>Creality</strong> Falcon 2 Pro</li>
+<li class=""><strong>OMTech</strong> Polar 50W</li>
+<li class=""><strong>Longer</strong> Ray5</li>
+<li class=""><strong>Thunder Laser</strong> Nova 35</li>
+</ul>
+<p>GRBL-based devices in this batch use the raster dialect for cleaner G-code
+output. If your machine isn't listed yet, open an issue on GitHub and we'll
+get it added.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="better-layer-interaction">Better Layer Interaction<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#better-layer-interaction" class="hash-link" aria-label="Better Layer Interaction 的直接链接" title="Better Layer Interaction 的直接��链接" translate="no">​</a></h2>
+<p>Layer columns now highlight selected workpieces and stay in sync with the
+canvas selection. This makes it much easier to see what you're working with:</p>
+<ul>
+<li class=""><strong>Single click</strong> selects one item</li>
+<li class=""><strong>Ctrl-click</strong> toggles individual items in a multi-selection</li>
+<li class=""><strong>Shift-click</strong> selects a range within a column</li>
+<li class=""><strong>Drag</strong> moves selected items between layers, including across multiple
+layers at once</li>
+</ul>
+<p>Right-clicking a workpiece in the layer tab opens a context menu with move,
+delete, and properties actions. The asset browser also received context menus
+with copy, cut, paste, and duplicate operations.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-auto-constraints">Sketcher Auto-Constraints<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#sketcher-auto-constraints" class="hash-link" aria-label="Sketcher Auto-Constraints 的直接链接" title="Sketcher Auto-Constraints 的直接链接" translate="no">​</a></h2>
+<p>The path tool now automatically creates horizontal and vertical constraints
+when the snap engine shows alignment guides during drawing. Your geometry
+comes out more precise with less manual constraint management. This also
+fixes a bug where snap-derived constraints could reference wrong point IDs
+and cause solver failures.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#other-improvements" class="hash-link" aria-label="Other Improvements 的直接链接" title="Other Improvements 的直接链接" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Sketch parameters</strong> displayed as a separate preferences group in the
+properties panel</li>
+<li class=""><strong>Locale-aware number formatting</strong> in sliders (proper decimal separators)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#bug-fixes" class="hash-link" aria-label="Bug Fixes 的直接链接" title="Bug Fixes 的直接链接" translate="no">​</a></h2>
+<ul>
+<li class="">Fixed GRBL buffer deadlock from lost ok responses on \r\r\n line endings</li>
+<li class="">Fixed wrong visibility icon for initially invisible layers</li>
+<li class="">Fixed IndexError when laser combo selection is out of sync with machine
+heads</li>
+<li class="">Fixed AttributeError on startup from early view_stack signal connection</li>
+<li class="">Fixed circle and ellipse sketches missing preview thumbnails</li>
+<li class="">Fixed canvas stuck in shift-pressed state after layer interaction</li>
+<li class="">Fixed incorrect 3D view mouse controls in the documentation (#229)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="special-thanks">Special Thanks<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#special-thanks" class="hash-link" aria-label="Special Thanks 的直接链接" title="Special Thanks 的直接链接" translate="no">​</a></h2>
+<p>This release was made possible with the support of our Patreon supporters:
+Amsel, froqstar, old-man-and-the-seam, pghpete, Derek McTavish, and four
+anonymous supporters.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-17-beta-2">Download Rayforge 1.7 Beta 2<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#download-rayforge-17-beta-2" class="hash-link" aria-label="Download Rayforge 1.7 Beta 2 的直接链接" title="Download Rayforge 1.7 Beta 2 的直接链接" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="https://rayforge.org/zh-CN/docs/getting-started/installation">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#join-the-community" class="hash-link" aria-label="Join the Community 的直接链接" title="Join the Community 的直接链接" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content:encoded>
+            <category>release</category>
+            <category>1.7</category>
+            <category>sanity-checks</category>
+            <category>device-profiles</category>
+            <category>layers</category>
+            <category>sketcher</category>
+        </item>
         <item>
             <title><![CDATA[Rayforge 1.7 Beta - CO2 Laser Support, OctoPrint, Parametric Text]]></title>
             <link>https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-octoprint-parametric-text</link>
@@ -198,7 +295,7 @@ multi-pass, and path optimization all handle curves properly now.</p>
 on the bed where the laser should not cut -- clamps, fixtures, or that corner
 where the hose always gets in the way. Rayforge checks for collisions and warns
 you before sending G-code.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance-and-memory">Performance and Memory<a href="https://rayforge.org/zh-CN/blog/rayforge-1.5-3d-simulator-bezier-nogozones#performance-and-memory" class="hash-link" aria-label="Performance and Memory 的直接链接" title="Performance and Memory 的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance-and-memory">Performance and Memory<a href="https://rayforge.org/zh-CN/blog/rayforge-1.5-3d-simulator-bezier-nogozones#performance-and-memory" class="hash-link" aria-label="Performance and Memory 的直�接链接" title="Performance and Memory 的直接链接" translate="no">​</a></h2>
 <p>The canvas is significantly more responsive. When you drag, pan, or zoom,
 expensive laser-path rendering is suppressed until you stop moving -- no more
 stuttering while repositioning a workpiece. Multi-step workflows render faster
@@ -786,7 +883,7 @@ keyboard shortcuts</li>
             <description><![CDATA[3D 预览]]></description>
             <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="3D 预览" src="https://rayforge.org/zh-CN/assets/images/main-3d-036a64ba4ce8c629a8e9c123a8a8c11d.png" width="2450" height="1700" class="img_ev3q"></p>
 <p>获得专业品质的激光雕刻效果不仅需要好的硬件——您的软件设置和工作流程也很重要。以下是帮助您充分利用 Rayforge 的五个技巧。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-使用过扫描获得更平滑的光栅雕刻">1. 使用过扫描获得更平滑的光栅雕刻<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#1-%E4%BD%BF%E7%94%A8%E8%BF%87%E6%89%AB%E6%8F%8F%E8%8E%B7%E5%BE%97%E6%9B%B4%E5%B9%B3%E6%BB%91%E7%9A%84%E5%85%89%E6%A0%85%E9%9B%95%E5%88%BB" class="hash-link" aria-label="1. 使用过扫描获得更平滑的光栅雕刻 的直接链接" title="1. 使用过扫描获得更平滑的光栅雕刻 的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-使用过扫描获得更平滑的光栅雕刻">1. 使用过扫描获得更平滑的光栅雕刻<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#1-%E4%BD%BF%E7%94%A8%E8%BF%87%E6%89%AB%E6%8F%8F%E8%8E%B7%E5%BE%97%E6%9B%B4%EF%BF%BD%E5%B9%B3%E6%BB%91%E7%9A%84%E5%85%89%E6%A0%85%E9%9B%95%E5%88%BB" class="hash-link" aria-label="1. 使用过扫描获得更平滑的光栅雕刻 的直接链接" title="1. 使用过扫描获得更平滑的光栅雕刻 的直接链接" translate="no">​</a></h2>
 <p>在进行光栅雕刻时，一个常见问题是在激光改变方向的边缘处出现可见的线条或不一致。这是因为激光头需要减速和加速，这会影响雕刻质量。</p>
 <p><strong>解决方案</strong>：在光栅操作设置中启用 <strong>过扫描</strong>。</p>
 <p>过扫描将激光的移动路径延伸到实际雕刻区域之外，使激光头在进入工作区域之前达到全速，并始终保持该速度。这样可以获得更平滑、更一致的雕刻效果。</p>
@@ -923,7 +1020,7 @@ keyboard shortcuts</li>
             <description><![CDATA[Rayforge 主窗口]]></description>
             <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 主窗口" src="https://rayforge.org/zh-CN/assets/images/main-standard-05f7c4dbfcf029bf132c55381b529297.png" width="2450" height="1700" class="img_ev3q"></p>
 <p>我们很高兴向您介绍 Rayforge，这是一款专为基于 GRBL 的激光切割机和雕刻机设计的现代化开源 G-code 发送器和控制软件。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="为什么选择-rayforge">为什么选择 Rayforge？<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-rayforge" class="hash-link" aria-label="为什么选择 Rayforge？ 的直接链接" title="为什�么选择 Rayforge？ 的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="为什么选择-rayforge">为什么选择 Rayforge？<a href="https://rayforge.org/zh-CN/blog/welcome-to-rayforge#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-rayforge" class="hash-link" aria-label="为什么选择 Rayforge？ �的直接链接" title="为什么选择 Rayforge？ 的直接链接" translate="no">​</a></h2>
 <p>在激光切割和雕刻的世界中，拥有可靠、直观的软件与拥有优质硬件同样重要。Rayforge 从零开始构建，专注于：</p>
 <ul>
 <li class=""><strong>现代用户体验</strong>：基于 Gtk4 和 Libadwaita 构建，Rayforge 提供简洁的原生界面，在 Linux 和 Windows 上都能完美运行</li>
