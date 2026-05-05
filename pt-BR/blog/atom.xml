@@ -1109,7 +1109,7 @@ de laser em seu sistema. Você pode especificar:</p>
 </ul>
 <p>Consulte nosso <a class="" href="https://rayforge.org/pt-BR/docs/machine/laser">Guia de Configuração de Laser</a>
 para instruções detalhadas.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-atribua-lasers-às-operações">2. Atribua Lasers às Operações<a href="https://rayforge.org/pt-BR/blog/multi-laser-support#2-atribua-lasers-%C3%A0s-opera%C3%A7%C3%B5es" class="hash-link" aria-label="Link direto para 2. Atribua Lasers ��às Operações" title="Link direto para 2. Atribua Lasers às Operações" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-atribua-lasers-às-operações">2. Atribua Lasers às Operações<a href="https://rayforge.org/pt-BR/blog/multi-laser-support#2-atribua-lasers-%C3%A0s-opera%C3%A7%C3%B5es" class="hash-link" aria-label="Link direto para 2. Atribua Lasers às Operações" title="Link direto para 2. Atribua Lasers às Operações" translate="no">​</a></h3>
 <p>Ao criar operações em seu projeto:</p>
 <ol>
 <li class="">Selecione a operação (Contorno, Raster, etc.)</li>
