@@ -2,11 +2,169 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rayforge.org/zh-CN/blog</id>
     <title>Rayforge Blog</title>
-    <updated>2026-05-02T00:00:00.000Z</updated>
+    <updated>2026-05-04T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rayforge.org/zh-CN/blog"/>
     <subtitle>Rayforge Blog</subtitle>
     <icon>https://rayforge.org/zh-CN/images/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Rayforge 1.7 - CO2/Fiber Lasers, Ruida, OctoPrint, Config Wizard]]></title>
+        <id>https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard</id>
+        <link href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard"/>
+        <updated>2026-05-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Rayforge 1.7 brings CO2 and fiber laser support, a Ruida driver, OctoPrint integration, a configuration wizard, job sanity checks, and 15 new device profiles.]]></summary>
+        <content type="html"><![CDATA[<p>Rayforge 1.7 brings CO2 and fiber laser support, a Ruida driver, an
+experimental OctoPrint driver, a configuration wizard for GRBL devices, job
+sanity checks, a manual laser control dock, parametric text templates, and 15
+new device profiles.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="co2-and-fiber-laser-pwm-settings">CO2 and Fiber Laser PWM Settings<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#co2-and-fiber-laser-pwm-settings" class="hash-link" aria-label="CO2 and Fiber Laser PWM Settings 的直接链接" title="CO2 and Fiber Laser PWM Settings 的直接链接" translate="no">​</a></h2>
+<p>Rayforge now understands that not all lasers are diodes. A new <strong>Laser Type</strong>
+dropdown in the laser head settings lets you choose between Diode, CO2, and
+Fiber. When you select CO2 or Fiber, a dedicated PWM section appears with
+controls for frequency and pulse width -- including configurable min/max bounds.</p>
+<p>These settings flow through the pipeline, so each operation step can use or
+override the defaults. The Ruida driver already leverages them for native
+frequency and pulse width commands.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ruida-driver">Ruida Driver<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#ruida-driver" class="hash-link" aria-label="Ruida Driver 的直接链接" title="Ruida Driver 的直接链接" translate="no">​</a></h2>
+<p>A complete <strong>Ruida driver</strong> is now available with jogging, position reporting,
+air assist, layer selection, auto-connect, status polling, and reference
+points support. It has been tested with a real controller.</p>
+<p>Generic device profiles for Ruida, GRBL, and Smoothieware are included so you
+can get started even without a machine-specific profile.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="configuration-wizard">Configuration Wizard<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#configuration-wizard" class="hash-link" aria-label="Configuration Wizard 的直接链接" title="Configuration Wizard 的直接链接" translate="no">​</a></h2>
+<p>Setting up a new machine is now much easier. The new <strong>configuration wizard</strong>
+probes GRBL devices over serial or network, detects the firmware version and
+settings, and creates a machine profile automatically. Just plug in your
+controller, pick the driver, and let the wizard handle the rest.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="octoprint-driver-experimental">OctoPrint Driver (Experimental)<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#octoprint-driver-experimental" class="hash-link" aria-label="OctoPrint Driver (Experimental) 的直接链接" title="OctoPrint Driver (Experimental) 的直接链接" translate="no">​</a></h2>
+<p>A new driver lets you submit G-code directly to an <strong>OctoPrint</strong> server over
+the network. It connects via WebSocket for real-time status updates and falls
+back to REST polling when needed. Setup requires just a hostname and API key,
+and the driver includes a "Request Access" flow that walks you through
+OctoPrint's application key system.</p>
+<p>This driver is labeled experimental and has not been tested on real hardware
+yet. If you have an OctoPrint setup, your feedback would be invaluable.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="manual-laser-control-dock">Manual Laser Control Dock<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#manual-laser-control-dock" class="hash-link" aria-label="Manual Laser Control Dock 的直接链接" title="Manual Laser Control Dock 的直接链接" translate="no">​</a></h2>
+<p>A new dockable panel gives you hands-on laser control with per-head power,
+frequency, pulse width, and an auto-off timer. Useful for testing, alignment,
+and manual positioning.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="job-sanity-checks">Job Sanity Checks<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#job-sanity-checks" class="hash-link" aria-label="Job Sanity Checks 的直接链接" title="Job Sanity Checks 的直接链接" translate="no">​</a></h2>
+<p>Before sending or exporting a job, Rayforge now runs a set of composable
+sanity checks and presents the results in a structured dialog. The system
+catches three categories of problems:</p>
+<ul>
+<li class=""><strong>Machine extent violations</strong> -- geometry extending beyond what your machine
+can physically reach</li>
+<li class=""><strong>Workarea violations</strong> -- workpieces outside the configured workarea
+boundaries</li>
+<li class=""><strong>No-go zone collisions</strong> -- geometry overlapping restricted areas defined
+in machine settings</li>
+</ul>
+<p>Each check produces at most one issue per unique violation, keeping the
+dialog readable even for complex projects.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="parametric-text-templates">Parametric Text Templates<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#parametric-text-templates" class="hash-link" aria-label="Parametric Text Templates 的直接链接" title="Parametric Text Templates 的直接链接" translate="no">​</a></h2>
+<p>Text boxes in the sketcher now support template expressions using curly braces.
+Any sketch parameter or input variable can be referenced:</p>
+<ul>
+<li class=""><code>{width}</code> resolves to the current width value</li>
+<li class=""><code>{name}</code> resolves to a string input parameter</li>
+<li class=""><code>{sqrt(area):.1f}</code> evaluates math and formats the result</li>
+</ul>
+<p>Built-in functions include <code>{today()}</code> for the current date, <code>{now()}</code> for a
+full timestamp, and <code>{uuid4()}</code> for a unique 8-character identifier.</p>
+<p>Text rendering has also been improved: Now Pango is used internally, which
+draws text more accurately than the old Cairo-based rendering.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="15-new-device-profiles">15 New Device Profiles<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#15-new-device-profiles" class="hash-link" aria-label="15 New Device Profiles 的直接链接" title="15 New Device Profiles 的直接链接" translate="no">​</a></h2>
+<p>Out-of-the-box support for popular laser cutters:</p>
+<ul>
+<li class=""><strong>Ortur</strong> Laser Master 3 and Laser Master 4</li>
+<li class=""><strong>Atomstack</strong> X40 Pro and A70</li>
+<li class=""><strong>TwoTrees</strong> TTS-55</li>
+<li class=""><strong>NEJE</strong> Master 3 Max</li>
+<li class=""><strong>Creality</strong> Falcon 2 Pro</li>
+<li class=""><strong>OMTech</strong> Polar 50W</li>
+<li class=""><strong>Longer</strong> Ray5</li>
+<li class=""><strong>Thunder Laser</strong> Nova 35</li>
+<li class=""><strong>Sculpfun</strong> iCube Ultra, S30 Pro Max, S40 MAX, and S70 MAX</li>
+<li class=""><strong>Elidor</strong> Z6</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="better-layer-interaction">Better Layer Interaction<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#better-layer-interaction" class="hash-link" aria-label="Better Layer Interaction 的直接链接" title="Better Layer Interaction 的直接链接" translate="no">​</a></h2>
+<p>Layer columns now highlight selected workpieces and stay in sync with the
+canvas selection:</p>
+<ul>
+<li class=""><strong>Single click</strong> selects one item</li>
+<li class=""><strong>Ctrl-click</strong> toggles individual items in a multi-selection</li>
+<li class=""><strong>Shift-click</strong> selects a range within a column</li>
+<li class=""><strong>Drag</strong> moves selected items between layers, including across multiple
+layers at once</li>
+</ul>
+<p>Right-clicking a workpiece in the layer tab opens a context menu with move,
+delete, and properties actions. The asset browser also received context menus
+with copy, cut, paste, and duplicate operations.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="direct-vector-editing">Direct Vector Editing<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#direct-vector-editing" class="hash-link" aria-label="Direct Vector Editing 的直接链接" title="Direct Vector Editing 的直接链接" translate="no">​</a></h2>
+<p>You can now double-click a workpiece to edit its vectors directly -- delete
+individual paths without having to go back to an external editor. This is a
+first step toward fuller in-app vector editing.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="linear-light-image-processing">Linear Light Image Processing<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#linear-light-image-processing" class="hash-link" aria-label="Linear Light Image Processing 的直接链接" title="Linear Light Image Processing 的直接链接" translate="no">​</a></h2>
+<p>All image processing -- resizing, grayscale conversion, dithering, and color
+LUT gradients -- now operates in linear light instead of sRGB. This produces
+more accurate interpolation when scaling and better dithering quality,
+especially for gradients and fine detail.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-auto-constraints">Sketcher Auto-Constraints<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#sketcher-auto-constraints" class="hash-link" aria-label="Sketcher Auto-Constraints 的直接链接" title="Sketcher Auto-Constraints 的直接链接" translate="no">​</a></h2>
+<p>The path tool now automatically creates horizontal and vertical constraints
+when the snap engine shows alignment guides during drawing. Your geometry
+comes out more precise with less manual constraint management.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#other-improvements" class="hash-link" aria-label="Other Improvements 的直�接链接" title="Other Improvements 的直接链接" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Job time estimate</strong> shown in the 3D canvas</li>
+<li class=""><strong>Search field</strong> in the machine profile selector</li>
+<li class=""><strong>Sketch parameters</strong> displayed as a separate preferences group</li>
+<li class=""><strong>Locale-aware number formatting</strong> in sliders</li>
+<li class=""><strong>Grid toggle</strong> in the 3D canvas visibility overlay</li>
+<li class=""><strong>Debug log</strong> can optionally include the project file</li>
+<li class=""><strong>Project files</strong> are now zipped internally</li>
+<li class=""><strong>GRBL serial transport</strong> -- non-blocking read, offloaded writes, exclusive
+port mode, buffer flushing, and multiple deadlock fixes</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#bug-fixes" class="hash-link" aria-label="Bug Fixes 的直接链接" title="Bug Fixes 的直接链接" translate="no">​</a></h2>
+<p>Fixed GRBL buffer overflow on devices with smaller RX buffers, GRBL buffer
+deadlock from lost ok responses on certain line endings, laser-off command
+sent during active jog causing error:9, deadlock detection false positives,
+parametric text not updating with volatile expressions, crash in
+MergeLinesTransformer, wrong visibility icon for invisible layers, IndexError
+and AttributeError on startup, circle and ellipse sketches missing thumbnails,
+canvas stuck in shift-pressed state, pipeline holding stale machine
+references, pipeline recalculation loop, power percentage rounding in step
+summaries, and many more stability fixes.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="special-thanks">Special Thanks<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#special-thanks" class="hash-link" aria-label="Special Thanks 的直接链接" title="Special Thanks 的直接链接" translate="no">​</a></h2>
+<p>This release was made possible with the support of our Patreon supporters:
+Amsel, froqstar, old-man-and-the-seam, pghpete, Derek McTavish, and four
+anonymous supporters.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-17">Download Rayforge 1.7<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#download-rayforge-17" class="hash-link" aria-label="Download Rayforge 1.7 的直接链接" title="Download Rayforge 1.7 的直接链接" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="https://rayforge.org/zh-CN/docs/getting-started/installation">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#join-the-community" class="hash-link" aria-label="Join the Community 的直接链接" title="Join the Community 的直接链接" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content>
+        <author>
+            <name>Rayforge Team</name>
+            <uri>https://github.com/barebaric/rayforge</uri>
+        </author>
+        <category label="release" term="release"/>
+        <category label="1.7" term="1.7"/>
+        <category label="co2" term="co2"/>
+        <category label="fiber" term="fiber"/>
+        <category label="ruida" term="ruida"/>
+        <category label="octoprint" term="octoprint"/>
+        <category label="pwm" term="pwm"/>
+        <category label="config-wizard" term="config-wizard"/>
+        <category label="sanity-checks" term="sanity-checks"/>
+        <category label="sketcher" term="sketcher"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Rayforge 1.7 Beta 2 - Job Sanity Checks, 10 New Device Profiles, Better Layers]]></title>
         <id>https://rayforge.org/zh-CN/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers</id>
