@@ -16,7 +16,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.63bf24b8.css">
-<script src="/zh-CN/assets/js/runtime~main.58e53d84.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.9590900a.js" defer="defer"></script>
 <script src="/zh-CN/assets/js/main.2a98edad.js" defer="defer"></script>
 </head>
 <body>
@@ -41,13 +41,14 @@
 <ul>
 <li class=""><strong>GRBL (串口)</strong> — 通过 USB 连接的 GRBL 设备</li>
 <li class=""><strong>GRBL (网络)</strong> — WiFi/以太网 GRBL 设备</li>
+<li class=""><strong>Marlin (串口)</strong> — 通过 USB 连接的 Marlin 设备</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="连接参数">连接参数<a href="#连接参数" class="hash-link" aria-label="连接参数 的直接链接" title="连接参数 的直接链接" translate="no">​</a></h3>
 <p>选择驱动程序后，填写连接详情（串口、波特率、主机等）。这些参数与
 <a class="" href="/zh-CN/docs/machine/general">常规设置</a>中使用的相同。</p>
 <p>点击 <strong>Next</strong> 开始探测。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="发现">发现<a href="#发现" class="hash-link" aria-label="发现 的直接链接" title="发现 的直接链接" translate="no">​</a></h2>
-<p>向导  连接到设备并查询其固件以获取配置数据。这包括：</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="发现">发现<a href="#发现" class="hash-link" aria-label="发 现 的直接链接" title="发现 的直接链接" translate="no">​</a></h2>
+<p>向导连接到设备并查询其固件以获取配置数据。这包括：</p>
 <ul>
 <li class="">固件版本和构建信息（<code>$I</code>）</li>
 <li class="">所有固件设置（<code>$$</code>）</li>
@@ -71,7 +72,7 @@
 <li class=""><strong>X 行程</strong> / <strong>Y 行程</strong> — 轴的最大行程（机器单位），
 从固件设置 <code>$130</code> 和 <code>$131</code> 读取</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="速度">速度<a href="#速度" class="hash-link" aria-label="速度 的直接链接" title="速 度 的直接链接" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="速度">速度<a href="#速度" class="hash-link" aria-label="速度 的直接链接" title="速度 的直接链接" translate="no">​</a></h3>
 <ul>
 <li class=""><strong>最大空移速度</strong> — 取 <code>$110</code> 和 <code>$111</code> 中的较小值</li>
 <li class=""><strong>最大切割速度</strong> — 默认与空移速度相同；根据需要调整</li>
@@ -96,7 +97,7 @@
 <li class="">激光模式未启用（<code>$32=0</code>）</li>
 <li class="">设备以英寸报告（<code>$13=1</code>）</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="创建机器">创建机器<a href="#创建机器" class="hash-link" aria-label="创建机器 的直接链接" title="创建机器 的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="创建机器">创建机器<a href="#创建机器" class="hash-link" aria-label="创  建机器 的直接链接" title="创建机器 的直接链接" translate="no">​</a></h2>
 <p>点击 <strong>Create Machine</strong> 完成。向导发出配置好的配置文件，正常的
 机器创建流程继续——<a class="" href="/zh-CN/docs/machine/general">机器设置对话框</a>打开以便进一步调整。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="限制">限制<a href="#限制" class="hash-link" aria-label="限制 的直接链接" title="限制 的直接链接" translate="no">​</a></h2>
