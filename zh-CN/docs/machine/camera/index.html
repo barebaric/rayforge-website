@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.9c46c759.css">
-<script src="/zh-CN/assets/js/runtime~main.9646fcc0.js" defer="defer"></script>
-<script src="/zh-CN/assets/js/main.491877f4.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.2e2f14ef.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.1c287ad8.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -212,7 +212,7 @@
 <li class="">
 <p><strong>预览对齐：</strong></p>
 <ul>
-<li class="">使用<a class="" href="/zh-CN/docs/features/simulation-mode">仿真模式</a>进行可视化</li>
+<li class="">使用<a class="" href="/zh-CN/docs/ui/3d-preview">3D 预览</a>进行可视化</li>
 <li class="">检查切割/雕刻将在您预期的位置</li>
 </ul>
 </li>
@@ -332,7 +332,7 @@
 <li class=""><strong>应用校正</strong> — Rayforge 从捕获的图像计算畸变模型，并使用它来矫正相机叠加</li>
 </ol>
 <p>校准后，相机叠加将显示明显更准确的床上内容表示。这对于广角镜头、偏心安装的相机或需要严格对齐公差的工作特别有帮助。</p>
-<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>何时校准</div><div class="admonitionContent_BuS1"><p>当您注  意到相机叠加即使经过仔细对齐仍然与实际床面不太吻合时，校准最有用。如果当前对齐看起来不错，您可能不需要它。但如果感觉略有偏差 — 特别是在画面边缘 — 运行校准向导通常会有所帮助。</p></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>何时校准</div><div class="admonitionContent_BuS1"><p>当您注意到相机叠 加即使经过仔细对齐仍然与实际床面不太吻合时，校准最有用。如果当前对齐看起来不错，您可能不需要它。但如果感觉略有偏差 — 特别是在画面边缘 — 运行校准向导通常会有所帮助。</p></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="多相机">多相机<a href="#多相机" class="hash-link" aria-label="多相机 的直接链接" title="多相机 的直接链接" translate="no">​</a></h3>
 <p>Rayforge 支持多个相机用于不同视图或机器：</p>
 <ul>
@@ -410,14 +410,13 @@
 <ul>
 <li class="">在设备设置中降低相机分辨率（如果可访问）</li>
 <li class="">关闭其他使用 CPU/GPU 的应用程序</li>
-<li class="">更新图形驱动  程序</li>
+<li class="">更新图形驱动程序</li>
 <li class="">在 Linux 上，确保使用 V4L2 后端（Rayforge 中自动）</li>
 <li class="">不需要时禁用相机以节省资源</li>
 </ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="相关页面">相关页面<a href="#相关页面" class="hash-link" aria-label="相关页面 的直接链接" title="相关页面 的直接链接" translate="no">​</a></h2>
 <ul>
-<li class=""><a class="" href="/zh-CN/docs/features/simulation-mode">仿真模式</a> - 使用相机叠加预览执行</li>
 <li class=""><a class="" href="/zh-CN/docs/ui/3d-preview">3D 预览</a> - 在 3D 中可视化作业</li>
 <li class=""><a class="" href="/zh-CN/docs/features/framing-your-job">框选作业</a> - 验证作业位置</li>
 <li class=""><a class="" href="/zh-CN/docs/machine/general">常规设置</a> - 机器配置</li>
