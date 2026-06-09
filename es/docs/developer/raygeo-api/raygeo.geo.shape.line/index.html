@@ -16,7 +16,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/es/assets/css/styles.1d300cfe.css">
-<script src="/es/assets/js/runtime~main.7bdc3228.js" defer="defer"></script>
+<script src="/es/assets/js/runtime~main.472febf5.js" defer="defer"></script>
 <script src="/es/assets/js/main.ff46b40a.js" defer="defer"></script>
 </head>
 <body>
@@ -299,6 +299,36 @@ containment checks, and angle-at-vertex computation.</p>
 
 
 <table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>Start of segment 1.</td></tr><tr><td><code>p2</code></td><td><code>types.Point</code></td><td>End of segment 1.</td></tr><tr><td><code>p3</code></td><td><code>types.Point</code></td><td>Start of segment 2.</td></tr><tr><td><code>p4</code></td><td><code>types.Point</code></td><td>End of segment 2.</td></tr><tr><td><em>Returns</em></td><td><code>Optional[types.Point]</code></td><td></td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_line_segment_length"><code>get_line_segment_length()</code><a href="#get_line_segment_length" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p><code>get_line_segment_length(p1: types.Point, p2: types.Point) -&gt; float</code></p>
+<p>Compute the Euclidean length of a line segment.</p>
+<p><strong>Returns:</strong> Length of the segment.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>Start point (x, y).</td></tr><tr><td><code>p2</code></td><td><code>types.Point</code></td><td>End point (x, y).</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_line_segment_polygon_intersections"><code>get_line_segment_polygon_intersections()</code><a href="#get_line_segment_polygon_intersections" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p><code>get_line_segment_polygon_intersections(p1: types.Point, p2: types.Point, polygon: list[types.Polygon]) -&gt; list[float]</code></p>
 <p>Get t-values of line segment-polygon intersections.</p>
@@ -403,6 +433,6 @@ containment checks, and angle-at-vertex computation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>point</code></td><td><code>types.Point</code></td><td>Point (x, y) to test.</td></tr><tr><td><code>seg_p1</code></td><td><code>types.Point</code></td><td>Start of the line segment.</td></tr><tr><td><code>seg_p2</code></td><td><code>types.Point</code></td><td>End of the line segment.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/raygeo-api/raygeo.geo.shape.line.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Navegación de documentos"><a class="pagination-nav__link pagination-nav__link--prev" href="/es/docs/developer/raygeo-api/raygeo.geo.shape.circle"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">raygeo.geo.shape.circle</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/es/docs/developer/raygeo-api/raygeo.geo.shape.point"><div class="pagination-nav__sublabel">Siguiente</div><div class="pagination-nav__label">raygeo.geo.shape.point</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#does_line_segment_intersect_circle" class="table-of-contents__link toc-highlight"><code>does_line_segment_intersect_circle()</code></a></li><li><a href="#does_line_segment_intersect_rect" class="table-of-contents__link toc-highlight"><code>does_line_segment_intersect_rect()</code></a></li><li><a href="#get_angle_at_vertex" class="table-of-contents__link toc-highlight"><code>get_angle_at_vertex()</code></a></li><li><a href="#get_line_closest_point" class="table-of-contents__link toc-highlight"><code>get_line_closest_point()</code></a></li><li><a href="#get_line_line_intersection" class="table-of-contents__link toc-highlight"><code>get_line_line_intersection()</code></a></li><li><a href="#get_line_segment_closest_point" class="table-of-contents__link toc-highlight"><code>get_line_segment_closest_point()</code></a></li><li><a href="#get_line_segment_intersection" class="table-of-contents__link toc-highlight"><code>get_line_segment_intersection()</code></a></li><li><a href="#get_line_segment_polygon_intersections" class="table-of-contents__link toc-highlight"><code>get_line_segment_polygon_intersections()</code></a></li><li><a href="#get_point_line_distance" class="table-of-contents__link toc-highlight"><code>get_point_line_distance()</code></a></li><li><a href="#is_point_on_line_segment" class="table-of-contents__link toc-highlight"><code>is_point_on_line_segment()</code></a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>point</code></td><td><code>types.Point</code></td><td>Point (x, y) to test.</td></tr><tr><td><code>seg_p1</code></td><td><code>types.Point</code></td><td>Start of the line segment.</td></tr><tr><td><code>seg_p2</code></td><td><code>types.Point</code></td><td>End of the line segment.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/raygeo-api/raygeo.geo.shape.line.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Navegación de documentos"><a class="pagination-nav__link pagination-nav__link--prev" href="/es/docs/developer/raygeo-api/raygeo.geo.shape.circle"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">raygeo.geo.shape.circle</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/es/docs/developer/raygeo-api/raygeo.geo.shape.point"><div class="pagination-nav__sublabel">Siguiente</div><div class="pagination-nav__label">raygeo.geo.shape.point</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#does_line_segment_intersect_circle" class="table-of-contents__link toc-highlight"><code>does_line_segment_intersect_circle()</code></a></li><li><a href="#does_line_segment_intersect_rect" class="table-of-contents__link toc-highlight"><code>does_line_segment_intersect_rect()</code></a></li><li><a href="#get_angle_at_vertex" class="table-of-contents__link toc-highlight"><code>get_angle_at_vertex()</code></a></li><li><a href="#get_line_closest_point" class="table-of-contents__link toc-highlight"><code>get_line_closest_point()</code></a></li><li><a href="#get_line_line_intersection" class="table-of-contents__link toc-highlight"><code>get_line_line_intersection()</code></a></li><li><a href="#get_line_segment_closest_point" class="table-of-contents__link toc-highlight"><code>get_line_segment_closest_point()</code></a></li><li><a href="#get_line_segment_intersection" class="table-of-contents__link toc-highlight"><code>get_line_segment_intersection()</code></a></li><li><a href="#get_line_segment_length" class="table-of-contents__link toc-highlight"><code>get_line_segment_length()</code></a></li><li><a href="#get_line_segment_polygon_intersections" class="table-of-contents__link toc-highlight"><code>get_line_segment_polygon_intersections()</code></a></li><li><a href="#get_point_line_distance" class="table-of-contents__link toc-highlight"><code>get_point_line_distance()</code></a></li><li><a href="#is_point_on_line_segment" class="table-of-contents__link toc-highlight"><code>is_point_on_line_segment()</code></a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>
