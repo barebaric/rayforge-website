@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.a82eb417.css">
-<script src="/zh-CN/assets/js/runtime~main.ee63bfa8.js" defer="defer"></script>
-<script src="/zh-CN/assets/js/main.f8c40de9.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.bd6ba165.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.a80df770.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -34,7 +34,7 @@
 <li class=""><strong>工作坐标系（WCS）</strong>：快速 WCS 选择（始终可见）</li>
 </ol>
 <p>面板的每个区域左侧都有一个图标标签栏，让您在 <strong>控制台</strong>、<strong>G 代码查看器</strong> 和 <strong>资产</strong> 浏览器之间切换。右侧的点动控制和 WCS 控制无论哪个标签处于活动状态都保持可见。标签可以在其标签栏内通过拖动重新排序，您还可以将标签拖到其他面板区域或分隔线上，以将布局重新排列为多列。空列会自动移除。</p>
-<p><img decoding="async" loading="lazy" alt="底部面板" src="/zh-CN/assets/images/bottom-panel-console-d912fd98d9cb21a39af21e095f511e2c.png" width="1450" height="400" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="底部面板" src="/zh-CN/assets/images/bottom-panel-console-99da2919337432b7990d404378e56e37.png" width="1450" height="400" class="img_ev3q"></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="访问底部面板">访问底部面板<a href="#访问底部面板" class="hash-link" aria-label="访问底部面板 的直接链接" title="访问底部面板 的直接链接" translate="no">​</a></h2>
 <p>底部面板可以通过以下方式切换：</p>
 <ul>
@@ -269,7 +269,12 @@
 
 
 
-<table><thead><tr><th>按钮</th><th>功能</th><th>描述</th></tr></thead><tbody><tr><td>点击归零</td><td>设置 X,Y=0</td><td>点击十字准线图标，然后在画布上点击以设置工作零点</td></tr><tr><td>编辑偏移</td><td>编辑</td><td>手动编辑 WCS 偏移值</td></tr><tr><td>零 X</td><td>设置 X=0</td><td>将当前 X 位置设为活动 WCS 的 X 原点</td></tr><tr><td>零 Y</td><td>设置 Y=0</td><td>将当前 Y 位置设为活动 WCS 的 Y 原点</td></tr><tr><td>零 Z</td><td>设置 Z=0</td><td>将当前 Z 位置设为活动 WCS 的 Z 原点</td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>按钮</th><th>功能</th><th>描述</th></tr></thead><tbody><tr><td>点击归零</td><td>设置 X,Y=0</td><td>点击十字准线图标，然后在画布上点击以设置工作零点</td></tr><tr><td>前往WCS零点</td><td>移动</td><td>将激光头移动到活动 WCS 的 X0 Y0 位置</td></tr><tr><td>编辑偏移</td><td>编辑</td><td>手动编辑 WCS 偏移值</td></tr><tr><td>零 X</td><td>设置 X=0</td><td>将当前 X 位置设为活动 WCS 的 X 原点</td></tr><tr><td>零 Y</td><td>设置 Y=0</td><td>将当前 Y 位置设为活动 WCS 的 Y 原点</td></tr><tr><td>零 Z</td><td>设置 Z=0</td><td>将  当前 Z 位置设为活动 WCS 的 Z 原点</td></tr></tbody></table>
 <div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>G53 无法更改</div><div class="admonitionContent_BuS1"><p>选择 G53（机器坐标）时零按钮被禁用，因为机器坐标由硬件固定。</p></div></div>
 <div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>设置 WCS 工作流程</div><div class="admonitionContent_BuS1"><ol>
 <li class="">连接到机器并归零所有轴</li>
@@ -297,8 +302,8 @@
 <li class=""><strong>警告</strong>（橙色）：警告消息</li>
 <li class=""><strong>状态轮询</strong>（暗淡）：实时位置/状态报告，如 <code>&amp;lt;Idle|WPos:0.000,0.000,0.000|...&amp;gt;</code></li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="详细模式">详细模式<a href="#详细模式" class="hash-link" aria-label="详细模式 的直接链接" title="详细模式 的直接链接" translate="no">​</a></h3>
-<p>点击控制台右上角的终端图标以切换详细输 出：</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="详细模式">详细模式<a href="#详细模式" class="hash-link" aria-label="详细模式 的直接链接" title="详细 模式 的直接链接" translate="no">​</a></h3>
+<p>点击控制台右上角的终端图标以切换详细输出：</p>
 <ul>
 <li class=""><strong>关闭</strong>（默认）：隐藏频繁的状态轮询和&quot;ok&quot;响应</li>
 <li class=""><strong>开启</strong>：显示所有机器通信</li>
@@ -335,7 +340,7 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="激光控制">激光控制<a href="#激光控制" class="hash-link" aria-label="激光控制 的直接链接" title="激光控制 的直接链接" translate="no">​</a></h2>
 <p>激光停靠栏提供对激光的手动控制，用于测试、对准和聚焦。它在底部面板中作为控件停靠栏旁边的标签页显示。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="激光头选择器">激光头选择器<a href="#激光头选择器" class="hash-link" aria-label="激光头选择器 的直接链接" title="激光头选择器 的直接链接" translate="no">​</a></h3>
-<p>下拉菜单列出所有已配置的激光头。当您的机器有多个激光头时，选择您想要控制的那个。副标题显示所选激光头的工具编号和最大功率。</p>
+<p>下拉菜单列出所有已配置的激光头。当您的机器有多个激光头时，选 择您想要控制的那个。副标题显示所选激光头的工具编号和最大功率。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="切换按钮">切换按钮<a href="#切换按钮" class="hash-link" aria-label="切换按钮 的直接链接" title="切换按钮 的直接链接" translate="no">​</a></h3>
 <p>激光头选择器旁边的切换按钮用于打开或关闭激光。当激光处于活动状态时，按钮变为红色作为安全指示。也可以从主窗口标题栏中的工具栏按钮切换激光。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="功率">功率<a href="#功率" class="hash-link" aria-label="功率 的直接链接" title="功率 的直接链接" translate="no">​</a></h3>
@@ -386,7 +391,7 @@
 
 <table><thead><tr><th>机器类型</th><th>点动支持</th><th>备注</th></tr></thead><tbody><tr><td>GRBL（v1.1+）</td><td>完全</td><td>支持所有点动功能</td></tr><tr><td>Smoothieware</td><td>完全</td><td>支持所有点动功能</td></tr><tr><td>自定义控制器</td><td>可变</td><td>取决于实现</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="安全功能">安全功能<a href="#安全功能" class="hash-link" aria-label="安全功能 的直接链接" title="安全功能 的直接链接" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="软限位">软限位<a href="#软限位" class="hash-link" aria-label="软限位 的直接链接" title="软限位 的 直接链接" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="软限位">软限位<a href="#软限位" class="hash-link" aria-label="软限位 的直接链接" title="软限位 的直接链接" translate="no">​</a></h3>
 <p>当在机器配置文件中启用软限位时：</p>
 <ul>
 <li class="">接近限位时按钮显示橙色警告</li>
