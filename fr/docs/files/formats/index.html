@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/fr/assets/css/styles.faf0fd32.css">
-<script src="/fr/assets/js/runtime~main.e6c56d37.js" defer="defer"></script>
-<script src="/fr/assets/js/main.58f64a82.js" defer="defer"></script>
+<script src="/fr/assets/js/runtime~main.1d0baeab.js" defer="defer"></script>
+<script src="/fr/assets/js/main.45804b4b.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -104,7 +104,21 @@ recommandations.</p>
 
 
 
-<table><thead><tr><th>Format</th><th>Type</th><th>Importation</th><th>Exportation</th><th>Utilisation recommandée</th></tr></thead><tbody><tr><td><strong>SVG</strong></td><td>Vecteur</td><td>✓ Direct / Trace</td><td>✓ Export obj.</td><td>Format de conception principal</td></tr><tr><td><strong>DXF</strong></td><td>Vecteur</td><td>✓ Direct</td><td>✓ Export obj.</td><td>Échange CAO</td></tr><tr><td><strong>PDF</strong></td><td>Mixte</td><td>✓ Direct / Trace</td><td>–</td><td>Documents avec contenu vectoriel</td></tr><tr><td><strong>PNG</strong></td><td>Matriciel</td><td>✓ Trace</td><td>–</td><td>Photos, images</td></tr><tr><td><strong>JPEG</strong></td><td>Matriciel</td><td>✓ Trace</td><td>–</td><td>Photos</td></tr><tr><td><strong>BMP</strong></td><td>Matriciel</td><td>✓ Trace</td><td>–</td><td>Graphiques simples</td></tr><tr><td><strong>RFS</strong></td><td>Croquis</td><td>✓ Direct</td><td>✓ Export obj.</td><td>Croquis paramétriques</td></tr><tr><td><strong>G-code</strong></td><td>Commande</td><td>–</td><td>✓ Principal</td><td>Sortie machine</td></tr><tr><td><strong>Projet Rayforge</strong></td><td>Projet</td><td>✓</td><td>✓</td><td>Enregistrer/charger projets</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Format</th><th>Type</th><th>Importation</th><th>Exportation</th><th>Utilisation recommandée</th></tr></thead><tbody><tr><td><strong>SVG</strong></td><td>Vecteur</td><td>✓ Direct / Trace</td><td>✓ Export obj.</td><td>Format de conception principal</td></tr><tr><td><strong>DXF</strong></td><td>Vecteur</td><td>✓ Direct</td><td>✓ Export obj.</td><td>Échange CAO</td></tr><tr><td><strong>PDF</strong></td><td>Mixte</td><td>✓ Direct / Trace</td><td>–</td><td>Documents avec contenu vectoriel</td></tr><tr><td><strong>LightBurn</strong></td><td>Vecteur</td><td>✓ Direct</td><td>–</td><td>Projets LightBurn</td></tr><tr><td><strong>Ruida</strong></td><td>Vecteur</td><td>✓ Direct</td><td>–</td><td>Fichiers de tâches Ruida</td></tr><tr><td><strong>PNG</strong></td><td>Matriciel</td><td>✓ Trace</td><td>–</td><td>Photos, images</td></tr><tr><td><strong>JPEG</strong></td><td>Matriciel</td><td>✓ Trace</td><td>–</td><td>Photos</td></tr><tr><td><strong>BMP</strong></td><td>Matriciel</td><td>✓ Trace</td><td>–</td><td>Graphiques simples</td></tr><tr><td><strong>RFS</strong></td><td>Croquis</td><td>✓ Direct</td><td>✓ Export obj.</td><td>Croquis paramétriques</td></tr><tr><td><strong>G-code</strong></td><td>Commande</td><td>–</td><td>✓ Principal</td><td>Sortie machine</td></tr><tr><td><strong>Projet Rayforge</strong></td><td>Projet</td><td>✓</td><td>✓</td><td>Enregistrer/charger projets</td></tr></tbody></table>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="formats-vectoriels">Formats vectoriels<a href="#formats-vectoriels" class="hash-link" aria-label="Lien direct vers Formats vectoriels" title="Lien direct vers Formats vectoriels" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="svg-scalable-vector-graphics">SVG (Scalable Vector Graphics)<a href="#svg-scalable-vector-graphics" class="hash-link" aria-label="Lien direct vers SVG (Scalable Vector Graphics)" title="Lien direct vers SVG (Scalable Vector Graphics)" translate="no">​</a></h3>
@@ -222,6 +236,42 @@ d&#x27;enregistrer et de partager des croquis entièrement modifiables.</p>
 <li class="">Archiver des travaux en cours</li>
 </ul>
 <hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="lightburn-lbrn--lbrn2">LightBurn (.lbrn / .lbrn2)<a href="#lightburn-lbrn--lbrn2" class="hash-link" aria-label="Lien direct vers LightBurn (.lbrn / .lbrn2)" title="Lien direct vers LightBurn (.lbrn / .lbrn2)" translate="no">​</a></h3>
+<p><strong>Extension :</strong> <code>.lbrn</code>, <code>.lbrn2</code>
+<strong>Type MIME :</strong> <code>application/x-lightburn</code>
+<strong>Importation :</strong> Analyse vectorielle directe
+<strong>Exportation :</strong> Non pris en charge</p>
+<p><strong>Qu&#x27;est-ce que LightBurn ?</strong></p>
+<p>LightBurn est un logiciel propriétaire de découpe laser. Ses fichiers <code>.lbrn</code>
+et <code>.lbrn2</code> contiennent de la géométrie vectorielle organisée en calques
+colorés avec des paramètres laser. Rayforge peut importer ces fichiers
+directement, offrant une voie de migration pour les utilisateurs passant de
+LightBurn à Rayforge.</p>
+<p><strong>Fonctionnalités prises en charge :</strong></p>
+<ul>
+<li class="">✓ Chemins vectoriels (lignes, courbes, arcs, texte converti en chemins)</li>
+<li class="">✓ Plusieurs calques colorés avec noms</li>
+<li class="">✓ Paramètres laser des calques (puissance, vitesse, passes, ordre de coupe)</li>
+<li class="">✓ Visibilité des calques et état verrouillé</li>
+<li class="">✓ Couleurs des lignes des calques mappées aux calques du document</li>
+<li class="">✓ Images matricielles intégrées (vectorisées à l&#x27;importation)</li>
+</ul>
+<p><strong>Limitations :</strong></p>
+<ul>
+<li class="">✗ <strong>Importation en lecture seule</strong> — les fichiers LightBurn ne peuvent être
+qu&#x27;importés, pas exportés</li>
+<li class="">✗ Les images matricielles à profondeur de bits variable peuvent être
+simplifiées</li>
+<li class="">✗ Certaines fonctionnalités avancées spécifiques à LightBurn peuvent ne pas
+être traduites</li>
+</ul>
+<p><strong>Quand l&#x27;utiliser :</strong></p>
+<ul>
+<li class="">Migrer des projets LightBurn existants vers Rayforge</li>
+<li class="">Ouvrir des fichiers LightBurn partagés par d&#x27;autres utilisateurs</li>
+<li class="">Réutiliser des conceptions LightBurn existantes</li>
+</ul>
+<hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pdf-portable-document-format">PDF (Portable Document Format)<a href="#pdf-portable-document-format" class="hash-link" aria-label="Lien direct vers PDF (Portable Document Format)" title="Lien direct vers PDF (Portable Document Format)" translate="no">​</a></h3>
 <p><strong>Extension :</strong> <code>.pdf</code>
 <strong>Type MIME :</strong> <code>application/pdf</code>
@@ -319,6 +369,6 @@ de qualité)</li>
 <ul>
 <li class=""><a class="" href="/fr/docs/files/importing">Importer des fichiers</a> - Comment importer chaque format</li>
 <li class=""><a class="" href="/fr/docs/files/exporting">Exporter</a> - Options d&#x27;exportation G-code</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/files/formats.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Modifier cette page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Pages de documentation"><a class="pagination-nav__link pagination-nav__link--prev" href="/fr/docs/files/importing"><div class="pagination-nav__sublabel">Précédent</div><div class="pagination-nav__label">Importer des fichiers</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/fr/docs/files/exporting"><div class="pagination-nav__sublabel">Suivant</div><div class="pagination-nav__label">Exporter depuis Rayforge</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#aperçu-des-formats" class="table-of-contents__link toc-highlight">Aperçu des formats</a><ul><li><a href="#référence-rapide" class="table-of-contents__link toc-highlight">Référence rapide</a></li></ul></li><li><a href="#formats-vectoriels" class="table-of-contents__link toc-highlight">Formats vectoriels</a><ul><li><a href="#svg-scalable-vector-graphics" class="table-of-contents__link toc-highlight">SVG (Scalable Vector Graphics)</a></li><li><a href="#dxf-drawing-exchange-format" class="table-of-contents__link toc-highlight">DXF (Drawing Exchange Format)</a></li><li><a href="#rfs-croquis-rayforge" class="table-of-contents__link toc-highlight">RFS (Croquis Rayforge)</a></li><li><a href="#pdf-portable-document-format" class="table-of-contents__link toc-highlight">PDF (Portable Document Format)</a></li></ul></li><li><a href="#formats-matriciels" class="table-of-contents__link toc-highlight">Formats matriciels</a><ul><li><a href="#png-portable-network-graphics" class="table-of-contents__link toc-highlight">PNG (Portable Network Graphics)</a></li><li><a href="#jpeg-joint-photographic-experts-group" class="table-of-contents__link toc-highlight">JPEG (Joint Photographic Experts Group)</a></li><li><a href="#bmp-bitmap" class="table-of-contents__link toc-highlight">BMP (Bitmap)</a></li></ul></li><li><a href="#pages-associées" class="table-of-contents__link toc-highlight">Pages associées</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/files/formats.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Modifier cette page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Pages de documentation"><a class="pagination-nav__link pagination-nav__link--prev" href="/fr/docs/files/importing"><div class="pagination-nav__sublabel">Précédent</div><div class="pagination-nav__label">Importer des fichiers</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/fr/docs/files/exporting"><div class="pagination-nav__sublabel">Suivant</div><div class="pagination-nav__label">Exporter depuis Rayforge</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#aperçu-des-formats" class="table-of-contents__link toc-highlight">Aperçu des formats</a><ul><li><a href="#référence-rapide" class="table-of-contents__link toc-highlight">Référence rapide</a></li></ul></li><li><a href="#formats-vectoriels" class="table-of-contents__link toc-highlight">Formats vectoriels</a><ul><li><a href="#svg-scalable-vector-graphics" class="table-of-contents__link toc-highlight">SVG (Scalable Vector Graphics)</a></li><li><a href="#dxf-drawing-exchange-format" class="table-of-contents__link toc-highlight">DXF (Drawing Exchange Format)</a></li><li><a href="#rfs-croquis-rayforge" class="table-of-contents__link toc-highlight">RFS (Croquis Rayforge)</a></li><li><a href="#lightburn-lbrn--lbrn2" class="table-of-contents__link toc-highlight">LightBurn (.lbrn / .lbrn2)</a></li><li><a href="#pdf-portable-document-format" class="table-of-contents__link toc-highlight">PDF (Portable Document Format)</a></li></ul></li><li><a href="#formats-matriciels" class="table-of-contents__link toc-highlight">Formats matriciels</a><ul><li><a href="#png-portable-network-graphics" class="table-of-contents__link toc-highlight">PNG (Portable Network Graphics)</a></li><li><a href="#jpeg-joint-photographic-experts-group" class="table-of-contents__link toc-highlight">JPEG (Joint Photographic Experts Group)</a></li><li><a href="#bmp-bitmap" class="table-of-contents__link toc-highlight">BMP (Bitmap)</a></li></ul></li><li><a href="#pages-associées" class="table-of-contents__link toc-highlight">Pages associées</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>
