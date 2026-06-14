@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/es/assets/css/styles.1d300cfe.css">
-<script src="/es/assets/js/runtime~main.7a092010.js" defer="defer"></script>
-<script src="/es/assets/js/main.5070aee5.js" defer="defer"></script>
+<script src="/es/assets/js/runtime~main.fbcad8c2.js" defer="defer"></script>
+<script src="/es/assets/js/main.75ea537f.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -77,7 +77,12 @@ arc linearization into line segments for rendering or further processing, angle 
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>arc_start</code></td><td><code>types.Point</code></td><td>Arc start point (x, y).</td></tr><tr><td><code>arc_end</code></td><td><code>types.Point</code></td><td>Arc end point (x, y).</td></tr><tr><td><code>arc_center</code></td><td><code>types.Point</code></td><td>Arc center point (x, y).</td></tr><tr><td><code>clockwise</code></td><td><code>bool</code></td><td>Whether the arc is clockwise.</td></tr><tr><td><code>circle_center</code></td><td><code>types.Point</code></td><td>Circle center (x, y).</td></tr><tr><td><code>circle_radius</code></td><td><code>float</code></td><td>Circle radius.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>arc_start</code></td><td><code>types.Point</code></td><td>Arc start point (x, y).</td></tr><tr><td><code>arc_end</code></td><td><code>types.Point</code></td><td>Arc end point (x, y).</td></tr><tr><td><code>arc_center</code></td><td><code>types.Point</code></td><td>Arc center point (x, y).</td></tr><tr><td><code>clockwise</code></td><td><code>bool</code></td><td>Whether the arc is clockwise.</td></tr><tr><td><code>circle_center</code></td><td><code>types.Point</code></td><td>Circle center (x, y).</td></tr><tr><td><code>circle_radius</code></td><td><code>float</code></td><td>Circle radius.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="does_arc_intersect_rect"><code>does_arc_intersect_rect()</code><a href="#does_arc_intersect_rect" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p><code>does_arc_intersect_rect(arc_start: types.Point, arc_end: types.Point, arc_center: types.Point, clockwise: bool, rect: types.Rect) -&gt; bool</code></p>
 <p>Check if an arc intersects a rectangle.</p>
@@ -122,7 +127,12 @@ arc linearization into line segments for rendering or further processing, angle 
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>arc_start</code></td><td><code>types.Point</code></td><td>Arc start point (x, y).</td></tr><tr><td><code>arc_end</code></td><td><code>types.Point</code></td><td>Arc end point (x, y).</td></tr><tr><td><code>arc_center</code></td><td><code>types.Point</code></td><td>Arc center point (x, y).</td></tr><tr><td><code>clockwise</code></td><td><code>bool</code></td><td>Whether the arc is clockwise.</td></tr><tr><td><code>rect</code></td><td><code>types.Rect</code></td><td>Rectangle (x_min, y_min, x_max, y_max).</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>arc_start</code></td><td><code>types.Point</code></td><td>Arc start point (x, y).</td></tr><tr><td><code>arc_end</code></td><td><code>types.Point</code></td><td>Arc end point (x, y).</td></tr><tr><td><code>arc_center</code></td><td><code>types.Point</code></td><td>Arc center point (x, y).</td></tr><tr><td><code>clockwise</code></td><td><code>bool</code></td><td>Whether the arc is clockwise.</td></tr><tr><td><code>rect</code></td><td><code>types.Rect</code></td><td>Rectangle (x_min, y_min, x_max, y_max).</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_arc_angles"><code>get_arc_angles()</code><a href="#get_arc_angles" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p><code>get_arc_angles(start: types.Point, end: types.Point, center: types.Point, clockwise: bool) -&gt; types.Point3D</code></p>
 <p>Get the start, end, and sweep angles of an arc.</p>
@@ -162,7 +172,12 @@ arc linearization into line segments for rendering or further processing, angle 
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>start</code></td><td><code>types.Point</code></td><td>Arc start point (x, y).</td></tr><tr><td><code>end</code></td><td><code>types.Point</code></td><td>Arc end point (x, y).</td></tr><tr><td><code>center</code></td><td><code>types.Point</code></td><td>Arc center point (x, y).</td></tr><tr><td><code>clockwise</code></td><td><code>bool</code></td><td>Whether the arc is clockwise.</td></tr><tr><td><em>Returns</em></td><td><code>types.Point3D</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>start</code></td><td><code>types.Point</code></td><td>Arc start point (x, y).</td></tr><tr><td><code>end</code></td><td><code>types.Point</code></td><td>Arc end point (x, y).</td></tr><tr><td><code>center</code></td><td><code>types.Point</code></td><td>Arc center point (x, y).</td></tr><tr><td><code>clockwise</code></td><td><code>bool</code></td><td>Whether the arc is clockwise.</td></tr><tr><td><em>Returns</em></td><td><code>types.Point3D</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_arc_bounds"><code>get_arc_bounds()</code><a href="#get_arc_bounds" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p><code>get_arc_bounds(start: types.Point, end: types.Point, center: types.Point, clockwise: bool) -&gt; types.Rect</code></p>
 <p>Get the bounding rectangle of an arc.</p>
@@ -202,7 +217,12 @@ arc linearization into line segments for rendering or further processing, angle 
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>start</code></td><td><code>types.Point</code></td><td>Arc start point (x, y).</td></tr><tr><td><code>end</code></td><td><code>types.Point</code></td><td>Arc end point (x, y).</td></tr><tr><td><code>center</code></td><td><code>types.Point</code></td><td>Arc center point (x, y).</td></tr><tr><td><code>clockwise</code></td><td><code>bool</code></td><td>Whether the arc is clockwise.</td></tr><tr><td><em>Returns</em></td><td><code>types.Rect</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>start</code></td><td><code>types.Point</code></td><td>Arc start point (x, y).</td></tr><tr><td><code>end</code></td><td><code>types.Point</code></td><td>Arc end point (x, y).</td></tr><tr><td><code>center</code></td><td><code>types.Point</code></td><td>Arc center point (x, y).</td></tr><tr><td><code>clockwise</code></td><td><code>bool</code></td><td>Whether the arc is clockwise.</td></tr><tr><td><em>Returns</em></td><td><code>types.Rect</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_arc_closest_point"><code>get_arc_closest_point()</code><a href="#get_arc_closest_point" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p><code>get_arc_closest_point(arc_cmd: Any, start_pos: types.Point3D, x: float, y: float) -&gt; Optional[tuple[float, types.Point, float]]</code></p>
 <p>Get the closest point on an arc to a given point.</p>
@@ -242,7 +262,12 @@ arc linearization into line segments for rendering or further processing, angle 
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>arc_cmd</code></td><td><code>Any</code></td><td>Arc command row or MockArc-like object.</td></tr><tr><td><code>start_pos</code></td><td><code>types.Point3D</code></td><td>Start position (x, y, z).</td></tr><tr><td><code>x</code></td><td><code>float</code></td><td>X coordinate of target point.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>Y coordinate of target point.</td></tr><tr><td><em>Returns</em></td><td><code>Optional[tuple[float, types.Point, float]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>arc_cmd</code></td><td><code>Any</code></td><td>Arc command row or MockArc-like object.</td></tr><tr><td><code>start_pos</code></td><td><code>types.Point3D</code></td><td>Start position (x, y, z).</td></tr><tr><td><code>x</code></td><td><code>float</code></td><td>X coordinate of target point.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>Y coordinate of target point.</td></tr><tr><td><em>Returns</em></td><td><code>Optional[tuple[float, types.Point, float]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_arc_direction"><code>get_arc_direction()</code><a href="#get_arc_direction" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p><code>get_arc_direction(center: types.Point, start: types.Point, mouse: types.Point) -&gt; bool</code></p>
 <p>Get the direction (CW/CCW) of an arc at a mouse point.</p>
@@ -277,7 +302,12 @@ arc linearization into line segments for rendering or further processing, angle 
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>center</code></td><td><code>types.Point</code></td><td>Arc center (x, y).</td></tr><tr><td><code>start</code></td><td><code>types.Point</code></td><td>Arc start point (x, y).</td></tr><tr><td><code>mouse</code></td><td><code>types.Point</code></td><td>Mouse point (x, y).</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>center</code></td><td><code>types.Point</code></td><td>Arc center (x, y).</td></tr><tr><td><code>start</code></td><td><code>types.Point</code></td><td>Arc start point (x, y).</td></tr><tr><td><code>mouse</code></td><td><code>types.Point</code></td><td>Mouse point (x, y).</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_arc_length"><code>get_arc_length()</code><a href="#get_arc_length" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p><code>get_arc_length(start_pos: types.Point, end_pos: types.Point, center_offset: types.Point, clockwise: bool) -&gt; float</code></p>
 <p>Compute the arc length of a circular arc.</p>
@@ -317,7 +347,12 @@ arc linearization into line segments for rendering or further processing, angle 
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>start_pos</code></td><td><code>types.Point</code></td><td>Start point (x, y).</td></tr><tr><td><code>end_pos</code></td><td><code>types.Point</code></td><td>End point (x, y).</td></tr><tr><td><code>center_offset</code></td><td><code>types.Point</code></td><td>Center offset (i, j) from start.</td></tr><tr><td><code>clockwise</code></td><td><code>bool</code></td><td>True for clockwise, False for counter-clockwise.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>start_pos</code></td><td><code>types.Point</code></td><td>Start point (x, y).</td></tr><tr><td><code>end_pos</code></td><td><code>types.Point</code></td><td>End point (x, y).</td></tr><tr><td><code>center_offset</code></td><td><code>types.Point</code></td><td>Center offset (i, j) from start.</td></tr><tr><td><code>clockwise</code></td><td><code>bool</code></td><td>True for clockwise, False for counter-clockwise.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_arc_midpoint"><code>get_arc_midpoint()</code><a href="#get_arc_midpoint" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p><code>get_arc_midpoint(start: types.Point, end: types.Point, center: types.Point, clockwise: bool) -&gt; types.Point</code></p>
 <p>Get the midpoint of an arc.</p>
@@ -357,7 +392,12 @@ arc linearization into line segments for rendering or further processing, angle 
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>start</code></td><td><code>types.Point</code></td><td>Arc start point (x, y).</td></tr><tr><td><code>end</code></td><td><code>types.Point</code></td><td>Arc end point (x, y).</td></tr><tr><td><code>center</code></td><td><code>types.Point</code></td><td>Arc center point (x, y).</td></tr><tr><td><code>clockwise</code></td><td><code>bool</code></td><td>Whether the arc is clockwise.</td></tr><tr><td><em>Returns</em></td><td><code>types.Point</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>start</code></td><td><code>types.Point</code></td><td>Arc start point (x, y).</td></tr><tr><td><code>end</code></td><td><code>types.Point</code></td><td>Arc end point (x, y).</td></tr><tr><td><code>center</code></td><td><code>types.Point</code></td><td>Arc center point (x, y).</td></tr><tr><td><code>clockwise</code></td><td><code>bool</code></td><td>Whether the arc is clockwise.</td></tr><tr><td><em>Returns</em></td><td><code>types.Point</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_arc_sweep"><code>get_arc_sweep()</code><a href="#get_arc_sweep" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p><code>get_arc_sweep(start_angle: float, end_angle: float, clockwise: bool) -&gt; float</code></p>
 <p>Compute the signed sweep angle for an arc.</p>
@@ -393,7 +433,12 @@ arc linearization into line segments for rendering or further processing, angle 
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>start_angle</code></td><td><code>float</code></td><td>Start angle in radians.</td></tr><tr><td><code>end_angle</code></td><td><code>float</code></td><td>End angle in radians.</td></tr><tr><td><code>clockwise</code></td><td><code>bool</code></td><td>Whether the arc is clockwise.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>start_angle</code></td><td><code>float</code></td><td>Start angle in radians.</td></tr><tr><td><code>end_angle</code></td><td><code>float</code></td><td>End angle in radians.</td></tr><tr><td><code>clockwise</code></td><td><code>bool</code></td><td>Whether the arc is clockwise.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="is_angle_between"><code>is_angle_between()</code><a href="#is_angle_between" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p><code>is_angle_between(angle: float, start: float, end: float, clockwise: bool) -&gt; bool</code></p>
 <p>Check if an angle is between two other angles.</p>
@@ -433,7 +478,12 @@ arc linearization into line segments for rendering or further processing, angle 
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>angle</code></td><td><code>float</code></td><td>Angle to test.</td></tr><tr><td><code>start</code></td><td><code>float</code></td><td>Start angle.</td></tr><tr><td><code>end</code></td><td><code>float</code></td><td>End angle.</td></tr><tr><td><code>clockwise</code></td><td><code>bool</code></td><td>Whether the arc is clockwise.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>angle</code></td><td><code>float</code></td><td>Angle to test.</td></tr><tr><td><code>start</code></td><td><code>float</code></td><td>Start angle.</td></tr><tr><td><code>end</code></td><td><code>float</code></td><td>End angle.</td></tr><tr><td><code>clockwise</code></td><td><code>bool</code></td><td>Whether the arc is clockwise.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="is_arc_clockwise"><code>is_arc_clockwise()</code><a href="#is_arc_clockwise" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p><code>is_arc_clockwise(points: collections.abc.Sequence[types.Point2DOr3D], center: types.Point2DOr3D) -&gt; bool</code></p>
 <p>Check if an arc is clockwise.</p>
@@ -463,7 +513,12 @@ arc linearization into line segments for rendering or further processing, angle 
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>points</code></td><td><code>collections.abc.Sequence[types.Point2DOr3D]</code></td><td>Sequence of (x, y) points on the arc.</td></tr><tr><td><code>center</code></td><td><code>types.Point2DOr3D</code></td><td>Arc center (x, y).</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>points</code></td><td><code>collections.abc.Sequence[types.Point2DOr3D]</code></td><td>Sequence of (x, y) points on the arc.</td></tr><tr><td><code>center</code></td><td><code>types.Point2DOr3D</code></td><td>Arc center (x, y).</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="is_arc_inside_polygons"><code>is_arc_inside_polygons()</code><a href="#is_arc_inside_polygons" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p><code>is_arc_inside_polygons(arc_start: types.Point, arc_end: types.Point, arc_center: types.Point, clockwise: bool, polygons: Any) -&gt; bool</code></p>
 <p>Check if an arc is inside a set of polygons.</p>
@@ -508,7 +563,12 @@ arc linearization into line segments for rendering or further processing, angle 
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>arc_start</code></td><td><code>types.Point</code></td><td>Arc start point (x, y).</td></tr><tr><td><code>arc_end</code></td><td><code>types.Point</code></td><td>Arc end point (x, y).</td></tr><tr><td><code>arc_center</code></td><td><code>types.Point</code></td><td>Arc center point (x, y).</td></tr><tr><td><code>clockwise</code></td><td><code>bool</code></td><td>Whether the arc is clockwise.</td></tr><tr><td><code>polygons</code></td><td><code>Any</code></td><td>List of polygons to check against.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>arc_start</code></td><td><code>types.Point</code></td><td>Arc start point (x, y).</td></tr><tr><td><code>arc_end</code></td><td><code>types.Point</code></td><td>Arc end point (x, y).</td></tr><tr><td><code>arc_center</code></td><td><code>types.Point</code></td><td>Arc center point (x, y).</td></tr><tr><td><code>clockwise</code></td><td><code>bool</code></td><td>Whether the arc is clockwise.</td></tr><tr><td><code>polygons</code></td><td><code>Any</code></td><td>List of polygons to check against.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n * m) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="linearize_arc"><code>linearize_arc()</code><a href="#linearize_arc" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p><code>linearize_arc(arc_cmd: Any, start_point: types.Point3D, resolution: float = 0.1) -&gt; list[tuple[types.Point3D, types.Point3D]]</code></p>
 <p>Linearize an arc into line segments.</p>
@@ -543,7 +603,12 @@ arc linearization into line segments for rendering or further processing, angle 
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>arc_cmd</code></td><td><code>Any</code></td><td>Arc command row or MockArc-like object.</td></tr><tr><td><code>start_point</code></td><td><code>types.Point3D</code></td><td>Start point (x, y, z).</td></tr><tr><td><code>resolution</code></td><td><code>float = 0.1</code></td><td>Maximum segment length.</td></tr><tr><td><em>Returns</em></td><td><code>list[tuple[types.Point3D, types.Point3D]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>arc_cmd</code></td><td><code>Any</code></td><td>Arc command row or MockArc-like object.</td></tr><tr><td><code>start_point</code></td><td><code>types.Point3D</code></td><td>Start point (x, y, z).</td></tr><tr><td><code>resolution</code></td><td><code>float = 0.1</code></td><td>Maximum segment length.</td></tr><tr><td><em>Returns</em></td><td><code>list[tuple[types.Point3D, types.Point3D]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <p><img decoding="async" loading="lazy" alt="Arc linearization: coarse and fine resolution" src="/es/assets/images/arc-linearize-de399328c3fd719cee2cb08d715f4f21.png" width="2700" height="900" class="img_ev3q"></p>
 <p><em>Arc linearization: coarse and fine resolution</em></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="normalize_angle"><code>normalize_angle()</code><a href="#normalize_angle" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
@@ -570,6 +635,11 @@ arc linearization into line segments for rendering or further processing, angle 
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>angle</code></td><td><code>float</code></td><td>Angle in radians.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/raygeo-api/raygeo.geo.shape.arc.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Navegación de documentos"><a class="pagination-nav__link pagination-nav__link--prev" href="/es/docs/developer/raygeo-api/raygeo.geo.shape"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">raygeo.geo.shape</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/es/docs/developer/raygeo-api/raygeo.geo.shape.bezier"><div class="pagination-nav__sublabel">Siguiente</div><div class="pagination-nav__label">raygeo.geo.shape.bezier</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#does_arc_intersect_circle" class="table-of-contents__link toc-highlight"><code>does_arc_intersect_circle()</code></a></li><li><a href="#does_arc_intersect_rect" class="table-of-contents__link toc-highlight"><code>does_arc_intersect_rect()</code></a></li><li><a href="#get_arc_angles" class="table-of-contents__link toc-highlight"><code>get_arc_angles()</code></a></li><li><a href="#get_arc_bounds" class="table-of-contents__link toc-highlight"><code>get_arc_bounds()</code></a></li><li><a href="#get_arc_closest_point" class="table-of-contents__link toc-highlight"><code>get_arc_closest_point()</code></a></li><li><a href="#get_arc_direction" class="table-of-contents__link toc-highlight"><code>get_arc_direction()</code></a></li><li><a href="#get_arc_length" class="table-of-contents__link toc-highlight"><code>get_arc_length()</code></a></li><li><a href="#get_arc_midpoint" class="table-of-contents__link toc-highlight"><code>get_arc_midpoint()</code></a></li><li><a href="#get_arc_sweep" class="table-of-contents__link toc-highlight"><code>get_arc_sweep()</code></a></li><li><a href="#is_angle_between" class="table-of-contents__link toc-highlight"><code>is_angle_between()</code></a></li><li><a href="#is_arc_clockwise" class="table-of-contents__link toc-highlight"><code>is_arc_clockwise()</code></a></li><li><a href="#is_arc_inside_polygons" class="table-of-contents__link toc-highlight"><code>is_arc_inside_polygons()</code></a></li><li><a href="#linearize_arc" class="table-of-contents__link toc-highlight"><code>linearize_arc()</code></a></li><li><a href="#normalize_angle" class="table-of-contents__link toc-highlight"><code>normalize_angle()</code></a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>angle</code></td><td><code>float</code></td><td>Angle in radians.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/raygeo-api/raygeo.geo.shape.arc.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Navegación de documentos"><a class="pagination-nav__link pagination-nav__link--prev" href="/es/docs/developer/raygeo-api/raygeo.geo.shape"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">raygeo.geo.shape</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/es/docs/developer/raygeo-api/raygeo.geo.shape.bezier"><div class="pagination-nav__sublabel">Siguiente</div><div class="pagination-nav__label">raygeo.geo.shape.bezier</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#does_arc_intersect_circle" class="table-of-contents__link toc-highlight"><code>does_arc_intersect_circle()</code></a></li><li><a href="#does_arc_intersect_rect" class="table-of-contents__link toc-highlight"><code>does_arc_intersect_rect()</code></a></li><li><a href="#get_arc_angles" class="table-of-contents__link toc-highlight"><code>get_arc_angles()</code></a></li><li><a href="#get_arc_bounds" class="table-of-contents__link toc-highlight"><code>get_arc_bounds()</code></a></li><li><a href="#get_arc_closest_point" class="table-of-contents__link toc-highlight"><code>get_arc_closest_point()</code></a></li><li><a href="#get_arc_direction" class="table-of-contents__link toc-highlight"><code>get_arc_direction()</code></a></li><li><a href="#get_arc_length" class="table-of-contents__link toc-highlight"><code>get_arc_length()</code></a></li><li><a href="#get_arc_midpoint" class="table-of-contents__link toc-highlight"><code>get_arc_midpoint()</code></a></li><li><a href="#get_arc_sweep" class="table-of-contents__link toc-highlight"><code>get_arc_sweep()</code></a></li><li><a href="#is_angle_between" class="table-of-contents__link toc-highlight"><code>is_angle_between()</code></a></li><li><a href="#is_arc_clockwise" class="table-of-contents__link toc-highlight"><code>is_arc_clockwise()</code></a></li><li><a href="#is_arc_inside_polygons" class="table-of-contents__link toc-highlight"><code>is_arc_inside_polygons()</code></a></li><li><a href="#linearize_arc" class="table-of-contents__link toc-highlight"><code>linearize_arc()</code></a></li><li><a href="#normalize_angle" class="table-of-contents__link toc-highlight"><code>normalize_angle()</code></a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

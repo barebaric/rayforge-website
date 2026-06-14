@@ -16,7 +16,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.a82eb417.css">
-<script src="/uk/assets/js/runtime~main.8e75c65b.js" defer="defer"></script>
+<script src="/uk/assets/js/runtime~main.9ff888b1.js" defer="defer"></script>
 <script src="/uk/assets/js/main.fc66efae.js" defer="defer"></script>
 </head>
 <body>
@@ -62,7 +62,12 @@ dimensions via width and height, with the Y axis flipped (SVG Y increases downwa
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>geometry</code></td><td><code>Geometry</code></td><td>A Geometry object with normalized coordinates.</td></tr><tr><td><code>width</code></td><td><code>int</code></td><td>Target pixel width.</td></tr><tr><td><code>height</code></td><td><code>int</code></td><td>Target pixel height.</td></tr><tr><td><em>Returns</em></td><td><code>str</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>geometry</code></td><td><code>Geometry</code></td><td>A Geometry object with normalized coordinates.</td></tr><tr><td><code>width</code></td><td><code>int</code></td><td>Target pixel width.</td></tr><tr><td><code>height</code></td><td><code>int</code></td><td>Target pixel height.</td></tr><tr><td><em>Returns</em></td><td><code>str</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) where n = number of commands</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="parse_svg_path_data"><code>parse_svg_path_data()</code><a href="#parse_svg_path_data" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p><code>parse_svg_path_data(path_data: str, transform: numpy.NDArray[numpy.float64] | None = None, scale_x: float = 1, scale_y: float = 1) -&gt; list[Geometry]</code></p>
 <p>Parse an SVG path d attribute into a list of Geometry objects.</p>
@@ -104,8 +109,13 @@ dimensions via width and height, with the Y axis flipped (SVG Y increases downwa
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>path_data</code></td><td><code>str</code></td><td>SVG path d attribute string.</td></tr><tr><td><code>transform</code></td><td><code>numpy.NDArray[numpy.float64] &amp;#124; None = None</code></td><td>3x3 affine transformation matrix, or None for identity.</td></tr><tr><td><code>scale_x</code></td><td><code>float = 1</code></td><td>X-axis scale factor for coordinate transform.</td></tr><tr><td><code>scale_y</code></td><td><code>float = 1</code></td><td>Y-axis scale factor for coordinate transform.</td></tr><tr><td><em>Returns</em></td><td><code>list[Geometry]</code></td><td></td></tr></tbody></table>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="parse_svg_transform"><code>parse_svg_transform()</code><a href="#parse_svg_transform" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>path_data</code></td><td><code>str</code></td><td>SVG path d attribute string.</td></tr><tr><td><code>transform</code></td><td><code>numpy.NDArray[numpy.float64] &amp;#124; None = None</code></td><td>3x3 affine transformation matrix, or None for identity.</td></tr><tr><td><code>scale_x</code></td><td><code>float = 1</code></td><td>X-axis scale factor for coordinate transform.</td></tr><tr><td><code>scale_y</code></td><td><code>float = 1</code></td><td>Y-axis scale factor for coordinate transform.</td></tr><tr><td><em>Returns</em></td><td><code>list[Geometry]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) where n = length of path data</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="parse_svg_transform"><code>parse_svg_transform()</code><a href="#parse_svg_transform" class="hash-link" aria-label="Пряме посилання на за головок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p><code>parse_svg_transform(transform_str: str) -&gt; numpy.NDArray[numpy.float64]</code></p>
 <p>Parse an SVG transform attribute string (translate only).</p>
 <p>Returns a 3x3 identity matrix with translation applied.</p>
@@ -130,7 +140,12 @@ dimensions via width and height, with the Y axis flipped (SVG Y increases downwa
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>transform_str</code></td><td><code>str</code></td><td>SVG transform attribute value.</td></tr><tr><td><em>Returns</em></td><td><code>numpy.NDArray[numpy.float64]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>transform_str</code></td><td><code>str</code></td><td>SVG transform attribute value.</td></tr><tr><td><em>Returns</em></td><td><code>numpy.NDArray[numpy.float64]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1)</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="svg_string_to_geometries"><code>svg_string_to_geometries()</code><a href="#svg_string_to_geometries" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p><code>svg_string_to_geometries(svg_str: str, scale_x: float = 1, scale_y: float = 1) -&gt; list[Geometry]</code></p>
 <p>Parse an SVG string and extract all path elements as Geometry objects.</p>
@@ -167,6 +182,11 @@ them to Geometry.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>svg_str</code></td><td><code>str</code></td><td>SVG document as a string.</td></tr><tr><td><code>scale_x</code></td><td><code>float = 1</code></td><td>X-axis scale factor for coordinate transform.</td></tr><tr><td><code>scale_y</code></td><td><code>float = 1</code></td><td>Y-axis scale factor for coordinate transform.</td></tr><tr><td><em>Returns</em></td><td><code>list[Geometry]</code></td><td></td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/raygeo-api/raygeo.svg.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Редагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Навігація по документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/developer/raygeo-api/raygeo.ops.types"><div class="pagination-nav__sublabel">Назад</div><div class="pagination-nav__label">raygeo.ops.types</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#geometry_to_svg_path" class="table-of-contents__link toc-highlight"><code>geometry_to_svg_path()</code></a></li><li><a href="#parse_svg_path_data" class="table-of-contents__link toc-highlight"><code>parse_svg_path_data()</code></a></li><li><a href="#parse_svg_transform" class="table-of-contents__link toc-highlight"><code>parse_svg_transform()</code></a></li><li><a href="#svg_string_to_geometries" class="table-of-contents__link toc-highlight"><code>svg_string_to_geometries()</code></a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>svg_str</code></td><td><code>str</code></td><td>SVG document as a string.</td></tr><tr><td><code>scale_x</code></td><td><code>float = 1</code></td><td>X-axis scale factor for coordinate transform.</td></tr><tr><td><code>scale_y</code></td><td><code>float = 1</code></td><td>Y-axis scale factor for coordinate transform.</td></tr><tr><td><em>Returns</em></td><td><code>list[Geometry]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) where n = size of SVG document</td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/raygeo-api/raygeo.svg.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Редагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Навігація по документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/developer/raygeo-api/raygeo.ops.types"><div class="pagination-nav__sublabel">Назад</div><div class="pagination-nav__label">raygeo.ops.types</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#geometry_to_svg_path" class="table-of-contents__link toc-highlight"><code>geometry_to_svg_path()</code></a></li><li><a href="#parse_svg_path_data" class="table-of-contents__link toc-highlight"><code>parse_svg_path_data()</code></a></li><li><a href="#parse_svg_transform" class="table-of-contents__link toc-highlight"><code>parse_svg_transform()</code></a></li><li><a href="#svg_string_to_geometries" class="table-of-contents__link toc-highlight"><code>svg_string_to_geometries()</code></a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

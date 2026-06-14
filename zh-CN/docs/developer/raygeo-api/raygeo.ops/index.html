@@ -16,7 +16,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.a82eb417.css">
-<script src="/zh-CN/assets/js/runtime~main.f4d7bcb7.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.15d699a8.js" defer="defer"></script>
 <script src="/zh-CN/assets/js/main.c36046a2.js" defer="defer"></script>
 </head>
 <body>
@@ -117,7 +117,12 @@ lead-out segments along the tangent direction at the path start and end.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>lead_in_mm</code></td><td><code>float</code></td><td>Lead-in distance in millimeters.</td></tr><tr><td><code>lead_out_mm</code></td><td><code>float</code></td><td>Lead-out distance in millimeters.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>lead_in_mm</code></td><td><code>float</code></td><td>Lead-in distance in millimeters.</td></tr><tr><td><code>lead_out_mm</code></td><td><code>float</code></td><td>Lead-out distance in millimeters.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <p><img decoding="async" loading="lazy" alt="Lead-in and lead-out paths" src="/zh-CN/assets/images/lead-in-out-b35dd16c11bf248305e35b8e71a4430f.png" width="1500" height="1500" class="img_ev3q"></p>
 <p><em>Lead-in and lead-out paths</em></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="apply_overscan"><code>apply_overscan()</code><a href="#apply_overscan" class="hash-link" aria-label="apply_overscan 的直接链接" title="apply_overscan 的直接链接" translate="no">​</a></h3>
@@ -145,7 +150,12 @@ lead-in and lead-out segments for constant engraving velocity.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>distance_mm</code></td><td><code>float</code></td><td>Overscan distance in millimeters.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>distance_mm</code></td><td><code>float</code></td><td>Overscan distance in millimeters.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <p><img decoding="async" loading="lazy" alt="Overscan applied to raster lines" src="/zh-CN/assets/images/overscan-85f974ef580b5c6f474cd0053ca93970.png" width="1800" height="1200" class="img_ev3q"></p>
 <p><em>Overscan applied to raster lines</em></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="apply_tab_gaps"><code>apply_tab_gaps()</code><a href="#apply_tab_gaps" class="hash-link" aria-label="apply_tab_gaps 的直接链接" title="apply_tab_gaps 的直接链接" translate="no">​</a></h3>
@@ -173,7 +183,12 @@ nearest point on the path. Only <code>VECTOR_OUTLINE</code> sections are modifie
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>clips</code></td><td><code>Sequence[tuple[float, float, float]]</code></td><td>List of <code>(x, y, width)</code> tuples defining tab positions.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>clips</code></td><td><code>Sequence[tuple[float, float, float]]</code></td><td>List of <code>(x, y, width)</code> tuples defining tab positions.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n * k) time, O(1) space where k is the number of tab clips</td></tr></tbody></table>
 <p><img decoding="async" loading="lazy" alt="Tab operations on a rectangle" src="/zh-CN/assets/images/tab-operations-29d98d4b9c54ad43310de0e33f8d211a.png" width="2100" height="900" class="img_ev3q"></p>
 <p><em>Tab operations on a rectangle</em></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="apply_tab_power"><code>apply_tab_power()</code><a href="#apply_tab_power" class="hash-link" aria-label="apply_tab_power 的直接链接" title="apply_tab_power 的直接链接" translate="no">​</a></h3>
@@ -211,7 +226,12 @@ but weaker. Only <code>VECTOR_OUTLINE</code> sections are modified.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>clips</code></td><td><code>Sequence[tuple[float, float, float]]</code></td><td>List of <code>(x, y, width)</code> tuples defining tab positions.</td></tr><tr><td><code>tab_power</code></td><td><code>float</code></td><td>Power level inside tab regions (0.0–1.0).</td></tr><tr><td><code>original_power</code></td><td><code>float</code></td><td>Normal cutting power to restore after the tab.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>clips</code></td><td><code>Sequence[tuple[float, float, float]]</code></td><td>List of <code>(x, y, width)</code> tuples defining tab positions.</td></tr><tr><td><code>tab_power</code></td><td><code>float</code></td><td>Power level inside tab regions (0.0–1.0).</td></tr><tr><td><code>original_power</code></td><td><code>float</code></td><td>Normal cutting power to restore after the tab.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n * k) time, O(1) space where k is the number of tab clips</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="arc_params"><code>arc_params()</code><a href="#arc_params" class="hash-link" aria-label="arc_params 的直接链接" title="arc_params 的直接链接" translate="no">​</a></h3>
 <p><code>arc_params(idx: int) -&gt; tuple[float, float, bool]</code></p>
 <p>Get the arc parameters (center offset i, j, and clockwise flag).</p>
@@ -237,8 +257,13 @@ but weaker. Only <code>VECTOR_OUTLINE</code> sections are modified.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>tuple[float, float, bool]</code></td><td></td></tr></tbody></table>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="arc_to"><code>arc_to()</code><a href="#arc_to" class="hash-link" aria-label="arc_to 的直接链接" title="arc_to 的直接链接" translate="no">​</a></h3>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>tuple[float, float, bool]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="arc_to"><code>arc_to()</code><a href="#arc_to" class="hash-link" aria-label="arc_to 的直接链接" title="arc_to 的 直接链接" translate="no">​</a></h3>
 <p><code>arc_to(x: float, y: float, i: float, j: float, clockwise: bool = True, z: float = 0.0, extra: Optional[dict] = None) -&gt; None</code></p>
 <p>Add a circular arc to the given coordinates.</p>
 
@@ -291,7 +316,12 @@ but weaker. Only <code>VECTOR_OUTLINE</code> sections are modified.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>float</code></td><td>End X coordinate.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>End Y coordinate.</td></tr><tr><td><code>i</code></td><td><code>float</code></td><td>I offset from current point to arc center.</td></tr><tr><td><code>j</code></td><td><code>float</code></td><td>J offset from current point to arc center.</td></tr><tr><td><code>clockwise</code></td><td><code>bool = True</code></td><td>Whether the arc is clockwise (default True).</td></tr><tr><td><code>z</code></td><td><code>float = 0.0</code></td><td>End Z coordinate (default 0.0).</td></tr><tr><td><code>extra</code></td><td><code>Optional[dict] = None</code></td><td>Optional dict of extra axis values.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>float</code></td><td>End X coordinate.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>End Y coordinate.</td></tr><tr><td><code>i</code></td><td><code>float</code></td><td>I offset from current point to arc center.</td></tr><tr><td><code>j</code></td><td><code>float</code></td><td>J offset from current point to arc center.</td></tr><tr><td><code>clockwise</code></td><td><code>bool = True</code></td><td>Whether the arc is clockwise (default True).</td></tr><tr><td><code>z</code></td><td><code>float = 0.0</code></td><td>End Z coordinate (default 0.0).</td></tr><tr><td><code>extra</code></td><td><code>Optional[dict] = None</code></td><td>Optional dict of extra axis values.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="bezier_params"><code>bezier_params()</code><a href="#bezier_params" class="hash-link" aria-label="bezier_params 的直接链接" title="bezier_params 的直接链接" translate="no">​</a></h3>
 <p><code>bezier_params(idx: int) -&gt; tuple[tuple[float, float, float], tuple[float, float, float]]</code></p>
 <p>Get the cubic bezier control points.</p>
@@ -317,7 +347,12 @@ but weaker. Only <code>VECTOR_OUTLINE</code> sections are modified.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>tuple[tuple[float, float, float], tuple[float, float, float]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>tuple[tuple[float, float, float], tuple[float, float, float]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="bezier_to"><code>bezier_to()</code><a href="#bezier_to" class="hash-link" aria-label="bezier_to 的直接链接" title="bezier_to 的直接链接" translate="no">​</a></h3>
 <p><code>bezier_to(control1: tuple[float, float, float], control2: tuple[float, float, float], end: tuple[float, float, float], extra: Optional[dict] = None) -&gt; None</code></p>
 <p>Add a cubic bezier curve to the given endpoint.</p>
@@ -356,7 +391,12 @@ but weaker. Only <code>VECTOR_OUTLINE</code> sections are modified.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>control1</code></td><td><code>tuple[float, float, float]</code></td><td>First control point <code>(x, y, z)</code>.</td></tr><tr><td><code>control2</code></td><td><code>tuple[float, float, float]</code></td><td>Second control point <code>(x, y, z)</code>.</td></tr><tr><td><code>end</code></td><td><code>tuple[float, float, float]</code></td><td>End point <code>(x, y, z)</code>.</td></tr><tr><td><code>extra</code></td><td><code>Optional[dict] = None</code></td><td>Optional dict of extra axis values.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>control1</code></td><td><code>tuple[float, float, float]</code></td><td>First control point <code>(x, y, z)</code>.</td></tr><tr><td><code>control2</code></td><td><code>tuple[float, float, float]</code></td><td>Second control point <code>(x, y, z)</code>.</td></tr><tr><td><code>end</code></td><td><code>tuple[float, float, float]</code></td><td>End point <code>(x, y, z)</code>.</td></tr><tr><td><code>extra</code></td><td><code>Optional[dict] = None</code></td><td>Optional dict of extra axis values.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="category"><code>category()</code><a href="#category" class="hash-link" aria-label="category 的直接链接" title="category 的直接链接" translate="no">​</a></h3>
 <p><code>category(idx: int) -&gt; types.CommandCategory</code></p>
 <p>Get the <strong>CommandCategory</strong> at the given index.</p>
@@ -381,7 +421,12 @@ but weaker. Only <code>VECTOR_OUTLINE</code> sections are modified.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index (negative = from end).</td></tr><tr><td><em>Returns</em></td><td><code>types.CommandCategory</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index (negative = from end).</td></tr><tr><td><em>Returns</em></td><td><code>types.CommandCategory</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="clear"><code>clear()</code><a href="#clear" class="hash-link" aria-label="clear 的直接链接" title="clear 的直接链接" translate="no">​</a></h3>
 <p><code>clear() -&gt; None</code></p>
 <p>Remove all commands from this Ops sequence.</p>
@@ -400,7 +445,12 @@ but weaker. Only <code>VECTOR_OUTLINE</code> sections are modified.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="clip_at"><code>clip_at()</code><a href="#clip_at" class="hash-link" aria-label="clip_at 的直接链接" title="clip_at 的直接链接" translate="no">​</a></h3>
 <p><code>clip_at(x: float, y: float, width: float) -&gt; bool</code></p>
 <p>Clip at a single vertical swath, keeping commands that intersect the band.</p>
@@ -435,7 +485,12 @@ but weaker. Only <code>VECTOR_OUTLINE</code> sections are modified.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>float</code></td><td>X coordinate of the left edge.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>Y coordinate (used to find the relevant segment).</td></tr><tr><td><code>width</code></td><td><code>float</code></td><td>Width of the band.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>float</code></td><td>X coordinate of the left edge.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>Y coordinate (used to find the relevant segment).</td></tr><tr><td><code>width</code></td><td><code>float</code></td><td>Width of the band.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="clip_ops_to_regions"><code>clip_ops_to_regions()</code><a href="#clip_ops_to_regions" class="hash-link" aria-label="clip_ops_to_regions 的直接链接" title="clip_ops_to_regions 的直接链接" translate="no">​</a></h3>
 <p><code>clip_ops_to_regions(regions: Sequence[Sequence[tuple[float, float]]], tolerance: float = 0.3) -&gt; None</code></p>
 <p>Clip paths using polygonal regions as boundaries; keeps what is inside.</p>
@@ -464,7 +519,12 @@ but weaker. Only <code>VECTOR_OUTLINE</code> sections are modified.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>regions</code></td><td><code>Sequence[Sequence[tuple[float, float]]]</code></td><td>List of polygons, each being a list of <code>(x, y)</code> vertices.</td></tr><tr><td><code>tolerance</code></td><td><code>float = 0.3</code></td><td>Approximation tolerance (default 0.3).</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>regions</code></td><td><code>Sequence[Sequence[tuple[float, float]]]</code></td><td>List of polygons, each being a list of <code>(x, y)</code> vertices.</td></tr><tr><td><code>tolerance</code></td><td><code>float = 0.3</code></td><td>Approximation tolerance (default 0.3).</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n * m) time, O(n) space where m is the number of polygon vertices</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="clip_rect"><code>clip_rect()</code><a href="#clip_rect" class="hash-link" aria-label="clip_rect 的直接链接" title="clip_rect 的直接链接" translate="no">​</a></h3>
 <p><code>clip_rect(rect: tuple[float, float, float, float]) -&gt; Ops</code></p>
 <p>Clip this sequence to a rectangle, keeping only commands inside.</p>
@@ -489,7 +549,12 @@ but weaker. Only <code>VECTOR_OUTLINE</code> sections are modified.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>rect</code></td><td><code>tuple[float, float, float, float]</code></td><td><code>(x_min, y_min, x_max, y_max)</code>.</td></tr><tr><td><em>Returns</em></td><td><code>Ops</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>rect</code></td><td><code>tuple[float, float, float, float]</code></td><td><code>(x_min, y_min, x_max, y_max)</code>.</td></tr><tr><td><em>Returns</em></td><td><code>Ops</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <p><img decoding="async" loading="lazy" alt="Ops paths clipped to a rectangle" src="/zh-CN/assets/images/ops-clip-rect-88eb4aee835fbca88b54ac5c8453a8a0.png" width="2400" height="1050" class="img_ev3q"></p>
 <p><em>Ops paths clipped to a rectangle</em></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="clip_to_regions"><code>clip_to_regions()</code><a href="#clip_to_regions" class="hash-link" aria-label="clip_to_regions 的直接链接" title="clip_to_regions 的直接链接" translate="no">​</a></h3>
@@ -520,7 +585,12 @@ but weaker. Only <code>VECTOR_OUTLINE</code> sections are modified.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>regions</code></td><td><code>Sequence[Sequence[tuple[float, float]]]</code></td><td>List of polygons, each being a list of <code>(x, y)</code> vertices.</td></tr><tr><td><code>tolerance</code></td><td><code>float = 0.3</code></td><td>Approximation tolerance (default 0.3).</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>regions</code></td><td><code>Sequence[Sequence[tuple[float, float]]]</code></td><td>List of polygons, each being a list of <code>(x, y)</code> vertices.</td></tr><tr><td><code>tolerance</code></td><td><code>float = 0.3</code></td><td>Approximation tolerance (default 0.3).</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n * m) time, O(n) space where m is the number of polygon vertices</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="close_path"><code>close_path()</code><a href="#close_path" class="hash-link" aria-label="close_path 的直接链接" title="close_path 的直接链接" translate="no">​</a></h3>
 <p><code>close_path() -&gt; None</code></p>
 <p>Close the current sub-path by adding a line back to the start.</p>
@@ -539,7 +609,12 @@ but weaker. Only <code>VECTOR_OUTLINE</code> sections are modified.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="command_type"><code>command_type()</code><a href="#command_type" class="hash-link" aria-label="command_type 的直接链接" title="command_type 的直接链接" translate="no">​</a></h3>
 <p><code>command_type(idx: int) -&gt; types.CommandType</code></p>
 <p>Get the <strong>CommandType</strong> at the given index.</p>
@@ -564,7 +639,12 @@ but weaker. Only <code>VECTOR_OUTLINE</code> sections are modified.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index (negative = from end).</td></tr><tr><td><em>Returns</em></td><td><code>types.CommandType</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index (negative = from end).</td></tr><tr><td><em>Returns</em></td><td><code>types.CommandType</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="copy"><code>copy()</code><a href="#copy" class="hash-link" aria-label="copy 的直接链接" title="copy 的直接链接" translate="no">​</a></h3>
 <p><code>copy() -&gt; Ops</code></p>
 <p>Return a deep copy of this Ops sequence.</p>
@@ -583,7 +663,12 @@ but weaker. Only <code>VECTOR_OUTLINE</code> sections are modified.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Ops</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Ops</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="copy_command_from"><code>copy_command_from()</code><a href="#copy_command_from" class="hash-link" aria-label="copy_command_from 的直接链接" title="copy_command_from 的直接链接" translate="no">​</a></h3>
 <p><code>copy_command_from(source: Ops, idx: int) -&gt; None</code></p>
 <p>Copy a single command from another Ops sequence into this one.</p>
@@ -612,7 +697,12 @@ but weaker. Only <code>VECTOR_OUTLINE</code> sections are modified.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>source</code></td><td><code>Ops</code></td><td>The source Ops sequence.</td></tr><tr><td><code>idx</code></td><td><code>int</code></td><td>Index of the command to copy.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>source</code></td><td><code>Ops</code></td><td>The source Ops sequence.</td></tr><tr><td><code>idx</code></td><td><code>int</code></td><td>Index of the command to copy.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cut_distance"><code>cut_distance()</code><a href="#cut_distance" class="hash-link" aria-label="cut_distance 的直接链接" title="cut_distance 的直接链接" translate="no">​</a></h3>
 <p><code>cut_distance() -&gt; float</code></p>
 <p>Compute the total cutting distance (excluding travel moves).</p>
@@ -631,7 +721,12 @@ but weaker. Only <code>VECTOR_OUTLINE</code> sections are modified.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="distance"><code>distance()</code><a href="#distance" class="hash-link" aria-label="distance 的直接链接" title="distance 的直接链接" translate="no">​</a></h3>
 <p><code>distance() -&gt; float</code></p>
 <p>Compute the total distance of all commands.</p>
@@ -650,7 +745,12 @@ but weaker. Only <code>VECTOR_OUTLINE</code> sections are modified.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="distance_at"><code>distance_at()</code><a href="#distance_at" class="hash-link" aria-label="distance_at 的直接链接" title="distance_at 的直接链接" translate="no">​</a></h3>
 <p><code>distance_at(idx: int, last_point: Optional[tuple[float, float, float]] = None) -&gt; float</code></p>
 <p>Compute the distance traveled up to command <em>idx</em>.</p>
@@ -680,7 +780,12 @@ but weaker. Only <code>VECTOR_OUTLINE</code> sections are modified.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><code>last_point</code></td><td><code>Optional[tuple[float, float, float]] = None</code></td><td>Optional starting point override.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><code>last_point</code></td><td><code>Optional[tuple[float, float, float]] = None</code></td><td>Optional starting point override.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dump"><code>dump()</code><a href="#dump" class="hash-link" aria-label="dump 的直接链接" title="dump 的直接链接" translate="no">​</a></h3>
 <p><code>dump() -&gt; None</code></p>
 <p>Print a human-readable dump of all commands.</p>
@@ -699,7 +804,12 @@ but weaker. Only <code>VECTOR_OUTLINE</code> sections are modified.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dwell"><code>dwell()</code><a href="#dwell" class="hash-link" aria-label="dwell 的直接链接" title="dwell 的直接链接" translate="no">​</a></h3>
 <p><code>dwell(duration_ms: float) -&gt; None</code></p>
 <p>Pause execution for a given duration.</p>
@@ -723,7 +833,12 @@ but weaker. Only <code>VECTOR_OUTLINE</code> sections are modified.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>duration_ms</code></td><td><code>float</code></td><td>Dwell duration in milliseconds.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>duration_ms</code></td><td><code>float</code></td><td>Dwell duration in milliseconds.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dwell_duration"><code>dwell_duration()</code><a href="#dwell_duration" class="hash-link" aria-label="dwell_duration 的直接链接" title="dwell_duration 的直接链接" translate="no">​</a></h3>
 <p><code>dwell_duration(idx: int) -&gt; float</code></p>
 <p>Get the duration (milliseconds) of a Dwell command.</p>
@@ -749,7 +864,12 @@ but weaker. Only <code>VECTOR_OUTLINE</code> sections are modified.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="enable_air_assist"><code>enable_air_assist()</code><a href="#enable_air_assist" class="hash-link" aria-label="enable_air_assist 的直接链接" title="enable_air_assist 的直接链接" translate="no">​</a></h3>
 <p><code>enable_air_assist(enabled: bool = True) -&gt; None</code></p>
 <p>Enable air assist for subsequent cutting.</p>
@@ -773,7 +893,12 @@ but weaker. Only <code>VECTOR_OUTLINE</code> sections are modified.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>enabled</code></td><td><code>bool = True</code></td><td>Whether to enable air assist (default True).</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>enabled</code></td><td><code>bool = True</code></td><td>Whether to enable air assist (default True).</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="endpoint"><code>endpoint()</code><a href="#endpoint" class="hash-link" aria-label="endpoint 的直接链接" title="endpoint 的直接链接" translate="no">​</a></h3>
 <p><code>endpoint(idx: int) -&gt; tuple[float, float, float]</code></p>
 <p>Get the endpoint coordinates of a moving command.</p>
@@ -798,8 +923,13 @@ but weaker. Only <code>VECTOR_OUTLINE</code> sections are modified.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index (negative = from end).</td></tr><tr><td><em>Returns</em></td><td><code>tuple[float, float, float]</code></td><td></td></tr></tbody></table>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="estimate_command_times"><code>estimate_command_times()</code><a href="#estimate_command_times" class="hash-link" aria-label="estimate_command_times 的直接链接" title="estimate_command_times 的直接链接" translate="no">​</a></h3>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index (negative = from end).</td></tr><tr><td><em>Returns</em></td><td><code>tuple[float, float, float]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="estimate_command_times"><code>estimate_command_times()</code><a href="#estimate_command_times" class="hash-link" aria-label="estimate_command_times 的直接链接" title="estimate_command_times 的 直接链接" translate="no">​</a></h3>
 <p><code>estimate_command_times(default_cut_speed: float = 1000.0, default_travel_speed: float = 3000.0, acceleration: float = 1000.0) -&gt; list[float]</code></p>
 <p>Estimate the time of each individual command in the sequence.</p>
 <p>Returns a list with one entry per command. Moving commands (MoveTo, LineTo, ArcTo, etc.) yield their
@@ -835,7 +965,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>default_cut_speed</code></td><td><code>float = 1000.0</code></td><td>Default cutting speed (default 1000.0).</td></tr><tr><td><code>default_travel_speed</code></td><td><code>float = 3000.0</code></td><td>Default travel speed (default 3000.0).</td></tr><tr><td><code>acceleration</code></td><td><code>float = 1000.0</code></td><td>Acceleration value (default 1000.0).</td></tr><tr><td><em>Returns</em></td><td><code>list[float]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>default_cut_speed</code></td><td><code>float = 1000.0</code></td><td>Default cutting speed (default 1000.0).</td></tr><tr><td><code>default_travel_speed</code></td><td><code>float = 3000.0</code></td><td>Default travel speed (default 3000.0).</td></tr><tr><td><code>acceleration</code></td><td><code>float = 1000.0</code></td><td>Acceleration value (default 1000.0).</td></tr><tr><td><em>Returns</em></td><td><code>list[float]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="estimate_time"><code>estimate_time()</code><a href="#estimate_time" class="hash-link" aria-label="estimate_time 的直接链接" title="estimate_time 的直接链接" translate="no">​</a></h3>
 <p><code>estimate_time(default_cut_speed: float = 1000.0, default_travel_speed: float = 3000.0, acceleration: float = 1000.0) -&gt; float</code></p>
 <p>Estimate the total processing time for this sequence.</p>
@@ -870,7 +1005,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>default_cut_speed</code></td><td><code>float = 1000.0</code></td><td>Default cutting speed (default 1000.0).</td></tr><tr><td><code>default_travel_speed</code></td><td><code>float = 3000.0</code></td><td>Default travel speed (default 3000.0).</td></tr><tr><td><code>acceleration</code></td><td><code>float = 1000.0</code></td><td>Acceleration value (default 1000.0).</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>default_cut_speed</code></td><td><code>float = 1000.0</code></td><td>Default cutting speed (default 1000.0).</td></tr><tr><td><code>default_travel_speed</code></td><td><code>float = 3000.0</code></td><td>Default travel speed (default 3000.0).</td></tr><tr><td><code>acceleration</code></td><td><code>float = 1000.0</code></td><td>Acceleration value (default 1000.0).</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="extend"><code>extend()</code><a href="#extend" class="hash-link" aria-label="extend 的直接链接" title="extend 的直接链接" translate="no">​</a></h3>
 <p><code>extend(other: Optional[Ops]) -&gt; None</code></p>
 <p>Extend this Ops sequence with commands from another.</p>
@@ -894,7 +1034,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>other</code></td><td><code>Optional[Ops]</code></td><td>The other Ops sequence (or None for no-op).</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>other</code></td><td><code>Optional[Ops]</code></td><td>The other Ops sequence (or None for no-op).</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="extra_axes-1"><code>extra_axes()</code><a href="#extra_axes-1" class="hash-link" aria-label="extra_axes-1 的直接链接" title="extra_axes-1 的直接链接" translate="no">​</a></h3>
 <p><code>extra_axes(idx: int) -&gt; Optional[dict]</code></p>
 <p>Get the extra axes data for a moving command.</p>
@@ -919,7 +1064,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>Optional[dict]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>Optional[dict]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="flip_ops"><code>flip_ops()</code><a href="#flip_ops" class="hash-link" aria-label="flip_ops 的直接链接" title="flip_ops 的直接链接" translate="no">​</a></h3>
 <p><code>flip_ops() -&gt; Ops</code></p>
 <p>Reverse the order of subpaths.</p>
@@ -939,7 +1089,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Ops</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Ops</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="frequency-1"><code>frequency()</code><a href="#frequency-1" class="hash-link" aria-label="frequency-1 的直接链接" title="frequency-1 的直接链接" translate="no">​</a></h3>
 <p><code>frequency(idx: int) -&gt; int</code></p>
 <p>Get the frequency of a SetFrequency command.</p>
@@ -965,7 +1120,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>int</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>int</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="from_dict"><code>from_dict()</code><a href="#from_dict" class="hash-link" aria-label="from_dict 的直接链接" title="from_dict 的直接链接" translate="no">​</a></h3>
 <p><code>@classmethod from_dict(data: dict) -&gt; Ops</code></p>
 <p>Create an Ops sequence from a dictionary.</p>
@@ -989,7 +1149,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>data</code></td><td><code>dict</code></td><td>Dictionary as produced by to_dict.</td></tr><tr><td><em>Returns</em></td><td><code>Ops</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>data</code></td><td><code>dict</code></td><td>Dictionary as produced by to_dict.</td></tr><tr><td><em>Returns</em></td><td><code>Ops</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="from_geometry"><code>from_geometry()</code><a href="#from_geometry" class="hash-link" aria-label="from_geometry 的直接链接" title="from_geometry 的直接链接" translate="no">​</a></h3>
 <p><code>@classmethod from_geometry(geometry: geo.Geometry) -&gt; Ops</code></p>
 <p>Create an Ops sequence from a Geometry.</p>
@@ -1013,7 +1178,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>geometry</code></td><td><code>geo.Geometry</code></td><td>The geometry to convert.</td></tr><tr><td><em>Returns</em></td><td><code>Ops</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>geometry</code></td><td><code>geo.Geometry</code></td><td>The geometry to convert.</td></tr><tr><td><em>Returns</em></td><td><code>Ops</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="from_numpy_arrays"><code>from_numpy_arrays()</code><a href="#from_numpy_arrays" class="hash-link" aria-label="from_numpy_arrays 的直接链接" title="from_numpy_arrays 的直接链接" translate="no">​</a></h3>
 <p><code>@classmethod from_numpy_arrays(arrays: dict) -&gt; Ops</code></p>
 <p>Create an Ops sequence from numpy arrays.</p>
@@ -1037,7 +1207,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>arrays</code></td><td><code>dict</code></td><td>Dictionary as produced by to_numpy_arrays.</td></tr><tr><td><em>Returns</em></td><td><code>Ops</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>arrays</code></td><td><code>dict</code></td><td>Dictionary as produced by to_numpy_arrays.</td></tr><tr><td><em>Returns</em></td><td><code>Ops</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_frame"><code>get_frame()</code><a href="#get_frame" class="hash-link" aria-label="get_frame 的直接链接" title="get_frame 的直接链接" translate="no">​</a></h3>
 <p><code>get_frame(power: Optional[float] = None, speed: Optional[float] = None) -&gt; Ops</code></p>
 <p>Extract a frame (first and last endpoints) from the sequence.</p>
@@ -1067,7 +1242,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>power</code></td><td><code>Optional[float] = None</code></td><td>Optional power to set on the frame commands.</td></tr><tr><td><code>speed</code></td><td><code>Optional[float] = None</code></td><td>Optional speed to set on the frame commands.</td></tr><tr><td><em>Returns</em></td><td><code>Ops</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>power</code></td><td><code>Optional[float] = None</code></td><td>Optional power to set on the frame commands.</td></tr><tr><td><code>speed</code></td><td><code>Optional[float] = None</code></td><td>Optional speed to set on the frame commands.</td></tr><tr><td><em>Returns</em></td><td><code>Ops</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="group_by_state_continuity"><code>group_by_state_continuity()</code><a href="#group_by_state_continuity" class="hash-link" aria-label="group_by_state_continuity 的直接链接" title="group_by_state_continuity 的直接链接" translate="no">​</a></h3>
 <p><code>group_by_state_continuity() -&gt; list[Ops]</code></p>
 <p>Group contiguous commands with the same state into separate Ops sequences.</p>
@@ -1087,7 +1267,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[Ops]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[Ops]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="indices_of"><code>indices_of()</code><a href="#indices_of" class="hash-link" aria-label="indices_of 的直接链接" title="indices_of 的直接链接" translate="no">​</a></h3>
 <p><code>indices_of(ct: types.CommandType) -&gt; list[int]</code></p>
 <p>Return all indices where the command type matches <em>ct</em>.</p>
@@ -1112,7 +1297,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>ct</code></td><td><code>types.CommandType</code></td><td>The <strong>CommandType</strong> to search for.</td></tr><tr><td><em>Returns</em></td><td><code>list[int]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>ct</code></td><td><code>types.CommandType</code></td><td>The <strong>CommandType</strong> to search for.</td></tr><tr><td><em>Returns</em></td><td><code>list[int]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="inspect"><code>inspect()</code><a href="#inspect" class="hash-link" aria-label="inspect 的直接链接" title="inspect 的直接链接" translate="no">​</a></h3>
 <p><code>inspect(idx: int) -&gt; CommandInfo</code></p>
 <p>Return detailed information about a single command.</p>
@@ -1137,7 +1327,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>The command index.</td></tr><tr><td><em>Returns</em></td><td><code>CommandInfo</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>The command index.</td></tr><tr><td><em>Returns</em></td><td><code>CommandInfo</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="is_cutting"><code>is_cutting()</code><a href="#is_cutting" class="hash-link" aria-label="is_cutting 的直接链接" title="is_cutting 的直接链接" translate="no">​</a></h3>
 <p><code>is_cutting(idx: int) -&gt; bool</code></p>
 <p>Check whether the command at <em>idx</em> is a cutting move.</p>
@@ -1162,7 +1357,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="is_empty"><code>is_empty()</code><a href="#is_empty" class="hash-link" aria-label="is_empty 的直接链接" title="is_empty 的直接链接" translate="no">​</a></h3>
 <p><code>is_empty() -&gt; bool</code></p>
 <p>Check if the ops sequence is empty.</p>
@@ -1181,7 +1381,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="is_marker"><code>is_marker()</code><a href="#is_marker" class="hash-link" aria-label="is_marker 的直接链接" title="is_marker 的直接链接" translate="no">​</a></h3>
 <p><code>is_marker(idx: int) -&gt; bool</code></p>
 <p>Check whether the command at <em>idx</em> is a marker command.</p>
@@ -1206,7 +1411,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="is_scanline"><code>is_scanline()</code><a href="#is_scanline" class="hash-link" aria-label="is_scanline 的直接链接" title="is_scanline 的直接链接" translate="no">​</a></h3>
 <p><code>is_scanline(idx: int) -&gt; bool</code></p>
 <p>Check whether the command at <em>idx</em> is a scanline command.</p>
@@ -1231,8 +1441,13 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="is_state"><code>is_state()</code><a href="#is_state" class="hash-link" aria-label="is_state 的直接链接" title="is_state 的直接链接" translate="no">​</a></h3>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="is_state"><code>is_state()</code><a href="#is_state" class="hash-link" aria-label="is_state 的直接 链接" title="is_state 的直接链接" translate="no">​</a></h3>
 <p><code>is_state(idx: int) -&gt; bool</code></p>
 <p>Check whether the command at <em>idx</em> is a state command.</p>
 <p><strong>Returns:</strong> True if the command modifies machine state.</p>
@@ -1256,7 +1471,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="is_travel"><code>is_travel()</code><a href="#is_travel" class="hash-link" aria-label="is_travel 的直接链接" title="is_travel 的直接链接" translate="no">​</a></h3>
 <p><code>is_travel(idx: int) -&gt; bool</code></p>
 <p>Check whether the command at <em>idx</em> is a travel (non-cutting) move.</p>
@@ -1281,7 +1501,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="job_end"><code>job_end()</code><a href="#job_end" class="hash-link" aria-label="job_end 的直接链接" title="job_end 的直接链接" translate="no">​</a></h3>
 <p><code>job_end() -&gt; None</code></p>
 <p>Mark the end of a job.</p>
@@ -1300,7 +1525,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="job_start"><code>job_start()</code><a href="#job_start" class="hash-link" aria-label="job_start 的直接链接" title="job_start 的直接链接" translate="no">​</a></h3>
 <p><code>job_start() -&gt; None</code></p>
 <p>Mark the start of a job.</p>
@@ -1319,7 +1549,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="laser_uid-1"><code>laser_uid()</code><a href="#laser_uid-1" class="hash-link" aria-label="laser_uid-1 的直接链接" title="laser_uid-1 的直接链接" translate="no">​</a></h3>
 <p><code>laser_uid(idx: int) -&gt; str</code></p>
 <p>Get the laser UID from a SetLaser command.</p>
@@ -1345,7 +1580,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>str</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>str</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="layer_end"><code>layer_end()</code><a href="#layer_end" class="hash-link" aria-label="layer_end 的直接链接" title="layer_end 的直接链接" translate="no">​</a></h3>
 <p><code>layer_end(layer_uid: str) -&gt; None</code></p>
 <p>Mark the end of a layer.</p>
@@ -1369,7 +1609,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>layer_uid</code></td><td><code>str</code></td><td>The layer identifier.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>layer_uid</code></td><td><code>str</code></td><td>The layer identifier.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="layer_start"><code>layer_start()</code><a href="#layer_start" class="hash-link" aria-label="layer_start 的直接链接" title="layer_start 的直接链接" translate="no">​</a></h3>
 <p><code>layer_start(layer_uid: str) -&gt; None</code></p>
 <p>Mark the start of a layer.</p>
@@ -1393,7 +1638,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>layer_uid</code></td><td><code>str</code></td><td>The layer identifier.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>layer_uid</code></td><td><code>str</code></td><td>The layer identifier.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="layer_uid-1"><code>layer_uid()</code><a href="#layer_uid-1" class="hash-link" aria-label="layer_uid-1 的直接链接" title="layer_uid-1 的直接链接" translate="no">​</a></h3>
 <p><code>layer_uid(idx: int) -&gt; str</code></p>
 <p>Get the layer UID from a LayerStart or LayerEnd command.</p>
@@ -1419,7 +1669,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>str</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>str</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="len"><code>len()</code><a href="#len" class="hash-link" aria-label="len 的直接链接" title="len 的直接链接" translate="no">​</a></h3>
 <p><code>len() -&gt; int</code></p>
 <p>Return the number of commands.</p>
@@ -1438,7 +1693,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>int</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>int</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="line_to"><code>line_to()</code><a href="#line_to" class="hash-link" aria-label="line_to 的直接链接" title="line_to 的直接链接" translate="no">​</a></h3>
 <p><code>line_to(x: float, y: float, z: float = 0.0, extra: Optional[dict] = None) -&gt; None</code></p>
 <p>Add a cutting line to the given coordinates.</p>
@@ -1477,7 +1737,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>float</code></td><td>X coordinate.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>Y coordinate.</td></tr><tr><td><code>z</code></td><td><code>float = 0.0</code></td><td>Z coordinate (default 0.0).</td></tr><tr><td><code>extra</code></td><td><code>Optional[dict] = None</code></td><td>Optional dict of extra axis values.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>float</code></td><td>X coordinate.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>Y coordinate.</td></tr><tr><td><code>z</code></td><td><code>float = 0.0</code></td><td>Z coordinate (default 0.0).</td></tr><tr><td><code>extra</code></td><td><code>Optional[dict] = None</code></td><td>Optional dict of extra axis values.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="linearize"><code>linearize()</code><a href="#linearize" class="hash-link" aria-label="linearize 的直接链接" title="linearize 的直接链接" translate="no">​</a></h3>
 <p><code>linearize(idx: int, start_point: tuple[float, float, float]) -&gt; Ops</code></p>
 <p>Decompose a curved command into linear segments.</p>
@@ -1508,7 +1773,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Index of the command to linearize.</td></tr><tr><td><code>start_point</code></td><td><code>tuple[float, float, float]</code></td><td>The <code>(x, y, z)</code> start point of the curve.</td></tr><tr><td><em>Returns</em></td><td><code>Ops</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Index of the command to linearize.</td></tr><tr><td><code>start_point</code></td><td><code>tuple[float, float, float]</code></td><td>The <code>(x, y, z)</code> start point of the curve.</td></tr><tr><td><em>Returns</em></td><td><code>Ops</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="linearize_all"><code>linearize_all()</code><a href="#linearize_all" class="hash-link" aria-label="linearize_all 的直接链接" title="linearize_all 的直接链接" translate="no">​</a></h3>
 <p><code>linearize_all() -&gt; None</code></p>
 <p>Replace all curved commands with linear approximations in-place.</p>
@@ -1527,7 +1797,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="linearize_arcs"><code>linearize_arcs()</code><a href="#linearize_arcs" class="hash-link" aria-label="linearize_arcs 的直接链接" title="linearize_arcs 的直接链接" translate="no">​</a></h3>
 <p><code>linearize_arcs() -&gt; None</code></p>
 <p>Replace only arc commands with linear approximations.</p>
@@ -1546,7 +1821,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="linearize_curves"><code>linearize_curves()</code><a href="#linearize_curves" class="hash-link" aria-label="linearize_curves 的直接链接" title="linearize_curves 的直接链接" translate="no">​</a></h3>
 <p><code>linearize_curves() -&gt; None</code></p>
 <p>Replace only bezier and quadratic bezier curves with linear approximations.</p>
@@ -1565,7 +1845,12 @@ estimated execution time in seconds. Non-moving commands (state changes, markers
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="merge_overlapping_lines"><code>merge_overlapping_lines()</code><a href="#merge_overlapping_lines" class="hash-link" aria-label="merge_overlapping_lines 的直接链接" title="merge_overlapping_lines 的直接链接" translate="no">​</a></h3>
 <p><code>merge_overlapping_lines(tolerance: float) -&gt; None</code></p>
 <p>Merge overlapping line segments across all paths.</p>
@@ -1591,7 +1876,12 @@ travel moves to avoid cutting the same line twice.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>tolerance</code></td><td><code>float</code></td><td>Maximum distance for considering lines collinear.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>tolerance</code></td><td><code>float</code></td><td>Maximum distance for considering lines collinear.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n log n) average time, O(n) space</td></tr></tbody></table>
 <p><img decoding="async" loading="lazy" alt="Line merging before and after" src="/zh-CN/assets/images/merge-lines-b1c1d79f14c481b93cc7355b1f5ec8e7.png" width="2400" height="900" class="img_ev3q"></p>
 <p><em>Line merging before and after</em></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="move_to"><code>move_to()</code><a href="#move_to" class="hash-link" aria-label="move_to 的直接链接" title="move_to 的直接链接" translate="no">​</a></h3>
@@ -1632,7 +1922,12 @@ travel moves to avoid cutting the same line twice.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>float</code></td><td>X coordinate.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>Y coordinate.</td></tr><tr><td><code>z</code></td><td><code>float = 0.0</code></td><td>Z coordinate (default 0.0).</td></tr><tr><td><code>extra</code></td><td><code>Optional[dict] = None</code></td><td>Optional dict of extra axis values.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>float</code></td><td>X coordinate.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>Y coordinate.</td></tr><tr><td><code>z</code></td><td><code>float = 0.0</code></td><td>Z coordinate (default 0.0).</td></tr><tr><td><code>extra</code></td><td><code>Optional[dict] = None</code></td><td>Optional dict of extra axis values.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ops_section_end"><code>ops_section_end()</code><a href="#ops_section_end" class="hash-link" aria-label="ops_section_end 的直接链接" title="ops_section_end 的直接链接" translate="no">​</a></h3>
 <p><code>ops_section_end(section_type: types.SectionType) -&gt; None</code></p>
 <p>Mark the end of an ops section.</p>
@@ -1656,7 +1951,12 @@ travel moves to avoid cutting the same line twice.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>section_type</code></td><td><code>types.SectionType</code></td><td>The type of section.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>section_type</code></td><td><code>types.SectionType</code></td><td>The type of section.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ops_section_start"><code>ops_section_start()</code><a href="#ops_section_start" class="hash-link" aria-label="ops_section_start 的直接链接" title="ops_section_start 的直接链接" translate="no">​</a></h3>
 <p><code>ops_section_start(section_type: types.SectionType, workpiece_uid: str) -&gt; None</code></p>
 <p>Mark the start of an ops section.</p>
@@ -1685,7 +1985,12 @@ travel moves to avoid cutting the same line twice.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>section_type</code></td><td><code>types.SectionType</code></td><td>The type of section.</td></tr><tr><td><code>workpiece_uid</code></td><td><code>str</code></td><td>The workpiece identifier.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>section_type</code></td><td><code>types.SectionType</code></td><td>The type of section.</td></tr><tr><td><code>workpiece_uid</code></td><td><code>str</code></td><td>The workpiece identifier.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="optimize_travel"><code>optimize_travel()</code><a href="#optimize_travel" class="hash-link" aria-label="optimize_travel 的直接链接" title="optimize_travel 的直接链接" translate="no">​</a></h3>
 <p><code>optimize_travel(allow_flip: bool = True, preserve_first: bool = False, preserve_order: Sequence[str] = [], progress_cb: Optional[Any] = None) -&gt; None</code></p>
 <p>Optimize travel distance by reordering segments.</p>
@@ -1726,7 +2031,12 @@ segment-level nearest-neighbor + 2-opt refinement.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>allow_flip</code></td><td><code>bool = True</code></td><td>Whether to allow flipping subpaths.</td></tr><tr><td><code>preserve_first</code></td><td><code>bool = False</code></td><td>Keep the first workpiece in place.</td></tr><tr><td><code>preserve_order</code></td><td><code>Sequence[str] = []</code></td><td>Workpiece UIDs whose order to preserve.</td></tr><tr><td><code>progress_cb</code></td><td><code>Optional[Any] = None</code></td><td>Optional callable(progress, message).</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>allow_flip</code></td><td><code>bool = True</code></td><td>Whether to allow flipping subpaths.</td></tr><tr><td><code>preserve_first</code></td><td><code>bool = False</code></td><td>Keep the first workpiece in place.</td></tr><tr><td><code>preserve_order</code></td><td><code>Sequence[str] = []</code></td><td>Workpiece UIDs whose order to preserve.</td></tr><tr><td><code>progress_cb</code></td><td><code>Optional[Any] = None</code></td><td>Optional callable(progress, message).</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n²) average time, O(n) space</td></tr></tbody></table>
 <p><img decoding="async" loading="lazy" alt="Travel path before and after optimization" src="/zh-CN/assets/images/ops-optimize-travel-2886db5d02eabf55b173240baade87df.png" width="3300" height="1050" class="img_ev3q"></p>
 <p><em>Travel path before and after optimization</em></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="power-1"><code>power()</code><a href="#power-1" class="hash-link" aria-label="power-1 的直接链接" title="power-1 的直接链接" translate="no">​</a></h3>
@@ -1754,7 +2064,12 @@ segment-level nearest-neighbor + 2-opt refinement.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="preload_state"><code>preload_state()</code><a href="#preload_state" class="hash-link" aria-label="preload_state 的直接链接" title="preload_state 的直接链接" translate="no">​</a></h3>
 <p><code>preload_state() -&gt; None</code></p>
 <p>Pre-compute and store the accumulated state at each moving command.</p>
@@ -1773,8 +2088,13 @@ segment-level nearest-neighbor + 2-opt refinement.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pulse_width-1"><code>pulse_width()</code><a href="#pulse_width-1" class="hash-link" aria-label="pulse_width-1 的直接链接" title="pulse_width-1 的 直接链接" translate="no">​</a></h3>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pulse_width-1"><code>pulse_width()</code><a href="#pulse_width-1" class="hash-link" aria-label="pulse_width-1 的直接链接" title="pulse_width-1 的直接链接" translate="no">​</a></h3>
 <p><code>pulse_width(idx: int) -&gt; float</code></p>
 <p>Get the pulse width of a SetPulseWidth command.</p>
 <p><strong>Returns:</strong> Pulse width in microseconds.</p>
@@ -1799,7 +2119,12 @@ segment-level nearest-neighbor + 2-opt refinement.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="quadratic_bezier_params"><code>quadratic_bezier_params()</code><a href="#quadratic_bezier_params" class="hash-link" aria-label="quadratic_bezier_params 的直接链接" title="quadratic_bezier_params 的直接链接" translate="no">​</a></h3>
 <p><code>quadratic_bezier_params(idx: int) -&gt; tuple[float, float, float]</code></p>
 <p>Get the quadratic bezier control point.</p>
@@ -1825,7 +2150,12 @@ segment-level nearest-neighbor + 2-opt refinement.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>tuple[float, float, float]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>tuple[float, float, float]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="quadratic_bezier_to"><code>quadratic_bezier_to()</code><a href="#quadratic_bezier_to" class="hash-link" aria-label="quadratic_bezier_to 的直接链接" title="quadratic_bezier_to 的直接链接" translate="no">​</a></h3>
 <p><code>quadratic_bezier_to(control: tuple[float, float, float], end: tuple[float, float, float], extra: Optional[dict] = None) -&gt; None</code></p>
 <p>Add a quadratic bezier curve to the given endpoint.</p>
@@ -1859,7 +2189,12 @@ segment-level nearest-neighbor + 2-opt refinement.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>control</code></td><td><code>tuple[float, float, float]</code></td><td>Control point <code>(x, y, z)</code>.</td></tr><tr><td><code>end</code></td><td><code>tuple[float, float, float]</code></td><td>End point <code>(x, y, z)</code>.</td></tr><tr><td><code>extra</code></td><td><code>Optional[dict] = None</code></td><td>Optional dict of extra axis values.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>control</code></td><td><code>tuple[float, float, float]</code></td><td>Control point <code>(x, y, z)</code>.</td></tr><tr><td><code>end</code></td><td><code>tuple[float, float, float]</code></td><td>End point <code>(x, y, z)</code>.</td></tr><tr><td><code>extra</code></td><td><code>Optional[dict] = None</code></td><td>Optional dict of extra axis values.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rect"><code>rect()</code><a href="#rect" class="hash-link" aria-label="rect 的直接链接" title="rect 的直接链接" translate="no">​</a></h3>
 <p><code>rect(include_travel: bool = False) -&gt; tuple[float, float, float, float]</code></p>
 <p>Compute the bounding rectangle of all commands.</p>
@@ -1884,7 +2219,12 @@ segment-level nearest-neighbor + 2-opt refinement.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>include_travel</code></td><td><code>bool = False</code></td><td>Whether to include travel moves (default False).</td></tr><tr><td><em>Returns</em></td><td><code>tuple[float, float, float, float]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>include_travel</code></td><td><code>bool = False</code></td><td>Whether to include travel moves (default False).</td></tr><tr><td><em>Returns</em></td><td><code>tuple[float, float, float, float]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="replace_all"><code>replace_all()</code><a href="#replace_all" class="hash-link" aria-label="replace_all 的直接链接" title="replace_all 的直接链接" translate="no">​</a></h3>
 <p><code>replace_all(source: Ops) -&gt; None</code></p>
 <p>Replace all commands in this sequence with those from another.</p>
@@ -1908,7 +2248,12 @@ segment-level nearest-neighbor + 2-opt refinement.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>source</code></td><td><code>Ops</code></td><td>The source Ops sequence.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>source</code></td><td><code>Ops</code></td><td>The source Ops sequence.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="replace_with"><code>replace_with()</code><a href="#replace_with" class="hash-link" aria-label="replace_with 的直接链接" title="replace_with 的直接链接" translate="no">​</a></h3>
 <p><code>replace_with(source: Ops) -&gt; None</code></p>
 <p>Replace the internal buffer of this sequence with a copy from another.</p>
@@ -1932,7 +2277,12 @@ segment-level nearest-neighbor + 2-opt refinement.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>source</code></td><td><code>Ops</code></td><td>The source Ops sequence.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>source</code></td><td><code>Ops</code></td><td>The source Ops sequence.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rotate"><code>rotate()</code><a href="#rotate" class="hash-link" aria-label="rotate 的直接链接" title="rotate 的直接链接" translate="no">​</a></h3>
 <p><code>rotate(angle_deg: float, cx: float, cy: float) -&gt; None</code></p>
 <p>Rotate all coordinates around a pivot point.</p>
@@ -1966,7 +2316,12 @@ segment-level nearest-neighbor + 2-opt refinement.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>angle_deg</code></td><td><code>float</code></td><td>Rotation angle in degrees.</td></tr><tr><td><code>cx</code></td><td><code>float</code></td><td>Pivot X coordinate.</td></tr><tr><td><code>cy</code></td><td><code>float</code></td><td>Pivot Y coordinate.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>angle_deg</code></td><td><code>float</code></td><td>Rotation angle in degrees.</td></tr><tr><td><code>cx</code></td><td><code>float</code></td><td>Pivot X coordinate.</td></tr><tr><td><code>cy</code></td><td><code>float</code></td><td>Pivot Y coordinate.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scale"><code>scale()</code><a href="#scale" class="hash-link" aria-label="scale 的直接链接" title="scale 的直接链接" translate="no">​</a></h3>
 <p><code>scale(sx: float, sy: float, sz: float = 1.0) -&gt; None</code></p>
 <p>Scale all coordinates by the given factors.</p>
@@ -2000,7 +2355,12 @@ segment-level nearest-neighbor + 2-opt refinement.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>sx</code></td><td><code>float</code></td><td>X scale factor.</td></tr><tr><td><code>sy</code></td><td><code>float</code></td><td>Y scale factor.</td></tr><tr><td><code>sz</code></td><td><code>float = 1.0</code></td><td>Z scale factor (default 1.0).</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>sx</code></td><td><code>float</code></td><td>X scale factor.</td></tr><tr><td><code>sy</code></td><td><code>float</code></td><td>Y scale factor.</td></tr><tr><td><code>sz</code></td><td><code>float = 1.0</code></td><td>Z scale factor (default 1.0).</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scan_to"><code>scan_to()</code><a href="#scan_to" class="hash-link" aria-label="scan_to 的直接链接" title="scan_to 的直接链接" translate="no">​</a></h3>
 <p><code>scan_to(x: float, y: float, z: float = 0.0, power_values: Optional[Sequence[int]] = None, extra: Optional[dict] = None) -&gt; None</code></p>
 <p>Add a scan-line move with per-pixel power values.</p>
@@ -2044,7 +2404,12 @@ segment-level nearest-neighbor + 2-opt refinement.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>float</code></td><td>End X coordinate.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>End Y coordinate.</td></tr><tr><td><code>z</code></td><td><code>float = 0.0</code></td><td>End Z coordinate (default 0.0).</td></tr><tr><td><code>power_values</code></td><td><code>Optional[Sequence[int]] = None</code></td><td>Optional per-pixel 8-bit power values.</td></tr><tr><td><code>extra</code></td><td><code>Optional[dict] = None</code></td><td>Optional dict of extra axis values.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>float</code></td><td>End X coordinate.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>End Y coordinate.</td></tr><tr><td><code>z</code></td><td><code>float = 0.0</code></td><td>End Z coordinate (default 0.0).</td></tr><tr><td><code>power_values</code></td><td><code>Optional[Sequence[int]] = None</code></td><td>Optional per-pixel 8-bit power values.</td></tr><tr><td><code>extra</code></td><td><code>Optional[dict] = None</code></td><td>Optional dict of extra axis values.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scanline_data"><code>scanline_data()</code><a href="#scanline_data" class="hash-link" aria-label="scanline_data 的直接链接" title="scanline_data 的直接链接" translate="no">​</a></h3>
 <p><code>scanline_data(idx: int) -&gt; bytes</code></p>
 <p>Get the raw scanline power data for a scanline command.</p>
@@ -2069,7 +2434,12 @@ segment-level nearest-neighbor + 2-opt refinement.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>bytes</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>bytes</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="section_params"><code>section_params()</code><a href="#section_params" class="hash-link" aria-label="section_params 的直接链接" title="section_params 的直接链接" translate="no">​</a></h3>
 <p><code>section_params(idx: int) -&gt; tuple[types.SectionType, Optional[str]]</code></p>
 <p>Get the section type and optional workpiece UID from an OpsSection command.</p>
@@ -2095,7 +2465,12 @@ segment-level nearest-neighbor + 2-opt refinement.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>tuple[types.SectionType, Optional[str]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>tuple[types.SectionType, Optional[str]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="section_ranges"><code>section_ranges()</code><a href="#section_ranges" class="hash-link" aria-label="section_ranges 的直接链接" title="section_ranges 的直接链接" translate="no">​</a></h3>
 <p><code>section_ranges() -&gt; list[OpsSectionRange]</code></p>
 <p>Return the section ranges of the ops as index ranges.</p>
@@ -2116,7 +2491,12 @@ segment-level nearest-neighbor + 2-opt refinement.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[OpsSectionRange]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[OpsSectionRange]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sections"><code>sections()</code><a href="#sections" class="hash-link" aria-label="sections 的直接链接" title="sections 的直接链接" translate="no">​</a></h3>
 <p><code>sections() -&gt; list[OpsSection]</code></p>
 <p>Return the logical sections of the ops.</p>
@@ -2138,7 +2518,12 @@ vector-outline and raster-fill portions.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[OpsSection]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[OpsSection]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="segment_indices"><code>segment_indices()</code><a href="#segment_indices" class="hash-link" aria-label="segment_indices 的直接链接" title="segment_indices 的直接链接" translate="no">​</a></h3>
 <p><code>segment_indices() -&gt; list[list[int]]</code></p>
 <p>Return index ranges for each contiguous cutting segment.</p>
@@ -2158,7 +2543,12 @@ vector-outline and raster-fill portions.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[list[int]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[list[int]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="set_cut_speed"><code>set_cut_speed()</code><a href="#set_cut_speed" class="hash-link" aria-label="set_cut_speed 的直接链接" title="set_cut_speed 的直接链接" translate="no">​</a></h3>
 <p><code>set_cut_speed(speed: float) -&gt; None</code></p>
 <p>Set the cutting speed for subsequent commands.</p>
@@ -2182,7 +2572,12 @@ vector-outline and raster-fill portions.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>speed</code></td><td><code>float</code></td><td>Cutting speed in units per second.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>speed</code></td><td><code>float</code></td><td>Cutting speed in units per second.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="set_frequency"><code>set_frequency()</code><a href="#set_frequency" class="hash-link" aria-label="set_frequency 的直接链接" title="set_frequency 的直接链接" translate="no">​</a></h3>
 <p><code>set_frequency(frequency: int) -&gt; None</code></p>
 <p>Set the laser pulse frequency.</p>
@@ -2206,7 +2601,12 @@ vector-outline and raster-fill portions.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>frequency</code></td><td><code>int</code></td><td>Frequency in Hz.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>frequency</code></td><td><code>int</code></td><td>Frequency in Hz.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="set_laser"><code>set_laser()</code><a href="#set_laser" class="hash-link" aria-label="set_laser 的直接链接" title="set_laser 的直接链接" translate="no">​</a></h3>
 <p><code>set_laser(laser_uid: str) -&gt; None</code></p>
 <p>Switch to a specific laser by UID.</p>
@@ -2230,7 +2630,12 @@ vector-outline and raster-fill portions.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>laser_uid</code></td><td><code>str</code></td><td>The laser identifier.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>laser_uid</code></td><td><code>str</code></td><td>The laser identifier.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="set_power"><code>set_power()</code><a href="#set_power" class="hash-link" aria-label="set_power 的直接链接" title="set_power 的直接链接" translate="no">​</a></h3>
 <p><code>set_power(power: float) -&gt; None</code></p>
 <p>Set the laser power for subsequent commands.</p>
@@ -2254,7 +2659,12 @@ vector-outline and raster-fill portions.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>power</code></td><td><code>float</code></td><td>Power level (0.0–1.0).</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>power</code></td><td><code>float</code></td><td>Power level (0.0–1.0).</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="set_pulse_width"><code>set_pulse_width()</code><a href="#set_pulse_width" class="hash-link" aria-label="set_pulse_width 的直接链接" title="set_pulse_width 的直接链接" translate="no">​</a></h3>
 <p><code>set_pulse_width(pulse_width: float) -&gt; None</code></p>
 <p>Set the laser pulse width.</p>
@@ -2278,7 +2688,12 @@ vector-outline and raster-fill portions.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>pulse_width</code></td><td><code>float</code></td><td>Pulse width in microseconds.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>pulse_width</code></td><td><code>float</code></td><td>Pulse width in microseconds.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="set_state_at"><code>set_state_at()</code><a href="#set_state_at" class="hash-link" aria-label="set_state_at 的直接链接" title="set_state_at 的直接链接" translate="no">​</a></h3>
 <p><code>set_state_at(idx: int, state: state.State) -&gt; None</code></p>
 <p>Overwrite the state at a specific command index.</p>
@@ -2307,7 +2722,12 @@ vector-outline and raster-fill portions.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>The command index.</td></tr><tr><td><code>state</code></td><td><code>state.State</code></td><td>The new state.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>The command index.</td></tr><tr><td><code>state</code></td><td><code>state.State</code></td><td>The new state.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="set_state_on_moving"><code>set_state_on_moving()</code><a href="#set_state_on_moving" class="hash-link" aria-label="set_state_on_moving 的直接链接" title="set_state_on_moving 的直接链接" translate="no">​</a></h3>
 <p><code>set_state_on_moving(state: state.State) -&gt; None</code></p>
 <p>Apply a state to all moving commands without an explicit state.</p>
@@ -2331,7 +2751,12 @@ vector-outline and raster-fill portions.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>state</code></td><td><code>state.State</code></td><td>The state to apply.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>state</code></td><td><code>state.State</code></td><td>The state to apply.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="set_travel_speed"><code>set_travel_speed()</code><a href="#set_travel_speed" class="hash-link" aria-label="set_travel_speed 的直接链接" title="set_travel_speed 的直接链接" translate="no">​</a></h3>
 <p><code>set_travel_speed(speed: float) -&gt; None</code></p>
 <p>Set the travel (rapid) speed for subsequent commands.</p>
@@ -2355,7 +2780,12 @@ vector-outline and raster-fill portions.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>speed</code></td><td><code>float</code></td><td>Travel speed in units per second.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>speed</code></td><td><code>float</code></td><td>Travel speed in units per second.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="speed-1"><code>speed()</code><a href="#speed-1" class="hash-link" aria-label="speed-1 的直接链接" title="speed-1 的直接链接" translate="no">​</a></h3>
 <p><code>speed(idx: int) -&gt; int</code></p>
 <p>Get the speed value from a SetCutSpeed or SetTravelSpeed command.</p>
@@ -2381,7 +2811,12 @@ vector-outline and raster-fill portions.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>int</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>int</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="split_into_subpaths"><code>split_into_subpaths()</code><a href="#split_into_subpaths" class="hash-link" aria-label="split_into_subpaths 的直接链接" title="split_into_subpaths 的直接链接" translate="no">​</a></h3>
 <p><code>split_into_subpaths() -&gt; list[Ops]</code></p>
 <p>Split this Ops sequence into separate subpaths.</p>
@@ -2401,7 +2836,12 @@ vector-outline and raster-fill portions.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[Ops]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[Ops]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="state-1"><code>state()</code><a href="#state-1" class="hash-link" aria-label="state-1 的直接链接" title="state-1 的直接链接" translate="no">​</a></h3>
 <p><code>state(idx: int) -&gt; Optional[state.State]</code></p>
 <p>Get the machine state stored on a command (if available).</p>
@@ -2426,7 +2866,12 @@ vector-outline and raster-fill portions.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>Optional[state.State]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>Optional[state.State]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="state_at"><code>state_at()</code><a href="#state_at" class="hash-link" aria-label="state_at 的直接链接" title="state_at 的直接链接" translate="no">​</a></h3>
 <p><code>state_at(idx: int) -&gt; state.State</code></p>
 <p>Return the accumulated state at a given command index.</p>
@@ -2452,7 +2897,12 @@ vector-outline and raster-fill portions.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>The command index.</td></tr><tr><td><em>Returns</em></td><td><code>state.State</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>The command index.</td></tr><tr><td><em>Returns</em></td><td><code>state.State</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sub_ops"><code>sub_ops()</code><a href="#sub_ops" class="hash-link" aria-label="sub_ops 的直接链接" title="sub_ops 的直接链接" translate="no">​</a></h3>
 <p><code>sub_ops(indices: Sequence[int]) -&gt; Ops</code></p>
 <p>Extract a subset of commands by index.</p>
@@ -2477,7 +2927,12 @@ vector-outline and raster-fill portions.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>indices</code></td><td><code>Sequence[int]</code></td><td>List of command indices to extract.</td></tr><tr><td><em>Returns</em></td><td><code>Ops</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>indices</code></td><td><code>Sequence[int]</code></td><td>List of command indices to extract.</td></tr><tr><td><em>Returns</em></td><td><code>Ops</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="subpath_indices"><code>subpath_indices()</code><a href="#subpath_indices" class="hash-link" aria-label="subpath_indices 的直接链接" title="subpath_indices 的直接链接" translate="no">​</a></h3>
 <p><code>subpath_indices() -&gt; list[list[int]]</code></p>
 <p>Return index ranges for each subpath.</p>
@@ -2497,7 +2952,12 @@ vector-outline and raster-fill portions.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[list[int]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[list[int]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="subtract_regions"><code>subtract_regions()</code><a href="#subtract_regions" class="hash-link" aria-label="subtract_regions 的直接链接" title="subtract_regions 的直接链接" translate="no">​</a></h3>
 <p><code>subtract_regions(regions: Sequence[Sequence[tuple[float, float]]]) -&gt; None</code></p>
 <p>Subtract polygonal regions from the cutting paths.</p>
@@ -2521,7 +2981,12 @@ vector-outline and raster-fill portions.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>regions</code></td><td><code>Sequence[Sequence[tuple[float, float]]]</code></td><td>List of polygons, each being a list of <code>(x, y)</code> vertices.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>regions</code></td><td><code>Sequence[Sequence[tuple[float, float]]]</code></td><td>List of polygons, each being a list of <code>(x, y)</code> vertices.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n * m) time, O(n) space where m is the number of polygon vertices</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="to_dict"><code>to_dict()</code><a href="#to_dict" class="hash-link" aria-label="to_dict 的直接链接" title="to_dict 的直接链接" translate="no">​</a></h3>
 <p><code>to_dict() -&gt; dict</code></p>
 <p>Serialize this Ops sequence to a dict suitable for JSON export.</p>
@@ -2541,7 +3006,12 @@ vector-outline and raster-fill portions.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>dict</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>dict</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="to_geometry"><code>to_geometry()</code><a href="#to_geometry" class="hash-link" aria-label="to_geometry 的直接链接" title="to_geometry 的直接链接" translate="no">​</a></h3>
 <p><code>to_geometry() -&gt; geo.Geometry</code></p>
 <p>Convert this Ops sequence back into a Geometry.</p>
@@ -2561,7 +3031,12 @@ vector-outline and raster-fill portions.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>geo.Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>geo.Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="to_numpy_arrays"><code>to_numpy_arrays()</code><a href="#to_numpy_arrays" class="hash-link" aria-label="to_numpy_arrays 的直接链接" title="to_numpy_arrays 的直接链接" translate="no">​</a></h3>
 <p><code>to_numpy_arrays() -&gt; dict</code></p>
 <p>Serialize this Ops sequence to numpy arrays.</p>
@@ -2581,7 +3056,12 @@ vector-outline and raster-fill portions.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>dict</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>dict</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="transfer_command_from"><code>transfer_command_from()</code><a href="#transfer_command_from" class="hash-link" aria-label="transfer_command_from 的直接链接" title="transfer_command_from 的直接链接" translate="no">​</a></h3>
 <p><code>transfer_command_from(source: Ops, idx: int) -&gt; None</code></p>
 <p>Transfer (move) a single command from another Ops sequence into this one.</p>
@@ -2610,7 +3090,12 @@ vector-outline and raster-fill portions.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>source</code></td><td><code>Ops</code></td><td>The source Ops sequence.</td></tr><tr><td><code>idx</code></td><td><code>int</code></td><td>Index of the command to transfer.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>source</code></td><td><code>Ops</code></td><td>The source Ops sequence.</td></tr><tr><td><code>idx</code></td><td><code>int</code></td><td>Index of the command to transfer.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="transform"><code>transform()</code><a href="#transform" class="hash-link" aria-label="transform 的直接链接" title="transform 的直接链接" translate="no">​</a></h3>
 <p><code>transform(matrix: geo.types.TransformMatrix) -&gt; None</code></p>
 <p>Apply a 4x4 affine transformation matrix to all geometry.</p>
@@ -2635,7 +3120,12 @@ vector-outline and raster-fill portions.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>matrix</code></td><td><code>geo.types.TransformMatrix</code></td><td>A 4x4 affine transformation matrix.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>matrix</code></td><td><code>geo.types.TransformMatrix</code></td><td>A 4x4 affine transformation matrix.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="transform_layers"><code>transform_layers()</code><a href="#transform_layers" class="hash-link" aria-label="transform_layers 的直接链接" title="transform_layers 的直接链接" translate="no">​</a></h3>
 <p><code>transform_layers(callback: Any) -&gt; None</code></p>
 <p>Transform each layer by calling a Python callback with the layer UID and ops.</p>
@@ -2660,7 +3150,12 @@ vector-outline and raster-fill portions.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>callback</code></td><td><code>Any</code></td><td>A callable accepting <code>(layer_uid, layer_ops)</code>.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>callback</code></td><td><code>Any</code></td><td>A callable accepting <code>(layer_uid, layer_ops)</code>.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="transform_moving"><code>transform_moving()</code><a href="#transform_moving" class="hash-link" aria-label="transform_moving 的直接链接" title="transform_moving 的直接链接" translate="no">​</a></h3>
 <p><code>transform_moving(on_endpoint: Any, on_aux_point: Optional[Any] = None) -&gt; None</code></p>
 <p>Transform moving commands by calling Python callbacks on each endpoint and aux point.</p>
@@ -2691,7 +3186,12 @@ in-place. The optional <code>on_aux_point</code> callback receives control point
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>on_endpoint</code></td><td><code>Any</code></td><td>Callable <code>(endpoint, extra_axes) -&gt; None</code>.</td></tr><tr><td><code>on_aux_point</code></td><td><code>Optional[Any] = None</code></td><td>Optional callable <code>(point,) -&gt; None</code> for curve control points.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>on_endpoint</code></td><td><code>Any</code></td><td>Callable <code>(endpoint, extra_axes) -&gt; None</code>.</td></tr><tr><td><code>on_aux_point</code></td><td><code>Optional[Any] = None</code></td><td>Optional callable <code>(point,) -&gt; None</code> for curve control points.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="translate"><code>translate()</code><a href="#translate" class="hash-link" aria-label="translate 的直接链接" title="translate 的直接链接" translate="no">​</a></h3>
 <p><code>translate(dx: float, dy: float, dz: float = 0.0) -&gt; None</code></p>
 <p>Translate all moving commands by the given offset.</p>
@@ -2725,7 +3225,12 @@ in-place. The optional <code>on_aux_point</code> callback receives control point
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>dx</code></td><td><code>float</code></td><td>X offset.</td></tr><tr><td><code>dy</code></td><td><code>float</code></td><td>Y offset.</td></tr><tr><td><code>dz</code></td><td><code>float = 0.0</code></td><td>Z offset (default 0.0).</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>dx</code></td><td><code>float</code></td><td>X offset.</td></tr><tr><td><code>dy</code></td><td><code>float</code></td><td>Y offset.</td></tr><tr><td><code>dz</code></td><td><code>float = 0.0</code></td><td>Z offset (default 0.0).</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="translate_layers"><code>translate_layers()</code><a href="#translate_layers" class="hash-link" aria-label="translate_layers 的直接链接" title="translate_layers 的直接链接" translate="no">​</a></h3>
 <p><code>translate_layers(default_offset: tuple[float, float, float], layer_offsets: Optional[dict] = None) -&gt; None</code></p>
 <p>Translate each layer by its own offset, with a default fallback.</p>
@@ -2754,7 +3259,12 @@ in-place. The optional <code>on_aux_point</code> callback receives control point
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>default_offset</code></td><td><code>tuple[float, float, float]</code></td><td>The <code>(x, y, z)</code> offset for layers not listed in layer_offsets.</td></tr><tr><td><code>layer_offsets</code></td><td><code>Optional[dict] = None</code></td><td>Optional dict mapping layer UIDs to <code>(x, y, z)</code> offsets.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>default_offset</code></td><td><code>tuple[float, float, float]</code></td><td>The <code>(x, y, z)</code> offset for layers not listed in layer_offsets.</td></tr><tr><td><code>layer_offsets</code></td><td><code>Optional[dict] = None</code></td><td>Optional dict mapping layer UIDs to <code>(x, y, z)</code> offsets.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="without_state"><code>without_state()</code><a href="#without_state" class="hash-link" aria-label="without_state 的直接链接" title="without_state 的直接链接" translate="no">​</a></h3>
 <p><code>without_state() -&gt; Ops</code></p>
 <p>Return a copy with all state commands removed.</p>
@@ -2774,7 +3284,12 @@ in-place. The optional <code>on_aux_point</code> callback receives control point
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Ops</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Ops</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="workpiece_end"><code>workpiece_end()</code><a href="#workpiece_end" class="hash-link" aria-label="workpiece_end 的直接链接" title="workpiece_end 的直接链接" translate="no">​</a></h3>
 <p><code>workpiece_end(workpiece_uid: str) -&gt; None</code></p>
 <p>Mark the end of a workpiece.</p>
@@ -2798,7 +3313,12 @@ in-place. The optional <code>on_aux_point</code> callback receives control point
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>workpiece_uid</code></td><td><code>str</code></td><td>The workpiece identifier.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>workpiece_uid</code></td><td><code>str</code></td><td>The workpiece identifier.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="workpiece_start"><code>workpiece_start()</code><a href="#workpiece_start" class="hash-link" aria-label="workpiece_start 的直接链接" title="workpiece_start 的直接链接" translate="no">​</a></h3>
 <p><code>workpiece_start(workpiece_uid: str) -&gt; None</code></p>
 <p>Mark the start of a workpiece.</p>
@@ -2822,7 +3342,12 @@ in-place. The optional <code>on_aux_point</code> callback receives control point
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>workpiece_uid</code></td><td><code>str</code></td><td>The workpiece identifier.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>workpiece_uid</code></td><td><code>str</code></td><td>The workpiece identifier.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="workpiece_uid-1"><code>workpiece_uid()</code><a href="#workpiece_uid-1" class="hash-link" aria-label="workpiece_uid-1 的直接链接" title="workpiece_uid-1 的直接链接" translate="no">​</a></h3>
 <p><code>workpiece_uid(idx: int) -&gt; str</code></p>
 <p>Get the workpiece UID from a WorkpieceStart or WorkpieceEnd command.</p>
@@ -2848,7 +3373,12 @@ in-place. The optional <code>on_aux_point</code> callback receives control point
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>str</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>idx</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>str</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="opssection">OpsSection<a href="#opssection" class="hash-link" aria-label="OpsSection 的直接链接" title="OpsSection 的直接链接" translate="no">​</a></h2>
 <p>A section of operations parsed into marker and content index groups.</p>
 <p>Produced by <strong>Ops.sections</strong> when splitting an Ops sequence into logical sections based on

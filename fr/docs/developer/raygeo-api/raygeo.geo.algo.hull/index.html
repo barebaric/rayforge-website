@@ -16,7 +16,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/fr/assets/css/styles.faf0fd32.css">
-<script src="/fr/assets/js/runtime~main.ea502178.js" defer="defer"></script>
+<script src="/fr/assets/js/runtime~main.5561b61d.js" defer="defer"></script>
 <script src="/fr/assets/js/main.7267dd83.js" defer="defer"></script>
 </head>
 <body>
@@ -56,7 +56,12 @@ and Bézier gravity attraction. Coordinates are returned in image pixel space (y
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>boolean_image</code></td><td><code>numpy.ndarray</code></td><td>2D boolean array.</td></tr><tr><td><code>gravity</code></td><td><code>float = 0.1</code></td><td>Shrink-wrap factor 0.0-1.0. 0 gives convex hull.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry &amp;#124; None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>boolean_image</code></td><td><code>numpy.ndarray</code></td><td>2D boolean array.</td></tr><tr><td><code>gravity</code></td><td><code>float = 0.1</code></td><td>Shrink-wrap factor 0.0-1.0. 0 gives convex hull.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry &amp;#124; None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(w*h + n log n + n * g) time, O(n) space where w*h is the image size, n the number of contour points, and g the number of gravity iterations</td></tr></tbody></table>
 <p><img decoding="async" loading="lazy" alt="Concave vs convex hull" src="/fr/assets/images/concave-hull-6404d88a50cac52014e28b6c08115096.png" width="1800" height="1800" class="img_ev3q"></p>
 <p><em>Concave vs convex hull</em></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_enclosing_hull"><code>get_enclosing_hull()</code><a href="#get_enclosing_hull" class="hash-link" aria-label="Lien direct vers get_enclosing_hull" title="Lien direct vers get_enclosing_hull" translate="no">​</a></h3>
@@ -83,7 +88,12 @@ and Bézier gravity attraction. Coordinates are returned in image pixel space (y
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>boolean_image</code></td><td><code>numpy.ndarray</code></td><td>2D boolean array.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry &amp;#124; None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>boolean_image</code></td><td><code>numpy.ndarray</code></td><td>2D boolean array.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry &amp;#124; None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(w<em>h + n log n) time, O(n) space where w</em>h is the image size and n the number of contour points</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_hulls_from_image"><code>get_hulls_from_image()</code><a href="#get_hulls_from_image" class="hash-link" aria-label="Lien direct vers get_hulls_from_image" title="Lien direct vers get_hulls_from_image" translate="no">​</a></h3>
 <p><code>get_hulls_from_image(boolean_image: numpy.ndarray) -&gt; list[Geometry]</code></p>
 <p>Compute a separate convex hull for each distinct component.</p>
@@ -108,6 +118,11 @@ and Bézier gravity attraction. Coordinates are returned in image pixel space (y
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>boolean_image</code></td><td><code>numpy.ndarray</code></td><td>2D boolean array.</td></tr><tr><td><em>Returns</em></td><td><code>list[Geometry]</code></td><td></td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/raygeo-api/raygeo.geo.algo.hull.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Modifier cette page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Pages de documentation"><a class="pagination-nav__link pagination-nav__link--prev" href="/fr/docs/developer/raygeo-api/raygeo.geo.algo.fitting"><div class="pagination-nav__sublabel">Précédent</div><div class="pagination-nav__label">raygeo.geo.algo.fitting</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/fr/docs/developer/raygeo-api/raygeo.geo.algo.interp"><div class="pagination-nav__sublabel">Suivant</div><div class="pagination-nav__label">raygeo.geo.algo.interp</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#get_concave_hull" class="table-of-contents__link toc-highlight"><code>get_concave_hull()</code></a></li><li><a href="#get_enclosing_hull" class="table-of-contents__link toc-highlight"><code>get_enclosing_hull()</code></a></li><li><a href="#get_hulls_from_image" class="table-of-contents__link toc-highlight"><code>get_hulls_from_image()</code></a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>boolean_image</code></td><td><code>numpy.ndarray</code></td><td>2D boolean array.</td></tr><tr><td><em>Returns</em></td><td><code>list[Geometry]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(w<em>h + n log n) time, O(n) space where w</em>h is the image size and n the total number of contour points</td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/raygeo-api/raygeo.geo.algo.hull.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Modifier cette page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Pages de documentation"><a class="pagination-nav__link pagination-nav__link--prev" href="/fr/docs/developer/raygeo-api/raygeo.geo.algo.fitting"><div class="pagination-nav__sublabel">Précédent</div><div class="pagination-nav__label">raygeo.geo.algo.fitting</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/fr/docs/developer/raygeo-api/raygeo.geo.algo.interp"><div class="pagination-nav__sublabel">Suivant</div><div class="pagination-nav__label">raygeo.geo.algo.interp</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#get_concave_hull" class="table-of-contents__link toc-highlight"><code>get_concave_hull()</code></a></li><li><a href="#get_enclosing_hull" class="table-of-contents__link toc-highlight"><code>get_enclosing_hull()</code></a></li><li><a href="#get_hulls_from_image" class="table-of-contents__link toc-highlight"><code>get_hulls_from_image()</code></a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

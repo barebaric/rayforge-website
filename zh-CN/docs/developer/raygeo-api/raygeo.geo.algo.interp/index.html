@@ -16,7 +16,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.a82eb417.css">
-<script src="/zh-CN/assets/js/runtime~main.f4d7bcb7.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.15d699a8.js" defer="defer"></script>
 <script src="/zh-CN/assets/js/main.c36046a2.js" defer="defer"></script>
 </head>
 <body>
@@ -55,7 +55,12 @@ slicing along 3D line segments.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>start</code></td><td><code>tuple[float, float, float]</code></td><td>Starting point (x, y, z).</td></tr><tr><td><code>end</code></td><td><code>tuple[float, float, float]</code></td><td>Ending point (x, y, z).</td></tr><tr><td><em>Returns</em></td><td><code>tuple[float, float, float, float]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>start</code></td><td><code>tuple[float, float, float]</code></td><td>Starting point (x, y, z).</td></tr><tr><td><code>end</code></td><td><code>tuple[float, float, float]</code></td><td>Ending point (x, y, z).</td></tr><tr><td><em>Returns</em></td><td><code>tuple[float, float, float, float]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="compute_t_range"><code>compute_t_range()</code><a href="#compute_t_range" class="hash-link" aria-label="compute_t_range 的直接链接" title="compute_t_range 的直接链接" translate="no">​</a></h3>
 <p><code>compute_t_range(origin: tuple[float, float, float], new_start: tuple[float, float, float], new_end: tuple[float, float, float], delta: tuple[float, float, float, float]) -&gt; tuple[float, float]</code></p>
 <p>Compute parameter range (t_start, t_end) for a clipped sub-segment.</p>
@@ -95,7 +100,12 @@ slicing along 3D line segments.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>origin</code></td><td><code>tuple[float, float, float]</code></td><td>Start of original segment (x, y, z).</td></tr><tr><td><code>new_start</code></td><td><code>tuple[float, float, float]</code></td><td>Start of clipped sub-segment (x, y, z).</td></tr><tr><td><code>new_end</code></td><td><code>tuple[float, float, float]</code></td><td>End of clipped sub-segment (x, y, z).</td></tr><tr><td><code>delta</code></td><td><code>tuple[float, float, float, float]</code></td><td>Segment delta from compute_segment_delta.</td></tr><tr><td><em>Returns</em></td><td><code>tuple[float, float]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>origin</code></td><td><code>tuple[float, float, float]</code></td><td>Start of original segment (x, y, z).</td></tr><tr><td><code>new_start</code></td><td><code>tuple[float, float, float]</code></td><td>Start of clipped sub-segment (x, y, z).</td></tr><tr><td><code>new_end</code></td><td><code>tuple[float, float, float]</code></td><td>End of clipped sub-segment (x, y, z).</td></tr><tr><td><code>delta</code></td><td><code>tuple[float, float, float, float]</code></td><td>Segment delta from compute_segment_delta.</td></tr><tr><td><em>Returns</em></td><td><code>tuple[float, float]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="project_t_along_segment"><code>project_t_along_segment()</code><a href="#project_t_along_segment" class="hash-link" aria-label="project_t_along_segment 的直接链接" title="project_t_along_segment 的直接链接" translate="no">​</a></h3>
 <p><code>project_t_along_segment(origin: tuple[float, float, float], point: tuple[float, float, float], delta: tuple[float, float, float, float]) -&gt; float</code></p>
 <p>Project a point onto a line segment, returning t in [0, 1].</p>
@@ -130,7 +140,12 @@ slicing along 3D line segments.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>origin</code></td><td><code>tuple[float, float, float]</code></td><td>Start of segment (x, y, z).</td></tr><tr><td><code>point</code></td><td><code>tuple[float, float, float]</code></td><td>Point to project (x, y, z).</td></tr><tr><td><code>delta</code></td><td><code>tuple[float, float, float, float]</code></td><td>Segment delta from compute_segment_delta.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>origin</code></td><td><code>tuple[float, float, float]</code></td><td>Start of segment (x, y, z).</td></tr><tr><td><code>point</code></td><td><code>tuple[float, float, float]</code></td><td>Point to project (x, y, z).</td></tr><tr><td><code>delta</code></td><td><code>tuple[float, float, float, float]</code></td><td>Segment delta from compute_segment_delta.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="slice_scanline_data"><code>slice_scanline_data()</code><a href="#slice_scanline_data" class="hash-link" aria-label="slice_scanline_data 的直接链接" title="slice_scanline_data 的直接链接" translate="no">​</a></h3>
 <p><code>slice_scanline_data(data: list[int], t_start: float, t_end: float) -&gt; list[int]</code></p>
 <p>Slice a scanline power array by parameter range [t_start, t_end).</p>
@@ -165,7 +180,12 @@ slicing along 3D line segments.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>data</code></td><td><code>list[int]</code></td><td>Full scanline power values.</td></tr><tr><td><code>t_start</code></td><td><code>float</code></td><td>Start parameter in [0, 1].</td></tr><tr><td><code>t_end</code></td><td><code>float</code></td><td>End parameter in [0, 1].</td></tr><tr><td><em>Returns</em></td><td><code>list[int]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>data</code></td><td><code>list[int]</code></td><td>Full scanline power values.</td></tr><tr><td><code>t_start</code></td><td><code>float</code></td><td>Start parameter in [0, 1].</td></tr><tr><td><code>t_end</code></td><td><code>float</code></td><td>End parameter in [0, 1].</td></tr><tr><td><em>Returns</em></td><td><code>list[int]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space where n is the length of the data slice</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="solve_quadratic"><code>solve_quadratic()</code><a href="#solve_quadratic" class="hash-link" aria-label="solve_quadratic 的直接链接" title="solve_quadratic 的直接链接" translate="no">​</a></h3>
 <p><code>solve_quadratic(a: float, b: float, c: float) -&gt; tuple[float | None, float | None]</code></p>
 <p>Solve quadratic equation a x^2 + b x + c = 0.</p>
@@ -200,6 +220,11 @@ slicing along 3D line segments.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>a</code></td><td><code>float</code></td><td>Quadratic coefficient.</td></tr><tr><td><code>b</code></td><td><code>float</code></td><td>Linear coefficient.</td></tr><tr><td><code>c</code></td><td><code>float</code></td><td>Constant term.</td></tr><tr><td><em>Returns</em></td><td><code>tuple[float &amp;#124; None, float &amp;#124; None]</code></td><td></td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/raygeo-api/raygeo.geo.algo.interp.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>编辑此页</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文档页面导航"><a class="pagination-nav__link pagination-nav__link--prev" href="/zh-CN/docs/developer/raygeo-api/raygeo.geo.algo.hull"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">raygeo.geo.algo.hull</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/zh-CN/docs/developer/raygeo-api/raygeo.geo.algo.minkowski"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">raygeo.geo.algo.minkowski</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#compute_segment_delta" class="table-of-contents__link toc-highlight"><code>compute_segment_delta()</code></a></li><li><a href="#compute_t_range" class="table-of-contents__link toc-highlight"><code>compute_t_range()</code></a></li><li><a href="#project_t_along_segment" class="table-of-contents__link toc-highlight"><code>project_t_along_segment()</code></a></li><li><a href="#slice_scanline_data" class="table-of-contents__link toc-highlight"><code>slice_scanline_data()</code></a></li><li><a href="#solve_quadratic" class="table-of-contents__link toc-highlight"><code>solve_quadratic()</code></a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>a</code></td><td><code>float</code></td><td>Quadratic coefficient.</td></tr><tr><td><code>b</code></td><td><code>float</code></td><td>Linear coefficient.</td></tr><tr><td><code>c</code></td><td><code>float</code></td><td>Constant term.</td></tr><tr><td><em>Returns</em></td><td><code>tuple[float &amp;#124; None, float &amp;#124; None]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/raygeo-api/raygeo.geo.algo.interp.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>编辑此页</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文档页面导航"><a class="pagination-nav__link pagination-nav__link--prev" href="/zh-CN/docs/developer/raygeo-api/raygeo.geo.algo.hull"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">raygeo.geo.algo.hull</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/zh-CN/docs/developer/raygeo-api/raygeo.geo.algo.minkowski"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">raygeo.geo.algo.minkowski</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#compute_segment_delta" class="table-of-contents__link toc-highlight"><code>compute_segment_delta()</code></a></li><li><a href="#compute_t_range" class="table-of-contents__link toc-highlight"><code>compute_t_range()</code></a></li><li><a href="#project_t_along_segment" class="table-of-contents__link toc-highlight"><code>project_t_along_segment()</code></a></li><li><a href="#slice_scanline_data" class="table-of-contents__link toc-highlight"><code>slice_scanline_data()</code></a></li><li><a href="#solve_quadratic" class="table-of-contents__link toc-highlight"><code>solve_quadratic()</code></a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

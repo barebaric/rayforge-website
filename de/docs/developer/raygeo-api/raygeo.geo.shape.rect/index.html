@@ -16,7 +16,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/de/assets/css/styles.a82eb417.css">
-<script src="/de/assets/js/runtime~main.9a361354.js" defer="defer"></script>
+<script src="/de/assets/js/runtime~main.bc96992e.js" defer="defer"></script>
 <script src="/de/assets/js/main.29801942.js" defer="defer"></script>
 </head>
 <body>
@@ -57,7 +57,12 @@ geometries.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>r1</code></td><td><code>types.Rect</code></td><td>First rectangle (x_min, y_min, x_max, y_max).</td></tr><tr><td><code>r2</code></td><td><code>types.Rect</code></td><td>Second rectangle (x_min, y_min, x_max, y_max).</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>r1</code></td><td><code>types.Rect</code></td><td>First rectangle (x_min, y_min, x_max, y_max).</td></tr><tr><td><code>r2</code></td><td><code>types.Rect</code></td><td>Second rectangle (x_min, y_min, x_max, y_max).</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="does_rect_contain_rect"><code>does_rect_contain_rect()</code><a href="#does_rect_contain_rect" class="hash-link" aria-label="Direkter Link zur does_rect_contain_rect" title="Direkter Link zur does_rect_contain_rect" translate="no">​</a></h3>
 <p><code>does_rect_contain_rect(outer: types.Rect, inner: types.Rect) -&gt; bool</code></p>
 <p>Check if one rectangle contains another.</p>
@@ -87,7 +92,12 @@ geometries.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>outer</code></td><td><code>types.Rect</code></td><td>Outer rectangle (x_min, y_min, x_max, y_max).</td></tr><tr><td><code>inner</code></td><td><code>types.Rect</code></td><td>Inner rectangle (x_min, y_min, x_max, y_max).</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>outer</code></td><td><code>types.Rect</code></td><td>Outer rectangle (x_min, y_min, x_max, y_max).</td></tr><tr><td><code>inner</code></td><td><code>types.Rect</code></td><td>Inner rectangle (x_min, y_min, x_max, y_max).</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="does_rect_intersect_rect"><code>does_rect_intersect_rect()</code><a href="#does_rect_intersect_rect" class="hash-link" aria-label="Direkter Link zur does_rect_intersect_rect" title="Direkter Link zur does_rect_intersect_rect" translate="no">​</a></h3>
 <p><code>does_rect_intersect_rect(r1: types.Rect, r2: types.Rect) -&gt; bool</code></p>
 <p>Check if two rectangles intersect.</p>
@@ -117,7 +127,12 @@ geometries.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>r1</code></td><td><code>types.Rect</code></td><td>First rectangle (x_min, y_min, x_max, y_max).</td></tr><tr><td><code>r2</code></td><td><code>types.Rect</code></td><td>Second rectangle (x_min, y_min, x_max, y_max).</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>r1</code></td><td><code>types.Rect</code></td><td>First rectangle (x_min, y_min, x_max, y_max).</td></tr><tr><td><code>r2</code></td><td><code>types.Rect</code></td><td>Second rectangle (x_min, y_min, x_max, y_max).</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_combined_rect"><code>get_combined_rect()</code><a href="#get_combined_rect" class="hash-link" aria-label="Direkter Link zur get_combined_rect" title="Direkter Link zur get_combined_rect" translate="no">​</a></h3>
 <p><code>get_combined_rect(geometries: list[Geometry]) -&gt; types.Rect</code></p>
 <p>Compute the union bounding box of multiple geometries.</p>
@@ -142,7 +157,12 @@ geometries.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>geometries</code></td><td><code>list[Geometry]</code></td><td>List of Geometry objects.</td></tr><tr><td><em>Returns</em></td><td><code>types.Rect</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>geometries</code></td><td><code>list[Geometry]</code></td><td>List of Geometry objects.</td></tr><tr><td><em>Returns</em></td><td><code>types.Rect</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space where n is the number of geometries</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="is_point_inside_rect"><code>is_point_inside_rect()</code><a href="#is_point_inside_rect" class="hash-link" aria-label="Direkter Link zur is_point_inside_rect" title="Direkter Link zur is_point_inside_rect" translate="no">​</a></h3>
 <p><code>is_point_inside_rect(point: types.Point, rect: types.Rect) -&gt; bool</code></p>
 <p>Check if a point is inside a rectangle.</p>
@@ -172,6 +192,11 @@ geometries.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>point</code></td><td><code>types.Point</code></td><td>Point (x, y) to test.</td></tr><tr><td><code>rect</code></td><td><code>types.Rect</code></td><td>Rectangle (x_min, y_min, x_max, y_max).</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/raygeo-api/raygeo.geo.shape.rect.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Diese Seite bearbeiten</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Dokumentation Seiten"><a class="pagination-nav__link pagination-nav__link--prev" href="/de/docs/developer/raygeo-api/raygeo.geo.shape.polygon"><div class="pagination-nav__sublabel">Zurück</div><div class="pagination-nav__label">raygeo.geo.shape.polygon</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/de/docs/developer/raygeo-api/raygeo.geo.types"><div class="pagination-nav__sublabel">Weiter</div><div class="pagination-nav__label">raygeo.geo.types</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#do_rects_intersect" class="table-of-contents__link toc-highlight"><code>do_rects_intersect()</code></a></li><li><a href="#does_rect_contain_rect" class="table-of-contents__link toc-highlight"><code>does_rect_contain_rect()</code></a></li><li><a href="#does_rect_intersect_rect" class="table-of-contents__link toc-highlight"><code>does_rect_intersect_rect()</code></a></li><li><a href="#get_combined_rect" class="table-of-contents__link toc-highlight"><code>get_combined_rect()</code></a></li><li><a href="#is_point_inside_rect" class="table-of-contents__link toc-highlight"><code>is_point_inside_rect()</code></a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>point</code></td><td><code>types.Point</code></td><td>Point (x, y) to test.</td></tr><tr><td><code>rect</code></td><td><code>types.Rect</code></td><td>Rectangle (x_min, y_min, x_max, y_max).</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/raygeo-api/raygeo.geo.shape.rect.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Diese Seite bearbeiten</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Dokumentation Seiten"><a class="pagination-nav__link pagination-nav__link--prev" href="/de/docs/developer/raygeo-api/raygeo.geo.shape.polygon"><div class="pagination-nav__sublabel">Zurück</div><div class="pagination-nav__label">raygeo.geo.shape.polygon</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/de/docs/developer/raygeo-api/raygeo.geo.types"><div class="pagination-nav__sublabel">Weiter</div><div class="pagination-nav__label">raygeo.geo.types</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#do_rects_intersect" class="table-of-contents__link toc-highlight"><code>do_rects_intersect()</code></a></li><li><a href="#does_rect_contain_rect" class="table-of-contents__link toc-highlight"><code>does_rect_contain_rect()</code></a></li><li><a href="#does_rect_intersect_rect" class="table-of-contents__link toc-highlight"><code>does_rect_intersect_rect()</code></a></li><li><a href="#get_combined_rect" class="table-of-contents__link toc-highlight"><code>get_combined_rect()</code></a></li><li><a href="#is_point_inside_rect" class="table-of-contents__link toc-highlight"><code>is_point_inside_rect()</code></a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

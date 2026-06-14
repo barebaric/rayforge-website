@@ -16,7 +16,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/fr/assets/css/styles.faf0fd32.css">
-<script src="/fr/assets/js/runtime~main.ea502178.js" defer="defer"></script>
+<script src="/fr/assets/js/runtime~main.5561b61d.js" defer="defer"></script>
 <script src="/fr/assets/js/main.7267dd83.js" defer="defer"></script>
 </head>
 <body>
@@ -106,7 +106,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>float</code></td><td>X coordinate.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>Y coordinate.</td></tr><tr><td><code>i</code></td><td><code>float = 0.0</code></td><td>I offset from current point to center.</td></tr><tr><td><code>j</code></td><td><code>float = 0.0</code></td><td>J offset from current point to center.</td></tr><tr><td><code>clockwise</code></td><td><code>bool = True</code></td><td>Whether the arc is clockwise.</td></tr><tr><td><code>z</code></td><td><code>float = 0.0</code></td><td>Z coordinate (default 0.0).</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>float</code></td><td>X coordinate.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>Y coordinate.</td></tr><tr><td><code>i</code></td><td><code>float = 0.0</code></td><td>I offset from current point to center.</td></tr><tr><td><code>j</code></td><td><code>float = 0.0</code></td><td>J offset from current point to center.</td></tr><tr><td><code>clockwise</code></td><td><code>bool = True</code></td><td>Whether the arc is clockwise.</td></tr><tr><td><code>z</code></td><td><code>float = 0.0</code></td><td>Z coordinate (default 0.0).</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="arc_to_as_bezier"><code>arc_to_as_bezier()</code><a href="#arc_to_as_bezier" class="hash-link" aria-label="Lien direct vers arc_to_as_bezier" title="Lien direct vers arc_to_as_bezier" translate="no">​</a></h3>
 <p><code>arc_to_as_bezier(x: float, y: float, i: float, j: float, clockwise: bool = True, z: float = 0.0) -&gt; Geometry</code></p>
 <p>Draw an arc, converting it to bezier curves.</p>
@@ -155,7 +160,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>float</code></td><td>End X coordinate.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>End Y coordinate.</td></tr><tr><td><code>i</code></td><td><code>float</code></td><td>I offset to center.</td></tr><tr><td><code>j</code></td><td><code>float</code></td><td>J offset to center.</td></tr><tr><td><code>clockwise</code></td><td><code>bool = True</code></td><td>Arc direction.</td></tr><tr><td><code>z</code></td><td><code>float = 0.0</code></td><td>End Z coordinate.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>float</code></td><td>End X coordinate.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>End Y coordinate.</td></tr><tr><td><code>i</code></td><td><code>float</code></td><td>I offset to center.</td></tr><tr><td><code>j</code></td><td><code>float</code></td><td>J offset to center.</td></tr><tr><td><code>clockwise</code></td><td><code>bool = True</code></td><td>Arc direction.</td></tr><tr><td><code>z</code></td><td><code>float = 0.0</code></td><td>End Z coordinate.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="area"><code>area()</code><a href="#area" class="hash-link" aria-label="Lien direct vers area" title="Lien direct vers area" translate="no">​</a></h3>
 <p><code>area() -&gt; float</code></p>
 <p>Return the signed area of the geometry.</p>
@@ -174,7 +184,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="bezier_to"><code>bezier_to()</code><a href="#bezier_to" class="hash-link" aria-label="Lien direct vers bezier_to" title="Lien direct vers bezier_to" translate="no">​</a></h3>
 <p><code>bezier_to(x: float, y: float, c1x: float, c1y: float, c2x: float, c2y: float, *, c1z: float = 0.0, c2z: float = 0.0, z: float = 0.0) -&gt; Geometry</code></p>
 <p>Draw a cubic bezier curve.</p>
@@ -238,7 +253,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>float</code></td><td>End X coordinate.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>End Y coordinate.</td></tr><tr><td><code>c1x</code></td><td><code>float</code></td><td>First control point X.</td></tr><tr><td><code>c1y</code></td><td><code>float</code></td><td>First control point Y.</td></tr><tr><td><code>c2x</code></td><td><code>float</code></td><td>Second control point X.</td></tr><tr><td><code>c2y</code></td><td><code>float</code></td><td>Second control point Y.</td></tr><tr><td><code>c1z</code></td><td><code>float</code></td><td>First control point Z (default 0.0).</td></tr><tr><td><code>c2z</code></td><td><code>float</code></td><td>Second control point Z (default 0.0).</td></tr><tr><td><code>z</code></td><td><code>float</code></td><td>End Z coordinate (default 0.0).</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>float</code></td><td>End X coordinate.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>End Y coordinate.</td></tr><tr><td><code>c1x</code></td><td><code>float</code></td><td>First control point X.</td></tr><tr><td><code>c1y</code></td><td><code>float</code></td><td>First control point Y.</td></tr><tr><td><code>c2x</code></td><td><code>float</code></td><td>Second control point X.</td></tr><tr><td><code>c2y</code></td><td><code>float</code></td><td>Second control point Y.</td></tr><tr><td><code>c1z</code></td><td><code>float</code></td><td>First control point Z (default 0.0).</td></tr><tr><td><code>c2z</code></td><td><code>float</code></td><td>Second control point Z (default 0.0).</td></tr><tr><td><code>z</code></td><td><code>float</code></td><td>End Z coordinate (default 0.0).</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cleanup"><code>cleanup()</code><a href="#cleanup" class="hash-link" aria-label="Lien direct vers cleanup" title="Lien direct vers cleanup" translate="no">​</a></h3>
 <p><code>cleanup(tolerance: float) -&gt; Geometry</code></p>
 <p>Remove duplicate segments from the geometry.</p>
@@ -262,7 +282,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>tolerance</code></td><td><code>float</code></td><td>Maximum deviation for equality.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>tolerance</code></td><td><code>float</code></td><td>Maximum deviation for equality.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n log n) average time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="clear"><code>clear()</code><a href="#clear" class="hash-link" aria-label="Lien direct vers clear" title="Lien direct vers clear" translate="no">​</a></h3>
 <p><code>clear() -&gt; Geometry</code></p>
 <p>Remove all commands from the geometry.</p>
@@ -281,7 +306,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="close_all_contours"><code>close_all_contours()</code><a href="#close_all_contours" class="hash-link" aria-label="Lien direct vers close_all_contours" title="Lien direct vers close_all_contours" translate="no">​</a></h3>
 <p><code>close_all_contours() -&gt; Geometry</code></p>
 <p>Close all open contours in the geometry.</p>
@@ -300,7 +330,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="close_gaps"><code>close_gaps()</code><a href="#close_gaps" class="hash-link" aria-label="Lien direct vers close_gaps" title="Lien direct vers close_gaps" translate="no">​</a></h3>
 <p><code>close_gaps(tolerance: Optional[float] = None) -&gt; Geometry</code></p>
 <p>Close gaps between sub-paths.</p>
@@ -324,7 +359,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>tolerance</code></td><td><code>Optional[float] = None</code></td><td>Max gap to close.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>tolerance</code></td><td><code>Optional[float] = None</code></td><td>Max gap to close.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="close_path"><code>close_path()</code><a href="#close_path" class="hash-link" aria-label="Lien direct vers close_path" title="Lien direct vers close_path" translate="no">​</a></h3>
 <p><code>close_path() -&gt; Geometry</code></p>
 <p>Close the current sub-path.</p>
@@ -343,7 +383,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="copy"><code>copy()</code><a href="#copy" class="hash-link" aria-label="Lien direct vers copy" title="Lien direct vers copy" translate="no">​</a></h3>
 <p><code>copy() -&gt; Geometry</code></p>
 <p>Return a deep copy of this geometry.</p>
@@ -362,7 +407,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="distance"><code>distance()</code><a href="#distance" class="hash-link" aria-label="Lien direct vers distance" title="Lien direct vers distance" translate="no">​</a></h3>
 <p><code>distance() -&gt; float</code></p>
 <p>Return the total path distance.</p>
@@ -381,7 +431,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="encloses"><code>encloses()</code><a href="#encloses" class="hash-link" aria-label="Lien direct vers encloses" title="Lien direct vers encloses" translate="no">​</a></h3>
 <p><code>encloses(other: Geometry) -&gt; bool</code></p>
 <p>Check if this geometry encloses another.</p>
@@ -405,7 +460,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>other</code></td><td><code>Geometry</code></td><td>The potentially enclosed geometry.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>other</code></td><td><code>Geometry</code></td><td>The potentially enclosed geometry.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n log n) average time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="extend"><code>extend()</code><a href="#extend" class="hash-link" aria-label="Lien direct vers extend" title="Lien direct vers extend" translate="no">​</a></h3>
 <p><code>extend(other: Geometry) -&gt; Geometry</code></p>
 <p>Append another geometry&#x27;s commands to this one.</p>
@@ -429,7 +489,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>other</code></td><td><code>Geometry</code></td><td>The geometry to append.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>other</code></td><td><code>Geometry</code></td><td>The geometry to append.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="filter"><code>filter()</code><a href="#filter" class="hash-link" aria-label="Lien direct vers filter" title="Lien direct vers filter" translate="no">​</a></h3>
 <p><code>filter(indices: set[int]) -&gt; Geometry</code></p>
 <p>Return a new Geometry containing only commands at the given indices.</p>
@@ -454,7 +519,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>indices</code></td><td><code>set[int]</code></td><td>Set of command indices to keep.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>indices</code></td><td><code>set[int]</code></td><td>Set of command indices to keep.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="filter_to_external_contours"><code>filter_to_external_contours()</code><a href="#filter_to_external_contours" class="hash-link" aria-label="Lien direct vers filter_to_external_contours" title="Lien direct vers filter_to_external_contours" translate="no">​</a></h3>
 <p><code>filter_to_external_contours() -&gt; Geometry</code></p>
 <p>Filter to only external (outermost) contours.</p>
@@ -473,7 +543,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n log n) average time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="find_closest_point"><code>find_closest_point()</code><a href="#find_closest_point" class="hash-link" aria-label="Lien direct vers find_closest_point" title="Lien direct vers find_closest_point" translate="no">​</a></h3>
 <p><code>find_closest_point(x: float, y: float) -&gt; Optional[tuple[int, float, tuple[float, float]]]</code></p>
 <p>Find the closest point on the path to (x, y).</p>
@@ -503,7 +578,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>float</code></td><td>X coordinate.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>Y coordinate.</td></tr><tr><td><em>Returns</em></td><td><code>Optional[tuple[int, float, tuple[float, float]]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>float</code></td><td>X coordinate.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>Y coordinate.</td></tr><tr><td><em>Returns</em></td><td><code>Optional[tuple[int, float, tuple[float, float]]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fit_arcs"><code>fit_arcs()</code><a href="#fit_arcs" class="hash-link" aria-label="Lien direct vers fit_arcs" title="Lien direct vers fit_arcs" translate="no">​</a></h3>
 <p><code>fit_arcs(tolerance: float) -&gt; Geometry</code></p>
 <p>Fit arcs only to the linearized geometry.</p>
@@ -527,7 +607,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>tolerance</code></td><td><code>float</code></td><td>Maximum deviation.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>tolerance</code></td><td><code>float</code></td><td>Maximum deviation.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n log n) average time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fit_curves"><code>fit_curves()</code><a href="#fit_curves" class="hash-link" aria-label="Lien direct vers fit_curves" title="Lien direct vers fit_curves" translate="no">​</a></h3>
 <p><code>fit_curves(tolerance: float, beziers: bool = True, arcs: bool = True, on_progress: Optional[Any] = None) -&gt; Geometry</code></p>
 <p>Fit curves (beziers and arcs) to the linearized geometry.</p>
@@ -566,7 +651,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>tolerance</code></td><td><code>float</code></td><td>Maximum deviation.</td></tr><tr><td><code>beziers</code></td><td><code>bool = True</code></td><td>Whether to fit bezier curves.</td></tr><tr><td><code>arcs</code></td><td><code>bool = True</code></td><td>Whether to fit arcs.</td></tr><tr><td><code>on_progress</code></td><td><code>Optional[Any] = None</code></td><td>Optional progress callback called with <code>(current, total)</code>.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>tolerance</code></td><td><code>float</code></td><td>Maximum deviation.</td></tr><tr><td><code>beziers</code></td><td><code>bool = True</code></td><td>Whether to fit bezier curves.</td></tr><tr><td><code>arcs</code></td><td><code>bool = True</code></td><td>Whether to fit arcs.</td></tr><tr><td><code>on_progress</code></td><td><code>Optional[Any] = None</code></td><td>Optional progress callback called with <code>(current, total)</code>.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n log n) average time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="flip_x"><code>flip_x()</code><a href="#flip_x" class="hash-link" aria-label="Lien direct vers flip_x" title="Lien direct vers flip_x" translate="no">​</a></h3>
 <p><code>flip_x() -&gt; Geometry</code></p>
 <p>Mirror the geometry along the X axis.</p>
@@ -585,7 +675,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="flip_y"><code>flip_y()</code><a href="#flip_y" class="hash-link" aria-label="Lien direct vers flip_y" title="Lien direct vers flip_y" translate="no">​</a></h3>
 <p><code>flip_y() -&gt; Geometry</code></p>
 <p>Mirror the geometry along the Y axis.</p>
@@ -604,7 +699,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="from_dict"><code>from_dict()</code><a href="#from_dict" class="hash-link" aria-label="Lien direct vers from_dict" title="Lien direct vers from_dict" translate="no">​</a></h3>
 <p><code>@classmethod from_dict(data: dict) -&gt; Geometry</code></p>
 <p>Create a Geometry from a dictionary.</p>
@@ -629,7 +729,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>data</code></td><td><code>dict</code></td><td>A dictionary as produced by</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>data</code></td><td><code>dict</code></td><td>A dictionary as produced by</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="from_points"><code>from_points()</code><a href="#from_points" class="hash-link" aria-label="Lien direct vers from_points" title="Lien direct vers from_points" translate="no">​</a></h3>
 <p><code>@classmethod from_points(points: Any, close: bool = True) -&gt; Geometry</code></p>
 <p>Create a Geometry from a sequence of points.</p>
@@ -659,7 +764,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>points</code></td><td><code>Any</code></td><td>A sequence of (x, y) or</td></tr><tr><td><code>close</code></td><td><code>bool = True</code></td><td>Whether to close the path.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>points</code></td><td><code>Any</code></td><td>A sequence of (x, y) or</td></tr><tr><td><code>close</code></td><td><code>bool = True</code></td><td>Whether to close the path.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_command_at"><code>get_command_at()</code><a href="#get_command_at" class="hash-link" aria-label="Lien direct vers get_command_at" title="Lien direct vers get_command_at" translate="no">​</a></h3>
 <p><code>get_command_at(index: int) -&gt; Optional[Any]</code></p>
 <p>Get the command at the given index as a typed command object.</p>
@@ -683,7 +793,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>index</code></td><td><code>int</code></td><td>Command index (negative returns None).</td></tr><tr><td><em>Returns</em></td><td><code>Optional[Any]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>index</code></td><td><code>int</code></td><td>Command index (negative returns None).</td></tr><tr><td><em>Returns</em></td><td><code>Optional[Any]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_last_point"><code>get_last_point()</code><a href="#get_last_point" class="hash-link" aria-label="Lien direct vers get_last_point" title="Lien direct vers get_last_point" translate="no">​</a></h3>
 <p><code>get_last_point() -&gt; tuple[float, float, float]</code></p>
 <p>Get the last point in the geometry.</p>
@@ -702,7 +817,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>tuple[float, float, float]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>tuple[float, float, float]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_outward_normal_at"><code>get_outward_normal_at()</code><a href="#get_outward_normal_at" class="hash-link" aria-label="Lien direct vers get_outward_normal_at" title="Lien direct vers get_outward_normal_at" translate="no">​</a></h3>
 <p><code>get_outward_normal_at(segment_index: int, t: float) -&gt; Optional[tuple[float, float]]</code></p>
 <p>Get the outward normal at parameter t on a segment.</p>
@@ -732,7 +852,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>segment_index</code></td><td><code>int</code></td><td>Index of the segment.</td></tr><tr><td><code>t</code></td><td><code>float</code></td><td>Parameter in [0, 1].</td></tr><tr><td><em>Returns</em></td><td><code>Optional[tuple[float, float]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>segment_index</code></td><td><code>int</code></td><td>Index of the segment.</td></tr><tr><td><code>t</code></td><td><code>float</code></td><td>Parameter in [0, 1].</td></tr><tr><td><em>Returns</em></td><td><code>Optional[tuple[float, float]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_point_at"><code>get_point_at()</code><a href="#get_point_at" class="hash-link" aria-label="Lien direct vers get_point_at" title="Lien direct vers get_point_at" translate="no">​</a></h3>
 <p><code>get_point_at(segment_index: int, t: float) -&gt; Optional[tuple[float, float, float]]</code></p>
 <p>Get the point at parameter t on a segment.</p>
@@ -762,7 +887,12 @@ smoothing, curve fitting, and Minkowski sums for toolpath generation.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>segment_index</code></td><td><code>int</code></td><td>Index of the segment.</td></tr><tr><td><code>t</code></td><td><code>float</code></td><td>Parameter in [0, 1].</td></tr><tr><td><em>Returns</em></td><td><code>Optional[tuple[float, float, float]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>segment_index</code></td><td><code>int</code></td><td>Index of the segment.</td></tr><tr><td><code>t</code></td><td><code>float</code></td><td>Parameter in [0, 1].</td></tr><tr><td><em>Returns</em></td><td><code>Optional[tuple[float, float, float]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_positions_at_distances"><code>get_positions_at_distances()</code><a href="#get_positions_at_distances" class="hash-link" aria-label="Lien direct vers get_positions_at_distances" title="Lien direct vers get_positions_at_distances" translate="no">​</a></h3>
 <p><code>get_positions_at_distances(distances: Sequence[float]) -&gt; list[tuple[int, float, tuple[float, float]]]</code></p>
 <p>Given a list of distances along the path, returns the corresponding (segment_index, t, point) for
@@ -789,7 +919,12 @@ each distance.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>distances</code></td><td><code>Sequence[float]</code></td><td>List of distances along the path.</td></tr><tr><td><em>Returns</em></td><td><code>list[tuple[int, float, tuple[float, float]]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>distances</code></td><td><code>Sequence[float]</code></td><td>List of distances along the path.</td></tr><tr><td><em>Returns</em></td><td><code>list[tuple[int, float, tuple[float, float]]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n + m) time, O(m) space where n is the number of segments and m the number of distances</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_tangent_at"><code>get_tangent_at()</code><a href="#get_tangent_at" class="hash-link" aria-label="Lien direct vers get_tangent_at" title="Lien direct vers get_tangent_at" translate="no">​</a></h3>
 <p><code>get_tangent_at(segment_index: int, t: float) -&gt; Optional[tuple[float, float]]</code></p>
 <p>Get the tangent vector at parameter t on a segment.</p>
@@ -819,7 +954,12 @@ each distance.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>segment_index</code></td><td><code>int</code></td><td>Index of the segment.</td></tr><tr><td><code>t</code></td><td><code>float</code></td><td>Parameter in [0, 1].</td></tr><tr><td><em>Returns</em></td><td><code>Optional[tuple[float, float]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>segment_index</code></td><td><code>int</code></td><td>Index of the segment.</td></tr><tr><td><code>t</code></td><td><code>float</code></td><td>Parameter in [0, 1].</td></tr><tr><td><em>Returns</em></td><td><code>Optional[tuple[float, float]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_typed_command_at"><code>get_typed_command_at()</code><a href="#get_typed_command_at" class="hash-link" aria-label="Lien direct vers get_typed_command_at" title="Lien direct vers get_typed_command_at" translate="no">​</a></h3>
 <p><code>get_typed_command_at(index: int) -&gt; Move | Line | Arc | Bezier | None</code></p>
 <p>Get the typed command at the given index.</p>
@@ -843,7 +983,12 @@ each distance.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>index</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>Move &amp;#124; Line &amp;#124; Arc &amp;#124; Bezier &amp;#124; None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>index</code></td><td><code>int</code></td><td>Command index.</td></tr><tr><td><em>Returns</em></td><td><code>Move &amp;#124; Line &amp;#124; Arc &amp;#124; Bezier &amp;#124; None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_valid_contours_data"><code>get_valid_contours_data()</code><a href="#get_valid_contours_data" class="hash-link" aria-label="Lien direct vers get_valid_contours_data" title="Lien direct vers get_valid_contours_data" translate="no">​</a></h3>
 <p><code>get_valid_contours_data() -&gt; list[dict]</code></p>
 <p>Get valid contour data from the geometry&#x27;s contours.</p>
@@ -863,7 +1008,12 @@ each distance.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[dict]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[dict]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="grow"><code>grow()</code><a href="#grow" class="hash-link" aria-label="Lien direct vers grow" title="Lien direct vers grow" translate="no">​</a></h3>
 <p><code>grow(amount: float) -&gt; Geometry</code></p>
 <p>Offset (grow/shrink) the geometry by the given amount.</p>
@@ -887,7 +1037,12 @@ each distance.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>amount</code></td><td><code>float</code></td><td>Positive to grow, negative to shrink.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>amount</code></td><td><code>float</code></td><td>Positive to grow, negative to shrink.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n log n) average time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="has_self_intersections"><code>has_self_intersections()</code><a href="#has_self_intersections" class="hash-link" aria-label="Lien direct vers has_self_intersections" title="Lien direct vers has_self_intersections" translate="no">​</a></h3>
 <p><code>has_self_intersections(fail_on_t_junction: bool = False) -&gt; bool</code></p>
 <p>Check if the geometry has self-intersections.</p>
@@ -911,7 +1066,12 @@ each distance.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>fail_on_t_junction</code></td><td><code>bool = False</code></td><td>Whether to fail on T-junctions.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>fail_on_t_junction</code></td><td><code>bool = False</code></td><td>Whether to fail on T-junctions.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n²) worst-case time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="intersects_with"><code>intersects_with()</code><a href="#intersects_with" class="hash-link" aria-label="Lien direct vers intersects_with" title="Lien direct vers intersects_with" translate="no">​</a></h3>
 <p><code>intersects_with(other: Geometry) -&gt; bool</code></p>
 <p>Check if this geometry intersects with another.</p>
@@ -935,7 +1095,12 @@ each distance.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>other</code></td><td><code>Geometry</code></td><td>The other geometry.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>other</code></td><td><code>Geometry</code></td><td>The other geometry.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n * m) worst-case time, O(1) space where n and m are the number of segments in each geometry</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="is_closed"><code>is_closed()</code><a href="#is_closed" class="hash-link" aria-label="Lien direct vers is_closed" title="Lien direct vers is_closed" translate="no">​</a></h3>
 <p><code>is_closed(tolerance: float = 1e-06) -&gt; bool</code></p>
 <p>Check if the geometry forms a closed path.</p>
@@ -959,7 +1124,12 @@ each distance.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>tolerance</code></td><td><code>float = 1e-06</code></td><td>Max gap between start and end point.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>tolerance</code></td><td><code>float = 1e-06</code></td><td>Max gap between start and end point.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="is_empty"><code>is_empty()</code><a href="#is_empty" class="hash-link" aria-label="Lien direct vers is_empty" title="Lien direct vers is_empty" translate="no">​</a></h3>
 <p><code>is_empty() -&gt; bool</code></p>
 <p>Check if the geometry has no commands.</p>
@@ -978,7 +1148,12 @@ each distance.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="iter_commands"><code>iter_commands()</code><a href="#iter_commands" class="hash-link" aria-label="Lien direct vers iter_commands" title="Lien direct vers iter_commands" translate="no">​</a></h3>
 <p><code>iter_commands() -&gt; list[Any]</code></p>
 <p>Iterate over all commands as typed command objects.</p>
@@ -997,7 +1172,12 @@ each distance.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[Any]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[Any]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="iter_typed_commands"><code>iter_typed_commands()</code><a href="#iter_typed_commands" class="hash-link" aria-label="Lien direct vers iter_typed_commands" title="Lien direct vers iter_typed_commands" translate="no">​</a></h3>
 <p><code>iter_typed_commands() -&gt; list[Move | Line | Arc | Bezier]</code></p>
 <p>Iterate over all commands as typed command objects.</p>
@@ -1016,7 +1196,12 @@ each distance.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[Move &amp;#124; Line &amp;#124; Arc &amp;#124; Bezier]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[Move &amp;#124; Line &amp;#124; Arc &amp;#124; Bezier]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="line_to"><code>line_to()</code><a href="#line_to" class="hash-link" aria-label="Lien direct vers line_to" title="Lien direct vers line_to" translate="no">​</a></h3>
 <p><code>line_to(x: float, y: float, z: float = 0.0) -&gt; Geometry</code></p>
 <p>Draw a line to the given coordinates.</p>
@@ -1050,7 +1235,12 @@ each distance.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>float</code></td><td>X coordinate.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>Y coordinate.</td></tr><tr><td><code>z</code></td><td><code>float = 0.0</code></td><td>Z coordinate (default 0.0).</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>float</code></td><td>X coordinate.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>Y coordinate.</td></tr><tr><td><code>z</code></td><td><code>float = 0.0</code></td><td>Z coordinate (default 0.0).</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="linearize"><code>linearize()</code><a href="#linearize" class="hash-link" aria-label="Lien direct vers linearize" title="Lien direct vers linearize" translate="no">​</a></h3>
 <p><code>linearize(tolerance: float) -&gt; Geometry</code></p>
 <p>Convert all curves to line segments.</p>
@@ -1074,7 +1264,12 @@ each distance.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>tolerance</code></td><td><code>float</code></td><td>Maximum deviation from curves.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>tolerance</code></td><td><code>float</code></td><td>Maximum deviation from curves.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="map_to_frame"><code>map_to_frame()</code><a href="#map_to_frame" class="hash-link" aria-label="Lien direct vers map_to_frame" title="Lien direct vers map_to_frame" translate="no">​</a></h3>
 <p><code>map_to_frame(origin: tuple[float, float], p_width: tuple[float, float], p_height: tuple[float, float], anchor_y: Optional[float] = None, stable_src_height: Optional[float] = None, anchor_x: Optional[float] = None, stable_src_width: Optional[float] = None) -&gt; Geometry</code></p>
 <p>Map the geometry into a rectangular frame.</p>
@@ -1128,7 +1323,12 @@ each distance.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>origin</code></td><td><code>tuple[float, float]</code></td><td>Frame origin (x, y).</td></tr><tr><td><code>p_width</code></td><td><code>tuple[float, float]</code></td><td>Frame width vector.</td></tr><tr><td><code>p_height</code></td><td><code>tuple[float, float]</code></td><td>Frame height vector.</td></tr><tr><td><code>anchor_y</code></td><td><code>Optional[float] = None</code></td><td>Y anchor position.</td></tr><tr><td><code>stable_src_height</code></td><td><code>Optional[float] = None</code></td><td>Stable source height for anchoring.</td></tr><tr><td><code>anchor_x</code></td><td><code>Optional[float] = None</code></td><td>X anchor position.</td></tr><tr><td><code>stable_src_width</code></td><td><code>Optional[float] = None</code></td><td>Stable source width for anchoring.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>origin</code></td><td><code>tuple[float, float]</code></td><td>Frame origin (x, y).</td></tr><tr><td><code>p_width</code></td><td><code>tuple[float, float]</code></td><td>Frame width vector.</td></tr><tr><td><code>p_height</code></td><td><code>tuple[float, float]</code></td><td>Frame height vector.</td></tr><tr><td><code>anchor_y</code></td><td><code>Optional[float] = None</code></td><td>Y anchor position.</td></tr><tr><td><code>stable_src_height</code></td><td><code>Optional[float] = None</code></td><td>Stable source height for anchoring.</td></tr><tr><td><code>anchor_x</code></td><td><code>Optional[float] = None</code></td><td>X anchor position.</td></tr><tr><td><code>stable_src_width</code></td><td><code>Optional[float] = None</code></td><td>Stable source width for anchoring.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="move_to"><code>move_to()</code><a href="#move_to" class="hash-link" aria-label="Lien direct vers move_to" title="Lien direct vers move_to" translate="no">​</a></h3>
 <p><code>move_to(x: float, y: float, z: float = 0.0) -&gt; Geometry</code></p>
 <p>Move the pen to the given coordinates.</p>
@@ -1162,7 +1362,12 @@ each distance.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>float</code></td><td>X coordinate.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>Y coordinate.</td></tr><tr><td><code>z</code></td><td><code>float = 0.0</code></td><td>Z coordinate (default 0.0).</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>float</code></td><td>X coordinate.</td></tr><tr><td><code>y</code></td><td><code>float</code></td><td>Y coordinate.</td></tr><tr><td><code>z</code></td><td><code>float = 0.0</code></td><td>Z coordinate (default 0.0).</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="normalize_winding_orders"><code>normalize_winding_orders()</code><a href="#normalize_winding_orders" class="hash-link" aria-label="Lien direct vers normalize_winding_orders" title="Lien direct vers normalize_winding_orders" translate="no">​</a></h3>
 <p><code>normalize_winding_orders() -&gt; Geometry</code></p>
 <p>Normalize winding orders (outer CCW, inner CW) of all contours.</p>
@@ -1181,7 +1386,12 @@ each distance.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n log n) average time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rect"><code>rect()</code><a href="#rect" class="hash-link" aria-label="Lien direct vers rect" title="Lien direct vers rect" translate="no">​</a></h3>
 <p><code>rect() -&gt; tuple[float, float, float, float]</code></p>
 <p>Return the bounding rectangle (x_min, y_min, x_max, y_max).</p>
@@ -1200,7 +1410,12 @@ each distance.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>tuple[float, float, float, float]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>tuple[float, float, float, float]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="remove_inner_edges"><code>remove_inner_edges()</code><a href="#remove_inner_edges" class="hash-link" aria-label="Lien direct vers remove_inner_edges" title="Lien direct vers remove_inner_edges" translate="no">​</a></h3>
 <p><code>remove_inner_edges() -&gt; Geometry</code></p>
 <p>Remove inner edges (shared between contours).</p>
@@ -1219,7 +1434,12 @@ each distance.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="reverse_contour"><code>reverse_contour()</code><a href="#reverse_contour" class="hash-link" aria-label="Lien direct vers reverse_contour" title="Lien direct vers reverse_contour" translate="no">​</a></h3>
 <p><code>reverse_contour() -&gt; Geometry</code></p>
 <p>Reverse the winding direction of all contours.</p>
@@ -1238,7 +1458,12 @@ each distance.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="segment_bounds"><code>segment_bounds()</code><a href="#segment_bounds" class="hash-link" aria-label="Lien direct vers segment_bounds" title="Lien direct vers segment_bounds" translate="no">​</a></h3>
 <p><code>segment_bounds(index: int) -&gt; Optional[tuple[float, float, float, float]]</code></p>
 <p>Return the bounding box of a single segment at the given index. Returns None for Move commands or if
@@ -1264,7 +1489,12 @@ the index is out of bounds.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>index</code></td><td><code>int</code></td><td>Segment index.</td></tr><tr><td><em>Returns</em></td><td><code>Optional[tuple[float, float, float, float]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>index</code></td><td><code>int</code></td><td>Segment index.</td></tr><tr><td><em>Returns</em></td><td><code>Optional[tuple[float, float, float, float]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="segments"><code>segments()</code><a href="#segments" class="hash-link" aria-label="Lien direct vers segments" title="Lien direct vers segments" translate="no">​</a></h3>
 <p><code>segments() -&gt; list[list[tuple[float, float, float]]]</code></p>
 <p>Return the geometry split into segments of connected commands.</p>
@@ -1283,7 +1513,12 @@ the index is out of bounds.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[list[tuple[float, float, float]]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[list[tuple[float, float, float]]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="segments_in_frame"><code>segments_in_frame()</code><a href="#segments_in_frame" class="hash-link" aria-label="Lien direct vers segments_in_frame" title="Lien direct vers segments_in_frame" translate="no">​</a></h3>
 <p><code>segments_in_frame(x1: float, y1: float, x2: float, y2: float) -&gt; list[int]</code></p>
 <p>Return indices of all segments whose bounding box intersects the given rectangle. Excludes Move
@@ -1324,7 +1559,12 @@ commands.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x1</code></td><td><code>float</code></td><td>First corner X.</td></tr><tr><td><code>y1</code></td><td><code>float</code></td><td>First corner Y.</td></tr><tr><td><code>x2</code></td><td><code>float</code></td><td>Second corner X.</td></tr><tr><td><code>y2</code></td><td><code>float</code></td><td>Second corner Y.</td></tr><tr><td><em>Returns</em></td><td><code>list[int]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x1</code></td><td><code>float</code></td><td>First corner X.</td></tr><tr><td><code>y1</code></td><td><code>float</code></td><td>First corner Y.</td></tr><tr><td><code>x2</code></td><td><code>float</code></td><td>Second corner X.</td></tr><tr><td><code>y2</code></td><td><code>float</code></td><td>Second corner Y.</td></tr><tr><td><em>Returns</em></td><td><code>list[int]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="simplify"><code>simplify()</code><a href="#simplify" class="hash-link" aria-label="Lien direct vers simplify" title="Lien direct vers simplify" translate="no">​</a></h3>
 <p><code>simplify(tolerance: float) -&gt; Geometry</code></p>
 <p>Simplify the geometry using Ramer-Douglas-Peucker.</p>
@@ -1348,7 +1588,12 @@ commands.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>tolerance</code></td><td><code>float</code></td><td>Maximum deviation from original.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>tolerance</code></td><td><code>float</code></td><td>Maximum deviation from original.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n log n) average time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="split_inner_and_outer_contours"><code>split_inner_and_outer_contours()</code><a href="#split_inner_and_outer_contours" class="hash-link" aria-label="Lien direct vers split_inner_and_outer_contours" title="Lien direct vers split_inner_and_outer_contours" translate="no">​</a></h3>
 <p><code>split_inner_and_outer_contours() -&gt; tuple[list[Geometry], list[Geometry]]</code></p>
 <p>Split contours into inner and outer groups.</p>
@@ -1367,7 +1612,12 @@ commands.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>tuple[list[Geometry], list[Geometry]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>tuple[list[Geometry], list[Geometry]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n log n) average time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="split_into_components"><code>split_into_components()</code><a href="#split_into_components" class="hash-link" aria-label="Lien direct vers split_into_components" title="Lien direct vers split_into_components" translate="no">​</a></h3>
 <p><code>split_into_components() -&gt; list[Geometry]</code></p>
 <p>Split the geometry into connected components.</p>
@@ -1386,7 +1636,12 @@ commands.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[Geometry]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[Geometry]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n log n) average time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="split_into_contours"><code>split_into_contours()</code><a href="#split_into_contours" class="hash-link" aria-label="Lien direct vers split_into_contours" title="Lien direct vers split_into_contours" translate="no">​</a></h3>
 <p><code>split_into_contours() -&gt; list[Geometry]</code></p>
 <p>Split the geometry into individual contours.</p>
@@ -1405,7 +1660,12 @@ commands.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[Geometry]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>list[Geometry]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="to_dict"><code>to_dict()</code><a href="#to_dict" class="hash-link" aria-label="Lien direct vers to_dict" title="Lien direct vers to_dict" translate="no">​</a></h3>
 <p><code>to_dict() -&gt; dict</code></p>
 <p>Serialize the geometry to a dictionary.</p>
@@ -1424,7 +1684,12 @@ commands.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>dict</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>dict</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="to_polygons"><code>to_polygons()</code><a href="#to_polygons" class="hash-link" aria-label="Lien direct vers to_polygons" title="Lien direct vers to_polygons" translate="no">​</a></h3>
 <p><code>to_polygons(tolerance: float = 0.01) -&gt; list[list[tuple[float, float]]]</code></p>
 <p>Convert the geometry to a list of polygons.</p>
@@ -1448,7 +1713,12 @@ commands.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>tolerance</code></td><td><code>float = 0.01</code></td><td>Max deviation for linearization.</td></tr><tr><td><em>Returns</em></td><td><code>list[list[tuple[float, float]]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>tolerance</code></td><td><code>float = 0.01</code></td><td>Max deviation for linearization.</td></tr><tr><td><em>Returns</em></td><td><code>list[list[tuple[float, float]]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="transform"><code>transform()</code><a href="#transform" class="hash-link" aria-label="Lien direct vers transform" title="Lien direct vers transform" translate="no">​</a></h3>
 <p><code>transform(matrix: types.TransformMatrix) -&gt; Geometry</code></p>
 <p>Apply a 4x4 affine transformation matrix.</p>
@@ -1474,7 +1744,12 @@ commands.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>matrix</code></td><td><code>types.TransformMatrix</code></td><td>A 4x4 affine transformation matrix.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>matrix</code></td><td><code>types.TransformMatrix</code></td><td>A 4x4 affine transformation matrix.</td></tr><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="upgrade_to_scalable"><code>upgrade_to_scalable()</code><a href="#upgrade_to_scalable" class="hash-link" aria-label="Lien direct vers upgrade_to_scalable" title="Lien direct vers upgrade_to_scalable" translate="no">​</a></h3>
 <p><code>upgrade_to_scalable() -&gt; Geometry</code></p>
 <p>Convert all arcs to bezier curves for uniform scaling.</p>
@@ -1493,7 +1768,12 @@ commands.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><em>Returns</em></td><td><code>Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="line">Line<a href="#line" class="hash-link" aria-label="Lien direct vers Line" title="Lien direct vers Line" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="end-2"><code>end</code><a href="#end-2" class="hash-link" aria-label="Lien direct vers end-2" title="Lien direct vers end-2" translate="no">​</a></h3>
 <p><code>end: tuple[float, float, float]</code></p>

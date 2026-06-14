@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/es/assets/css/styles.1d300cfe.css">
-<script src="/es/assets/js/runtime~main.7a092010.js" defer="defer"></script>
-<script src="/es/assets/js/main.5070aee5.js" defer="defer"></script>
+<script src="/es/assets/js/runtime~main.fbcad8c2.js" defer="defer"></script>
+<script src="/es/assets/js/main.75ea537f.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -57,67 +57,12 @@ arc deviation).</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>points</code></td><td><code>collections.abc.Sequence[types.Point3D]</code></td><td>Sequence of 3D points.</td></tr><tr><td><code>tolerance</code></td><td><code>float = 1e-06</code></td><td>Collinearity tolerance.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="create_arc_cmd"><code>create_arc_cmd()</code><a href="#create_arc_cmd" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
-<p><code>create_arc_cmd(end: types.Point3D, center: types.Point, start: types.Point3D) -&gt; geo.Arc</code></p>
-<p>Create an arc command.</p>
-<p><strong>Returns:</strong> An Arc command.</p>
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>end</code></td><td><code>types.Point3D</code></td><td>End point (x, y, z).</td></tr><tr><td><code>center</code></td><td><code>types.Point</code></td><td>Center offset (dx, dy).</td></tr><tr><td><code>start</code></td><td><code>types.Point3D</code></td><td>Start point (x, y, z).</td></tr><tr><td><em>Returns</em></td><td><code>geo.Arc</code></td><td></td></tr></tbody></table>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="create_line_cmd"><code>create_line_cmd()</code><a href="#create_line_cmd" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
-<p><code>create_line_cmd(end_point: types.Point3D) -&gt; geo.Line</code></p>
-<p>Create a line command from an end point.</p>
-<p><strong>Returns:</strong> A Line command.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>end_point</code></td><td><code>types.Point3D</code></td><td>End point (x, y, z).</td></tr><tr><td><em>Returns</em></td><td><code>geo.Line</code></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>points</code></td><td><code>collections.abc.Sequence[types.Point3D]</code></td><td>Sequence of 3D points.</td></tr><tr><td><code>tolerance</code></td><td><code>float = 1e-06</code></td><td>Collinearity tolerance.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fit_circle_to_3_points"><code>fit_circle_to_3_points()</code><a href="#fit_circle_to_3_points" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p><code>fit_circle_to_3_points(p1: types.Point2DOr3D, p2: types.Point2DOr3D, p3: types.Point2DOr3D) -&gt; Optional[tuple[types.Point, float]]</code></p>
 <p>Fit a circle to three points.</p>
@@ -152,7 +97,14 @@ arc deviation).</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p1</code></td><td><code>types.Point2DOr3D</code></td><td>First point (x, y) or (x, y, z).</td></tr><tr><td><code>p2</code></td><td><code>types.Point2DOr3D</code></td><td>Second point (x, y) or (x, y, z).</td></tr><tr><td><code>p3</code></td><td><code>types.Point2DOr3D</code></td><td>Third point (x, y) or (x, y, z).</td></tr><tr><td><em>Returns</em></td><td><code>Optional[tuple[types.Point, float]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p1</code></td><td><code>types.Point2DOr3D</code></td><td>First point (x, y) or (x, y, z).</td></tr><tr><td><code>p2</code></td><td><code>types.Point2DOr3D</code></td><td>Second point (x, y) or (x, y, z).</td></tr><tr><td><code>p3</code></td><td><code>types.Point2DOr3D</code></td><td>Third point (x, y) or (x, y, z).</td></tr><tr><td><em>Returns</em></td><td><code>Optional[tuple[types.Point, float]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
+<p><img decoding="async" loading="lazy" alt="Circle fitted to three points" src="/es/assets/images/fitting-3-points-1a043d169aab7013fea07255d70f226c.png" width="1050" height="1050" class="img_ev3q"></p>
+<p><em>Circle fitted to three points</em></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fit_circle_to_points"><code>fit_circle_to_points()</code><a href="#fit_circle_to_points" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p><code>fit_circle_to_points(points: collections.abc.Sequence[types.Point3D]) -&gt; Optional[tuple[types.Point, float, float]]</code></p>
 <p>Fit a circle to a set of points.</p>
@@ -177,7 +129,12 @@ arc deviation).</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>points</code></td><td><code>collections.abc.Sequence[types.Point3D]</code></td><td>Sequence of 3D points to fit.</td></tr><tr><td><em>Returns</em></td><td><code>Optional[tuple[types.Point, float, float]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>points</code></td><td><code>collections.abc.Sequence[types.Point3D]</code></td><td>Sequence of 3D points to fit.</td></tr><tr><td><em>Returns</em></td><td><code>Optional[tuple[types.Point, float, float]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <p><img decoding="async" loading="lazy" alt="Circle fitted to points" src="/es/assets/images/fitting-circle-c6bbb4fe6f2876af77cf24537dd12ab7.png" width="1050" height="1050" class="img_ev3q"></p>
 <p><em>Circle fitted to points</em></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fit_points_recursive"><code>fit_points_recursive()</code><a href="#fit_points_recursive" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
@@ -219,7 +176,12 @@ arc deviation).</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>points</code></td><td><code>collections.abc.Sequence[types.Point3D]</code></td><td>Sequence of 3D points to fit.</td></tr><tr><td><code>tolerance</code></td><td><code>float</code></td><td>Fitting tolerance.</td></tr><tr><td><code>start_idx</code></td><td><code>int</code></td><td>Start index in the points array.</td></tr><tr><td><code>end_idx</code></td><td><code>int</code></td><td>End index in the points array.</td></tr><tr><td><em>Returns</em></td><td><code>geo.Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>points</code></td><td><code>collections.abc.Sequence[types.Point3D]</code></td><td>Sequence of 3D points to fit.</td></tr><tr><td><code>tolerance</code></td><td><code>float</code></td><td>Fitting tolerance.</td></tr><tr><td><code>start_idx</code></td><td><code>int</code></td><td>Start index in the points array.</td></tr><tr><td><code>end_idx</code></td><td><code>int</code></td><td>End index in the points array.</td></tr><tr><td><em>Returns</em></td><td><code>geo.Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n log n) average time, O(n) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fit_points_with_primitives"><code>fit_points_with_primitives()</code><a href="#fit_points_with_primitives" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p><code>fit_points_with_primitives(points: collections.abc.Sequence[types.Point3D], tolerance: float) -&gt; geo.Geometry</code></p>
 <p>Fit a polyline of points with arc and line primitives.</p>
@@ -249,7 +211,12 @@ arc deviation).</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>points</code></td><td><code>collections.abc.Sequence[types.Point3D]</code></td><td>Sequence of 3D points to fit.</td></tr><tr><td><code>tolerance</code></td><td><code>float</code></td><td>Fitting tolerance.</td></tr><tr><td><em>Returns</em></td><td><code>geo.Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>points</code></td><td><code>collections.abc.Sequence[types.Point3D]</code></td><td>Sequence of 3D points to fit.</td></tr><tr><td><code>tolerance</code></td><td><code>float</code></td><td>Fitting tolerance.</td></tr><tr><td><em>Returns</em></td><td><code>geo.Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n log n) average time, O(n) space</td></tr></tbody></table>
 <p><img decoding="async" loading="lazy" alt="Fitted primitives" src="/es/assets/images/fitting-primitives-bf6ad284b33a4241a013e46c307197f0.png" width="2100" height="900" class="img_ev3q"></p>
 <p><em>Fitted primitives</em></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="flatten_to_points"><code>flatten_to_points()</code><a href="#flatten_to_points" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
@@ -281,7 +248,14 @@ arc deviation).</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>geometry</code></td><td><code>geo.Geometry</code></td><td>Geometry to flatten.</td></tr><tr><td><code>tolerance</code></td><td><code>float</code></td><td>Flattening tolerance.</td></tr><tr><td><em>Returns</em></td><td><code>list[list[types.Point3D]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>geometry</code></td><td><code>geo.Geometry</code></td><td>Geometry to flatten.</td></tr><tr><td><code>tolerance</code></td><td><code>float</code></td><td>Flattening tolerance.</td></tr><tr><td><em>Returns</em></td><td><code>list[list[types.Point3D]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n + m) time, O(m) space where n is the number of commands and m the number of output points</td></tr></tbody></table>
+<p><img decoding="async" loading="lazy" alt="Arc curve flattened to dense line segments" src="/es/assets/images/fitting-flatten-07ad664654219599e2fec9014ed2efc1.png" width="2100" height="900" class="img_ev3q"></p>
+<p><em>Arc curve flattened to dense line segments</em></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_polyline_arc_deviation"><code>get_polyline_arc_deviation()</code><a href="#get_polyline_arc_deviation" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p><code>get_polyline_arc_deviation(points: collections.abc.Sequence[types.Point3D], center: types.Point, radius: float) -&gt; float</code></p>
 <p>Get the maximum arc deviation for a set of points.</p>
@@ -316,7 +290,14 @@ arc deviation).</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>points</code></td><td><code>collections.abc.Sequence[types.Point3D]</code></td><td>Sequence of 3D points.</td></tr><tr><td><code>center</code></td><td><code>types.Point</code></td><td>Arc center (x, y).</td></tr><tr><td><code>radius</code></td><td><code>float</code></td><td>Arc radius.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>points</code></td><td><code>collections.abc.Sequence[types.Point3D]</code></td><td>Sequence of 3D points.</td></tr><tr><td><code>center</code></td><td><code>types.Point</code></td><td>Arc center (x, y).</td></tr><tr><td><code>radius</code></td><td><code>float</code></td><td>Arc radius.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
+<p><img decoding="async" loading="lazy" alt="Maximum deviation from a reference arc" src="/es/assets/images/fitting-arc-deviation-9a735296609241aeb167c6e2769f5b8f.png" width="1050" height="1050" class="img_ev3q"></p>
+<p><em>Maximum deviation from a reference arc</em></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_polyline_line_deviation"><code>get_polyline_line_deviation()</code><a href="#get_polyline_line_deviation" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p><code>get_polyline_line_deviation(points: collections.abc.Sequence[types.Point3D], start: int, end: int) -&gt; tuple[float, int]</code></p>
 <p>Get the maximum line deviation for a segment of a polyline.</p>
@@ -351,7 +332,14 @@ arc deviation).</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>points</code></td><td><code>collections.abc.Sequence[types.Point3D]</code></td><td>Sequence of 3D points.</td></tr><tr><td><code>start</code></td><td><code>int</code></td><td>Start index.</td></tr><tr><td><code>end</code></td><td><code>int</code></td><td>End index.</td></tr><tr><td><em>Returns</em></td><td><code>tuple[float, int]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>points</code></td><td><code>collections.abc.Sequence[types.Point3D]</code></td><td>Sequence of 3D points.</td></tr><tr><td><code>start</code></td><td><code>int</code></td><td>Start index.</td></tr><tr><td><code>end</code></td><td><code>int</code></td><td>End index.</td></tr><tr><td><em>Returns</em></td><td><code>tuple[float, int]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
+<p><img decoding="async" loading="lazy" alt="Maximum deviation from a chord" src="/es/assets/images/fitting-line-deviation-dda0899aab256e5dd885ca3ee6a8b73f.png" width="1200" height="750" class="img_ev3q"></p>
+<p><em>Maximum deviation from a chord</em></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="linearize_geometry"><code>linearize_geometry()</code><a href="#linearize_geometry" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p><code>linearize_geometry(geometry: geo.Geometry, tolerance: float) -&gt; geo.Geometry</code></p>
 <p>Linearize geometry data into line segments.</p>
@@ -381,7 +369,14 @@ arc deviation).</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>geometry</code></td><td><code>geo.Geometry</code></td><td>Geometry to linearize.</td></tr><tr><td><code>tolerance</code></td><td><code>float</code></td><td>Linearization tolerance.</td></tr><tr><td><em>Returns</em></td><td><code>geo.Geometry</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>geometry</code></td><td><code>geo.Geometry</code></td><td>Geometry to linearize.</td></tr><tr><td><code>tolerance</code></td><td><code>float</code></td><td>Linearization tolerance.</td></tr><tr><td><em>Returns</em></td><td><code>geo.Geometry</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n + m) time, O(m) space where n is the number of commands and m the number of output segments</td></tr></tbody></table>
+<p><img decoding="async" loading="lazy" alt="Arc curve linearized with RDP simplification" src="/es/assets/images/fitting-linearize-437f1fc82de486f0f90c0ffdc2263dc0.png" width="2100" height="900" class="img_ev3q"></p>
+<p><em>Arc curve linearized with RDP simplification</em></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="project_circle_center_to_bisector"><code>project_circle_center_to_bisector()</code><a href="#project_circle_center_to_bisector" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p><code>project_circle_center_to_bisector(p1: types.Point2DOr3D, p2: types.Point2DOr3D, center: types.Point) -&gt; types.Point</code></p>
 <p>Project a circle center onto the perpendicular bisector of two points.</p>
@@ -416,6 +411,13 @@ arc deviation).</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p1</code></td><td><code>types.Point2DOr3D</code></td><td>First point (x, y) or (x, y, z).</td></tr><tr><td><code>p2</code></td><td><code>types.Point2DOr3D</code></td><td>Second point (x, y) or (x, y, z).</td></tr><tr><td><code>center</code></td><td><code>types.Point</code></td><td>Circle center to project.</td></tr><tr><td><em>Returns</em></td><td><code>types.Point</code></td><td></td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/raygeo-api/raygeo.geo.algo.fitting.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Navegación de documentos"><a class="pagination-nav__link pagination-nav__link--prev" href="/es/docs/developer/raygeo-api/raygeo.geo.algo.clipping"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">raygeo.geo.algo.clipping</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/es/docs/developer/raygeo-api/raygeo.geo.algo.hull"><div class="pagination-nav__sublabel">Siguiente</div><div class="pagination-nav__label">raygeo.geo.algo.hull</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#are_points_collinear" class="table-of-contents__link toc-highlight"><code>are_points_collinear()</code></a></li><li><a href="#create_arc_cmd" class="table-of-contents__link toc-highlight"><code>create_arc_cmd()</code></a></li><li><a href="#create_line_cmd" class="table-of-contents__link toc-highlight"><code>create_line_cmd()</code></a></li><li><a href="#fit_circle_to_3_points" class="table-of-contents__link toc-highlight"><code>fit_circle_to_3_points()</code></a></li><li><a href="#fit_circle_to_points" class="table-of-contents__link toc-highlight"><code>fit_circle_to_points()</code></a></li><li><a href="#fit_points_recursive" class="table-of-contents__link toc-highlight"><code>fit_points_recursive()</code></a></li><li><a href="#fit_points_with_primitives" class="table-of-contents__link toc-highlight"><code>fit_points_with_primitives()</code></a></li><li><a href="#flatten_to_points" class="table-of-contents__link toc-highlight"><code>flatten_to_points()</code></a></li><li><a href="#get_polyline_arc_deviation" class="table-of-contents__link toc-highlight"><code>get_polyline_arc_deviation()</code></a></li><li><a href="#get_polyline_line_deviation" class="table-of-contents__link toc-highlight"><code>get_polyline_line_deviation()</code></a></li><li><a href="#linearize_geometry" class="table-of-contents__link toc-highlight"><code>linearize_geometry()</code></a></li><li><a href="#project_circle_center_to_bisector" class="table-of-contents__link toc-highlight"><code>project_circle_center_to_bisector()</code></a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p1</code></td><td><code>types.Point2DOr3D</code></td><td>First point (x, y) or (x, y, z).</td></tr><tr><td><code>p2</code></td><td><code>types.Point2DOr3D</code></td><td>Second point (x, y) or (x, y, z).</td></tr><tr><td><code>center</code></td><td><code>types.Point</code></td><td>Circle center to project.</td></tr><tr><td><em>Returns</em></td><td><code>types.Point</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
+<p><img decoding="async" loading="lazy" alt="Circle center projected onto the perpendicular bisector" src="/es/assets/images/fitting-project-bisector-77ed67c008993b17772df774df2b3c1e.png" width="1050" height="1050" class="img_ev3q"></p>
+<p><em>Circle center projected onto the perpendicular bisector</em></p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/raygeo-api/raygeo.geo.algo.fitting.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Navegación de documentos"><a class="pagination-nav__link pagination-nav__link--prev" href="/es/docs/developer/raygeo-api/raygeo.geo.algo.clipping"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">raygeo.geo.algo.clipping</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/es/docs/developer/raygeo-api/raygeo.geo.algo.hull"><div class="pagination-nav__sublabel">Siguiente</div><div class="pagination-nav__label">raygeo.geo.algo.hull</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#are_points_collinear" class="table-of-contents__link toc-highlight"><code>are_points_collinear()</code></a></li><li><a href="#fit_circle_to_3_points" class="table-of-contents__link toc-highlight"><code>fit_circle_to_3_points()</code></a></li><li><a href="#fit_circle_to_points" class="table-of-contents__link toc-highlight"><code>fit_circle_to_points()</code></a></li><li><a href="#fit_points_recursive" class="table-of-contents__link toc-highlight"><code>fit_points_recursive()</code></a></li><li><a href="#fit_points_with_primitives" class="table-of-contents__link toc-highlight"><code>fit_points_with_primitives()</code></a></li><li><a href="#flatten_to_points" class="table-of-contents__link toc-highlight"><code>flatten_to_points()</code></a></li><li><a href="#get_polyline_arc_deviation" class="table-of-contents__link toc-highlight"><code>get_polyline_arc_deviation()</code></a></li><li><a href="#get_polyline_line_deviation" class="table-of-contents__link toc-highlight"><code>get_polyline_line_deviation()</code></a></li><li><a href="#linearize_geometry" class="table-of-contents__link toc-highlight"><code>linearize_geometry()</code></a></li><li><a href="#project_circle_center_to_bisector" class="table-of-contents__link toc-highlight"><code>project_circle_center_to_bisector()</code></a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

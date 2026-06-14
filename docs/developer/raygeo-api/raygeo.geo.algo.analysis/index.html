@@ -16,7 +16,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.f02514bd.css">
-<script src="/assets/js/runtime~main.8f46c8fb.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.ddd1908e.js" defer="defer"></script>
 <script src="/assets/js/main.27307c37.js" defer="defer"></script>
 </head>
 <body>
@@ -52,7 +52,12 @@ computing subpath/geometry area, and determining path winding order.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>geometry</code></td><td><code>geo.Geometry</code></td><td>Geometry to compute area from.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>geometry</code></td><td><code>geo.Geometry</code></td><td>Geometry to compute area from.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_path_winding_order"><code>get_path_winding_order()</code><a href="#get_path_winding_order" class="hash-link" aria-label="Direct link to get_path_winding_order" title="Direct link to get_path_winding_order" translate="no">​</a></h3>
 <p><code>get_path_winding_order(geometry: geo.Geometry, start_cmd_index: int) -&gt; str</code></p>
 <p>Determine the winding order of a subpath.</p>
@@ -82,7 +87,12 @@ computing subpath/geometry area, and determining path winding order.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>geometry</code></td><td><code>geo.Geometry</code></td><td>Geometry to analyze.</td></tr><tr><td><code>start_cmd_index</code></td><td><code>int</code></td><td>Index of the starting command.</td></tr><tr><td><em>Returns</em></td><td><code>str</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>geometry</code></td><td><code>geo.Geometry</code></td><td>Geometry to analyze.</td></tr><tr><td><code>start_cmd_index</code></td><td><code>int</code></td><td>Index of the starting command.</td></tr><tr><td><em>Returns</em></td><td><code>str</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_subpath_area"><code>get_subpath_area()</code><a href="#get_subpath_area" class="hash-link" aria-label="Direct link to get_subpath_area" title="Direct link to get_subpath_area" translate="no">​</a></h3>
 <p><code>get_subpath_area(geometry: geo.Geometry, start_cmd_index: int) -&gt; float</code></p>
 <p>Compute the signed area of a subpath using the shoelace formula.</p>
@@ -113,7 +123,12 @@ computing subpath/geometry area, and determining path winding order.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>geometry</code></td><td><code>geo.Geometry</code></td><td>Geometry to compute area from.</td></tr><tr><td><code>start_cmd_index</code></td><td><code>int</code></td><td>Index of the starting command.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>geometry</code></td><td><code>geo.Geometry</code></td><td>Geometry to compute area from.</td></tr><tr><td><code>start_cmd_index</code></td><td><code>int</code></td><td>Index of the starting command.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_subpath_vertices"><code>get_subpath_vertices()</code><a href="#get_subpath_vertices" class="hash-link" aria-label="Direct link to get_subpath_vertices" title="Direct link to get_subpath_vertices" translate="no">​</a></h3>
 <p><code>get_subpath_vertices(geometry: geo.Geometry, start_cmd_index: int) -&gt; list[tuple[float, float]]</code></p>
 <p>Extract vertices from a subpath starting at the given command index.</p>
@@ -144,7 +159,12 @@ computing subpath/geometry area, and determining path winding order.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>geometry</code></td><td><code>geo.Geometry</code></td><td>Geometry to extract vertices from.</td></tr><tr><td><code>start_cmd_index</code></td><td><code>int</code></td><td>Index of the starting command.</td></tr><tr><td><em>Returns</em></td><td><code>list[tuple[float, float]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>geometry</code></td><td><code>geo.Geometry</code></td><td>Geometry to extract vertices from.</td></tr><tr><td><code>start_cmd_index</code></td><td><code>int</code></td><td>Index of the starting command.</td></tr><tr><td><em>Returns</em></td><td><code>list[tuple[float, float]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n + m) time, O(m) space where n is the number of commands and m the number of output vertices</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="remove_duplicates"><code>remove_duplicates()</code><a href="#remove_duplicates" class="hash-link" aria-label="Direct link to remove_duplicates" title="Direct link to remove_duplicates" translate="no">​</a></h3>
 <p><code>remove_duplicates(points: collections.abc.Sequence[types.Point]) -&gt; types.Polygon</code></p>
 <p>Remove duplicate points from a sequence.</p>
@@ -169,6 +189,11 @@ computing subpath/geometry area, and determining path winding order.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>points</code></td><td><code>collections.abc.Sequence[types.Point]</code></td><td>Sequence of (x, y) points.</td></tr><tr><td><em>Returns</em></td><td><code>types.Polygon</code></td><td></td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/raygeo-api/raygeo.geo.algo.analysis.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/developer/raygeo-api/raygeo.geo.algo"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">raygeo.geo.algo</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/developer/raygeo-api/raygeo.geo.algo.clipping"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">raygeo.geo.algo.clipping</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#get_area" class="table-of-contents__link toc-highlight"><code>get_area()</code></a></li><li><a href="#get_path_winding_order" class="table-of-contents__link toc-highlight"><code>get_path_winding_order()</code></a></li><li><a href="#get_subpath_area" class="table-of-contents__link toc-highlight"><code>get_subpath_area()</code></a></li><li><a href="#get_subpath_vertices" class="table-of-contents__link toc-highlight"><code>get_subpath_vertices()</code></a></li><li><a href="#remove_duplicates" class="table-of-contents__link toc-highlight"><code>remove_duplicates()</code></a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>points</code></td><td><code>collections.abc.Sequence[types.Point]</code></td><td>Sequence of (x, y) points.</td></tr><tr><td><em>Returns</em></td><td><code>types.Polygon</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(n) space</td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/raygeo-api/raygeo.geo.algo.analysis.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/developer/raygeo-api/raygeo.geo.algo"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">raygeo.geo.algo</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/developer/raygeo-api/raygeo.geo.algo.clipping"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">raygeo.geo.algo.clipping</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#get_area" class="table-of-contents__link toc-highlight"><code>get_area()</code></a></li><li><a href="#get_path_winding_order" class="table-of-contents__link toc-highlight"><code>get_path_winding_order()</code></a></li><li><a href="#get_subpath_area" class="table-of-contents__link toc-highlight"><code>get_subpath_area()</code></a></li><li><a href="#get_subpath_vertices" class="table-of-contents__link toc-highlight"><code>get_subpath_vertices()</code></a></li><li><a href="#remove_duplicates" class="table-of-contents__link toc-highlight"><code>remove_duplicates()</code></a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

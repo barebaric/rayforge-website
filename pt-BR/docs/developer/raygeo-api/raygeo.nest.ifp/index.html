@@ -16,7 +16,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/pt-BR/assets/css/styles.73ffe6d9.css">
-<script src="/pt-BR/assets/js/runtime~main.b3ec0b1d.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/runtime~main.9fdb73cf.js" defer="defer"></script>
 <script src="/pt-BR/assets/js/main.fb6a161d.js" defer="defer"></script>
 </head>
 <body>
@@ -56,7 +56,12 @@ part inside a bin.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>bin</code></td><td><code>collections.abc.Sequence[types.Point]</code></td><td>Bin polygon as (x, y) points.</td></tr><tr><td><code>part_neg</code></td><td><code>collections.abc.Sequence[types.Point]</code></td><td>Orbiting polygon negated as (x, y) points.</td></tr><tr><td><em>Returns</em></td><td><code>list[types.Polygon]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>bin</code></td><td><code>collections.abc.Sequence[types.Point]</code></td><td>Bin polygon as (x, y) points.</td></tr><tr><td><code>part_neg</code></td><td><code>collections.abc.Sequence[types.Point]</code></td><td>Orbiting polygon negated as (x, y) points.</td></tr><tr><td><em>Returns</em></td><td><code>list[types.Polygon]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n * m) where n, m = vertex counts.</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="inner_fit_polygon"><code>inner_fit_polygon()</code><a href="#inner_fit_polygon" class="hash-link" aria-label="Link direto para inner_fit_polygon" title="Link direto para inner_fit_polygon" translate="no">​</a></h3>
 <p><code>inner_fit_polygon(bin: collections.abc.Sequence[types.Point], part: collections.abc.Sequence[types.Point]) -&gt; list[types.Polygon]</code></p>
 <p>Compute the Inner-Fit Polygon (IFP) for a part inside a bin.</p>
@@ -86,7 +91,12 @@ part inside a bin.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>bin</code></td><td><code>collections.abc.Sequence[types.Point]</code></td><td>Bin polygon as (x, y) points.</td></tr><tr><td><code>part</code></td><td><code>collections.abc.Sequence[types.Point]</code></td><td>Part polygon as (x, y) points.</td></tr><tr><td><em>Returns</em></td><td><code>list[types.Polygon]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>bin</code></td><td><code>collections.abc.Sequence[types.Point]</code></td><td>Bin polygon as (x, y) points.</td></tr><tr><td><code>part</code></td><td><code>collections.abc.Sequence[types.Point]</code></td><td>Part polygon as (x, y) points.</td></tr><tr><td><em>Returns</em></td><td><code>list[types.Polygon]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n * m) where n, m = vertex counts of bin and part.</td></tr></tbody></table>
 <p><img decoding="async" loading="lazy" alt="Inner Fit Polygon showing valid placement region" src="/pt-BR/assets/images/inner-fit-polygon-aac94d1971fdf7cbb4642cc729b4fc88.png" width="1200" height="1200" class="img_ev3q"></p>
 <p><em>Inner Fit Polygon showing valid placement region</em></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sweep_hull_for_edge"><code>sweep_hull_for_edge()</code><a href="#sweep_hull_for_edge" class="hash-link" aria-label="Link direto para sweep_hull_for_edge" title="Link direto para sweep_hull_for_edge" translate="no">​</a></h3>
@@ -123,6 +133,11 @@ part inside a bin.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>First edge endpoint.</td></tr><tr><td><code>p2</code></td><td><code>types.Point</code></td><td>Second edge endpoint.</td></tr><tr><td><code>part_neg</code></td><td><code>collections.abc.Sequence[types.Point]</code></td><td>Orbiting polygon negated as (x, y) points.</td></tr><tr><td><em>Returns</em></td><td><code>types.Polygon</code></td><td></td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/raygeo-api/raygeo.nest.ifp.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Páginas de documentação"><a class="pagination-nav__link pagination-nav__link--prev" href="/pt-BR/docs/developer/raygeo-api/raygeo.nest.gravity"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">raygeo.nest.gravity</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/pt-BR/docs/developer/raygeo-api/raygeo.nest.nfp"><div class="pagination-nav__sublabel">Próximo</div><div class="pagination-nav__label">raygeo.nest.nfp</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#build_no_go_zones" class="table-of-contents__link toc-highlight"><code>build_no_go_zones()</code></a></li><li><a href="#inner_fit_polygon" class="table-of-contents__link toc-highlight"><code>inner_fit_polygon()</code></a></li><li><a href="#sweep_hull_for_edge" class="table-of-contents__link toc-highlight"><code>sweep_hull_for_edge()</code></a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>First edge endpoint.</td></tr><tr><td><code>p2</code></td><td><code>types.Point</code></td><td>Second edge endpoint.</td></tr><tr><td><code>part_neg</code></td><td><code>collections.abc.Sequence[types.Point]</code></td><td>Orbiting polygon negated as (x, y) points.</td></tr><tr><td><em>Returns</em></td><td><code>types.Polygon</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n log n) for convex hull computation.</td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/raygeo-api/raygeo.nest.ifp.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Páginas de documentação"><a class="pagination-nav__link pagination-nav__link--prev" href="/pt-BR/docs/developer/raygeo-api/raygeo.nest.gravity"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">raygeo.nest.gravity</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/pt-BR/docs/developer/raygeo-api/raygeo.nest.nfp"><div class="pagination-nav__sublabel">Próximo</div><div class="pagination-nav__label">raygeo.nest.nfp</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#build_no_go_zones" class="table-of-contents__link toc-highlight"><code>build_no_go_zones()</code></a></li><li><a href="#inner_fit_polygon" class="table-of-contents__link toc-highlight"><code>inner_fit_polygon()</code></a></li><li><a href="#sweep_hull_for_edge" class="table-of-contents__link toc-highlight"><code>sweep_hull_for_edge()</code></a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

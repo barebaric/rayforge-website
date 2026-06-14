@@ -16,7 +16,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.a82eb417.css">
-<script src="/uk/assets/js/runtime~main.8e75c65b.js" defer="defer"></script>
+<script src="/uk/assets/js/runtime~main.9ff888b1.js" defer="defer"></script>
 <script src="/uk/assets/js/main.fc66efae.js" defer="defer"></script>
 </head>
 <body>
@@ -73,7 +73,12 @@ quadratic form.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point</code></td><td>Start control point (x, y).</td></tr><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>First control point (x, y).</td></tr><tr><td><code>p2</code></td><td><code>types.Point</code></td><td>Second control point (x, y).</td></tr><tr><td><code>p3</code></td><td><code>types.Point</code></td><td>End control point (x, y).</td></tr><tr><td><code>rect</code></td><td><code>types.Rect</code></td><td>Clipping rectangle (x_min, y_min, x_max, y_max).</td></tr><tr><td><em>Returns</em></td><td><code>list[tuple[types.Point, types.Point, types.Point, types.Point]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point</code></td><td>Start control point (x, y).</td></tr><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>First control point (x, y).</td></tr><tr><td><code>p2</code></td><td><code>types.Point</code></td><td>Second control point (x, y).</td></tr><tr><td><code>p3</code></td><td><code>types.Point</code></td><td>End control point (x, y).</td></tr><tr><td><code>rect</code></td><td><code>types.Rect</code></td><td>Clipping rectangle (x_min, y_min, x_max, y_max).</td></tr><tr><td><em>Returns</em></td><td><code>list[tuple[types.Point, types.Point, types.Point, types.Point]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n)</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="convert_cubic_bezier_to_quadratic"><code>convert_cubic_bezier_to_quadratic()</code><a href="#convert_cubic_bezier_to_quadratic" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p><code>convert_cubic_bezier_to_quadratic(p0: types.Point, p1: types.Point, p2: types.Point, p3: types.Point) -&gt; tuple[types.Point, types.Point, types.Point]</code></p>
 <p>Convert a cubic bezier to a quadratic bezier.</p>
@@ -113,7 +118,12 @@ quadratic form.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point</code></td><td>Start control point (x, y).</td></tr><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>First control point (x, y).</td></tr><tr><td><code>p2</code></td><td><code>types.Point</code></td><td>Second control point (x, y).</td></tr><tr><td><code>p3</code></td><td><code>types.Point</code></td><td>End control point (x, y).</td></tr><tr><td><em>Returns</em></td><td><code>tuple[types.Point, types.Point, types.Point]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point</code></td><td>Start control point (x, y).</td></tr><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>First control point (x, y).</td></tr><tr><td><code>p2</code></td><td><code>types.Point</code></td><td>Second control point (x, y).</td></tr><tr><td><code>p3</code></td><td><code>types.Point</code></td><td>End control point (x, y).</td></tr><tr><td><em>Returns</em></td><td><code>tuple[types.Point, types.Point, types.Point]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1)</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="flatten_bezier"><code>flatten_bezier()</code><a href="#flatten_bezier" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p><code>flatten_bezier(p0: types.Point3D, p1: types.Point3D, p2: types.Point3D, p3: types.Point3D, tolerance: float, max_subdivisions: int, pts: list) -&gt; None</code></p>
 <p>Flatten a bezier curve into points.</p>
@@ -167,7 +177,12 @@ quadratic form.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point3D</code></td><td>Start control point (x, y, z).</td></tr><tr><td><code>p1</code></td><td><code>types.Point3D</code></td><td>First control point (x, y, z).</td></tr><tr><td><code>p2</code></td><td><code>types.Point3D</code></td><td>Second control point (x, y, z).</td></tr><tr><td><code>p3</code></td><td><code>types.Point3D</code></td><td>End control point (x, y, z).</td></tr><tr><td><code>tolerance</code></td><td><code>float</code></td><td>Flattening tolerance.</td></tr><tr><td><code>max_subdivisions</code></td><td><code>int</code></td><td>Maximum recursion depth.</td></tr><tr><td><code>pts</code></td><td><code>list</code></td><td>Output list to append points to.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point3D</code></td><td>Start control point (x, y, z).</td></tr><tr><td><code>p1</code></td><td><code>types.Point3D</code></td><td>First control point (x, y, z).</td></tr><tr><td><code>p2</code></td><td><code>types.Point3D</code></td><td>Second control point (x, y, z).</td></tr><tr><td><code>p3</code></td><td><code>types.Point3D</code></td><td>End control point (x, y, z).</td></tr><tr><td><code>tolerance</code></td><td><code>float</code></td><td>Flattening tolerance.</td></tr><tr><td><code>max_subdivisions</code></td><td><code>int</code></td><td>Maximum recursion depth.</td></tr><tr><td><code>pts</code></td><td><code>list</code></td><td>Output list to append points to.</td></tr><tr><td><em>Returns</em></td><td><code>None</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n)</td></tr></tbody></table>
 <p><img decoding="async" loading="lazy" alt="Bezier flattening via adaptive subdivision" src="/uk/assets/images/bezier-flatten-41f18d953003bdf7603157a554ae5574.png" width="3600" height="900" class="img_ev3q"></p>
 <p><em>Bezier flattening via adaptive subdivision</em></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_bezier_bounds"><code>get_bezier_bounds()</code><a href="#get_bezier_bounds" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
@@ -209,7 +224,12 @@ quadratic form.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point</code></td><td>Start control point (x, y).</td></tr><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>First control point (x, y).</td></tr><tr><td><code>p2</code></td><td><code>types.Point</code></td><td>Second control point (x, y).</td></tr><tr><td><code>p3</code></td><td><code>types.Point</code></td><td>End control point (x, y).</td></tr><tr><td><em>Returns</em></td><td><code>types.Rect</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point</code></td><td>Start control point (x, y).</td></tr><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>First control point (x, y).</td></tr><tr><td><code>p2</code></td><td><code>types.Point</code></td><td>Second control point (x, y).</td></tr><tr><td><code>p3</code></td><td><code>types.Point</code></td><td>End control point (x, y).</td></tr><tr><td><em>Returns</em></td><td><code>types.Rect</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1)</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_bezier_flatness_sq"><code>get_bezier_flatness_sq()</code><a href="#get_bezier_flatness_sq" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p><code>get_bezier_flatness_sq(a: types.Point3D, b: types.Point3D, c: types.Point3D, d: types.Point3D) -&gt; float</code></p>
 <p>Compute the flatness squared of a cubic bezier.</p>
@@ -249,8 +269,13 @@ quadratic form.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>a</code></td><td><code>types.Point3D</code></td><td>Start point (x, y, z).</td></tr><tr><td><code>b</code></td><td><code>types.Point3D</code></td><td>First control point (x, y, z).</td></tr><tr><td><code>c</code></td><td><code>types.Point3D</code></td><td>Second control point (x, y, z).</td></tr><tr><td><code>d</code></td><td><code>types.Point3D</code></td><td>End point (x, y, z).</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr></tbody></table>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_bezier_length"><code>get_bezier_length()</code><a href="#get_bezier_length" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме пос илання на заголовок" translate="no">​</a></h3>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>a</code></td><td><code>types.Point3D</code></td><td>Start point (x, y, z).</td></tr><tr><td><code>b</code></td><td><code>types.Point3D</code></td><td>First control point (x, y, z).</td></tr><tr><td><code>c</code></td><td><code>types.Point3D</code></td><td>Second control point (x, y, z).</td></tr><tr><td><code>d</code></td><td><code>types.Point3D</code></td><td>End point (x, y, z).</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1)</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_bezier_length"><code>get_bezier_length()</code><a href="#get_bezier_length" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p><code>get_bezier_length(p0: types.Point, c1: types.Point, c2: types.Point, p1: types.Point) -&gt; float</code></p>
 <p>Compute the arc length of a cubic Bezier curve.</p>
 <p><strong>Returns:</strong> Arc length.</p>
@@ -289,7 +314,12 @@ quadratic form.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point</code></td><td>Start point (x, y).</td></tr><tr><td><code>c1</code></td><td><code>types.Point</code></td><td>First control point (x, y).</td></tr><tr><td><code>c2</code></td><td><code>types.Point</code></td><td>Second control point (x, y).</td></tr><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>End point (x, y).</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point</code></td><td>Start point (x, y).</td></tr><tr><td><code>c1</code></td><td><code>types.Point</code></td><td>First control point (x, y).</td></tr><tr><td><code>c2</code></td><td><code>types.Point</code></td><td>Second control point (x, y).</td></tr><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>End point (x, y).</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n)</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_bezier_point_at"><code>get_bezier_point_at()</code><a href="#get_bezier_point_at" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p><code>get_bezier_point_at(p0: types.Point, p1: types.Point, p2: types.Point, p3: types.Point, t: float) -&gt; types.Point</code></p>
 <p>Get a point on a cubic bezier at parameter t.</p>
@@ -334,7 +364,12 @@ quadratic form.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point</code></td><td>Start control point (x, y).</td></tr><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>First control point (x, y).</td></tr><tr><td><code>p2</code></td><td><code>types.Point</code></td><td>Second control point (x, y).</td></tr><tr><td><code>p3</code></td><td><code>types.Point</code></td><td>End control point (x, y).</td></tr><tr><td><code>t</code></td><td><code>float</code></td><td>Parameter value (0..1).</td></tr><tr><td><em>Returns</em></td><td><code>types.Point</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point</code></td><td>Start control point (x, y).</td></tr><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>First control point (x, y).</td></tr><tr><td><code>p2</code></td><td><code>types.Point</code></td><td>Second control point (x, y).</td></tr><tr><td><code>p3</code></td><td><code>types.Point</code></td><td>End control point (x, y).</td></tr><tr><td><code>t</code></td><td><code>float</code></td><td>Parameter value (0..1).</td></tr><tr><td><em>Returns</em></td><td><code>types.Point</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1)</td></tr></tbody></table>
 <p><img decoding="async" loading="lazy" alt="Bezier point evaluation at parameter t" src="/uk/assets/images/bezier-point-at-f5e29fd840049989d9b4b6395ba0e332.png" width="1050" height="900" class="img_ev3q"></p>
 <p><em>Bezier point evaluation at parameter t</em></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_bezier_rect_intersections"><code>get_bezier_rect_intersections()</code><a href="#get_bezier_rect_intersections" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
@@ -381,7 +416,12 @@ quadratic form.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point</code></td><td>Start control point (x, y).</td></tr><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>First control point (x, y).</td></tr><tr><td><code>p2</code></td><td><code>types.Point</code></td><td>Second control point (x, y).</td></tr><tr><td><code>p3</code></td><td><code>types.Point</code></td><td>End control point (x, y).</td></tr><tr><td><code>rect</code></td><td><code>types.Rect</code></td><td>Rectangle (x_min, y_min, x_max, y_max).</td></tr><tr><td><em>Returns</em></td><td><code>list[float]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point</code></td><td>Start control point (x, y).</td></tr><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>First control point (x, y).</td></tr><tr><td><code>p2</code></td><td><code>types.Point</code></td><td>Second control point (x, y).</td></tr><tr><td><code>p3</code></td><td><code>types.Point</code></td><td>End control point (x, y).</td></tr><tr><td><code>rect</code></td><td><code>types.Rect</code></td><td>Rectangle (x_min, y_min, x_max, y_max).</td></tr><tr><td><em>Returns</em></td><td><code>list[float]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n)</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_perpendicular_dist_sq"><code>get_perpendicular_dist_sq()</code><a href="#get_perpendicular_dist_sq" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p><code>get_perpendicular_dist_sq(pt: types.Point3D, origin: types.Point3D, vx: float, vy: float, vz: float = 0, norm_sq: float = 0) -&gt; float</code></p>
 <p>Compute the perpendicular distance squared.</p>
@@ -431,7 +471,12 @@ quadratic form.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>pt</code></td><td><code>types.Point3D</code></td><td>Point to measure from.</td></tr><tr><td><code>origin</code></td><td><code>types.Point3D</code></td><td>Origin of the line.</td></tr><tr><td><code>vx</code></td><td><code>float</code></td><td>X component of line direction.</td></tr><tr><td><code>vy</code></td><td><code>float</code></td><td>Y component of line direction.</td></tr><tr><td><code>vz</code></td><td><code>float = 0</code></td><td>Z component of line direction.</td></tr><tr><td><code>norm_sq</code></td><td><code>float = 0</code></td><td>Precomputed squared norm (optional).</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>pt</code></td><td><code>types.Point3D</code></td><td>Point to measure from.</td></tr><tr><td><code>origin</code></td><td><code>types.Point3D</code></td><td>Origin of the line.</td></tr><tr><td><code>vx</code></td><td><code>float</code></td><td>X component of line direction.</td></tr><tr><td><code>vy</code></td><td><code>float</code></td><td>Y component of line direction.</td></tr><tr><td><code>vz</code></td><td><code>float = 0</code></td><td>Z component of line direction.</td></tr><tr><td><code>norm_sq</code></td><td><code>float = 0</code></td><td>Precomputed squared norm (optional).</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1)</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="is_bezier_flat"><code>is_bezier_flat()</code><a href="#is_bezier_flat" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p><code>is_bezier_flat(p0: types.Point, p1: types.Point, p2: types.Point, p3: types.Point, tolerance_sq: float) -&gt; bool</code></p>
 <p>Test whether a cubic bezier curve is flat enough to approximate with a line segment.</p>
@@ -479,7 +524,12 @@ checks the control point distances from the start point.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point</code></td><td>Start control point (x, y).</td></tr><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>First control point (x, y).</td></tr><tr><td><code>p2</code></td><td><code>types.Point</code></td><td>Second control point (x, y).</td></tr><tr><td><code>p3</code></td><td><code>types.Point</code></td><td>End control point (x, y).</td></tr><tr><td><code>tolerance_sq</code></td><td><code>float</code></td><td>Squared tolerance for flatness.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point</code></td><td>Start control point (x, y).</td></tr><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>First control point (x, y).</td></tr><tr><td><code>p2</code></td><td><code>types.Point</code></td><td>Second control point (x, y).</td></tr><tr><td><code>p3</code></td><td><code>types.Point</code></td><td>End control point (x, y).</td></tr><tr><td><code>tolerance_sq</code></td><td><code>float</code></td><td>Squared tolerance for flatness.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1)</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="is_bezier_inside_polygons"><code>is_bezier_inside_polygons()</code><a href="#is_bezier_inside_polygons" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p><code>is_bezier_inside_polygons(p0: types.Point, p1: types.Point, p2: types.Point, p3: types.Point, polygons: Any) -&gt; bool</code></p>
 <p>Check if a bezier curve is inside a set of polygons.</p>
@@ -524,7 +574,12 @@ checks the control point distances from the start point.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point</code></td><td>Start control point (x, y).</td></tr><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>First control point (x, y).</td></tr><tr><td><code>p2</code></td><td><code>types.Point</code></td><td>Second control point (x, y).</td></tr><tr><td><code>p3</code></td><td><code>types.Point</code></td><td>End control point (x, y).</td></tr><tr><td><code>polygons</code></td><td><code>Any</code></td><td>List of polygons to check against.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point</code></td><td>Start control point (x, y).</td></tr><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>First control point (x, y).</td></tr><tr><td><code>p2</code></td><td><code>types.Point</code></td><td>Second control point (x, y).</td></tr><tr><td><code>p3</code></td><td><code>types.Point</code></td><td>End control point (x, y).</td></tr><tr><td><code>polygons</code></td><td><code>Any</code></td><td>List of polygons to check against.</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n * m)</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="linearize_bezier"><code>linearize_bezier()</code><a href="#linearize_bezier" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p><code>linearize_bezier(p0: types.Point3D, p1: types.Point3D, p2: types.Point3D, p3: types.Point3D, num_steps: int) -&gt; list[tuple[types.Point3D, types.Point3D]]</code></p>
 <p>Linearize a bezier into line segments.</p>
@@ -569,7 +624,12 @@ checks the control point distances from the start point.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point3D</code></td><td>Start control point (x, y, z).</td></tr><tr><td><code>p1</code></td><td><code>types.Point3D</code></td><td>First control point (x, y, z).</td></tr><tr><td><code>p2</code></td><td><code>types.Point3D</code></td><td>Second control point (x, y, z).</td></tr><tr><td><code>p3</code></td><td><code>types.Point3D</code></td><td>End control point (x, y, z).</td></tr><tr><td><code>num_steps</code></td><td><code>int</code></td><td>Number of linearization steps.</td></tr><tr><td><em>Returns</em></td><td><code>list[tuple[types.Point3D, types.Point3D]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point3D</code></td><td>Start control point (x, y, z).</td></tr><tr><td><code>p1</code></td><td><code>types.Point3D</code></td><td>First control point (x, y, z).</td></tr><tr><td><code>p2</code></td><td><code>types.Point3D</code></td><td>Second control point (x, y, z).</td></tr><tr><td><code>p3</code></td><td><code>types.Point3D</code></td><td>End control point (x, y, z).</td></tr><tr><td><code>num_steps</code></td><td><code>int</code></td><td>Number of linearization steps.</td></tr><tr><td><em>Returns</em></td><td><code>list[tuple[types.Point3D, types.Point3D]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n)</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="linearize_bezier_adaptive"><code>linearize_bezier_adaptive()</code><a href="#linearize_bezier_adaptive" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p><code>linearize_bezier_adaptive(p0: types.Point, p1: types.Point, p2: types.Point, p3: types.Point, tolerance_sq: float, max_subdivisions: int = 20) -&gt; types.Polygon</code></p>
 <p>Adaptively linearize a bezier curve.</p>
@@ -619,7 +679,12 @@ checks the control point distances from the start point.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point</code></td><td>Start control point (x, y).</td></tr><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>First control point (x, y).</td></tr><tr><td><code>p2</code></td><td><code>types.Point</code></td><td>Second control point (x, y).</td></tr><tr><td><code>p3</code></td><td><code>types.Point</code></td><td>End control point (x, y).</td></tr><tr><td><code>tolerance_sq</code></td><td><code>float</code></td><td>Squared tolerance for subdivision.</td></tr><tr><td><code>max_subdivisions</code></td><td><code>int = 20</code></td><td>Maximum recursion depth.</td></tr><tr><td><em>Returns</em></td><td><code>types.Polygon</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point</code></td><td>Start control point (x, y).</td></tr><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>First control point (x, y).</td></tr><tr><td><code>p2</code></td><td><code>types.Point</code></td><td>Second control point (x, y).</td></tr><tr><td><code>p3</code></td><td><code>types.Point</code></td><td>End control point (x, y).</td></tr><tr><td><code>tolerance_sq</code></td><td><code>float</code></td><td>Squared tolerance for subdivision.</td></tr><tr><td><code>max_subdivisions</code></td><td><code>int = 20</code></td><td>Maximum recursion depth.</td></tr><tr><td><em>Returns</em></td><td><code>types.Polygon</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n)</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="linearize_bezier_segment"><code>linearize_bezier_segment()</code><a href="#linearize_bezier_segment" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p><code>linearize_bezier_segment(p0: types.Point3D, p1: types.Point3D, p2: types.Point3D, p3: types.Point3D, tolerance: float = 0.1) -&gt; list[types.Point3D]</code></p>
 <p>Linearize a single bezier segment.</p>
@@ -664,7 +729,12 @@ checks the control point distances from the start point.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point3D</code></td><td>Start control point (x, y, z).</td></tr><tr><td><code>p1</code></td><td><code>types.Point3D</code></td><td>First control point (x, y, z).</td></tr><tr><td><code>p2</code></td><td><code>types.Point3D</code></td><td>Second control point (x, y, z).</td></tr><tr><td><code>p3</code></td><td><code>types.Point3D</code></td><td>End control point (x, y, z).</td></tr><tr><td><code>tolerance</code></td><td><code>float = 0.1</code></td><td>Linearization tolerance.</td></tr><tr><td><em>Returns</em></td><td><code>list[types.Point3D]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point3D</code></td><td>Start control point (x, y, z).</td></tr><tr><td><code>p1</code></td><td><code>types.Point3D</code></td><td>First control point (x, y, z).</td></tr><tr><td><code>p2</code></td><td><code>types.Point3D</code></td><td>Second control point (x, y, z).</td></tr><tr><td><code>p3</code></td><td><code>types.Point3D</code></td><td>End control point (x, y, z).</td></tr><tr><td><code>tolerance</code></td><td><code>float = 0.1</code></td><td>Linearization tolerance.</td></tr><tr><td><em>Returns</em></td><td><code>list[types.Point3D]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n)</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="split_bezier"><code>split_bezier()</code><a href="#split_bezier" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p><code>split_bezier(p0: types.Point, p1: types.Point, p2: types.Point, p3: types.Point, t: float) -&gt; tuple[tuple[types.Point, types.Point, types.Point, types.Point], tuple[types.Point, types.Point, types.Point, types.Point]]</code></p>
 <p>Split a cubic bezier at parameter t.</p>
@@ -709,7 +779,12 @@ checks the control point distances from the start point.</p>
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point</code></td><td>Start control point (x, y).</td></tr><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>First control point (x, y).</td></tr><tr><td><code>p2</code></td><td><code>types.Point</code></td><td>Second control point (x, y).</td></tr><tr><td><code>p3</code></td><td><code>types.Point</code></td><td>End control point (x, y).</td></tr><tr><td><code>t</code></td><td><code>float</code></td><td>Split parameter (0..1).</td></tr><tr><td><em>Returns</em></td><td><code>tuple[tuple[types.Point, types.Point, types.Point, types.Point], tuple[types.Point, types.Point, types.Point, types.Point]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>p0</code></td><td><code>types.Point</code></td><td>Start control point (x, y).</td></tr><tr><td><code>p1</code></td><td><code>types.Point</code></td><td>First control point (x, y).</td></tr><tr><td><code>p2</code></td><td><code>types.Point</code></td><td>Second control point (x, y).</td></tr><tr><td><code>p3</code></td><td><code>types.Point</code></td><td>End control point (x, y).</td></tr><tr><td><code>t</code></td><td><code>float</code></td><td>Split parameter (0..1).</td></tr><tr><td><em>Returns</em></td><td><code>tuple[tuple[types.Point, types.Point, types.Point, types.Point], tuple[types.Point, types.Point, types.Point, types.Point]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1)</td></tr></tbody></table>
 <p><img decoding="async" loading="lazy" alt="Bezier split at parameter t" src="/uk/assets/images/bezier-split-0e62a9837d3b0c2f75affa0cb2294f24.png" width="2100" height="900" class="img_ev3q"></p>
 <p><em>Bezier split at parameter t</em></p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/raygeo-api/raygeo.geo.shape.bezier.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Редагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Навігація по документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/developer/raygeo-api/raygeo.geo.shape.arc"><div class="pagination-nav__sublabel">Назад</div><div class="pagination-nav__label">raygeo.geo.shape.arc</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/uk/docs/developer/raygeo-api/raygeo.geo.shape.circle"><div class="pagination-nav__sublabel">Далі</div><div class="pagination-nav__label">raygeo.geo.shape.circle</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#clip_bezier_with_rect" class="table-of-contents__link toc-highlight"><code>clip_bezier_with_rect()</code></a></li><li><a href="#convert_cubic_bezier_to_quadratic" class="table-of-contents__link toc-highlight"><code>convert_cubic_bezier_to_quadratic()</code></a></li><li><a href="#flatten_bezier" class="table-of-contents__link toc-highlight"><code>flatten_bezier()</code></a></li><li><a href="#get_bezier_bounds" class="table-of-contents__link toc-highlight"><code>get_bezier_bounds()</code></a></li><li><a href="#get_bezier_flatness_sq" class="table-of-contents__link toc-highlight"><code>get_bezier_flatness_sq()</code></a></li><li><a href="#get_bezier_length" class="table-of-contents__link toc-highlight"><code>get_bezier_length()</code></a></li><li><a href="#get_bezier_point_at" class="table-of-contents__link toc-highlight"><code>get_bezier_point_at()</code></a></li><li><a href="#get_bezier_rect_intersections" class="table-of-contents__link toc-highlight"><code>get_bezier_rect_intersections()</code></a></li><li><a href="#get_perpendicular_dist_sq" class="table-of-contents__link toc-highlight"><code>get_perpendicular_dist_sq()</code></a></li><li><a href="#is_bezier_flat" class="table-of-contents__link toc-highlight"><code>is_bezier_flat()</code></a></li><li><a href="#is_bezier_inside_polygons" class="table-of-contents__link toc-highlight"><code>is_bezier_inside_polygons()</code></a></li><li><a href="#linearize_bezier" class="table-of-contents__link toc-highlight"><code>linearize_bezier()</code></a></li><li><a href="#linearize_bezier_adaptive" class="table-of-contents__link toc-highlight"><code>linearize_bezier_adaptive()</code></a></li><li><a href="#linearize_bezier_segment" class="table-of-contents__link toc-highlight"><code>linearize_bezier_segment()</code></a></li><li><a href="#split_bezier" class="table-of-contents__link toc-highlight"><code>split_bezier()</code></a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>

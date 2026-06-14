@@ -16,7 +16,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/fr/assets/css/styles.faf0fd32.css">
-<script src="/fr/assets/js/runtime~main.ea502178.js" defer="defer"></script>
+<script src="/fr/assets/js/runtime~main.5561b61d.js" defer="defer"></script>
 <script src="/fr/assets/js/main.7267dd83.js" defer="defer"></script>
 </head>
 <body>
@@ -56,7 +56,12 @@ polygon / inner fit polygon calculations used in nesting and packing algorithms.
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>polygons</code></td><td><code>collections.abc.Sequence[collections.abc.Sequence[types.Point]]</code></td><td>List of polygons to scale.</td></tr><tr><td><code>max_int</code></td><td><code>int = 2147483647</code></td><td>Maximum integer value for Clipper.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>polygons</code></td><td><code>collections.abc.Sequence[collections.abc.Sequence[types.Point]]</code></td><td>List of polygons to scale.</td></tr><tr><td><code>max_int</code></td><td><code>int = 2147483647</code></td><td>Maximum integer value for Clipper.</td></tr><tr><td><em>Returns</em></td><td><code>float</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="convolve_point_sequences"><code>convolve_point_sequences()</code><a href="#convolve_point_sequences" class="hash-link" aria-label="Lien direct vers convolve_point_sequences" title="Lien direct vers convolve_point_sequences" translate="no">​</a></h3>
 <p><code>convolve_point_sequences(seq_a: collections.abc.Sequence[tuple[float, float]], seq_b: collections.abc.Sequence[tuple[float, float]]) -&gt; list[list[tuple[float, float]]]</code></p>
 <p>Convolve two sequences of points.</p>
@@ -86,7 +91,12 @@ polygon / inner fit polygon calculations used in nesting and packing algorithms.
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>seq_a</code></td><td><code>collections.abc.Sequence[tuple[float, float]]</code></td><td>First sequence of points.</td></tr><tr><td><code>seq_b</code></td><td><code>collections.abc.Sequence[tuple[float, float]]</code></td><td>Second sequence of points.</td></tr><tr><td><em>Returns</em></td><td><code>list[list[tuple[float, float]]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>seq_a</code></td><td><code>collections.abc.Sequence[tuple[float, float]]</code></td><td>First sequence of points.</td></tr><tr><td><code>seq_b</code></td><td><code>collections.abc.Sequence[tuple[float, float]]</code></td><td>Second sequence of points.</td></tr><tr><td><em>Returns</em></td><td><code>list[list[tuple[float, float]]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n _ m) time, O(n _ m) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="convolve_two_segments"><code>convolve_two_segments()</code><a href="#convolve_two_segments" class="hash-link" aria-label="Lien direct vers convolve_two_segments" title="Lien direct vers convolve_two_segments" translate="no">​</a></h3>
 <p><code>convolve_two_segments(a1: tuple[float, float], a2: tuple[float, float], b1: tuple[float, float], b2: tuple[float, float]) -&gt; list[tuple[float, float]]</code></p>
 <p>Convolve two line segments.</p>
@@ -126,7 +136,12 @@ polygon / inner fit polygon calculations used in nesting and packing algorithms.
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>a1</code></td><td><code>tuple[float, float]</code></td><td>Start point of segment A.</td></tr><tr><td><code>a2</code></td><td><code>tuple[float, float]</code></td><td>End point of segment A.</td></tr><tr><td><code>b1</code></td><td><code>tuple[float, float]</code></td><td>Start point of segment B.</td></tr><tr><td><code>b2</code></td><td><code>tuple[float, float]</code></td><td>End point of segment B.</td></tr><tr><td><em>Returns</em></td><td><code>list[tuple[float, float]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>a1</code></td><td><code>tuple[float, float]</code></td><td>Start point of segment A.</td></tr><tr><td><code>a2</code></td><td><code>tuple[float, float]</code></td><td>End point of segment A.</td></tr><tr><td><code>b1</code></td><td><code>tuple[float, float]</code></td><td>Start point of segment B.</td></tr><tr><td><code>b2</code></td><td><code>tuple[float, float]</code></td><td>End point of segment B.</td></tr><tr><td><em>Returns</em></td><td><code>list[tuple[float, float]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(1) time, O(1) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_inner_fit_polygon"><code>get_inner_fit_polygon()</code><a href="#get_inner_fit_polygon" class="hash-link" aria-label="Lien direct vers get_inner_fit_polygon" title="Lien direct vers get_inner_fit_polygon" translate="no">​</a></h3>
 <p><code>get_inner_fit_polygon(outer: collections.abc.Sequence[types.Point], inner: collections.abc.Sequence[types.Point]) -&gt; list[types.Polygon]</code></p>
 <p>Compute the inner fit polygon (no-fit polygon for nesting).</p>
@@ -156,7 +171,12 @@ polygon / inner fit polygon calculations used in nesting and packing algorithms.
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>outer</code></td><td><code>collections.abc.Sequence[types.Point]</code></td><td>Outer polygon as (x, y) points.</td></tr><tr><td><code>inner</code></td><td><code>collections.abc.Sequence[types.Point]</code></td><td>Inner polygon as (x, y) points.</td></tr><tr><td><em>Returns</em></td><td><code>list[types.Polygon]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>outer</code></td><td><code>collections.abc.Sequence[types.Point]</code></td><td>Outer polygon as (x, y) points.</td></tr><tr><td><code>inner</code></td><td><code>collections.abc.Sequence[types.Point]</code></td><td>Inner polygon as (x, y) points.</td></tr><tr><td><em>Returns</em></td><td><code>list[types.Polygon]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n * m) time, O(n + m) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_no_fit_polygon"><code>get_no_fit_polygon()</code><a href="#get_no_fit_polygon" class="hash-link" aria-label="Lien direct vers get_no_fit_polygon" title="Lien direct vers get_no_fit_polygon" translate="no">​</a></h3>
 <p><code>get_no_fit_polygon(subject: collections.abc.Sequence[types.Point], tool: collections.abc.Sequence[types.Point]) -&gt; list[types.Polygon]</code></p>
 <p>Compute the no-fit polygon for two 2D polygons.</p>
@@ -186,7 +206,12 @@ polygon / inner fit polygon calculations used in nesting and packing algorithms.
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>subject</code></td><td><code>collections.abc.Sequence[types.Point]</code></td><td>Subject polygon as (x, y) points.</td></tr><tr><td><code>tool</code></td><td><code>collections.abc.Sequence[types.Point]</code></td><td>Tool polygon as (x, y) points.</td></tr><tr><td><em>Returns</em></td><td><code>list[types.Polygon]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>subject</code></td><td><code>collections.abc.Sequence[types.Point]</code></td><td>Subject polygon as (x, y) points.</td></tr><tr><td><code>tool</code></td><td><code>collections.abc.Sequence[types.Point]</code></td><td>Tool polygon as (x, y) points.</td></tr><tr><td><em>Returns</em></td><td><code>list[types.Polygon]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n * m) time, O(n + m) space</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_polygon_minkowski_sum_convex"><code>get_polygon_minkowski_sum_convex()</code><a href="#get_polygon_minkowski_sum_convex" class="hash-link" aria-label="Lien direct vers get_polygon_minkowski_sum_convex" title="Lien direct vers get_polygon_minkowski_sum_convex" translate="no">​</a></h3>
 <p><code>get_polygon_minkowski_sum_convex(poly_a: collections.abc.Sequence[tuple[float, float]], poly_b: collections.abc.Sequence[tuple[float, float]]) -&gt; list[list[tuple[float, float]]]</code></p>
 <p>Compute the Minkowski sum of two convex polygons.</p>
@@ -216,7 +241,12 @@ polygon / inner fit polygon calculations used in nesting and packing algorithms.
 
 
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>poly_a</code></td><td><code>collections.abc.Sequence[tuple[float, float]]</code></td><td>First convex polygon as points.</td></tr><tr><td><code>poly_b</code></td><td><code>collections.abc.Sequence[tuple[float, float]]</code></td><td>Second convex polygon as points.</td></tr><tr><td><em>Returns</em></td><td><code>list[list[tuple[float, float]]]</code></td><td></td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>poly_a</code></td><td><code>collections.abc.Sequence[tuple[float, float]]</code></td><td>First convex polygon as points.</td></tr><tr><td><code>poly_b</code></td><td><code>collections.abc.Sequence[tuple[float, float]]</code></td><td>Second convex polygon as points.</td></tr><tr><td><em>Returns</em></td><td><code>list[list[tuple[float, float]]]</code></td><td></td></tr><tr><td><em>Complexity</em></td><td></td><td>O(n + m) time, O(n + m) space</td></tr></tbody></table>
 <p><img decoding="async" loading="lazy" alt="Minkowski sum of two convex polygons" src="/fr/assets/images/minkowski-sum-025138ef979f4871470152e366838acc.png" width="1200" height="1200" class="img_ev3q"></p>
 <p><em>Minkowski sum of two convex polygons</em></p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/docs/developer/raygeo-api/raygeo.geo.algo.minkowski.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Modifier cette page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Pages de documentation"><a class="pagination-nav__link pagination-nav__link--prev" href="/fr/docs/developer/raygeo-api/raygeo.geo.algo.interp"><div class="pagination-nav__sublabel">Précédent</div><div class="pagination-nav__label">raygeo.geo.algo.interp</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/fr/docs/developer/raygeo-api/raygeo.geo.algo.overcut"><div class="pagination-nav__sublabel">Suivant</div><div class="pagination-nav__label">raygeo.geo.algo.overcut</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#calculate_input_scale" class="table-of-contents__link toc-highlight"><code>calculate_input_scale()</code></a></li><li><a href="#convolve_point_sequences" class="table-of-contents__link toc-highlight"><code>convolve_point_sequences()</code></a></li><li><a href="#convolve_two_segments" class="table-of-contents__link toc-highlight"><code>convolve_two_segments()</code></a></li><li><a href="#get_inner_fit_polygon" class="table-of-contents__link toc-highlight"><code>get_inner_fit_polygon()</code></a></li><li><a href="#get_no_fit_polygon" class="table-of-contents__link toc-highlight"><code>get_no_fit_polygon()</code></a></li><li><a href="#get_polygon_minkowski_sum_convex" class="table-of-contents__link toc-highlight"><code>get_polygon_minkowski_sum_convex()</code></a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
