@@ -16,7 +16,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/pt-BR/assets/css/styles.73ffe6d9.css">
-<script src="/pt-BR/assets/js/runtime~main.9ca9dd98.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/runtime~main.3b7e677c.js" defer="defer"></script>
 <script src="/pt-BR/assets/js/main.fb6a161d.js" defer="defer"></script>
 </head>
 <body>
@@ -108,57 +108,216 @@ high-level nesting orchestration.</p>
 <p>Find a valid position: heuristic search first, NFP fallback second.</p>
 <p>Supports hull-based collision detection and sheet world offsets.</p>
 <p><strong>Returns:</strong> (x, y) position or None.</p>
-<p>| Parameter            | Type                                                                                                | Description                                    |
-| -------------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------- | --- |
-| <code>ifp_polygons</code>       | <code>collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]</code>                           | IFP polygons (valid placement region).         |
-| <code>part_polygons</code>      | <code>collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]</code>                           | Part polygons to place.                        |
-| <code>part_hulls</code>         | <code>collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]</code>                           | Convex hulls for collision (may be empty).     |
-| <code>placed_polys_list</code>  | <code>collections.abc.Sequence[collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]]</code> | Already-placed parts, each a list of polygons. |
-| <code>placed_hulls_list</code>  | <code>collections.abc.Sequence[collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]]</code> | Hulls of already-placed parts, each a list.    |
-| <code>grid</code>               | <code>spatial_grid.SpatialGrid</code>                                                                          | SpatialGrid for fast neighbor lookup.          |
-| <code>sheet_world_offset</code> | <code>tuple[float, float]</code>                                                                               | (offset_x, offset_y) for this sheet.           |
-| <code>spacing</code>            | <code>float = 1</code>                                                                                         | Minimum spacing between parts.                 |
-| <code>min_area</code>           | <code>float = 1</code>                                                                                         | Minimum overlap area (clipper coords).         |
-| <code>curve_tolerance</code>    | <code>float = 0.5</code>                                                                                       | Curve tolerance for distance filtering.        |
-| <em>Returns</em>            | <code>tuple[float, float]                                                                                | None</code>                                          |     |</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>ifp_polygons</code></td><td><code>collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]</code></td><td>IFP polygons (valid placement region).</td></tr><tr><td><code>part_polygons</code></td><td><code>collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]</code></td><td>Part polygons to place.</td></tr><tr><td><code>part_hulls</code></td><td><code>collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]</code></td><td>Convex hulls for collision (may be empty).</td></tr><tr><td><code>placed_polys_list</code></td><td><code>collections.abc.Sequence[collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]]</code></td><td>Already-placed parts, each a list of polygons.</td></tr><tr><td><code>placed_hulls_list</code></td><td><code>collections.abc.Sequence[collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]]</code></td><td>Hulls of already-placed parts, each a list.</td></tr><tr><td><code>grid</code></td><td><code>spatial_grid.SpatialGrid</code></td><td>SpatialGrid for fast neighbor lookup.</td></tr><tr><td><code>sheet_world_offset</code></td><td><code>tuple[float, float]</code></td><td>(offset_x, offset_y) for this sheet.</td></tr><tr><td><code>spacing</code></td><td><code>float = 1</code></td><td>Minimum spacing between parts.</td></tr><tr><td><code>min_area</code></td><td><code>float = 1</code></td><td>Minimum overlap area (clipper coords).</td></tr><tr><td><code>curve_tolerance</code></td><td><code>float = 0.5</code></td><td>Curve tolerance for distance filtering.</td></tr><tr><td><em>Returns</em></td><td><code>tuple[float, float] &amp;#124; None</code></td><td></td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="find_valid_position_nfp"><code>find_valid_position_nfp()</code><a href="#find_valid_position_nfp" class="hash-link" aria-label="Link direto para find_valid_position_nfp" title="Link direto para find_valid_position_nfp" translate="no">​</a></h3>
 <p><code>find_valid_position_nfp(ifp_polygons: collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]], part_polygons: collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]], part_hulls: collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]], placed_polys_list: collections.abc.Sequence[collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]], placed_hulls_list: collections.abc.Sequence[collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]], grid: spatial_grid.SpatialGrid, sheet_world_offset: tuple[float, float], spacing: float = 1, min_area: float = 1, curve_tolerance: float = 0.5) -&gt; tuple[float, float] | None</code></p>
 <p>Find a valid position using NFP-based region subtraction.</p>
 <p>Computes No-Fit Polygons for nearby placed parts and subtracts them from the IFP to identify viable
 placement regions.</p>
 <p><strong>Returns:</strong> (x, y) position or None.</p>
-<p>| Parameter            | Type                                                                                                | Description                                    |
-| -------------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------- | --- |
-| <code>ifp_polygons</code>       | <code>collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]</code>                           | IFP polygons (valid placement region).         |
-| <code>part_polygons</code>      | <code>collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]</code>                           | Part polygons to place.                        |
-| <code>part_hulls</code>         | <code>collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]</code>                           | Convex hulls for collision (may be empty).     |
-| <code>placed_polys_list</code>  | <code>collections.abc.Sequence[collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]]</code> | Already-placed parts, each a list of polygons. |
-| <code>placed_hulls_list</code>  | <code>collections.abc.Sequence[collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]]</code> | Hulls of already-placed parts, each a list.    |
-| <code>grid</code>               | <code>spatial_grid.SpatialGrid</code>                                                                          | SpatialGrid for fast neighbor lookup.          |
-| <code>sheet_world_offset</code> | <code>tuple[float, float]</code>                                                                               | (offset_x, offset_y) for this sheet.           |
-| <code>spacing</code>            | <code>float = 1</code>                                                                                         | Minimum spacing between parts.                 |
-| <code>min_area</code>           | <code>float = 1</code>                                                                                         | Minimum overlap area (clipper coords).         |
-| <code>curve_tolerance</code>    | <code>float = 0.5</code>                                                                                       | Curve tolerance for distance filtering.        |
-| <em>Returns</em>            | <code>tuple[float, float]                                                                                | None</code>                                          |     |</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>ifp_polygons</code></td><td><code>collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]</code></td><td>IFP polygons (valid placement region).</td></tr><tr><td><code>part_polygons</code></td><td><code>collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]</code></td><td>Part polygons to place.</td></tr><tr><td><code>part_hulls</code></td><td><code>collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]</code></td><td>Convex hulls for collision (may be empty).</td></tr><tr><td><code>placed_polys_list</code></td><td><code>collections.abc.Sequence[collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]]</code></td><td>Already-placed parts, each a list of polygons.</td></tr><tr><td><code>placed_hulls_list</code></td><td><code>collections.abc.Sequence[collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]]</code></td><td>Hulls of already-placed parts, each a list.</td></tr><tr><td><code>grid</code></td><td><code>spatial_grid.SpatialGrid</code></td><td>SpatialGrid for fast neighbor lookup.</td></tr><tr><td><code>sheet_world_offset</code></td><td><code>tuple[float, float]</code></td><td>(offset_x, offset_y) for this sheet.</td></tr><tr><td><code>spacing</code></td><td><code>float = 1</code></td><td>Minimum spacing between parts.</td></tr><tr><td><code>min_area</code></td><td><code>float = 1</code></td><td>Minimum overlap area (clipper coords).</td></tr><tr><td><code>curve_tolerance</code></td><td><code>float = 0.5</code></td><td>Curve tolerance for distance filtering.</td></tr><tr><td><em>Returns</em></td><td><code>tuple[float, float] &amp;#124; None</code></td><td></td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="find_valid_position_scored"><code>find_valid_position_scored()</code><a href="#find_valid_position_scored" class="hash-link" aria-label="Link direto para find_valid_position_scored" title="Link direto para find_valid_position_scored" translate="no">​</a></h3>
 <p><code>find_valid_position_scored(ifp_polygons: collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]], part_polygons: collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]], part_hulls: collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]], placed_polys_list: collections.abc.Sequence[collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]], placed_hulls_list: collections.abc.Sequence[collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]], grid: spatial_grid.SpatialGrid, sheet_world_offset: tuple[float, float], spacing: float = 1, min_area: float = 1, curve_tolerance: float = 0.5) -&gt; tuple[float, float] | None</code></p>
 <p>Find a valid position using heuristic candidate search.</p>
 <p>Uses IFP vertices, bottom-left sweep, grid, placed polygon vertices, and perimeter candidates. Falls
 back to NFP-region candidates. Scores candidates and picks the best valid one.</p>
 <p><strong>Returns:</strong> (x, y) position or None.</p>
-<p>| Parameter            | Type                                                                                                | Description                                    |
-| -------------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------- | --- |
-| <code>ifp_polygons</code>       | <code>collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]</code>                           | IFP polygons (valid placement region).         |
-| <code>part_polygons</code>      | <code>collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]</code>                           | Part polygons to place.                        |
-| <code>part_hulls</code>         | <code>collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]</code>                           | Convex hulls for collision (may be empty).     |
-| <code>placed_polys_list</code>  | <code>collections.abc.Sequence[collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]]</code> | Already-placed parts, each a list of polygons. |
-| <code>placed_hulls_list</code>  | <code>collections.abc.Sequence[collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]]</code> | Hulls of already-placed parts, each a list.    |
-| <code>grid</code>               | <code>spatial_grid.SpatialGrid</code>                                                                          | SpatialGrid for fast neighbor lookup.          |
-| <code>sheet_world_offset</code> | <code>tuple[float, float]</code>                                                                               | (offset_x, offset_y) for this sheet.           |
-| <code>spacing</code>            | <code>float = 1</code>                                                                                         | Minimum spacing between parts.                 |
-| <code>min_area</code>           | <code>float = 1</code>                                                                                         | Minimum overlap area (clipper coords).         |
-| <code>curve_tolerance</code>    | <code>float = 0.5</code>                                                                                       | Curve tolerance for distance filtering.        |
-| <em>Returns</em>            | <code>tuple[float, float]                                                                                | None</code>                                          |     |</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>ifp_polygons</code></td><td><code>collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]</code></td><td>IFP polygons (valid placement region).</td></tr><tr><td><code>part_polygons</code></td><td><code>collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]</code></td><td>Part polygons to place.</td></tr><tr><td><code>part_hulls</code></td><td><code>collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]</code></td><td>Convex hulls for collision (may be empty).</td></tr><tr><td><code>placed_polys_list</code></td><td><code>collections.abc.Sequence[collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]]</code></td><td>Already-placed parts, each a list of polygons.</td></tr><tr><td><code>placed_hulls_list</code></td><td><code>collections.abc.Sequence[collections.abc.Sequence[collections.abc.Sequence[tuple[float, float]]]]</code></td><td>Hulls of already-placed parts, each a list.</td></tr><tr><td><code>grid</code></td><td><code>spatial_grid.SpatialGrid</code></td><td>SpatialGrid for fast neighbor lookup.</td></tr><tr><td><code>sheet_world_offset</code></td><td><code>tuple[float, float]</code></td><td>(offset_x, offset_y) for this sheet.</td></tr><tr><td><code>spacing</code></td><td><code>float = 1</code></td><td>Minimum spacing between parts.</td></tr><tr><td><code>min_area</code></td><td><code>float = 1</code></td><td>Minimum overlap area (clipper coords).</td></tr><tr><td><code>curve_tolerance</code></td><td><code>float = 0.5</code></td><td>Curve tolerance for distance filtering.</td></tr><tr><td><em>Returns</em></td><td><code>tuple[float, float] &amp;#124; None</code></td><td></td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="generate_bottom_left_candidates"><code>generate_bottom_left_candidates()</code><a href="#generate_bottom_left_candidates" class="hash-link" aria-label="Link direto para generate_bottom_left_candidates" title="Link direto para generate_bottom_left_candidates" translate="no">​</a></h3>
 <p><code>generate_bottom_left_candidates(ifp_bounds: tuple[float, float, float, float], part_bounds: tuple[float, float, float, float], spacing: float) -&gt; list[tuple[float, float]]</code></p>
 <p>Generate candidate positions scanning from bottom-left.</p>

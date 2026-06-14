@@ -16,7 +16,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.a82eb417.css">
-<script src="/zh-CN/assets/js/runtime~main.3744a445.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.bb159d0a.js" defer="defer"></script>
 <script src="/zh-CN/assets/js/main.c36046a2.js" defer="defer"></script>
 </head>
 <body>
@@ -64,6 +64,8 @@ for each input group in order.</p>
 
 
 <table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>placement_groups</code></td><td><code>collections.abc.Sequence[collections.abc.Sequence[types.Polygon]]</code></td><td>List of placed parts (each a list of polygons).</td></tr><tr><td><code>sheet_poly</code></td><td><code>types.Polygon</code></td><td>Sheet polygon.</td></tr><tr><td><code>spacing</code></td><td><code>float</code></td><td>Minimum spacing between parts.</td></tr><tr><td><em>Returns</em></td><td><code>list[tuple[float, float]]</code></td><td></td></tr></tbody></table>
+<p><img decoding="async" loading="lazy" alt="Gravity tightening: before vs after" src="/zh-CN/assets/images/gravity-ab70c30431fa48d38a57f80ad805de38.png" width="2400" height="1050" class="img_ev3q"></p>
+<p><em>Gravity tightening: before vs after</em></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="find_max_slide"><code>find_max_slide()</code><a href="#find_max_slide" class="hash-link" aria-label="find_max_slide 的直接链接" title="find_max_slide 的直接链接" translate="no">​</a></h3>
 <p><code>find_max_slide(polys: collections.abc.Sequence[types.Polygon], other_polys_list: collections.abc.Sequence[collections.abc.Sequence[types.Polygon]], sheet_bounds: tuple[float, float, float, float], sheet_poly: types.Polygon, axis: str, spacing: float) -&gt; float</code></p>
 <p>Find the maximum distance a part can slide in the negative axis direction.</p>

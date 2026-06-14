@@ -16,7 +16,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.a82eb417.css">
-<script src="/zh-CN/assets/js/runtime~main.3744a445.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.bb159d0a.js" defer="defer"></script>
 <script src="/zh-CN/assets/js/main.c36046a2.js" defer="defer"></script>
 </head>
 <body>
@@ -69,13 +69,42 @@ dimensions via width and height, with the Y axis flipped (SVG Y increases downwa
 <p>Supports M/m, L/l, H/h, V/v, C/c, Z/z commands. Cubic Bezier curves are flattened to line segments
 (20 steps).</p>
 <p><strong>Returns:</strong> List of Geometry objects, one per subpath.</p>
-<p>| Parameter   | Type                          | Description                                   |
-| ----------- | ----------------------------- | --------------------------------------------- | ------------------------------------------------------- |
-| <code>path_data</code> | <code>str</code>                         | SVG path d attribute string.                  |
-| <code>transform</code> | <code>numpy.NDArray[numpy.float64] | None = None</code>                                  | 3x3 affine transformation matrix, or None for identity. |
-| <code>scale_x</code>   | <code>float = 1</code>                   | X-axis scale factor for coordinate transform. |
-| <code>scale_y</code>   | <code>float = 1</code>                   | Y-axis scale factor for coordinate transform. |
-| <em>Returns</em>   | <code>list[Geometry]</code>              |                                               |</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>path_data</code></td><td><code>str</code></td><td>SVG path d attribute string.</td></tr><tr><td><code>transform</code></td><td><code>numpy.NDArray[numpy.float64] &amp;#124; None = None</code></td><td>3x3 affine transformation matrix, or None for identity.</td></tr><tr><td><code>scale_x</code></td><td><code>float = 1</code></td><td>X-axis scale factor for coordinate transform.</td></tr><tr><td><code>scale_y</code></td><td><code>float = 1</code></td><td>Y-axis scale factor for coordinate transform.</td></tr><tr><td><em>Returns</em></td><td><code>list[Geometry]</code></td><td></td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="parse_svg_transform"><code>parse_svg_transform()</code><a href="#parse_svg_transform" class="hash-link" aria-label="parse_svg_transform 的直接链接" title="parse_svg_transform 的直接链接" translate="no">​</a></h3>
 <p><code>parse_svg_transform(transform_str: str) -&gt; numpy.NDArray[numpy.float64]</code></p>
 <p>Parse an SVG transform attribute string (translate only).</p>

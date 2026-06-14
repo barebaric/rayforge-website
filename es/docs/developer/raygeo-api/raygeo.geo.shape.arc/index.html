@@ -16,7 +16,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/es/assets/css/styles.1d300cfe.css">
-<script src="/es/assets/js/runtime~main.33296658.js" defer="defer"></script>
+<script src="/es/assets/js/runtime~main.c00e164a.js" defer="defer"></script>
 <script src="/es/assets/js/main.75ea537f.js" defer="defer"></script>
 </head>
 <body>
@@ -544,6 +544,8 @@ arc linearization into line segments for rendering or further processing, angle 
 
 
 <table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>arc_cmd</code></td><td><code>Any</code></td><td>Arc command row or MockArc-like object.</td></tr><tr><td><code>start_point</code></td><td><code>types.Point3D</code></td><td>Start point (x, y, z).</td></tr><tr><td><code>resolution</code></td><td><code>float = 0.1</code></td><td>Maximum segment length.</td></tr><tr><td><em>Returns</em></td><td><code>list[tuple[types.Point3D, types.Point3D]]</code></td><td></td></tr></tbody></table>
+<p><img decoding="async" loading="lazy" alt="Arc linearization: coarse and fine resolution" src="/es/assets/images/arc-linearize-de399328c3fd719cee2cb08d715f4f21.png" width="2700" height="900" class="img_ev3q"></p>
+<p><em>Arc linearization: coarse and fine resolution</em></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="normalize_angle"><code>normalize_angle()</code><a href="#normalize_angle" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p><code>normalize_angle(angle: float) -&gt; float</code></p>
 <p>Normalize an angle to the range [0, 2*pi).</p>

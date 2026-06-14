@@ -16,7 +16,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.a82eb417.css">
-<script src="/uk/assets/js/runtime~main.3e8c94e1.js" defer="defer"></script>
+<script src="/uk/assets/js/runtime~main.53e31672.js" defer="defer"></script>
 <script src="/uk/assets/js/main.fc66efae.js" defer="defer"></script>
 </head>
 <body>
@@ -103,6 +103,8 @@ and point projection onto a circle&#x27;s circumference.</p>
 
 
 <table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>c1</code></td><td><code>types.Point</code></td><td>Center of first circle (x, y).</td></tr><tr><td><code>r1</code></td><td><code>float</code></td><td>Radius of first circle.</td></tr><tr><td><code>c2</code></td><td><code>types.Point</code></td><td>Center of second circle (x, y).</td></tr><tr><td><code>r2</code></td><td><code>float</code></td><td>Radius of second circle.</td></tr><tr><td><em>Returns</em></td><td><code>types.Polygon</code></td><td></td></tr></tbody></table>
+<p><img decoding="async" loading="lazy" alt="Circle-circle and line-circle intersection points" src="/uk/assets/images/circle-intersections-961dbfaa79e3d74be3099c1994853be8.png" width="2100" height="1050" class="img_ev3q"></p>
+<p><em>Circle-circle and line-circle intersection points</em></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_line_circle_intersections"><code>get_line_circle_intersections()</code><a href="#get_line_circle_intersections" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p><code>get_line_circle_intersections(p1: types.Point, p2: types.Point, center: types.Point, radius: float) -&gt; types.Polygon</code></p>
 <p>Get intersection points of a line segment with a circle.</p>
@@ -178,7 +180,7 @@ and point projection onto a circle&#x27;s circumference.</p>
 
 
 <table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>center</code></td><td><code>types.Point</code></td><td>Circle center (x, y).</td></tr><tr><td><code>radius</code></td><td><code>float</code></td><td>Circle radius.</td></tr><tr><td><code>rect</code></td><td><code>types.Rect</code></td><td>Rectangle (x_min, y_min, x_max, y_max).</td></tr><tr><td><em>Returns</em></td><td><code>bool</code></td><td></td></tr></tbody></table>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="line_segment_intersects_circle"><code>line_segment_intersects_circle()</code><a href="#line_segment_intersects_circle" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="line_segment_intersects_circle"><code>line_segment_intersects_circle()</code><a href="#line_segment_intersects_circle" class="hash-link" aria-label="Пряме посилан ня на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p><code>line_segment_intersects_circle(p1: types.Point, p2: types.Point, circle_center: types.Point, circle_radius: float) -&gt; bool</code></p>
 <p>Check if a line segment intersects a circle.</p>
 <p><strong>Returns:</strong> True if the line segment intersects the circle.</p>
