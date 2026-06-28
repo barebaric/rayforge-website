@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="es" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-reference/firmware" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Compatibilidad de Firmware | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" property="og:url" content="https://rayforge.org/es/docs/reference/firmware"><meta data-rh="true" property="og:locale" content="es"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="pt_BR"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="de"><meta data-rh="true" property="og:locale:alternate" content="zh_CN"><meta data-rh="true" property="og:locale:alternate" content="uk"><meta data-rh="true" name="docusaurus_locale" content="es"><meta data-rh="true" name="docsearch:language" content="es"><meta data-rh="true" name="keywords" content="laser cutter software, laser engraving software, LightBurn alternative, free laser software, open source laser software, GRBL, laser cutting software, laser control software, G-code sender, Rayforge"><meta data-rh="true" name="author" content="Rayforge Contributors"><meta data-rh="true" name="robots" content="index, follow"><meta data-rh="true" property="og:type" content="website"><meta data-rh="true" property="og:site_name" content="Rayforge"><meta data-rh="true" property="og:image" content="https://rayforge.org/images/social.png"><meta data-rh="true" property="og:image:width" content="1200"><meta data-rh="true" property="og:image:height" content="630"><meta data-rh="true" property="og:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" name="twitter:title" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:description" content="The complete creative studio for your laser cutter. Design, simulate, and control — with AI-powered tools, 3D preview, and a built-in sketcher."><meta data-rh="true" name="twitter:image" content="https://rayforge.org/images/social.png"><meta data-rh="true" name="twitter:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Compatibilidad de Firmware | Rayforge"><meta data-rh="true" name="description" content="Esta página documenta la compatibilidad de firmware para controladores láser usados con Rayforge."><meta data-rh="true" property="og:description" content="Esta página documenta la compatibilidad de firmware para controladores láser usados con Rayforge."><link data-rh="true" rel="icon" href="/es/images/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/es/docs/reference/firmware"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/reference/firmware" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/pt-BR/docs/reference/firmware" hreflang="pt-BR"><link data-rh="true" rel="alternate" href="https://rayforge.org/es/docs/reference/firmware" hreflang="es"><link data-rh="true" rel="alternate" href="https://rayforge.org/fr/docs/reference/firmware" hreflang="fr"><link data-rh="true" rel="alternate" href="https://rayforge.org/de/docs/reference/firmware" hreflang="de"><link data-rh="true" rel="alternate" href="https://rayforge.org/zh-CN/docs/reference/firmware" hreflang="zh-CN"><link data-rh="true" rel="alternate" href="https://rayforge.org/uk/docs/reference/firmware" hreflang="uk"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/reference/firmware" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Compatibilidad de Firmware","item":"https://rayforge.org/es/docs/reference/firmware"}]}</script><link rel="alternate" type="application/rss+xml" href="/es/blog/rss.xml" title="Rayforge RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/es/blog/atom.xml" title="Rayforge Atom Feed">
+
+
+
+
+
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rayforge","description":"Free open-source laser cutter software for GRBL-based machines. Design, simulate, and control your laser cutter or engraver with AI-powered tools, 3D preview, and a built-in sketcher.","url":"https://rayforge.org","applicationCategory":"DesignApplication","operatingSystem":"Linux, Windows, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"barebaric","url":"https://github.com/barebaric"},"screenshot":"https://rayforge.org/screenshots/main-standard.png","featureList":"AI-powered design generation, 3D simulation and preview, Parametric 2D sketcher, GRBL and Smoothieware support, Rotary axis support, Material and recipe management, Path optimization, Multi-layer support, Camera calibration","license":"https://github.com/barebaric/rayforge/blob/main/LICENSE","programmingLanguage":"Python","installUrl":"https://rayforge.org/docs/getting-started/installation"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
+<script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/es/assets/css/styles.1d300cfe.css">
+<script src="/es/assets/js/runtime~main.c35200cd.js" defer="defer"></script>
+<script src="/es/assets/js/main.cfaac8a1.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Ir al contenido principal"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Ir al contenido principal</a></div><nav aria-label="Navegación principal" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Alternar barra de navegación" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/es/"><div class="navbar__logo"><img src="/es/images/icon.svg" alt="Logotipo de Rayforge" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/es/images/icon.svg" alt="Logotipo de Rayforge" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Rayforge</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/es/docs/getting-started/installation">Documentación</a><a class="navbar__item navbar__link" href="/es/resources/devices">Dispositivos</a><a class="navbar__item navbar__link" href="/es/docs/developer/getting-started/">Desarrollador</a><a class="navbar__item navbar__link" href="/es/contributing">Contribuir</a><a class="navbar__item navbar__link" href="/es/sponsor">Patrocinador</a><a class="navbar__item navbar__link" href="/es/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>Español</a><ul class="dropdown__menu"><li><a href="/docs/reference/firmware" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="en">English</a></li><li><a href="/pt-BR/docs/reference/firmware" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="pt-BR">Português (Brasil)</a></li><li><a href="/es/docs/reference/firmware" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="es">Español</a></li><li><a href="/fr/docs/reference/firmware" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="fr">Français</a></li><li><a href="/de/docs/reference/firmware" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="de">Deutsch</a></li><li><a href="/zh-CN/docs/reference/firmware" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="zh-CN">中文（中国）</a></li><li><a href="/uk/docs/reference/firmware" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="uk">Українська</a></li></ul></div><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="patreonLink_HbXT"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" class="patreonImg_dUDi"></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Modo del sistema" aria-label="Cambiar entre modo claro y oscuro (actualmente Modo del sistema)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div class="floatingLinks_ekMW"><a class="floatingLink_seiz" href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" aria-label="Rayforge on GitHub" title="GitHub"><img class="floatingIcon_OM1j" src="https://cdn.simpleicons.org/github/000000" alt="" width="20" height="20" loading="lazy"></a><a class="floatingLink_seiz" href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" aria-label="Join Rayforge on Discord" title="Discord"><img class="floatingIcon_OM1j" src="https://cdn.simpleicons.org/discord/000000" alt="" width="20" height="20" loading="lazy"></a><a class="floatingLink_seiz" href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" aria-label="Support Rayforge on Patreon" title="Patreon"><img class="floatingIcon_OM1j floatingIconPatreon_HIKb" src="https://cdn.simpleicons.org/patreon/FF424D" alt="" width="20" height="20" loading="lazy"></a></div><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Volver arriba" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><div class="sidebarSearch_pOTk"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div><nav aria-label="Barra lateral de documentación" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/es/docs/getting-started/installation"><span title="Primeros Pasos" class="categoryLinkLabel_W154">Primeros Pasos</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/getting-started/installation"><span title="Instalación" class="linkLabel_WmDU">Instalación</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/getting-started/first-time-setup"><span title="Configuración Inicial" class="linkLabel_WmDU">Configuración Inicial</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/getting-started/quick-start"><span title="Guía de Inicio Rápido" class="linkLabel_WmDU">Guía de Inicio Rápido</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/ui/settings"><span title="Configuración de la Aplicación" class="categoryLinkLabel_W154">Configuración de la Aplicación</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/machine/config-wizard"><span title="Configuración de la Máquina" class="categoryLinkLabel_W154">Configuración de la Máquina</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/ui/main-window"><span title="Interfaz de Usuario" class="categoryLinkLabel_W154">Interfaz de Usuario</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/features/operations/contour"><span title="Características" class="categoryLinkLabel_W154">Características</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/addons/ai-workpiece-generator"><span title="Addons" class="categoryLinkLabel_W154">Addons</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/files/importing"><span title="Archivos" class="categoryLinkLabel_W154">Archivos</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/general-info/laser-safety"><span title="Información General" class="categoryLinkLabel_W154">Información General</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/troubleshooting/connection"><span title="Solución de Problemas" class="categoryLinkLabel_W154">Solución de Problemas</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/es/docs/reference/shortcuts"><span title="Referencia" class="categoryLinkLabel_W154">Referencia</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/reference/shortcuts"><span title="Atajos de Teclado" class="linkLabel_WmDU">Atajos de Teclado</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/reference/gcode-dialects"><span title="Soporte de Dialectos de Código G" class="linkLabel_WmDU">Soporte de Dialectos de Código G</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/es/docs/reference/firmware"><span title="Compatibilidad de Firmware" class="linkLabel_WmDU">Compatibilidad de Firmware</span></a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Migas de pan"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Inicio" class="breadcrumbs__link" href="/es/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Referencia</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Compatibilidad de Firmware</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">En esta página</button></div><div class="theme-doc-markdown markdown"><header><h1>Compatibilidad de Firmware</h1></header>
+<p>Esta página documenta la compatibilidad de firmware para controladores láser usados con Rayforge.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="resumen">Resumen<a href="#resumen" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
+<p>Rayforge está diseñado principalmente para <strong>controladores basados en GRBL</strong> pero también es compatible con Marlin, Smoothieware y otros tipos de firmware.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="matriz-de-compatibilidad">Matriz de Compatibilidad<a href="#matriz-de-compatibilidad" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Firmware</th><th>Version</th><th>Estado</th><th>Controlador</th><th>Notas</th></tr></thead><tbody><tr><td><strong>GRBL</strong></td><td>1.1+</td><td>Completamente soportado</td><td>GRBL Serial / GRBL Serial Simple</td><td>Recomendado</td></tr><tr><td><strong>grblHAL</strong></td><td>2023+</td><td>Compatible</td><td>GRBL Serial / GRBL Telnet</td><td>Fork moderno de GRBL</td></tr><tr><td><strong>GRBL</strong></td><td>0.9</td><td>Limitado</td><td>GRBL Serial</td><td>Antiguo, puede tener problemas</td></tr><tr><td><strong>Smoothieware</strong></td><td>Todos</td><td>Compatible</td><td>SmoothieDriver (Telnet)</td><td>Basado en red</td></tr><tr><td><strong>Marlin</strong></td><td>2.0+</td><td>Compatible</td><td>Marlin Serial</td><td>Requiere modo láser</td></tr><tr><td><strong>ESP3D</strong></td><td>Todos</td><td>Compatible</td><td>GRBL Telnet</td><td>Basado en red</td></tr><tr><td><strong>OctoPrint</strong></td><td>Todos</td><td>Experimental</td><td>OctoPrint</td><td>Ver notas abajo</td></tr><tr><td><strong>Otros</strong></td><td>-</td><td>No soportado</td><td>-</td><td>Solicitar soporte</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="firmware-grbl">Firmware GRBL<a href="#firmware-grbl" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
+<p><strong>Estado:</strong> ✓ Completamente Soportado
+<strong>Versiones:</strong> 1.1+
+<strong>Controlador:</strong> GRBL Serial, GRBL Serial Simple</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="grbl-11-recomendado">GRBL 1.1 (Recomendado)<a href="#grbl-11-recomendado" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p><strong>¿Qué es GRBL 1.1?</strong></p>
+<p>GRBL 1.1 es el firmware más común para máquinas CNC y láser de aficionado. Lanzado en 2017, es estable, bien documentado y ampliamente soportado.</p>
+<p><strong>Funciones soportadas por Rayforge:</strong></p>
+<ul>
+<li class="">Comunicación serie (USB)</li>
+<li class="">Reportes de estado en tiempo real</li>
+<li class="">Modo láser (M4 potencia constante)</li>
+<li class="">Lectura/escritura de ajustes ($$, $X=valor)</li>
+<li class="">Ciclos de homing ($H)</li>
+<li class="">Sistemas de coordenadas de trabajo (G54)</li>
+<li class="">Comandos de desplazamiento ($J=)</li>
+<li class="">Anulación de velocidad de avance</li>
+<li class="">Límites suaves</li>
+<li class="">Límites físicos (finales de carrera)</li>
+</ul>
+<p><strong>Limitaciones conocidas:</strong></p>
+<ul>
+<li class="">Rango de potencia: 0-1000 (parámetro S)</li>
+<li class="">Sin conectividad de red (solo USB)</li>
+<li class="">Memoria a bordo limitada (búfer de código G pequeño)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="verificando-versión-de-grbl">Verificando Versión de GRBL<a href="#verificando-versión-de-grbl" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p><strong>Consultar versión:</strong></p>
+<p>Conéctate a tu controlador y envía:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">$I</span><br></div></code></pre></div></div>
+<p><strong>Ejemplos de respuesta:</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">[VER:1.1h.20190825:]</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">[OPT:V,15,128]</span><br></div></code></pre></div></div>
+<ul>
+<li class=""><code>1.1h</code> = versión de GRBL 1.1h</li>
+<li class="">La fecha indica compilación</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="grbl-09-antiguo">GRBL 0.9 (Antiguo)<a href="#grbl-09-antiguo" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p><strong>Estado:</strong> Soporte Limitado</p>
+<p>GRBL 0.9 es una versión antigua con algunos problemas de compatibilidad:</p>
+<p><strong>Diferencias:</strong></p>
+<ul>
+<li class="">Formato de reporte de estado diferente</li>
+<li class="">Sin modo láser (M4) - solo usa M3</li>
+<li class="">Menos ajustes</li>
+<li class="">Sintaxis de desplazamiento diferente</li>
+</ul>
+<p><strong>Si tienes GRBL 0.9:</strong></p>
+<ol>
+<li class=""><strong>Actualiza a GRBL 1.1</strong> si es posible (recomendado)</li>
+<li class=""><strong>Usa M3 en lugar de M4</strong> (potencia menos predecible)</li>
+<li class=""><strong>Prueba exhaustivamente</strong> - algunas funciones pueden no funcionar</li>
+</ol>
+<p><strong>Instrucciones de actualización:</strong> Ver <a href="https://github.com/gnea/grbl/wiki" target="_blank" rel="noopener noreferrer" class="">GRBL Wiki</a></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="controlador-grbl-serial-simple">Controlador GRBL Serial Simple<a href="#controlador-grbl-serial-simple" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p>Rayforge incluye un segundo controlador serie GRBL para dispositivos
+donde el controlador estándar con contador de búfer causa falsas alarmas
+o errores de comunicación.</p>
+<p><strong>Cómo funciona:</strong></p>
+<ul>
+<li class="">Usa un protocolo ping-pong: envía una línea, espera &quot;ok&quot;, envía la siguiente</li>
+<li class="">Sin gestión de búfer por conteo de caracteres</li>
+<li class="">Sin detección de bloqueos ni recuperación de paradas</li>
+<li class="">Más simple y predecible en algunos dispositivos</li>
+</ul>
+<p><strong>Cuándo usarlo:</strong></p>
+<ul>
+<li class="">Tu dispositivo recibe falsas alarmas de búfer con el controlador estándar</li>
+<li class="">Ocurren errores de comunicación intermitentes con el controlador estándar</li>
+<li class="">Tienes un dispositivo con comportamiento de búfer inusual</li>
+</ul>
+<p><strong>Cuándo NO usarlo:</strong></p>
+<ul>
+<li class="">El controlador GRBL Serial estándar funciona de manera fiable en la mayoría de dispositivos</li>
+<li class="">El controlador simple carece de recuperación de bloqueos, por lo que
+los trabajos pueden detenerse ante una respuesta &quot;ok&quot; perdida sin
+recuperación automática</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="grblhal">grblHAL<a href="#grblhal" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
+<p><strong>Estado:</strong> Compatible
+<strong>Versiones:</strong> 2023+
+<strong>Controlador:</strong> GRBL Serial</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="qué-es-grblhal">¿Qué es grblHAL?<a href="#qué-es-grblhal" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p>grblHAL es un fork moderno de GRBL con funciones mejoradas:</p>
+<ul>
+<li class="">Soporte para múltiples hardware de controlador (STM32, ESP32, etc.)</li>
+<li class="">Red Ethernet/WiFi</li>
+<li class="">Soporte de tarjeta SD</li>
+<li class="">Más pines de E/S</li>
+<li class="">Soporte láser mejorado</li>
+</ul>
+<p><strong>Compatibilidad con Rayforge:</strong></p>
+<ul>
+<li class=""><strong>Completamente compatible</strong> - grblHAL mantiene el protocolo GRBL 1.1</li>
+<li class="">Todas las funciones de GRBL funcionan</li>
+<li class="">Funciones adicionales (red, SD) aún no soportadas por Rayforge</li>
+<li class="">Reportes de estado idénticos a GRBL</li>
+</ul>
+<p><strong>Usando grblHAL:</strong></p>
+<ol>
+<li class="">Selecciona el controlador &quot;GRBL Serial&quot; en Rayforge</li>
+<li class="">Conecta vía serie USB (igual que GRBL)</li>
+<li class="">Todas las funciones funcionan como está documentado para GRBL</li>
+</ol>
+<p><strong>Futuro:</strong> Rayforge puede añadir soporte para funciones específicas de grblHAL (red, etc.)</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="controlador-grbl-telnet">Controlador GRBL Telnet<a href="#controlador-grbl-telnet" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
+<p><strong>Estado:</strong> Soportado
+<strong>Firmware:</strong> grblHAL, ESP3D y otros controladores GRBL en red
+<strong>Controlador:</strong> GRBL Telnet</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acerca-del-controlador-grbl-telnet">Acerca del Controlador GRBL Telnet<a href="#acerca-del-controlador-grbl-telnet" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p>El controlador GRBL Telnet se conecta a controladores basados en GRBL a través de la red
+mediante una interfaz Telnet. Ideal para placas con WiFi o Ethernet integrado — sin
+necesidad de cable USB.</p>
+<p><strong>Características:</strong></p>
+<ul>
+<li class="">Conectividad de red (Ethernet/WiFi)</li>
+<li class="">Compatible con placas basadas en grblHAL y ESP3D</li>
+<li class="">Mismo protocolo GRBL que el controlador serie</li>
+</ul>
+<p><strong>Usando el controlador GRBL Telnet:</strong></p>
+<ol>
+<li class=""><strong>Configura la red</strong> en tu controlador (WiFi o Ethernet)</li>
+<li class=""><strong>Selecciona &quot;GRBL Telnet&quot;</strong> en los ajustes de máquina</li>
+<li class=""><strong>Introduce la dirección IP</strong> y puerto de tu controlador</li>
+<li class=""><strong>Conecta</strong> — el controlador se comunica por Telnet</li>
+</ol>
+<p><strong>Requisitos:</strong></p>
+<ul>
+<li class="">Controlador compatible con GRBL en red (grblHAL, ESP3D, etc.)</li>
+<li class="">Controlador y computadora en la misma red</li>
+<li class="">Interfaz Telnet habilitada en el controlador</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="smoothieware">Smoothieware<a href="#smoothieware" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
+<p><strong>Controlador:</strong> GRBL Serial (modo compatibilidad)</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="notas-de-compatibilidad">Notas de Compatibilidad<a href="#notas-de-compatibilidad" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p>Smoothieware usa sintaxis de código G diferente:</p>
+<p><strong>Diferencias clave:</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Función</th><th>GRBL</th><th>Smoothieware</th></tr></thead><tbody><tr><td><strong>Láser Encendido</strong></td><td><code>M4 S&lt;valor&gt;</code></td><td><code>M3 S&lt;valor&gt;</code></td></tr><tr><td><strong>Rango de Potencia</strong></td><td>0-1000</td><td>0.0-1.0 (flotante)</td></tr><tr><td><strong>Estado</strong></td><td>formato <code>&lt;...&gt;</code></td><td>Formato diferente</td></tr></tbody></table>
+<p><strong>Usando Smoothieware con Rayforge:</strong></p>
+<ol>
+<li class=""><strong>Selecciona el dialecto Smoothieware</strong> en ajustes de máquina &gt; Código G &gt; Dialecto</li>
+<li class=""><strong>Prueba con potencia baja</strong> primero</li>
+<li class=""><strong>Verifica el rango de potencia</strong> coincide con tu configuración</li>
+<li class=""><strong>Sin estado en tiempo real</strong> - retroalimentación limitada</li>
+</ol>
+<p><strong>Limitaciones:</strong></p>
+<ul>
+<li class="">Reporte de estado no completamente compatible</li>
+<li class="">La escala de potencia puede diferir</li>
+<li class="">Comandos de ajustes ($$) no soportados</li>
+<li class="">Sin probar en hardware real</li>
+</ul>
+<p><strong>Recomendación:</strong> Si es posible, usa firmware compatible con GRBL en su lugar.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="marlin">Marlin<a href="#marlin" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
+<p><strong>Versiones:</strong> 2.0+ con soporte láser
+<strong>Controlador:</strong> Marlin Serial</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="controlador-marlin-serial">Controlador Marlin Serial<a href="#controlador-marlin-serial" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p>Rayforge incluye un MarlinSerialDriver dedicado que se conecta al firmware Marlin
+a través de serial (USB). Marlin 2.0+ puede controlar láseres cuando está configurado apropiadamente.</p>
+<p><strong>Características:</strong></p>
+<ul>
+<li class="">Comunicación serial (USB)</li>
+<li class="">Protocolo de handshake de Marlin (espera el mensaje &quot;start&quot;)</li>
+<li class="">Transmisión de G-code línea por línea con acuse de recibo <code>ok</code></li>
+<li class="">Consulta de posición M114</li>
+<li class="">Ejecución de trabajos con informe de progreso detallado</li>
+<li class="">Home (G28), jogging, movimiento, cambio de herramienta (T)</li>
+<li class="">Configuración de offset WCS (G10 L2 P)</li>
+<li class="">Control de potencia láser mediante el dialecto Marlin</li>
+<li class="">Cancelación vía M410 (Quick Stop)</li>
+<li class="">Sonda de auto-configuración (consulta M115, M211, M503)</li>
+</ul>
+<p><strong>Requisitos:</strong></p>
+<ol>
+<li class=""><strong>Firmware Marlin 2.0 o posterior</strong></li>
+<li class=""><strong>Funciones láser habilitadas:</strong>
+<div class="language-cpp codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-cpp codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token macro property directive-hash">#</span><span class="token macro property directive keyword" style="font-style:italic">define</span><span class="token macro property"> </span><span class="token macro property macro-name">LASER_FEATURE</span><span class="token plain"></span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"></span><span class="token macro property directive-hash">#</span><span class="token macro property directive keyword" style="font-style:italic">define</span><span class="token macro property"> </span><span class="token macro property macro-name">LASER_POWER_INLINE</span><br></div></code></pre></div></div>
+</li>
+<li class=""><strong>Rango de potencia correcto</strong> configurado:
+<div class="language-cpp codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-cpp codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token macro property directive-hash">#</span><span class="token macro property directive keyword" style="font-style:italic">define</span><span class="token macro property"> </span><span class="token macro property macro-name">SPEED_POWER_MAX</span><span class="token macro property"> </span><span class="token macro property expression number" style="color:rgb(247, 140, 108)">1000</span><br></div></code></pre></div></div>
+</li>
+</ol>
+<p><strong>Usando Marlin con Rayforge:</strong></p>
+<ol>
+<li class=""><strong>Selecciona el controlador &quot;Marlin (Serial)&quot;</strong> en ajustes de máquina</li>
+<li class=""><strong>Configura el puerto serie</strong> y la velocidad de baudios (típicamente 115200)</li>
+<li class=""><strong>Selecciona el dialecto Marlin</strong> en ajustes de máquina &gt; G-code &gt; Dialecto</li>
+<li class=""><strong>Configura Marlin</strong> para uso láser</li>
+<li class=""><strong>Prueba el rango de potencia</strong> (0-1000 o 0-255)</li>
+</ol>
+<p><strong>Limitaciones:</strong></p>
+<ul>
+<li class="">Experimental — comentarios bienvenidos</li>
+<li class="">Lectura/escritura de ajustes (como <code>$$</code> de GRBL) no soportada</li>
+<li class="">Sin conectividad de red (solo USB)</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="guía-de-actualización-de-firmware">Guía de Actualización de Firmware<a href="#guía-de-actualización-de-firmware" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="actualizando-a-grbl-11">Actualizando a GRBL 1.1<a href="#actualizando-a-grbl-11" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p><strong>¿Por qué actualizar?</strong></p>
+<ul>
+<li class="">Modo láser (M4) para potencia constante</li>
+<li class="">Mejor reporte de estado</li>
+<li class="">Más confiable</li>
+<li class="">Mejor soporte de Rayforge</li>
+</ul>
+<p><strong>Cómo actualizar:</strong></p>
+<ol>
+<li class="">
+<p><strong>Identifica tu placa controladora:</strong></p>
+<ul>
+<li class="">Arduino Nano/Uno (ATmega328P)</li>
+<li class="">Arduino Mega (ATmega2560)</li>
+<li class="">Placa personalizada</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Descarga GRBL 1.1:</strong></p>
+<ul>
+<li class=""><a href="https://github.com/gnea/grbl/releases" target="_blank" rel="noopener noreferrer" class="">GRBL Releases</a></li>
+<li class="">Obtén la última versión 1.1 (1.1h recomendado)</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Flashea el firmware:</strong></p>
+<p><strong>Usando Arduino IDE:</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">1. Instala Arduino IDE</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">2. Abre el sketch GRBL (grbl.ino)</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">3. Selecciona la placa y puerto correctos</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">4. Subir</span><br></div></code></pre></div></div>
+<p><strong>Usando avrdude:</strong></p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">avrdude -c arduino -p m328p -P /dev/ttyUSB0 \</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">        -U flash:w:grbl.hex:i</span><br></div></code></pre></div></div>
+</li>
+<li class="">
+<p><strong>Configura GRBL:</strong></p>
+<ul>
+<li class="">Conecta vía serie</li>
+<li class="">Envía <code>$$</code> para ver ajustes</li>
+<li class="">Configura para tu máquina</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="respaldo-antes-de-actualizar">Respaldo Antes de Actualizar<a href="#respaldo-antes-de-actualizar" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p><strong>Guarda tus ajustes:</strong></p>
+<ol>
+<li class="">Conéctate al controlador</li>
+<li class="">Envía el comando <code>$$</code></li>
+<li class="">Copia toda la salida de ajustes</li>
+<li class="">Guárdala en un archivo</li>
+</ol>
+<p><strong>Después de actualizar:</strong></p>
+<ul>
+<li class="">Restaura los ajustes uno por uno: <code>$0=10</code>, <code>$1=25</code>, etc.</li>
+<li class="">O usa los valores predeterminados y reconfigura</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hardware-de-controlador">Hardware de Controlador<a href="#hardware-de-controlador" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="controladores-comunes">Controladores Comunes<a href="#controladores-comunes" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Placa</th><th>Firmware Típico</th><th>Soporte Rayforge</th></tr></thead><tbody><tr><td><strong>Arduino CNC Shield</strong></td><td>GRBL 1.1</td><td>Excelente</td></tr><tr><td><strong>MKS DLC32</strong></td><td>grblHAL</td><td>Excelente</td></tr><tr><td><strong>Ruida</strong></td><td>Propietario</td><td>Experimental</td></tr><tr><td><strong>OctoPrint (Pi)</strong></td><td>Varios</td><td>Experimental</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="controladores-recomendados">Controladores Recomendados<a href="#controladores-recomendados" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p>Para mejor compatibilidad con Rayforge:</p>
+<ol>
+<li class="">
+<p><strong>Arduino Nano + CNC Shield</strong> (GRBL 1.1)</p>
+<ul>
+<li class="">Económico (~$10-20)</li>
+<li class="">Fácil de flashear</li>
+<li class="">Bien documentado</li>
+</ul>
+</li>
+<li class="">
+<p><strong>MKS DLC32</strong> (grblHAL)</p>
+<ul>
+<li class="">Moderno (basado en ESP32)</li>
+<li class="">Capaz de WiFi</li>
+<li class="">Desarrollo activo</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Placas GRBL personalizadas</strong></p>
+<ul>
+<li class="">Muchas disponibles en marketplaces</li>
+<li class="">Verifica soporte de GRBL 1.1+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="configuración-de-firmware">Configuración de Firmware<a href="#configuración-de-firmware" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ajustes-de-grbl-para-láser">Ajustes de GRBL para Láser<a href="#ajustes-de-grbl-para-láser" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p><strong>Ajustes esenciales:</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">$30=1000    ; Potencia máxima de husillo/láser (1000 = 100%)</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">$31=0       ; Potencia mínima de husillo/láser</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">$32=1       ; Modo láser habilitado (1 = on)</span><br></div></code></pre></div></div>
+<p><strong>Ajustes de máquina:</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">$100=80     ; Pasos/mm X (calibra para tu máquina)</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">$101=80     ; Pasos/mm Y</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">$110=3000   ; Tasa máxima X (mm/min)</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">$111=3000   ; Tasa máxima Y</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">$120=100    ; Aceleración X (mm/seg)</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">$121=100    ; Aceleración Y</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">$130=300    ; Recorrido máximo X (mm)</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">$131=200    ; Recorrido máximo Y (mm)</span><br></div></code></pre></div></div>
+<p><strong>Ajustes de seguridad:</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">$20=1       ; Límites suaves habilitados</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">$21=1       ; Límites físicos habilitados (si tienes finales de carrera)</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">$22=1       ; Homing habilitado</span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="probando-el-firmware">Probando el Firmware<a href="#probando-el-firmware" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p><strong>Secuencia de prueba básica:</strong></p>
+<ol>
+<li class="">
+<p><strong>Prueba de conexión:</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">Enviar: ?</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">Esperar: &lt;Idle|...&gt;</span><br></div></code></pre></div></div>
+</li>
+<li class="">
+<p><strong>Verificación de versión:</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">Enviar: $I</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">Esperar: [VER:1.1...]</span><br></div></code></pre></div></div>
+</li>
+<li class="">
+<p><strong>Verificación de ajustes:</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">Enviar: $$</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">Esperar: $0=..., $1=..., etc.</span><br></div></code></pre></div></div>
+</li>
+<li class="">
+<p><strong>Prueba de movimiento:</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">Enviar: G91 G0 X10</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">Esperar: La máquina se mueve 10mm en X</span><br></div></code></pre></div></div>
+</li>
+<li class="">
+<p><strong>Prueba de láser (potencia muy baja):</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">Enviar: M4 S10</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">Esperar: El láser se enciende (tenue)</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">Enviar: M5</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">Esperar: El láser se apaga</span><br></div></code></pre></div></div>
+</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="solución-de-problemas-de-firmware">Solución de Problemas de Firmware<a href="#solución-de-problemas-de-firmware" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="el-firmware-no-responde">El Firmware No Responde<a href="#el-firmware-no-responde" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p><strong>Síntomas:</strong></p>
+<ul>
+<li class="">Sin respuesta a comandos</li>
+<li class="">La conexión falla</li>
+<li class="">El estado no se reporta</li>
+</ul>
+<p><strong>Diagnóstico:</strong></p>
+<ol>
+<li class="">
+<p><strong>Revisa la velocidad de transmisión:</strong></p>
+<ul>
+<li class="">GRBL 1.1 por defecto: 115200</li>
+<li class="">GRBL 0.9: 9600</li>
+<li class="">Prueba ambos</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Revisa el cable USB:</strong></p>
+<ul>
+<li class="">Cable de datos, no solo de carga</li>
+<li class="">Reemplaza con un cable conocido como bueno</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Revisa el puerto:</strong></p>
+<ul>
+<li class="">Linux: <code>/dev/ttyUSB0</code> o <code>/dev/ttyACM0</code></li>
+<li class="">Windows: COM3, COM4, etc.</li>
+<li class="">Puerto correcto seleccionado en Rayforge</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Prueba con terminal:</strong></p>
+<ul>
+<li class="">Usa screen, minicom, o PuTTY</li>
+<li class="">Envía <code>?</code> y ve si obtienes respuesta</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="el-firmware-falla">El Firmware Falla<a href="#el-firmware-falla" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p><strong>Síntomas:</strong></p>
+<ul>
+<li class="">El controlador se bloquea durante el trabajo</li>
+<li class="">Desconexiones aleatorias</li>
+<li class="">Comportamiento inconsistente</li>
+</ul>
+<p><strong>Posibles causas:</strong></p>
+<ol>
+<li class=""><strong>Desbordamiento de búfer</strong> - Archivo de código G demasiado complejo</li>
+<li class=""><strong>Ruido eléctrico</strong> - Mala conexión a tierra o EMI</li>
+<li class=""><strong>Bug de firmware</strong> - Actualiza a la última versión</li>
+<li class=""><strong>Problema de hardware</strong> - Controlador defectuoso</li>
+</ol>
+<p><strong>Soluciones:</strong></p>
+<ul>
+<li class="">Actualiza el firmware a la última versión estable</li>
+<li class="">Simplifica el código G (reduce precisión, menos segmentos)</li>
+<li class="">Añade cuentas de ferrita al cable USB</li>
+<li class="">Mejora la conexión a tierra y el enrutamiento de cables</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="firmware-incorrecto">Firmware Incorrecto<a href="#firmware-incorrecto" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p><strong>Síntomas:</strong></p>
+<ul>
+<li class="">Comandos rechazados</li>
+<li class="">Comportamiento inesperado</li>
+<li class="">Mensajes de error</li>
+</ul>
+<p><strong>Solución:</strong></p>
+<ol>
+<li class="">Consulta la versión del firmware: <code>$I</code></li>
+<li class="">Compara con las expectativas de Rayforge</li>
+<li class="">Actualiza o selecciona el dialecto correcto</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="soporte-de-firmware-futuro">Soporte de Firmware Futuro<a href="#soporte-de-firmware-futuro" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="controladores-ruida">Controladores Ruida<a href="#controladores-ruida" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p>Rayforge incluye soporte experimental para controladores basados en Ruida (p.ej.
+RDC6442, RDC6445, Ruida R5). El controlador Ruida se conecta por red y soporta
+jogging, reporte de posición, control de aire asistido, selección de capa,
+auto-conexión y sondeo de estado.</p>
+<p><strong>Funciones:</strong></p>
+<ul>
+<li class="">Conectividad de red (Ethernet/WiFi)</li>
+<li class="">Reporte de posición</li>
+<li class="">Controles de jogging</li>
+<li class="">Aire asistido y selecci  ón de capa</li>
+<li class="">Soporte de puntos de referencia</li>
+</ul>
+<p><strong>Limitaciones:</strong></p>
+<ul>
+<li class="">Experimental — aún no completamente estable</li>
+<li class="">Sin generación de G-code; Ruida usa su propio protocolo propietario</li>
+<li class="">Envío de trabajos aún no soportado</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="octoprint">OctoPrint<a href="#octoprint" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p>Rayforge incluye un controlador OctoPrint experimental que envía G-code
+directamente a un servidor OctoPrint a través de la red. Esto es útil si tu
+láser está conectado a una Raspberry Pi u otra máquina ejecutando OctoPrint.</p>
+<p><strong>Funcionalidades:</strong></p>
+<ul>
+<li class="">Conexión WebSocket para actualizaciones de estado en tiempo real</li>
+<li class="">Sondeo REST como alternativa cuando WebSocket no está disponible</li>
+<li class="">Reconexión automática al perder la conexión</li>
+<li class="">Envío de trabajos con inicio automático de impresión</li>
+<li class="">Jogging, referencia y controles de pausa/reanudación</li>
+<li class="">Flujo &quot;Solicitar Acceso&quot; para claves de aplicación de OctoPrint</li>
+</ul>
+<p><strong>Usando el controlador OctoPrint:</strong></p>
+<ol>
+<li class="">Selecciona el controlador &quot;OctoPrint&quot; en los ajustes de la máquina</li>
+<li class="">Introduce el nombre de host o dirección IP de tu servidor OctoPrint</li>
+<li class="">Establece el puerto (predeterminado: 80)</li>
+<li class="">Haz clic en &quot;Solicitar Acceso&quot; para obtener una clave API a través del
+sistema de claves de aplicación de OctoPrint</li>
+<li class="">Conecta — Rayforge establecerá una conexión WebSocket</li>
+</ol>
+<p><strong>Limitaciones:</strong></p>
+<ul>
+<li class="">Experimental y no probado en hardware real — comentarios bienvenidos</li>
+<li class="">No es posible leer o escribir ajustes del firmware a través de OctoPrint</li>
+<li class="">Los resultados de sondeo no son reportados por OctoPrint</li>
+<li class="">La lectura de desplazamientos WCS no es compatible</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="otras-funciones-solicitadas">Otras Funciones Solicitadas<a href="#otras-funciones-solicitadas" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p>Los usuarios han solicitado soporte para:</p>
+<ul>
+<li class=""><strong>Trocen/AWC</strong> - Controladores láser comerciales</li>
+<li class=""><strong>ESP32 WiFi</strong> - Conectividad de red para grblHAL</li>
+<li class=""><strong>API de Láser</strong> - API de máquina directa (sin código G)</li>
+</ul>
+<p><strong>Estado:</strong> Actualmente no soportados. Las solicitudes de funciones son bienvenidas en GitHub.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="contribuyendo">Contribuyendo<a href="#contribuyendo" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p>Para añadir soporte de firmware:</p>
+<ol>
+<li class="">Implementa el controlador en <code>rayforge/machine/driver/</code></li>
+<li class="">Define el dialecto de código G en <code>rayforge/machine/models/dialect.py</code></li>
+<li class="">Prueba exhaustivamente en hardware real</li>
+<li class="">Envía pull request con documentación</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="páginas-relacionadas">Páginas Relacionadas<a href="#páginas-relacionadas" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/es/docs/reference/gcode-dialects">Dialectos de Código G</a> - Detalles de dialectos</li>
+<li class=""><a class="" href="/es/docs/machine/device">Ajustes de Dispositivo</a> - Configuración de GRBL</li>
+<li class=""><a class="" href="/es/docs/troubleshooting/connection">Problemas de Conexión</a> - Solución de problemas de conexión</li>
+<li class=""><a class="" href="/es/docs/machine/general">Ajustes Generales</a> - Configuración de máquina</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/reference/firmware.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Navegación de documentos"><a class="pagination-nav__link pagination-nav__link--prev" href="/es/docs/reference/gcode-dialects"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Soporte de Dialectos de Código G</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#resumen" class="table-of-contents__link toc-highlight">Resumen</a><ul><li><a href="#matriz-de-compatibilidad" class="table-of-contents__link toc-highlight">Matriz de Compatibilidad</a></li></ul></li><li><a href="#firmware-grbl" class="table-of-contents__link toc-highlight">Firmware GRBL</a><ul><li><a href="#grbl-11-recomendado" class="table-of-contents__link toc-highlight">GRBL 1.1 (Recomendado)</a></li><li><a href="#verificando-versión-de-grbl" class="table-of-contents__link toc-highlight">Verificando Versión de GRBL</a></li><li><a href="#grbl-09-antiguo" class="table-of-contents__link toc-highlight">GRBL 0.9 (Antiguo)</a></li><li><a href="#controlador-grbl-serial-simple" class="table-of-contents__link toc-highlight">Controlador GRBL Serial Simple</a></li></ul></li><li><a href="#grblhal" class="table-of-contents__link toc-highlight">grblHAL</a><ul><li><a href="#qué-es-grblhal" class="table-of-contents__link toc-highlight">¿Qué es grblHAL?</a></li></ul></li><li><a href="#controlador-grbl-telnet" class="table-of-contents__link toc-highlight">Controlador GRBL Telnet</a><ul><li><a href="#acerca-del-controlador-grbl-telnet" class="table-of-contents__link toc-highlight">Acerca del Controlador GRBL Telnet</a></li></ul></li><li><a href="#smoothieware" class="table-of-contents__link toc-highlight">Smoothieware</a><ul><li><a href="#notas-de-compatibilidad" class="table-of-contents__link toc-highlight">Notas de Compatibilidad</a></li></ul></li><li><a href="#marlin" class="table-of-contents__link toc-highlight">Marlin</a><ul><li><a href="#controlador-marlin-serial" class="table-of-contents__link toc-highlight">Controlador Marlin Serial</a></li></ul></li><li><a href="#guía-de-actualización-de-firmware" class="table-of-contents__link toc-highlight">Guía de Actualización de Firmware</a><ul><li><a href="#actualizando-a-grbl-11" class="table-of-contents__link toc-highlight">Actualizando a GRBL 1.1</a></li><li><a href="#respaldo-antes-de-actualizar" class="table-of-contents__link toc-highlight">Respaldo Antes de Actualizar</a></li></ul></li><li><a href="#hardware-de-controlador" class="table-of-contents__link toc-highlight">Hardware de Controlador</a><ul><li><a href="#controladores-comunes" class="table-of-contents__link toc-highlight">Controladores Comunes</a></li><li><a href="#controladores-recomendados" class="table-of-contents__link toc-highlight">Controladores Recomendados</a></li></ul></li><li><a href="#configuración-de-firmware" class="table-of-contents__link toc-highlight">Configuración de Firmware</a><ul><li><a href="#ajustes-de-grbl-para-láser" class="table-of-contents__link toc-highlight">Ajustes de GRBL para Láser</a></li><li><a href="#probando-el-firmware" class="table-of-contents__link toc-highlight">Probando el Firmware</a></li></ul></li><li><a href="#solución-de-problemas-de-firmware" class="table-of-contents__link toc-highlight">Solución de Problemas de Firmware</a><ul><li><a href="#el-firmware-no-responde" class="table-of-contents__link toc-highlight">El Firmware No Responde</a></li><li><a href="#el-firmware-falla" class="table-of-contents__link toc-highlight">El Firmware Falla</a></li><li><a href="#firmware-incorrecto" class="table-of-contents__link toc-highlight">Firmware Incorrecto</a></li></ul></li><li><a href="#soporte-de-firmware-futuro" class="table-of-contents__link toc-highlight">Soporte de Firmware Futuro</a><ul><li><a href="#controladores-ruida" class="table-of-contents__link toc-highlight">Controladores Ruida</a></li><li><a href="#octoprint" class="table-of-contents__link toc-highlight">OctoPrint</a></li><li><a href="#otras-funciones-solicitadas" class="table-of-contents__link toc-highlight">Otras Funciones Solicitadas</a></li><li><a href="#contribuyendo" class="table-of-contents__link toc-highlight">Contribuyendo</a></li></ul></li><li><a href="#páginas-relacionadas" class="table-of-contents__link toc-highlight">Páginas Relacionadas</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</body>
+</html>

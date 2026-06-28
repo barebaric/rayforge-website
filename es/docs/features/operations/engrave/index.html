@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="es" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-features/operations/engrave" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Grabado | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" property="og:url" content="https://rayforge.org/es/docs/features/operations/engrave"><meta data-rh="true" property="og:locale" content="es"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="pt_BR"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="de"><meta data-rh="true" property="og:locale:alternate" content="zh_CN"><meta data-rh="true" property="og:locale:alternate" content="uk"><meta data-rh="true" name="docusaurus_locale" content="es"><meta data-rh="true" name="docsearch:language" content="es"><meta data-rh="true" name="keywords" content="laser cutter software, laser engraving software, LightBurn alternative, free laser software, open source laser software, GRBL, laser cutting software, laser control software, G-code sender, Rayforge"><meta data-rh="true" name="author" content="Rayforge Contributors"><meta data-rh="true" name="robots" content="index, follow"><meta data-rh="true" property="og:type" content="website"><meta data-rh="true" property="og:site_name" content="Rayforge"><meta data-rh="true" property="og:image" content="https://rayforge.org/images/social.png"><meta data-rh="true" property="og:image:width" content="1200"><meta data-rh="true" property="og:image:height" content="630"><meta data-rh="true" property="og:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" name="twitter:title" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:description" content="The complete creative studio for your laser cutter. Design, simulate, and control — with AI-powered tools, 3D preview, and a built-in sketcher."><meta data-rh="true" name="twitter:image" content="https://rayforge.org/images/social.png"><meta data-rh="true" name="twitter:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Grabado | Rayforge"><meta data-rh="true" name="description" content="Las operaciones de grabado rellenan áreas con líneas de escaneo rasterizado, soportando múltiples modos para diferentes efectos de grabado. Desde fotos en escala de grises suaves hasta efectos de relieve 3D, elige el modo que mejor se adapte a tu diseño y material."><meta data-rh="true" property="og:description" content="Las operaciones de grabado rellenan áreas con líneas de escaneo rasterizado, soportando múltiples modos para diferentes efectos de grabado. Desde fotos en escala de grises suaves hasta efectos de relieve 3D, elige el modo que mejor se adapte a tu diseño y material."><link data-rh="true" rel="icon" href="/es/images/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/es/docs/features/operations/engrave"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/features/operations/engrave" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/pt-BR/docs/features/operations/engrave" hreflang="pt-BR"><link data-rh="true" rel="alternate" href="https://rayforge.org/es/docs/features/operations/engrave" hreflang="es"><link data-rh="true" rel="alternate" href="https://rayforge.org/fr/docs/features/operations/engrave" hreflang="fr"><link data-rh="true" rel="alternate" href="https://rayforge.org/de/docs/features/operations/engrave" hreflang="de"><link data-rh="true" rel="alternate" href="https://rayforge.org/zh-CN/docs/features/operations/engrave" hreflang="zh-CN"><link data-rh="true" rel="alternate" href="https://rayforge.org/uk/docs/features/operations/engrave" hreflang="uk"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/features/operations/engrave" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Grabado","item":"https://rayforge.org/es/docs/features/operations/engrave"}]}</script><link rel="alternate" type="application/rss+xml" href="/es/blog/rss.xml" title="Rayforge RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/es/blog/atom.xml" title="Rayforge Atom Feed">
+
+
+
+
+
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rayforge","description":"Free open-source laser cutter software for GRBL-based machines. Design, simulate, and control your laser cutter or engraver with AI-powered tools, 3D preview, and a built-in sketcher.","url":"https://rayforge.org","applicationCategory":"DesignApplication","operatingSystem":"Linux, Windows, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"barebaric","url":"https://github.com/barebaric"},"screenshot":"https://rayforge.org/screenshots/main-standard.png","featureList":"AI-powered design generation, 3D simulation and preview, Parametric 2D sketcher, GRBL and Smoothieware support, Rotary axis support, Material and recipe management, Path optimization, Multi-layer support, Camera calibration","license":"https://github.com/barebaric/rayforge/blob/main/LICENSE","programmingLanguage":"Python","installUrl":"https://rayforge.org/docs/getting-started/installation"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
+<script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/es/assets/css/styles.1d300cfe.css">
+<script src="/es/assets/js/runtime~main.c35200cd.js" defer="defer"></script>
+<script src="/es/assets/js/main.cfaac8a1.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Ir al contenido principal"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Ir al contenido principal</a></div><nav aria-label="Navegación principal" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Alternar barra de navegación" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/es/"><div class="navbar__logo"><img src="/es/images/icon.svg" alt="Logotipo de Rayforge" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/es/images/icon.svg" alt="Logotipo de Rayforge" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Rayforge</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/es/docs/getting-started/installation">Documentación</a><a class="navbar__item navbar__link" href="/es/resources/devices">Dispositivos</a><a class="navbar__item navbar__link" href="/es/docs/developer/getting-started/">Desarrollador</a><a class="navbar__item navbar__link" href="/es/contributing">Contribuir</a><a class="navbar__item navbar__link" href="/es/sponsor">Patrocinador</a><a class="navbar__item navbar__link" href="/es/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>Español</a><ul class="dropdown__menu"><li><a href="/docs/features/operations/engrave" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="en">English</a></li><li><a href="/pt-BR/docs/features/operations/engrave" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="pt-BR">Português (Brasil)</a></li><li><a href="/es/docs/features/operations/engrave" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="es">Español</a></li><li><a href="/fr/docs/features/operations/engrave" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="fr">Français</a></li><li><a href="/de/docs/features/operations/engrave" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="de">Deutsch</a></li><li><a href="/zh-CN/docs/features/operations/engrave" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="zh-CN">中文（中国）</a></li><li><a href="/uk/docs/features/operations/engrave" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="uk">Українська</a></li></ul></div><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="patreonLink_HbXT"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" class="patreonImg_dUDi"></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Modo del sistema" aria-label="Cambiar entre modo claro y oscuro (actualmente Modo del sistema)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div class="floatingLinks_ekMW"><a class="floatingLink_seiz" href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" aria-label="Rayforge on GitHub" title="GitHub"><img class="floatingIcon_OM1j" src="https://cdn.simpleicons.org/github/000000" alt="" width="20" height="20" loading="lazy"></a><a class="floatingLink_seiz" href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" aria-label="Join Rayforge on Discord" title="Discord"><img class="floatingIcon_OM1j" src="https://cdn.simpleicons.org/discord/000000" alt="" width="20" height="20" loading="lazy"></a><a class="floatingLink_seiz" href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" aria-label="Support Rayforge on Patreon" title="Patreon"><img class="floatingIcon_OM1j floatingIconPatreon_HIKb" src="https://cdn.simpleicons.org/patreon/FF424D" alt="" width="20" height="20" loading="lazy"></a></div><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Volver arriba" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><div class="sidebarSearch_pOTk"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div><nav aria-label="Barra lateral de documentación" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/es/docs/getting-started/installation"><span title="Primeros Pasos" class="categoryLinkLabel_W154">Primeros Pasos</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/getting-started/installation"><span title="Instalación" class="linkLabel_WmDU">Instalación</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/getting-started/first-time-setup"><span title="Configuración Inicial" class="linkLabel_WmDU">Configuración Inicial</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/getting-started/quick-start"><span title="Guía de Inicio Rápido" class="linkLabel_WmDU">Guía de Inicio Rápido</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/ui/settings"><span title="Configuración de la Aplicación" class="categoryLinkLabel_W154">Configuración de la Aplicación</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/machine/config-wizard"><span title="Configuración de la Máquina" class="categoryLinkLabel_W154">Configuración de la Máquina</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/ui/main-window"><span title="Interfaz de Usuario" class="categoryLinkLabel_W154">Interfaz de Usuario</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/es/docs/features/operations/contour"><span title="Características" class="categoryLinkLabel_W154">Características</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/es/docs/features/operations/contour"><span title="Operaciones" class="categoryLinkLabel_W154">Operaciones</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/features/operations/contour"><span title="Corte de Contorno" class="linkLabel_WmDU">Corte de Contorno</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/es/docs/features/operations/engrave"><span title="Grabado" class="linkLabel_WmDU">Grabado</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/features/operations/shrink-wrap"><span title="Envoltura Contraída" class="linkLabel_WmDU">Envoltura Contraída</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/features/operations/frame-outline"><span title="Perfilado de Marco" class="linkLabel_WmDU">Perfilado de Marco</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/features/operations/material-test-grid"><span title="Cuadrícula de Prueba de Material" class="linkLabel_WmDU">Cuadrícula de Prueba de Material</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/features/operations/wavefront"><span title="Frente de Onda" class="linkLabel_WmDU">Frente de Onda</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/es/docs/features/smooth"><span title="Post-Processing" class="categoryLinkLabel_W154">Post-Processing</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/features/sketcher"><span title="Diseñador paramétrico 2D" class="linkLabel_WmDU">Diseñador paramétrico 2D</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/features/multi-layer"><span title="Flujo de trabajo multicapa" class="linkLabel_WmDU">Flujo de trabajo multicapa</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/features/stock-handling"><span title="Manejo de Material Base" class="linkLabel_WmDU">Manejo de Material Base</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/features/framing-your-job"><span title="Enmarcando su trabajo" class="linkLabel_WmDU">Enmarcando su trabajo</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/features/sanity-checks"><span title="Comprobaciones de Sanity del Trabajo" class="linkLabel_WmDU">Comprobaciones de Sanity del Trabajo</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/features/workpiece-positioning"><span title="Guía de Posicionamiento de Piezas de Trabajo" class="linkLabel_WmDU">Guía de Posicionamiento de Piezas de Trabajo</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/es/docs/features/kerf"><span title="Compensación de Kerf" class="linkLabel_WmDU">Compensación de Kerf</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/addons/ai-workpiece-generator"><span title="Addons" class="categoryLinkLabel_W154">Addons</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/files/importing"><span title="Archivos" class="categoryLinkLabel_W154">Archivos</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/general-info/laser-safety"><span title="Información General" class="categoryLinkLabel_W154">Información General</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/troubleshooting/connection"><span title="Solución de Problemas" class="categoryLinkLabel_W154">Solución de Problemas</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/es/docs/reference/shortcuts"><span title="Referencia" class="categoryLinkLabel_W154">Referencia</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Migas de pan"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Inicio" class="breadcrumbs__link" href="/es/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Características</span></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Operaciones</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Grabado</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">En esta página</button></div><div class="theme-doc-markdown markdown"><header><h1>Grabado</h1></header>
+<p>Las operaciones de grabado rellenan áreas con líneas de escaneo rasterizado, soportando múltiples modos para diferentes efectos de grabado. Desde fotos en escala de grises suaves hasta efectos de relieve 3D, elige el modo que mejor se adapte a tu diseño y material.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="resumen">Resumen<a href="#resumen" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
+<p>Las operaciones de grabado:</p>
+<ul>
+<li class="">Rellenan formas cerradas con líneas de escaneo</li>
+<li class="">Soportan múltiples modos de grabado para diferentes efectos</li>
+<li class="">Funcionan tanto con formas vectoriales como imágenes de mapa de bits</li>
+<li class="">Usan escaneo bidireccional para velocidad</li>
+<li class="">Crean marcas permanentes en muchos materiales</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="modos-de-grabado">Modos de Grabado<a href="#modos-de-grabado" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="modo-de-potencia-variable">Modo de Potencia Variable<a href="#modo-de-potencia-variable" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p>El modo de Potencia Variable varía la potencia del láser continuamente basándose en el brillo de la imagen, creando grabado en escala de grises suave con transiciones graduales.</p>
+<p><strong>Mejor Para:</strong></p>
+<ul>
+<li class="">Fotos e imágenes en escala de grises suaves</li>
+<li class="">Degradados y transiciones naturales</li>
+<li class="">Retratos y obras de arte</li>
+<li class="">Grabado en madera y cuero</li>
+</ul>
+<p><strong>Características Clave:</strong></p>
+<ul>
+<li class="">Modulación continua de potencia</li>
+<li class="">Control de potencia mín/máx</li>
+<li class="">Degradados suaves</li>
+<li class="">Mejor calidad tonal que el tramado</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="modo-de-potencia-constante">Modo de Potencia Constante<a href="#modo-de-potencia-constante" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p>El modo de Potencia Constante graba a potencia completa, con un umbral que determina qué píxeles se graban. Esto crea resultados limpios en blanco/negro.</p>
+<p><strong>Mejor Para:</strong></p>
+<ul>
+<li class="">Texto y logos</li>
+<li class="">Gráficos de alto contraste</li>
+<li class="">Grabados limpios en blanco/negro</li>
+<li class="">Formas y patrones simples</li>
+</ul>
+<p><strong>Características Clave:</strong></p>
+<ul>
+<li class="">Grabado basado en umbral</li>
+<li class="">Salida de potencia consistente</li>
+<li class="">Más rápido que el modo de potencia variable</li>
+<li class="">Bordes limpios</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="modo-trama">Modo Trama<a href="#modo-trama" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p>El modo trama convierte imágenes en escala de grises a patrones binarios usando algoritmos de tramado, permitiendo grabado de fotos de alta calidad con mejor reproducción tonal que métodos simples basados en umbral.</p>
+<p><strong>Mejor Para:</strong></p>
+<ul>
+<li class="">Grabar fotografías en madera o cuero</li>
+<li class="">Crear obras de arte estilo media tinta</li>
+<li class="">Imágenes con degradados suaves</li>
+<li class="">Cuando el rasterizado estándar no captura suficiente detalle</li>
+</ul>
+<p><strong>Características Clave:</strong></p>
+<ul>
+<li class="">Múltiples opciones de algoritmos de tramado</li>
+<li class="">Mejor preservación de detalle</li>
+<li class="">Tonos continuos percibidos</li>
+<li class="">Ideal para fotografías</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="modo-múltiples-profundidades">Modo Múltiples Profundidades<a href="#modo-múltiples-profundidades" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p>El modo Múltiples Profundidades crea efectos de relieve 3D variando la potencia del láser basándose en el brillo de la imagen, con múltiples pasadas para tallado más profundo.</p>
+<p><strong>Mejor Para:</strong></p>
+<ul>
+<li class="">Crear retratos y obras de arte 3D</li>
+<li class="">Mapas de terreno y topográficos</li>
+<li class="">Litofanías (imágenes 3D que transmiten luz)</li>
+<li class="">Logos y diseños en relieve</li>
+<li class="">Esculturas en relieve</li>
+</ul>
+<p><strong>Características Clave:</strong></p>
+<ul>
+<li class="">Mapeo de profundidad desde el brillo de la imagen</li>
+<li class="">Profundidad mín/máx configurable</li>
+<li class="">Degradados suaves</li>
+<li class="">Múltiples pasadas para grabado más profundo</li>
+<li class="">Escalonamiento Z entre pasadas</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="cuándo-usar-grabado">Cuándo Usar Grabado<a href="#cuándo-usar-grabado" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
+<p>Usa operaciones de grabado para:</p>
+<ul>
+<li class="">Grabar texto y logos</li>
+<li class="">Crear imágenes y fotos en madera/cuero</li>
+<li class="">Rellenar áreas sólidas con textura</li>
+<li class="">Marcar partes y productos</li>
+<li class="">Crear efectos de relieve 3D</li>
+<li class="">Obras de arte estilo media tinta</li>
+</ul>
+<p><strong>No uses grabado para:</strong></p>
+<ul>
+<li class="">Cortar a través del material (usa <a class="" href="/es/docs/features/operations/contour">Contorno</a> en su lugar)</li>
+<li class="">Contornos precisos (el rasterizado crea áreas rellenas)</li>
+<li class="">Trabajo de líneas finas (los vectores son más limpios)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="creando-una-operación-de-grabado">Creando una Operación de Grabado<a href="#creando-una-operación-de-grabado" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="paso-1-preparar-contenido">Paso 1: Preparar Contenido<a href="#paso-1-preparar-contenido" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p>El grabado funciona con:</p>
+<ul>
+<li class=""><strong>Formas vectoriales</strong> - Rellenas con líneas de escaneo</li>
+<li class=""><strong>Texto</strong> - Convertido a trayectorias rellenas</li>
+<li class=""><strong>Imágenes</strong> - Convertidas a escala de grises y grabadas</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="paso-2-añadir-operación-de-grabado">Paso 2: Añadir Operación de Grabado<a href="#paso-2-añadir-operación-de-grabado" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Menú:</strong> Operaciones → Añadir Grabado</li>
+<li class=""><strong>Atajo:</strong> <kbd>ctrl+shift+e</kbd></li>
+<li class=""><strong>Clic derecho:</strong> Menú contextual → Añadir Operación → Grabado</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="paso-3-elegir-modo">Paso 3: Elegir Modo<a href="#paso-3-elegir-modo" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p>Selecciona el modo de grabado que mejor se adapte a tus necesidades:</p>
+<ul>
+<li class=""><strong>Potencia Variable</strong> - Grabado en escala de grises suave</li>
+<li class=""><strong>Potencia Constante</strong> - Grabado limpio en blanco/negro</li>
+<li class=""><strong>Trama</strong> - Grabado de fotos de alta calidad</li>
+<li class=""><strong>Múltiples Profundidades</strong> - Efectos de relieve 3D</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="paso-4-configurar-ajustes">Paso 4: Configurar Ajustes<a href="#paso-4-configurar-ajustes" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p><img decoding="async" loading="lazy" alt="Ajustes de paso de grabado" src="/es/assets/images/step-settings-engrave-general-variable-22eed82a0ebda59edf24d7bae9e5b0c7.png" width="650" height="950" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ajustes-comunes">Ajustes Comunes<a href="#ajustes-comunes" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="potencia-y-velocidad">Potencia y Velocidad<a href="#potencia-y-velocidad" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p><strong>Potencia (%):</strong></p>
+<ul>
+<li class="">Intensidad del láser para grabar</li>
+<li class="">Potencia más baja para marcado más ligero</li>
+<li class="">Potencia más alta para grabado más profundo</li>
+</ul>
+<p><strong>Velocidad (mm/min):</strong></p>
+<ul>
+<li class="">Qué tan rápido escanea el láser</li>
+<li class="">Más rápido = más ligero, más lento = más oscuro</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="intervalo-de-línea">Intervalo de Línea<a href="#intervalo-de-línea" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p><strong>Intervalo de Línea (mm):</strong></p>
+<ul>
+<li class="">Espaciado entre líneas de escaneo</li>
+<li class="">Menor = mayor calidad, tiempo de trabajo más largo</li>
+<li class="">Mayor = más rápido, líneas visibles</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Intervalo</th><th>Calidad</th><th>Velocidad</th><th>Usar Para</th></tr></thead><tbody><tr><td>0.05mm</td><td>Máxima</td><td>Más lento</td><td>Fotos, detalle fino</td></tr><tr><td>0.1mm</td><td>Alta</td><td>Media</td><td>Texto, logos, gráficos</td></tr><tr><td>0.2mm</td><td>Media</td><td>Rápido</td><td>Rellenos sólidos, texturas</td></tr><tr><td>0.3mm+</td><td>Baja</td><td>Más rápido</td><td>Borrador, pruebas</td></tr></tbody></table>
+<p><strong>Recomendado:</strong> 0.1mm para uso general</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>Coincidencia de Resolución</div></div>
+<p>Para imágenes, el intervalo de línea debería coincidir o exceder la resolución de la imagen. Si tu imagen es 10 píxeles/mm (254 DPI), usa intervalo de línea de 0.1mm o menor.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dirección-de-escaneo">Dirección de Escaneo<a href="#dirección-de-escaneo" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p><strong>Ángulo de Escaneo (grados):</strong></p>
+<ul>
+<li class="">Dirección de las líneas de escaneo</li>
+<li class="">0 = horizontal (izquierda a derecha)</li>
+<li class="">90 = vertical (arriba a abajo)</li>
+<li class="">45 = diagonal</li>
+</ul>
+<p><strong>¿Por qué cambiar el ángulo?</strong></p>
+<ul>
+<li class="">Veta de la madera: Graba perpendicular a la veta para mejores resultados</li>
+<li class="">Orientación del patrón: Coincidir con la estética del diseño</li>
+<li class="">Reducir bandas: Diferente ángulo puede ocultar imperfecciones</li>
+</ul>
+<p><strong>Escaneo Bidireccional:</strong></p>
+<ul>
+<li class=""><strong>Habilitado:</strong> El láser graba en ambas direcciones (más rápido)</li>
+<li class=""><strong>Deshabilitado:</strong> El láser solo graba de izquierda a derecha (más lento, más consistente)</li>
+</ul>
+<p>Para mejor calidad, deshabilita bidireccional. Para velocidad, habilítalo.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="overscan">Overscan<a href="#overscan" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p><strong>Distancia de Overscan (mm):</strong></p>
+<ul>
+<li class="">Qué tan más allá del diseño viaja el láser antes de dar la vuelta</li>
+<li class="">Permite que el láser alcance velocidad completa antes de entrar al diseño</li>
+<li class="">Previene marcas de quemadura al inicio/final de líneas</li>
+</ul>
+<p><strong>Valores típicos:</strong></p>
+<ul>
+<li class="">2-5mm para la mayoría de trabajos</li>
+<li class="">Mayor para velocidades altas</li>
+</ul>
+<p>Ver <a class="" href="/es/docs/features/overscan">Overscan</a> para detalles.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="post-procesamiento">Post-Procesamiento<a href="#post-procesamiento" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
+<p><img decoding="async" loading="lazy" alt="Ajustes de post-procesamiento de grabado" src="/es/assets/images/step-settings-engrave-post-e453085f6f5d76f938ce10f64ed72061.png" width="650" height="950" class="img_ev3q"></p>
+<p>Las operaciones de grabado soportan varias opciones de post-procesamiento:</p>
+<ul>
+<li class=""><strong><a class="" href="/es/docs/features/overscan">Overscan</a></strong> - Extiende las líneas rasterizadas para calidad de grabado consistente</li>
+<li class=""><strong><a class="" href="/es/docs/features/path-optimization">Optimización de Trayectoria</a></strong> - Reduce la distancia de viaje</li>
+<li class=""><strong><a class="" href="/es/docs/features/multi-pass">Multi-Pasada</a></strong> - Repite el grabado para resultados más profundos</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ajustes-específicos-del-modo">Ajustes Específicos del Modo<a href="#ajustes-específicos-del-modo" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ajustes-del-modo-potencia-variable">Ajustes del Modo Potencia Variable<a href="#ajustes-del-modo-potencia-variable" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p><img decoding="async" loading="lazy" alt="Ajustes del modo Potencia Variable" src="/es/assets/images/step-settings-engrave-general-variable-22eed82a0ebda59edf24d7bae9e5b0c7.png" width="650" height="950" class="img_ev3q"></p>
+<p><strong>Potencia Mín (%):</strong></p>
+<ul>
+<li class="">Potencia del láser para áreas más claras (píxeles blancos)</li>
+<li class="">Usualmente 0-20%</li>
+<li class="">Establecer más alto para evitar áreas muy superficiales</li>
+</ul>
+<p><strong>Potencia Máx (%):</strong></p>
+<ul>
+<li class="">Potencia del láser para áreas más oscuras (píxeles negros)</li>
+<li class="">Usualmente 40-80% dependiendo del material</li>
+<li class="">Menor = relieve sutil, mayor = profundidad dramática</li>
+</ul>
+<p><strong>Ejemplos de Rango de Potencia:</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Mín</th><th>Máx</th><th>Efecto</th></tr></thead><tbody><tr><td>0%</td><td>40%</td><td>Relieve sutil, ligero</td></tr><tr><td>10%</td><td>60%</td><td>Profundidad media, seguro</td></tr><tr><td>20%</td><td>80%</td><td>Profundo, relieve dramático</td></tr></tbody></table>
+<p><strong>Invertir:</strong></p>
+<ul>
+<li class=""><strong>Apagado</strong> (por defecto): Blanco = superficial, Negro = profundo</li>
+<li class=""><strong>Encendido</strong>: Blanco = profundo, Negro = superficial</li>
+</ul>
+<p>Usa invertir para litofanías (áreas claras deberían ser delgadas) o repujado (áreas elevadas).</p>
+<p><strong>Rango de Brillo:</strong></p>
+<p>Controla cómo se mapean los valores de brillo de la imagen a la potencia del láser. El histograma muestra la distribución de valores de brillo en tu imagen.</p>
+<ul>
+<li class=""><strong>Auto Niveles</strong> (por defecto): Ajusta automáticamente los puntos de negro y blanco basándose en el contenido de la imagen. Valores por debajo del punto de negro se tratan como negro, valores por encima del punto blanco se tratan como blanco. Esto estira el contraste de la imagen para usar el rango completo de potencia.</li>
+<li class=""><strong>Modo Manual</strong>: Deshabilita Auto Niveles para establecer manualmente los puntos de negro y blanco arrastrando los marcadores en el histograma.</li>
+</ul>
+<p>Esto es particularmente útil para:</p>
+<ul>
+<li class="">Imágenes de bajo contraste que necesitan mejora de contraste</li>
+<li class="">Imágenes con rango tonal limitado</li>
+<li class="">Asegurar resultados consistentes a través de diferentes imágenes fuente</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ajustes-del-modo-potencia-constante">Ajustes del Modo Potencia Constante<a href="#ajustes-del-modo-potencia-constante" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p><img decoding="async" loading="lazy" alt="Ajustes del modo Potencia Constante" src="/es/assets/images/step-settings-engrave-general-constant_power-104ac4fbfb99c40458079df6a1c35839.png" width="650" height="950" class="img_ev3q"></p>
+<p><strong>Umbral (0-255):</strong></p>
+<ul>
+<li class="">Corte de brillo para separación blanco/negro</li>
+<li class="">Menor = más negro grabado</li>
+<li class="">Mayor = más blanco grabado</li>
+</ul>
+<p><strong>Valores típicos:</strong></p>
+<ul>
+<li class="">128 (umbral 50% gris)</li>
+<li class="">Ajustar basándose en el contraste de la imagen</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ajustes-del-modo-trama">Ajustes del Modo Trama<a href="#ajustes-del-modo-trama" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p><img decoding="async" loading="lazy" alt="Ajustes del modo Trama" src="/es/assets/images/step-settings-engrave-general-dither-1097d603cd32c8784020a5cd21885739.png" width="650" height="950" class="img_ev3q"></p>
+<p><strong>Algoritmo de Tramado:</strong></p>
+<p>Elige el algoritmo que mejor se adapte a tu imagen y material:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Algoritmo</th><th>Calidad</th><th>Velocidad</th><th>Mejor Para</th></tr></thead><tbody><tr><td>Floyd-Steinberg</td><td>Máxima</td><td>Más lento</td><td>Fotos, retratos, degradados suaves</td></tr><tr><td>Bayer 2x2</td><td>Baja</td><td>Más rápido</td><td>Efecto media tonta grueso</td></tr><tr><td>Bayer 4x4</td><td>Media</td><td>Rápido</td><td>Media tonta equilibrada</td></tr><tr><td>Bayer 8x8</td><td>Alta</td><td>Media</td><td>Detalle fino, patrones sutiles</td></tr></tbody></table>
+<p><strong>Floyd-Steinberg</strong> es el predeterminado y recomendado para la mayoría de grabados de fotos. Usa difusión de error para distribuir errores de cuantización a píxeles vecinos, creando resultados de aspecto natural.</p>
+<p><strong>Tramado Bayer</strong> crea patrones regulares que pueden producir efectos artísticos que asemejan la impresión tradicional de media tinta.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ajustes-del-modo-múltiples-profundidades">Ajustes del Modo Múltiples Profundidades<a href="#ajustes-del-modo-múltiples-profundidades" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p><img decoding="async" loading="lazy" alt="Ajustes del modo Múltiples Profundidades" src="/es/assets/images/step-settings-engrave-general-multi_pass-45fb6c246dbc5b52a0db6a6dbc6a1a33.png" width="650" height="950" class="img_ev3q"></p>
+<p><strong>Número de Niveles de Profundidad:</strong></p>
+<ul>
+<li class="">Número de niveles de profundidad discretos</li>
+<li class="">Más niveles = degradados más suaves</li>
+<li class="">Típico: 5-10 niveles</li>
+</ul>
+<p><strong>Paso-Z por Nivel (mm):</strong></p>
+<ul>
+<li class="">Cuánto bajar entre pasadas de profundidad</li>
+<li class="">Crea profundidad total más profunda con múltiples pasadas</li>
+<li class="">Típico: 0.1-0.5mm</li>
+</ul>
+<p><strong>Rotar Ángulo Por Pasada:</strong></p>
+<ul>
+<li class="">Grados para rotar cada pasada sucesiva</li>
+<li class="">Crea efecto 3D tipo entramado cruzado</li>
+<li class="">Típico: 0-45 grados</li>
+</ul>
+<p><strong>Invertir:</strong></p>
+<ul>
+<li class=""><strong>Habilitado:</strong> Blanco = profundo, Negro = superficial</li>
+<li class=""><strong>Deshabilitado:</strong> Negro = profundo, Blanco = superficial</li>
+</ul>
+<p>Usa invertir para litofanías (áreas claras deberían ser delgadas) o repujado (áreas elevadas).</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="consejos-y-mejores-prácticas">Consejos y Mejores Prácticas<a href="#consejos-y-mejores-prácticas" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
+<p><img decoding="async" loading="lazy" alt="Ajustes de post-procesamiento de grabado" src="/es/assets/images/step-settings-engrave-post-e453085f6f5d76f938ce10f64ed72061.png" width="650" height="950" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="selección-de-material">Selección de Material<a href="#selección-de-material" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p><strong>Mejores materiales para grabar:</strong></p>
+<ul>
+<li class="">Madera (las variaciones naturales crean resultados hermosos)</li>
+<li class="">Cuero (se quema a marrón oscuro/negro)</li>
+<li class="">Aluminio anodizado (remueve el recubrimiento, revela el metal)</li>
+<li class="">Metales recubiertos (remueve la capa de recubrimiento)</li>
+<li class="">Algunos plásticos (¡prueba primero!)</li>
+</ul>
+<p><strong>Materiales desafiantes:</strong></p>
+<ul>
+<li class="">Acrílico transparente (no muestra bien el grabado)</li>
+<li class="">Metales sin recubrimiento (requiere compuestos de marcado especiales)</li>
+<li class="">Vidrio (requiere ajustes/recubrimientos especiales)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ajustes-de-calidad">Ajustes de Calidad<a href="#ajustes-de-calidad" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p><strong>Para mejor calidad:</strong></p>
+<ul>
+<li class="">Usa intervalo de línea más pequeño (0.05-0.1mm)</li>
+<li class="">Deshabilita escaneo bidireccional</li>
+<li class="">Aumenta overscan (3-5mm)</li>
+<li class="">Usa potencia más baja, múltiples pasadas</li>
+<li class="">Asegúrate de que el material esté plano y asegurado</li>
+</ul>
+<p><strong>Para grabado más rápido:</strong></p>
+<ul>
+<li class="">Usa intervalo de línea más grande (0.15-0.2mm)</li>
+<li class="">Habilita escaneo bidireccional</li>
+<li class="">Overscan mínimo (1-2mm)</li>
+<li class="">Pasada única a potencia más alta</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="problemas-comunes">Problemas Comunes<a href="#problemas-comunes" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<p><strong>Marcas de quemadura al final de líneas:</strong></p>
+<ul>
+<li class="">Aumenta la distancia de overscan</li>
+<li class="">Revisa los ajustes de aceleración</li>
+<li class="">Reduce la potencia ligeramente</li>
+</ul>
+<p><strong>Líneas de escaneo visibles:</strong></p>
+<ul>
+<li class="">Disminuye el intervalo de línea</li>
+<li class="">Reduce la potencia (sobre-quemar crea huecos)</li>
+<li class="">Verifica que el material esté plano</li>
+</ul>
+<p><strong>Grabado desigual:</strong></p>
+<ul>
+<li class="">Asegúrate de que el material esté plano</li>
+<li class="">Revisa la consistencia del enfoque</li>
+<li class="">Verifica la estabilidad de potencia del láser</li>
+<li class="">Limpia la lente del láser</li>
+</ul>
+<p><strong>Bandas (rayas oscuras/claras):</strong></p>
+<ul>
+<li class="">Deshabilita escaneo bidireccional</li>
+<li class="">Revisa la tensión de las correas</li>
+<li class="">Reduce la velocidad</li>
+<li class="">Prueba diferente ángulo de escaneo</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="solución-de-problemas">Solución de Problemas<a href="#solución-de-problemas" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="grabado-muy-ligero">Grabado muy ligero<a href="#grabado-muy-ligero" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Aumenta:</strong> Ajuste de potencia</li>
+<li class=""><strong>Disminuye:</strong> Ajuste de velocidad</li>
+<li class=""><strong>Revisa:</strong> El enfoque es correcto</li>
+<li class=""><strong>Prueba:</strong> Múltiples pasadas</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="grabado-muy-oscuroquemando">Grabado muy oscuro/quemando<a href="#grabado-muy-oscuroquemando" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Disminuye:</strong> Ajuste de potencia</li>
+<li class=""><strong>Aumenta:</strong> Ajuste de velocidad</li>
+<li class=""><strong>Aumenta:</strong> Intervalo de línea</li>
+<li class=""><strong>Revisa:</strong> El material es apropiado</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="oscuridad-inconsistente">Oscuridad inconsistente<a href="#oscuridad-inconsistente" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Revisa:</strong> El material está plano</li>
+<li class=""><strong>Revisa:</strong> La distancia de enfoque es consistente</li>
+<li class=""><strong>Verifica:</strong> El haz del láser está limpio</li>
+<li class=""><strong>Prueba:</strong> Diferente área del material (la veta varía)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="la-imagen-se-ve-pixelada">La imagen se ve pixelada<a href="#la-imagen-se-ve-pixelada" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Disminuye:</strong> Intervalo de línea</li>
+<li class=""><strong>Revisa:</strong> Resolución de la imagen fuente</li>
+<li class=""><strong>Prueba:</strong> Intervalo de línea más pequeño (0.05mm)</li>
+<li class=""><strong>Verifica:</strong> La imagen no se está escalando hacia arriba</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="líneas-de-escaneo-visibles">Líneas de escaneo visibles<a href="#líneas-de-escaneo-visibles" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Disminuye:</strong> Intervalo de línea</li>
+<li class=""><strong>Reduce:</strong> Potencia (sobre-quemar crea huecos)</li>
+<li class=""><strong>Prueba:</strong> Diferente ángulo de escaneo</li>
+<li class=""><strong>Asegúrate:</strong> La superficie del material es suave</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="temas-relacionados">Temas Relacionados<a href="#temas-relacionados" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
+<ul>
+<li class=""><strong><a class="" href="/es/docs/features/operations/contour">Corte de Contorno</a></strong> - Cortar contornos y formas</li>
+<li class=""><strong><a class="" href="/es/docs/features/overscan">Overscan</a></strong> - Mejorando la calidad del grabado</li>
+<li class=""><strong><a class="" href="/es/docs/features/operations/material-test-grid">Cuadrícula de Prueba de Materiales</a></strong> - Encontrar ajustes óptimos</li>
+<li class=""><strong><a class="" href="/es/docs/features/multi-layer">Flujo de Trabajo Multi-Capa</a></strong> - Combinando grabado con otras operaciones</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/features/operations/engrave.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Navegación de documentos"><a class="pagination-nav__link pagination-nav__link--prev" href="/es/docs/features/operations/contour"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Corte de Contorno</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/es/docs/features/operations/shrink-wrap"><div class="pagination-nav__sublabel">Siguiente</div><div class="pagination-nav__label">Envoltura Contraída</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#resumen" class="table-of-contents__link toc-highlight">Resumen</a></li><li><a href="#modos-de-grabado" class="table-of-contents__link toc-highlight">Modos de Grabado</a><ul><li><a href="#modo-de-potencia-variable" class="table-of-contents__link toc-highlight">Modo de Potencia Variable</a></li><li><a href="#modo-de-potencia-constante" class="table-of-contents__link toc-highlight">Modo de Potencia Constante</a></li><li><a href="#modo-trama" class="table-of-contents__link toc-highlight">Modo Trama</a></li><li><a href="#modo-múltiples-profundidades" class="table-of-contents__link toc-highlight">Modo Múltiples Profundidades</a></li></ul></li><li><a href="#cuándo-usar-grabado" class="table-of-contents__link toc-highlight">Cuándo Usar Grabado</a></li><li><a href="#creando-una-operación-de-grabado" class="table-of-contents__link toc-highlight">Creando una Operación de Grabado</a><ul><li><a href="#paso-1-preparar-contenido" class="table-of-contents__link toc-highlight">Paso 1: Preparar Contenido</a></li><li><a href="#paso-2-añadir-operación-de-grabado" class="table-of-contents__link toc-highlight">Paso 2: Añadir Operación de Grabado</a></li><li><a href="#paso-3-elegir-modo" class="table-of-contents__link toc-highlight">Paso 3: Elegir Modo</a></li><li><a href="#paso-4-configurar-ajustes" class="table-of-contents__link toc-highlight">Paso 4: Configurar Ajustes</a></li></ul></li><li><a href="#ajustes-comunes" class="table-of-contents__link toc-highlight">Ajustes Comunes</a><ul><li><a href="#potencia-y-velocidad" class="table-of-contents__link toc-highlight">Potencia y Velocidad</a></li><li><a href="#intervalo-de-línea" class="table-of-contents__link toc-highlight">Intervalo de Línea</a></li><li><a href="#dirección-de-escaneo" class="table-of-contents__link toc-highlight">Dirección de Escaneo</a></li><li><a href="#overscan" class="table-of-contents__link toc-highlight">Overscan</a></li></ul></li><li><a href="#post-procesamiento" class="table-of-contents__link toc-highlight">Post-Procesamiento</a></li><li><a href="#ajustes-específicos-del-modo" class="table-of-contents__link toc-highlight">Ajustes Específicos del Modo</a><ul><li><a href="#ajustes-del-modo-potencia-variable" class="table-of-contents__link toc-highlight">Ajustes del Modo Potencia Variable</a></li><li><a href="#ajustes-del-modo-potencia-constante" class="table-of-contents__link toc-highlight">Ajustes del Modo Potencia Constante</a></li><li><a href="#ajustes-del-modo-trama" class="table-of-contents__link toc-highlight">Ajustes del Modo Trama</a></li><li><a href="#ajustes-del-modo-múltiples-profundidades" class="table-of-contents__link toc-highlight">Ajustes del Modo Múltiples Profundidades</a></li></ul></li><li><a href="#consejos-y-mejores-prácticas" class="table-of-contents__link toc-highlight">Consejos y Mejores Prácticas</a><ul><li><a href="#selección-de-material" class="table-of-contents__link toc-highlight">Selección de Material</a></li><li><a href="#ajustes-de-calidad" class="table-of-contents__link toc-highlight">Ajustes de Calidad</a></li><li><a href="#problemas-comunes" class="table-of-contents__link toc-highlight">Problemas Comunes</a></li></ul></li><li><a href="#solución-de-problemas" class="table-of-contents__link toc-highlight">Solución de Problemas</a><ul><li><a href="#grabado-muy-ligero" class="table-of-contents__link toc-highlight">Grabado muy ligero</a></li><li><a href="#grabado-muy-oscuroquemando" class="table-of-contents__link toc-highlight">Grabado muy oscuro/quemando</a></li><li><a href="#oscuridad-inconsistente" class="table-of-contents__link toc-highlight">Oscuridad inconsistente</a></li><li><a href="#la-imagen-se-ve-pixelada" class="table-of-contents__link toc-highlight">La imagen se ve pixelada</a></li><li><a href="#líneas-de-escaneo-visibles" class="table-of-contents__link toc-highlight">Líneas de escaneo visibles</a></li></ul></li><li><a href="#temas-relacionados" class="table-of-contents__link toc-highlight">Temas Relacionados</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,1544 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Rayforge Blog</title>
+        <link>https://rayforge.org/fr/blog</link>
+        <description>Rayforge Blog</description>
+        <lastBuildDate>Tue, 16 Jun 2026 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>fr</language>
+        <item>
+            <title><![CDATA[Rayforge 1.8 - Rust Pipeline Complete, LightBurn Import, New Device Profiles]]></title>
+            <link>https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-lightburn-import</link>
+            <guid>https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-lightburn-import</guid>
+            <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Rayforge 1.8 completes the Rust geometry pipeline migration, adds full LightBurn file format import, new device profiles, a simple GRBL serial driver, and significant performance improvements.]]></description>
+            <content:encoded><![CDATA[<p>Rayforge 1.8 is here! This release completes the Rust geometry pipeline
+migration, adds full LightBurn file format import, new device profiles, a
+simple GRBL serial driver, and significant performance improvements across
+the board.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="rust-pipeline-raygeo">Rust Pipeline (raygeo)<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-lightburn-import#rust-pipeline-raygeo" class="hash-link" aria-label="Lien direct vers Rust Pipeline (raygeo)" title="Lien direct vers Rust Pipeline (raygeo)" translate="no">​</a></h2>
+<p>The geometry engine now runs entirely in Rust through the raygeo library.
+Tab operations, merge lines, overscan, lead-in/out, hull computation, the
+raster scan engine, image processing, SVG parsing, and encoder functions are
+all Rust-accelerated. The old Python implementations have all been removed.</p>
+<p>raygeo is now at version 0.8 with thoroughly documented APIs, visual examples,
+and interactive tools. It handles everything from bezier curve processing to
+camera calibration algorithms.</p>
+<p><strong>What runs in Rust:</strong></p>
+<ul>
+<li class="">Tab operations, merge lines, overscan, lead-in/out, hull computation</li>
+<li class="">Raster scan engine: power modulation, mask scanning, multi-pass modes</li>
+<li class="">Image processing: sRGB conversion, dithering, grayscale normalization,
+auto-level computation</li>
+<li class="">SVG parsing: length parsing, geometry extraction, layer splitting,
+metadata extraction</li>
+<li class="">Encoder functions: scanline rasterization, cylinder transforms</li>
+<li class="">Image denoising and Otsu thresholding</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="lightburn-import">LightBurn Import<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-lightburn-import#lightburn-import" class="hash-link" aria-label="Lien direct vers LightBurn Import" title="Lien direct vers LightBurn Import" translate="no">​</a></h2>
+<p>Rayforge can now import LightBurn project files (.lbrn / .lbrn2) with layers
+and geometry preserved, device profiles (.lbdev) with camera calibration,
+and cut settings as workflow step parameters. Power, speed, and passes carry
+over from your existing LightBurn designs.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-device-profiles">New Device Profiles<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-lightburn-import#new-device-profiles" class="hash-link" aria-label="Lien direct vers New Device Profiles" title="Lien direct vers New Device Profiles" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Acmer P3</strong> laser engraver</li>
+<li class=""><strong>Creality Falcon 10W</strong> -- 10W diode laser with 400x415mm work area</li>
+<li class=""><strong>Sculpfun C1</strong> engraver</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="simple-grbl-serial-driver">Simple GRBL Serial Driver<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-lightburn-import#simple-grbl-serial-driver" class="hash-link" aria-label="Lien direct vers Simple GRBL Serial Driver" title="Lien direct vers Simple GRBL Serial Driver" translate="no">​</a></h2>
+<p>A new GrblSerialSimpleDriver uses a ping-pong protocol: send one line, wait
+for "ok", send the next. No character-counting buffer management, no deadlock
+detection, no stall recovery. Available as an alternative when the advanced
+driver causes false alarms on certain devices.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance">Performance<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-lightburn-import#performance" class="hash-link" aria-label="Lien direct vers Performance" title="Lien direct vers Performance" translate="no">​</a></h2>
+<p>The 3D canvas slider no longer freezes on large jobs. The old O(n) seek was
+replaced with pre-computed snapshots and binary search. Seek time dropped
+from seconds to roughly 3 milliseconds on a 338K-command job.</p>
+<p>Adaptive deadlock timeouts estimate per-command execution time, so slow moves
+get longer timeouts and fast moves get shorter ones. Machine settings now
+apply immediately without requiring a restart.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ops-redesign">Ops Redesign<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-lightburn-import#ops-redesign" class="hash-link" aria-label="Lien direct vers Ops Redesign" title="Lien direct vers Ops Redesign" translate="no">​</a></h2>
+<p>The core Ops container was completely rewritten from a list of Python Command
+objects to a Struct-of-Arrays layout with index-based access. This is the
+foundation for the Rust integration and is significantly faster in Python too.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-lightburn-import#other-improvements" class="hash-link" aria-label="Lien direct vers Other Improvements" title="Lien direct vers Other Improvements" translate="no">​</a></h2>
+<ul>
+<li class="">Go to WCS Zero button in the Current Position section</li>
+<li class="">Lens calibration dialog in camera properties, split from image settings</li>
+<li class="">Finer raster line spacing lowered to 0.001 mm for microfabrication</li>
+<li class="">macOS Tahoe icons updated to Liquid Glass-style design</li>
+<li class="">Deadlock detection toggle in GRBL driver settings</li>
+<li class="">Rotary module selection disabled when machine has no rotary modules</li>
+<li class="">pyclipper and svgelements dependencies removed, replaced by raygeo</li>
+<li class="">Worker pool detects crashed workers and spawns replacements</li>
+<li class="">Pre-generated raygeo API docs on the website</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-lightburn-import#bug-fixes" class="hash-link" aria-label="Lien direct vers Bug Fixes" title="Lien direct vers Bug Fixes" translate="no">​</a></h2>
+<p>Fixed GRBL network disconnect with MKS DLC32 boards, buffer stall recovery
+aborting jobs during slow moves, 3D canvas slider freeze on large jobs,
+optimizer splitting continuous scanlines, tab clip points not scaled to
+workpiece size, machine settings not applying until restart, ValueError when
+removing the active machine, manual laser control routing, WCS dropdown
+coordinates not syncing, multiprocessing warnings on Python 3.12, and many
+more.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="special-thanks">Special Thanks<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-lightburn-import#special-thanks" class="hash-link" aria-label="Lien direct vers Special Thanks" title="Lien direct vers Special Thanks" translate="no">​</a></h2>
+<p>This release was made possible with the support of our Patreon supporters:
+froqstar, old-man-and-the-seam, pghpete, Derek McTavish, starlynx.dev, Amsel,
+and four anonymous supporters.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-18">Download Rayforge 1.8<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-lightburn-import#download-rayforge-18" class="hash-link" aria-label="Lien direct vers Download Rayforge 1.8" title="Lien direct vers Download Rayforge 1.8" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="https://rayforge.org/fr/docs/getting-started/installation">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-lightburn-import#join-the-community" class="hash-link" aria-label="Lien direct vers Join the Community" title="Lien direct vers Join the Community" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content:encoded>
+            <category>release</category>
+            <category>1.8</category>
+            <category>rust</category>
+            <category>raygeo</category>
+            <category>lightburn</category>
+            <category>performance</category>
+            <category>grbl</category>
+            <category>device-profiles</category>
+        </item>
+        <item>
+            <title><![CDATA[Rayforge 1.8 Beta - Rust-Powered Pipeline, Faster Rasterizing, New GRBL Driver]]></title>
+            <link>https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-faster-rasterizing-grbl-simple</link>
+            <guid>https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-faster-rasterizing-grbl-simple</guid>
+            <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Rayforge 1.8 beta rewrites the core pipeline in Rust, redesigns the Ops data structure, ports raster and image processing to Rust, adds a simple GRBL serial driver, and includes new device profiles.]]></description>
+            <content:encoded><![CDATA[<p>Rayforge 1.8 beta brings a Rust-powered geometry pipeline, a completely
+redesigned Ops data structure, raster and image processing ported to Rust, a
+new simple GRBL serial driver, and new device profiles.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ops-redesigned-with-struct-of-arrays">Ops Redesigned with Struct-of-Arrays<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-faster-rasterizing-grbl-simple#ops-redesigned-with-struct-of-arrays" class="hash-link" aria-label="Lien direct vers Ops Redesigned with Struct-of-Arrays" title="Lien direct vers Ops Redesigned with Struct-of-Arrays" translate="no">​</a></h2>
+<p>The core Ops container has been completely rewritten from a list of Python
+Command objects to a <strong>Struct-of-Arrays</strong> layout with index-based access.
+This new design is significantly faster in Python and serves as the
+foundation for the Rust backend integration. Every transformer, encoder,
+producer, and the 3D simulator has been ported to the new API.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="geometry-processing-in-rust-raygeo-06">Geometry Processing in Rust (raygeo 0.6)<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-faster-rasterizing-grbl-simple#geometry-processing-in-rust-raygeo-06" class="hash-link" aria-label="Lien direct vers Geometry Processing in Rust (raygeo 0.6)" title="Lien direct vers Geometry Processing in Rust (raygeo 0.6)" translate="no">​</a></h2>
+<p>Five major pipeline stages now run entirely in Rust via raygeo 0.6: <strong>tab
+operations</strong>, <strong>merge lines</strong>, <strong>overscan</strong>, <strong>lead-in/lead-out</strong>, and <strong>hull
+computation</strong>. Each has been rewritten as a thin Python wrapper around
+raygeo's Rust functions, and the old Python implementations have been
+removed. This is the continuation of the migration that started in 1.7.8.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="raster-engine-in-rust">Raster Engine in Rust<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-faster-rasterizing-grbl-simple#raster-engine-in-rust" class="hash-link" aria-label="Lien direct vers Raster Engine in Rust" title="Lien direct vers Raster Engine in Rust" translate="no">​</a></h2>
+<p>Raster scan loops -- the hot path for engraving operations -- have been
+replaced with Rust-accelerated raygeo functions for power modulation, mask
+scanning, and multi-pass modes. Auto-level computation and grayscale
+normalization also run in Rust. All 39 existing raster tests pass unchanged.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="image-processing-in-rust">Image Processing in Rust<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-faster-rasterizing-grbl-simple#image-processing-in-rust" class="hash-link" aria-label="Lien direct vers Image Processing in Rust" title="Lien direct vers Image Processing in Rust" translate="no">​</a></h2>
+<p>sRGB-to-linear conversion, linear-to-sRGB, all dithering algorithms
+(Floyd-Steinberg, Bayer, minimum run length), auto-level computation, and
+grayscale normalization are now handled by raygeo.image. The Python side
+keeps only thin Cairo surface buffer wrappers.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3d-canvas-slider-performance">3D Canvas Slider Performance<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-faster-rasterizing-grbl-simple#3d-canvas-slider-performance" class="hash-link" aria-label="Lien direct vers 3D Canvas Slider Performance" title="Lien direct vers 3D Canvas Slider Performance" translate="no">​</a></h2>
+<p>The 3D playback scrubber now pre-computes snapshots every 1000 commands at
+load time and uses binary search during playback. For a 338K-command job,
+seek time drops from seconds to roughly 3 milliseconds.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="simple-grbl-serial-driver-experimental">Simple GRBL Serial Driver (Experimental)<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-faster-rasterizing-grbl-simple#simple-grbl-serial-driver-experimental" class="hash-link" aria-label="Lien direct vers Simple GRBL Serial Driver (Experimental)" title="Lien direct vers Simple GRBL Serial Driver (Experimental)" translate="no">​</a></h2>
+<p>A new <strong>GrblSerialSimpleDriver</strong> uses a ping-pong protocol: send one line,
+wait for "ok", send the next. No character-counting buffer management, no
+deadlock detection, no stall recovery. Useful for devices where the advanced
+buffer-counting driver causes false alarms or communication errors.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="adaptive-deadlock-timeouts">Adaptive Deadlock Timeouts<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-faster-rasterizing-grbl-simple#adaptive-deadlock-timeouts" class="hash-link" aria-label="Lien direct vers Adaptive Deadlock Timeouts" title="Lien direct vers Adaptive Deadlock Timeouts" translate="no">​</a></h2>
+<p>The GRBL driver now estimates per-command execution time and sets individual
+timeouts accordingly. Slow moves get longer timeouts, fast moves get shorter
+ones. This eliminates false ALARM:3 errors on slow feed rates.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="go-to-wcs-zero">Go to WCS Zero<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-faster-rasterizing-grbl-simple#go-to-wcs-zero" class="hash-link" aria-label="Lien direct vers Go to WCS Zero" title="Lien direct vers Go to WCS Zero" translate="no">​</a></h2>
+<p>A new button in the Current Position section moves the machine to X0 Y0 of
+the active Work Coordinate System.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-device-profiles">New Device Profiles<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-faster-rasterizing-grbl-simple#new-device-profiles" class="hash-link" aria-label="Lien direct vers New Device Profiles" title="Lien direct vers New Device Profiles" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Creality Falcon 10W</strong> -- 10W diode laser with 400x415mm work area</li>
+<li class=""><strong>Sculpfun C1</strong> -- diode laser engraver</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="finer-raster-line-spacing">Finer Raster Line Spacing<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-faster-rasterizing-grbl-simple#finer-raster-line-spacing" class="hash-link" aria-label="Lien direct vers Finer Raster Line Spacing" title="Lien direct vers Finer Raster Line Spacing" translate="no">​</a></h2>
+<p>The minimum raster line spacing has been lowered from 0.01 mm to 0.001 mm
+with 3-digit decimal precision, enabling sub-10 micron pitch work for
+microfabrication and precision lithography.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="machine-settings-apply-immediately">Machine Settings Apply Immediately<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-faster-rasterizing-grbl-simple#machine-settings-apply-immediately" class="hash-link" aria-label="Lien direct vers Machine Settings Apply Immediately" title="Lien direct vers Machine Settings Apply Immediately" translate="no">​</a></h2>
+<p>Machine settings changes now propagate to the pipeline and canvas without
+requiring a restart. Driver, dialect, laser, and axis changes are all picked
+up live.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-faster-rasterizing-grbl-simple#other-improvements" class="hash-link" aria-label="Lien direct vers Other Improvements" title="Lien direct vers Other Improvements" translate="no">​</a></h2>
+<ul>
+<li class="">Worker pool detects crashed and unresponsive workers, spawns replacements
+automatically</li>
+<li class="">Fixed GRBL network disconnect with MKS DLC32 boards</li>
+<li class="">Fixed ValueError when removing the active machine</li>
+<li class="">Fixed manual laser control routing</li>
+<li class="">File dialogs now prefer Rayforge project and sketch MIME types</li>
+<li class="">Deadlock detection can now be toggled on/off per driver</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="special-thanks">Special Thanks<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-faster-rasterizing-grbl-simple#special-thanks" class="hash-link" aria-label="Lien direct vers Special Thanks" title="Lien direct vers Special Thanks" translate="no">​</a></h2>
+<p>This release was made possible with the support of our Patreon supporters:
+froqstar, old-man-and-the-seam, pghpete, Derek McTavish, starlynx.dev, and
+five anonymous supporters.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-18-beta">Download Rayforge 1.8 Beta<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-faster-rasterizing-grbl-simple#download-rayforge-18-beta" class="hash-link" aria-label="Lien direct vers Download Rayforge 1.8 Beta" title="Lien direct vers Download Rayforge 1.8 Beta" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="https://rayforge.org/fr/docs/getting-started/installation">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/fr/blog/rayforge-1.8-rust-pipeline-faster-rasterizing-grbl-simple#join-the-community" class="hash-link" aria-label="Lien direct vers Join the Community" title="Lien direct vers Join the Community" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content:encoded>
+            <category>release</category>
+            <category>1.8</category>
+            <category>rust</category>
+            <category>raygeo</category>
+            <category>performance</category>
+            <category>grbl</category>
+            <category>raster</category>
+            <category>ops</category>
+        </item>
+        <item>
+            <title><![CDATA[Rayforge 1.7 - CO2/Fiber Lasers, Ruida, OctoPrint, Config Wizard]]></title>
+            <link>https://rayforge.org/fr/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard</link>
+            <guid>https://rayforge.org/fr/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard</guid>
+            <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Rayforge 1.7 brings CO2 and fiber laser support, a Ruida driver, OctoPrint integration, a configuration wizard, job sanity checks, and 15 new device profiles.]]></description>
+            <content:encoded><![CDATA[<p>Rayforge 1.7 brings CO2 and fiber laser support, a Ruida driver, an
+experimental OctoPrint driver, a configuration wizard for GRBL devices, job
+sanity checks, a manual laser control dock, parametric text templates, and 15
+new device profiles.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="co2-and-fiber-laser-pwm-settings">CO2 and Fiber Laser PWM Settings<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#co2-and-fiber-laser-pwm-settings" class="hash-link" aria-label="Lien direct vers CO2 and Fiber Laser PWM Settings" title="Lien direct vers CO2 and Fiber Laser PWM Settings" translate="no">​</a></h2>
+<p>Rayforge now understands that not all lasers are diodes. A new <strong>Laser Type</strong>
+dropdown in the laser head settings lets you choose between Diode, CO2, and
+Fiber. When you select CO2 or Fiber, a dedicated PWM section appears with
+controls for frequency and pulse width -- including configurable min/max bounds.</p>
+<p>These settings flow through the pipeline, so each operation step can use or
+override the defaults. The Ruida driver already leverages them for native
+frequency and pulse width commands.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ruida-driver">Ruida Driver<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#ruida-driver" class="hash-link" aria-label="Lien direct vers Ruida Driver" title="Lien direct vers Ruida Driver" translate="no">​</a></h2>
+<p>A complete <strong>Ruida driver</strong> is now available with jogging, position reporting,
+air assist, layer selection, auto-connect, status polling, and reference
+points support. It has been tested with a real controller.</p>
+<p>Generic device profiles for Ruida, GRBL, and Smoothieware are included so you
+can get started even without a machine-specific profile.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="configuration-wizard">Configuration Wizard<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#configuration-wizard" class="hash-link" aria-label="Lien direct vers Configuration Wizard" title="Lien direct vers Configuration Wizard" translate="no">​</a></h2>
+<p>Setting up a new machine is now much easier. The new <strong>configuration wizard</strong>
+probes GRBL devices over serial or network, detects the firmware version and
+settings, and creates a machine profile automatically. Just plug in your
+controller, pick the driver, and let the wizard handle the rest.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="octoprint-driver-experimental">OctoPrint Driver (Experimental)<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#octoprint-driver-experimental" class="hash-link" aria-label="Lien direct vers OctoPrint Driver (Experimental)" title="Lien direct vers OctoPrint Driver (Experimental)" translate="no">​</a></h2>
+<p>A new driver lets you submit G-code directly to an <strong>OctoPrint</strong> server over
+the network. It connects via WebSocket for real-time status updates and falls
+back to REST polling when needed. Setup requires just a hostname and API key,
+and the driver includes a "Request Access" flow that walks you through
+OctoPrint's application key system.</p>
+<p>This driver is labeled experimental and has not been tested on real hardware
+yet. If you have an OctoPrint setup, your feedback would be invaluable.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="manual-laser-control-dock">Manual Laser Control Dock<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#manual-laser-control-dock" class="hash-link" aria-label="Lien direct vers Manual Laser Control Dock" title="Lien direct vers Manual Laser Control Dock" translate="no">​</a></h2>
+<p>A new dockable panel gives you hands-on laser control with per-head power,
+frequency, pulse width, and an auto-off timer. Useful for testing, alignment,
+and manual positioning.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="job-sanity-checks">Job Sanity Checks<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#job-sanity-checks" class="hash-link" aria-label="Lien direct vers Job Sanity Checks" title="Lien direct vers Job Sanity Checks" translate="no">​</a></h2>
+<p>Before sending or exporting a job, Rayforge now runs a set of composable
+sanity checks and presents the results in a structured dialog. The system
+catches three categories of problems:</p>
+<ul>
+<li class=""><strong>Machine extent violations</strong> -- geometry extending beyond what your machine
+can physically reach</li>
+<li class=""><strong>Workarea violations</strong> -- workpieces outside the configured workarea
+boundaries</li>
+<li class=""><strong>No-go zone collisions</strong> -- geometry overlapping restricted areas defined
+in machine settings</li>
+</ul>
+<p>Each check produces at most one issue per unique violation, keeping the
+dialog readable even for complex projects.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="parametric-text-templates">Parametric Text Templates<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#parametric-text-templates" class="hash-link" aria-label="Lien direct vers Parametric Text Templates" title="Lien direct vers Parametric Text Templates" translate="no">​</a></h2>
+<p>Text boxes in the sketcher now support template expressions using curly braces.
+Any sketch parameter or input variable can be referenced:</p>
+<ul>
+<li class=""><code>{width}</code> resolves to the current width value</li>
+<li class=""><code>{name}</code> resolves to a string input parameter</li>
+<li class=""><code>{sqrt(area):.1f}</code> evaluates math and formats the result</li>
+</ul>
+<p>Built-in functions include <code>{today()}</code> for the current date, <code>{now()}</code> for a
+full timestamp, and <code>{uuid4()}</code> for a unique 8-character identifier.</p>
+<p>Text rendering has also been improved: Now Pango is used internally, which
+draws text more accurately than the old Cairo-based rendering.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="15-new-device-profiles">15 New Device Profiles<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#15-new-device-profiles" class="hash-link" aria-label="Lien direct vers 15 New Device Profiles" title="Lien direct vers 15 New Device Profiles" translate="no">​</a></h2>
+<p>Out-of-the-box support for popular laser cutters:</p>
+<ul>
+<li class=""><strong>Ortur</strong> Laser Master 3 and Laser Master 4</li>
+<li class=""><strong>Atomstack</strong> X40 Pro and A70</li>
+<li class=""><strong>TwoTrees</strong> TTS-55</li>
+<li class=""><strong>NEJE</strong> Master 3 Max</li>
+<li class=""><strong>Creality</strong> Falcon 2 Pro</li>
+<li class=""><strong>OMTech</strong> Polar 50W</li>
+<li class=""><strong>Longer</strong> Ray5</li>
+<li class=""><strong>Thunder Laser</strong> Nova 35</li>
+<li class=""><strong>Sculpfun</strong> iCube Ultra, S30 Pro Max, S40 MAX, and S70 MAX</li>
+<li class=""><strong>Elidor</strong> Z6</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="better-layer-interaction">Better Layer Interaction<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#better-layer-interaction" class="hash-link" aria-label="Lien direct vers Better Layer Interaction" title="Lien direct vers Better Layer Interaction" translate="no">​</a></h2>
+<p>Layer columns now highlight selected workpieces and stay in sync with the
+canvas selection:</p>
+<ul>
+<li class=""><strong>Single click</strong> selects one item</li>
+<li class=""><strong>Ctrl-click</strong> toggles individual items in a multi-selection</li>
+<li class=""><strong>Shift-click</strong> selects a range within a column</li>
+<li class=""><strong>Drag</strong> moves selected items between layers, including across multiple
+layers at once</li>
+</ul>
+<p>Right-clicking a workpiece in the layer tab opens a context menu with move,
+delete, and properties actions. The asset browser also received context menus
+with copy, cut, paste, and duplicate operations.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="direct-vector-editing">Direct Vector Editing<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#direct-vector-editing" class="hash-link" aria-label="Lien direct vers Direct Vector Editing" title="Lien direct vers Direct Vector Editing" translate="no">​</a></h2>
+<p>You can now double-click a workpiece to edit its vectors directly -- delete
+individual paths without having to go back to an external editor. This is a
+first step toward fuller in-app vector editing.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="linear-light-image-processing">Linear Light Image Processing<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#linear-light-image-processing" class="hash-link" aria-label="Lien direct vers Linear Light Image Processing" title="Lien direct vers Linear Light Image Processing" translate="no">​</a></h2>
+<p>All image processing -- resizing, grayscale conversion, dithering, and color
+LUT gradients -- now operates in linear light instead of sRGB. This produces
+more accurate interpolation when scaling and better dithering quality,
+especially for gradients and fine detail.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-auto-constraints">Sketcher Auto-Constraints<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#sketcher-auto-constraints" class="hash-link" aria-label="Lien direct vers Sketcher Auto-Constraints" title="Lien direct vers Sketcher Auto-Constraints" translate="no">​</a></h2>
+<p>The path tool now automatically creates horizontal and vertical constraints
+when the snap engine shows alignment guides during drawing. Your geometry
+comes out more precise with less manual constraint management.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#other-improvements" class="hash-link" aria-label="Lien direct vers Other Improvements" title="Lien direct vers Other Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Job time estimate</strong> shown in the 3D canvas</li>
+<li class=""><strong>Search field</strong> in the machine profile selector</li>
+<li class=""><strong>Sketch parameters</strong> displayed as a separate preferences group</li>
+<li class=""><strong>Locale-aware number formatting</strong> in sliders</li>
+<li class=""><strong>Grid toggle</strong> in the 3D canvas visibility overlay</li>
+<li class=""><strong>Debug log</strong> can optionally include the project file</li>
+<li class=""><strong>Project files</strong> are now zipped internally</li>
+<li class=""><strong>GRBL serial transport</strong> -- non-blocking read, offloaded writes, exclusive
+port mode, buffer flushing, and multiple deadlock fixes</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#bug-fixes" class="hash-link" aria-label="Lien direct vers Bug Fixes" title="Lien direct vers Bug Fixes" translate="no">​</a></h2>
+<p>Fixed GRBL buffer overflow on devices with smaller RX buffers, GRBL buffer
+deadlock from lost ok responses on certain line endings, laser-off command
+sent during active jog causing error:9, deadlock detection false positives,
+parametric text not updating with volatile expressions, crash in
+MergeLinesTransformer, wrong visibility icon for invisible layers, IndexError
+and AttributeError on startup, circle and ellipse sketches missing thumbnails,
+canvas stuck in shift-pressed state, pipeline holding stale machine
+references, pipeline recalculation loop, power percentage rounding in step
+summaries, and many more stability fixes.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="special-thanks">Special Thanks<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#special-thanks" class="hash-link" aria-label="Lien direct vers Special Thanks" title="Lien direct vers Special Thanks" translate="no">​</a></h2>
+<p>This release was made possible with the support of our Patreon supporters:
+Amsel, froqstar, old-man-and-the-seam, pghpete, Derek McTavish, and four
+anonymous supporters.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-17">Download Rayforge 1.7<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#download-rayforge-17" class="hash-link" aria-label="Lien direct vers Download Rayforge 1.7" title="Lien direct vers Download Rayforge 1.7" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="https://rayforge.org/fr/docs/getting-started/installation">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#join-the-community" class="hash-link" aria-label="Lien direct vers Join the Community" title="Lien direct vers Join the Community" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content:encoded>
+            <category>release</category>
+            <category>1.7</category>
+            <category>co2</category>
+            <category>fiber</category>
+            <category>ruida</category>
+            <category>octoprint</category>
+            <category>pwm</category>
+            <category>config-wizard</category>
+            <category>sanity-checks</category>
+            <category>sketcher</category>
+        </item>
+        <item>
+            <title><![CDATA[Rayforge 1.7 Beta 2 - Job Sanity Checks, 10 New Device Profiles, Better Layers]]></title>
+            <link>https://rayforge.org/fr/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers</link>
+            <guid>https://rayforge.org/fr/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers</guid>
+            <pubDate>Sat, 02 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Rayforge 1.7 beta 2 adds job sanity checks, 10 new device profiles, improved layer interaction with multi-selection and context menus, and sketcher auto-constraints.]]></description>
+            <content:encoded><![CDATA[<p>Rayforge 1.7 beta 2 brings a new safety net for your jobs, profiles for ten
+more popular laser cutters, and a significantly improved layer interaction
+experience.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="job-sanity-checks">Job Sanity Checks<a href="https://rayforge.org/fr/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#job-sanity-checks" class="hash-link" aria-label="Lien direct vers Job Sanity Checks" title="Lien direct vers Job Sanity Checks" translate="no">​</a></h2>
+<p>Before sending or exporting a job, Rayforge now runs a set of composable
+sanity checks and presents the results in a structured dialog. The system
+catches three categories of problems:</p>
+<ul>
+<li class=""><strong>Machine extent violations</strong> -- geometry extending beyond what your machine
+can physically reach, reported per axis and direction</li>
+<li class=""><strong>Workarea violations</strong> -- workpieces outside the configured workarea
+boundaries</li>
+<li class=""><strong>No-go zone collisions</strong> -- geometry overlapping restricted areas defined
+in machine settings</li>
+</ul>
+<p>Each check produces at most one issue per unique violation, keeping the
+dialog readable even for complex projects. Errors and warnings are clearly
+separated so you can make an informed decision before proceeding.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="10-new-device-profiles">10 New Device Profiles<a href="https://rayforge.org/fr/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#10-new-device-profiles" class="hash-link" aria-label="Lien direct vers 10 New Device Profiles" title="Lien direct vers 10 New Device Profiles" translate="no">​</a></h2>
+<p>This release adds out-of-the-box support for some of the most popular laser
+cutters in the community:</p>
+<ul>
+<li class=""><strong>Ortur</strong> Laser Master 3 and Laser Master 4</li>
+<li class=""><strong>Atomstack</strong> X40 Pro and A70</li>
+<li class=""><strong>TwoTrees</strong> TTS-55</li>
+<li class=""><strong>NEJE</strong> Master 3 Max</li>
+<li class=""><strong>Creality</strong> Falcon 2 Pro</li>
+<li class=""><strong>OMTech</strong> Polar 50W</li>
+<li class=""><strong>Longer</strong> Ray5</li>
+<li class=""><strong>Thunder Laser</strong> Nova 35</li>
+</ul>
+<p>GRBL-based devices in this batch use the raster dialect for cleaner G-code
+output. If your machine isn't listed yet, open an issue on GitHub and we'll
+get it added.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="better-layer-interaction">Better Layer Interaction<a href="https://rayforge.org/fr/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#better-layer-interaction" class="hash-link" aria-label="Lien direct vers Better Layer Interaction" title="Lien direct vers Better Layer Interaction" translate="no">​</a></h2>
+<p>Layer columns now highlight selected workpieces and stay in sync with the
+canvas selection. This makes it much easier to see what you're working with:</p>
+<ul>
+<li class=""><strong>Single click</strong> selects one item</li>
+<li class=""><strong>Ctrl-click</strong> toggles individual items in a multi-selection</li>
+<li class=""><strong>Shift-click</strong> selects a range within a column</li>
+<li class=""><strong>Drag</strong> moves selected items between layers, including across multiple
+layers at once</li>
+</ul>
+<p>Right-clicking a workpiece in the layer tab opens a context menu with move,
+delete, and properties actions. The asset browser also received context menus
+with copy, cut, paste, and duplicate operations.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-auto-constraints">Sketcher Auto-Constraints<a href="https://rayforge.org/fr/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#sketcher-auto-constraints" class="hash-link" aria-label="Lien direct vers Sketcher Auto-Constraints" title="Lien direct vers Sketcher Auto-Constraints" translate="no">​</a></h2>
+<p>The path tool now automatically creates horizontal and vertical constraints
+when the snap engine shows alignment guides during drawing. Your geometry
+comes out more precise with less manual constraint management. This also
+fixes a bug where snap-derived constraints could reference wrong point IDs
+and cause solver failures.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/fr/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#other-improvements" class="hash-link" aria-label="Lien direct vers Other Improvements" title="Lien direct vers Other Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Sketch parameters</strong> displayed as a separate preferences group in the
+properties panel</li>
+<li class=""><strong>Locale-aware number formatting</strong> in sliders (proper decimal separators)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/fr/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#bug-fixes" class="hash-link" aria-label="Lien direct vers Bug Fixes" title="Lien direct vers Bug Fixes" translate="no">​</a></h2>
+<ul>
+<li class="">Fixed GRBL buffer deadlock from lost ok responses on \r\r\n line endings</li>
+<li class="">Fixed wrong visibility icon for initially invisible layers</li>
+<li class="">Fixed IndexError when laser combo selection is out of sync with machine
+heads</li>
+<li class="">Fixed AttributeError on startup from early view_stack signal connection</li>
+<li class="">Fixed circle and ellipse sketches missing preview thumbnails</li>
+<li class="">Fixed canvas stuck in shift-pressed state after layer interaction</li>
+<li class="">Fixed incorrect 3D view mouse controls in the documentation (#229)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="special-thanks">Special Thanks<a href="https://rayforge.org/fr/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#special-thanks" class="hash-link" aria-label="Lien direct vers Special Thanks" title="Lien direct vers Special Thanks" translate="no">​</a></h2>
+<p>This release was made possible with the support of our Patreon supporters:
+Amsel, froqstar, old-man-and-the-seam, pghpete, Derek McTavish, and four
+anonymous supporters.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-17-beta-2">Download Rayforge 1.7 Beta 2<a href="https://rayforge.org/fr/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#download-rayforge-17-beta-2" class="hash-link" aria-label="Lien direct vers Download Rayforge 1.7 Beta 2" title="Lien direct vers Download Rayforge 1.7 Beta 2" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="https://rayforge.org/fr/docs/getting-started/installation">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/fr/blog/rayforge-1.7-beta2-sanity-checks-device-profiles-layers#join-the-community" class="hash-link" aria-label="Lien direct vers Join the Community" title="Lien direct vers Join the Community" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content:encoded>
+            <category>release</category>
+            <category>1.7</category>
+            <category>sanity-checks</category>
+            <category>device-profiles</category>
+            <category>layers</category>
+            <category>sketcher</category>
+        </item>
+        <item>
+            <title><![CDATA[Rayforge 1.7 Beta - CO2 Laser Support, OctoPrint, Parametric Text]]></title>
+            <link>https://rayforge.org/fr/blog/rayforge-1.7-co2-octoprint-parametric-text</link>
+            <guid>https://rayforge.org/fr/blog/rayforge-1.7-co2-octoprint-parametric-text</guid>
+            <pubDate>Fri, 01 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Rayforge 1.7 beta brings CO2 and fiber laser PWM settings, an experimental OctoPrint driver, parametric text templates in the sketcher, and linear light image processing.]]></description>
+            <content:encoded><![CDATA[<p>Rayforge 1.7 beta expands hardware support to CO2 and fiber lasers, adds an
+experimental OctoPrint driver, brings template expressions to the sketcher text
+tool, and improves image processing accuracy across the board.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="co2-and-fiber-laser-pwm-settings">CO2 and Fiber Laser PWM Settings<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-octoprint-parametric-text#co2-and-fiber-laser-pwm-settings" class="hash-link" aria-label="Lien direct vers CO2 and Fiber Laser PWM Settings" title="Lien direct vers CO2 and Fiber Laser PWM Settings" translate="no">​</a></h2>
+<p>Rayforge now understands that not all lasers are diodes. A new <strong>Laser Type</strong>
+dropdown in the laser head settings lets you choose between Diode, CO2, and
+Fiber. When you select CO2 or Fiber, a dedicated PWM section appears with
+controls for frequency and pulse width -- including configurable min/max bounds.</p>
+<p>These settings flow through the pipeline, so each operation step can use or
+override the defaults. The Ruida driver already leverages them for native
+frequency and pulse width commands.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="octoprint-driver-experimental">OctoPrint Driver (Experimental)<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-octoprint-parametric-text#octoprint-driver-experimental" class="hash-link" aria-label="Lien direct vers OctoPrint Driver (Experimental)" title="Lien direct vers OctoPrint Driver (Experimental)" translate="no">​</a></h2>
+<p>A new driver lets you submit G-code directly to an OctoPrint server over the
+network. It connects via WebSocket for real-time status updates and falls back
+to REST polling when needed. Setup requires just a hostname and an API key, and
+the driver includes a "Request Access" flow that walks you through OctoPrint's
+application key system.</p>
+<p>This driver is labeled experimental and has not been tested on real hardware
+yet. If you have an OctoPrint setup, your feedback would be invaluable.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="parametric-text-templates">Parametric Text Templates<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-octoprint-parametric-text#parametric-text-templates" class="hash-link" aria-label="Lien direct vers Parametric Text Templates" title="Lien direct vers Parametric Text Templates" translate="no">​</a></h2>
+<p>Text boxes in the sketcher now support template expressions using curly braces.
+Any sketch parameter or input variable can be referenced:</p>
+<ul>
+<li class=""><code>{width}</code> resolves to the current width value</li>
+<li class=""><code>{name}</code> resolves to a string input parameter</li>
+<li class=""><code>{sqrt(area):.1f}</code> evaluates math and formats the result</li>
+</ul>
+<p>Built-in functions include <code>{today()}</code> for the current date, <code>{now()}</code> for a
+full timestamp, and <code>{uuid4()}</code> for a unique 8-character identifier. This makes
+it easy to label parts with live dimensions, date-stamp production pieces, or
+generate serial numbers.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="linear-light-image-processing">Linear Light Image Processing<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-octoprint-parametric-text#linear-light-image-processing" class="hash-link" aria-label="Lien direct vers Linear Light Image Processing" title="Lien direct vers Linear Light Image Processing" translate="no">​</a></h2>
+<p>All image processing -- resizing, grayscale conversion, dithering, and color
+LUT gradients -- now operates in linear light instead of sRGB. This produces
+more accurate interpolation when scaling and better dithering quality,
+especially for gradients and fine detail where sRGB's nonlinear curve used to
+cause banding.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-octoprint-parametric-text#other-improvements" class="hash-link" aria-label="Lien direct vers Other Improvements" title="Lien direct vers Other Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Sculpfun iCube Ultra</strong> device profile added</li>
+<li class=""><strong>Grid toggle</strong> in the 3D canvas visibility overlay</li>
+<li class=""><strong>Debug log</strong> can optionally include the project file</li>
+<li class=""><strong>Device profile selector</strong> received visual improvements</li>
+<li class=""><strong>Tab power slider</strong> is now hidden for non-cut steps</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-octoprint-parametric-text#bug-fixes" class="hash-link" aria-label="Lien direct vers Bug Fixes" title="Lien direct vers Bug Fixes" translate="no">​</a></h2>
+<ul>
+<li class="">Fixed GRBL buffer overflow on devices with smaller RX buffers</li>
+<li class="">Fixed parametric text not updating correctly with volatile expressions</li>
+<li class="">Fixed crash in MergeLinesTransformer when a cutting command appeared before
+any positioning command</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="special-thanks">Special Thanks<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-octoprint-parametric-text#special-thanks" class="hash-link" aria-label="Lien direct vers Special Thanks" title="Lien direct vers Special Thanks" translate="no">​</a></h2>
+<p>This release was made possible with the support of our Patreon supporters:
+Amsel, froqstar, old-man-and-the-seam, pghpete, Derek McTavish, and four
+anonymous supporters.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-17-beta">Download Rayforge 1.7 Beta<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-octoprint-parametric-text#download-rayforge-17-beta" class="hash-link" aria-label="Lien direct vers Download Rayforge 1.7 Beta" title="Lien direct vers Download Rayforge 1.7 Beta" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="https://rayforge.org/fr/docs/getting-started/installation">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/fr/blog/rayforge-1.7-co2-octoprint-parametric-text#join-the-community" class="hash-link" aria-label="Lien direct vers Join the Community" title="Lien direct vers Join the Community" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content:encoded>
+            <category>release</category>
+            <category>1.7</category>
+            <category>co2</category>
+            <category>octoprint</category>
+            <category>pwm</category>
+            <category>sketcher</category>
+            <category>image-processing</category>
+        </item>
+        <item>
+            <title><![CDATA[Rayforge 1.6 - Device Profiles, Rotary Overhaul, Print & Cut]]></title>
+            <link>https://rayforge.org/fr/blog/rayforge-1.6-device-profiles-rotary-print-cut</link>
+            <guid>https://rayforge.org/fr/blog/rayforge-1.6-device-profiles-rotary-print-cut</guid>
+            <pubDate>Fri, 24 Apr 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Rayforge 1.6 brings a complete rotary overhaul, device profiles, a redesigned layer system, per-layer WCS, and a Print and Cut addon.]]></description>
+            <content:encoded><![CDATA[<p>Rayforge 1.6 brings a complete rotary axis overhaul, a new device profile
+system, a redesigned layer system with per-layer WCS, and a Print and Cut addon
+for aligning laser cuts with printed material.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="device-profiles">Device Profiles<a href="https://rayforge.org/fr/blog/rayforge-1.6-device-profiles-rotary-print-cut#device-profiles" class="hash-link" aria-label="Lien direct vers Device Profiles" title="Lien direct vers Device Profiles" translate="no">​</a></h2>
+<p>Machine profiles have been replaced by <strong>device profiles</strong> -- declarative
+packages that bundle your work area, axis setup, laser settings, and G-code
+dialect into a single file. Pick your device and everything is pre-configured.
+You can export and import profiles to share setups between machines or back up
+your configuration.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="rotary-axis-overhaul">Rotary Axis Overhaul<a href="https://rayforge.org/fr/blog/rayforge-1.6-device-profiles-rotary-print-cut#rotary-axis-overhaul" class="hash-link" aria-label="Lien direct vers Rotary Axis Overhaul" title="Lien direct vers Rotary Axis Overhaul" translate="no">​</a></h2>
+<p>Rotary support was rewritten from the ground up with proper kinematics. The new
+system supports a <strong>true 4th axis</strong> alongside your existing X, Y, and Z axes,
+as well as <strong>axis replacement mode</strong> for setups where the rotary takes over X
+or Y. Roller-type rotary attachments get their own dedicated settings.</p>
+<p>The 2D canvas adapts to rotary mode automatically, and the 3D canvas renders
+rotary toolpaths correctly in every configuration -- including during simulation
+playback. The kinematics engine was refactored to build dynamically from an axis
+set and mapper, making it far more flexible and correct.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="print-and-cut">Print and Cut<a href="https://rayforge.org/fr/blog/rayforge-1.6-device-profiles-rotary-print-cut#print-and-cut" class="hash-link" aria-label="Lien direct vers Print and Cut" title="Lien direct vers Print and Cut" translate="no">​</a></h2>
+<p>A new addon helps you align laser cuts with pre-printed material. Register
+reference points on your print, let Rayforge calculate the offset and rotation,
+and your cuts land exactly where they should. Perfect for making stickers,
+labels, or anything that needs to line up with an existing print.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="redesigned-layer-system">Redesigned Layer System<a href="https://rayforge.org/fr/blog/rayforge-1.6-device-profiles-rotary-print-cut#redesigned-layer-system" class="hash-link" aria-label="Lien direct vers Redesigned Layer System" title="Lien direct vers Redesigned Layer System" translate="no">​</a></h2>
+<p>The layer panel got a complete overhaul. Each layer column now shows a visual
+workflow so you can see your operations at a glance. You can reorder layers and
+workpieces with drag-and-drop. Each layer can be assigned its own Work
+Coordinate System (G54-G59) for multi-fixture setups, with a quick edit button
+right in the layer settings. The settings dialog is non-modal, so you can keep
+it open while working on the canvas.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="material-test-grid">Material Test Grid<a href="https://rayforge.org/fr/blog/rayforge-1.6-device-profiles-rotary-print-cut#material-test-grid" class="hash-link" aria-label="Lien direct vers Material Test Grid" title="Lien direct vers Material Test Grid" translate="no">​</a></h2>
+<p>New parameter combinations are available, and multipass mode now shows extra
+speed or power labels so you can tell exactly what each cell represents.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="grbl-telnet-driver">GRBL Telnet Driver<a href="https://rayforge.org/fr/blog/rayforge-1.6-device-profiles-rotary-print-cut#grbl-telnet-driver" class="hash-link" aria-label="Lien direct vers GRBL Telnet Driver" title="Lien direct vers GRBL Telnet Driver" translate="no">​</a></h2>
+<p>Community contributor gyordanov built a new driver that connects to GRBL
+controllers over the network via Telnet. It works with grblHAL and ESP3D-based
+boards -- no USB cable needed.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/fr/blog/rayforge-1.6-device-profiles-rotary-print-cut#other-improvements" class="hash-link" aria-label="Lien direct vers Other Improvements" title="Lien direct vers Other Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Update checker</strong> notifies you when a new version is available</li>
+<li class=""><strong>Floating properties panel</strong> gives you more canvas space</li>
+<li class=""><strong>Editable slider values</strong> -- click and type the exact number you want</li>
+<li class=""><strong>Ops color setting</strong> -- choose layer color or laser color for rendering</li>
+<li class=""><strong>Creality Falcon A1</strong> device profile</li>
+<li class=""><strong>Massively reduced memory</strong> usage for multi-layer PDFs</li>
+<li class=""><strong>GRBL serial improvements</strong> with deadlock recovery and comment stripping</li>
+<li class=""><strong>Sketcher</strong> -- support changing text color using the fill tool</li>
+<li class=""><strong>Canvas</strong> -- right-click context menu for empty space</li>
+<li class=""><strong>Windows</strong> -- terminal window no longer appears on startup</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="special-thanks">Special Thanks<a href="https://rayforge.org/fr/blog/rayforge-1.6-device-profiles-rotary-print-cut#special-thanks" class="hash-link" aria-label="Lien direct vers Special Thanks" title="Lien direct vers Special Thanks" translate="no">​</a></h2>
+<p>This release was made possible with the support of our Patreon supporters:
+old-man-and-the-seam, Amsel, froqstar, pghpete, Derek McTavish, and four
+anonymous supporters.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-16">Download Rayforge 1.6<a href="https://rayforge.org/fr/blog/rayforge-1.6-device-profiles-rotary-print-cut#download-rayforge-16" class="hash-link" aria-label="Lien direct vers Download Rayforge 1.6" title="Lien direct vers Download Rayforge 1.6" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="https://rayforge.org/fr/docs/getting-started/installation">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/fr/blog/rayforge-1.6-device-profiles-rotary-print-cut#join-the-community" class="hash-link" aria-label="Lien direct vers Join the Community" title="Lien direct vers Join the Community" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content:encoded>
+            <category>release</category>
+            <category>1.6</category>
+            <category>rotary</category>
+            <category>device-profiles</category>
+            <category>print-and-cut</category>
+            <category>layers</category>
+        </item>
+        <item>
+            <title><![CDATA[Rayforge 1.5 - 3D Simulator, Bezier Curves, No-Go Zones]]></title>
+            <link>https://rayforge.org/fr/blog/rayforge-1.5-3d-simulator-bezier-nogozones</link>
+            <guid>https://rayforge.org/fr/blog/rayforge-1.5-3d-simulator-bezier-nogozones</guid>
+            <pubDate>Thu, 09 Apr 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Rayforge 1.5 adds a full 3D job simulator with playback controls, native cubic bezier G5 support, no-go zones with collision checking, and major performance gains.]]></description>
+            <content:encoded><![CDATA[<p>Rayforge 1.5 adds a full 3D job simulator with playback controls, native
+cubic bezier curve support (G5), no-go zones with collision checking, and
+significant performance and memory improvements.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3d-simulator">3D Simulator<a href="https://rayforge.org/fr/blog/rayforge-1.5-3d-simulator-bezier-nogozones#3d-simulator" class="hash-link" aria-label="Lien direct vers 3D Simulator" title="Lien direct vers 3D Simulator" translate="no">​</a></h2>
+<p>The 3D canvas now has a complete job simulator. You can watch your job execute
+step by step -- the laser head moves along the toolpath, the beam appears when
+the laser fires, and bitmap engravings are progressively revealed as the
+playhead advances.</p>
+<p>Playback controls sit at the bottom of the canvas: play/pause, step forward
+and backward, a scrubber slider, and a speed button that cycles through 1x
+to 16x. Rotary mode works too -- the cylinder rotates along with the
+simulation. All of this runs without blocking the rest of the interface, even
+on complex jobs.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bezier-curves-g5">Bezier Curves (G5)<a href="https://rayforge.org/fr/blog/rayforge-1.5-3d-simulator-bezier-nogozones#bezier-curves-g5" class="hash-link" aria-label="Lien direct vers Bezier Curves (G5)" title="Lien direct vers Bezier Curves (G5)" translate="no">​</a></h2>
+<p>Rayforge now supports native cubic bezier curves through the entire pipeline --
+from import all the way to G-code output. For machines running LinuxCNC or
+Marlin, curves are emitted as G5 commands instead of thousands of tiny line
+segments. The result is smoother cuts, smaller G-code files, and faster
+execution. For machines that don't support G5 (Grbl, Smoothieware, and
+others), curves are automatically linearized -- no configuration needed.</p>
+<p>This touched nearly every part of the system. Tabs, cropping, smoothing,
+multi-pass, and path optimization all handle curves properly now.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="no-go-zones">No-Go Zones<a href="https://rayforge.org/fr/blog/rayforge-1.5-3d-simulator-bezier-nogozones#no-go-zones" class="hash-link" aria-label="Lien direct vers No-Go Zones" title="Lien direct vers No-Go Zones" translate="no">​</a></h2>
+<p>You can now define restricted areas in your machine settings. These mark areas
+on the bed where the laser should not cut -- clamps, fixtures, or that corner
+where the hose always gets in the way. Rayforge checks for collisions and warns
+you before sending G-code.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance-and-memory">Performance and Memory<a href="https://rayforge.org/fr/blog/rayforge-1.5-3d-simulator-bezier-nogozones#performance-and-memory" class="hash-link" aria-label="Lien direct vers Performance and Memory" title="Lien direct vers Performance and Memory" translate="no">​</a></h2>
+<p>The canvas is significantly more responsive. When you drag, pan, or zoom,
+expensive laser-path rendering is suppressed until you stop moving -- no more
+stuttering while repositioning a workpiece. Multi-step workflows render faster
+because all visible steps are composited into a single surface.</p>
+<p>Large images that used to cause multi-gigabyte memory spikes are now
+automatically scaled to sensible limits. The image handling was rewritten to
+avoid unnecessary copies, and caching is smarter -- shared images are rendered
+once and reused across workpieces. Two memory leaks in the 3D simulator were
+also fixed.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="dockable-bottom-panel">Dockable Bottom Panel<a href="https://rayforge.org/fr/blog/rayforge-1.5-3d-simulator-bezier-nogozones#dockable-bottom-panel" class="hash-link" aria-label="Lien direct vers Dockable Bottom Panel" title="Lien direct vers Dockable Bottom Panel" translate="no">​</a></h2>
+<p>The bottom panel tabs can now be rearranged freely. Drag a tab onto the divider
+between columns to split it off into its own column. You can keep the layer
+list and G-code viewer visible side by side, for example. The layout persists
+between sessions.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="asset-browser">Asset Browser<a href="https://rayforge.org/fr/blog/rayforge-1.5-3d-simulator-bezier-nogozones#asset-browser" class="hash-link" aria-label="Lien direct vers Asset Browser" title="Lien direct vers Asset Browser" translate="no">​</a></h2>
+<p>The asset browser has been overhauled. All assets are visible and can be
+dragged to the canvas or to a specific layer. Multi-selection works for
+drag-and-drop and bulk deletion. Thumbnails are generated for most image
+formats, and when the browser is empty it shows a helpful placeholder with
+buttons to add stock or a sketch.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-import-options">New Import Options<a href="https://rayforge.org/fr/blog/rayforge-1.5-3d-simulator-bezier-nogozones#new-import-options" class="hash-link" aria-label="Lien direct vers New Import Options" title="Lien direct vers New Import Options" translate="no">​</a></h2>
+<p>The import dialog offers three layer modes: flatten into the current layer,
+create new layers from the file, or map imported layers onto existing ones.
+After import, Rayforge adds sensible default workflow steps -- a Contour step
+for vector layers and an Engrave step for layers with fills.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="lead-in--lead-out">Lead-In / Lead-Out<a href="https://rayforge.org/fr/blog/rayforge-1.5-3d-simulator-bezier-nogozones#lead-in--lead-out" class="hash-link" aria-label="Lien direct vers Lead-In / Lead-Out" title="Lien direct vers Lead-In / Lead-Out" translate="no">​</a></h2>
+<p>A new lead-in/lead-out postprocessor adds zero-power approach and exit moves
+at the start and end of each contour. This helps the laser reach constant
+velocity before the actual cut begins, improving cut quality at entry and exit
+points.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/fr/blog/rayforge-1.5-3d-simulator-bezier-nogozones#other-improvements" class="hash-link" aria-label="Lien direct vers Other Improvements" title="Lien direct vers Other Improvements" translate="no">​</a></h2>
+<ul>
+<li class="">3D model support for rotary axes (GLB format)</li>
+<li class="">Continuous laser mode and modal feedrate G-code options</li>
+<li class="">GRBL raster dialect with cleaner M4/M5 handling</li>
+<li class="">Grbl MKS DLC32 machine profile</li>
+<li class="">Material test: labels engraved first, overscan support, label speed setting</li>
+<li class="">Ctrl+F search in console and G-code viewer</li>
+<li class="">YUYV camera protocol support</li>
+<li class="">Addons can register toggles in the View menu</li>
+<li class="">Status bar removed, info moved to contextual locations</li>
+<li class="">Single instance lock</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-15">Download Rayforge 1.5<a href="https://rayforge.org/fr/blog/rayforge-1.5-3d-simulator-bezier-nogozones#download-rayforge-15" class="hash-link" aria-label="Lien direct vers Download Rayforge 1.5" title="Lien direct vers Download Rayforge 1.5" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="https://rayforge.org/fr/docs/getting-started/installation">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/fr/blog/rayforge-1.5-3d-simulator-bezier-nogozones#join-the-community" class="hash-link" aria-label="Lien direct vers Join the Community" title="Lien direct vers Join the Community" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content:encoded>
+            <category>release</category>
+            <category>1.5</category>
+            <category>simulator</category>
+            <category>bezier</category>
+            <category>nogozones</category>
+            <category>performance</category>
+        </item>
+        <item>
+            <title><![CDATA[Rayforge 1.4 - Rotary Axis, PDF Layers, Camera Calibration]]></title>
+            <link>https://rayforge.org/fr/blog/rayforge-1.4-rotary-pdf-camera</link>
+            <guid>https://rayforge.org/fr/blog/rayforge-1.4-rotary-pdf-camera</guid>
+            <pubDate>Sun, 29 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Rayforge 1.4 adds rotary axis support for cylindrical workpieces, PDF vector import with layers, camera calibration, and improved sketcher tools.]]></description>
+            <content:encoded><![CDATA[<p>Rayforge 1.4 adds rotary axis support for cylindrical workpieces, direct
+vector import for PDF files with layers, a guided camera calibration wizard,
+and an improved sketcher with ellipse tools and smarter snapping.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="rotary-axis-support">Rotary Axis Support<a href="https://rayforge.org/fr/blog/rayforge-1.4-rotary-pdf-camera#rotary-axis-support" class="hash-link" aria-label="Lien direct vers Rotary Axis Support" title="Lien direct vers Rotary Axis Support" translate="no">​</a></h2>
+<p>You can now engrave and cut cylindrical objects like tumblers, glasses, and
+pens. Rayforge wraps your design around the cylinder surface and shows a 3D
+preview so you know exactly what the result will look like before you start.</p>
+<p>Rotary mode can be toggled per layer, which means you can combine flat and
+cylindrical work in a single project. A small rotary icon next to each layer
+makes it easy to see which layers will run on the rotary attachment.</p>
+<p>Head over to the <a class="" href="https://rayforge.org/fr/docs/machine/rotary">Rotary Setup</a> page for details on
+configuring your module.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pdf-import-with-layers">PDF Import with Layers<a href="https://rayforge.org/fr/blog/rayforge-1.4-rotary-pdf-camera#pdf-import-with-layers" class="hash-link" aria-label="Lien direct vers PDF Import with Layers" title="Lien direct vers PDF Import with Layers" translate="no">​</a></h2>
+<p>PDF files can now be imported as vector paths instead of being rasterized
+first. This means cleaner lines, no quality loss, and — if the PDF contains
+layers — you can pick which layers to import, just like with SVG files.</p>
+<p>This is especially handy when someone sends you a PDF that was exported from
+Illustrator or Inkscape and you need clean cutting paths without re-drawing
+anything.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="camera-calibration-wizard">Camera Calibration Wizard<a href="https://rayforge.org/fr/blog/rayforge-1.4-rotary-pdf-camera#camera-calibration-wizard" class="hash-link" aria-label="Lien direct vers Camera Calibration Wizard" title="Lien direct vers Camera Calibration Wizard" translate="no">​</a></h2>
+<p>Getting a camera aligned to your laser bed just got easier. The new guided
+calibration wizard walks you through the process step by step using a printed
+calibration card. Rayforge computes a full distortion model from the card
+images, correcting for barrel distortion and perspective errors automatically.</p>
+<p>The result is noticeably better alignment accuracy, especially with wide-angle
+lenses or cameras mounted at an angle.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-improvements">Sketcher Improvements<a href="https://rayforge.org/fr/blog/rayforge-1.4-rotary-pdf-camera#sketcher-improvements" class="hash-link" aria-label="Lien direct vers Sketcher Improvements" title="Lien direct vers Sketcher Improvements" translate="no">​</a></h2>
+<p>The circle tool has been replaced with a more general <strong>ellipse tool</strong> that
+handles both circles and ellipses. The equality constraint now works on
+ellipses too.</p>
+<p>Drawing geometry also feels smoother now: many tools automatically apply
+constraints as you create shapes, and a new <strong>magnetic snap</strong> system replaces
+the old snap-to-grid behavior. Instead of locking to a fixed grid, magnetic
+snap pulls your cursor toward nearby geometry — points, lines, and endpoints —
+making it much easier to connect shapes precisely.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="better-framing-controls">Better Framing Controls<a href="https://rayforge.org/fr/blog/rayforge-1.4-rotary-pdf-camera#better-framing-controls" class="hash-link" aria-label="Lien direct vers Better Framing Controls" title="Lien direct vers Better Framing Controls" translate="no">​</a></h2>
+<p>The framing feature has new settings for finer control:</p>
+<ul>
+<li class=""><strong>Frame speed</strong> is now configured per laser head</li>
+<li class=""><strong>Corner dwell time</strong> lets the laser pause briefly at each corner so you can
+see exactly where the boundary is</li>
+<li class=""><strong>Repeat count</strong> traces the outline multiple times for better visibility</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="merge-lines-post-processor">Merge Lines Post-Processor<a href="https://rayforge.org/fr/blog/rayforge-1.4-rotary-pdf-camera#merge-lines-post-processor" class="hash-link" aria-label="Lien direct vers Merge Lines Post-Processor" title="Lien direct vers Merge Lines Post-Processor" translate="no">​</a></h2>
+<p>A new post-processor called <strong>Merge Lines</strong> detects overlapping path segments
+and merges them into a single pass. This is useful when you import designs
+where shapes share edges — think grid patterns or tessellations — and you want
+to avoid cutting the same line twice.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/fr/blog/rayforge-1.4-rotary-pdf-camera#other-improvements" class="hash-link" aria-label="Lien direct vers Other Improvements" title="Lien direct vers Other Improvements" translate="no">​</a></h2>
+<ul>
+<li class="">Machine profile for the Acmer S1 has been added</li>
+<li class="">G-code dialects are now independent copies, so customizing one never affects
+others</li>
+<li class="">Dialects support a separate laser-on command for focusing</li>
+<li class="">Large images are handled more safely to prevent running out of memory</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/fr/blog/rayforge-1.4-rotary-pdf-camera#bug-fixes" class="hash-link" aria-label="Lien direct vers Bug Fixes" title="Lien direct vers Bug Fixes" translate="no">​</a></h2>
+<ul>
+<li class="">Fixed material test producer issues</li>
+<li class="">Fixed position reporting for machines with only X and Y axes</li>
+<li class="">Fixed a sketcher issue where distance constraints could shadow the line
+underneath</li>
+<li class="">Fixed memory exhaustion when importing very large images</li>
+<li class="">Fixed a race condition during worker initialization</li>
+</ul>
+<p>See the CHANGELOG on GitHub for the complete list.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-14">Download Rayforge 1.4<a href="https://rayforge.org/fr/blog/rayforge-1.4-rotary-pdf-camera#download-rayforge-14" class="hash-link" aria-label="Lien direct vers Download Rayforge 1.4" title="Lien direct vers Download Rayforge 1.4" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="https://rayforge.org/fr/docs/getting-started/installation">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/fr/blog/rayforge-1.4-rotary-pdf-camera#join-the-community" class="hash-link" aria-label="Lien direct vers Join the Community" title="Lien direct vers Join the Community" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content:encoded>
+            <category>release</category>
+            <category>1.4</category>
+            <category>rotary</category>
+            <category>camera</category>
+            <category>pdf</category>
+            <category>sketcher</category>
+        </item>
+        <item>
+            <title><![CDATA[Rayforge 1.3 - Bezier Curves in Sketcher, Modular Architecture]]></title>
+            <link>https://rayforge.org/fr/blog/rayforge-1.3-bezier-curves-sketcher-addon</link>
+            <guid>https://rayforge.org/fr/blog/rayforge-1.3-bezier-curves-sketcher-addon</guid>
+            <pubDate>Mon, 23 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Rayforge 1.3 adds bezier curve support in the sketcher, a unified path tool, more efficient G-code output, and moves the sketcher to an add-on.]]></description>
+            <content:encoded><![CDATA[<p>Rayforge 1.3 brings bezier curve support to the parametric sketcher, a new
+unified path tool, more efficient G-code output, and moves the sketcher to
+an optional add-on.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bezier-curves-in-the-sketcher">Bezier Curves in the Sketcher<a href="https://rayforge.org/fr/blog/rayforge-1.3-bezier-curves-sketcher-addon#bezier-curves-in-the-sketcher" class="hash-link" aria-label="Lien direct vers Bezier Curves in the Sketcher" title="Lien direct vers Bezier Curves in the Sketcher" translate="no">​</a></h2>
+<p>The headline feature for this release is full support for bezier curves in
+the parametric sketcher. The old line tool has been replaced with a new
+unified <strong>path tool</strong> that seamlessly combines lines and curves.</p>
+<p>You can now:</p>
+<ul>
+<li class="">Draw smooth bezier curves with intuitive handle-based editing</li>
+<li class="">Connect curves to existing geometry - the path edit tool can snap to
+existing points in your sketch</li>
+<li class="">Make endpoints smooth or symmetric when they're connected by a coincident
+constraint - perfect for creating seamless curves</li>
+<li class="">Convert bezier curves back to straight lines with the new "straighten"
+tool</li>
+</ul>
+<p>This has been one of the most requested features, and we're excited to see
+what you create with it.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-is-now-an-add-on">Sketcher is Now an Add-on<a href="https://rayforge.org/fr/blog/rayforge-1.3-bezier-curves-sketcher-addon#sketcher-is-now-an-add-on" class="hash-link" aria-label="Lien direct vers Sketcher is Now an Add-on" title="Lien direct vers Sketcher is Now an Add-on" translate="no">​</a></h2>
+<p>Continuing the modularization work from version 1.2, the sketcher has been
+moved to an add-on. It's installed and enabled by default, so existing users
+won't notice any difference. But if you prefer a minimal setup without
+parametric sketching, you can now disable it.</p>
+<p>This change also comes with new extension registries that make it easier for
+add-on developers to extend Rayforge.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-quality-of-life-improvements">Sketcher Quality-of-Life Improvements<a href="https://rayforge.org/fr/blog/rayforge-1.3-bezier-curves-sketcher-addon#sketcher-quality-of-life-improvements" class="hash-link" aria-label="Lien direct vers Sketcher Quality-of-Life Improvements" title="Lien direct vers Sketcher Quality-of-Life Improvements" translate="no">​</a></h2>
+<p>The sketcher received several smaller but impactful improvements:</p>
+<p><strong>Grid Tool</strong>
+A new tool to toggle grid visibility for better alignment.</p>
+<p><strong>Conflicting Constraints</strong>
+When constraints conflict with each other, they're now highlighted in the
+panel so you can quickly identify and fix the problem.</p>
+<p><strong>Show/Hide Controls</strong>
+New toggle buttons let you show or hide construction geometry and constraints
+individually.</p>
+<p><strong>Shift Constrains Movement</strong>
+Hold Shift while dragging to constrain movement to the nearest axis - great
+for keeping things aligned.</p>
+<p><strong>Cleaner Background</strong>
+The gray background area is now hidden for a cleaner editing experience.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="more-efficient-g-code">More Efficient G-code<a href="https://rayforge.org/fr/blog/rayforge-1.3-bezier-curves-sketcher-addon#more-efficient-g-code" class="hash-link" aria-label="Lien direct vers More Efficient G-code" title="Lien direct vers More Efficient G-code" translate="no">​</a></h2>
+<p>Rayforge now produces more compact G-code by omitting unchanged coordinates.
+If you're cutting along the X-axis, for example, only the X coordinate will
+be emitted on each line. This makes files smaller and cleaner, and makes
+the old "no-Z" dialect variants obsolete (they've been removed).</p>
+<p>The G-code viewer also got some updates:</p>
+<ul>
+<li class="">Shows line count and byte size</li>
+<li class="">Always displays at least the first 20,000 lines</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="raster-operation-enhancements">Raster Operation Enhancements<a href="https://rayforge.org/fr/blog/rayforge-1.3-bezier-curves-sketcher-addon#raster-operation-enhancements" class="hash-link" aria-label="Lien direct vers Raster Operation Enhancements" title="Lien direct vers Raster Operation Enhancements" translate="no">​</a></h2>
+<p>New settings for sample interval and power levels give you more control over
+your raster operations. These are particularly useful for fine-tuning results
+on materials that need precise power management.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/fr/blog/rayforge-1.3-bezier-curves-sketcher-addon#other-improvements" class="hash-link" aria-label="Lien direct vers Other Improvements" title="Lien direct vers Other Improvements" translate="no">​</a></h2>
+<ul>
+<li class="">All icons normalized to 32x32 viewbox for consistent appearance</li>
+<li class="">AI workpiece generator now creates sketches when the geometry can be mapped</li>
+<li class="">Updated translations</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/fr/blog/rayforge-1.3-bezier-curves-sketcher-addon#bug-fixes" class="hash-link" aria-label="Lien direct vers Bug Fixes" title="Lien direct vers Bug Fixes" translate="no">​</a></h2>
+<p>This release fixes many issues:</p>
+<ul>
+<li class="">Fixed fillet and chamfer tools not working correctly</li>
+<li class="">Fixed texture encoder drawing spaced dots instead of lines in some cases</li>
+<li class="">Fixed G1 being emitted without coordinates when all coordinates were unchanged</li>
+<li class="">Fixed loading project files with unknown assets</li>
+<li class="">Fixed issues when disabling and re-enabling add-ons at runtime</li>
+</ul>
+<p>See the CHANGELOG on GitHub for the complete list.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-13">Download Rayforge 1.3<a href="https://rayforge.org/fr/blog/rayforge-1.3-bezier-curves-sketcher-addon#download-rayforge-13" class="hash-link" aria-label="Lien direct vers Download Rayforge 1.3" title="Lien direct vers Download Rayforge 1.3" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="https://rayforge.org/fr/docs/getting-started/installation">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/fr/blog/rayforge-1.3-bezier-curves-sketcher-addon#join-the-community" class="hash-link" aria-label="Lien direct vers Join the Community" title="Lien direct vers Join the Community" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content:encoded>
+            <category>release</category>
+            <category>1.3</category>
+            <category>sketcher</category>
+            <category>bezier</category>
+            <category>addons</category>
+        </item>
+        <item>
+            <title><![CDATA[Rayforge 1.2 - AI Generator, Camera Enhancements, and Improved Add-ons]]></title>
+            <link>https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai</link>
+            <guid>https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai</guid>
+            <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Rayforge 1.2 adds an AI workpiece generator for laser design, camera calibration improvements, and a modular add-on system for laser cutting workflows.]]></description>
+            <content:encoded><![CDATA[<p>Rayforge 1.2 brings an AI workpiece generator, significant camera
+enhancements, and a completely revamped add-on system with core
+functionality now available as optional modules.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ai-workpiece-generator-add-on">AI Workpiece Generator Add-on<a href="https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai#ai-workpiece-generator-add-on" class="hash-link" aria-label="Lien direct vers AI Workpiece Generator Add-on" title="Lien direct vers AI Workpiece Generator Add-on" translate="no">​</a></h2>
+<p>A new experimental add-on allows generating workpieces from text prompts.
+This is great for quickly creating simple designs or getting inspiration
+for new projects.</p>
+<p>This is a first step, and we're excited about the possibilities this
+opens up for the future!</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="camera-enhancements">Camera Enhancements<a href="https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai#camera-enhancements" class="hash-link" aria-label="Lien direct vers Camera Enhancements" title="Lien direct vers Camera Enhancements" translate="no">​</a></h2>
+<p>Thanks to the incredible work of <strong>MausRundung</strong>, the camera system has
+received a major overhaul:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="image-enhancement">Image Enhancement<a href="https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai#image-enhancement" class="hash-link" aria-label="Lien direct vers Image Enhancement" title="Lien direct vers Image Enhancement" translate="no">​</a></h3>
+<ul>
+<li class="">Temporal noise reduction with configurable strength</li>
+<li class="">Cleaner preview images, especially in low-light conditions</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fisheye-distortion-correction">Fisheye Distortion Correction<a href="https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai#fisheye-distortion-correction" class="hash-link" aria-label="Lien direct vers Fisheye Distortion Correction" title="Lien direct vers Fisheye Distortion Correction" translate="no">​</a></h3>
+<ul>
+<li class="">Radial distortion correction (k1, k2 parameters)</li>
+<li class="">Tangential distortion correction (p1, p2 parameters)</li>
+<li class="">Perfect for wide-angle lenses</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="improved-alignment-ui">Improved Alignment UI<a href="https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai#improved-alignment-ui" class="hash-link" aria-label="Lien direct vers Improved Alignment UI" title="Lien direct vers Improved Alignment UI" translate="no">​</a></h3>
+<ul>
+<li class="">Zoom, pan, and keyboard navigation in the alignment dialog</li>
+<li class="">Better point dragging with visual feedback</li>
+<li class="">Image stretching and positioning controls with offsets</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="improved-add-on-system">Improved Add-on System<a href="https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai#improved-add-on-system" class="hash-link" aria-label="Lien direct vers Improved Add-on System" title="Lien direct vers Improved Add-on System" translate="no">​</a></h2>
+<p>The add-on system has been greatly improved. The main change is that much
+of the core functionality has been moved into add-ons that are installed
+by default, but can be disabled or enabled as needed:</p>
+<p><strong>Core as Add-ons</strong>
+The built-in transformers and laser essentials have been converted to
+add-ons. This makes Rayforge more modular - you can disable features you
+don't need or enable only what you want.</p>
+<p><strong>Add-on Capabilities</strong>
+Add-ons can now:</p>
+<ul>
+<li class="">Register transformers (post-processors) for custom G-code manipulation</li>
+<li class="">Register keyboard shortcuts for custom workflows</li>
+<li class="">Hook into the backend and frontend independently</li>
+</ul>
+<p><strong>Commercial Support</strong>
+The system now supports paid and third-party add-ons, enabling developers
+to create commercial extensions for Rayforge.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="stock-improvements">Stock Improvements<a href="https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai#stock-improvements" class="hash-link" aria-label="Lien direct vers Stock Improvements" title="Lien direct vers Stock Improvements" translate="no">​</a></h2>
+<p>Stock handling is now more flexible:</p>
+<ul>
+<li class=""><strong>Document-level stock</strong> - stock is no longer tied to individual layers</li>
+<li class=""><strong>Duplicate stock</strong> using Ctrl+D</li>
+<li class=""><strong>Non-rectangular stock</strong> - convert any workpiece to stock for irregular
+materials</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-improvements">Sketcher Improvements<a href="https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai#sketcher-improvements" class="hash-link" aria-label="Lien direct vers Sketcher Improvements" title="Lien direct vers Sketcher Improvements" translate="no">​</a></h2>
+<p>The parametric sketcher received several quality-of-life improvements in
+this release:</p>
+<ul>
+<li class=""><strong>Live preview for line tool</strong> - see the line before you commit</li>
+<li class=""><strong>Dimension display</strong> - shows dimensions while adding geometry</li>
+<li class=""><strong>Snap-to-grid</strong> - hold Ctrl to snap to the grid</li>
+<li class=""><strong>Entity highlighting</strong> - hovered entities and constraints are highlighted</li>
+<li class=""><strong>Toolbar shortcuts</strong> - shows currently available keyboard shortcuts</li>
+<li class=""><strong>Connected selection</strong> - Shift+Double click selects connected geometry</li>
+<li class=""><strong>Arc radius adjustment</strong> - change arc radius while adding the second endpoint</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="more-new-features">More New Features<a href="https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai#more-new-features" class="hash-link" aria-label="Lien direct vers More New Features" title="Lien direct vers More New Features" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="crop-to-stock-post-processor">Crop to Stock Post-Processor<a href="https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai#crop-to-stock-post-processor" class="hash-link" aria-label="Lien direct vers Crop to Stock Post-Processor" title="Lien direct vers Crop to Stock Post-Processor" translate="no">​</a></h3>
+<p>A new post-processor that automatically crops operations to your stock
+boundaries, saving time and material.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="inter-workpiece-path-optimization">Inter-Workpiece Path Optimization<a href="https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai#inter-workpiece-path-optimization" class="hash-link" aria-label="Lien direct vers Inter-Workpiece Path Optimization" title="Lien direct vers Inter-Workpiece Path Optimization" translate="no">​</a></h3>
+<p>The path optimizer now also optimizes the workpiece order, reducing travel
+distance when working with multiple workpieces in a single job. Previously,
+Rayforge only optimized travel paths within individual workpieces.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="configurable-cutraster-colors">Configurable Cut/Raster Colors<a href="https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai#configurable-cutraster-colors" class="hash-link" aria-label="Lien direct vers Configurable Cut/Raster Colors" title="Lien direct vers Configurable Cut/Raster Colors" translate="no">​</a></h3>
+<p>Each laser can now have its own cut and raster colors, making it easier
+to distinguish between different laser heads.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="quick-wcs-positioning">Quick WCS Positioning<a href="https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai#quick-wcs-positioning" class="hash-link" aria-label="Lien direct vers Quick WCS Positioning" title="Lien direct vers Quick WCS Positioning" translate="no">​</a></h3>
+<p>Click anywhere on the canvas to set the work coordinate system origin.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="omtech-k40-profile">OMTech K40+ Profile<a href="https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai#omtech-k40-profile" class="hash-link" aria-label="Lien direct vers OMTech K40+ Profile" title="Lien direct vers OMTech K40+ Profile" translate="no">​</a></h3>
+<p>New machine profile for the popular OMTech K40+ laser cutter.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mach4-g-code-dialect">Mach4 G-code Dialect<a href="https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai#mach4-g-code-dialect" class="hash-link" aria-label="Lien direct vers Mach4 G-code Dialect" title="Lien direct vers Mach4 G-code Dialect" translate="no">​</a></h3>
+<p>New built-in G-code dialect for Mach4 controllers using M67 for spindle
+speed (laser power) control.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="platform-updates">Platform Updates<a href="https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai#platform-updates" class="hash-link" aria-label="Lien direct vers Platform Updates" title="Lien direct vers Platform Updates" translate="no">​</a></h3>
+<ul>
+<li class="">Updated macOS support thanks to <strong>Pablo Gil</strong></li>
+<li class="">Flatpak updates thanks to <strong>fllmn</strong></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai#bug-fixes" class="hash-link" aria-label="Lien direct vers Bug Fixes" title="Lien direct vers Bug Fixes" translate="no">​</a></h2>
+<p>This release addresses many issues:</p>
+<ul>
+<li class="">Add-on not enabled immediately after installation</li>
+<li class="">macOS bundle issues with GTK modules and built-in add-ons</li>
+<li class="">Tasker startup crash with DictProxy type annotations</li>
+<li class="">Old project files not showing new transformers</li>
+<li class="">SVG exporter stacking multiple workpieces on top of each other</li>
+<li class="">Auto layout for rotated stock</li>
+<li class="">Windows build using wrong version string on forks</li>
+<li class="">Mac and Windows builds not finding icon</li>
+</ul>
+<p>See the CHANGELOG on GitHub for the complete list.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="special-thanks">Special Thanks<a href="https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai#special-thanks" class="hash-link" aria-label="Lien direct vers Special Thanks" title="Lien direct vers Special Thanks" translate="no">​</a></h2>
+<p>This release was made possible with the support of our Patreon supporters:</p>
+<ul>
+<li class="">2 anonymous contributors</li>
+<li class="">Amsel</li>
+<li class="">froqstar</li>
+</ul>
+<p>And thanks to <strong>MausRundung</strong> for the camera enhancements, <strong>Pablo Gil</strong> for
+macOS updates, and <strong>fllmn</strong> for Flatpak updates!</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-12">Download Rayforge 1.2<a href="https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai#download-rayforge-12" class="hash-link" aria-label="Lien direct vers Download Rayforge 1.2" title="Lien direct vers Download Rayforge 1.2" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://github.com/barebaric/rayforge/releases" target="_blank" rel="noopener noreferrer" class="">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/fr/blog/rayforge-1.2-addons-camera-ai#join-the-community" class="hash-link" aria-label="Lien direct vers Join the Community" title="Lien direct vers Join the Community" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content:encoded>
+            <category>release</category>
+            <category>1.2</category>
+            <category>addons</category>
+            <category>camera</category>
+            <category>ai</category>
+        </item>
+        <item>
+            <title><![CDATA[Rayforge 1.1 - MacOS Support, Pipeline Rewrite, G-code Console, and Unified Raster]]></title>
+            <link>https://rayforge.org/fr/blog/rayforge-1.1-pipeline-rewrite</link>
+            <guid>https://rayforge.org/fr/blog/rayforge-1.1-pipeline-rewrite</guid>
+            <pubDate>Fri, 27 Feb 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Rayforge 1.1 brings macOS support, a new G-code console, unified raster operations, and a rewritten pipeline for better laser cutting performance.]]></description>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 1.1" src="https://rayforge.org/fr/assets/images/rayforge-1.1-7e0d0638da78baa86b6281fa7f32df3b.png" width="1344" height="768" class="img_ev3q"></p>
+<p>Rayforge 1.1 brings a powerful new G-code console, unified raster operations,
+and a completely rebuilt data pipeline for improved performance and stability.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="macos-support">MacOS Support<a href="https://rayforge.org/fr/blog/rayforge-1.1-pipeline-rewrite#macos-support" class="hash-link" aria-label="Lien direct vers MacOS Support" title="Lien direct vers MacOS Support" translate="no">​</a></h2>
+<p>Thanks to the incredible work of GitHub user <strong>pgilfernandez</strong>, Rayforge
+now officially supports macOS! Both Intel and Apple Silicon Macs are
+supported. This has been a long-requested feature, and we're thrilled to
+welcome Mac users to the Rayforge community.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-big-story-complete-pipeline-rewrite">The Big Story: Complete Pipeline Rewrite<a href="https://rayforge.org/fr/blog/rayforge-1.1-pipeline-rewrite#the-big-story-complete-pipeline-rewrite" class="hash-link" aria-label="Lien direct vers The Big Story: Complete Pipeline Rewrite" title="Lien direct vers The Big Story: Complete Pipeline Rewrite" translate="no">​</a></h2>
+<p>The headline feature of this release is a complete rewrite of the data
+pipeline backend. The new architecture is based on a Directed Acyclic Graph
+(DAG), which brings significant improvements:</p>
+<ul>
+<li class=""><strong>Better performance</strong> for complex projects with many operations</li>
+<li class=""><strong>Reduced memory usage</strong> through more efficient data handling</li>
+<li class=""><strong>Smoother UI responsiveness</strong> during heavy processing</li>
+<li class=""><strong>Fixed memory leaks</strong> that affected long editing sessions</li>
+</ul>
+<p>This foundational upgrade makes Rayforge more robust and prepares the
+codebase for future features.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="unified-raster-operations">Unified Raster Operations<a href="https://rayforge.org/fr/blog/rayforge-1.1-pipeline-rewrite#unified-raster-operations" class="hash-link" aria-label="Lien direct vers Unified Raster Operations" title="Lien direct vers Unified Raster Operations" translate="no">​</a></h2>
+<p>The old "raster", "depth", and "dither" operations have been merged into a
+single, unified raster operation. This simplifies the workflow while giving
+you more control:</p>
+<ul>
+<li class=""><strong>Configurable line distance</strong> in all raster operations</li>
+<li class=""><strong>New "Raster (Dither)" operation</strong> with configurable algorithms</li>
+<li class=""><strong>Auto thresholding</strong> for Variable Power and Multipass modes</li>
+<li class=""><strong>Histogram</strong> in the raster engraver for visual threshold setting</li>
+<li class=""><strong>Symbolic visualization</strong> of raster direction in the rasterizer</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="g-code-console">G-code Console<a href="https://rayforge.org/fr/blog/rayforge-1.1-pipeline-rewrite#g-code-console" class="hash-link" aria-label="Lien direct vers G-code Console" title="Lien direct vers G-code Console" translate="no">​</a></h2>
+<p>The log view has been replaced with a fully-featured G-code terminal. You can
+now send commands directly to your machine, view responses in real-time, and
+interact with your laser cutter more directly than ever before.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="more-new-features">More New Features<a href="https://rayforge.org/fr/blog/rayforge-1.1-pipeline-rewrite#more-new-features" class="hash-link" aria-label="Lien direct vers More New Features" title="Lien direct vers More New Features" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="export-support">Export Support<a href="https://rayforge.org/fr/blog/rayforge-1.1-pipeline-rewrite#export-support" class="hash-link" aria-label="Lien direct vers Export Support" title="Lien direct vers Export Support" translate="no">​</a></h3>
+<p>You can now export your documents or selected objects to SVG and DXF formats.
+This is great for sharing designs or using them in other software.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-improvements">Sketcher Improvements<a href="https://rayforge.org/fr/blog/rayforge-1.1-pipeline-rewrite#sketcher-improvements" class="hash-link" aria-label="Lien direct vers Sketcher Improvements" title="Lien direct vers Sketcher Improvements" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Angle constraints</strong> are now available in the parametric sketcher</li>
+<li class=""><strong>Conflicting constraints</strong> are highlighted in red for easier debugging</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="machine-configuration">Machine Configuration<a href="https://rayforge.org/fr/blog/rayforge-1.1-pipeline-rewrite#machine-configuration" class="hash-link" aria-label="Lien direct vers Machine Configuration" title="Lien direct vers Machine Configuration" translate="no">​</a></h3>
+<ul>
+<li class="">Axis extents, work surface, and soft limits can now be configured per machine</li>
+<li class="">Built-in G-code dialect supporting dynamic power mode</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-additions">Other Additions<a href="https://rayforge.org/fr/blog/rayforge-1.1-pipeline-rewrite#other-additions" class="hash-link" aria-label="Lien direct vers Other Additions" title="Lien direct vers Other Additions" translate="no">​</a></h3>
+<ul>
+<li class="">Increased maximum laser spot size to 10 mm</li>
+<li class=""><code>RAYFORGE_MAX_WORKERS</code> environment variable to limit processes</li>
+<li class="">macOS packaging scripts and resources for better platform support</li>
+<li class=""><code>--uiscript</code> CLI argument for executing scripts after the UI is up</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes">Bug Fixes<a href="https://rayforge.org/fr/blog/rayforge-1.1-pipeline-rewrite#bug-fixes" class="hash-link" aria-label="Lien direct vers Bug Fixes" title="Lien direct vers Bug Fixes" translate="no">​</a></h2>
+<p>This release addresses many issues:</p>
+<ul>
+<li class="">Multiple memory leaks in the data pipeline</li>
+<li class="">Race conditions between worker pool task completion and pipeline shutdown</li>
+<li class="">Camera device scanning crash on Windows</li>
+<li class="">Multipass post-processor exception</li>
+<li class="">Rasterizer angle causing distortion</li>
+<li class="">Various macOS issues: shm_open length errors, SVG rendering fallback,
+keyboard shortcuts</li>
+<li class="">Workpiece stage not emitting correct node state</li>
+<li class="">Zoom resolution stuck until resizing at least once</li>
+<li class="">Blurry view overlay on startup</li>
+<li class="">Unresponsive serial ports now handled gracefully</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="special-thanks">Special Thanks<a href="https://rayforge.org/fr/blog/rayforge-1.1-pipeline-rewrite#special-thanks" class="hash-link" aria-label="Lien direct vers Special Thanks" title="Lien direct vers Special Thanks" translate="no">​</a></h2>
+<p>This release was made possible with the support of our Patreon supporters:</p>
+<ul>
+<li class="">2 anonymous contributors</li>
+<li class="">Amsel</li>
+</ul>
+<p>Thank you for supporting Rayforge development!</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-11">Download Rayforge 1.1<a href="https://rayforge.org/fr/blog/rayforge-1.1-pipeline-rewrite#download-rayforge-11" class="hash-link" aria-label="Lien direct vers Download Rayforge 1.1" title="Lien direct vers Download Rayforge 1.1" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://github.com/barebaric/rayforge/releases" target="_blank" rel="noopener noreferrer" class="">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/fr/blog/rayforge-1.1-pipeline-rewrite#join-the-community" class="hash-link" aria-label="Lien direct vers Join the Community" title="Lien direct vers Join the Community" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content:encoded>
+            <category>release</category>
+            <category>1.1</category>
+            <category>pipeline</category>
+            <category>raster</category>
+            <category>gcode</category>
+        </item>
+        <item>
+            <title><![CDATA[Rayforge 1.0 - Célébration du premier anniversaire]]></title>
+            <link>https://rayforge.org/fr/blog/rayforge-1.0-first-birthday</link>
+            <guid>https://rayforge.org/fr/blog/rayforge-1.0-first-birthday</guid>
+            <pubDate>Thu, 29 Jan 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Rayforge 1.0]]></description>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 1.0" src="https://rayforge.org/fr/assets/images/rayforge-1.0-95669e0bab418ed91ad92eb5532ec092.png" width="1920" height="1024" class="img_ev3q"></p>
+<p>Aujourd'hui marque une étape spéciale pour Rayforge - nous publions la
+version 1.0 exactement le jour du premier anniversaire du projet ! Ce qui
+a commencé par un simple commit le 1er février 2025 s'est transformé en
+une plateforme complète de découpe et gravure laser.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="le-parcours-jusquici">Le parcours jusqu'ici<a href="https://rayforge.org/fr/blog/rayforge-1.0-first-birthday#le-parcours-jusquici" class="hash-link" aria-label="Lien direct vers Le parcours jusqu'ici" title="Lien direct vers Le parcours jusqu'ici" translate="no">​</a></h2>
+<p>Au cours de l'année écoulée, Rayforge est passé d'un outil basique de
+contrôle laser à une plateforme complète de conception et fabrication.
+Nous avons tout construit à partir de zéro : un système de CAO 2D
+paramétrique, un aperçu 3D du G-code, la prise en charge multi-couches,
+la prise en charge multi-laser, l'alignement par caméra, les systèmes de
+coordonnées de travail, et bien plus encore.</p>
+<p>Cette version représente l'aboutissement de cette vision - un outil
+stable et prêt pour la production capable de gérer de vrais flux de
+travail de découpe et gravure laser.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="quoi-de-neuf-dans-la-10">Quoi de neuf dans la 1.0<a href="https://rayforge.org/fr/blog/rayforge-1.0-first-birthday#quoi-de-neuf-dans-la-10" class="hash-link" aria-label="Lien direct vers Quoi de neuf dans la 1.0" title="Lien direct vers Quoi de neuf dans la 1.0" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sauvegarde-et-chargement-de-projets">Sauvegarde et chargement de projets<a href="https://rayforge.org/fr/blog/rayforge-1.0-first-birthday#sauvegarde-et-chargement-de-projets" class="hash-link" aria-label="Lien direct vers Sauvegarde et chargement de projets" title="Lien direct vers Sauvegarde et chargement de projets" translate="no">​</a></h3>
+<p>La fonctionnalité la plus demandée est enfin là. Vous pouvez maintenant
+sauvegarder vos flux de travail complets et les restaurer ultérieurement.
+Les extensions de fichiers <code>.ryp</code> (projet) et <code>.rfs</code> (esquisse) sont
+enregistrées au niveau du système, vous pouvez donc double-cliquer sur
+vos projets pour les ouvrir directement. Un menu de fichiers récents
+fournit un accès rapide à votre travail.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="esquisseur-paramétrique-avec-prise-en-charge-du-texte">Esquisseur paramétrique avec prise en charge du texte<a href="https://rayforge.org/fr/blog/rayforge-1.0-first-birthday#esquisseur-param%C3%A9trique-avec-prise-en-charge-du-texte" class="hash-link" aria-label="Lien direct vers Esquisseur paramétrique avec prise en charge du texte" title="Lien direct vers Esquisseur paramétrique avec prise en charge du texte" translate="no">​</a></h3>
+<p>L'esquisseur prend désormais en charge le texte avec une intégration
+complète des contraintes. Ajoutez du texte à vos esquisses, appliquez
+des contraintes de rapport d'aspect, et contrôlez le placement et le
+dimensionnement de manière paramétrique. Cela ouvre tout un monde de
+possibilités de conception pour les enseignes gravées au laser, les
+étiquettes et les éléments décoratifs.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="panneau-inférieur-unifié">Panneau inférieur unifié<a href="https://rayforge.org/fr/blog/rayforge-1.0-first-birthday#panneau-inf%C3%A9rieur-unifi%C3%A9" class="hash-link" aria-label="Lien direct vers Panneau inférieur unifié" title="Lien direct vers Panneau inférieur unifié" translate="no">​</a></h3>
+<p>Le dialogue de déplacement et la vue du journal ont été fusionnés en
+un seul panneau inférieur unifié. Cette consolidation offre un espace
+de travail plus propre tout en gardant les outils essentiels de contrôle
+et de surveillance de la machine facilement accessibles. Le panneau
+comporte un accès par onglets aux contrôles de déplacement et à la
+sortie du journal, facilitant le basculement entre les opérations sans
+perdre d'espace d'écran.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="autres-améliorations">Autres améliorations<a href="https://rayforge.org/fr/blog/rayforge-1.0-first-birthday#autres-am%C3%A9liorations" class="hash-link" aria-label="Lien direct vers Autres améliorations" title="Lien direct vers Autres améliorations" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Panneau inférieur</strong> : Le dialogue de déplacement et la vue du journal
+sont maintenant fusionnés dans un panneau inférieur unifié</li>
+<li class=""><strong>Dialogue d'importation</strong> : Les erreurs sont maintenant collectées et
+affichées ensemble</li>
+<li class=""><strong>Importateurs</strong> : Presque entièrement réécrits pour une meilleure
+testabilité</li>
+<li class=""><strong>Stabilité de l'esquisseur</strong> : Le solveur favorise maintenant les points
+pour un déplacement plus stable</li>
+<li class=""><strong>Corrections de bugs</strong> : Import DXF multi-couches, bugs d'alignement,
+problèmes de centrage, et plus encore</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="points-forts-des-fonctionnalités">Points forts des fonctionnalités<a href="https://rayforge.org/fr/blog/rayforge-1.0-first-birthday#points-forts-des-fonctionnalit%C3%A9s" class="hash-link" aria-label="Lien direct vers Points forts des fonctionnalités" title="Lien direct vers Points forts des fonctionnalités" translate="no">​</a></h2>
+<p>Rayforge 1.0 comprend plus de 60 fonctionnalités :</p>
+<p><strong>Outils de conception</strong></p>
+<ul>
+<li class="">CAO 2D avec esquisse paramétrique</li>
+<li class="">Contraintes géométriques et dimensionnelles</li>
+<li class="">Prise en charge du texte dans les esquisses</li>
+<li class="">Prise en charge multi-couches</li>
+</ul>
+<p><strong>Fabrication</strong></p>
+<ul>
+<li class="">Opérations 2.5D (contour, trame, gravure en profondeur)</li>
+<li class="">Prise en charge multi-laser</li>
+<li class="">Systèmes de coordonnées de travail (G54-G59)</li>
+<li class="">Optimisation et lissage des trajets</li>
+<li class="">Ponts de maintien avec placement automatique</li>
+</ul>
+<p><strong>Import/Export</strong></p>
+<ul>
+<li class="">Prise en charge des fichiers SVG, DXF, PDF, JPEG, PNG, BMP, Ruida</li>
+<li class="">Traçage vectoriel avec plusieurs algorithmes</li>
+<li class="">Prétraitement d'image (débruitage, inversion, seuillage)</li>
+</ul>
+<p><strong>Contrôle de machine</strong></p>
+<ul>
+<li class="">Profils multi-machines</li>
+<li class="">Paramètres de firmware pour GRBL, Smoothieware, Marlin</li>
+<li class="">Macros et hooks G-code</li>
+<li class="">Substitution de variables</li>
+<li class="">Console terminal avec statut en direct</li>
+</ul>
+<p><strong>Visualisation</strong></p>
+<ul>
+<li class="">Aperçu 3D du G-code avec simulation complète</li>
+<li class="">Alignement par caméra</li>
+<li class="">Thèmes sombre et clair</li>
+<li class="">Prise en charge multilingue</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="un-regard-en-arrière">Un regard en arrière<a href="https://rayforge.org/fr/blog/rayforge-1.0-first-birthday#un-regard-en-arri%C3%A8re" class="hash-link" aria-label="Lien direct vers Un regard en arrière" title="Lien direct vers Un regard en arrière" translate="no">​</a></h2>
+<p>Le premier commit a été fait le 1er février 2025, à 19:37:27. C'était un
+simple « import initial » avec un support de rendu SVG basique. Depuis
+lors, nous avons :</p>
+<ul>
+<li class="">Publié 28 versions (0.13 à 0.28, plus 1.0)</li>
+<li class="">Ajouté plus de 60 fonctionnalités</li>
+<li class="">Corrigé des centaines de bugs</li>
+<li class="">Construit une communauté d'utilisateurs et de contributeurs</li>
+<li class="">Créé des installateurs pour Windows, Linux (deb, snap, flatpak) et macOS</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="et-maintenant-">Et maintenant ?<a href="https://rayforge.org/fr/blog/rayforge-1.0-first-birthday#et-maintenant-" class="hash-link" aria-label="Lien direct vers Et maintenant ?" title="Lien direct vers Et maintenant ?" translate="no">​</a></h2>
+<p>La version 1.0 est une étape, pas une destination. La feuille de route
+à venir comprend :</p>
+<ul>
+<li class="">Outils vectoriels et capacités d'édition améliorés</li>
+<li class="">Support matériel plus large</li>
+<li class="">Optimisations de performance pour les grands projets</li>
+<li class="">Plus de profils de machine et de dialectes</li>
+<li class="">Écosystème de paquets piloté par la communauté</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="télécharger-rayforge-10">Télécharger Rayforge 1.0<a href="https://rayforge.org/fr/blog/rayforge-1.0-first-birthday#t%C3%A9l%C3%A9charger-rayforge-10" class="hash-link" aria-label="Lien direct vers Télécharger Rayforge 1.0" title="Lien direct vers Télécharger Rayforge 1.0" translate="no">​</a></h2>
+<p>Obtenez la dernière version depuis notre site web : <a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">https://rayforge.org/</a></p>
+<p>Les installateurs sont disponibles pour :</p>
+<ul>
+<li class="">Windows (installateur)</li>
+<li class="">Linux (deb, snap, flatpak)</li>
+<li class="">macOS (dmg)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="rejoignez-la-communauté">Rejoignez la communauté<a href="https://rayforge.org/fr/blog/rayforge-1.0-first-birthday#rejoignez-la-communaut%C3%A9" class="hash-link" aria-label="Lien direct vers Rejoignez la communauté" title="Lien direct vers Rejoignez la communauté" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>GitHub</strong> : <a href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" class="">https://github.com/barebaric/rayforge</a></li>
+<li class=""><strong>Discord</strong> : <a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">https://discord.gg/sTHNdTtpQJ</a></li>
+<li class=""><strong>Patreon</strong> : <a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">https://www.patreon.com/c/knipknap</a></li>
+</ul>
+<p>Merci à tous ceux qui ont contribué, testé, signalé des bugs, ou
+simplement utilisé Rayforge au cours de cette année passée. Voici une
+nouvelle année à construire l'avenir de la fabrication open-source !</p>
+<hr>
+<p><em>Joyeux premier anniversaire, Rayforge ! 🎂</em></p>]]></content:encoded>
+            <category>version</category>
+            <category>1</category>
+            <category>étape</category>
+        </item>
+        <item>
+            <title><![CDATA[5 conseils pour de meilleurs résultats de gravure laser avec Rayforge]]></title>
+            <link>https://rayforge.org/fr/blog/5-tips-better-engraving</link>
+            <guid>https://rayforge.org/fr/blog/5-tips-better-engraving</guid>
+            <pubDate>Thu, 20 Feb 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Aperçu 3D]]></description>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Aperçu 3D" src="https://rayforge.org/fr/assets/images/main-3d-036a64ba4ce8c629a8e9c123a8a8c11d.png" width="2450" height="1700" class="img_ev3q"></p>
+<p>Obtenir des résultats de gravure laser de qualité professionnelle
+nécessite plus que du bon matériel — vos paramètres logiciels et votre
+flux de travail comptent aussi. Voici cinq conseils pour vous aider à
+tirer le meilleur parti de Rayforge.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-utilisez-loverscan-pour-une-gravure-tramée-plus-fluide">1. Utilisez l'overscan pour une gravure tramée plus fluide<a href="https://rayforge.org/fr/blog/5-tips-better-engraving#1-utilisez-loverscan-pour-une-gravure-tram%C3%A9e-plus-fluide" class="hash-link" aria-label="Lien direct vers 1. Utilisez l'overscan pour une gravure tramée plus fluide" title="Lien direct vers 1. Utilisez l'overscan pour une gravure tramée plus fluide" translate="no">​</a></h2>
+<p>Lors de la gravure tramée, un problème courant est l'apparition de
+lignes visibles ou d'incohérences sur les bords où le laser change de
+direction. Cela se produit parce que la tête laser doit décélérer et
+accélérer, ce qui peut affecter la qualité de gravure.</p>
+<p><strong>Solution</strong> : Activez l'<strong>Overscan</strong> dans les paramètres de votre
+opération tramée.</p>
+<p>L'overscan étend le trajet du laser au-delà de la zone de gravure
+réelle, permettant à la tête d'atteindre sa pleine vitesse avant
+d'entrer dans la zone de travail et de la maintenir tout au long.
+Cela donne une gravure beaucoup plus fluide et plus homogène.</p>
+<p>Pour activer l'overscan :</p>
+<ol>
+<li class="">Sélectionnez votre opération tramée</li>
+<li class="">Ouvrez les paramètres de l'opération</li>
+<li class="">Activez « Overscan » et définissez la distance (généralement 3-5mm
+fonctionne bien)</li>
+</ol>
+<p>En savoir plus dans notre <a class="" href="https://rayforge.org/fr/docs/features/overscan">guide Overscan</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-optimisez-le-temps-de-déplacement-avec-lordonnancement-des-trajets">2. Optimisez le temps de déplacement avec l'ordonnancement des trajets<a href="https://rayforge.org/fr/blog/5-tips-better-engraving#2-optimisez-le-temps-de-d%C3%A9placement-avec-lordonnancement-des-trajets" class="hash-link" aria-label="Lien direct vers 2. Optimisez le temps de déplacement avec l'ordonnancement des trajets" title="Lien direct vers 2. Optimisez le temps de déplacement avec l'ordonnancement des trajets" translate="no">​</a></h2>
+<p>Pour les opérations de contour avec de nombreux trajets séparés,
+l'ordre dans lequel le laser visite chaque forme peut avoir un impact
+significatif sur le temps total de la tâche.</p>
+<p><strong>Solution</strong> : Utilisez l'<strong>optimisation du temps de déplacement</strong>
+intégrée de Rayforge.</p>
+<p>Rayforge peut réorganiser automatiquement les trajets pour minimiser
+le temps de déplacement sans découpe. Cela est particulièrement utile
+pour les tâches avec de nombreux petits objets ou du texte avec
+plusieurs lettres.</p>
+<p>L'optimisation des trajets est généralement activée par défaut, mais
+vous pouvez la vérifier et l'ajuster dans les paramètres de l'opération
+Contour.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-ajoutez-des-ponts-de-maintien-pour-éviter-le-déplacement-des-pièces">3. Ajoutez des ponts de maintien pour éviter le déplacement des pièces<a href="https://rayforge.org/fr/blog/5-tips-better-engraving#3-ajoutez-des-ponts-de-maintien-pour-%C3%A9viter-le-d%C3%A9placement-des-pi%C3%A8ces" class="hash-link" aria-label="Lien direct vers 3. Ajoutez des ponts de maintien pour éviter le déplacement des pièces" title="Lien direct vers 3. Ajoutez des ponts de maintien pour éviter le déplacement des pièces" translate="no">​</a></h2>
+<p>Rien n'est plus frustrant que de voir une tâche de découpe presque
+terminée gâchée parce que la pièce a bougé ou est tombée à travers le
+plateau de la machine au dernier moment.</p>
+<p><strong>Solution</strong> : Utilisez des <strong>Ponts de maintien</strong> pour garder les pièces
+en place jusqu'à ce que la tâche soit terminée.</p>
+<p>Les ponts de maintien sont de petites sections non découpées qui
+maintiennent votre pièce connectée au matériau environnant. Une fois
+la tâche terminée, vous pouvez facilement retirer la pièce et nettoyer
+les ponts avec un couteau ou du papier de verre.</p>
+<p>Rayforge prend en charge le placement manuel et automatique des ponts :</p>
+<ul>
+<li class=""><strong>Manuel</strong> : Cliquez exactement où vous voulez les ponts sur le canevas</li>
+<li class=""><strong>Automatique</strong> : Spécifiez le nombre de ponts et laissez Rayforge
+les répartir uniformément</li>
+</ul>
+<p>Consultez la <a class="" href="https://rayforge.org/fr/docs/features/holding-tabs">documentation des Ponts de maintien</a>
+pour un guide complet.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-prévisualisez-votre-tâche-en-3d-avant-lexécution">4. Prévisualisez votre tâche en 3D avant l'exécution<a href="https://rayforge.org/fr/blog/5-tips-better-engraving#4-pr%C3%A9visualisez-votre-t%C3%A2che-en-3d-avant-lex%C3%A9cution" class="hash-link" aria-label="Lien direct vers 4. Prévisualisez votre tâche en 3D avant l'exécution" title="Lien direct vers 4. Prévisualisez votre tâche en 3D avant l'exécution" translate="no">​</a></h2>
+<p>L'une des fonctionnalités les plus précieuses de Rayforge est l'aperçu
+3D du G-code. Il est tentant de sauter cette étape et d'envoyer la
+tâche directement à la machine, mais prendre un moment pour prévisualiser
+peut vous faire gagner du temps et des matériaux.</p>
+<p><strong>Ce qu'il faut rechercher dans l'aperçu</strong> :</p>
+<ul>
+<li class="">Vérifiez que toutes les opérations s'exécutent dans le bon ordre</li>
+<li class="">Recherchez tout trajet d'outil ou chevauchement inattendu</li>
+<li class="">Confirmez que les opérations multi-passes ont le nombre correct de passes</li>
+<li class="">Assurez-vous que les limites de la tâche s'inscrivent dans votre matériau</li>
+</ul>
+<p>Pour ouvrir l'aperçu 3D, cliquez sur le bouton <strong>Aperçu 3D</strong> dans la
+barre d'outils principale après avoir généré votre G-code.</p>
+<p>En savoir plus sur l'aperçu 3D dans notre
+<a class="" href="https://rayforge.org/fr/docs/ui/3d-preview">documentation de l'interface</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-utilisez-des-hooks-g-code-personnalisés-pour-des-flux-de-travail-cohérents">5. Utilisez des hooks G-code personnalisés pour des flux de travail cohérents<a href="https://rayforge.org/fr/blog/5-tips-better-engraving#5-utilisez-des-hooks-g-code-personnalis%C3%A9s-pour-des-flux-de-travail-coh%C3%A9rents" class="hash-link" aria-label="Lien direct vers 5. Utilisez des hooks G-code personnalisés pour des flux de travail cohérents" title="Lien direct vers 5. Utilisez des hooks G-code personnalisés pour des flux de travail cohérents" translate="no">​</a></h2>
+<p>Si vous vous retrouvez à exécuter les mêmes commandes G-code avant ou
+après chaque tâche — comme le retour à l'origine, l'activation d'une
+assistance air, ou l'exécution d'une routine de mise au point — vous
+pouvez automatiser cela avec des <strong>Macros et Hooks G-code</strong>.</p>
+<p><strong>Cas d'utilisation courants</strong> :</p>
+<ul>
+<li class=""><strong>Hook pré-tâche</strong> : Retour à l'origine de la machine, activation de
+l'assistance air, exécution d'une routine de mise au point automatique</li>
+<li class=""><strong>Hook post-tâche</strong> : Désactivation de l'assistance air, retour à la
+position d'origine, lecture d'un son de fin</li>
+<li class=""><strong>Macros spécifiques à une couche</strong> : Changement de la hauteur de mise
+au point entre les opérations, changement de modules laser</li>
+</ul>
+<p>Les hooks prennent en charge la substitution de variables, vous pouvez
+donc référencer des propriétés de tâche comme l'épaisseur du matériau,
+le type d'opération, et plus encore.</p>
+<p>Exemple de hook pré-tâche :</p>
+<div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">G28 ; Retour à l'origine de tous les axes</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">M8 ; Activer l'assistance air</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">G0 Z{focus_height} ; Déplacer à la hauteur de mise au point</span><br></div></code></pre></div></div>
+<p>Consultez notre <a class="" href="https://rayforge.org/fr/docs/machine/hooks-macros">guide des Macros et Hooks G-code</a>
+pour des exemples détaillés et une référence des variables.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="conseil-bonus--testez-dabord-sur-du-matériel-de-récupération">Conseil bonus : Testez d'abord sur du matériel de récupération<a href="https://rayforge.org/fr/blog/5-tips-better-engraving#conseil-bonus--testez-dabord-sur-du-mat%C3%A9riel-de-r%C3%A9cup%C3%A9ration" class="hash-link" aria-label="Lien direct vers Conseil bonus : Testez d'abord sur du matériel de récupération" title="Lien direct vers Conseil bonus : Testez d'abord sur du matériel de récupération" translate="no">​</a></h2>
+<p>Bien que cela ne soit pas spécifique à Rayforge, cela vaut la peine d'être
+répété : testez toujours les nouveaux paramètres, opérations ou matériaux
+sur des chutes d'abord. Utilisez les profils de matériaux et les préréglages
+d'opérations de Rayforge pour sauvegarder vos paramètres testés pour une
+utilisation future.</p>
+<hr>
+<p><em>Vous avez vos propres astuces et conseils Rayforge ? Partagez-les avec
+la communauté sur <a href="https://github.com/barebaric/rayforge/discussions" target="_blank" rel="noopener noreferrer" class="">GitHub Discussions</a> !</em></p>]]></content:encoded>
+            <category>gravure</category>
+            <category>optimisation</category>
+            <category>qualité</category>
+            <category>flux-de-travail</category>
+        </item>
+        <item>
+            <title><![CDATA[Prise en charge multi-laser - Choisissez différents lasers pour chaque opération]]></title>
+            <link>https://rayforge.org/fr/blog/multi-laser-support</link>
+            <guid>https://rayforge.org/fr/blog/multi-laser-support</guid>
+            <pubDate>Fri, 10 Jan 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[L'une des fonctionnalités les plus puissantes de Rayforge est la capacité]]></description>
+            <content:encoded><![CDATA[<p>L'une des fonctionnalités les plus puissantes de Rayforge est la capacité
+d'assigner différents lasers à différentes opérations au sein d'une même
+tâche. Cela ouvre des possibilités passionnantes pour les configurations
+multi-outils et les flux de travail spécialisés.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="quest-ce-que-la-prise-en-charge-multi-laser-">Qu'est-ce que la prise en charge multi-laser ?<a href="https://rayforge.org/fr/blog/multi-laser-support#quest-ce-que-la-prise-en-charge-multi-laser-" class="hash-link" aria-label="Lien direct vers Qu'est-ce que la prise en charge multi-laser ?" title="Lien direct vers Qu'est-ce que la prise en charge multi-laser ?" translate="no">​</a></h2>
+<p>Si votre machine est équipée de plusieurs modules laser — par exemple,
+un laser à diode pour la gravure et un laser CO2 pour la découpe, ou
+différents lasers à diode de puissance variée optimisés pour différents
+matériaux — Rayforge vous permet de tirer pleinement parti de cette
+configuration.</p>
+<p>Avec la prise en charge multi-laser, vous pouvez :</p>
+<ul>
+<li class=""><strong>Assigner différents lasers à différentes opérations</strong> dans votre tâche</li>
+<li class=""><strong>Basculer entre les modules laser</strong> automatiquement pendant l'exécution
+de la tâche</li>
+<li class=""><strong>Optimiser pour le matériau et la tâche</strong> en utilisant l'outil adapté
+à chaque opération</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="cas-dutilisation">Cas d'utilisation<a href="https://rayforge.org/fr/blog/multi-laser-support#cas-dutilisation" class="hash-link" aria-label="Lien direct vers Cas d'utilisation" title="Lien direct vers Cas d'utilisation" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="gravure-et-découpe-hybrides">Gravure et découpe hybrides<a href="https://rayforge.org/fr/blog/multi-laser-support#gravure-et-d%C3%A9coupe-hybrides" class="hash-link" aria-label="Lien direct vers Gravure et découpe hybrides" title="Lien direct vers Gravure et découpe hybrides" translate="no">​</a></h3>
+<p>Imaginez que vous travailliez sur un projet de panneau en bois :</p>
+<ol>
+<li class=""><strong>Opération 1</strong> : Utiliser un laser à diode de faible puissance pour
+graver du texte fin et des graphiques détaillés</li>
+<li class=""><strong>Opération 2</strong> : Passer à un laser CO2 de plus grande puissance pour
+découper la forme du panneau</li>
+</ol>
+<p>Avec Rayforge, vous assignez simplement chaque opération au laser
+approprié dans votre profil de machine, et le logiciel gère le reste.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="optimisation-spécifique-au-matériau">Optimisation spécifique au matériau<a href="https://rayforge.org/fr/blog/multi-laser-support#optimisation-sp%C3%A9cifique-au-mat%C3%A9riau" class="hash-link" aria-label="Lien direct vers Optimisation spécifique au matériau" title="Lien direct vers Optimisation spécifique au matériau" translate="no">​</a></h3>
+<p>Différents types de laser excellent avec différents matériaux :</p>
+<ul>
+<li class=""><strong>Lasers à diode</strong> : Excellents pour la gravure sur bois, le cuir et
+certains plastiques</li>
+<li class=""><strong>Lasers CO2</strong> : Parfaits pour découper l'acrylique, le bois et
+d'autres matériaux organiques</li>
+<li class=""><strong>Lasers à fibre</strong> : Idéaux pour le marquage des métaux</li>
+</ul>
+<p>Si vous avez plusieurs types de lasers sur un système portique, la
+prise en charge multi-laser de Rayforge vous permet d'utiliser l'outil
+optimal pour chaque partie de votre projet.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="comment-le-configurer">Comment le configurer<a href="https://rayforge.org/fr/blog/multi-laser-support#comment-le-configurer" class="hash-link" aria-label="Lien direct vers Comment le configurer" title="Lien direct vers Comment le configurer" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-configurer-plusieurs-lasers-dans-votre-profil-de-machine">1. Configurer plusieurs lasers dans votre profil de machine<a href="https://rayforge.org/fr/blog/multi-laser-support#1-configurer-plusieurs-lasers-dans-votre-profil-de-machine" class="hash-link" aria-label="Lien direct vers 1. Configurer plusieurs lasers dans votre profil de machine" title="Lien direct vers 1. Configurer plusieurs lasers dans votre profil de machine" translate="no">​</a></h3>
+<p>Allez dans <strong>Configuration de la machine → Lasers multiples</strong> et
+définissez chaque module laser dans votre système. Vous pouvez spécifier :</p>
+<ul>
+<li class="">Le type de laser et la plage de puissance</li>
+<li class="">Les positions de décalage (si les lasers sont montés à différents
+emplacements)</li>
+<li class="">La compatibilité des matériaux</li>
+</ul>
+<p>Consultez notre <a class="" href="https://rayforge.org/fr/docs/machine/laser">Guide de configuration laser</a>
+pour des instructions détaillées.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-assigner-les-lasers-aux-opérations">2. Assigner les lasers aux opérations<a href="https://rayforge.org/fr/blog/multi-laser-support#2-assigner-les-lasers-aux-op%C3%A9rations" class="hash-link" aria-label="Lien direct vers 2. Assigner les lasers aux opérations" title="Lien direct vers 2. Assigner les lasers aux opérations" translate="no">​</a></h3>
+<p>Lors de la création d'opérations dans votre projet :</p>
+<ol>
+<li class="">Sélectionnez l'opération (Contour, Trame, etc.)</li>
+<li class="">Dans les paramètres de l'opération, choisissez le laser à utiliser
+dans le menu déroulant</li>
+<li class="">Configurez les paramètres de l'opération spécifiques à ce laser</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-prévisualiser-et-exécuter">3. Prévisualiser et exécuter<a href="https://rayforge.org/fr/blog/multi-laser-support#3-pr%C3%A9visualiser-et-ex%C3%A9cuter" class="hash-link" aria-label="Lien direct vers 3. Prévisualiser et exécuter" title="Lien direct vers 3. Prévisualiser et exécuter" translate="no">​</a></h3>
+<p>Utilisez l'aperçu 3D pour vérifier vos trajets d'outil, puis envoyez la
+tâche à votre machine. Rayforge générera automatiquement les commandes
+G-code appropriées pour basculer entre les lasers selon les besoins.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="détails-techniques">Détails techniques<a href="https://rayforge.org/fr/blog/multi-laser-support#d%C3%A9tails-techniques" class="hash-link" aria-label="Lien direct vers Détails techniques" title="Lien direct vers Détails techniques" translate="no">​</a></h2>
+<p>Sous le capot, Rayforge utilise des commandes G-code pour basculer entre
+les modules laser. L'implémentation exacte dépend de votre firmware et
+de votre configuration matérielle, mais les approches courantes incluent :</p>
+<ul>
+<li class=""><strong>M3/M4 avec décalages d'outil</strong> : Basculer entre les lasers en
+utilisant des commandes de changement d'outil</li>
+<li class=""><strong>Contrôle GPIO</strong> : Utiliser des broches GPIO prises en charge par le
+firmware pour activer/désactiver différents modules laser</li>
+<li class=""><strong>Macros personnalisées</strong> : Définir des macros pré- et post-opération
+pour la commutation laser</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pour-commencer">Pour commencer<a href="https://rayforge.org/fr/blog/multi-laser-support#pour-commencer" class="hash-link" aria-label="Lien direct vers Pour commencer" title="Lien direct vers Pour commencer" translate="no">​</a></h2>
+<p>La prise en charge multi-laser est disponible dans Rayforge 0.15 et
+versions ultérieures. Pour démarrer :</p>
+<ol>
+<li class="">Mettez à jour vers la dernière version</li>
+<li class="">Configurez votre profil de machine avec plusieurs lasers</li>
+<li class="">Testez sur un projet expérimental !</li>
+</ol>
+<p>Consultez la <a class="" href="https://rayforge.org/fr/docs/machine/general">documentation des profils de machine</a>
+pour plus de détails.</p>
+<hr>
+<p><em>Vous avez une configuration multi-laser ? Nous serions ravis d'entendre
+parler de votre expérience ! Partagez vos projets et vos commentaires sur
+<a href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" class="">GitHub</a>.</em></p>]]></content:encoded>
+            <category>multi-laser</category>
+            <category>opérations</category>
+            <category>flux-de-travail</category>
+        </item>
+        <item>
+            <title><![CDATA[Bienvenue dans Rayforge : Logiciel de contrôle laser moderne]]></title>
+            <link>https://rayforge.org/fr/blog/welcome-to-rayforge</link>
+            <guid>https://rayforge.org/fr/blog/welcome-to-rayforge</guid>
+            <pubDate>Sun, 15 Dec 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Fenêtre principale de Rayforge]]></description>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Fenêtre principale de Rayforge" src="https://rayforge.org/fr/assets/images/main-standard-05f7c4dbfcf029bf132c55381b529297.png" width="2450" height="1700" class="img_ev3q"></p>
+<p>Nous sommes ravis de vous présenter Rayforge, un émetteur de G-code moderne
+et open-source, ainsi qu'un logiciel de contrôle conçu spécifiquement pour
+les découpeuses et graveuses laser basées sur GRBL.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pourquoi-rayforge-">Pourquoi Rayforge ?<a href="https://rayforge.org/fr/blog/welcome-to-rayforge#pourquoi-rayforge-" class="hash-link" aria-label="Lien direct vers Pourquoi Rayforge ?" title="Lien direct vers Pourquoi Rayforge ?" translate="no">​</a></h2>
+<p>Dans le monde de la découpe et de la gravure laser, disposer d'un logiciel
+fiable et intuitif est tout aussi important que d'avoir du matériel de
+qualité. Rayforge a été conçu dès le départ en mettant l'accent sur :</p>
+<ul>
+<li class=""><strong>Expérience utilisateur moderne</strong> : Construit avec Gtk4 et Libadwaita,
+Rayforge offre une interface claire et native qui se sent comme chez
+elle sur Linux et Windows</li>
+<li class=""><strong>Fonctionnalités professionnelles</strong> : Flux de travail multi-couches,
+aperçu 3D, intégration de caméra et génération de trajets avancée</li>
+<li class=""><strong>Flexibilité</strong> : Prise en charge de plusieurs profils de machine,
+macros personnalisées et options de configuration étendues</li>
+<li class=""><strong>Développement ouvert</strong> : Piloté par la communauté, les contributions
+sont les bienvenues</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="quest-ce-qui-différencie-rayforge-">Qu'est-ce qui différencie Rayforge ?<a href="https://rayforge.org/fr/blog/welcome-to-rayforge#quest-ce-qui-diff%C3%A9rencie-rayforge-" class="hash-link" aria-label="Lien direct vers Qu'est-ce qui différencie Rayforge ?" title="Lien direct vers Qu'est-ce qui différencie Rayforge ?" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="opérations-multi-couches">Opérations multi-couches<a href="https://rayforge.org/fr/blog/welcome-to-rayforge#op%C3%A9rations-multi-couches" class="hash-link" aria-label="Lien direct vers Opérations multi-couches" title="Lien direct vers Opérations multi-couches" translate="no">​</a></h3>
+<p>L'une des caractéristiques remarquables de Rayforge est son flux de
+travail multi-couches. Assignez différentes opérations à différentes
+couches dans votre conception — gravez des détails fins sur une couche,
+puis découpez la pièce sur une autre. Le tout géré de manière fluide dans
+une seule interface.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="aperçu-3d-du-g-code">Aperçu 3D du G-code<a href="https://rayforge.org/fr/blog/welcome-to-rayforge#aper%C3%A7u-3d-du-g-code" class="hash-link" aria-label="Lien direct vers Aperçu 3D du G-code" title="Lien direct vers Aperçu 3D du G-code" translate="no">​</a></h3>
+<p>Avant d'envoyer votre tâche à la machine, visualisez exactement ce qui
+va se passer avec notre aperçu 3D du G-code. Détectez les problèmes
+potentiels avant qu'ils ne surviennent et économisez du temps et des
+matériaux.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="intégration-de-caméra">Intégration de caméra<a href="https://rayforge.org/fr/blog/welcome-to-rayforge#int%C3%A9gration-de-cam%C3%A9ra" class="hash-link" aria-label="Lien direct vers Intégration de caméra" title="Lien direct vers Intégration de caméra" translate="no">​</a></h3>
+<p>Utilisez une caméra USB pour l'alignement précis de la pièce, le
+positionnement, et même le traçage de l'arrière-plan. Parfait pour
+positionner des conceptions sur des matériaux préexistants ou créer
+des gabarits.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="génération-de-trajets-avancée">Génération de trajets avancée<a href="https://rayforge.org/fr/blog/welcome-to-rayforge#g%C3%A9n%C3%A9ration-de-trajets-avanc%C3%A9e" class="hash-link" aria-label="Lien direct vers Génération de trajets avancée" title="Lien direct vers Génération de trajets avancée" translate="no">​</a></h3>
+<p>Rayforge inclut un traçage d'image de haute qualité, une optimisation
+du temps de déplacement, un lissage des trajets et une interpolation
+de la taille du spot pour garantir que vos projets se réalisent exactement
+comme prévu.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pour-commencer">Pour commencer<a href="https://rayforge.org/fr/blog/welcome-to-rayforge#pour-commencer" class="hash-link" aria-label="Lien direct vers Pour commencer" title="Lien direct vers Pour commencer" translate="no">​</a></h2>
+<p>Prêt à essayer Rayforge ? Consultez notre
+<a class="" href="https://rayforge.org/fr/docs/getting-started/installation">Guide d'installation</a> pour démarrer.
+Que vous utilisiez Ubuntu, une autre distribution Linux via Snap, ou
+Windows, nous avons ce qu'il vous faut.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="rejoignez-la-communauté">Rejoignez la communauté<a href="https://rayforge.org/fr/blog/welcome-to-rayforge#rejoignez-la-communaut%C3%A9" class="hash-link" aria-label="Lien direct vers Rejoignez la communauté" title="Lien direct vers Rejoignez la communauté" translate="no">​</a></h2>
+<p>Rayforge est open-source et piloté par la communauté. Nous accueillons
+les contributions de toutes sortes :</p>
+<ul>
+<li class="">Signalez des bugs et demandez des fonctionnalités sur
+<a href="https://github.com/barebaric/rayforge/issues" target="_blank" rel="noopener noreferrer" class="">GitHub Issues</a></li>
+<li class="">Contribuez au code via les
+<a href="https://github.com/barebaric/rayforge/pulls" target="_blank" rel="noopener noreferrer" class="">pull requests</a></li>
+<li class="">Améliorez la documentation</li>
+<li class="">Partagez vos projets et expériences</li>
+</ul>
+<hr>
+<p><em>Vous avez des questions ou des commentaires ? Rejoignez la conversation
+sur GitHub ou consultez notre <a class="" href="https://rayforge.org/fr/docs/getting-started/installation">documentation</a>.</em></p>]]></content:encoded>
+            <category>introduction</category>
+            <category>fonctionnalités</category>
+        </item>
+    </channel>
+</rss>

@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="zh-CN" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-features/operations/engrave" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">雕刻 | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" property="og:url" content="https://rayforge.org/zh-CN/docs/features/operations/engrave"><meta data-rh="true" property="og:locale" content="zh_CN"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="pt_BR"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="de"><meta data-rh="true" property="og:locale:alternate" content="uk"><meta data-rh="true" name="docusaurus_locale" content="zh-CN"><meta data-rh="true" name="docsearch:language" content="zh-CN"><meta data-rh="true" name="keywords" content="laser cutter software, laser engraving software, LightBurn alternative, free laser software, open source laser software, GRBL, laser cutting software, laser control software, G-code sender, Rayforge"><meta data-rh="true" name="author" content="Rayforge Contributors"><meta data-rh="true" name="robots" content="index, follow"><meta data-rh="true" property="og:type" content="website"><meta data-rh="true" property="og:site_name" content="Rayforge"><meta data-rh="true" property="og:image" content="https://rayforge.org/images/social.png"><meta data-rh="true" property="og:image:width" content="1200"><meta data-rh="true" property="og:image:height" content="630"><meta data-rh="true" property="og:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" name="twitter:title" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:description" content="The complete creative studio for your laser cutter. Design, simulate, and control — with AI-powered tools, 3D preview, and a built-in sketcher."><meta data-rh="true" name="twitter:image" content="https://rayforge.org/images/social.png"><meta data-rh="true" name="twitter:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="雕刻 | Rayforge"><meta data-rh="true" name="description" content="雕刻操作用光栅扫描线填充区域，支持多种模式用于不同的雕刻效果。从平滑的灰度照片到 3D 浮雕效果，选择最适合您设计和材料的模式。"><meta data-rh="true" property="og:description" content="雕刻操作用光栅扫描线填充区域，支持多种模式用于不同的雕刻效果。从平滑的灰度照片到 3D 浮雕效果，选择最适合您设计和材料的模式。"><link data-rh="true" rel="icon" href="/zh-CN/images/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/zh-CN/docs/features/operations/engrave"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/features/operations/engrave" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/pt-BR/docs/features/operations/engrave" hreflang="pt-BR"><link data-rh="true" rel="alternate" href="https://rayforge.org/es/docs/features/operations/engrave" hreflang="es"><link data-rh="true" rel="alternate" href="https://rayforge.org/fr/docs/features/operations/engrave" hreflang="fr"><link data-rh="true" rel="alternate" href="https://rayforge.org/de/docs/features/operations/engrave" hreflang="de"><link data-rh="true" rel="alternate" href="https://rayforge.org/zh-CN/docs/features/operations/engrave" hreflang="zh-CN"><link data-rh="true" rel="alternate" href="https://rayforge.org/uk/docs/features/operations/engrave" hreflang="uk"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/features/operations/engrave" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"雕刻","item":"https://rayforge.org/zh-CN/docs/features/operations/engrave"}]}</script><link rel="alternate" type="application/rss+xml" href="/zh-CN/blog/rss.xml" title="Rayforge RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/zh-CN/blog/atom.xml" title="Rayforge Atom Feed">
+
+
+
+
+
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rayforge","description":"Free open-source laser cutter software for GRBL-based machines. Design, simulate, and control your laser cutter or engraver with AI-powered tools, 3D preview, and a built-in sketcher.","url":"https://rayforge.org","applicationCategory":"DesignApplication","operatingSystem":"Linux, Windows, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"barebaric","url":"https://github.com/barebaric"},"screenshot":"https://rayforge.org/screenshots/main-standard.png","featureList":"AI-powered design generation, 3D simulation and preview, Parametric 2D sketcher, GRBL and Smoothieware support, Rotary axis support, Material and recipe management, Path optimization, Multi-layer support, Camera calibration","license":"https://github.com/barebaric/rayforge/blob/main/LICENSE","programmingLanguage":"Python","installUrl":"https://rayforge.org/docs/getting-started/installation"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
+<script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.a82eb417.css">
+<script src="/zh-CN/assets/js/runtime~main.4c6966f9.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.6d252095.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="跳转到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳转到主要内容</a></div><nav aria-label="主导航" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/zh-CN/"><div class="navbar__logo"><img src="/zh-CN/images/icon.svg" alt="Rayforge 标志" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/zh-CN/images/icon.svg" alt="Rayforge 标志" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Rayforge</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/zh-CN/docs/getting-started/installation">文档</a><a class="navbar__item navbar__link" href="/zh-CN/resources/devices">设备</a><a class="navbar__item navbar__link" href="/zh-CN/docs/developer/getting-started/">开发者</a><a class="navbar__item navbar__link" href="/zh-CN/contributing">贡献</a><a class="navbar__item navbar__link" href="/zh-CN/sponsor">赞助</a><a class="navbar__item navbar__link" href="/zh-CN/blog">博客</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>中文（中国）</a><ul class="dropdown__menu"><li><a href="/docs/features/operations/engrave" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="en">English</a></li><li><a href="/pt-BR/docs/features/operations/engrave" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="pt-BR">Português (Brasil)</a></li><li><a href="/es/docs/features/operations/engrave" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="es">Español</a></li><li><a href="/fr/docs/features/operations/engrave" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="fr">Français</a></li><li><a href="/de/docs/features/operations/engrave" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="de">Deutsch</a></li><li><a href="/zh-CN/docs/features/operations/engrave" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="zh-CN">中文（中国）</a></li><li><a href="/uk/docs/features/operations/engrave" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="uk">Українська</a></li></ul></div><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="patreonLink_HbXT"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" class="patreonImg_dUDi"></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="系统模式" aria-label="切换深色和浅色模式（当前为系统模式）"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div class="floatingLinks_ekMW"><a class="floatingLink_seiz" href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" aria-label="Rayforge on GitHub" title="GitHub"><img class="floatingIcon_OM1j" src="https://cdn.simpleicons.org/github/000000" alt="" width="20" height="20" loading="lazy"></a><a class="floatingLink_seiz" href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" aria-label="Join Rayforge on Discord" title="Discord"><img class="floatingIcon_OM1j" src="https://cdn.simpleicons.org/discord/000000" alt="" width="20" height="20" loading="lazy"></a><a class="floatingLink_seiz" href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" aria-label="Support Rayforge on Patreon" title="Patreon"><img class="floatingIcon_OM1j floatingIconPatreon_HIKb" src="https://cdn.simpleicons.org/patreon/FF424D" alt="" width="20" height="20" loading="lazy"></a></div><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><div class="sidebarSearch_pOTk"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="搜索" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div><nav aria-label="文档侧边栏导航" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/zh-CN/docs/getting-started/installation"><span title="入门指南" class="categoryLinkLabel_W154">入门指南</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/getting-started/installation"><span title="安装" class="linkLabel_WmDU">安装</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/getting-started/first-time-setup"><span title="首次设置" class="linkLabel_WmDU">首次设置</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/getting-started/quick-start"><span title="快速入门指南" class="linkLabel_WmDU">快速入门指南</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/zh-CN/docs/ui/settings"><span title="应用设置" class="categoryLinkLabel_W154">应用设置</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/zh-CN/docs/machine/config-wizard"><span title="机器设置" class="categoryLinkLabel_W154">机器设置</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/zh-CN/docs/ui/main-window"><span title="用户界面" class="categoryLinkLabel_W154">用户界面</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/zh-CN/docs/features/operations/contour"><span title="功能" class="categoryLinkLabel_W154">功能</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/zh-CN/docs/features/operations/contour"><span title="操作" class="categoryLinkLabel_W154">操作</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/features/operations/contour"><span title="轮廓切割" class="linkLabel_WmDU">轮廓切割</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/zh-CN/docs/features/operations/engrave"><span title="雕刻" class="linkLabel_WmDU">雕刻</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/features/operations/shrink-wrap"><span title="收缩包裹" class="linkLabel_WmDU">收缩包裹</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/features/operations/frame-outline"><span title="框架轮廓" class="linkLabel_WmDU">框架轮廓</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/features/operations/material-test-grid"><span title="材料测试网格" class="linkLabel_WmDU">材料测试网格</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/features/operations/wavefront"><span title="波前" class="linkLabel_WmDU">波前</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/zh-CN/docs/features/smooth"><span title="Post-Processing" class="categoryLinkLabel_W154">Post-Processing</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/features/sketcher"><span title="参数化 2D 草图绘制器" class="linkLabel_WmDU">参数化 2D 草图绘制器</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/features/multi-layer"><span title="多图层工作流程" class="linkLabel_WmDU">多图层工作流程</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/features/stock-handling"><span title="材料处理" class="linkLabel_WmDU">材料处理</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/features/framing-your-job"><span title="框定您的工作" class="linkLabel_WmDU">框定您的工作</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/features/sanity-checks"><span title="作业完整性检查" class="linkLabel_WmDU">作业完整性检查</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/features/workpiece-positioning"><span title="工件定位指南" class="linkLabel_WmDU">工件定位指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/features/kerf"><span title="缝隙补偿" class="linkLabel_WmDU">缝隙补偿</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/zh-CN/docs/addons/ai-workpiece-generator"><span title="Addons" class="categoryLinkLabel_W154">Addons</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/zh-CN/docs/files/importing"><span title="文件" class="categoryLinkLabel_W154">文件</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/zh-CN/docs/general-info/laser-safety"><span title="常规信息" class="categoryLinkLabel_W154">常规信息</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/zh-CN/docs/troubleshooting/connection"><span title="故障排除" class="categoryLinkLabel_W154">故障排除</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/zh-CN/docs/reference/shortcuts"><span title="参考" class="categoryLinkLabel_W154">参考</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="面包屑导航"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="首页" class="breadcrumbs__link" href="/zh-CN/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">功能</span></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">操作</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">雕刻</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页目录</button></div><div class="theme-doc-markdown markdown"><header><h1>雕刻</h1></header>
+<p>雕刻操作用光栅扫描线填充区域，支持多种模式用于不同的雕刻效果。从平滑的灰度照片到 3D 浮雕效果，选择最适合您设计和材料的模式。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="概述">概述<a href="#概述" class="hash-link" aria-label="概述 的直接链接" title="概述 的直接链接" translate="no">​</a></h2>
+<p>雕刻操作：</p>
+<ul>
+<li class="">用扫描线填充封闭形状</li>
+<li class="">支持多种雕刻模式用于不同效果</li>
+<li class="">同时使用矢量形状和位图图像</li>
+<li class="">使用双向扫描以提高速度</li>
+<li class="">在许多材料上创建永久标记</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="雕刻模式">雕刻模式<a href="#雕刻模式" class="hash-link" aria-label="雕刻模式 的直接链接" title="雕刻模式 的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="可变功率模式">可变功率模式<a href="#可变功率模式" class="hash-link" aria-label="可变功率模式 的直接链接" title="可变功率模式 的直接链接" translate="no">​</a></h3>
+<p>可变功率模式根据图像亮度连续变化激光功率，创建具有渐变过渡的平滑灰度雕刻。</p>
+<p><strong>最适用于：</strong></p>
+<ul>
+<li class="">平滑的灰度照片和图像</li>
+<li class="">自然的渐变和过渡</li>
+<li class="">人像和艺术作品</li>
+<li class="">木材和皮革雕刻</li>
+</ul>
+<p><strong>主要功能：</strong></p>
+<ul>
+<li class="">连续功率调制</li>
+<li class="">最小/最大功率控制</li>
+<li class="">平滑渐变</li>
+<li class="">比抖动更好的色调质量</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="恒定功率模式">恒定功率模式<a href="#恒定功率模式" class="hash-link" aria-label="恒定功率模式 的直接链接" title="恒定功率模式 的直接链接" translate="no">​</a></h3>
+<p>恒定功率模式以全功率雕刻，用阈值确定哪些像素被雕刻。这创建干净的黑/白结果。</p>
+<p><strong>最适用于：</strong></p>
+<ul>
+<li class="">文本和标志</li>
+<li class="">高对比度图形</li>
+<li class="">干净的黑/白雕刻</li>
+<li class="">简单的形状和图案</li>
+</ul>
+<p><strong>主要功能：</strong></p>
+<ul>
+<li class="">基于阈值的雕刻</li>
+<li class="">一致的功率输出</li>
+<li class="">比可变功率模式更快</li>
+<li class="">干净的边缘</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="抖动模式">抖动模式<a href="#抖动模式" class="hash-link" aria-label="抖动模式 的直接链接" title="抖动模式 的直接链接" translate="no">​</a></h3>
+<p>抖动模式使用抖动算法将灰度图像转换为二进制图案，实现比简单阈值方法更高质量的照片雕刻和更好的色调再现。</p>
+<p><strong>最适用于：</strong></p>
+<ul>
+<li class="">在木材或皮革上雕刻照片</li>
+<li class="">创建半色调风格的艺术作品</li>
+<li class="">具有平滑渐变的图 像</li>
+<li class="">当标准光栅无法捕获足够细节时</li>
+</ul>
+<p><strong>主要功能：</strong></p>
+<ul>
+<li class="">多种抖动算法选择</li>
+<li class="">更好的细节保留</li>
+<li class="">感知的连续色调</li>
+<li class="">非常适合照片</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="多深度模式">多深度模式<a href="#多深度模式" class="hash-link" aria-label="多深度模式 的直接链接" title="多深度模式 的直接链接" translate="no">​</a></h3>
+<p>多深度模式通过根据图像亮度变化激光功率来创建 3D 浮雕效果，多次遍以获得更深的雕刻。</p>
+<p><strong>最适用于：</strong></p>
+<ul>
+<li class="">创建 3D 人像和艺术作品</li>
+<li class="">地形和地形图</li>
+<li class="">石版画（透光的 3D 图像）</li>
+<li class="">浮雕标志和设计</li>
+<li class="">浮雕雕塑</li>
+</ul>
+<p><strong>主要功能：</strong></p>
+<ul>
+<li class="">从图像亮度映射深度</li>
+<li class="">可配置的最小/最大深度</li>
+<li class="">平滑渐变</li>
+<li class="">多次遍以获得更深的雕刻</li>
+<li class="">遍之间 Z 步进</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="何时使用雕刻">何时使用雕刻<a href="#何时使用雕刻" class="hash-link" aria-label="何时使用雕刻 的直接链接" title="何时使用雕刻 的直接链接" translate="no">​</a></h2>
+<p>使用雕刻操作用于：</p>
+<ul>
+<li class="">雕刻文本和标志</li>
+<li class="">在木材/皮革上创建图像和照片</li>
+<li class="">用纹理填充实心区域</li>
+<li class="">标记零件和产品</li>
+<li class="">创建 3D 浮雕效果</li>
+<li class="">半色调风格的艺术作品</li>
+</ul>
+<p><strong>不要使用雕刻用于：</strong></p>
+<ul>
+<li class="">切割穿透材料（改用<a class="" href="/zh-CN/docs/features/operations/contour">轮廓</a>）</li>
+<li class="">精确的轮廓（光栅创建填充区域）</li>
+<li class="">细线工作（矢量更干  净）</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="创建雕刻操作">创建雕刻操作<a href="#创建雕刻操作" class="hash-link" aria-label="创建雕刻操作 的直接链接" title="创建雕刻操作 的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="第-1-步准备内容">第 1 步：准备内容<a href="#第-1-步准备内容" class="hash-link" aria-label="第 1 步：准备内容 的直接链接" title="第 1 步：准备内容 的直接链接" translate="no">​</a></h3>
+<p>雕刻适用于：</p>
+<ul>
+<li class=""><strong>矢量形状</strong> - 用扫描线填充</li>
+<li class=""><strong>文本</strong> - 转换为填充路径</li>
+<li class=""><strong>图像</strong> - 转换为灰度并雕刻</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="第-2-步添加雕刻操作">第 2 步：添加雕刻操作<a href="#第-2-步添加雕刻操作" class="hash-link" aria-label="第 2 步：添加雕刻操作 的直接链接" title="第 2 步：添加雕刻操作 的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>菜单：</strong> 操作 → 添加雕刻</li>
+<li class=""><strong>快捷键：</strong> <kbd>ctrl+shift+e</kbd></li>
+<li class=""><strong>右键点击：</strong> 上下文菜单 → 添加操作 → 雕刻</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="第-3-步选择模式">第 3 步：选择模式<a href="#第-3-步选择模式" class="hash-link" aria-label="第 3 步：选择模式 的直接链接" title="第 3 步：选择模式 的直接链接" translate="no">​</a></h3>
+<p>选择最适合您需求的雕刻模式：</p>
+<ul>
+<li class=""><strong>可变功率</strong> - 平滑灰度雕刻</li>
+<li class=""><strong>恒定功率</strong> - 干净的黑/白雕刻</li>
+<li class=""><strong>抖动</strong> - 高质量照片雕刻</li>
+<li class=""><strong>多深度</strong> - 3D 浮雕效果</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="第-4-步配置设置">第 4 步：配置设置<a href="#第-4-步配置设置" class="hash-link" aria-label="第 4 步：配置设置 的直接链接" title="第 4 步：配置设置 的直接链接" translate="no">​</a></h3>
+<p><img decoding="async" loading="lazy" alt="雕刻步骤设置" src="/zh-CN/assets/images/step-settings-engrave-general-variable-22eed82a0ebda59edf24d7bae9e5b0c7.png" width="650" height="950" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="通用设置">通用设置<a href="#通用设置" class="hash-link" aria-label="通用设置 的直接链接" title="通用设置 的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="功率和速度">功率和速度<a href="#功率和速度" class="hash-link" aria-label="功率和速度 的直接链接" title="功率和速度 的直接链接" translate="no">​</a></h3>
+<p><strong>功率（%）：</strong></p>
+<ul>
+<li class="">雕刻的激光强度</li>
+<li class="">较低功率用于较浅的标记</li>
+<li class="">较高功率用于更深的雕刻</li>
+</ul>
+<p><strong>速度（mm/min）：</strong></p>
+<ul>
+<li class="">激光扫描的速度</li>
+<li class="">更快 = 更浅，更慢 = 更深</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="线间距">线间距<a href="#线间距" class="hash-link" aria-label="线间距 的直接链接" title="线间距 的直接链接" translate="no">​</a></h3>
+<p><strong>线间距（mm）：</strong></p>
+<ul>
+<li class="">扫描线之间的间距</li>
+<li class="">更小 = 更高质量，更长的作业时间</li>
+<li class="">更大 = 更快，可见线条</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>间距</th><th>质量</th><th>速度</th><th>用于</th></tr></thead><tbody><tr><td>0.05mm</td><td>最高</td><td>最慢</td><td>照片、精细细节</td></tr><tr><td>0.1mm</td><td>高</td><td>中等</td><td>文本、标志、图形</td></tr><tr><td>0.2mm</td><td>中等</td><td>快</td><td>实心填充、纹理</td></tr><tr><td>0.3mm+</td><td>低</td><td>最快</td><td>草稿、测试</td></tr></tbody></table>
+<p><strong>推荐：</strong> 0.1mm 用于一般用途</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>分辨率匹配</div></div>
+<p>对于图像，线间距应匹配或超过图像分辨率。如果图像是 10 像素/mm（254 DPI），使用 0.1mm 线间距或更小。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="扫描方向">扫描方向<a href="#扫描方向" class="hash-link" aria-label="扫描方向 的直接链接" title="扫描方向 的直接链接" translate="no">​</a></h3>
+<p><strong>扫描角度（度）：</strong></p>
+<ul>
+<li class="">扫描线的方向</li>
+<li class="">0 = 水平（从左到右）</li>
+<li class="">90 = 垂直（从上到下）</li>
+<li class="">45 = 对角线</li>
+</ul>
+<p><strong>为什么要更改角度？</strong></p>
+<ul>
+<li class="">木纹：垂直于纹理雕刻以获得更好的效果</li>
+<li class="">图案方向：匹配设计美学</li>
+<li class="">减少条带：不同的角度可以隐藏瑕疵</li>
+</ul>
+<p><strong>双向扫描：</strong></p>
+<ul>
+<li class=""><strong>启用：</strong> 激光在两个方向雕刻（更快）</li>
+<li class=""><strong>禁用：</strong> 激光仅从左到右雕刻（更慢，更一致）</li>
+</ul>
+<p>为了最佳质量，禁用双向。为了速度，启用它。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="过扫描">过扫描<a href="#过扫描" class="hash-link" aria-label="过扫描 的直接链接" title="过扫描 的直接链接" translate="no">​</a></h3>
+<p><strong>过扫描距离（mm）：</strong></p>
+<ul>
+<li class="">激光在转向前超出设计移动多远</li>
+<li class="">允许激光在进入设计前达到全速</li>
+<li class="">防止线条开始/结束处的烧伤标记</li>
+</ul>
+<p><strong>典型值：</strong></p>
+<ul>
+<li class="">大多数作业为 2-5mm</li>
+<li class="">高速时更大</li>
+</ul>
+<p>有关详细信息，请参阅<a class="" href="/zh-CN/docs/features/overscan">过扫描</a>。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="模式特定设置">模式特定设置<a href="#模式特定设置" class="hash-link" aria-label="模式特定设置 的直接链接" title="模式特定设置 的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="可变功率模式设置">可变功率模式设置<a href="#可变功率模式设置" class="hash-link" aria-label="可变功率模式设置 的直接链接" title="可变功率模式设置 的直接链接" translate="no">​</a></h3>
+<p><img decoding="async" loading="lazy" alt="可变功率模式设置" src="/zh-CN/assets/images/step-settings-engrave-general-variable-22eed82a0ebda59edf24d7bae9e5b0c7.png" width="650" height="950" class="img_ev3q"></p>
+<p><strong>最小功率（%）：</strong></p>
+<ul>
+<li class="">最浅区域（白色像素）的激光功率</li>
+<li class="">通常 0-20%</li>
+<li class="">设置较高以避免非常浅的区域</li>
+</ul>
+<p><strong>最大功率（%）：</strong></p>
+<ul>
+<li class="">最深区域（黑色像素）的激光功率</li>
+<li class="">通常 40-80%，取决于材料</li>
+<li class="">较低 = 微妙的浮雕，较高 = 戏剧性的深度</li>
+</ul>
+<p><strong>功率范围示例：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>最小</th><th>最大</th><th>效果</th></tr></thead><tbody><tr><td>0%</td><td>40%</td><td>微妙、浅浮雕</td></tr><tr><td>10%</td><td>60%</td><td>中等深度、安全</td></tr><tr><td>20%</td><td>80%</td><td>深、戏剧性浮雕</td></tr></tbody></table>
+<p><strong>反转：</strong></p>
+<ul>
+<li class=""><strong>关闭</strong>（默认）：白色 = 浅，黑色 = 深</li>
+<li class=""><strong>开启</strong>：白色 = 深，黑色 = 浅</li>
+</ul>
+<p>用于石版画（浅色区域应该薄）或浮雕（凸起区域）。</p>
+<p><strong>亮度范围：</strong></p>
+<p>控制图像亮度值如何映射到激光功率。直方图显示图像中亮度值的分布。</p>
+<ul>
+<li class=""><strong>自动级别</strong>（默认）：根据图像内容自动调整黑点和白点。黑点以下的值视为黑色，白点以上的值视为白色。这拉伸图像的对比度以使用完整的功率范围。</li>
+<li class=""><strong>手动模式</strong>：禁用自动级别通过拖动直方图上的标记手动设置黑点和白点。</li>
+</ul>
+<p>这对于以下情况特别有用：</p>
+<ul>
+<li class="">需要对比度增强的低对比度图像</li>
+<li class="">色调范围有限的图像</li>
+<li class="">确保不同源图像的一致结果</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="恒定功率模式设置">恒定功率模式设置<a href="#恒定功率模式设置" class="hash-link" aria-label="恒定功率模式设置 的直接链接" title="恒定功率模式设置 的直接链接" translate="no">​</a></h3>
+<p><img decoding="async" loading="lazy" alt="恒定功率模式设置" src="/zh-CN/assets/images/step-settings-engrave-general-constant_power-104ac4fbfb99c40458079df6a1c35839.png" width="650" height="950" class="img_ev3q"></p>
+<p><strong>阈值（0-255）：</strong></p>
+<ul>
+<li class="">黑/白分离的亮度截止</li>
+<li class="">较低 = 更多黑色被雕刻</li>
+<li class="">较高 = 更多白色被雕刻</li>
+</ul>
+<p><strong>典型值：</strong></p>
+<ul>
+<li class="">128（50% 灰色阈值）</li>
+<li class="">根据图像对比度  调整</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="抖动模式设置">抖动模式设置<a href="#抖动模式设置" class="hash-link" aria-label="抖动模式设置 的直接链接" title="抖动模式设置 的直接链接" translate="no">​</a></h3>
+<p><img decoding="async" loading="lazy" alt="抖动模式设置" src="/zh-CN/assets/images/step-settings-engrave-general-dither-1097d603cd32c8784020a5cd21885739.png" width="650" height="950" class="img_ev3q"></p>
+<p><strong>抖动算法：</strong></p>
+<p>选择最适合您的图像和材料的算法：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>算法</th><th>质量</th><th>速度</th><th>最适用于</th></tr></thead><tbody><tr><td>Floyd-Steinberg</td><td>最高</td><td>最慢</td><td>照片、人像、平滑渐变</td></tr><tr><td>Bayer 2x2</td><td>低</td><td>最快</td><td>粗糙的半色调效果</td></tr><tr><td>Bayer 4x4</td><td>中等</td><td>快</td><td>平衡的半色调</td></tr><tr><td>Bayer 8x8</td><td>高</td><td>中等</td><td>精细细节、微妙图案</td></tr></tbody></table>
+<p><strong>Floyd-Steinberg</strong> 是默认的，推荐用于大多数照片雕刻。它使用误差扩散将量化误差分配给相邻像素，创建自然外观的结果。</p>
+<p><strong>Bayer 抖动</strong>创建规则图案，可以产生类似传统半色调印刷的艺术效果。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="多深度模式设置">多深度模式设置<a href="#多深度模式设置" class="hash-link" aria-label="多深度模式设置 的直接链接" title="多深度模式设置 的直接链接" translate="no">​</a></h3>
+<p><img decoding="async" loading="lazy" alt="多深度模式设置" src="/zh-CN/assets/images/step-settings-engrave-general-multi_pass-45fb6c246dbc5b52a0db6a6dbc6a1a33.png" width="650" height="950" class="img_ev3q"></p>
+<p><strong>深度级别数：</strong></p>
+<ul>
+<li class="">离散深度级别的数量</li>
+<li class="">更多级别 = 更平滑的渐变</li>
+<li class="">典型：5-10 级</li>
+</ul>
+<p><strong>每级 Z 下步（mm）：</strong></p>
+<ul>
+<li class="">深度遍之间向下步进多远</li>
+<li class="">通过多次遍创建更深的总深度</li>
+<li class="">典型：0.1-0.5mm</li>
+</ul>
+<p><strong>每遍旋转角度：</strong></p>
+<ul>
+<li class="">连续遍的旋转度数</li>
+<li class="">创建交叉阴影状的 3D 效果</li>
+<li class="">典型：0-45 度</li>
+</ul>
+<p><strong>反转：</strong></p>
+<ul>
+<li class=""><strong>启用：</strong> 白色 = 深，黑色 = 浅</li>
+<li class=""><strong>禁用：</strong> 黑色 = 深，白色 = 浅</li>
+</ul>
+<p>用于石版画（浅色区域应该薄）或浮雕（凸起区域）。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="后处理">后处理<a href="#后处理" class="hash-link" aria-label="后处理 的直接链接" title="后处理 的直接链接" translate="no">​</a></h2>
+<p><img decoding="async" loading="lazy" alt="雕刻后处理设置" src="/zh-CN/assets/images/step-settings-engrave-post-e453085f6f5d76f938ce10f64ed72061.png" width="650" height="950" class="img_ev3q"></p>
+<p>雕刻操作支持多种后处理选项：</p>
+<ul>
+<li class=""><strong><a class="" href="/zh-CN/docs/features/overscan">过扫描</a></strong> - 延伸光栅线以获得一致的雕刻质量</li>
+<li class=""><strong><a class="" href="/zh-CN/docs/features/path-optimization">路径优化</a></strong> - 减少行程距离</li>
+<li class=""><strong><a class="" href="/zh-CN/docs/features/multi-pass">多次遍</a></strong> - 重复雕刻以获得更深的效果</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="提示和最佳实践">提示和最佳实践<a href="#提示和最佳实践" class="hash-link" aria-label="提示和最佳实践 的直接链接" title="提示和最佳实践 的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="材料选择">材料选择<a href="#材料选择" class="hash-link" aria-label="材料选择 的直接链接" title="材料选择 的直接链接" translate="no">​</a></h3>
+<p><strong>最适合雕刻的材料：</strong></p>
+<ul>
+<li class="">木材（自然变化创造美丽的结果）</li>
+<li class="">皮革（烧伤至深棕色/黑色）</li>
+<li class="">阳极氧化铝（去除涂层，露出金属）</li>
+<li class="">涂层金属（去除涂层层）</li>
+<li class="">某些塑料（先测试！）</li>
+</ul>
+<p><strong>挑战性材料：</strong></p>
+<ul>
+<li class="">透明亚克力（不能很好地显示雕刻）</li>
+<li class="">无涂层的金属（需要特殊的标记化合物）</li>
+<li class="">玻璃（需要特殊设置/涂层）</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="质量设置">质量设置<a href="#质量设置" class="hash-link" aria-label="质量设置 的直接链接" title="质量设置 的直接链接" translate="no">​</a></h3>
+<p><strong>为了最佳质量：</strong></p>
+<ul>
+<li class="">使用较小的线间距（0.05-0.1mm）</li>
+<li class="">禁用双向扫描</li>
+<li class="">增加过扫描（3-5mm）</li>
+<li class="">使用较低功率，多次遍</li>
+<li class="">确保材料平坦并固定</li>
+</ul>
+<p><strong>为了更快的雕刻：</strong></p>
+<ul>
+<li class="">使用较大的线间距（0.15-0.2mm）</li>
+<li class="">启用双向扫描</li>
+<li class="">最小过扫描（1-2mm）</li>
+<li class="">单次遍较高功率</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="常见问题">常见问题<a href="#常见问题" class="hash-link" aria-label="常见问题 的直接链接" title="常见问题 的直接链接" translate="no">​</a></h3>
+<p><strong>线条末端的烧伤标记：</strong></p>
+<ul>
+<li class="">增加过扫描距离</li>
+<li class="">检查加速度设置</li>
+<li class="">略微降低功率</li>
+</ul>
+<p><strong>可见扫描线：</strong></p>
+<ul>
+<li class="">减小线间距</li>
+<li class="">降低功率（过度烧伤创建间隙）</li>
+<li class="">检查材料是否平坦</li>
+</ul>
+<p><strong>雕刻不均匀：</strong></p>
+<ul>
+<li class="">确保材料平坦</li>
+<li class="">检查对焦一致性</li>
+<li class="">验证激光功率稳定性</li>
+<li class="">清洁激光透镜</li>
+</ul>
+<p><strong>条带（深/浅条纹）：</strong></p>
+<ul>
+<li class="">禁用双向扫描</li>
+<li class="">检查皮带张力</li>
+<li class="">降低速度</li>
+<li class="">尝试不同的扫描角度</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="故障排除">故障排除<a href="#故障排除" class="hash-link" aria-label="故障排除 的直接链接" title="故障排除 的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="雕刻太浅">雕刻太浅<a href="#雕刻太浅" class="hash-link" aria-label="雕刻太浅 的直接链接" title="雕刻太浅 的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>增加：</strong> 功率设置</li>
+<li class=""><strong>降低：</strong> 速度设置</li>
+<li class=""><strong>检查：</strong> 对焦正确</li>
+<li class=""><strong>尝试：</strong> 多次遍</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="雕刻太深烧伤">雕刻太深/烧伤<a href="#雕刻太深烧伤" class="hash-link" aria-label="雕刻太深/烧伤 的直接链接" title="雕刻太深/烧伤 的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>降低：</strong> 功率设置</li>
+<li class=""><strong>增加：</strong> 速度设置</li>
+<li class=""><strong>增加：</strong> 线间距</li>
+<li class=""><strong>检查：</strong> 材料是否适当</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="暗度不一致">暗度不一致<a href="#暗度不一致" class="hash-link" aria-label="暗度不一致 的直接链接" title="暗度不一致 的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>检查：</strong> 材料平坦</li>
+<li class=""><strong>检查：</strong> 对焦距离一致</li>
+<li class=""><strong>验证：</strong> 激光束干净</li>
+<li class=""><strong>测试：</strong> 材料的不同区域（纹理变化）</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="图像看起来像素化">图像看起来像素化<a href="#图像看起来像素化" class="hash-link" aria-label="图像看起来像素化 的直接链接" title="图像看起来像素化 的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>降低：</strong> 线间距</li>
+<li class=""><strong>检查：</strong> 源图像分辨率</li>
+<li class=""><strong>尝试：</strong> 较小的线间距（0.05mm）</li>
+<li class=""><strong>验证：</strong> 图像未被放大</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="可见扫描线">可见扫描线<a href="#可见扫描线" class="hash-link" aria-label="可见扫描线 的直接链接" title="可见扫描线 的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>降低：</strong> 线间距</li>
+<li class=""><strong>降低：</strong> 功率（过度烧伤创建间隙）</li>
+<li class=""><strong>尝试：</strong> 不同的扫描角度</li>
+<li class=""><strong>确保：</strong> 材料表面光滑</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="相关主题">相关主题<a href="#相关主题" class="hash-link" aria-label="相关主题 的直接链接" title="相关主题 的直接链接" translate="no">​</a></h2>
+<ul>
+<li class=""><strong><a class="" href="/zh-CN/docs/features/operations/contour">轮廓切割</a></strong> - 切割轮廓和形状</li>
+<li class=""><strong><a class="" href="/zh-CN/docs/features/overscan">过扫描</a></strong> - 提高雕刻质量</li>
+<li class=""><strong><a class="" href="/zh-CN/docs/features/operations/material-test-grid">材料测试网格</a></strong> - 找到最佳设置</li>
+<li class=""><strong><a class="" href="/zh-CN/docs/features/multi-layer">多层工作流程</a></strong> - 将雕刻与其他操作结合</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/features/operations/engrave.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>编辑此页</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文档页面导航"><a class="pagination-nav__link pagination-nav__link--prev" href="/zh-CN/docs/features/operations/contour"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">轮廓切割</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/zh-CN/docs/features/operations/shrink-wrap"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">收缩包裹</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#概述" class="table-of-contents__link toc-highlight">概述</a></li><li><a href="#雕刻模式" class="table-of-contents__link toc-highlight">雕刻模式</a><ul><li><a href="#可变功率模式" class="table-of-contents__link toc-highlight">可变功率模式</a></li><li><a href="#恒定功率模式" class="table-of-contents__link toc-highlight">恒定功率模式</a></li><li><a href="#抖动模式" class="table-of-contents__link toc-highlight">抖动模式</a></li><li><a href="#多深度模式" class="table-of-contents__link toc-highlight">多深度模式</a></li></ul></li><li><a href="#何时使用雕刻" class="table-of-contents__link toc-highlight">何时使用雕刻</a></li><li><a href="#创建雕刻操作" class="table-of-contents__link toc-highlight">创建雕刻操作</a><ul><li><a href="#第-1-步准备内容" class="table-of-contents__link toc-highlight">第 1 步：准备内容</a></li><li><a href="#第-2-步添加雕刻操作" class="table-of-contents__link toc-highlight">第 2 步：添加雕刻操作</a></li><li><a href="#第-3-步选择模式" class="table-of-contents__link toc-highlight">第 3 步：选择模式</a></li><li><a href="#第-4-步配置设置" class="table-of-contents__link toc-highlight">第 4 步：配置设置</a></li></ul></li><li><a href="#通用设置" class="table-of-contents__link toc-highlight">通用设置</a><ul><li><a href="#功率和速度" class="table-of-contents__link toc-highlight">功率和速度</a></li><li><a href="#线间距" class="table-of-contents__link toc-highlight">线间距</a></li><li><a href="#扫描方向" class="table-of-contents__link toc-highlight">扫描方向</a></li><li><a href="#过扫描" class="table-of-contents__link toc-highlight">过扫描</a></li></ul></li><li><a href="#模式特定设置" class="table-of-contents__link toc-highlight">模式特定设置</a><ul><li><a href="#可变功率模式设置" class="table-of-contents__link toc-highlight">可变功率模式设置</a></li><li><a href="#恒定功率模式设置" class="table-of-contents__link toc-highlight">恒定功率模式设置</a></li><li><a href="#抖动模式设置" class="table-of-contents__link toc-highlight">抖动模式设置</a></li><li><a href="#多深度模式设置" class="table-of-contents__link toc-highlight">多深度模式设置</a></li></ul></li><li><a href="#后处理" class="table-of-contents__link toc-highlight">后处理</a></li><li><a href="#提示和最佳实践" class="table-of-contents__link toc-highlight">提示和最佳实践</a><ul><li><a href="#材料选择" class="table-of-contents__link toc-highlight">材料选择</a></li><li><a href="#质量设置" class="table-of-contents__link toc-highlight">质量设置</a></li><li><a href="#常见问题" class="table-of-contents__link toc-highlight">常见问题</a></li></ul></li><li><a href="#故障排除" class="table-of-contents__link toc-highlight">故障排除</a><ul><li><a href="#雕刻太浅" class="table-of-contents__link toc-highlight">雕刻太浅</a></li><li><a href="#雕刻太深烧伤" class="table-of-contents__link toc-highlight">雕刻太深/烧伤</a></li><li><a href="#暗度不一致" class="table-of-contents__link toc-highlight">暗度不一致</a></li><li><a href="#图像看起来像素化" class="table-of-contents__link toc-highlight">图像看起来像素化</a></li><li><a href="#可见扫描线" class="table-of-contents__link toc-highlight">可见扫描线</a></li></ul></li><li><a href="#相关主题" class="table-of-contents__link toc-highlight">相关主题</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</body>
+</html>

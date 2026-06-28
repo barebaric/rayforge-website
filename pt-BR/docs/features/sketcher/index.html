@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="pt-BR" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-features/sketcher" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Esboçador paramétrico 2D | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" property="og:url" content="https://rayforge.org/pt-BR/docs/features/sketcher"><meta data-rh="true" property="og:locale" content="pt_BR"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="de"><meta data-rh="true" property="og:locale:alternate" content="zh_CN"><meta data-rh="true" property="og:locale:alternate" content="uk"><meta data-rh="true" name="docusaurus_locale" content="pt-BR"><meta data-rh="true" name="docsearch:language" content="pt-BR"><meta data-rh="true" name="keywords" content="laser cutter software, laser engraving software, LightBurn alternative, free laser software, open source laser software, GRBL, laser cutting software, laser control software, G-code sender, Rayforge"><meta data-rh="true" name="author" content="Rayforge Contributors"><meta data-rh="true" name="robots" content="index, follow"><meta data-rh="true" property="og:type" content="website"><meta data-rh="true" property="og:site_name" content="Rayforge"><meta data-rh="true" property="og:image" content="https://rayforge.org/images/social.png"><meta data-rh="true" property="og:image:width" content="1200"><meta data-rh="true" property="og:image:height" content="630"><meta data-rh="true" property="og:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" name="twitter:title" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:description" content="The complete creative studio for your laser cutter. Design, simulate, and control — with AI-powered tools, 3D preview, and a built-in sketcher."><meta data-rh="true" name="twitter:image" content="https://rayforge.org/images/social.png"><meta data-rh="true" name="twitter:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Esboçador paramétrico 2D | Rayforge"><meta data-rh="true" name="description" content="O Esboçador paramétrico 2D é um recurso poderoso do Rayforge que permite criar"><meta data-rh="true" property="og:description" content="O Esboçador paramétrico 2D é um recurso poderoso do Rayforge que permite criar"><link data-rh="true" rel="icon" href="/pt-BR/images/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/pt-BR/docs/features/sketcher"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/features/sketcher" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/pt-BR/docs/features/sketcher" hreflang="pt-BR"><link data-rh="true" rel="alternate" href="https://rayforge.org/es/docs/features/sketcher" hreflang="es"><link data-rh="true" rel="alternate" href="https://rayforge.org/fr/docs/features/sketcher" hreflang="fr"><link data-rh="true" rel="alternate" href="https://rayforge.org/de/docs/features/sketcher" hreflang="de"><link data-rh="true" rel="alternate" href="https://rayforge.org/zh-CN/docs/features/sketcher" hreflang="zh-CN"><link data-rh="true" rel="alternate" href="https://rayforge.org/uk/docs/features/sketcher" hreflang="uk"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/features/sketcher" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Esboçador paramétrico 2D","item":"https://rayforge.org/pt-BR/docs/features/sketcher"}]}</script><link rel="alternate" type="application/rss+xml" href="/pt-BR/blog/rss.xml" title="Rayforge RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/pt-BR/blog/atom.xml" title="Rayforge Atom Feed">
+
+
+
+
+
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rayforge","description":"Free open-source laser cutter software for GRBL-based machines. Design, simulate, and control your laser cutter or engraver with AI-powered tools, 3D preview, and a built-in sketcher.","url":"https://rayforge.org","applicationCategory":"DesignApplication","operatingSystem":"Linux, Windows, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"barebaric","url":"https://github.com/barebaric"},"screenshot":"https://rayforge.org/screenshots/main-standard.png","featureList":"AI-powered design generation, 3D simulation and preview, Parametric 2D sketcher, GRBL and Smoothieware support, Rotary axis support, Material and recipe management, Path optimization, Multi-layer support, Camera calibration","license":"https://github.com/barebaric/rayforge/blob/main/LICENSE","programmingLanguage":"Python","installUrl":"https://rayforge.org/docs/getting-started/installation"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
+<script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/pt-BR/assets/css/styles.73ffe6d9.css">
+<script src="/pt-BR/assets/js/runtime~main.a29a2273.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/main.a674dc30.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Pular para o conteúdo principal"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Pular para o conteúdo principal</a></div><nav aria-label="Navegação principal" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Alternar barra de navegação" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/pt-BR/"><div class="navbar__logo"><img src="/pt-BR/images/icon.svg" alt="Logo do Rayforge" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/pt-BR/images/icon.svg" alt="Logo do Rayforge" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Rayforge</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/pt-BR/docs/getting-started/installation">Documentação</a><a class="navbar__item navbar__link" href="/pt-BR/resources/devices">Dispositivos</a><a class="navbar__item navbar__link" href="/pt-BR/docs/developer/getting-started/">Desenvolvedor</a><a class="navbar__item navbar__link" href="/pt-BR/contributing">Contribuir</a><a class="navbar__item navbar__link" href="/pt-BR/sponsor">Patrocinador</a><a class="navbar__item navbar__link" href="/pt-BR/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>Português (Brasil)</a><ul class="dropdown__menu"><li><a href="/docs/features/sketcher" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="en">English</a></li><li><a href="/pt-BR/docs/features/sketcher" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="pt-BR">Português (Brasil)</a></li><li><a href="/es/docs/features/sketcher" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="es">Español</a></li><li><a href="/fr/docs/features/sketcher" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="fr">Français</a></li><li><a href="/de/docs/features/sketcher" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="de">Deutsch</a></li><li><a href="/zh-CN/docs/features/sketcher" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="zh-CN">中文（中国）</a></li><li><a href="/uk/docs/features/sketcher" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="uk">Українська</a></li></ul></div><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="patreonLink_HbXT"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" class="patreonImg_dUDi"></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Modo do sistema" aria-label="Alternar entre modo escuro e claro (atualmente Modo do sistema)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div class="floatingLinks_ekMW"><a class="floatingLink_seiz" href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" aria-label="Rayforge on GitHub" title="GitHub"><img class="floatingIcon_OM1j" src="https://cdn.simpleicons.org/github/000000" alt="" width="20" height="20" loading="lazy"></a><a class="floatingLink_seiz" href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" aria-label="Join Rayforge on Discord" title="Discord"><img class="floatingIcon_OM1j" src="https://cdn.simpleicons.org/discord/000000" alt="" width="20" height="20" loading="lazy"></a><a class="floatingLink_seiz" href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" aria-label="Support Rayforge on Patreon" title="Patreon"><img class="floatingIcon_OM1j floatingIconPatreon_HIKb" src="https://cdn.simpleicons.org/patreon/FF424D" alt="" width="20" height="20" loading="lazy"></a></div><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Voltar ao topo" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><div class="sidebarSearch_pOTk"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div><nav aria-label="Barra lateral de documentação" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/pt-BR/docs/getting-started/installation"><span title="Primeiros Passos" class="categoryLinkLabel_W154">Primeiros Passos</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/pt-BR/docs/getting-started/installation"><span title="Instalação" class="linkLabel_WmDU">Instalação</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/pt-BR/docs/getting-started/first-time-setup"><span title="Configuração Inicial" class="linkLabel_WmDU">Configuração Inicial</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/pt-BR/docs/getting-started/quick-start"><span title="Guia de Início Rápido" class="linkLabel_WmDU">Guia de Início Rápido</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/pt-BR/docs/ui/settings"><span title="Configurações do Aplicativo" class="categoryLinkLabel_W154">Configurações do Aplicativo</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/pt-BR/docs/machine/config-wizard"><span title="Configuração da Máquina" class="categoryLinkLabel_W154">Configuração da Máquina</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/pt-BR/docs/ui/main-window"><span title="Interface do Usuário" class="categoryLinkLabel_W154">Interface do Usuário</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/pt-BR/docs/features/operations/contour"><span title="Recursos" class="categoryLinkLabel_W154">Recursos</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/pt-BR/docs/features/operations/contour"><span title="Operações" class="categoryLinkLabel_W154">Operações</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/pt-BR/docs/features/smooth"><span title="Post-Processing" class="categoryLinkLabel_W154">Post-Processing</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/pt-BR/docs/features/sketcher"><span title="Esboçador paramétrico 2D" class="linkLabel_WmDU">Esboçador paramétrico 2D</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/pt-BR/docs/features/multi-layer"><span title="Fluxo de trabalho multicamadas" class="linkLabel_WmDU">Fluxo de trabalho multicamadas</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/pt-BR/docs/features/stock-handling"><span title="Manuseio de Material" class="linkLabel_WmDU">Manuseio de Material</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/pt-BR/docs/features/framing-your-job"><span title="Enquadramento do seu trabalho" class="linkLabel_WmDU">Enquadramento do seu trabalho</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/pt-BR/docs/features/sanity-checks"><span title="Verificações de Sanidade do Trabalho" class="linkLabel_WmDU">Verificações de Sanidade do Trabalho</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/pt-BR/docs/features/workpiece-positioning"><span title="Guia de Posicionamento de Peça de Trabalho" class="linkLabel_WmDU">Guia de Posicionamento de Peça de Trabalho</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/pt-BR/docs/features/kerf"><span title="Compensação de Kerf" class="linkLabel_WmDU">Compensação de Kerf</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/pt-BR/docs/addons/ai-workpiece-generator"><span title="Addons" class="categoryLinkLabel_W154">Addons</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/pt-BR/docs/files/importing"><span title="Arquivos" class="categoryLinkLabel_W154">Arquivos</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/pt-BR/docs/general-info/laser-safety"><span title="Informações Gerais" class="categoryLinkLabel_W154">Informações Gerais</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/pt-BR/docs/troubleshooting/connection"><span title="Solução de Problemas" class="categoryLinkLabel_W154">Solução de Problemas</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/pt-BR/docs/reference/shortcuts"><span title="Referência" class="categoryLinkLabel_W154">Referência</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Início" class="breadcrumbs__link" href="/pt-BR/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Recursos</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Esboçador paramétrico 2D</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">Nesta página</button></div><div class="theme-doc-markdown markdown"><header><h1>Esboçador paramétrico 2D</h1></header>
+<p>O Esboçador paramétrico 2D é um recurso poderoso do Rayforge que permite criar
+e editar designs 2D precisos baseados em restrições diretamente no aplicativo.
+Esse recurso permite projetar peças personalizadas do zero sem precisar de
+software CAD externo.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="visão-geral">Visão geral<a href="#visão-geral" class="hash-link" aria-label="Link direto para Visão geral" title="Link direto para Visão geral" translate="no">​</a></h2>
+<p>O esboçador fornece um conjunto completo de ferramentas para criar formas
+geométricas e aplicar restrições paramétricas para definir relações precisas
+entre os elementos. Essa abordagem garante que seus designs mantenham a
+geometria pretendida mesmo quando as dimensões são modificadas.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="criando-e-editando-esboços">Criando e editando esboços<a href="#criando-e-editando-esboços" class="hash-link" aria-label="Link direto para Criando e editando esboços" title="Link direto para Criando e editando esboços" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="criando-um-novo-esboço">Criando um novo esboço<a href="#criando-um-novo-esboço" class="hash-link" aria-label="Link direto para Criando um novo esboço" title="Link direto para Criando um novo esboço" translate="no">​</a></h3>
+<ol>
+<li class="">Clique no botão &quot;Novo esboço&quot; na barra de ferramentas ou use o menu
+principal</li>
+<li class="">Um novo espaço de trabalho vazio será aberto com a interface do editor de
+esboços</li>
+<li class="">Comece a criar geometria usando as ferramentas de desenho do menu circular
+ou os atalhos de teclado</li>
+<li class="">Aplique restrições para definir as relações entre os elementos</li>
+<li class="">Clique em &quot;Finalizar esboço&quot; para salvar seu trabalho e retornar ao espaço
+de trabalho principal</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="editando-esboços-existentes">Editando esboços existentes<a href="#editando-esboços-existentes" class="hash-link" aria-label="Link direto para Editando esboços existentes" title="Link direto para Editando esboços existentes" translate="no">​</a></h3>
+<ol>
+<li class="">Dê um duplo clique em uma peça baseada em esboço no espaço de trabalho
+principal</li>
+<li class="">Alternativamente, selecione um esboço e escolha &quot;Editar esboço&quot; no menu de
+contexto</li>
+<li class="">Faça suas modificações usando as mesmas ferramentas e restrições</li>
+<li class="">Clique em &quot;Finalizar esboço&quot; para salvar as alterações ou em &quot;Cancelar
+esboço&quot; para descartá-las</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="criando-geometria-2d">Criando geometria 2D<a href="#criando-geometria-2d" class="hash-link" aria-label="Link direto para Criando geometria 2D" title="Link direto para Criando geometria 2D" translate="no">​</a></h2>
+<p>O esboçador suporta a criação dos seguintes elementos geométricos básicos:</p>
+<ul>
+<li class=""><strong>Caminhos (linhas e curvas de Bézier)</strong>: Desenhe linhas retas e curvas de
+Bézier suaves usando a ferramenta de caminho unificada. Clique para colocar
+pontos, arraste para criar alças de Bézier.</li>
+<li class=""><strong>Arcos</strong>: Desenhe arcos especificando um ponto central, um ponto inicial e um
+ponto final</li>
+<li class=""><strong>Elipses</strong>: Crie elipses (e círculos) definindo um ponto central e
+arrastando para definir o tamanho e a proporção. Segure <code>Ctrl</code> enquanto
+arrasta para restringir a um círculo perfeito.</li>
+<li class=""><strong>Retângulos</strong>: Desenhe retângulos especificando dois cantos opostos</li>
+<li class=""><strong>Retângulos arredondados</strong>: Desenhe retângulos com cantos arredondados</li>
+<li class=""><strong>Caixas de texto</strong>: Adicione elementos de texto ao seu esboço. O conteúdo
+do texto suporta expressões de modelo paramétricas (veja
+<a href="#modelos-de-texto" class="">Modelos de Texto</a> abaixo).</li>
+<li class=""><strong>Preenchimentos</strong>: Preencha regiões fechadas para criar áreas sólidas</li>
+</ul>
+<p>Esses elementos formam a base dos seus designs 2D e podem ser combinados para
+criar formas complexas. Os preenchimentos são particularmente úteis para criar
+regiões sólidas que serão gravadas ou cortadas como uma única peça.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="trabalhando-com-curvas-de-bézier">Trabalhando com curvas de Bézier<a href="#trabalhando-com-curvas-de-bézier" class="hash-link" aria-label="Link direto para Trabalhando com curvas de Bézier" title="Link direto para Trabalhando com curvas de Bézier" translate="no">​</a></h2>
+<p>A ferramenta de caminho suporta curvas de Bézier para criar formas suaves e
+orgânicas:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="desenhando-curvas-de-bézier">Desenhando curvas de Bézier<a href="#desenhando-curvas-de-bézier" class="hash-link" aria-label="Link direto para Desenhando curvas de Bézier" title="Link direto para Desenhando curvas de Bézier" translate="no">​</a></h3>
+<ol>
+<li class="">Selecione a ferramenta de caminho no menu circular ou use o atalho de
+teclado</li>
+<li class="">Clique para colocar pontos — cada clique cria um novo ponto</li>
+<li class="">Arraste após clicar para criar alças de Bézier para curvas suaves</li>
+<li class="">Continue adicionando pontos para construir seu caminho</li>
+<li class="">Pressione Escape ou dê um duplo clique para finalizar o caminho</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="editando-curvas-de-bézier">Editando curvas de Bézier<a href="#editando-curvas-de-bézier" class="hash-link" aria-label="Link direto para Editando curvas de Bézier" title="Link direto para Editando curvas de Bézier" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Mover pontos</strong>: Clique e arraste qualquer ponto para reposicioná-lo</li>
+<li class=""><strong>Ajustar alças</strong>: Arraste as extremidades das alças para modificar a forma
+da curva</li>
+<li class=""><strong>Conectar a pontos existentes</strong>: Ao editar um caminho, você pode snapar para
+pontos existentes no seu esboço</li>
+<li class=""><strong>Tornar suave/simétrico</strong>: Pontos conectados por uma restrição de
+coincidência podem ser suavizados (tangente contínua) ou simetrizados (alças
+espelhadas)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="convertendo-curvas-em-linhas">Convertendo curvas em linhas<a href="#convertendo-curvas-em-linhas" class="hash-link" aria-label="Link direto para Convertendo curvas em linhas" title="Link direto para Convertendo curvas em linhas" translate="no">​</a></h3>
+<p>Use a <strong>ferramenta de retificação</strong> para converter curvas de Bézier de volta em
+linhas retas. Isso é útil quando você precisa de geometria limpa e simples.
+Selecione os segmentos de Bézier que deseja converter e aplique a ação de
+retificação.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sistema-de-restrições-paramétricas">Sistema de restrições paramétricas<a href="#sistema-de-restrições-paramétricas" class="hash-link" aria-label="Link direto para Sistema de restrições paramétricas" title="Link direto para Sistema de restrições paramétricas" translate="no">​</a></h2>
+<p>O sistema de restrições é o núcleo do esboçador paramétrico, permitindo definir
+relações geométricas precisas:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="restrições-geométricas">Restrições geométricas<a href="#restrições-geométricas" class="hash-link" aria-label="Link direto para Restrições geométricas" title="Link direto para Restrições geométricas" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Coincidência</strong>: Força dois pontos a ocupar a mesma posição</li>
+<li class=""><strong>Vertical</strong>: Restringe uma linha a ser perfeitamente vertical</li>
+<li class=""><strong>Horizontal</strong>: Restringe uma linha a ser perfeitamente horizontal</li>
+<li class=""><strong>Tangente</strong>: Torna uma linha tangente a um círculo ou arco</li>
+<li class=""><strong>Perpendicular</strong>: Força duas linhas, uma linha e um arco/círculo, ou dois
+arcos/círculos a se encontrarem em 90 graus</li>
+<li class=""><strong>Ponto em linha/forma</strong>: Restringe um ponto a ficar sobre uma linha, arco ou
+círculo</li>
+<li class=""><strong>Colinear</strong>: Força duas ou mais linhas a ficarem sobre a mesma linha
+infinita</li>
+<li class=""><strong>Simetria</strong>: Cria relações simétricas entre elementos. Suporta dois modos:
+<ul>
+<li class=""><strong>Simetria de ponto</strong>: Selecione 3 pontos (o primeiro é o centro)</li>
+<li class=""><strong>Simetria de linha</strong>: Selecione 2 pontos e 1 linha (a linha é o eixo)</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="restrições-dimensionais">Restrições dimensionais<a href="#restrições-dimensionais" class="hash-link" aria-label="Link direto para Restrições dimensionais" title="Link direto para Restrições dimensionais" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Distância</strong>: Define a distância exata entre dois pontos ou ao longo de uma
+linha</li>
+<li class=""><strong>Diâmetro</strong>: Define o diâmetro de um círculo</li>
+<li class=""><strong>Raio</strong>: Define o raio de um círculo ou arco</li>
+<li class=""><strong>Ângulo</strong>: Impõe um ângulo específico entre duas linhas</li>
+<li class=""><strong>Proporção</strong>: Força a razão entre duas distâncias a ser igual a um valor
+especificado</li>
+<li class=""><strong>Comprimento/Raio igual</strong>: Força múltiplos elementos (linhas, arcos,
+elipses ou círculos) a ter o mesmo comprimento ou raio</li>
+<li class=""><strong>Distância igual</strong>: Torna dois segmentos de linha do mesmo comprimento
+(diferente de Comprimento/Raio igual, que também pode se aplicar a arcos e
+círculos)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="interface-do-menu-circular">Interface do menu circular<a href="#interface-do-menu-circular" class="hash-link" aria-label="Link direto para Interface do menu circular" title="Link direto para Interface do menu circular" translate="no">​</a></h2>
+<p>O esboçador apresenta um menu circular contextual que fornece acesso rápido a
+todas as ferramentas de desenho e restrição. Esse menu radial aparece quando
+você clica com o botão direito no espaço de trabalho do esboço e se adapta com
+base no seu contexto e seleção atuais.</p>
+<p>Os itens do menu circular mostram dinamicamente as opções disponíveis com base
+no que você selecionou. Por exemplo, ao clicar em um espaço vazio, você verá
+ferramentas de desenho. Ao clicar em geometria selecionada, verá as restrições
+aplicáveis.</p>
+<p><img decoding="async" loading="lazy" alt="Menu circular do esboçador" src="/pt-BR/assets/images/sketcher-pie-menu-a3332c447ad5789c22d9bf91c0859075.png" width="458" height="325" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="atalhos-de-teclado">Atalhos de teclado<a href="#atalhos-de-teclado" class="hash-link" aria-label="Link direto para Atalhos de teclado" title="Link direto para Atalhos de teclado" translate="no">​</a></h2>
+<p>O esboçador fornece atalhos de teclado para um fluxo de trabalho eficiente:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="atalhos-de-ferramentas">Atalhos de ferramentas<a href="#atalhos-de-ferramentas" class="hash-link" aria-label="Link direto para Atalhos de ferramentas" title="Link direto para Atalhos de ferramentas" translate="no">​</a></h3>
+<ul>
+<li class=""><code>Space</code>: Ferramenta de seleção</li>
+<li class=""><code>G+P</code>: Ferramenta de caminho (linhas e curvas de Bézier)</li>
+<li class=""><code>G+A</code>: Ferramenta de arco</li>
+<li class=""><code>G+C</code>: Ferramenta de elipse</li>
+<li class=""><code>G+R</code>: Ferramenta de retângulo</li>
+<li class=""><code>G+O</code>: Ferramenta de retângulo arredondado</li>
+<li class=""><code>G+F</code>: Ferramenta de preenchimento de área</li>
+<li class=""><code>G+T</code>: Ferramenta de caixa de texto</li>
+<li class=""><code>G+G</code>: Ferramenta de grade (alternar visibilidade da grade)</li>
+<li class=""><code>G+N</code>: Alternar modo de construção na seleção</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="atalhos-de-ações">Atalhos de ações<a href="#atalhos-de-ações" class="hash-link" aria-label="Link direto para Atalhos de ações" title="Link direto para Atalhos de ações" translate="no">​</a></h3>
+<ul>
+<li class=""><code>C+H</code>: Adicionar chanfro no canto</li>
+<li class=""><code>C+F</code>: Adicionar arredondamento no canto</li>
+<li class=""><code>C+S</code>: Retificar curvas de Bézier selecionadas para linhas</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="atalhos-de-restrições">Atalhos de restrições<a href="#atalhos-de-restrições" class="hash-link" aria-label="Link direto para Atalhos de restrições" title="Link direto para Atalhos de restrições" translate="no">​</a></h3>
+<ul>
+<li class=""><code>H</code>: Aplicar restrição Horizontal</li>
+<li class=""><code>V</code>: Aplicar restrição Vertical</li>
+<li class=""><code>N</code>: Aplicar restrição Perpendicular</li>
+<li class=""><code>T</code>: Aplicar restrição Tangente</li>
+<li class=""><code>E</code>: Aplicar restrição Igual</li>
+<li class=""><code>O</code> ou <code>C</code>: Aplicar restrição de Alinhamento (Coincidência)</li>
+<li class=""><code>S</code>: Aplicar restrição de Simetria</li>
+<li class=""><code>K+D</code>: Aplicar restrição de Distância</li>
+<li class=""><code>K+R</code>: Aplicar restrição de Raio</li>
+<li class=""><code>K+O</code>: Aplicar restrição de Diâmetro</li>
+<li class=""><code>K+A</code>: Aplicar restrição de Ângulo</li>
+<li class=""><code>K+X</code>: Aplicar restrição de Proporção</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="atalhos-gerais">Atalhos gerais<a href="#atalhos-gerais" class="hash-link" aria-label="Link direto para Atalhos gerais" title="Link direto para Atalhos gerais" translate="no">​</a></h3>
+<ul>
+<li class=""><code>Ctrl+Z</code>: Desfazer</li>
+<li class=""><code>Ctrl+Y</code> ou <code>Ctrl+Shift+Z</code>: Refazer</li>
+<li class=""><code>Delete</code>: Excluir elementos selecionados</li>
+<li class=""><code>Escape</code>: Cancelar operação atual ou deselecionar</li>
+<li class=""><code>F</code>: Ajustar visualização ao conteúdo</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="modo-de-construção">Modo de construção<a href="#modo-de-construção" class="hash-link" aria-label="Link direto para Modo de construção" title="Link direto para Modo de construção" translate="no">​</a></h2>
+<p>O modo de construção permite marcar entidades como &quot;geometria de construção&quot; —
+elementos auxiliares usados para guiar seu design, mas que não fazem parte do
+resultado final. As entidades de construção são exibidas de forma diferente
+(geralmente como linhas tracejadas) e não são incluídas quando o esboço é usado
+para corte ou gravação a laser.</p>
+<p>Para alternar o modo de construção:</p>
+<ul>
+<li class="">Selecione uma ou mais entidades</li>
+<li class="">Pressione <code>N</code> ou <code>G+N</code>, ou use a opção Construção no menu circular</li>
+</ul>
+<p>As entidades de construção são úteis para:</p>
+<ul>
+<li class="">Criar linhas e círculos de referência</li>
+<li class="">Definir geometria temporária para alinhamento</li>
+<li class="">Construir formas complexas a partir de uma estrutura de guias</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="grade-snap-e-controles-de-visibilidade">Grade, snap e controles de visibilidade<a href="#grade-snap-e-controles-de-visibilidade" class="hash-link" aria-label="Link direto para Grade, snap e controles de visibilidade" title="Link direto para Grade, snap e controles de visibilidade" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ferramenta-de-grade">Ferramenta de grade<a href="#ferramenta-de-grade" class="hash-link" aria-label="Link direto para Ferramenta de grade" title="Link direto para Ferramenta de grade" translate="no">​</a></h3>
+<p>A ferramenta de grade fornece uma referência visual para alinhamento e
+dimensionamento:</p>
+<ul>
+<li class="">Ative/desative a grade usando o botão da ferramenta ou <code>G+G</code></li>
+<li class="">A grade se adapta ao seu nível de zoom para manter um espaçamento
+consistente</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="snap-magnético">Snap magnético<a href="#snap-magnético" class="hash-link" aria-label="Link direto para Snap magnético" title="Link direto para Snap magnético" translate="no">​</a></h3>
+<p>Ao criar ou mover geometria, o Rayforge automaticamente atrai seu cursor para
+elementos próximos — extremidades, pontos médios de linhas, interseções e outros
+pontos de referência. Isso facilita a conexão precisa de formas sem precisar
+colocar cada ponto manualmente. O indicador de snap destaca quando seu cursor
+está próximo de um alvo de snap.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="auto-restrição-durante-a-criação">Auto-restrição durante a criação<a href="#auto-restrição-durante-a-criação" class="hash-link" aria-label="Link direto para Auto-restrição durante a criação" title="Link direto para Auto-restrição durante a criação" translate="no">​</a></h3>
+<p>Muitas ferramentas de desenho aplicam restrições automaticamente ao criar
+geometria. Por exemplo, ao desenhar uma linha próxima à horizontal ou vertical,
+o esboçador oferecerá para travá-la no lugar. A ferramenta de caminho
+também cria restrições horizontais e verticais automaticamente quando as
+guias de snap mostram alinhamento durante o desenho. Isso ajuda a manter seu esboço
+organizado desde o início, em vez de corrigir as coisas depois.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="controles-mostrarocultar">Controles mostrar/ocultar<a href="#controles-mostrarocultar" class="hash-link" aria-label="Link direto para Controles mostrar/ocultar" title="Link direto para Controles mostrar/ocultar" translate="no">​</a></h3>
+<p>A barra de ferramentas do esboçador inclui botões de alternância para controlar
+a visibilidade:</p>
+<ul>
+<li class=""><strong>Mostrar/ocultar geometria de construção</strong>: Alterna a visibilidade das
+entidades de construção</li>
+<li class=""><strong>Mostrar/ocultar restrições</strong>: Alterna a visibilidade dos marcadores de
+restrições</li>
+</ul>
+<p>Esses controles ajudam a reduzir a poluição visual ao trabalhar em esboços
+complexos.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="movimento-restrito-ao-eixo">Movimento restrito ao eixo<a href="#movimento-restrito-ao-eixo" class="hash-link" aria-label="Link direto para Movimento restrito ao eixo" title="Link direto para Movimento restrito ao eixo" translate="no">​</a></h3>
+<p>Ao arrastar pontos ou geometria, segure <code>Shift</code> para restringir o movimento ao
+eixo mais próximo (horizontal ou vertical). Isso é útil para manter o
+alinhamento durante ajustes.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="chanfro-e-arredondamento">Chanfro e arredondamento<a href="#chanfro-e-arredondamento" class="hash-link" aria-label="Link direto para Chanfro e arredondamento" title="Link direto para Chanfro e arredondamento" translate="no">​</a></h2>
+<p>O esboçador fornece ferramentas para modificar os cantos da sua geometria:</p>
+<ul>
+<li class=""><strong>Chanfro</strong>: Substitui um canto agudo por uma borda chanfrada. Selecione um
+ponto de junção (onde duas linhas se encontram) e aplique a ação de chanfro.</li>
+<li class=""><strong>Arredondamento</strong>: Substitui um canto agudo por uma borda arredondada.
+Selecione um ponto de junção (onde duas linhas se encontram) e aplique a ação
+de arredondamento.</li>
+</ul>
+<p>Para usar chanfro ou arredondamento:</p>
+<ol>
+<li class="">Selecione um ponto de junção onde duas linhas se encontram</li>
+<li class="">Pressione <code>C+H</code> para chanfro ou <code>C+F</code> para arredondamento</li>
+<li class="">Use o menu circular ou os atalhos de teclado para aplicar a modificação</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="modelos-de-texto">Modelos de Texto<a href="#modelos-de-texto" class="hash-link" aria-label="Link direto para Modelos de Texto" title="Link direto para Modelos de Texto" translate="no">​</a></h2>
+<p>As caixas de texto suportam expressões de modelo entre chaves. Elas são
+resolvidas no momento da resolução usando os valores atuais dos parâmetros,
+então o texto é atualizado automaticamente quando você altera uma dimensão ou
+variável de entrada.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="substituição-de-variáveis">Substituição de Variáveis<a href="#substituição-de-variáveis" class="hash-link" aria-label="Link direto para Substituição de Variáveis" title="Link direto para Substituição de Variáveis" translate="no">​</a></h3>
+<p>Referencie qualquer parâmetro do esboço ou variável de entrada pelo nome:</p>
+<ul>
+<li class=""><code>{width}</code> — o valor atual do parâmetro &quot;width&quot;</li>
+<li class=""><code>{name}</code> — o valor de um parâmetro de entrada do tipo string</li>
+<li class=""><code>{count:.0f}</code> — formatado com um especificador de formato Python (sem decimais)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="expressões-matemáticas">Expressões Matemáticas<a href="#expressões-matemáticas" class="hash-link" aria-label="Link direto para Expressões Matemáticas" title="Link direto para Expressões Matemáticas" translate="no">​</a></h3>
+<p>Você pode usar funções matemáticas nos modelos:</p>
+<ul>
+<li class=""><code>{sqrt(area):.2f}</code> — raiz quadrada de &quot;area&quot;, formatada com 2 casas decimais</li>
+<li class=""><code>{width * 2}</code> — expressões aritméticas</li>
+</ul>
+<p>As funções matemáticas padrão (<code>sqrt</code>, <code>sin</code>, <code>cos</code>, <code>tan</code>, <code>pi</code>, etc.) estão
+disponíveis.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="funções-integradas">Funções Integradas<a href="#funções-integradas" class="hash-link" aria-label="Link direto para Funções Integradas" title="Link direto para Funções Integradas" translate="no">​</a></h3>
+<ul>
+<li class=""><code>{today()}</code> — a data de hoje (ex.: <code>2026-05-01</code>)</li>
+<li class=""><code>{now()}</code> — data e hora atuais</li>
+<li class=""><code>{uuid4()}</code> — uma string hexadecimal única de 8 caracteres, regenerada a
+cada resolução</li>
+</ul>
+<p>Isso é útil para datar peças ou gerar números de série únicos para etiquetagem
+de produção.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="exemplos-de-uso">Exemplos de Uso<a href="#exemplos-de-uso" class="hash-link" aria-label="Link direto para Exemplos de Uso" title="Link direto para Exemplos de Uso" translate="no">​</a></h3>
+<ul>
+<li class=""><code>Part #{uuid4()}</code> — número de série único a cada resolução</li>
+<li class=""><code>W={width:.1f} H={height:.1f}</code> — rótulos de dimensões em tempo real</li>
+<li class=""><code>Data: {today()}</code> — datar cada peça</li>
+<li class=""><code>{name} - {count:.0f}un</code> — combinar parâmetros de string e numéricos</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="importação-e-exportação">Importação e exportação<a href="#importação-e-exportação" class="hash-link" aria-label="Link direto para Importação e exportação" title="Link direto para Importação e exportação" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="exportando-objetos">Exportando objetos<a href="#exportando-objetos" class="hash-link" aria-label="Link direto para Exportando objetos" title="Link direto para Exportando objetos" translate="no">​</a></h3>
+<p>Você pode exportar qualquer peça selecionada para vários formatos vetoriais:</p>
+<ol>
+<li class="">Selecione uma peça na tela</li>
+<li class="">Escolha <strong>Objeto → Exportar objeto...</strong> (ou clique com o botão direito e
+selecione no menu de contexto)</li>
+<li class="">Escolha o formato de exportação:
+<ul>
+<li class=""><strong>RFS (.rfs)</strong>: Formato nativo de esboço paramétrico do Rayforge —
+preserva todas as restrições e pode ser reimportado para edição</li>
+<li class=""><strong>SVG (.svg)</strong>: Formato vetorial padrão — amplamente compatível com
+softwares de design</li>
+<li class=""><strong>DXF (.dxf)</strong>: Formato de intercâmbio CAD — compatível com a maioria dos
+aplicativos CAD</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="salvando-esboços">Salvando esboços<a href="#salvando-esboços" class="hash-link" aria-label="Link direto para Salvando esboços" title="Link direto para Salvando esboços" translate="no">​</a></h3>
+<p>Você pode salvar seus esboços 2D em arquivos para reutilização em outros
+projetos. Todas as restrições paramétricas são preservadas ao salvar,
+garantindo que seus designs mantenham suas relações geométricas.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="importando-esboços">Importando esboços<a href="#importando-esboços" class="hash-link" aria-label="Link direto para Importando esboços" title="Link direto para Importando esboços" translate="no">​</a></h3>
+<p>Esboços salvos podem ser importados em qualquer espaço de trabalho, permitindo
+que você crie uma biblioteca de elementos de design comumente usados. O processo
+de importação mantém todas as restrições e relações dimensionais.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="dicas-de-fluxo-de-trabalho">Dicas de fluxo de trabalho<a href="#dicas-de-fluxo-de-trabalho" class="hash-link" aria-label="Link direto para Dicas de fluxo de trabalho" title="Link direto para Dicas de fluxo de trabalho" translate="no">​</a></h2>
+<ol>
+<li class=""><strong>Comece com geometria aproximada</strong>: Crie formas básicas primeiro e depois
+refine com restrições</li>
+<li class=""><strong>Use restrições cedo</strong>: Aplique restrições enquanto constrói para manter a
+intenção do design</li>
+<li class=""><strong>Verifique o status das restrições</strong>: O sistema indica quando os esboços
+estão totalmente restritos</li>
+<li class=""><strong>Fique atento a conflitos</strong>: Restrições que conflitam entre si são
+destacadas em vermelho e mostradas no painel de restrições para fácil
+identificação</li>
+<li class=""><strong>Utilize a simetria</strong>: Restrições de simetria podem acelerar
+significativamente designs complexos</li>
+<li class=""><strong>Use a grade</strong>: Ative a grade para alinhamento preciso e use Ctrl para
+snapar na grade</li>
+<li class=""><strong>Itere e refine</strong>: Não hesite em modificar restrições para obter o
+resultado desejado</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="recursos-de-edição">Recursos de edição<a href="#recursos-de-edição" class="hash-link" aria-label="Link direto para Recursos de edição" title="Link direto para Recursos de edição" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Suporte completo a desfazer/refazer</strong>: O estado completo do esboço é salvo
+com cada operação</li>
+<li class=""><strong>Cursor dinâmico</strong>: O cursor muda para refletir a ferramenta de desenho
+ativa</li>
+<li class=""><strong>Visualização de restrições</strong>: As restrições aplicadas são claramente
+indicadas na interface</li>
+<li class=""><strong>Atualizações em tempo real</strong>: Alterações nas restrições atualizam
+imediatamente a geometria</li>
+<li class=""><strong>Edição por duplo clique</strong>: Dar um duplo clique em restrições dimensionais
+(Distância, Raio, Diâmetro, Ângulo, Proporção) abre um diálogo para editar
+seus valores</li>
+<li class=""><strong>Expressões paramétricas</strong>: Restrições dimensionais suportam expressões,
+permitindo que valores sejam calculados a partir de outros parâmetros (por
+ex., <code>width/2</code> para um raio que seja metade da largura)</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/features/sketcher.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Páginas de documentação"><a class="pagination-nav__link pagination-nav__link--prev" href="/pt-BR/docs/features/lead-in-out"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Aproximação / Saída</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/pt-BR/docs/features/multi-layer"><div class="pagination-nav__sublabel">Próximo</div><div class="pagination-nav__label">Fluxo de trabalho multicamadas</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#visão-geral" class="table-of-contents__link toc-highlight">Visão geral</a></li><li><a href="#criando-e-editando-esboços" class="table-of-contents__link toc-highlight">Criando e editando esboços</a><ul><li><a href="#criando-um-novo-esboço" class="table-of-contents__link toc-highlight">Criando um novo esboço</a></li><li><a href="#editando-esboços-existentes" class="table-of-contents__link toc-highlight">Editando esboços existentes</a></li></ul></li><li><a href="#criando-geometria-2d" class="table-of-contents__link toc-highlight">Criando geometria 2D</a></li><li><a href="#trabalhando-com-curvas-de-bézier" class="table-of-contents__link toc-highlight">Trabalhando com curvas de Bézier</a><ul><li><a href="#desenhando-curvas-de-bézier" class="table-of-contents__link toc-highlight">Desenhando curvas de Bézier</a></li><li><a href="#editando-curvas-de-bézier" class="table-of-contents__link toc-highlight">Editando curvas de Bézier</a></li><li><a href="#convertendo-curvas-em-linhas" class="table-of-contents__link toc-highlight">Convertendo curvas em linhas</a></li></ul></li><li><a href="#sistema-de-restrições-paramétricas" class="table-of-contents__link toc-highlight">Sistema de restrições paramétricas</a><ul><li><a href="#restrições-geométricas" class="table-of-contents__link toc-highlight">Restrições geométricas</a></li><li><a href="#restrições-dimensionais" class="table-of-contents__link toc-highlight">Restrições dimensionais</a></li></ul></li><li><a href="#interface-do-menu-circular" class="table-of-contents__link toc-highlight">Interface do menu circular</a></li><li><a href="#atalhos-de-teclado" class="table-of-contents__link toc-highlight">Atalhos de teclado</a><ul><li><a href="#atalhos-de-ferramentas" class="table-of-contents__link toc-highlight">Atalhos de ferramentas</a></li><li><a href="#atalhos-de-ações" class="table-of-contents__link toc-highlight">Atalhos de ações</a></li><li><a href="#atalhos-de-restrições" class="table-of-contents__link toc-highlight">Atalhos de restrições</a></li><li><a href="#atalhos-gerais" class="table-of-contents__link toc-highlight">Atalhos gerais</a></li></ul></li><li><a href="#modo-de-construção" class="table-of-contents__link toc-highlight">Modo de construção</a></li><li><a href="#grade-snap-e-controles-de-visibilidade" class="table-of-contents__link toc-highlight">Grade, snap e controles de visibilidade</a><ul><li><a href="#ferramenta-de-grade" class="table-of-contents__link toc-highlight">Ferramenta de grade</a></li><li><a href="#snap-magnético" class="table-of-contents__link toc-highlight">Snap magnético</a></li><li><a href="#auto-restrição-durante-a-criação" class="table-of-contents__link toc-highlight">Auto-restrição durante a criação</a></li><li><a href="#controles-mostrarocultar" class="table-of-contents__link toc-highlight">Controles mostrar/ocultar</a></li><li><a href="#movimento-restrito-ao-eixo" class="table-of-contents__link toc-highlight">Movimento restrito ao eixo</a></li></ul></li><li><a href="#chanfro-e-arredondamento" class="table-of-contents__link toc-highlight">Chanfro e arredondamento</a></li><li><a href="#modelos-de-texto" class="table-of-contents__link toc-highlight">Modelos de Texto</a><ul><li><a href="#substituição-de-variáveis" class="table-of-contents__link toc-highlight">Substituição de Variáveis</a></li><li><a href="#expressões-matemáticas" class="table-of-contents__link toc-highlight">Expressões Matemáticas</a></li><li><a href="#funções-integradas" class="table-of-contents__link toc-highlight">Funções Integradas</a></li><li><a href="#exemplos-de-uso" class="table-of-contents__link toc-highlight">Exemplos de Uso</a></li></ul></li><li><a href="#importação-e-exportação" class="table-of-contents__link toc-highlight">Importação e exportação</a><ul><li><a href="#exportando-objetos" class="table-of-contents__link toc-highlight">Exportando objetos</a></li><li><a href="#salvando-esboços" class="table-of-contents__link toc-highlight">Salvando esboços</a></li><li><a href="#importando-esboços" class="table-of-contents__link toc-highlight">Importando esboços</a></li></ul></li><li><a href="#dicas-de-fluxo-de-trabalho" class="table-of-contents__link toc-highlight">Dicas de fluxo de trabalho</a></li><li><a href="#recursos-de-edição" class="table-of-contents__link toc-highlight">Recursos de edição</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</body>
+</html>
