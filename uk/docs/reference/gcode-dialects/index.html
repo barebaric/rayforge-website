@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.a82eb417.css">
-<script src="/uk/assets/js/runtime~main.b15ce5b3.js" defer="defer"></script>
-<script src="/uk/assets/js/main.96d27875.js" defer="defer"></script>
+<script src="/uk/assets/js/runtime~main.dbcd727b.js" defer="defer"></script>
+<script src="/uk/assets/js/main.c497abb0.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -151,12 +151,264 @@
 ніж та, що використовується під час фактичного різання або гравірування.
 Перевірте сторін ку налаштувань вашого діалекту щодо цієї опції.</p>
 <hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="заповнювачі-шаблонів">Заповнювачі шаблонів<a href="#заповнювачі-шаблонів" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<p>При створенні або редагуванні власного діалекту кожен шаблон команди
+використовує
+<a href="https://docs.python.org/3/library/string.html#format-string-syntax" target="_blank" rel="noopener noreferrer" class="">рядки форматування Python</a>
+з заповнювачами для введення динамічних значень. Використовуйте синтаксис
+<code>{назва}</code> або <code>{назва:.0f}</code> (наприклад, <code>{power:.0f}</code> для форматування як
+ціле число без десяткових знаків).</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="доступні-заповнювачі-за-шаблоном">Доступні заповнювачі за шаблоном<a href="#доступні-заповнювачі-за-шаблоном" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Шаблон</th><th>Заповнювачі</th></tr></thead><tbody><tr><td><strong>Лазер Увімкн.</strong></td><td><code>power</code></td></tr><tr><td><strong>Лазер Фокус</strong></td><td><code>power</code></td></tr><tr><td><strong>Лазер Вимкн.</strong></td><td><em>(немає)</em></td></tr><tr><td><strong>Заміна інструм.</strong></td><td><code>tool_number</code></td></tr><tr><td><strong>Встановити швид.</strong></td><td><code>speed</code></td></tr><tr><td><strong>Переміщення</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code></td></tr><tr><td><strong>Лінійний рух</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code>, <code>i</code>, <code>j</code>, <code>power</code></td></tr><tr><td><strong>Дуга (CW)</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code>, <code>i</code>, <code>j</code>, <code>power</code></td></tr><tr><td><strong>Дуга (CCW)</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code>, <code>i</code>, <code>j</code>, <code>power</code></td></tr><tr><td><strong>Без&#x27;є Кубічний</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code>, <code>i</code>, <code>j</code>, <code>p</code>, <code>q</code>, <code>power</code></td></tr><tr><td><strong>Повітря Увімкн./Вимкн.</strong></td><td><em>(немає)</em></td></tr><tr><td><strong>Всі почати</strong></td><td><em>(немає)</em></td></tr><tr><td><strong>Вісь почати</strong></td><td><code>axis_letter</code></td></tr><tr><td><strong>Перемістити до</strong></td><td><code>speed</code>, <code>x</code>, <code>y</code>, <code>z</code></td></tr><tr><td><strong>Jog</strong></td><td><code>speed</code></td></tr><tr><td><strong>Очистити тривогу</strong></td><td><em>(немає)</em></td></tr><tr><td><strong>Зміщення WCS</strong></td><td><code>p_num</code>, <code>x</code>, <code>y</code>, <code>z</code></td></tr><tr><td><strong>Цикл зондування</strong></td><td><code>axis_letter</code>, <code>max_travel</code>, <code>feed_rate</code></td></tr><tr><td><strong>Затримка</strong></td><td><code>seconds</code>, <code>milliseconds</code></td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="довідка-по-заповнювачах">Довідка по заповнювачах<a href="#довідка-по-заповнювачах" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="координати">Координати<a href="#координати" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Заповнювач</th><th>Опис</th></tr></thead><tbody><tr><td><code>x</code></td><td>Цільова координата X як float (наприклад, <code>100.0</code>)</td></tr><tr><td><code>y</code></td><td>Цільова координата Y як float (наприклад, <code>200.0</code>)</td></tr><tr><td><code>z</code></td><td>Цільова координата Z як float (наприклад, <code>5.0</code>)</td></tr><tr><td><code>x_cmd</code></td><td>Рядок команди осі X, наприклад, <code>&quot; X100.0&quot;</code>. Опускається, якщо не змінилася (якщо увімкнено «Пропускати незмінні координати»)</td></tr><tr><td><code>y_cmd</code></td><td>Рядок команди осі Y, наприклад, <code>&quot; Y200.0&quot;</code>. Опускається, якщо не змінилася</td></tr><tr><td><code>z_cmd</code></td><td>Рядок команди осі Z, наприклад, <code>&quot; Z5.0&quot;</code>. Опускається, якщо не змінилася</td></tr><tr><td><code>extra_cmd</code></td><td>Рядок команди додаткових осей (A, B, C), наприклад, <code>&quot; A90.0&quot;</code>. Порожній, якщо додаткові осі не налаштовані</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="рух">Рух<a href="#рух" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Заповнювач</th><th>Опис</th></tr></thead><tbody><tr><td><code>f_command</code></td><td>Рядок команди подачі, наприклад, <code>&quot; F3000&quot;</code>. Опускається, якщо модальна і не змінилася</td></tr><tr><td><code>s_command</code></td><td>Рядок команди шпинделя/потужності, наприклад, <code>&quot; S500&quot;</code>. Використовується в динамічному/растровому режимах та безперервному лазерному режимі</td></tr><tr><td><code>i</code></td><td>Зміщення X контрольної точки дуги або Без&#x27;є від початкової позиції</td></tr><tr><td><code>j</code></td><td>Зміщення Y контрольної точки дуги або Без&#x27;є від початкової позиції</td></tr><tr><td><code>p</code></td><td>Зміщення X другої контрольної точки Без&#x27;є від кінцевої позиції (лише Без&#x27;є Кубічний)</td></tr><tr><td><code>q</code></td><td>Зміщення Y другої контрольної точки Без&#x27;є від кінцевої позиції (лише Без&#x27;є Кубічний)</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="потужність-і-швидкість">Потужність і швидкість<a href="#потужність-і-швидкість" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Заповнювач</th><th>Опис</th></tr></thead><tbody><tr><td><code>power</code></td><td>Абсолютне значення потужності лазера як float. Підтримує форматування, наприклад, <code>{power:.0f}</code> для цілих чисел</td></tr><tr><td><code>speed</code></td><td>Значення швидкості (для команд Перемістити до та Jog)</td></tr><tr><td><code>tool_number</code></td><td>Номер інструмента/головки лазера</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="машина-і-зондування">Машина і зондування<a href="#машина-і-зондування" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Заповнювач</th><th>Опис</th></tr></thead><tbody><tr><td><code>axis_letter</code></td><td>Окрема літера осі, наприклад, <code>&quot;X&quot;</code>, <code>&quot;Y&quot;</code>, <code>&quot;Z&quot;</code> (для Вісь почати та Зондування)</td></tr><tr><td><code>p_num</code></td><td>Номер P WCS (наприклад, <code>1</code> для G54)</td></tr><tr><td><code>max_travel</code></td><td>Максимальна відстань переміщення зонда (лише Цикл зондування)</td></tr><tr><td><code>feed_rate</code></td><td>Подача зондування (лише Цикл зондування)</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="затримка">Затримка<a href="#затримка" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Заповнювач</th><th>Опис</th></tr></thead><tbody><tr><td><code>seconds</code></td><td>Тривалість затримки в секундах як float (наприклад, <code>1.5</code>)</td></tr><tr><td><code>milliseconds</code></td><td>Тривалість затримки в мілісекундах як ціле число (наприклад, <code>1500</code>)</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="поради">Поради<a href="#поради" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Специфікації форматування</strong> підтримуються: <code>{power:.0f}</code> формує потужність як ціле число,
+<code>{power:.2f}</code> з двома десятковими знаками.</li>
+<li class="">Налаштування <strong>«Пропускати незмінні координати»</strong> контролює, чи <code>x_cmd</code>, <code>y_cmd</code>
+та <code>z_cmd</code> залишаються порожніми, коли позиція осі не змінилася з моменту
+останньої команди. Це зменшує розмір G-code.</li>
+<li class="">Налаштування <strong>«Модальна подача»</strong> контролює, чи <code>f_command</code> опускається, коли
+подача не змінилася.</li>
+<li class="">Залиште поле шаблону <strong>порожнім</strong>, щоб повністю пропустити цю команду
+(наприклад, встановіть <code>bezier_cubic</code> на <code>&quot;&quot;</code>, щоб вимкнути нативний вивід Без&#x27;є
+і використовувати лінеаризацію натомість).</li>
+</ul>
+<hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="повязані-сторінки">Пов&#x27;язані сторінки<a href="#повязані-сторінки" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <ul>
 <li class=""><a class="" href="/uk/docs/files/exporting">Експорт G-code</a> - Налаштування експорту</li>
 <li class=""><a class="" href="/uk/docs/reference/firmware">Сумісність прошивки</a> - Версії прошивок</li>
 <li class=""><a class="" href="/uk/docs/machine/device">Налаштування пристрою</a> - Конфігурація GRBL</li>
 <li class=""><a class="" href="/uk/docs/machine/hooks-macros">Макроси та хуки</a> - Вставка власного G-code</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/reference/gcode-dialects.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Редагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Навігація по документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/reference/shortcuts"><div class="pagination-nav__sublabel">Назад</div><div class="pagination-nav__label">Клавіатурні скорочення</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/uk/docs/reference/firmware"><div class="pagination-nav__sublabel">Далі</div><div class="pagination-nav__label">Сумісність прошивки</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#підтримувані-діалекти" class="table-of-contents__link toc-highlight">Підтримувані діалекти</a></li><li><a href="#mach4-m67-analog" class="table-of-contents__link toc-highlight">Mach4 (M67 Analog)</a><ul><li><a href="#основні-характеристики" class="table-of-contents__link toc-highlight">Основні характеристики</a></li><li><a href="#коли-використовувати" class="table-of-contents__link toc-highlight">Коли використовувати</a></li><li><a href="#формат-команди" class="table-of-contents__link toc-highlight">Формат команди</a></li></ul></li><li><a href="#створення-власного-діалекту" class="table-of-contents__link toc-highlight">Створення власного діалекту</a><ul><li><a href="#налаштування-діалекту" class="table-of-contents__link toc-highlight">Налаштування діалекту</a></li><li><a href="#окрема-команда-вмикання-лазера-для-фокусування" class="table-of-contents__link toc-highlight">Окрема команда вмикання лазера для фокусування</a></li></ul></li><li><a href="#повязані-сторінки" class="table-of-contents__link toc-highlight">Пов&#39;язані сторінки</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/reference/gcode-dialects.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Редагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Навігація по документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/reference/shortcuts"><div class="pagination-nav__sublabel">Назад</div><div class="pagination-nav__label">Клавіатурні скорочення</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/uk/docs/reference/firmware"><div class="pagination-nav__sublabel">Далі</div><div class="pagination-nav__label">Сумісність прошивки</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#підтримувані-діалекти" class="table-of-contents__link toc-highlight">Підтримувані діалекти</a></li><li><a href="#mach4-m67-analog" class="table-of-contents__link toc-highlight">Mach4 (M67 Analog)</a><ul><li><a href="#основні-характеристики" class="table-of-contents__link toc-highlight">Основні характеристики</a></li><li><a href="#коли-використовувати" class="table-of-contents__link toc-highlight">Коли використовувати</a></li><li><a href="#формат-команди" class="table-of-contents__link toc-highlight">Формат команди</a></li></ul></li><li><a href="#створення-власного-діалекту" class="table-of-contents__link toc-highlight">Створення власного діалекту</a><ul><li><a href="#налаштування-діалекту" class="table-of-contents__link toc-highlight">Налаштування діалекту</a></li><li><a href="#окрема-команда-вмикання-лазера-для-фокусування" class="table-of-contents__link toc-highlight">Окрема команда вмикання лазера для фокусування</a></li></ul></li><li><a href="#заповнювачі-шаблонів" class="table-of-contents__link toc-highlight">Заповнювачі шаблонів</a><ul><li><a href="#доступні-заповнювачі-за-шаблоном" class="table-of-contents__link toc-highlight">Доступні заповнювачі за шаблоном</a></li><li><a href="#довідка-по-заповнювачах" class="table-of-contents__link toc-highlight">Довідка по заповнювачах</a></li><li><a href="#поради" class="table-of-contents__link toc-highlight">Поради</a></li></ul></li><li><a href="#повязані-сторінки" class="table-of-contents__link toc-highlight">Пов&#39;язані сторінки</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

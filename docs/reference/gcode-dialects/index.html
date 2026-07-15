@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.f02514bd.css">
-<script src="/assets/js/runtime~main.8cd6b535.js" defer="defer"></script>
-<script src="/assets/js/main.52ea760f.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.206b799b.js" defer="defer"></script>
+<script src="/assets/js/main.51c09532.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -147,12 +147,262 @@ low power, which is useful for focus mode. This lets you use a different command
 for the visual &quot;laser pointer&quot; behavior than what is used during actual cutting
 or engraving. Check your dialect&#x27;s settings page for this option.</p>
 <hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="template-placeholders">Template Placeholders<a href="#template-placeholders" class="hash-link" aria-label="Direct link to Template Placeholders" title="Direct link to Template Placeholders" translate="no">​</a></h2>
+<p>When creating or editing a custom dialect, each command template uses
+<a href="https://docs.python.org/3/library/string.html#format-string-syntax" target="_blank" rel="noopener noreferrer" class="">Python format string</a>
+placeholders to inject dynamic values. Use <code>{name}</code> or <code>{name:.0f}</code> syntax
+(e.g., <code>{power:.0f}</code> to format as a decimal with no fractional digits).</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="available-placeholders-by-template">Available Placeholders by Template<a href="#available-placeholders-by-template" class="hash-link" aria-label="Direct link to Available Placeholders by Template" title="Direct link to Available Placeholders by Template" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Template</th><th>Placeholders</th></tr></thead><tbody><tr><td><strong>Laser On</strong></td><td><code>power</code></td></tr><tr><td><strong>Focus Laser On</strong></td><td><code>power</code></td></tr><tr><td><strong>Laser Off</strong></td><td><em>(none)</em></td></tr><tr><td><strong>Tool Change</strong></td><td><code>tool_number</code></td></tr><tr><td><strong>Set Speed</strong></td><td><code>speed</code></td></tr><tr><td><strong>Travel Move</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code></td></tr><tr><td><strong>Linear Move</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code>, <code>i</code>, <code>j</code>, <code>power</code></td></tr><tr><td><strong>Arc (CW)</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code>, <code>i</code>, <code>j</code>, <code>power</code></td></tr><tr><td><strong>Arc (CCW)</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code>, <code>i</code>, <code>j</code>, <code>power</code></td></tr><tr><td><strong>Bezier Cubic</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code>, <code>i</code>, <code>j</code>, <code>p</code>, <code>q</code>, <code>power</code></td></tr><tr><td><strong>Air On/Off</strong></td><td><em>(none)</em></td></tr><tr><td><strong>Home All</strong></td><td><em>(none)</em></td></tr><tr><td><strong>Home Axis</strong></td><td><code>axis_letter</code></td></tr><tr><td><strong>Move To</strong></td><td><code>speed</code>, <code>x</code>, <code>y</code>, <code>z</code></td></tr><tr><td><strong>Jog</strong></td><td><code>speed</code></td></tr><tr><td><strong>Clear Alarm</strong></td><td><em>(none)</em></td></tr><tr><td><strong>Set WCS Offset</strong></td><td><code>p_num</code>, <code>x</code>, <code>y</code>, <code>z</code></td></tr><tr><td><strong>Probe Cycle</strong></td><td><code>axis_letter</code>, <code>max_travel</code>, <code>feed_rate</code></td></tr><tr><td><strong>Dwell</strong></td><td><code>seconds</code>, <code>milliseconds</code></td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="placeholder-reference">Placeholder Reference<a href="#placeholder-reference" class="hash-link" aria-label="Direct link to Placeholder Reference" title="Direct link to Placeholder Reference" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="coordinates">Coordinates<a href="#coordinates" class="hash-link" aria-label="Direct link to Coordinates" title="Direct link to Coordinates" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Placeholder</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td>Target X coordinate as a float (e.g., <code>100.0</code>)</td></tr><tr><td><code>y</code></td><td>Target Y coordinate as a float (e.g., <code>200.0</code>)</td></tr><tr><td><code>z</code></td><td>Target Z coordinate as a float (e.g., <code>5.0</code>)</td></tr><tr><td><code>x_cmd</code></td><td>X-axis command string, e.g., <code>&quot; X100.0&quot;</code>. Omitted when unchanged (if &quot;Omit unchanged coordinates&quot; is enabled)</td></tr><tr><td><code>y_cmd</code></td><td>Y-axis command string, e.g., <code>&quot; Y200.0&quot;</code>. Omitted when unchanged</td></tr><tr><td><code>z_cmd</code></td><td>Z-axis command string, e.g., <code>&quot; Z5.0&quot;</code>. Omitted when unchanged</td></tr><tr><td><code>extra_cmd</code></td><td>Extra axes command string for A, B, C axes (e.g., <code>&quot; A90.0&quot;</code>). Empty if no extra axes are configured</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="motion">Motion<a href="#motion" class="hash-link" aria-label="Direct link to Motion" title="Direct link to Motion" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Placeholder</th><th>Description</th></tr></thead><tbody><tr><td><code>f_command</code></td><td>Feedrate command string, e.g., <code>&quot; F3000&quot;</code>. Omitted when modal and unchanged</td></tr><tr><td><code>s_command</code></td><td>Spindle/power command string, e.g., <code>&quot; S500&quot;</code>. Used in dynamic/raster modes and continuous laser mode</td></tr><tr><td><code>i</code></td><td>Arc or Bézier control point X offset from start position</td></tr><tr><td><code>j</code></td><td>Arc or Bézier control point Y offset from start position</td></tr><tr><td><code>p</code></td><td>Second Bézier control point X offset from end position (Bezier Cubic only)</td></tr><tr><td><code>q</code></td><td>Second Bézier control point Y offset from end position (Bezier Cubic only)</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="power-and-speed">Power and Speed<a href="#power-and-speed" class="hash-link" aria-label="Direct link to Power and Speed" title="Direct link to Power and Speed" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Placeholder</th><th>Description</th></tr></thead><tbody><tr><td><code>power</code></td><td>Absolute laser power value (float). Supports format specifiers, e.g., <code>{power:.0f}</code> for no decimals</td></tr><tr><td><code>speed</code></td><td>Speed value (for Move To and Jog commands)</td></tr><tr><td><code>tool_number</code></td><td>Tool/laser head number</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="machine-and-probing">Machine and Probing<a href="#machine-and-probing" class="hash-link" aria-label="Direct link to Machine and Probing" title="Direct link to Machine and Probing" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Placeholder</th><th>Description</th></tr></thead><tbody><tr><td><code>axis_letter</code></td><td>Single axis letter, e.g., <code>&quot;X&quot;</code>, <code>&quot;Y&quot;</code>, <code>&quot;Z&quot;</code> (for Home Axis and Probe)</td></tr><tr><td><code>p_num</code></td><td>WCS P-number (e.g., <code>1</code> for G54)</td></tr><tr><td><code>max_travel</code></td><td>Maximum probe travel distance (Probe Cycle only)</td></tr><tr><td><code>feed_rate</code></td><td>Probe feedrate (Probe Cycle only)</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="dwell">Dwell<a href="#dwell" class="hash-link" aria-label="Direct link to Dwell" title="Direct link to Dwell" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Placeholder</th><th>Description</th></tr></thead><tbody><tr><td><code>seconds</code></td><td>Dwell duration in seconds as a float (e.g., <code>1.5</code>)</td></tr><tr><td><code>milliseconds</code></td><td>Dwell duration in milliseconds as an integer (e.g., <code>1500</code>)</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tips">Tips<a href="#tips" class="hash-link" aria-label="Direct link to Tips" title="Direct link to Tips" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Format specifiers</strong> are supported: <code>{power:.0f}</code> formats power as an integer,
+<code>{power:.2f}</code> as two decimal places.</li>
+<li class="">The <strong>&quot;Omit unchanged coordinates&quot;</strong> setting controls whether <code>x_cmd</code>, <code>y_cmd</code>,
+and <code>z_cmd</code> are left empty when the axis position has not changed since the
+last command. This reduces G-code size.</li>
+<li class="">The <strong>&quot;Modal Feedrate&quot;</strong> setting controls whether <code>f_command</code> is omitted when
+the feedrate has not changed.</li>
+<li class="">Leave a template field <strong>empty</strong> to skip that command entirely (e.g., setting
+<code>bezier_cubic</code> to <code>&quot;&quot;</code> disables native Bézier output and falls back to
+linearization).</li>
+</ul>
+<hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-pages">Related Pages<a href="#related-pages" class="hash-link" aria-label="Direct link to Related Pages" title="Direct link to Related Pages" translate="no">​</a></h2>
 <ul>
 <li class=""><a class="" href="/docs/files/exporting">Exporting G-code</a> - Export settings</li>
 <li class=""><a class="" href="/docs/reference/firmware">Firmware Compatibility</a> - Firmware versions</li>
 <li class=""><a class="" href="/docs/machine/device">Device Settings</a> - GRBL configuration</li>
 <li class=""><a class="" href="/docs/machine/hooks-macros">Macros &amp; Hooks</a> - Custom G-code injection</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/reference/gcode-dialects.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/reference/shortcuts"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Keyboard Shortcuts</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/reference/firmware"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Firmware Compatibility</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#supported-dialects" class="table-of-contents__link toc-highlight">Supported Dialects</a></li><li><a href="#mach4-m67-analog" class="table-of-contents__link toc-highlight">Mach4 (M67 Analog)</a><ul><li><a href="#key-features" class="table-of-contents__link toc-highlight">Key Features</a></li><li><a href="#when-to-use" class="table-of-contents__link toc-highlight">When to Use</a></li><li><a href="#command-format" class="table-of-contents__link toc-highlight">Command Format</a></li></ul></li><li><a href="#creating-a-custom-dialect" class="table-of-contents__link toc-highlight">Creating a Custom Dialect</a><ul><li><a href="#dialect-settings" class="table-of-contents__link toc-highlight">Dialect Settings</a></li><li><a href="#separate-laser-on-command-for-focusing" class="table-of-contents__link toc-highlight">Separate Laser-On Command for Focusing</a></li></ul></li><li><a href="#related-pages" class="table-of-contents__link toc-highlight">Related Pages</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/reference/gcode-dialects.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/reference/shortcuts"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Keyboard Shortcuts</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/reference/firmware"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Firmware Compatibility</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#supported-dialects" class="table-of-contents__link toc-highlight">Supported Dialects</a></li><li><a href="#mach4-m67-analog" class="table-of-contents__link toc-highlight">Mach4 (M67 Analog)</a><ul><li><a href="#key-features" class="table-of-contents__link toc-highlight">Key Features</a></li><li><a href="#when-to-use" class="table-of-contents__link toc-highlight">When to Use</a></li><li><a href="#command-format" class="table-of-contents__link toc-highlight">Command Format</a></li></ul></li><li><a href="#creating-a-custom-dialect" class="table-of-contents__link toc-highlight">Creating a Custom Dialect</a><ul><li><a href="#dialect-settings" class="table-of-contents__link toc-highlight">Dialect Settings</a></li><li><a href="#separate-laser-on-command-for-focusing" class="table-of-contents__link toc-highlight">Separate Laser-On Command for Focusing</a></li></ul></li><li><a href="#template-placeholders" class="table-of-contents__link toc-highlight">Template Placeholders</a><ul><li><a href="#available-placeholders-by-template" class="table-of-contents__link toc-highlight">Available Placeholders by Template</a></li><li><a href="#placeholder-reference" class="table-of-contents__link toc-highlight">Placeholder Reference</a></li><li><a href="#tips" class="table-of-contents__link toc-highlight">Tips</a></li></ul></li><li><a href="#related-pages" class="table-of-contents__link toc-highlight">Related Pages</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

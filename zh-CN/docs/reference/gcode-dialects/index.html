@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.a82eb417.css">
-<script src="/zh-CN/assets/js/runtime~main.f798817c.js" defer="defer"></script>
-<script src="/zh-CN/assets/js/main.06af6c2c.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.1bb49e3e.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.d5d4b580.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -124,12 +124,258 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="独立的激光开启命令用于对焦">独立的激光开启命令用于对焦<a href="#独立的激光开启命令用于对焦" class="hash-link" aria-label="独立的激光开启命令用于对焦 的直接链接" title="独立的激光开启命令用于对焦 的直接链接" translate="no">​</a></h3>
 <p>某些方言支持配置单独的低功率激光开启命令，这对于对焦模式非常有用。这允许您使用与实际切割或雕刻时不同的命令来实现视觉&quot;激光笔&quot;行为。请查看您的方言设置页面以了解此选项。</p>
 <hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="模板占位符">模板占位符<a href="#模板占位符" class="hash-link" aria-label="模板占位符 的直接链接" title="模板占位符 的直接链接" translate="no">​</a></h2>
+<p>创建或编辑自定义方言时，每个命令模板使用
+<a href="https://docs.python.org/3/library/string.html#format-string-syntax" target="_blank" rel="noopener noreferrer" class="">Python 格式化字符串</a>
+占位符来注入动态值。使用 <code>{name}</code> 或 <code>{name:.0f}</code> 语法（例如 <code>{power:.0f}</code>
+格式化为无小数的整数）。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="按模板可用的占位符">按模板可用的占位符<a href="#按模板可用的占位符" class="hash-link" aria-label="按模板可用的占位符 的直接链接" title="按模板可用的占位符 的直接链接" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>模板</th><th>占位符</th></tr></thead><tbody><tr><td><strong>激光开启</strong></td><td><code>power</code></td></tr><tr><td><strong>对焦激光</strong></td><td><code>power</code></td></tr><tr><td><strong>激光关闭</strong></td><td><em>（无）</em></td></tr><tr><td><strong>换刀</strong></td><td><code>tool_number</code></td></tr><tr><td><strong>设置速度</strong></td><td><code>speed</code></td></tr><tr><td><strong>快速移动</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code></td></tr><tr><td><strong>直线移动</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code>, <code>i</code>, <code>j</code>, <code>power</code></td></tr><tr><td><strong>圆弧（顺时针）</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code>, <code>i</code>, <code>j</code>, <code>power</code></td></tr><tr><td><strong>圆弧（逆时针）</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code>, <code>i</code>, <code>j</code>, <code>power</code></td></tr><tr><td><strong>贝塞尔三次</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code>, <code>i</code>, <code>j</code>, <code>p</code>, <code>q</code>, <code>power</code></td></tr><tr><td><strong>气泵开关</strong></td><td><em>（无）</em></td></tr><tr><td><strong>全部归零</strong></td><td><em>（无）</em></td></tr><tr><td><strong>轴归零</strong></td><td><code>axis_letter</code></td></tr><tr><td><strong>移动到</strong></td><td><code>speed</code>, <code>x</code>, <code>y</code>, <code>z</code></td></tr><tr><td><strong>点动</strong></td><td><code>speed</code></td></tr><tr><td><strong>清除报警</strong></td><td><em>（无）</em></td></tr><tr><td><strong>设置 WCS 偏移</strong></td><td><code>p_num</code>, <code>x</code>, <code>y</code>, <code>z</code></td></tr><tr><td><strong>探测循环</strong></td><td><code>axis_letter</code>, <code>max_travel</code>, <code>feed_rate</code></td></tr><tr><td><strong>暂停</strong></td><td><code>seconds</code>, <code>milliseconds</code></td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="占位符参考">占位符参考<a href="#占位符参考" class="hash-link" aria-label="占位符参考 的直接链接" title="占位符参考 的直接链接" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="坐标">坐标<a href="#坐标" class="hash-link" aria-label="坐标 的直接链接" title="坐标 的直接链接" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>占位符</th><th>描述</th></tr></thead><tbody><tr><td><code>x</code></td><td>目标 X 坐标，浮点数（例如 <code>100.0</code>）</td></tr><tr><td><code>y</code></td><td>目标 Y 坐标，浮点数（例如 <code>200.0</code>）</td></tr><tr><td><code>z</code></td><td>目标 Z 坐标，浮点数（例如 <code>5.0</code>）</td></tr><tr><td><code>x_cmd</code></td><td>X 轴命令字符串，例如 <code>&quot; X100.0&quot;</code>。未更改时省略（如果启用了&quot;省略未更改的坐标&quot;）</td></tr><tr><td><code>y_cmd</code></td><td>Y 轴命令字符串，例如 <code>&quot; Y200.0&quot;</code>。未更改时省略</td></tr><tr><td><code>z_cmd</code></td><td>Z 轴命令字符串，例如 <code>&quot; Z5.0&quot;</code>。未更改时省略</td></tr><tr><td><code>extra_cmd</code></td><td>附加轴命令字符串（A、B、C 轴），例如 <code>&quot; A90.0&quot;</code>。未配置附加轴时为空</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="运动">运动<a href="#运动" class="hash-link" aria-label="运动 的直接链接" title="运动 的直接链接" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>占位符</th><th>描述</th></tr></thead><tbody><tr><td><code>f_command</code></td><td>进给速率命令字符串，例如 <code>&quot; F3000&quot;</code>。模态且未更改时省略</td></tr><tr><td><code>s_command</code></td><td>主轴/功率命令字符串，例如 <code>&quot; S500&quot;</code>。用于动态/光栅模式和连续激光模式</td></tr><tr><td><code>i</code></td><td>圆弧或贝塞尔控制点相对于起点的 X 偏移</td></tr><tr><td><code>j</code></td><td>圆弧或贝塞尔控制点相对于起点的 Y 偏移</td></tr><tr><td><code>p</code></td><td>第二个贝塞尔控制点相对于终点的 X 偏移（仅贝塞尔三次）</td></tr><tr><td><code>q</code></td><td>第二个贝塞尔控制点相对于终点的 Y 偏移（仅贝塞尔三次）</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="功率和速度">功率和速度<a href="#功率和速度" class="hash-link" aria-label="功率和速度 的直接链接" title="功率和速度 的直接链接" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>占位符</th><th>描述</th></tr></thead><tbody><tr><td><code>power</code></td><td>激光绝对功率值，浮点数。支持格式化，例如 <code>{power:.0f}</code> 为整数</td></tr><tr><td><code>speed</code></td><td>速度值（用于移动到和点动命令）</td></tr><tr><td><code>tool_number</code></td><td>刀具/激光头编号</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="机器和探测">机器和探测<a href="#机器和探测" class="hash-link" aria-label="机器和探测 的直接链接" title="机器和探测 的直接链接" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>占位符</th><th>描述</th></tr></thead><tbody><tr><td><code>axis_letter</code></td><td>单个轴字母，例如 <code>&quot;X&quot;</code>、<code>&quot;Y&quot;</code>、<code>&quot;Z&quot;</code>（用于轴归零和探测）</td></tr><tr><td><code>p_num</code></td><td>WCS P 编号（例如 <code>1</code> 代表 G54）</td></tr><tr><td><code>max_travel</code></td><td>最大探测行程距离（仅探测循环）</td></tr><tr><td><code>feed_rate</code></td><td>探测进给速率（仅探测循环）</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="暂停">暂停<a href="#暂停" class="hash-link" aria-label="暂停 的直接链接" title="暂停 的直接链接" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>占位符</th><th>描述</th></tr></thead><tbody><tr><td><code>seconds</code></td><td>暂停持续时间（秒），浮点数（例如 <code>1.5</code>）</td></tr><tr><td><code>milliseconds</code></td><td>暂停持续时间（毫秒），整数（例如 <code>1500</code>）</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="提示">提示<a href="#提示" class="hash-link" aria-label="提示 的直接链接" title="提示 的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">支持<strong>格式规范</strong>：<code>{power:.0f}</code> 将功率格式化为整数，<code>{power:.2f}</code> 为两位小数。</li>
+<li class="">**&quot;省略未更改的坐标&quot;**设置控制当轴位置自上次命令以来未更改时，<code>x_cmd</code>、<code>y_cmd</code>
+和 <code>z_cmd</code> 是否留空。这会减小 G 代码的大小。</li>
+<li class="">**&quot;模态进给速率&quot;**设置控制当进给速率未更改时是否省略 <code>f_command</code>。</li>
+<li class="">将模板字段留<strong>空</strong>可完全跳过该命令（例如，将 <code>bezier_cubic</code> 设为 <code>&quot;&quot;</code>
+可禁用原生贝塞尔输出，改用线性化）。</li>
+</ul>
+<hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="相关页面">相关页面<a href="#相关页面" class="hash-link" aria-label="相关页面 的直接链接" title="相关页面 的直接链接" translate="no">​</a></h2>
 <ul>
 <li class=""><a class="" href="/zh-CN/docs/files/exporting">导出 G 代码</a> - 导出设置</li>
 <li class=""><a class="" href="/zh-CN/docs/reference/firmware">固件兼容性</a> - 固件版本</li>
 <li class=""><a class="" href="/zh-CN/docs/machine/device">设备设置</a> - GRBL 配置</li>
 <li class=""><a class="" href="/zh-CN/docs/machine/hooks-macros">宏和钩子</a> - 自定义 G 代码注入</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/reference/gcode-dialects.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>编辑此页</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文档页面导航"><a class="pagination-nav__link pagination-nav__link--prev" href="/zh-CN/docs/reference/shortcuts"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">键盘快捷键</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/zh-CN/docs/reference/firmware"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">固件兼容性</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#支持的方言" class="table-of-contents__link toc-highlight">支持的方言</a></li><li><a href="#mach4m67-模拟" class="table-of-contents__link toc-highlight">Mach4（M67 模拟）</a><ul><li><a href="#主要特性" class="table-of-contents__link toc-highlight">主要特性</a></li><li><a href="#何时使用" class="table-of-contents__link toc-highlight">何时使用</a></li><li><a href="#命令格式" class="table-of-contents__link toc-highlight">命令格式</a></li></ul></li><li><a href="#创建自定义方言" class="table-of-contents__link toc-highlight">创建自定义方言</a><ul><li><a href="#方言设置" class="table-of-contents__link toc-highlight">方言设置</a></li><li><a href="#独立的激光开启命令用于对焦" class="table-of-contents__link toc-highlight">独立的激光开启命令用于对焦</a></li></ul></li><li><a href="#相关页面" class="table-of-contents__link toc-highlight">相关页面</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/reference/gcode-dialects.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>编辑此页</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文档页面导航"><a class="pagination-nav__link pagination-nav__link--prev" href="/zh-CN/docs/reference/shortcuts"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">键盘快捷键</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/zh-CN/docs/reference/firmware"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">固件兼容性</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#支持的方言" class="table-of-contents__link toc-highlight">支持的方言</a></li><li><a href="#mach4m67-模拟" class="table-of-contents__link toc-highlight">Mach4（M67 模拟）</a><ul><li><a href="#主要特性" class="table-of-contents__link toc-highlight">主要特性</a></li><li><a href="#何时使用" class="table-of-contents__link toc-highlight">何时使用</a></li><li><a href="#命令格式" class="table-of-contents__link toc-highlight">命令格式</a></li></ul></li><li><a href="#创建自定义方言" class="table-of-contents__link toc-highlight">创建自定义方言</a><ul><li><a href="#方言设置" class="table-of-contents__link toc-highlight">方言设置</a></li><li><a href="#独立的激光开启命令用于对焦" class="table-of-contents__link toc-highlight">独立的激光开启命令用于对焦</a></li></ul></li><li><a href="#模板占位符" class="table-of-contents__link toc-highlight">模板占位符</a><ul><li><a href="#按模板可用的占位符" class="table-of-contents__link toc-highlight">按模板可用的占位符</a></li><li><a href="#占位符参考" class="table-of-contents__link toc-highlight">占位符参考</a></li><li><a href="#提示" class="table-of-contents__link toc-highlight">提示</a></li></ul></li><li><a href="#相关页面" class="table-of-contents__link toc-highlight">相关页面</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

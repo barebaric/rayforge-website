@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/pt-BR/assets/css/styles.73ffe6d9.css">
-<script src="/pt-BR/assets/js/runtime~main.cd6d26ba.js" defer="defer"></script>
-<script src="/pt-BR/assets/js/main.b67ef083.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/runtime~main.9b644c9a.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/main.e2917399.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -153,12 +153,262 @@ um comando diferente para o comportamento visual de &quot;ponteiro laser&quot; d
 usado durante o corte ou gravação real. Verifique a página de configurações do
 seu dialeto para esta opção.</p>
 <hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="espaços-reservados-de-modelos">Espaços Reservados de Modelos<a href="#espaços-reservados-de-modelos" class="hash-link" aria-label="Link direto para Espaços Reservados de Modelos" title="Link direto para Espaços Reservados de Modelos" translate="no">​</a></h2>
+<p>Ao criar ou editar um dialeto personalizado, cada modelo de comando utiliza
+<a href="https://docs.python.org/3/library/string.html#format-string-syntax" target="_blank" rel="noopener noreferrer" class="">strings de formatação do Python</a>
+com espaços reservados para injetar valores dinâmicos. Use a sintaxe <code>{nome}</code>
+ou <code>{nome:.0f}</code> (ex., <code>{power:.0f}</code> para formatar como inteiro sem decimais).</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="espaços-reservados-disponíveis-por-modelo">Espaços Reservados Disponíveis por Modelo<a href="#espaços-reservados-disponíveis-por-modelo" class="hash-link" aria-label="Link direto para Espaços Reservados Disponíveis por Modelo" title="Link direto para Espaços Reservados Disponíveis por Modelo" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Modelo</th><th>Espaços Reservados</th></tr></thead><tbody><tr><td><strong>Laser Ligado</strong></td><td><code>power</code></td></tr><tr><td><strong>Laser Foco</strong></td><td><code>power</code></td></tr><tr><td><strong>Laser Desligado</strong></td><td><em>(nenhum)</em></td></tr><tr><td><strong>Troca Ferram.</strong></td><td><code>tool_number</code></td></tr><tr><td><strong>Ajustar Vel.</strong></td><td><code>speed</code></td></tr><tr><td><strong>Mov. Rápido</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code></td></tr><tr><td><strong>Mov. Linear</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code>, <code>i</code>, <code>j</code>, <code>power</code></td></tr><tr><td><strong>Arco (CW)</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code>, <code>i</code>, <code>j</code>, <code>power</code></td></tr><tr><td><strong>Arco (CCW)</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code>, <code>i</code>, <code>j</code>, <code>power</code></td></tr><tr><td><strong>Bézier Cúbico</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code>, <code>i</code>, <code>j</code>, <code>p</code>, <code>q</code>, <code>power</code></td></tr><tr><td><strong>Ar On/Off</strong></td><td><em>(nenhum)</em></td></tr><tr><td><strong>Origem Todos</strong></td><td><em>(nenhum)</em></td></tr><tr><td><strong>Origem Eixo</strong></td><td><code>axis_letter</code></td></tr><tr><td><strong>Mover Para</strong></td><td><code>speed</code>, <code>x</code>, <code>y</code>, <code>z</code></td></tr><tr><td><strong>Jog</strong></td><td><code>speed</code></td></tr><tr><td><strong>Limpar Alarme</strong></td><td><em>(nenhum)</em></td></tr><tr><td><strong>Ajuste WCS</strong></td><td><code>p_num</code>, <code>x</code>, <code>y</code>, <code>z</code></td></tr><tr><td><strong>Ciclo de Sondagem</strong></td><td><code>axis_letter</code>, <code>max_travel</code>, <code>feed_rate</code></td></tr><tr><td><strong>Espera</strong></td><td><code>seconds</code>, <code>milliseconds</code></td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="referência-dos-espaços-reservados">Referência dos Espaços Reservados<a href="#referência-dos-espaços-reservados" class="hash-link" aria-label="Link direto para Referência dos Espaços Reservados" title="Link direto para Referência dos Espaços Reservados" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="coordenadas">Coordenadas<a href="#coordenadas" class="hash-link" aria-label="Link direto para Coordenadas" title="Link direto para Coordenadas" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Espaço Reservado</th><th>Descrição</th></tr></thead><tbody><tr><td><code>x</code></td><td>Coordenada X alvo como float (ex., <code>100.0</code>)</td></tr><tr><td><code>y</code></td><td>Coordenada Y alvo como float (ex., <code>200.0</code>)</td></tr><tr><td><code>z</code></td><td>Coordenada Z alvo como float (ex., <code>5.0</code>)</td></tr><tr><td><code>x_cmd</code></td><td>String de comando do eixo X, ex., <code>&quot; X100.0&quot;</code>. Omitido se inalterado (se &quot;Omitir coordenadas inalteradas&quot; estiver ativo)</td></tr><tr><td><code>y_cmd</code></td><td>String de comando do eixo Y, ex., <code>&quot; Y200.0&quot;</code>. Omitido se inalterado</td></tr><tr><td><code>z_cmd</code></td><td>String de comando do eixo Z, ex., <code>&quot; Z5.0&quot;</code>. Omitido se inalterado</td></tr><tr><td><code>extra_cmd</code></td><td>String de comando para eixos extras (A, B, C), ex., <code>&quot; A90.0&quot;</code>. Vazio se nenhum eixo extra estiver configurado</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="movimento">Movimento<a href="#movimento" class="hash-link" aria-label="Link direto para Movimento" title="Link direto para Movimento" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Espaço Reservado</th><th>Descrição</th></tr></thead><tbody><tr><td><code>f_command</code></td><td>String de comando de taxa de avanço, ex., <code>&quot; F3000&quot;</code>. Omitido se modal e inalterado</td></tr><tr><td><code>s_command</code></td><td>String de comando de spindle/potência, ex., <code>&quot; S500&quot;</code>. Usado nos modos dinâmico/raster e em modo laser contínuo</td></tr><tr><td><code>i</code></td><td>Deslocamento X do ponto de controle do arco ou Bézier a partir da posição inicial</td></tr><tr><td><code>j</code></td><td>Deslocamento Y do ponto de controle do arco ou Bézier a partir da posição inicial</td></tr><tr><td><code>p</code></td><td>Deslocamento X do segundo ponto de controle Bézier a partir da posição final (apenas Bézier Cúbico)</td></tr><tr><td><code>q</code></td><td>Deslocamento Y do segundo ponto de controle Bézier a partir da posição final (apenas Bézier Cúbico)</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="potência-e-velocidade">Potência e velocidade<a href="#potência-e-velocidade" class="hash-link" aria-label="Link direto para Potência e velocidade" title="Link direto para Potência e velocidade" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Espaço Reservado</th><th>Descrição</th></tr></thead><tbody><tr><td><code>power</code></td><td>Valor absoluto de potência do laser como float. Suporta formatação, ex., <code>{power:.0f}</code> para inteiros</td></tr><tr><td><code>speed</code></td><td>Valor de velocidade (para comandos Mover Para e Jog)</td></tr><tr><td><code>tool_number</code></td><td>Número da ferramenta/cabeça do laser</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="máquina-e-sondagem">Máquina e Sondagem<a href="#máquina-e-sondagem" class="hash-link" aria-label="Link direto para Máquina e Sondagem" title="Link direto para Máquina e Sondagem" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Espaço Reservado</th><th>Descrição</th></tr></thead><tbody><tr><td><code>axis_letter</code></td><td>Letra do eixo única, ex., <code>&quot;X&quot;</code>, <code>&quot;Y&quot;</code>, <code>&quot;Z&quot;</code> (para Origem Eixo e Sondagem)</td></tr><tr><td><code>p_num</code></td><td>Número P do WCS (ex., <code>1</code> para G54)</td></tr><tr><td><code>max_travel</code></td><td>Distância máxima de deslocamento da sonda (apenas Ciclo de Sondagem)</td></tr><tr><td><code>feed_rate</code></td><td>Taxa de avanço da sonda (apenas Ciclo de Sondagem)</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="espera">Espera<a href="#espera" class="hash-link" aria-label="Link direto para Espera" title="Link direto para Espera" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Espaço Reservado</th><th>Descrição</th></tr></thead><tbody><tr><td><code>seconds</code></td><td>Duração da espera em segundos como float (ex., <code>1.5</code>)</td></tr><tr><td><code>milliseconds</code></td><td>Duração da espera em milissegundos como inteiro (ex., <code>1500</code>)</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dicas">Dicas<a href="#dicas" class="hash-link" aria-label="Link direto para Dicas" title="Link direto para Dicas" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Especificações de formatação</strong> são suportadas: <code>{power:.0f}</code> formata a potência como
+inteiro, <code>{power:.2f}</code> com duas casas decimais.</li>
+<li class="">A configuração <strong>«Omitir coordenadas inalteradas»</strong> controla se <code>x_cmd</code>, <code>y_cmd</code>
+e <code>z_cmd</code> ficam vazios quando a posição do eixo não mudou desde o último comando.
+Isso reduz o tamanho do G-code.</li>
+<li class="">A configuração <strong>«Taxa de Avanço Modal»</strong> controla se <code>f_command</code> é omitida quando
+a taxa de avanço não mudou.</li>
+<li class="">Deixe um campo de modelo <strong>vazio</strong> para pular esse comando completamente
+(ex., definir <code>bezier_cubic</code> como <code>&quot;&quot;</code> desativa a saída Bézier nativa e usa
+linearização como alternativa).</li>
+</ul>
+<hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="páginas-relacionadas">Páginas Relacionadas<a href="#páginas-relacionadas" class="hash-link" aria-label="Link direto para Páginas Relacionadas" title="Link direto para Páginas Relacionadas" translate="no">​</a></h2>
 <ul>
 <li class=""><a class="" href="/pt-BR/docs/files/exporting">Exportando G-code</a> - Configurações de exportação</li>
 <li class=""><a class="" href="/pt-BR/docs/reference/firmware">Compatibilidade de Firmware</a> - Versões de firmware</li>
 <li class=""><a class="" href="/pt-BR/docs/machine/device">Configurações de Dispositivo</a> - Configuração GRBL</li>
 <li class=""><a class="" href="/pt-BR/docs/machine/hooks-macros">Macros &amp; Hooks</a> - Injeção de G-code personalizado</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/reference/gcode-dialects.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Páginas de documentação"><a class="pagination-nav__link pagination-nav__link--prev" href="/pt-BR/docs/reference/shortcuts"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Atalhos de Teclado</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/pt-BR/docs/reference/firmware"><div class="pagination-nav__sublabel">Próximo</div><div class="pagination-nav__label">Compatibilidade de Firmware</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#dialetos-suportados" class="table-of-contents__link toc-highlight">Dialetos Suportados</a></li><li><a href="#mach4-m67-analog" class="table-of-contents__link toc-highlight">Mach4 (M67 Analog)</a><ul><li><a href="#recursos-principais" class="table-of-contents__link toc-highlight">Recursos Principais</a></li><li><a href="#quando-usar" class="table-of-contents__link toc-highlight">Quando Usar</a></li><li><a href="#formato-de-comando" class="table-of-contents__link toc-highlight">Formato de Comando</a></li></ul></li><li><a href="#criando-um-dialeto-personalizado" class="table-of-contents__link toc-highlight">Criando um Dialeto Personalizado</a><ul><li><a href="#configurações-do-dialeto" class="table-of-contents__link toc-highlight">Configurações do Dialeto</a></li><li><a href="#comando-separado-de-ativação-do-laser-para-focagem" class="table-of-contents__link toc-highlight">Comando Separado de Ativação do Laser para Focagem</a></li></ul></li><li><a href="#páginas-relacionadas" class="table-of-contents__link toc-highlight">Páginas Relacionadas</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/reference/gcode-dialects.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Páginas de documentação"><a class="pagination-nav__link pagination-nav__link--prev" href="/pt-BR/docs/reference/shortcuts"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Atalhos de Teclado</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/pt-BR/docs/reference/firmware"><div class="pagination-nav__sublabel">Próximo</div><div class="pagination-nav__label">Compatibilidade de Firmware</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#dialetos-suportados" class="table-of-contents__link toc-highlight">Dialetos Suportados</a></li><li><a href="#mach4-m67-analog" class="table-of-contents__link toc-highlight">Mach4 (M67 Analog)</a><ul><li><a href="#recursos-principais" class="table-of-contents__link toc-highlight">Recursos Principais</a></li><li><a href="#quando-usar" class="table-of-contents__link toc-highlight">Quando Usar</a></li><li><a href="#formato-de-comando" class="table-of-contents__link toc-highlight">Formato de Comando</a></li></ul></li><li><a href="#criando-um-dialeto-personalizado" class="table-of-contents__link toc-highlight">Criando um Dialeto Personalizado</a><ul><li><a href="#configurações-do-dialeto" class="table-of-contents__link toc-highlight">Configurações do Dialeto</a></li><li><a href="#comando-separado-de-ativação-do-laser-para-focagem" class="table-of-contents__link toc-highlight">Comando Separado de Ativação do Laser para Focagem</a></li></ul></li><li><a href="#espaços-reservados-de-modelos" class="table-of-contents__link toc-highlight">Espaços Reservados de Modelos</a><ul><li><a href="#espaços-reservados-disponíveis-por-modelo" class="table-of-contents__link toc-highlight">Espaços Reservados Disponíveis por Modelo</a></li><li><a href="#referência-dos-espaços-reservados" class="table-of-contents__link toc-highlight">Referência dos Espaços Reservados</a></li><li><a href="#dicas" class="table-of-contents__link toc-highlight">Dicas</a></li></ul></li><li><a href="#páginas-relacionadas" class="table-of-contents__link toc-highlight">Páginas Relacionadas</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>
