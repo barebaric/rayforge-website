@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.1">
-<title data-rh="true">Architecture du pipeline | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" property="og:url" content="https://rayforge.org/fr/docs/developer/pipeline"><meta data-rh="true" property="og:locale" content="fr"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="pt_BR"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="de"><meta data-rh="true" property="og:locale:alternate" content="zh_CN"><meta data-rh="true" property="og:locale:alternate" content="uk"><meta data-rh="true" name="docusaurus_locale" content="fr"><meta data-rh="true" name="docsearch:language" content="fr"><meta data-rh="true" name="keywords" content="laser cutter software, laser engraving software, LightBurn alternative, free laser software, open source laser software, GRBL, laser cutting software, laser control software, G-code sender, Rayforge"><meta data-rh="true" name="author" content="Rayforge Contributors"><meta data-rh="true" name="robots" content="index, follow"><meta data-rh="true" property="og:type" content="website"><meta data-rh="true" property="og:site_name" content="Rayforge"><meta data-rh="true" property="og:image" content="https://rayforge.org/images/social.png"><meta data-rh="true" property="og:image:width" content="1200"><meta data-rh="true" property="og:image:height" content="630"><meta data-rh="true" property="og:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" name="twitter:title" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:description" content="The complete creative studio for your laser cutter. Design, simulate, and control — with AI-powered tools, 3D preview, and a built-in sketcher."><meta data-rh="true" name="twitter:image" content="https://rayforge.org/images/social.png"><meta data-rh="true" name="twitter:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Architecture du pipeline | Rayforge"><meta data-rh="true" name="description" content="Le pipeline de traitement Rayforge - comment les conceptions passent de l&#x27;importation aux opérations jusqu&#x27;à la génération de G-code."><meta data-rh="true" property="og:description" content="Le pipeline de traitement Rayforge - comment les conceptions passent de l&#x27;importation aux opérations jusqu&#x27;à la génération de G-code."><link data-rh="true" rel="icon" href="/fr/images/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/fr/docs/developer/pipeline"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/developer/pipeline" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/pt-BR/docs/developer/pipeline" hreflang="pt-BR"><link data-rh="true" rel="alternate" href="https://rayforge.org/es/docs/developer/pipeline" hreflang="es"><link data-rh="true" rel="alternate" href="https://rayforge.org/fr/docs/developer/pipeline" hreflang="fr"><link data-rh="true" rel="alternate" href="https://rayforge.org/de/docs/developer/pipeline" hreflang="de"><link data-rh="true" rel="alternate" href="https://rayforge.org/zh-CN/docs/developer/pipeline" hreflang="zh-CN"><link data-rh="true" rel="alternate" href="https://rayforge.org/uk/docs/developer/pipeline" hreflang="uk"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/developer/pipeline" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Architecture du pipeline","item":"https://rayforge.org/fr/docs/developer/pipeline"}]}</script><link rel="alternate" type="application/rss+xml" href="/fr/blog/rss.xml" title="Rayforge RSS Feed">
+<title data-rh="true">Architecture du Pipeline | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" property="og:url" content="https://rayforge.org/fr/docs/developer/pipeline"><meta data-rh="true" property="og:locale" content="fr"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="pt_BR"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="de"><meta data-rh="true" property="og:locale:alternate" content="zh_CN"><meta data-rh="true" property="og:locale:alternate" content="uk"><meta data-rh="true" name="docusaurus_locale" content="fr"><meta data-rh="true" name="docsearch:language" content="fr"><meta data-rh="true" name="keywords" content="laser cutter software, laser engraving software, LightBurn alternative, free laser software, open source laser software, GRBL, laser cutting software, laser control software, G-code sender, Rayforge"><meta data-rh="true" name="author" content="Rayforge Contributors"><meta data-rh="true" name="robots" content="index, follow"><meta data-rh="true" property="og:type" content="website"><meta data-rh="true" property="og:site_name" content="Rayforge"><meta data-rh="true" property="og:image" content="https://rayforge.org/images/social.png"><meta data-rh="true" property="og:image:width" content="1200"><meta data-rh="true" property="og:image:height" content="630"><meta data-rh="true" property="og:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" name="twitter:title" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:description" content="The complete creative studio for your laser cutter. Design, simulate, and control — with AI-powered tools, 3D preview, and a built-in sketcher."><meta data-rh="true" name="twitter:image" content="https://rayforge.org/images/social.png"><meta data-rh="true" name="twitter:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Architecture du Pipeline | Rayforge"><meta data-rh="true" name="description" content="Le pipeline d&#x27;intentions de Rayforge – comment les conceptions passent du modèle Doc via les intentions raygeo jusqu&#x27;à la génération de G-code."><meta data-rh="true" property="og:description" content="Le pipeline d&#x27;intentions de Rayforge – comment les conceptions passent du modèle Doc via les intentions raygeo jusqu&#x27;à la génération de G-code."><link data-rh="true" rel="icon" href="/fr/images/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/fr/docs/developer/pipeline"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/developer/pipeline" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/pt-BR/docs/developer/pipeline" hreflang="pt-BR"><link data-rh="true" rel="alternate" href="https://rayforge.org/es/docs/developer/pipeline" hreflang="es"><link data-rh="true" rel="alternate" href="https://rayforge.org/fr/docs/developer/pipeline" hreflang="fr"><link data-rh="true" rel="alternate" href="https://rayforge.org/de/docs/developer/pipeline" hreflang="de"><link data-rh="true" rel="alternate" href="https://rayforge.org/zh-CN/docs/developer/pipeline" hreflang="zh-CN"><link data-rh="true" rel="alternate" href="https://rayforge.org/uk/docs/developer/pipeline" hreflang="uk"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/developer/pipeline" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Architecture du Pipeline","item":"https://rayforge.org/fr/docs/developer/pipeline"}]}</script><link rel="alternate" type="application/rss+xml" href="/fr/blog/rss.xml" title="Rayforge RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/fr/blog/atom.xml" title="Rayforge Atom Feed">
 
 
@@ -16,37 +16,38 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/fr/assets/css/styles.faf0fd32.css">
-<script src="/fr/assets/js/runtime~main.acd9ca19.js" defer="defer"></script>
-<script src="/fr/assets/js/main.9085ca02.js" defer="defer"></script>
+<script src="/fr/assets/js/runtime~main.b023b2dc.js" defer="defer"></script>
+<script src="/fr/assets/js/main.2d193f38.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
 <symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
-<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Aller au contenu principal"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Aller au contenu principal</a></div><nav aria-label="Navigation principale" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Basculer la barre de navigation" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/fr/"><div class="navbar__logo"><img src="/fr/images/icon.svg" alt="Logo Rayforge" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/fr/images/icon.svg" alt="Logo Rayforge" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Rayforge</b></a><a class="navbar__item navbar__link" href="/fr/docs/getting-started/installation">Documentation</a><a class="navbar__item navbar__link" href="/fr/resources/devices">Appareils</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/fr/docs/developer/getting-started/">Développeur</a><a class="navbar__item navbar__link" href="/fr/contributing">Contribuer</a><a class="navbar__item navbar__link" href="/fr/sponsor">Sponsor</a><a class="navbar__item navbar__link" href="/fr/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>Français</a><ul class="dropdown__menu"><li><a href="/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="en">English</a></li><li><a href="/pt-BR/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="pt-BR">Português (Brasil)</a></li><li><a href="/es/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="es">Español</a></li><li><a href="/fr/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="fr">Français</a></li><li><a href="/de/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="de">Deutsch</a></li><li><a href="/zh-CN/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="zh-CN">中文（中国）</a></li><li><a href="/uk/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="uk">Українська</a></li></ul></div><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="patreonLink_HbXT"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" class="patreonImg_dUDi"></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Mode système" aria-label="Basculer entre le mode sombre et clair (actuellement Mode système)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div class="floatingLinks_ekMW"><a class="floatingLink_seiz" href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" aria-label="Rayforge on GitHub" title="GitHub"><img class="floatingIcon_OM1j" src="https://cdn.simpleicons.org/github/000000" alt="" width="20" height="20" loading="lazy"></a><a class="floatingLink_seiz" href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" aria-label="Join Rayforge on Discord" title="Discord"><img class="floatingIcon_OM1j" src="https://cdn.simpleicons.org/discord/000000" alt="" width="20" height="20" loading="lazy"></a><a class="floatingLink_seiz" href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" aria-label="Support Rayforge on Patreon" title="Patreon"><img class="floatingIcon_OM1j floatingIconPatreon_HIKb" src="https://cdn.simpleicons.org/patreon/FF424D" alt="" width="20" height="20" loading="lazy"></a></div><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Retour en haut" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><div class="sidebarSearch_pOTk"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div><nav aria-label="Barre latérale de documentation" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/fr/docs/developer/getting-started/"><span title="Démarrage" class="categoryLinkLabel_W154">Démarrage</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/developer/getting-started/"><span title="Obtenir le code" class="linkLabel_WmDU">Obtenir le code</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/developer/getting-started/setup"><span title="Configuration" class="linkLabel_WmDU">Configuration</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/developer/getting-started/submitting-changes"><span title="Soumettre des changements" class="linkLabel_WmDU">Soumettre des changements</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/fr/docs/developer/architecture"><span title="Architecture" class="categoryLinkLabel_W154">Architecture</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/developer/architecture"><span title="Architecture de Rayforge" class="linkLabel_WmDU">Architecture de Rayforge</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/developer/docmodel"><span title="Architecture du modèle de document" class="linkLabel_WmDU">Architecture du modèle de document</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/developer/importer"><span title="Architecture de l&#x27;importateur" class="linkLabel_WmDU">Architecture de l&#x27;importateur</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/fr/docs/developer/pipeline"><span title="Architecture du pipeline" class="linkLabel_WmDU">Architecture du pipeline</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/developer/tasker"><span title="Tasker : Gestion des tâches en arrière-plan" class="linkLabel_WmDU">Tasker : Gestion des tâches en arrière-plan</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/developer/driver"><span title="Guide de développement de pilote" class="linkLabel_WmDU">Guide de développement de pilote</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/fr/docs/developer/addon-overview"><span title="Addon Development" class="categoryLinkLabel_W154">Addon Development</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/fr/docs/developer/raygeo-api/raygeo"><span title="RayGeo API Reference" class="categoryLinkLabel_W154">RayGeo API Reference</span></a><button aria-label="Développer la catégorie &#x27;RayGeo API Reference&#x27; de la barre latérale" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Fil d&#x27;Ariane"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Accueil" class="breadcrumbs__link" href="/fr/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Architecture</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Architecture du pipeline</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">Sur cette page</button></div><div class="theme-doc-markdown markdown"><header><h1>Architecture du pipeline</h1></header>
-<p>Ce document décrit l&#x27;architecture du pipeline, qui utilise un Graphe Orienté Acyclique
-(DAG) pour orchestrer la génération d&#x27;artefacts. Le pipeline transforme les données de
-conception brutes en sorties finales pour la visualisation et la fabrication, avec
-une planification sensible aux dépendances et une mise en cache efficace des artefacts.</p>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Aller au contenu principal"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Aller au contenu principal</a></div><nav aria-label="Navigation principale" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Basculer la barre de navigation" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/fr/"><div class="navbar__logo"><img src="/fr/images/icon.svg" alt="Logo Rayforge" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/fr/images/icon.svg" alt="Logo Rayforge" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Rayforge</b></a><a class="navbar__item navbar__link" href="/fr/docs/getting-started/installation">Documentation</a><a class="navbar__item navbar__link" href="/fr/resources/devices">Appareils</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/fr/docs/developer/getting-started/">Développeur</a><a class="navbar__item navbar__link" href="/fr/contributing">Contribuer</a><a class="navbar__item navbar__link" href="/fr/sponsor">Sponsor</a><a class="navbar__item navbar__link" href="/fr/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>Français</a><ul class="dropdown__menu"><li><a href="/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="en">English</a></li><li><a href="/pt-BR/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="pt-BR">Português (Brasil)</a></li><li><a href="/es/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="es">Español</a></li><li><a href="/fr/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="fr">Français</a></li><li><a href="/de/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="de">Deutsch</a></li><li><a href="/zh-CN/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="zh-CN">中文（中国）</a></li><li><a href="/uk/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="uk">Українська</a></li></ul></div><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="patreonLink_HbXT"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" class="patreonImg_dUDi"></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Mode système" aria-label="Basculer entre le mode sombre et clair (actuellement Mode système)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div class="floatingLinks_ekMW"><a class="floatingLink_seiz" href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" aria-label="Rayforge on GitHub" title="GitHub"><img class="floatingIcon_OM1j" src="https://cdn.simpleicons.org/github/000000" alt="" width="20" height="20" loading="lazy"></a><a class="floatingLink_seiz" href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" aria-label="Join Rayforge on Discord" title="Discord"><img class="floatingIcon_OM1j" src="https://cdn.simpleicons.org/discord/000000" alt="" width="20" height="20" loading="lazy"></a><a class="floatingLink_seiz" href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" aria-label="Support Rayforge on Patreon" title="Patreon"><img class="floatingIcon_OM1j floatingIconPatreon_HIKb" src="https://cdn.simpleicons.org/patreon/FF424D" alt="" width="20" height="20" loading="lazy"></a></div><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Retour en haut" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><div class="sidebarSearch_pOTk"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div><nav aria-label="Barre latérale de documentation" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/fr/docs/developer/getting-started/"><span title="Démarrage" class="categoryLinkLabel_W154">Démarrage</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/developer/getting-started/"><span title="Obtenir le code" class="linkLabel_WmDU">Obtenir le code</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/developer/getting-started/setup"><span title="Configuration" class="linkLabel_WmDU">Configuration</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/developer/getting-started/submitting-changes"><span title="Soumettre des changements" class="linkLabel_WmDU">Soumettre des changements</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/fr/docs/developer/architecture"><span title="Architecture" class="categoryLinkLabel_W154">Architecture</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/developer/architecture"><span title="Architecture de Rayforge" class="linkLabel_WmDU">Architecture de Rayforge</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/developer/docmodel"><span title="Architecture du modèle de document" class="linkLabel_WmDU">Architecture du modèle de document</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/developer/importer"><span title="Architecture de l&#x27;importateur" class="linkLabel_WmDU">Architecture de l&#x27;importateur</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/fr/docs/developer/pipeline"><span title="Architecture du Pipeline" class="linkLabel_WmDU">Architecture du Pipeline</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/developer/tasker"><span title="Tasker : Gestion des tâches en arrière-plan" class="linkLabel_WmDU">Tasker : Gestion des tâches en arrière-plan</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/fr/docs/developer/driver"><span title="Guide de développement de pilote" class="linkLabel_WmDU">Guide de développement de pilote</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/fr/docs/developer/addon-overview"><span title="Addon Development" class="categoryLinkLabel_W154">Addon Development</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/fr/docs/developer/raygeo-api/raygeo"><span title="RayGeo API Reference" class="categoryLinkLabel_W154">RayGeo API Reference</span></a><button aria-label="Développer la catégorie &#x27;RayGeo API Reference&#x27; de la barre latérale" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Fil d&#x27;Ariane"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Accueil" class="breadcrumbs__link" href="/fr/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Architecture</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Architecture du Pipeline</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">Sur cette page</button></div><div class="theme-doc-markdown markdown"><header><h1>Architecture du Pipeline</h1></header>
+<p>Ce document décrit le pipeline qui transforme un modèle <code>Doc</code> en
+G-code exécutable par une machine. Depuis la réécriture 1.9.0, le
+pipeline est construit sur les <strong>intentions raygeo</strong> : une description
+déclarative du travail que le côté Rust doit effectuer, couplée à une
+fine couche d&#x27;orchestration Python et un magasin d&#x27;artefacts en
+processus avec comptage de références.</p>
+<p>L&#x27;ancien DAG multiprocessus (<code>DagScheduler</code>, <code>PipelineGraph</code>,
+<code>ArtifactManager</code>, <code>GenerationContext</code>, <code>WorkPiecePipelineStage</code>) a
+été supprimé. Ce document décrit uniquement l&#x27;architecture active.</p>
 <!-- -->
-<h1>Concepts de base</h1>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="nœuds-dartefacts-et-graphe-de-dépendances">Nœuds d&#x27;artefacts et graphe de dépendances<a href="#nœuds-dartefacts-et-graphe-de-dépendances" class="hash-link" aria-label="Lien direct vers Nœuds d&#x27;artefacts et graphe de dépendances" title="Lien direct vers Nœuds d&#x27;artefacts et graphe de dépendances" translate="no">​</a></h2>
-<p>Le pipeline utilise un <strong>Graphe Orienté Acyclique (DAG)</strong> pour modéliser les artefacts et
-leurs dépendances. Chaque artefact est représenté comme un <code>ArtifactNode</code> dans le
-graphe.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="artifactnode">ArtifactNode<a href="#artifactnode" class="hash-link" aria-label="Lien direct vers ArtifactNode" title="Lien direct vers ArtifactNode" translate="no">​</a></h3>
-<p>Chaque nœud contient :</p>
-<ul>
-<li class=""><strong>ArtifactKey</strong> : Un identifiant unique consistant en un ID et un type de groupe
-(<code>workpiece</code>, <code>step</code>, <code>job</code>, ou <code>view</code>)</li>
-<li class=""><strong>Dépendances</strong> : Liste des nœuds dont ce nœud dépend (enfants)</li>
-<li class=""><strong>Dépendants</strong> : Liste des nœuds qui dépendent de ce nœud (parents)</li>
-</ul>
-<p>Les nœuds ne stockent pas d&#x27;état directement. Au lieu de cela, ils délèguent les
-lectures et écritures d&#x27;état à l&#x27;<code>ArtifactManager</code>, qui maintient un registre de
-tous les artefacts et de leurs états.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="états-des-nœuds">États des nœuds<a href="#états-des-nœuds" class="hash-link" aria-label="Lien direct vers États des nœuds" title="Lien direct vers États des nœuds" translate="no">​</a></h3>
-<p>Les nœuds progressent à travers cinq états :</p>
+<h1>Concepts Clés</h1>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pipeline-façade-publique">Pipeline (Façade Publique)<a href="#pipeline-façade-publique" class="hash-link" aria-label="Lien direct vers Pipeline (Façade Publique)" title="Lien direct vers Pipeline (Façade Publique)" translate="no">​</a></h2>
+<p><code>rayforge/pipeline/pipeline.py:40</code> — la classe avec laquelle le reste
+de l&#x27;application communique. <code>DocEditor</code>, <code>ViewManager</code>, les widgets
+UI et le code de test ne doivent dépendre que de <code>Pipeline</code>.
+<code>IntentController</code> et <code>IntentBuilder</code> sont des détails
+d&#x27;implémentation de la façade et peuvent changer sans préavis.</p>
+<p><code>Pipeline</code> possède l&#x27;intégration <code>ArtifactStore</code> : elle traduit les
+sorties brutes de raygeo émises par son <code>IntentController</code> interne en
+handles d&#x27;artefacts refcountés que l&#x27;UI et les chemins d&#x27;exportation
+consomment, et expose la surface de signaux/propriétés que le reste
+de l&#x27;application attend (état occupé, pause/reprise, recalcul,
+changements de machine).</p>
+<p>Signaux clés relayés par la façade :</p>
 
 
 
@@ -76,91 +77,194 @@ tous les artefacts et de leurs états.</p>
 
 
 
-<table><thead><tr><th>État</th><th>Description</th></tr></thead><tbody><tr><td><code>DIRTY</code></td><td>L&#x27;artefact doit être (re)généré</td></tr><tr><td><code>PROCESSING</code></td><td>Une tâche génère actuellement l&#x27;artefact</td></tr><tr><td><code>VALID</code></td><td>L&#x27;artefact est prêt et à jour</td></tr><tr><td><code>ERROR</code></td><td>La génération a échoué</td></tr><tr><td><code>CANCELLED</code></td><td>La génération a été annulée ; sera relancée si toujours nécessaire</td></tr></tbody></table>
-<p>Lorsqu&#x27;un nœud est marqué comme sale, tous ses dépendants sont également marqués sales,
-propageant l&#x27;invalidation vers le haut du graphe.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pipelinegraph">PipelineGraph<a href="#pipelinegraph" class="hash-link" aria-label="Lien direct vers PipelineGraph" title="Lien direct vers PipelineGraph" translate="no">​</a></h3>
-<p>Le <code>PipelineGraph</code> est construit à partir du modèle Doc et contient :</p>
-<ul>
-<li class="">Un nœud pour chaque paire <code>(WorkPiece, Step)</code></li>
-<li class="">Un nœud pour chaque Step</li>
-<li class="">Un nœud pour le Job</li>
-</ul>
-<p>Les dépendances sont établies :</p>
-<ul>
-<li class="">Les Steps dépendent de leurs nœuds de paire <code>(WorkPiece, Step)</code></li>
-<li class="">Le Job dépend de toutes les Steps</li>
-</ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="dagscheduler">DagScheduler<a href="#dagscheduler" class="hash-link" aria-label="Lien direct vers DagScheduler" title="Lien direct vers DagScheduler" translate="no">​</a></h2>
-<p>Le <code>DagScheduler</code> est l&#x27;ordonnanceur central du pipeline. Il possède le
-<code>PipelineGraph</code> et est responsable de :</p>
+
+
+
+
+<table><thead><tr><th>Signal</th><th>Signification</th></tr></thead><tbody><tr><td><code>processing_state_changed</code></td><td>Transitions occupé/inactif</td></tr><tr><td><code>workpiece_artifact_ready</code></td><td>Un handle <code>WorkPieceArtifact</code> a été publié</td></tr><tr><td><code>job_generation_finished</code></td><td>Un handle <code>JobArtifact</code> (G-code + ops + estimations) prêt</td></tr><tr><td><code>job_time_updated</code></td><td>Estimation de temps agrégée modifiée pendant un rebuild</td></tr><tr><td><code>data_stale</code></td><td>Reconstruction demandée mais en pause ou mode manuel</td></tr><tr><td><code>visual_chunk_available</code></td><td>Fragment raster progressif pour mises à jour UI incrémentales</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="intentcontroller">IntentController<a href="#intentcontroller" class="hash-link" aria-label="Lien direct vers IntentController" title="Lien direct vers IntentController" translate="no">​</a></h2>
+<p><code>rayforge/pipeline/intent_controller.py:108</code> — possède une <code>Intent</code>
+raygeo et le cycle de vie de reconstruction associé. Il écoute les
+mêmes signaux Doc que l&#x27;ancien pipeline (<code>descendant_updated</code>,
+<code>descendant_transform_changed</code>, <code>descendant_added</code>,
+<code>descendant_removed</code>, <code>job_assembly_invalidated</code>) et reconstruit une
+<code>Intent</code> raygeo à chaque modification du document.</p>
+<p>À chaque reconstruction avec debounce (200 ms <code>REBUILD_DEBOUNCE_MS</code>) :</p>
 <ol>
-<li class=""><strong>Construire le graphe</strong> à partir du modèle Doc</li>
-<li class=""><strong>Identifier les nœuds prêts</strong> (DIRTY avec toutes les dépendances VALID)</li>
-<li class=""><strong>Déclencher les lancements de tâches</strong> via les étapes appropriées du pipeline</li>
-<li class=""><strong>Suivre l&#x27;état</strong> à travers le processus de génération</li>
-<li class=""><strong>Notifier les consommateurs</strong> lorsque les artefacts sont prêts</li>
+<li class=""><code>IntentBuilder</code> est appelé pour produire une liste fraîche
+d&#x27;objets <code>NodeRequest</code> à partir du <code>Doc</code> courant.</li>
+<li class="">La nouvelle liste est encapsulée dans une <code>Intent</code> raygeo via
+<code>create_intent_from_nodes</code>.</li>
+<li class=""><code>Intent.update</code> compare l&#x27;intention précédente avec la nouvelle en
+utilisant le <code>version_token</code> par nœud et supprime les entrées de
+cache obsolètes sur la <code>Pipeline</code> raygeo partagée.</li>
+<li class="">Quand <code>dispatch=True</code>, la nouvelle intention est également exécutée
+via <code>run_intent</code> ; le callback <code>on_completed</code> effectue le filtre
+d&#x27;époque (élimine les résultats dont le <code>generation_id</code> est
+antérieur à la génération actuelle du contrôleur) puis marshalle
+un rattachement DOM vers le thread principal de l&#x27;application via
+le gestionnaire de tâches partagé.</li>
+<li class="">Le callback <code>on_batch_progress</code> relaye la progression agrégée aux
+auditeurs via <code>progress_changed</code> (marshalé vers le thread principal
+pour que les gestionnaires de signaux ne s&#x27;exécutent jamais sur un
+travailleur rayon).</li>
 </ol>
-<p>L&#x27;ordonnanceur travaille avec des IDs de génération pour suivre quels artefacts appartiennent à
-quelle version du document, permettant la réutilisation d&#x27;artefacts valides entre les générations.</p>
-<p>Comportements clés :</p>
+<p>La carte <code>_key_to_item</code> du contrôleur (reconstruite à chaque appel
+réussi à <code>IntentBuilder.build</code>) permet au callback <code>on_completed</code>
+avec filtre d&#x27;époque de rattacher les sorties au <code>WorkPiece</code> ou
+<code>Step</code> d&#x27;origine sans reparcourir le Doc. Les clés de nœud sont
+distribuées par forme :</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Clé de nœud</th><th>Rattaché à</th><th>Signal émis</th></tr></thead><tbody><tr><td><code>workpiece:{wp_uid}:{step_uid}</code></td><td>Le <code>WorkPiece</code> propriétaire</td><td><code>workpiece_artifact_ready</code></td></tr><tr><td><code>step:{step_uid}</code></td><td>Le <code>Step</code> propriétaire</td><td><code>step_artifact_ready</code></td></tr><tr><td><code>job</code></td><td>Le <code>Doc</code></td><td><code>job_aggregate_ready</code></td></tr><tr><td><code>job:encode</code></td><td>Le <code>Doc</code></td><td><code>job_generation_finished</code></td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="intentbuilder">IntentBuilder<a href="#intentbuilder" class="hash-link" aria-label="Lien direct vers IntentBuilder" title="Lien direct vers IntentBuilder" translate="no">​</a></h2>
+<p><code>rayforge/pipeline/intent_builder.py:133</code> — parcourt un <code>Doc</code> et
+produit une liste plate d&#x27;objets <code>NodeRequest</code> avec <strong>clés stables</strong>
+et <strong>jetons de version déterministes</strong>. Le builder est sans état :
+chaque appel à <code>build</code> produit une liste fraîche et autonome adaptée
+à l&#x27;encapsulation dans une <code>Intent</code> raygeo.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="clés-stables">Clés Stables<a href="#clés-stables" class="hash-link" aria-label="Lien direct vers Clés Stables" title="Lien direct vers Clés Stables" translate="no">​</a></h3>
 <ul>
-<li class="">Lorsque le graphe est construit, l&#x27;ordonnanceur synchronise les états des nœuds avec le
-gestionnaire d&#x27;artefacts pour identifier les artefacts en cache qui peuvent être réutilisés</li>
-<li class="">Les artefacts de la génération précédente peuvent être réutilisés s&#x27;ils restent valides</li>
-<li class="">Les invalidations sont suivies même avant la reconstruction du graphe et réappliquées après</li>
-<li class="">L&#x27;ordonnanceur délègue la création effective des tâches aux étapes mais contrôle
-<strong>quand</strong> les tâches sont lancées en fonction de l&#x27;état de préparation des dépendances</li>
+<li class=""><code>workpiece:{wp_uid}:{step_uid}</code> — un nœud de calcul par paire
+workpiece/step.</li>
+<li class=""><code>step:{step_uid}</code> — un nœud d&#x27;agrégat par step qui concatène les
+sorties de calcul des workpieces et applique les transformers par
+step.</li>
+<li class=""><code>job</code> — un nœud d&#x27;agrégat final liant toutes les sorties des steps
+avec des marqueurs de niveau job et des paramètres machine.</li>
+<li class=""><code>job:machinexform</code> — nœud de calcul de transformation machine qui
+consomme les ops en espace monde de l&#x27;agrégat job et produit des
+ops en espace machine (linéarisation de courbes, mappage d&#x27;axe
+rotatif, monde→machine, offsets WCS, Z-flip, AXIS_REPLACEMENT).</li>
+<li class=""><code>job:encode</code> — nœud de calcul d&#x27;encodeur qui consomme les ops du
+nœud de transformation machine et produit le code machine
+(G-code / sommet / texture).</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="artifactmanager">ArtifactManager<a href="#artifactmanager" class="hash-link" aria-label="Lien direct vers ArtifactManager" title="Lien direct vers ArtifactManager" translate="no">​</a></h2>
-<p>L&#x27;<code>ArtifactManager</code> sert à la fois de cache et de source unique de vérité
-pour l&#x27;état des artefacts. Il :</p>
+<p>Les formats de clé sont centralisés dans <code>intent_builder.py</code> pour que
+le producteur et la carte de rattachement d&#x27;<code>IntentController</code>
+soient toujours en accord.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="jetons-de-version">Jetons de Version<a href="#jetons-de-version" class="hash-link" aria-label="Lien direct vers Jetons de Version" title="Lien direct vers Jetons de Version" translate="no">​</a></h3>
+<p>Le cache raygeo est indexé uniquement par clé de nœud ; le
+<code>version_token</code> est le seul signal d&#x27;invalidation. Les jetons sont
+des condensés SHA-1 d&#x27;une représentation canonique des entrées qui
+affectent la sortie d&#x27;un nœud (voir <code>_hash_int</code>,
+<code>intent_builder.py:1066</code>) :</p>
 <ul>
-<li class="">Stocke et récupère les handles d&#x27;artefacts via un <strong>registre</strong> (indexé par
-<code>ArtifactKey</code> + ID de génération)</li>
-<li class="">Suit l&#x27;état (<code>DIRTY</code>, <code>VALID</code>, <code>ERROR</code>, etc.) dans les entrées du registre</li>
-<li class="">Gère le comptage de références pour le nettoyage de la mémoire partagée</li>
-<li class="">Gère le cycle de vie (création, rétention, libération, élagage)</li>
-<li class="">Fournit des gestionnaires de contexte pour l&#x27;adoption sécurisée des artefacts,
-la complétion, les rapports d&#x27;échec et d&#x27;annulation</li>
+<li class=""><strong>Jetons de calcul</strong> hachent
+<code>(geometry_revision, wp_size, step_params, assembler_params, per_workpiece_transformers)</code>. Pour les scopes de step déclarant un
+transformer sensible à la position (voir <code>Step.is_position_sensitive</code>),
+<code>transform_revision</code> du workpiece et la révision de stock sont
+incluses dans le jeton ; sinon elles sont omises pour que les
+simples mouvements n&#x27;invalident pas les résultats de calcul du
+workpiece.</li>
+<li class=""><strong>Jetons d&#x27;agrégat de step</strong> hachent
+<code>(upstream compute tokens, placements, step_params, per_step/per_workpiece transformers, position_sensitive())</code>, plus
+<code>stock_rev</code> quand le step est sensible à la position.</li>
+<li class=""><strong>Jeton job</strong> intègre tous les jetons d&#x27;agrégat par step pour que
+tout changement amont (déplacement de workpiece, édition de
+transformer, modification de paramètre de step) se propage jusqu&#x27;au
+cache job/encode.</li>
+<li class=""><strong>Jeton de transformation machine</strong> intègre le jeton job plus
+l&#x27;identité de la machine (<code>supports_curves</code>, <code>reverse_z_axis</code>,
+configuration WCS, configuration du module rotatif par couche).</li>
+<li class=""><strong>Jeton d&#x27;encode</strong> intègre le jeton de transformation machine plus
+l&#x27;identité de l&#x27;encodeur (<code>driver_name</code>, <code>gcode_precision</code>,
+étendues d&#x27;axes, ...).</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="generationcontext">GenerationContext<a href="#generationcontext" class="hash-link" aria-label="Lien direct vers GenerationContext" title="Lien direct vers GenerationContext" translate="no">​</a></h2>
-<p>Chaque cycle de réconciliation crée un <code>GenerationContext</code> qui suit toutes
-les tâches actives pour cette génération. Il garantit que les ressources en
-mémoire partagée restent valides jusqu&#x27;à ce que toutes les tâches en cours
-pour une génération soient terminées, même si une génération plus récente a
-déjà commencé. Lorsqu&#x27;un contexte est remplacé et que toutes ses tâches sont
-terminées, il libère automatiquement ses ressources.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="cycle-de-vie-de-la-mémoire-partagée">Cycle de vie de la mémoire partagée<a href="#cycle-de-vie-de-la-mémoire-partagée" class="hash-link" aria-label="Lien direct vers Cycle de vie de la mémoire partagée" title="Lien direct vers Cycle de vie de la mémoire partagée" translate="no">​</a></h2>
-<p>Les artefacts sont stockés en mémoire partagée (<code>multiprocessing.shared_memory</code>) pour
-une communication inter-processus efficace entre les processus de travail et le processus
-principal. L&#x27;<code>ArtifactStore</code> gère le cycle de vie de ces blocs mémoire.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="patterns-de-propriété">Patterns de propriété<a href="#patterns-de-propriété" class="hash-link" aria-label="Lien direct vers Patterns de propriété" title="Lien direct vers Patterns de propriété" translate="no">​</a></h3>
-<p><strong>Propriété locale :</strong> Le processus créateur possède le handle et le libère
-lorsqu&#x27;il a terminé. C&#x27;est le pattern le plus simple.</p>
-<p><strong>Transfert inter-processus :</strong> Un travailleur crée un artefact, l&#x27;envoie au
-processus principal via IPC, et transfère la propriété. Le travailleur « oublie » le
-handle (ferme son descripteur de fichier sans supprimer la mémoire), tandis que
-le processus principal « l&#x27;adopte » et devient responsable de sa libération éventuelle.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="détection-des-artefacts-périmés">Détection des artefacts périmés<a href="#détection-des-artefacts-périmés" class="hash-link" aria-label="Lien direct vers Détection des artefacts périmés" title="Lien direct vers Détection des artefacts périmés" translate="no">​</a></h3>
-<p>Le mécanisme <code>StaleGenerationError</code> empêche l&#x27;adoption d&#x27;artefacts provenant de
-générations remplacées. Lorsqu&#x27;une génération plus récente a commencé, le
-gestionnaire détecte les artefacts périmés lors de l&#x27;adoption et les ignore silencieusement.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="étapes-du-pipeline">Étapes du pipeline<a href="#étapes-du-pipeline" class="hash-link" aria-label="Lien direct vers Étapes du pipeline" title="Lien direct vers Étapes du pipeline" translate="no">​</a></h2>
-<p>Les étapes du pipeline (<code>WorkPiecePipelineStage</code>, <code>StepPipelineStage</code>,
-<code>JobPipelineStage</code>) sont responsables de la <strong>mécanique</strong> de l&#x27;exécution des tâches :</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="construction-des-étapes">Construction des Étapes<a href="#construction-des-étapes" class="hash-link" aria-label="Lien direct vers Construction des Étapes" title="Lien direct vers Construction des Étapes" translate="no">​</a></h3>
+<p>Chaque <code>NodeRequest</code> porte une <code>StageSpec</code> décrivant le travail que
+raygeo doit effectuer pour ce nœud. Le builder produit :</p>
 <ul>
-<li class="">Elles créent et enregistrent des tâches de sous-processus via le <code>TaskManager</code></li>
-<li class="">Elles gèrent les événements de tâche (morceaux progressifs, résultats intermédiaires)</li>
-<li class="">Elles gèrent l&#x27;adoption et la mise en cache des artefacts lors de la complétion des tâches</li>
-<li class="">Elles émettent des signaux pour notifier le pipeline des changements d&#x27;état</li>
+<li class=""><code>StageSpec.Compute</code> pour chaque paire workpiece/step via
+<code>Step.build_compute_payload(machine_defaults, workpiece)</code>, qui
+retourne un <code>Part</code> (géométrie vectorielle ou source d&#x27;image) plus
+un <code>ComputePayload</code> (spécification d&#x27;assembleur). Les transformers
+par workpiece (<code>OverscanTransformer</code>,
+<code>BidirScanOffsetTransformer</code>, ...) sont résolus via
+<code>transformer_registry</code> en pyclasses Rust typées <code>*Spec</code> et attachés
+au payload pour que l&#x27;étape de calcul Rust les applique après
+l&#x27;assemblage.</li>
+<li class=""><code>StageSpec.Aggregate</code> pour chaque step : un <code>AggregateGroup</code> par
+nœud de calcul workpiece amont, entouré de marqueurs
+<code>WorkpieceStart</code>/<code>WorkpieceEnd</code>, chaque entrée portant la matrice
+de placement monde et la taille physique du workpiece comme
+<code>target_dimensions</code>. Les transformers par step (<code>MultiPassTransformer</code>,
+<code>Optimize</code>, ...) sont attachés à <code>AggregateSpec.transformers</code> pour
+que l&#x27;étape d&#x27;agrégat Rust les applique après concaténation.
+<code>MachineParams</code> est peuplé depuis la machine résolue pour que
+l&#x27;estimation de temps de l&#x27;agrégat soit correcte.</li>
+<li class=""><code>StageSpec.Aggregate</code> pour le nœud <code>job</code> : un <code>AggregateGroup</code> par
+couche entouré de marqueurs <code>LayerStart</code>/<code>LayerEnd</code>, chacun
+contenant un <code>AggregateInput</code> par step visible ; l&#x27;agrégat entier
+est entouré de <code>JobStart</code>/<code>JobEnd</code>.</li>
+<li class=""><code>MachineTransformSpec</code> pour <code>job:machinexform</code> : la matrice
+4×4 monde→machine, les offsets WCS par défaut et par
+couche, les entrées <code>RotaryMappingSpec</code> par couche, le drapeau de
+linéarisation de courbes et le drapeau Z-reverse, empaquetés dans
+une spécification sérialisable que l&#x27;étape Rust
+<code>MachineTransformCompute</code> consomme.</li>
+<li class=""><code>EncodeSpec</code> pour <code>job:encode</code> : achemine les machines Grbl vers le
+<code>GcodeSpec</code> Rust natif (compilé directement sur un thread rayon
+sans traverser le GIL) et toute autre machine vers un <code>PythonEncoder</code>
+encapsulant le callable d&#x27;encodeur spécifique au driver. L&#x27;encodeur
+lit les ops en espace machine depuis le nœud amont <code>job:machinexform</code>.</li>
 </ul>
-<p>Le <strong>DagScheduler</strong> décide <strong>quand</strong> déclencher chaque étape, mais les
-étapes gèrent le lancement effectif des sous-processus, la gestion des événements et
-l&#x27;adoption des résultats.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="stratégie-dinvalidation">Stratégie d&#x27;invalidation<a href="#stratégie-dinvalidation" class="hash-link" aria-label="Lien direct vers Stratégie d&#x27;invalidation" title="Lien direct vers Stratégie d&#x27;invalidation" translate="no">​</a></h2>
-<p>L&#x27;invalidation est déclenchée par des changements dans le modèle Doc, avec différentes
-stratégies selon ce qui a changé :</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="résolution-de-stock">Résolution de Stock<a href="#résolution-de-stock" class="hash-link" aria-label="Lien direct vers Résolution de Stock" title="Lien direct vers Résolution de Stock" translate="no">​</a></h3>
+<p><code>_resolve_stock_geometries</code> (appelée une fois par <code>build</code> et mise en
+cache sur le builder) retourne les géométries de limite de stock en
+espace monde que les transformers comme <code>CropTransformer</code> utilisent
+pour découper les ops par workpiece dans la zone de travail de la
+machine ou dans des <code>StockItem</code>s explicites. Les entrées <code>StockItem</code>
+appartenant au Doc ont priorité ; le rectangle de la zone de travail
+de la machine est utilisé comme solution de repli uniquement quand
+aucun stock de Doc n&#x27;existe.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pipeline-raygeo--run_intent">Pipeline raygeo &amp; <code>run_intent</code><a href="#pipeline-raygeo--run_intent" class="hash-link" aria-label="Lien direct vers pipeline-raygeo--run_intent" title="Lien direct vers pipeline-raygeo--run_intent" translate="no">​</a></h2>
+<p>La <code>Pipeline</code> de raygeo (<code>raygeo.pipeline.execute.Pipeline</code>) possède
+le cache que <code>Intent.update</code> invalide. <code>run_intent</code> planifie les
+nœuds de l&#x27;intention sur des threads travailleurs rayon sous le GIL
+et invoque le callback <code>on_completed</code> par nœud et <code>on_batch_progress</code>
+pour la progression agrégée. Les travaux lourds (calcul, raster,
+agrégat, transformations machine, encodage) s&#x27;exécutent dans des
+threads raygeo au lieu de sous-processus, ce qui est le changement
+principal mentionné dans CHANGELOG 1.9.0.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="artifactstore--handles-dartefacts">ArtifactStore &amp; Handles d&#x27;Artefacts<a href="#artifactstore--handles-dartefacts" class="hash-link" aria-label="Lien direct vers ArtifactStore &amp; Handles d&#x27;Artefacts" title="Lien direct vers ArtifactStore &amp; Handles d&#x27;Artefacts" translate="no">​</a></h2>
+<p>L&#x27;ancien <code>ArtifactStore</code> en mémoire partagée a été remplacé par un
+magasin en processus avec comptage de références
+(<code>rayforge/pipeline/artifact/store.py:29</code>). Tous les artefacts vivent
+comme des objets Python simples dans un dict indexé par UUID ; les
+handles portent l&#x27;UUID dans leur champ <code>key</code> plus les métadonnées
+nécessaires au type d&#x27;artefact. Le cycle de vie est géré par comptage
+de références via <code>ArtifactStore.retain</code>/<code>release</code>.</p>
+<p>La façade <code>Pipeline</code> traduit les sorties raygeo en handles d&#x27;artefacts
+sur le thread principal :</p>
 
 
 
@@ -186,152 +290,206 @@ stratégies selon ce qui a changé :</p>
 
 
 
-<table><thead><tr><th>Type de changement</th><th>Comportement</th></tr></thead><tbody><tr><td>Géométrie/paramètres</td><td>Paires workpiece-step invalidées, en cascade vers les steps et le job</td></tr><tr><td>Position/rotation</td><td>Steps invalidées directement (en cascade vers le job) ; workpieces ignorées sauf si sensibles à la position</td></tr><tr><td>Changement de taille</td><td>Identique à la géométrie : cascade complète des paires workpiece-step vers le haut</td></tr><tr><td>Config machine</td><td>Tous les artefacts sont forcément invalidés à travers toutes les générations</td></tr></tbody></table>
-<p>Les steps sensibles à la position (par ex., celles avec le recadrage au stock activé) déclenchent
-l&#x27;invalidation des workpieces même pour les changements de position purs.</p>
-<h1>Détail détaillé</h1>
+<table><thead><tr><th>Sortie (raygeo)</th><th>Artefact</th><th>Stocké sous tag</th></tr></thead><tbody><tr><td>Ops par workpiece-step</td><td><code>WorkPieceArtifact</code></td><td><code>wp</code></td></tr><tr><td>Ops agrégées par step</td><td><code>StepOpsArtifact</code></td><td><code>step</code></td></tr><tr><td>Agrégat job + encode</td><td><code>JobArtifact</code></td><td><code>job</code></td></tr></tbody></table>
+<p><code>JobArtifact</code> porte les <code>Ops</code> en espace monde, la distance totale,
+l&#x27;estimation de temps, l&#x27;<code>EncodedOutput</code> (texte plus carte
+op→code machine) et — quand des modules rotatifs sont
+configurés — des ops mappées cinématiquement pour l&#x27;aperçu 3D.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ids-de-génération--filtre-dépoque">IDs de Génération &amp; Filtre d&#x27;Époque<a href="#ids-de-génération--filtre-dépoque" class="hash-link" aria-label="Lien direct vers IDs de Génération &amp; Filtre d&#x27;Époque" title="Lien direct vers IDs de Génération &amp; Filtre d&#x27;Époque" translate="no">​</a></h2>
+<p>Chaque reconstruction incrémente <code>IntentController.generation_id</code>.
+Chaque nœud terminé porte la génération dont il est issu. Le callback
+<code>on_completed</code> compare le <code>generation_id</code> du nœud avec la génération
+actuelle du contrôleur et supprime silencieusement les résultats
+obsolètes, de sorte que les sorties périmées d&#x27;une reconstruction
+antérieure ne soient jamais rattachées au DOM.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pause-reprise--mode-manuel">Pause, Reprise &amp; Mode Manuel<a href="#pause-reprise--mode-manuel" class="hash-link" aria-label="Lien direct vers Pause, Reprise &amp; Mode Manuel" title="Lien direct vers Pause, Reprise &amp; Mode Manuel" translate="no">​</a></h2>
+<ul>
+<li class=""><code>Pipeline.pause()</code>/<code>resume()</code> incrémente/décrémente un compteur de
+pause sur le contrôleur. Pendant la pause, les modifications du Doc
+positionnent un drapeau <code>data_stale</code> (et émettent <code>data_stale</code>) au
+lieu de planifier une reconstruction ; à la reprise, le drapeau est
+effacé et une reconstruction est planifiée si <code>auto_rebuild</code> est
+activé.</li>
+<li class=""><code>Pipeline.auto_pipeline=False</code> (mode manuel) : le recalcul est
+déclenché explicitement via <code>Pipeline.recalculate()</code> plutôt
+qu&#x27;automatiquement à chaque modification du Doc.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="stratégie-dinvalidation">Stratégie d&#x27;Invalidation<a href="#stratégie-dinvalidation" class="hash-link" aria-label="Lien direct vers Stratégie d&#x27;Invalidation" title="Lien direct vers Stratégie d&#x27;Invalidation" translate="no">​</a></h2>
+<p>L&#x27;invalidation est implicite et pilotée par les jetons : tout
+changement qui affecte les entrées d&#x27;un nœud amène le builder à
+produire un <code>version_token</code> différent pour la clé de ce nœud.
+<code>Intent.update</code> supprime l&#x27;entrée de cache obsolète et raygeo
+réexécute uniquement ce nœud (et ses consommateurs aval).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Type de Changement</th><th>Effet sur les Jetons</th></tr></thead><tbody><tr><td>Géométrie / paramètres</td><td>Nouveaux jetons de calcul workpiece cascade vers step, job, machinexform, encode</td></tr><tr><td>Position / rotation</td><td>Jetons de calcul workpiece inchangés sauf si le step est sensible à la position ; les jetons d&#x27;agrégat step changent toujours à cause des placements intégrés, ce qui cascade vers job/encode</td></tr><tr><td>Changement de taille</td><td>Comme géométrie : les jetons cascade depuis les paires workpiece-step vers le haut</td></tr><tr><td>Stock items visibles/déplacés/ajoutés</td><td>Affecte <code>stock_rev</code> (intégré dans les jetons de calcul et d&#x27;agrégat des steps sensibles à la position)</td></tr><tr><td>Configuration machine</td><td>Tous les jetons <code>job:machinexform</code> et <code>job:encode</code> changent ; les jetons de calcul/agrégat step changent si <code>kerf_mm</code>/<code>cut_speed</code>/tête laser/tolérance d&#x27;arc/<code>supports_curves</code>/<code>supports_arcs</code> changent</td></tr></tbody></table>
+<h1>Ventilation Détaillée</h1>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="entrée">Entrée<a href="#entrée" class="hash-link" aria-label="Lien direct vers Entrée" title="Lien direct vers Entrée" translate="no">​</a></h2>
 <p>Le processus commence avec le <strong>Modèle Doc</strong>, qui contient :</p>
 <ul>
-<li class=""><strong>WorkPieces :</strong> Éléments de conception individuels (SVGs, images) placés sur le canevas</li>
-<li class=""><strong>Steps :</strong> Instructions de traitement (Contour, Raster, etc.) avec paramètres</li>
-<li class=""><strong>Layers :</strong> Regroupement de workpieces, chacun avec son propre flux de travail</li>
+<li class=""><strong>WorkPieces :</strong> Éléments de conception individuels (SVG, images)
+placés sur le canvas</li>
+<li class=""><strong>Steps :</strong> Instructions de traitement (Contour, Raster, etc.) avec
+paramètres, organisées dans un <code>Workflow</code> par couche</li>
+<li class=""><strong>Layers :</strong> Regroupement de workpieces, chacun avec son propre
+workflow, WCS et configuration rotative</li>
+<li class=""><strong>StockItems :</strong> Limites de stock explicites optionnelles utilisées
+par les transformers sensibles à la position (ex. CropTransformer)</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="noyau-du-pipeline">Noyau du pipeline<a href="#noyau-du-pipeline" class="hash-link" aria-label="Lien direct vers Noyau du pipeline" title="Lien direct vers Noyau du pipeline" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pipeline-orchestrateur">Pipeline (Orchestrateur)<a href="#pipeline-orchestrateur" class="hash-link" aria-label="Lien direct vers Pipeline (Orchestrateur)" title="Lien direct vers Pipeline (Orchestrateur)" translate="no">​</a></h3>
-<p>La classe <code>Pipeline</code> est le chef d&#x27;orchestre de haut niveau qui :</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="orchestration-python">Orchestration Python<a href="#orchestration-python" class="hash-link" aria-label="Lien direct vers Orchestration Python" title="Lien direct vers Orchestration Python" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pipeline-façade">Pipeline (Façade)<a href="#pipeline-façade" class="hash-link" aria-label="Lien direct vers Pipeline (Façade)" title="Lien direct vers Pipeline (Façade)" translate="no">​</a></h3>
+<p>La classe <code>Pipeline</code> :</p>
 <ul>
-<li class="">Écoute les changements du modèle Doc via des signaux</li>
-<li class=""><strong>Groupe</strong> les changements (délai de réconciliation de 200ms, délai de suppression de 50ms)</li>
-<li class="">Coordonne avec le DagScheduler pour déclencher la régénération</li>
-<li class="">Gère l&#x27;état de traitement global et la détection d&#x27;activité</li>
-<li class="">Prend en charge <strong>pause/reprise</strong> pour les opérations par lots</li>
-<li class="">Prend en charge le <strong>mode manuel</strong> (<code>auto_pipeline=False</code>) où le recalcul
-est déclenché explicitement plutôt qu&#x27;automatiquement</li>
-<li class="">Connecte les signaux entre les composants et les relaie aux consommateurs</li>
+<li class="">Écoute les modifications du modèle Doc via des signaux (relayés à
+travers l&#x27;<code>IntentController</code>)</li>
+<li class=""><strong>Debounce</strong> les changements (délai de réconciliation de 200 ms)</li>
+<li class="">Coordonne avec l&#x27;<code>IntentController</code> pour déclencher la régénération</li>
+<li class="">Gère l&#x27;état global de traitement et la détection d&#x27;occupation</li>
+<li class="">Supporte la <strong>pause/reprise</strong> pour les opérations par lots</li>
+<li class="">Supporte le <strong>mode manuel</strong> (<code>auto_pipeline=False</code>) où le recalcul
+est déclenché explicitement</li>
+<li class="">Connecte les signaux entre les composants et les relaie aux
+consommateurs</li>
+<li class="">Publie les handles d&#x27;artefacts refcountés dans l&#x27;<code>ArtifactStore</code></li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dagscheduler-1">DagScheduler<a href="#dagscheduler-1" class="hash-link" aria-label="Lien direct vers DagScheduler" title="Lien direct vers DagScheduler" translate="no">​</a></h3>
-<p>Le <code>DagScheduler</code> :</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="intentcontroller-1">IntentController<a href="#intentcontroller-1" class="hash-link" aria-label="Lien direct vers IntentController" title="Lien direct vers IntentController" translate="no">​</a></h3>
+<p>L&#x27;<code>IntentController</code> :</p>
 <ul>
-<li class="">Construit et maintient le <code>PipelineGraph</code></li>
-<li class="">Identifie les nœuds prêts pour le traitement</li>
-<li class="">Déclenche les lancements de tâches via les méthodes <code>launch_task()</code> des étapes</li>
-<li class="">Suit les transitions d&#x27;état des nœuds via le registre</li>
-<li class="">Émet des signaux lorsque les artefacts sont prêts</li>
+<li class="">Possède une <code>Intent</code> raygeo et le cycle de vie de reconstruction</li>
+<li class="">Reconstruit une intention fraîche à chaque changement de Doc avec
+debounce</li>
+<li class="">Exécute l&#x27;intention via <code>run_intent</code> quand <code>dispatch=True</code></li>
+<li class="">Filtre les résultats obsolètes par <code>generation_id</code> (filtre d&#x27;époque)</li>
+<li class="">Marshalle les rattachements DOM vers le thread principal via le
+gestionnaire de tâches partagé</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="artifactmanager-1">ArtifactManager<a href="#artifactmanager-1" class="hash-link" aria-label="Lien direct vers ArtifactManager" title="Lien direct vers ArtifactManager" translate="no">​</a></h3>
-<p>L&#x27;<code>ArtifactManager</code> :</p>
-<ul>
-<li class="">Maintient un <strong>registre</strong> d&#x27;objets <code>LedgerEntry</code>, chacun suivant un handle,
-un ID de génération et un état de nœud</li>
-<li class="">Met en cache les handles d&#x27;artefacts en mémoire partagée</li>
-<li class="">Gère le comptage de références pour le nettoyage</li>
-<li class="">Fournit la recherche par ArtifactKey et ID de génération</li>
-<li class="">Élude les générations obsolètes pour garder le registre propre</li>
-</ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="generationcontext-1">GenerationContext<a href="#generationcontext-1" class="hash-link" aria-label="Lien direct vers GenerationContext" title="Lien direct vers GenerationContext" translate="no">​</a></h3>
-<p>Chaque réconciliation crée un nouveau <code>GenerationContext</code> qui :</p>
-<ul>
-<li class="">Suit les tâches actives via des clés à comptage de références</li>
-<li class="">Possède les ressources en mémoire partagée pour sa génération</li>
-<li class="">S&#x27;arrête automatiquement lorsqu&#x27;il est remplacé et que toutes les tâches sont terminées</li>
-</ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="génération-dartefacts">Génération d&#x27;artefacts<a href="#génération-dartefacts" class="hash-link" aria-label="Lien direct vers Génération d&#x27;artefacts" title="Lien direct vers Génération d&#x27;artefacts" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="intentbuilder-1">IntentBuilder<a href="#intentbuilder-1" class="hash-link" aria-label="Lien direct vers IntentBuilder" title="Lien direct vers IntentBuilder" translate="no">​</a></h3>
+<p>L&#x27;<code>IntentBuilder</code> est sans état ; chaque appel à <code>build</code> parcourt le
+<code>Doc</code> et produit un <code>NodeRequest</code> par paire workpiece/step, un
+agrégat par step, et les nœuds <code>job</code>, <code>job:machinexform</code> et
+<code>job:encode</code>. Voir <a href="#cl%C3%A9s-stables" class="">Clés Stables</a>,
+<a href="#jetons-de-version" class="">Jetons de Version</a> et
+<a href="#construction-des-%C3%A9tapes" class="">Construction des Étapes</a> ci-dessus.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pipeline-raygeo">Pipeline raygeo<a href="#pipeline-raygeo" class="hash-link" aria-label="Lien direct vers Pipeline raygeo" title="Lien direct vers Pipeline raygeo" translate="no">​</a></h2>
+<p><code>run_intent</code> planifie l&#x27;exécution des nœuds sur des threads
+travailleurs rayon sous le GIL. L&#x27;instance partagée <code>RaygeoPipeline</code>
+contient le cache de nœuds indexé par clé de nœud ; <code>Intent.update</code>
+est le seul point d&#x27;entrée d&#x27;invalidation. Calcul, raster, shrinkwrap,
+wavefront, contour, rendu de vue et transformation/encodage machine
+s&#x27;exécutent tous dans des threads raygeo.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="génération-dartefacts">Génération d&#x27;Artefacts<a href="#génération-dartefacts" class="hash-link" aria-label="Lien direct vers Génération d&#x27;Artefacts" title="Lien direct vers Génération d&#x27;Artefacts" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="workpieceartifacts">WorkPieceArtifacts<a href="#workpieceartifacts" class="hash-link" aria-label="Lien direct vers WorkPieceArtifacts" title="Lien direct vers WorkPieceArtifacts" translate="no">​</a></h3>
 <p>Générés pour chaque combinaison <code>(WorkPiece, Step)</code>. Contient :</p>
 <ul>
-<li class="">Trajets d&#x27;outil (<code>Ops</code>) dans le système de coordonnées local du workpiece</li>
-<li class="">Indicateur de scalabilité et dimensions source pour des ops indépendants de la résolution</li>
-<li class="">Système de coordonnées et métadonnées de génération</li>
+<li class="">Toolpaths (<code>Ops</code>) dans le système de coordonnées local du workpiece</li>
+<li class="">Drapeau d&#x27;évolutivité et dimensions source pour les ops
+indépendantes de la résolution</li>
+<li class="">ID de génération</li>
 </ul>
-<p>Séquence de traitement :</p>
-<ol>
-<li class=""><strong>Producteur :</strong> Crée les trajets d&#x27;outil bruts (<code>Ops</code>) à partir des données du workpiece</li>
-<li class=""><strong>Transformateurs :</strong> Modifications par workpiece appliquées dans des phases ordonnées
-(Raffinement de géométrie → Interruption de trajet → Post-traitement)</li>
-</ol>
-<p>Les workpieces raster volumineux sont traités incrémentalement par morceaux, permettant
-un retour visuel progressif pendant la génération.</p>
+<p>Les grands workpieces raster sont traités par incréments en fragments
+(relayés via <code>visual_chunk_available</code>), permettant un retour visuel
+progressif pendant la génération.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stepopsartifacts">StepOpsArtifacts<a href="#stepopsartifacts" class="hash-link" aria-label="Lien direct vers StepOpsArtifacts" title="Lien direct vers StepOpsArtifacts" translate="no">​</a></h3>
-<p>Générés pour chaque Step, consommant tous les WorkPieceArtifacts liés :</p>
+<p>Générés pour chaque Step, consommant tous les WorkPieceArtifacts
+associés :</p>
 <ul>
-<li class="">Ops combinés pour tous les workpieces en coordonnées espace-monde</li>
-<li class="">Transformateurs par étape appliqués (Optimiser, Multi-Passe, etc.)</li>
+<li class=""><code>Ops</code> combinés pour tous les workpieces en coordonnées monde</li>
+<li class="">Transformers par step appliqués (<code>Optimize</code>, <code>MultiPass</code>, ...)</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="jobartifact">JobArtifact<a href="#jobartifact" class="hash-link" aria-label="Lien direct vers JobArtifact" title="Lien direct vers JobArtifact" translate="no">​</a></h3>
-<p>Généré à la demande lorsque le G-code est nécessaire, consommant tous les StepOpsArtifacts :</p>
+<p>Généré quand du G-code est nécessaire, consommant l&#x27;agrégat <code>job</code> et
+le nœud <code>job:encode</code> :</p>
 <ul>
-<li class="">Code machine final (G-code ou format spécifique au pilote)</li>
-<li class="">Ops complets pour la simulation et la lecture</li>
+<li class="">Code machine final (G-code ou format spécifique au driver) via
+<code>EncodedOutput</code> (texte + carte op→code machine)</li>
+<li class=""><code>Ops</code> en espace monde pour simulation et lecture</li>
 <li class="">Estimation de temps haute fidélité et distance totale</li>
-<li class="">Ops mappés rotatifs pour l&#x27;aperçu 3D</li>
+<li class="">Ops mappées rotativement pour l&#x27;aperçu 3D quand des modules
+rotatifs sont configurés</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="couche-de-vue-2d-séparée">Couche de vue 2D (Séparée)<a href="#couche-de-vue-2d-séparée" class="hash-link" aria-label="Lien direct vers Couche de vue 2D (Séparée)" title="Lien direct vers Couche de vue 2D (Séparée)" translate="no">​</a></h2>
-<p>Le <code>ViewManager</code> est <strong>découplé</strong> du pipeline de données. Il gère le rendu
-pour le canevas 2D en fonction de l&#x27;état de l&#x27;interface :</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="couche-de-vue-2d-découplée">Couche de Vue 2D (Découplée)<a href="#couche-de-vue-2d-découplée" class="hash-link" aria-label="Lien direct vers Couche de Vue 2D (Découplée)" title="Lien direct vers Couche de Vue 2D (Découplée)" translate="no">​</a></h2>
+<p>Le <code>ViewManager</code> est découplé du pipeline de données. Il gère le
+rendu pour le canvas 2D basé sur l&#x27;état de l&#x27;UI.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rendercontext">RenderContext<a href="#rendercontext" class="hash-link" aria-label="Lien direct vers RenderContext" title="Lien direct vers RenderContext" translate="no">​</a></h3>
-<p>Contient les paramètres de vue actuels :</p>
-<ul>
-<li class="">Pixels par millimètre (niveau de zoom)</li>
-<li class="">Décalage de la fenêtre d&#x27;affichage (pan)</li>
-<li class="">Options d&#x27;affichage (afficher les déplacements à vide, etc.)</li>
-</ul>
+<p>Contient les paramètres de vue actuels (pixels par millimètre, décalage
+du viewport, options d&#x27;affichage).</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="workpieceviewartifacts">WorkPieceViewArtifacts<a href="#workpieceviewartifacts" class="hash-link" aria-label="Lien direct vers WorkPieceViewArtifacts" title="Lien direct vers WorkPieceViewArtifacts" translate="no">​</a></h3>
-<p>Le ViewManager crée des <code>WorkPieceViewArtifacts</code> qui :</p>
+<p>Le <code>ViewManager</code> crée des <code>WorkPieceViewArtifacts</code> qui rastérisent
+les <code>WorkPieceArtifacts</code> dans l&#x27;espace écran, appliquent le
+<code>RenderContext</code> actuel, et sont mis en cache et mis à jour quand le
+contexte ou la source change. Le re-rendu est limité (intervalle de
+33 ms) et à concurrence limitée ; l&#x27;assemblage progressif de
+fragments fournit des mises à jour visuelles incrémentales. Le
+<code>ViewManager</code> indexe les vues par <code>(workpiece_uid, step_uid)</code> pour
+permettre la visualisation des états intermédiaires d&#x27;un workpiece à
+travers plusieurs steps.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="couche-3d--simulateur-découplée">Couche 3D / Simulateur (Découplée)<a href="#couche-3d--simulateur-découplée" class="hash-link" aria-label="Lien direct vers Couche 3D / Simulateur (Découplée)" title="Lien direct vers Couche 3D / Simulateur (Découplée)" translate="no">​</a></h2>
+<p>Le système de visualisation et de simulation 3D est découplé du
+pipeline de données, suivant un modèle similaire au <code>ViewManager</code>. Il
+se compose :</p>
 <ul>
-<li class="">Rastérisent les WorkPieceArtifacts vers l&#x27;espace écran</li>
-<li class="">Appliquent le RenderContext actuel</li>
-<li class="">Sont mis en cache et mis à jour lorsque le contexte ou la source change</li>
+<li class="">D&#x27;un <strong>Scene Compiler</strong> qui s&#x27;exécute dans un sous-processus pour
+convertir les ops <code>JobArtifact</code> en données de sommet prêtes pour le
+GPU</li>
+<li class="">D&#x27;un <strong>OpPlayer</strong> qui rejoue les ops du job pour une simulation
+machine en temps réel avec des contrôles de lecture</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cycle-de-vie">Cycle de vie<a href="#cycle-de-vie" class="hash-link" aria-label="Lien direct vers Cycle de vie" title="Lien direct vers Cycle de vie" translate="no">​</a></h3>
-<ol>
-<li class="">Le ViewManager suit les handles <code>WorkPieceArtifact</code> sources</li>
-<li class="">Lorsque le contexte de rendu change, le ViewManager déclenche un nouveau rendu</li>
-<li class="">Lorsque l&#x27;artefact source change, le ViewManager déclenche un nouveau rendu</li>
-<li class="">Le rendu est limité (intervalle de 33ms) et la concurrence est contrôlée</li>
-<li class="">L&#x27;assemblage progressif des morceaux fournit des mises à jour visuelles incrémentales</li>
-</ol>
-<p>Le ViewManager indexe les vues par <code>(workpiece_uid, step_uid)</code> pour supporter
-la visualisation des états intermédiaires d&#x27;un workpiece à travers plusieurs étapes.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="couche-3d--simulateur-séparée">Couche 3D / Simulateur (Séparée)<a href="#couche-3d--simulateur-séparée" class="hash-link" aria-label="Lien direct vers Couche 3D / Simulateur (Séparée)" title="Lien direct vers Couche 3D / Simulateur (Séparée)" translate="no">​</a></h2>
-<p>Le système de visualisation et de simulation 3D est <strong>découplé</strong> du pipeline
-de données, suivant un pattern similaire au ViewManager. Il se compose de :</p>
-<ul>
-<li class="">Un <strong>Compilateur de Scène</strong> qui s&#x27;exécute dans un sous-processus pour convertir les ops
-du <code>JobArtifact</code> en données de sommets prêtes pour le GPU</li>
-<li class="">Un <strong>OpPlayer</strong> qui rejoue les ops du travail pour la simulation machine en temps réel
-avec des contrôles de lecture</li>
-</ul>
-<p>Les deux consomment le <code>JobArtifact</code> produit par l&#x27;étape job du pipeline.</p>
+<p>Les deux consomment le <code>JobArtifact</code> produit par le pipeline.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="compiledsceneartifact">CompiledSceneArtifact<a href="#compiledsceneartifact" class="hash-link" aria-label="Lien direct vers CompiledSceneArtifact" title="Lien direct vers CompiledSceneArtifact" translate="no">​</a></h3>
-<p>Le Compilateur de Scène produit un <code>CompiledSceneArtifact</code> contenant :</p>
+<p>Le Scene Compiler produit un <code>CompiledSceneArtifact</code> contenant :</p>
 <ul>
-<li class=""><strong>Couches de sommets :</strong> Tampons de sommets puissance/déplacement/puissance zéro avec
-des décalages par commande pour la révélation progressive</li>
-<li class=""><strong>Couches de texture :</strong> Cartes de puissance de lignes de balayage rastérisées pour
-l&#x27;aperçu de gravure</li>
-<li class=""><strong>Couches de superposition :</strong> Segments de puissance de lignes de balayage pour le
-surlignage en temps réel</li>
-<li class="">Prise en charge de la géométrie rotative (enroulée sur cylindre)</li>
+<li class=""><strong>Couches de sommets :</strong> Buffers de sommets powered/travel/zero-power
+avec décalages par commande pour révélation progressive</li>
+<li class=""><strong>Couches de texture :</strong> Cartes de puissance de lignes de balayage
+rastérisées pour l&#x27;aperçu de gravure</li>
+<li class=""><strong>Couches de superposition :</strong> Segments de puissance de lignes de
+balayage pour surbrillance en temps réel</li>
+<li class="">Support pour la géométrie rotative (enveloppée cylindriquement)</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pipeline-de-compilation">Pipeline de compilation<a href="#pipeline-de-compilation" class="hash-link" aria-label="Lien direct vers Pipeline de compilation" title="Lien direct vers Pipeline de compilation" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pipeline-de-compilation">Pipeline de Compilation<a href="#pipeline-de-compilation" class="hash-link" aria-label="Lien direct vers Pipeline de Compilation" title="Lien direct vers Pipeline de Compilation" translate="no">​</a></h3>
 <ol>
-<li class="">Le Canvas3D écoute les signaux <code>job_generation_finished</code></li>
-<li class="">Lorsqu&#x27;un nouveau job est prêt, il planifie la compilation de scène dans un sous-processus</li>
-<li class="">Le sous-processus lit le <code>JobArtifact</code> depuis la mémoire partagée et compile
-les ops en données de sommets GPU</li>
-<li class="">La scène compilée est adoptée dans la mémoire partagée et chargée dans
-les rendus GPU</li>
+<li class="">Canvas3D écoute les signaux <code>job_generation_finished</code></li>
+<li class="">Quand un nouveau job est prêt, il planifie la compilation de scène
+dans un sous-processus</li>
+<li class="">Le sous-processus lit le <code>JobArtifact</code> depuis le magasin et compile
+les ops en données de sommet GPU</li>
+<li class="">La scène compilée est reprise et téléchargée vers les moteurs de
+rendu GPU</li>
 </ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="opplayer-backend-simulateur">OpPlayer (Backend Simulateur)<a href="#opplayer-backend-simulateur" class="hash-link" aria-label="Lien direct vers OpPlayer (Backend Simulateur)" title="Lien direct vers OpPlayer (Backend Simulateur)" translate="no">​</a></h3>
-<p>L&#x27;<code>OpPlayer</code> parcourt les ops du job commande par commande, maintenant un
-<code>MachineState</code> qui suit la position, l&#x27;état du laser et les axes auxiliaires.
-Ceci pilote :</p>
-<ul>
-<li class="">La lecture du canevas 3D (révélation progressive du trajet d&#x27;outil)</li>
-<li class="">La position de la tête machine et la visualisation du faisceau laser</li>
-<li class="">L&#x27;avance commande par commande pour le curseur de lecture</li>
-</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="opplayer-backend-du-simulateur">OpPlayer (Backend du Simulateur)<a href="#opplayer-backend-du-simulateur" class="hash-link" aria-label="Lien direct vers OpPlayer (Backend du Simulateur)" title="Lien direct vers OpPlayer (Backend du Simulateur)" translate="no">​</a></h3>
+<p>L&#x27;<code>OpPlayer</code> parcourt les ops du job commande par commande, en
+maintenant un <code>MachineState</code> qui suit la position, l&#x27;état du laser et
+les axes auxiliaires. Cela pilote la lecture du canvas 3D (révélation
+progressive du trajet d&#x27;outil), la visualisation de la position de la
+tête de machine et du faisceau laser, et le pas à pas par commande
+pour le curseur de lecture.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="consommateurs">Consommateurs<a href="#consommateurs" class="hash-link" aria-label="Lien direct vers Consommateurs" title="Lien direct vers Consommateurs" translate="no">​</a></h2>
 
 
@@ -358,44 +516,68 @@ Ceci pilote :</p>
 
 
 
-<table><thead><tr><th>Consommateur</th><th>Utilise</th><th>Objectif</th></tr></thead><tbody><tr><td>Canevas 2D</td><td>WorkPieceViewArtifacts</td><td>Rend les workpieces dans l&#x27;espace écran</td></tr><tr><td>Canevas 3D</td><td>CompiledSceneArtifact</td><td>Rend le job complet en 3D avec lecture</td></tr><tr><td>Machine</td><td>JobArtifact (code machine)</td><td>Sortie de fabrication</td></tr></tbody></table>
-<h1>Décisions architecturales clés</h1>
+<table><thead><tr><th>Consommateur</th><th>Utilise</th><th>But</th></tr></thead><tbody><tr><td>Canvas 2D</td><td>WorkPieceViewArtifacts</td><td>Affiche les workpieces en espace écran</td></tr><tr><td>Canvas 3D</td><td>CompiledSceneArtifact</td><td>Affiche le job complet en 3D avec lecture</td></tr><tr><td>Machine</td><td>JobArtifact (code machine)</td><td>Sortie de fabrication</td></tr></tbody></table>
+<h1>Décisions Architecturales Clés</h1>
 <ol>
 <li class="">
-<p><strong>Ordonnancement basé sur DAG :</strong> Au lieu d&#x27;étapes séquentielles, les artefacts sont
-générés lorsque leurs dépendances deviennent disponibles, permettant le parallélisme.</p>
+<p><strong>Ordonnancement basé sur les Intentions :</strong> Au lieu d&#x27;un DAG
+Python explicite avec des ordonnanceurs résidents Python, le
+pipeline déclare <em>quoi</em> calculer (une <code>Intent</code> de <code>NodeRequest</code>s
+avec des clés stables et des jetons de version) et laisse
+<code>run_intent</code> de raygeo ordonnancer le travail sur des threads
+rayon. L&#x27;invalidation du cache est purement pilotée par les jetons
+via <code>Intent.update</code>.</p>
 </li>
 <li class="">
-<p><strong>État basé sur un registre :</strong> L&#x27;état des nœuds est suivi dans les entrées du registre
-de l&#x27;ArtifactManager plutôt que dans les nœuds du graphe eux-mêmes, fournissant
-une source unique de vérité pour l&#x27;état et le stockage des handles.</p>
+<p><strong>Façade + Contrôleur Interne :</strong> <code>Pipeline</code> est la seule surface
+publique ; <code>IntentController</code> et <code>IntentBuilder</code> sont des détails
+d&#x27;implémentation. Cela maintient le contrat public de
+signaux/propriétés stable tout en permettant aux internes
+d&#x27;orchestration d&#x27;évoluer.</p>
 </li>
 <li class="">
-<p><strong>Séparation de la couche de vue :</strong> Le canevas 2D (ViewManager) et le canevas 3D
-(Compilateur de Scène) sont tous deux découplés du pipeline de données. Chacun
-exécute son propre rendu basé sur des sous-processus et est piloté par des signaux
-du pipeline plutôt que de faire partie du DAG.</p>
+<p><strong>Magasin d&#x27;Artefacts en Processus :</strong> Le remplacement du magasin
+multiprocessus en mémoire partagée par un dictionnaire en processus
+avec comptage de références supprime la complexité IPC et de
+transfert de propriété tout en conservant le contrat de
+handle/cycle de vie sur lequel reposent l&#x27;UI et les chemins
+d&#x27;exportation.</p>
 </li>
 <li class="">
-<p><strong>IDs de génération :</strong> Les artefacts sont suivis avec des IDs de génération, permettant
-une réutilisation efficace entre les versions du document et la détection des artefacts périmés.</p>
+<p><strong>IDs de Génération :</strong> Chaque reconstruction incrémente un ID de
+génération ; chaque nœud terminé porte sa génération d&#x27;origine. Le
+filtre d&#x27;époque de <code>on_completed</code> supprime silencieusement les
+résultats obsolètes, de sorte que les sorties périmées ne soient
+jamais rattachées au DOM.</p>
 </li>
 <li class="">
-<p><strong>Orchestration centralisée :</strong> Le DagScheduler est le point unique de
-contrôle pour l&#x27;ordonnancement des tâches ; les étapes gèrent la mécanique d&#x27;exécution.</p>
+<p><strong>Rattachement sur le Thread Principal :</strong> Les callbacks raygeo
+(<code>on_completed</code>, <code>on_batch_progress</code>) se déclenchent sur des
+threads travailleurs rayon sous le GIL ; le contrôleur marshalle
+chaque callback touchant le DOM vers le thread principal de
+l&#x27;application via le gestionnaire de tâches partagé, de sorte que
+les gestionnaires de signaux ne s&#x27;exécutent jamais sur un
+travailleur.</p>
 </li>
 <li class="">
-<p><strong>Isolation du GenerationContext :</strong> Chaque génération a son propre contexte,
-garantissant que les ressources restent actives jusqu&#x27;à ce que toutes les tâches en cours soient terminées.</p>
+<p><strong>Séparation des Couches de Vue :</strong> Le canvas 2D (<code>ViewManager</code>)
+et le canvas 3D (Scene Compiler / OpPlayer) sont tous deux
+découplés du pipeline de données. Chacun est piloté par des
+signaux du pipeline plutôt que de faire partie de l&#x27;intention.</p>
 </li>
 <li class="">
-<p><strong>Suivi d&#x27;invalidation :</strong> Les clés marquées sales avant la reconstruction du graphe sont
-préservées et réappliquées après reconstruction.</p>
+<p><strong>Invalidation Pilotée par les Jetons :</strong> Il n&#x27;y a pas de table
+d&#x27;invalidation explicite. Le builder produit des jetons de version
+SHA-1 canoniques ; tout changement d&#x27;entrée produit un jeton
+différent, qu&#x27;<code>Intent.update</code> utilise pour supprimer exactement
+les entrées de cache affectées.</p>
 </li>
 <li class="">
-<p><strong>Réconciliation groupée :</strong> Les changements sont regroupés avec des délais
-configurables pour éviter des cycles de pipeline excessifs lors d&#x27;éditions rapides.</p>
+<p><strong>Réconciliation avec Debounce :</strong> Les modifications du Doc sont
+regroupées avec un debounce de 200 ms (<code>REBUILD_DEBOUNCE_MS</code>) pour
+éviter les cycles excessifs du pipeline pendant les modifications
+rapides.</p>
 </li>
-</ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/developer/pipeline.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Modifier cette page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Pages de documentation"><a class="pagination-nav__link pagination-nav__link--prev" href="/fr/docs/developer/importer"><div class="pagination-nav__sublabel">Précédent</div><div class="pagination-nav__label">Architecture de l&#x27;importateur</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/fr/docs/developer/tasker"><div class="pagination-nav__sublabel">Suivant</div><div class="pagination-nav__label">Tasker : Gestion des tâches en arrière-plan</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#nœuds-dartefacts-et-graphe-de-dépendances" class="table-of-contents__link toc-highlight">Nœuds d&#39;artefacts et graphe de dépendances</a><ul><li><a href="#artifactnode" class="table-of-contents__link toc-highlight">ArtifactNode</a></li><li><a href="#états-des-nœuds" class="table-of-contents__link toc-highlight">États des nœuds</a></li><li><a href="#pipelinegraph" class="table-of-contents__link toc-highlight">PipelineGraph</a></li></ul></li><li><a href="#dagscheduler" class="table-of-contents__link toc-highlight">DagScheduler</a></li><li><a href="#artifactmanager" class="table-of-contents__link toc-highlight">ArtifactManager</a></li><li><a href="#generationcontext" class="table-of-contents__link toc-highlight">GenerationContext</a></li><li><a href="#cycle-de-vie-de-la-mémoire-partagée" class="table-of-contents__link toc-highlight">Cycle de vie de la mémoire partagée</a><ul><li><a href="#patterns-de-propriété" class="table-of-contents__link toc-highlight">Patterns de propriété</a></li><li><a href="#détection-des-artefacts-périmés" class="table-of-contents__link toc-highlight">Détection des artefacts périmés</a></li></ul></li><li><a href="#étapes-du-pipeline" class="table-of-contents__link toc-highlight">Étapes du pipeline</a></li><li><a href="#stratégie-dinvalidation" class="table-of-contents__link toc-highlight">Stratégie d&#39;invalidation</a></li><li><a href="#entrée" class="table-of-contents__link toc-highlight">Entrée</a></li><li><a href="#noyau-du-pipeline" class="table-of-contents__link toc-highlight">Noyau du pipeline</a><ul><li><a href="#pipeline-orchestrateur" class="table-of-contents__link toc-highlight">Pipeline (Orchestrateur)</a></li><li><a href="#dagscheduler-1" class="table-of-contents__link toc-highlight">DagScheduler</a></li><li><a href="#artifactmanager-1" class="table-of-contents__link toc-highlight">ArtifactManager</a></li><li><a href="#generationcontext-1" class="table-of-contents__link toc-highlight">GenerationContext</a></li></ul></li><li><a href="#génération-dartefacts" class="table-of-contents__link toc-highlight">Génération d&#39;artefacts</a><ul><li><a href="#workpieceartifacts" class="table-of-contents__link toc-highlight">WorkPieceArtifacts</a></li><li><a href="#stepopsartifacts" class="table-of-contents__link toc-highlight">StepOpsArtifacts</a></li><li><a href="#jobartifact" class="table-of-contents__link toc-highlight">JobArtifact</a></li></ul></li><li><a href="#couche-de-vue-2d-séparée" class="table-of-contents__link toc-highlight">Couche de vue 2D (Séparée)</a><ul><li><a href="#rendercontext" class="table-of-contents__link toc-highlight">RenderContext</a></li><li><a href="#workpieceviewartifacts" class="table-of-contents__link toc-highlight">WorkPieceViewArtifacts</a></li><li><a href="#cycle-de-vie" class="table-of-contents__link toc-highlight">Cycle de vie</a></li></ul></li><li><a href="#couche-3d--simulateur-séparée" class="table-of-contents__link toc-highlight">Couche 3D / Simulateur (Séparée)</a><ul><li><a href="#compiledsceneartifact" class="table-of-contents__link toc-highlight">CompiledSceneArtifact</a></li><li><a href="#pipeline-de-compilation" class="table-of-contents__link toc-highlight">Pipeline de compilation</a></li><li><a href="#opplayer-backend-simulateur" class="table-of-contents__link toc-highlight">OpPlayer (Backend Simulateur)</a></li></ul></li><li><a href="#consommateurs" class="table-of-contents__link toc-highlight">Consommateurs</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/developer/pipeline.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Modifier cette page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Pages de documentation"><a class="pagination-nav__link pagination-nav__link--prev" href="/fr/docs/developer/importer"><div class="pagination-nav__sublabel">Précédent</div><div class="pagination-nav__label">Architecture de l&#x27;importateur</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/fr/docs/developer/tasker"><div class="pagination-nav__sublabel">Suivant</div><div class="pagination-nav__label">Tasker : Gestion des tâches en arrière-plan</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#pipeline-façade-publique" class="table-of-contents__link toc-highlight">Pipeline (Façade Publique)</a></li><li><a href="#intentcontroller" class="table-of-contents__link toc-highlight">IntentController</a></li><li><a href="#intentbuilder" class="table-of-contents__link toc-highlight">IntentBuilder</a><ul><li><a href="#clés-stables" class="table-of-contents__link toc-highlight">Clés Stables</a></li><li><a href="#jetons-de-version" class="table-of-contents__link toc-highlight">Jetons de Version</a></li><li><a href="#construction-des-étapes" class="table-of-contents__link toc-highlight">Construction des Étapes</a></li><li><a href="#résolution-de-stock" class="table-of-contents__link toc-highlight">Résolution de Stock</a></li></ul></li><li><a href="#pipeline-raygeo--run_intent" class="table-of-contents__link toc-highlight">Pipeline raygeo &amp; <code>run_intent</code></a></li><li><a href="#artifactstore--handles-dartefacts" class="table-of-contents__link toc-highlight">ArtifactStore &amp; Handles d&#39;Artefacts</a></li><li><a href="#ids-de-génération--filtre-dépoque" class="table-of-contents__link toc-highlight">IDs de Génération &amp; Filtre d&#39;Époque</a></li><li><a href="#pause-reprise--mode-manuel" class="table-of-contents__link toc-highlight">Pause, Reprise &amp; Mode Manuel</a></li><li><a href="#stratégie-dinvalidation" class="table-of-contents__link toc-highlight">Stratégie d&#39;Invalidation</a></li><li><a href="#entrée" class="table-of-contents__link toc-highlight">Entrée</a></li><li><a href="#orchestration-python" class="table-of-contents__link toc-highlight">Orchestration Python</a><ul><li><a href="#pipeline-façade" class="table-of-contents__link toc-highlight">Pipeline (Façade)</a></li><li><a href="#intentcontroller-1" class="table-of-contents__link toc-highlight">IntentController</a></li><li><a href="#intentbuilder-1" class="table-of-contents__link toc-highlight">IntentBuilder</a></li></ul></li><li><a href="#pipeline-raygeo" class="table-of-contents__link toc-highlight">Pipeline raygeo</a></li><li><a href="#génération-dartefacts" class="table-of-contents__link toc-highlight">Génération d&#39;Artefacts</a><ul><li><a href="#workpieceartifacts" class="table-of-contents__link toc-highlight">WorkPieceArtifacts</a></li><li><a href="#stepopsartifacts" class="table-of-contents__link toc-highlight">StepOpsArtifacts</a></li><li><a href="#jobartifact" class="table-of-contents__link toc-highlight">JobArtifact</a></li></ul></li><li><a href="#couche-de-vue-2d-découplée" class="table-of-contents__link toc-highlight">Couche de Vue 2D (Découplée)</a><ul><li><a href="#rendercontext" class="table-of-contents__link toc-highlight">RenderContext</a></li><li><a href="#workpieceviewartifacts" class="table-of-contents__link toc-highlight">WorkPieceViewArtifacts</a></li></ul></li><li><a href="#couche-3d--simulateur-découplée" class="table-of-contents__link toc-highlight">Couche 3D / Simulateur (Découplée)</a><ul><li><a href="#compiledsceneartifact" class="table-of-contents__link toc-highlight">CompiledSceneArtifact</a></li><li><a href="#pipeline-de-compilation" class="table-of-contents__link toc-highlight">Pipeline de Compilation</a></li><li><a href="#opplayer-backend-du-simulateur" class="table-of-contents__link toc-highlight">OpPlayer (Backend du Simulateur)</a></li></ul></li><li><a href="#consommateurs" class="table-of-contents__link toc-highlight">Consommateurs</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

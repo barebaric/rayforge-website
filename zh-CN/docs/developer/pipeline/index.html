@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.1">
-<title data-rh="true">流水线架构 | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" property="og:url" content="https://rayforge.org/zh-CN/docs/developer/pipeline"><meta data-rh="true" property="og:locale" content="zh_CN"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="pt_BR"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="de"><meta data-rh="true" property="og:locale:alternate" content="uk"><meta data-rh="true" name="docusaurus_locale" content="zh-CN"><meta data-rh="true" name="docsearch:language" content="zh-CN"><meta data-rh="true" name="keywords" content="laser cutter software, laser engraving software, LightBurn alternative, free laser software, open source laser software, GRBL, laser cutting software, laser control software, G-code sender, Rayforge"><meta data-rh="true" name="author" content="Rayforge Contributors"><meta data-rh="true" name="robots" content="index, follow"><meta data-rh="true" property="og:type" content="website"><meta data-rh="true" property="og:site_name" content="Rayforge"><meta data-rh="true" property="og:image" content="https://rayforge.org/images/social.png"><meta data-rh="true" property="og:image:width" content="1200"><meta data-rh="true" property="og:image:height" content="630"><meta data-rh="true" property="og:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" name="twitter:title" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:description" content="The complete creative studio for your laser cutter. Design, simulate, and control — with AI-powered tools, 3D preview, and a built-in sketcher."><meta data-rh="true" name="twitter:image" content="https://rayforge.org/images/social.png"><meta data-rh="true" name="twitter:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="流水线架构 | Rayforge"><meta data-rh="true" name="description" content="本文档描述流水线架构，它使用有向无环图（DAG）来编排工件生成。流水线将原始设计数据转换为用于可视化和制造的最终输出，具有依赖感知调度和高效的工件缓存。"><meta data-rh="true" property="og:description" content="本文档描述流水线架构，它使用有向无环图（DAG）来编排工件生成。流水线将原始设计数据转换为用于可视化和制造的最终输出，具有依赖感知调度和高效的工件缓存。"><link data-rh="true" rel="icon" href="/zh-CN/images/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/zh-CN/docs/developer/pipeline"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/developer/pipeline" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/pt-BR/docs/developer/pipeline" hreflang="pt-BR"><link data-rh="true" rel="alternate" href="https://rayforge.org/es/docs/developer/pipeline" hreflang="es"><link data-rh="true" rel="alternate" href="https://rayforge.org/fr/docs/developer/pipeline" hreflang="fr"><link data-rh="true" rel="alternate" href="https://rayforge.org/de/docs/developer/pipeline" hreflang="de"><link data-rh="true" rel="alternate" href="https://rayforge.org/zh-CN/docs/developer/pipeline" hreflang="zh-CN"><link data-rh="true" rel="alternate" href="https://rayforge.org/uk/docs/developer/pipeline" hreflang="uk"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/developer/pipeline" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"流水线架构","item":"https://rayforge.org/zh-CN/docs/developer/pipeline"}]}</script><link rel="alternate" type="application/rss+xml" href="/zh-CN/blog/rss.xml" title="Rayforge RSS Feed">
+<title data-rh="true">管道架构 | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" property="og:url" content="https://rayforge.org/zh-CN/docs/developer/pipeline"><meta data-rh="true" property="og:locale" content="zh_CN"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="pt_BR"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="de"><meta data-rh="true" property="og:locale:alternate" content="uk"><meta data-rh="true" name="docusaurus_locale" content="zh-CN"><meta data-rh="true" name="docsearch:language" content="zh-CN"><meta data-rh="true" name="keywords" content="laser cutter software, laser engraving software, LightBurn alternative, free laser software, open source laser software, GRBL, laser cutting software, laser control software, G-code sender, Rayforge"><meta data-rh="true" name="author" content="Rayforge Contributors"><meta data-rh="true" name="robots" content="index, follow"><meta data-rh="true" property="og:type" content="website"><meta data-rh="true" property="og:site_name" content="Rayforge"><meta data-rh="true" property="og:image" content="https://rayforge.org/images/social.png"><meta data-rh="true" property="og:image:width" content="1200"><meta data-rh="true" property="og:image:height" content="630"><meta data-rh="true" property="og:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" name="twitter:title" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:description" content="The complete creative studio for your laser cutter. Design, simulate, and control — with AI-powered tools, 3D preview, and a built-in sketcher."><meta data-rh="true" name="twitter:image" content="https://rayforge.org/images/social.png"><meta data-rh="true" name="twitter:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="管道架构 | Rayforge"><meta data-rh="true" name="description" content="Rayforge 意图管道 — 设计如何从 Doc 模型通过 raygeo 意图传递到 G-code 生成。"><meta data-rh="true" property="og:description" content="Rayforge 意图管道 — 设计如何从 Doc 模型通过 raygeo 意图传递到 G-code 生成。"><link data-rh="true" rel="icon" href="/zh-CN/images/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/zh-CN/docs/developer/pipeline"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/developer/pipeline" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/pt-BR/docs/developer/pipeline" hreflang="pt-BR"><link data-rh="true" rel="alternate" href="https://rayforge.org/es/docs/developer/pipeline" hreflang="es"><link data-rh="true" rel="alternate" href="https://rayforge.org/fr/docs/developer/pipeline" hreflang="fr"><link data-rh="true" rel="alternate" href="https://rayforge.org/de/docs/developer/pipeline" hreflang="de"><link data-rh="true" rel="alternate" href="https://rayforge.org/zh-CN/docs/developer/pipeline" hreflang="zh-CN"><link data-rh="true" rel="alternate" href="https://rayforge.org/uk/docs/developer/pipeline" hreflang="uk"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/developer/pipeline" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"管道架构","item":"https://rayforge.org/zh-CN/docs/developer/pipeline"}]}</script><link rel="alternate" type="application/rss+xml" href="/zh-CN/blog/rss.xml" title="Rayforge RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/zh-CN/blog/atom.xml" title="Rayforge Atom Feed">
 
 
@@ -16,29 +16,22 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.a82eb417.css">
-<script src="/zh-CN/assets/js/runtime~main.e00662d5.js" defer="defer"></script>
-<script src="/zh-CN/assets/js/main.d635c374.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.634e7e8c.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.a1317747.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
 <symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
-<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="跳转到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳转到主要内容</a></div><nav aria-label="主导航" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/zh-CN/"><div class="navbar__logo"><img src="/zh-CN/images/icon.svg" alt="Rayforge 标志" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/zh-CN/images/icon.svg" alt="Rayforge 标志" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Rayforge</b></a><a class="navbar__item navbar__link" href="/zh-CN/docs/getting-started/installation">文档</a><a class="navbar__item navbar__link" href="/zh-CN/resources/devices">设备</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/zh-CN/docs/developer/getting-started/">开发者</a><a class="navbar__item navbar__link" href="/zh-CN/contributing">贡献</a><a class="navbar__item navbar__link" href="/zh-CN/sponsor">赞助</a><a class="navbar__item navbar__link" href="/zh-CN/blog">博客</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>中文（中国）</a><ul class="dropdown__menu"><li><a href="/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="en">English</a></li><li><a href="/pt-BR/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="pt-BR">Português (Brasil)</a></li><li><a href="/es/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="es">Español</a></li><li><a href="/fr/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="fr">Français</a></li><li><a href="/de/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="de">Deutsch</a></li><li><a href="/zh-CN/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="zh-CN">中文（中国）</a></li><li><a href="/uk/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="uk">Українська</a></li></ul></div><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="patreonLink_HbXT"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" class="patreonImg_dUDi"></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="系统模式" aria-label="切换深色和浅色模式（当前为系统模式）"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div class="floatingLinks_ekMW"><a class="floatingLink_seiz" href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" aria-label="Rayforge on GitHub" title="GitHub"><img class="floatingIcon_OM1j" src="https://cdn.simpleicons.org/github/000000" alt="" width="20" height="20" loading="lazy"></a><a class="floatingLink_seiz" href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" aria-label="Join Rayforge on Discord" title="Discord"><img class="floatingIcon_OM1j" src="https://cdn.simpleicons.org/discord/000000" alt="" width="20" height="20" loading="lazy"></a><a class="floatingLink_seiz" href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" aria-label="Support Rayforge on Patreon" title="Patreon"><img class="floatingIcon_OM1j floatingIconPatreon_HIKb" src="https://cdn.simpleicons.org/patreon/FF424D" alt="" width="20" height="20" loading="lazy"></a></div><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><div class="sidebarSearch_pOTk"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="搜索" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div><nav aria-label="文档侧边栏导航" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/zh-CN/docs/developer/getting-started/"><span title="入门指南" class="categoryLinkLabel_W154">入门指南</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/developer/getting-started/"><span title="获取代码" class="linkLabel_WmDU">获取代码</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/developer/getting-started/setup"><span title="环境设置" class="linkLabel_WmDU">环境设置</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/developer/getting-started/submitting-changes"><span title="提交更改" class="linkLabel_WmDU">提交更改</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/zh-CN/docs/developer/architecture"><span title="架构" class="categoryLinkLabel_W154">架构</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/developer/architecture"><span title="Rayforge 架构" class="linkLabel_WmDU">Rayforge 架构</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/developer/docmodel"><span title="文档模型架构" class="linkLabel_WmDU">文档模型架构</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/developer/importer"><span title="导入器架构" class="linkLabel_WmDU">导入器架构</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/zh-CN/docs/developer/pipeline"><span title="流水线架构" class="linkLabel_WmDU">流水线架构</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/developer/tasker"><span title="Tasker：后台任务管理" class="linkLabel_WmDU">Tasker：后台任务管理</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/developer/driver"><span title="驱动程序开发指南" class="linkLabel_WmDU">驱动程序开发指南</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/zh-CN/docs/developer/addon-overview"><span title="Addon Development" class="categoryLinkLabel_W154">Addon Development</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/zh-CN/docs/developer/raygeo-api/raygeo"><span title="RayGeo API Reference" class="categoryLinkLabel_W154">RayGeo API Reference</span></a><button aria-label="展开侧边栏分类 &#x27;RayGeo API Reference&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="面包屑导航"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="首页" class="breadcrumbs__link" href="/zh-CN/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">架构</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">流水线架构</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页目录</button></div><div class="theme-doc-markdown markdown"><header><h1>流水线架构</h1></header>
-<p>本文档描述流水线  架构，它使用有向无环图（DAG）来编排工件生成。流水线将原始设计数据转换为用于可视化和制造的最终输出，具有依赖感知调度和高效的工件缓存。</p>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="跳转到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳转到主要内容</a></div><nav aria-label="主导航" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/zh-CN/"><div class="navbar__logo"><img src="/zh-CN/images/icon.svg" alt="Rayforge 标志" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/zh-CN/images/icon.svg" alt="Rayforge 标志" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Rayforge</b></a><a class="navbar__item navbar__link" href="/zh-CN/docs/getting-started/installation">文档</a><a class="navbar__item navbar__link" href="/zh-CN/resources/devices">设备</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/zh-CN/docs/developer/getting-started/">开发者</a><a class="navbar__item navbar__link" href="/zh-CN/contributing">贡献</a><a class="navbar__item navbar__link" href="/zh-CN/sponsor">赞助</a><a class="navbar__item navbar__link" href="/zh-CN/blog">博客</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>中文（中国）</a><ul class="dropdown__menu"><li><a href="/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="en">English</a></li><li><a href="/pt-BR/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="pt-BR">Português (Brasil)</a></li><li><a href="/es/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="es">Español</a></li><li><a href="/fr/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="fr">Français</a></li><li><a href="/de/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="de">Deutsch</a></li><li><a href="/zh-CN/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="zh-CN">中文（中国）</a></li><li><a href="/uk/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="uk">Українська</a></li></ul></div><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="patreonLink_HbXT"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" class="patreonImg_dUDi"></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="系统模式" aria-label="切换深色和浅色模式（当前为系统模式）"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div class="floatingLinks_ekMW"><a class="floatingLink_seiz" href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" aria-label="Rayforge on GitHub" title="GitHub"><img class="floatingIcon_OM1j" src="https://cdn.simpleicons.org/github/000000" alt="" width="20" height="20" loading="lazy"></a><a class="floatingLink_seiz" href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" aria-label="Join Rayforge on Discord" title="Discord"><img class="floatingIcon_OM1j" src="https://cdn.simpleicons.org/discord/000000" alt="" width="20" height="20" loading="lazy"></a><a class="floatingLink_seiz" href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" aria-label="Support Rayforge on Patreon" title="Patreon"><img class="floatingIcon_OM1j floatingIconPatreon_HIKb" src="https://cdn.simpleicons.org/patreon/FF424D" alt="" width="20" height="20" loading="lazy"></a></div><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><div class="sidebarSearch_pOTk"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="搜索" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div><nav aria-label="文档侧边栏导航" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/zh-CN/docs/developer/getting-started/"><span title="入门指南" class="categoryLinkLabel_W154">入门指南</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/developer/getting-started/"><span title="获取代码" class="linkLabel_WmDU">获取代码</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/developer/getting-started/setup"><span title="环境设置" class="linkLabel_WmDU">环境设置</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/developer/getting-started/submitting-changes"><span title="提交更改" class="linkLabel_WmDU">提交更改</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/zh-CN/docs/developer/architecture"><span title="架构" class="categoryLinkLabel_W154">架构</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/developer/architecture"><span title="Rayforge 架构" class="linkLabel_WmDU">Rayforge 架构</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/developer/docmodel"><span title="文档模型架构" class="linkLabel_WmDU">文档模型架构</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/developer/importer"><span title="导入器架构" class="linkLabel_WmDU">导入器架构</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/zh-CN/docs/developer/pipeline"><span title="管道架构" class="linkLabel_WmDU">管道架构</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/developer/tasker"><span title="Tasker：后台任务管理" class="linkLabel_WmDU">Tasker：后台任务管理</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/zh-CN/docs/developer/driver"><span title="驱动程序开发指南" class="linkLabel_WmDU">驱动程序开发指南</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/zh-CN/docs/developer/addon-overview"><span title="Addon Development" class="categoryLinkLabel_W154">Addon Development</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/zh-CN/docs/developer/raygeo-api/raygeo"><span title="RayGeo API Reference" class="categoryLinkLabel_W154">RayGeo API Reference</span></a><button aria-label="展开侧边栏分类 &#x27;RayGeo API Reference&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="面包屑导航"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="首页" class="breadcrumbs__link" href="/zh-CN/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">架构</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">管道架构</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页目录</button></div><div class="theme-doc-markdown markdown"><header><h1>管道架构</h1></header>
+<p>本文档描述了将 <code>Doc</code> 模型转换为机器可执行 G-code 的管道。自 1.9.0 重写以来，该管道基于 <strong>raygeo 意图</strong> 构建：这是一种声明式描述，说明 Rust 端应执行的工作，配合一个轻量级的 Python 编排层和一个进程内引用计数的工件存储。</p>
+<p>之前的多进程 DAG（<code>DagScheduler</code>、<code>PipelineGraph</code>、<code>ArtifactManager</code>、<code>GenerationContext</code>、<code>WorkPiecePipelineStage</code>）已被移除。本文档仅描述当前的活跃架构。</p>
 <!-- -->
 <h1>核心概念</h1>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="工件节点和依赖图">工件节点和依赖图<a href="#工件节点和依赖图" class="hash-link" aria-label="工件节点和依赖图 的直接链接" title="工件节点和依赖图 的直接链接" translate="no">​</a></h2>
-<p>流水线使用 <strong>有向无环图（DAG）</strong> 来建模工件及其依赖关系。每个工件在图中表示为 <code>ArtifactNode</code>。</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="artifactnode">ArtifactNode<a href="#artifactnode" class="hash-link" aria-label="ArtifactNode 的直接链接" title="ArtifactNode 的直接链接" translate="no">​</a></h3>
-<p>每个节点包含：</p>
-<ul>
-<li class=""><strong>ArtifactKey</strong>：由 ID 和组类型（<code>workpiece</code>、<code>step</code>、<code>job</code> 或 <code>view</code>）组成的唯一标识符</li>
-<li class=""><strong>State</strong>：节点当前的生命周期状态</li>
-<li class=""><strong>Dependencies</strong>：此节点依赖的节点列表（子节点）</li>
-<li class=""><strong>Dependents</strong>：依赖此节点的节点列表（父节点）</li>
-</ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="节点状态">节点状态<a href="#节点状态" class="hash-link" aria-label="节点状态 的直接链接" title="节点状态 的直接链接" translate="no">​</a></h3>
-<p>节点经历四种状态：</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pipeline公共外观">Pipeline（公共外观）<a href="#pipeline公共外观" class="hash-link" aria-label="Pipeline（公共外观） 的直接链接" title="Pipeline（公共外观） 的直接链接" translate="no">​</a></h2>
+<p><code>rayforge/pipeline/pipeline.py:40</code> — 应用程序其他部分与之通信的类。<code>DocEditor</code>、<code>ViewManager</code>、UI 小部件和测试代码应仅依赖于 <code>Pipeline</code>。<code>IntentController</code> 和 <code>IntentBuilder</code> 是外观的实现细节，可能随时更改，恕不另行通知。</p>
+<p><code>Pipeline</code> 拥有 <code>ArtifactStore</code> 集成：它将内部 <code>IntentController</code> 发出的原始 raygeo 输出转换为 UI 和导出路径所消费的引用计数工件句柄，并公开应用程序其余部分所期望的信号/属性接口（忙状态、暂停/恢复、重新计算、机器更改）。</p>
+<p>外观转发的关键信号：</p>
 
 
 
@@ -64,62 +57,93 @@
 
 
 
-<table><thead><tr><th>状态</th><th>描述</th></tr></thead><tbody><tr><td><code>DIRTY</code></td><td>工件需要重新生成</td></tr><tr><td><code>PROCESSING</code></td><td>任务正在生成工件</td></tr><tr><td><code>VALID</code></td><td>工件已就绪且是最新的</td></tr><tr><td><code>ERROR</code></td><td>生成失败</td></tr></tbody></table>
-<p>当一个节点被标记为脏时，其所有依赖者也被标记为脏，将失效沿图向上传播。</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pipelinegraph">PipelineGraph<a href="#pipelinegraph" class="hash-link" aria-label="PipelineGraph 的直接链接" title="PipelineGraph 的直接链接" translate="no">​</a></h3>
-<p><code>PipelineGraph</code> 从 Doc 模型构建，包含：</p>
-<ul>
-<li class="">每个 <code>(WorkPiece, Step)</code> 对的一个节点</li>
-<li class="">每个 Step 的一个节点</li>
-<li class="">Job 的一个节点</li>
-</ul>
-<p>建立依赖关系：</p>
-<ul>
-<li class="">Steps 依赖于其 <code>(WorkPiece, Step)</code> 对节点</li>
-<li class="">Job 依赖于所有 Steps</li>
-</ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="dagscheduler">DagScheduler<a href="#dagscheduler" class="hash-link" aria-label="DagScheduler 的直接链接" title="DagScheduler 的直接链接" translate="no">​</a></h2>
-<p><code>DagScheduler</code> 是流水线的中央编排器。它拥有 <code>PipelineGraph</code> 并负责：</p>
+
+
+
+
+
+
+
+
+<table><thead><tr><th>信号</th><th>含义</th></tr></thead><tbody><tr><td><code>processing_state_changed</code></td><td>忙/空闲状态转换</td></tr><tr><td><code>workpiece_artifact_ready</code></td><td>已发布 <code>WorkPieceArtifact</code> 句柄</td></tr><tr><td><code>job_generation_finished</code></td><td><code>JobArtifact</code> 句柄（G-code + ops + 估计）已就绪</td></tr><tr><td><code>job_time_updated</code></td><td>重建期间聚合时间估计已更改</td></tr><tr><td><code>data_stale</code></td><td>请求重建但当前已暂停或处于手动模式</td></tr><tr><td><code>visual_chunk_available</code></td><td>渐进式光栅块，用于增量 UI 更新</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="intentcontroller">IntentController<a href="#intentcontroller" class="hash-link" aria-label="IntentController 的直接链接" title="IntentController 的直接链接" translate="no">​</a></h2>
+<p><code>rayforge/pipeline/intent_controller.py:108</code> — 拥有一个 raygeo <code>Intent</code> 及周围的重建生命周期。它监听旧管道使用的相同冒泡 Doc 信号（<code>descendant_updated</code>、<code>descendant_transform_changed</code>、<code>descendant_added</code>、<code>descendant_removed</code>、<code>job_assembly_invalidated</code>），并在文档更改时重建 raygeo <code>Intent</code>。</p>
+<p>在每次防抖重建（200 毫秒 <code>REBUILD_DEBOUNCE_MS</code>）时：</p>
 <ol>
-<li class="">从 Doc 模型 <strong>构建图</strong></li>
-<li class=""><strong>识别就绪节点</strong>（DIRTY 且所有依赖项为 VALID）</li>
-<li class=""><strong>启动任务</strong>生成工件</li>
-<li class="">通过生成过程 <strong>跟踪状态</strong></li>
-<li class="">当工件就绪时 <strong>通知消费者</strong></li>
+<li class="">调用 <code>IntentBuilder</code> 从当前 <code>Doc</code> 生成一个全新的 <code>NodeRequest</code> 对象列表。</li>
+<li class="">新列表通过 <code>create_intent_from_nodes</code> 包装成 raygeo <code>Intent</code>。</li>
+<li class=""><code>Intent.update</code> 使用每个节点的 <code>version_token</code> 比较前后意图，并在共享的 raygeo <code>Pipeline</code> 上驱逐所有过时的缓存条目。</li>
+<li class="">当 <code>dispatch=True</code> 时，新意图也通过 <code>run_intent</code> 执行；<code>on_completed</code> 回调执行 epoch 过滤器（丢弃 <code>generation_id</code> 早于控制器当前世代的结果），然后通过共享的任务管理器将 DOM 重新附加编组回应用程序主线程。</li>
+<li class=""><code>on_batch_progress</code> 回调通过 <code>progress_changed</code> 将聚合进度中继给监听器（编组到主线程，以便信号处理程序永远不会在 rayon 工作线程 上运行）。</li>
 </ol>
-<p>调度器使用生成 ID 来跟踪哪些工件属于哪个文档版本，允许跨生成重用有效工件。</p>
-<p>关键行为：</p>
+<p>控制器的 <code>_key_to_item</code> 映射（在每次成功的 <code>IntentBuilder.build</code> 调用时重建）允许带 epoch 过滤器的 <code>on_completed</code> 回调将输出重新附加到原始 <code>WorkPiece</code> 或 <code>Step</code>，而无需重新遍历 Doc。节点键按形状分发：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>节点键</th><th>重新附加到</th><th>发出的信号</th></tr></thead><tbody><tr><td><code>workpiece:{wp_uid}:{step_uid}</code></td><td>所属 <code>WorkPiece</code></td><td><code>workpiece_artifact_ready</code></td></tr><tr><td><code>step:{step_uid}</code></td><td>所属 <code>Step</code></td><td><code>step_artifact_ready</code></td></tr><tr><td><code>job</code></td><td><code>Doc</code></td><td><code>job_aggregate_ready</code></td></tr><tr><td><code>job:encode</code></td><td><code>Doc</code></td><td><code>job_generation_finished</code></td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="intentbuilder">IntentBuilder<a href="#intentbuilder" class="hash-link" aria-label="IntentBuilder 的直接链接" title="IntentBuilder 的直接链接" translate="no">​</a></h2>
+<p><code>rayforge/pipeline/intent_builder.py:133</code> — 遍历 <code>Doc</code> 并生成一个扁平的 <code>NodeRequest</code> 对象列表，带有<strong>稳定键</strong>和<strong>确定性版本令牌</strong>。构建器是无状态的：每次调用 <code>build</code> 都会生成一个全新的、自包含的列表，适合包装到 raygeo <code>Intent</code> 中。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="稳定键">稳定键<a href="#稳定键" class="hash-link" aria-label="稳定键 的直接链接" title="稳定键 的直接链接" translate="no">​</a></h3>
 <ul>
-<li class="">构建图时，调度器将节点状态与工件管理器同步，以识别可以重用的缓存工件</li>
-<li class="">如果前一代的工件仍然有效，可以重用</li>
-<li class="">调度器跟踪哪些生成 ID 有正在运行的任务，以在生成转换期间保留工件</li>
-<li class="">即使在图重建之前也会跟踪失效，并在之后重新应用</li>
+<li class=""><code>workpiece:{wp_uid}:{step_uid}</code> — 每个工件/步骤对一个计算节点。</li>
+<li class=""><code>step:{step_uid}</code> — 每个步骤一个聚合节点，连接工件计算输出并应用按步骤转  换器。</li>
+<li class=""><code>job</code> — 一个最终聚合节点，将所有步骤输出与作业级标记和机器参数链接起来。</li>
+<li class=""><code>job:machinexform</code> — 机器变换计算节点，消费作业聚合的世界空间 ops 并生成机器空间 ops（曲线线性化、旋转轴映射、世界→机器、WCS 偏移、Z 翻转、AXIS_REPLACEMENT）。</li>
+<li class=""><code>job:encode</code> — 编码器计算节点，消费机器变换节点的 ops 并生成机器代码（G-code / 顶点 / 纹理）。</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="artifactmanager">ArtifactManager<a href="#artifactmanager" class="hash-link" aria-label="ArtifactManager 的直接链接" title="ArtifactManager 的直接链接" translate="no">​</a></h2>
-<p><code>ArtifactManager</code> 是工件句柄的纯缓存管理器。它：</p>
+<p>键格式集中在 <code>intent_builder.py</code> 中，以便生产者和 <code>IntentController</code> 重新附加映射始终保持一致。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="版本令牌">版本令牌<a href="#版本令牌" class="hash-link" aria-label="版本令牌 的直接链接" title="版本令牌 的直接链接" translate="no">​</a></h3>
+<p>raygeo 的缓存仅按节点键索引；<code>version_token</code> 是唯一的失效信号。令牌是影响节点输出的输入规范表示的 SHA-1 摘要（参见 <code>_hash_int</code>，<code>intent_builder.py:1066</code>）：</p>
 <ul>
-<li class="">存储和检索工件句柄</li>
-<li class="">管理引用计数以进行清理</li>
-<li class="">处理生命周期（创建、保留、释放）</li>
-<li class="">不跟踪状态（状态由 DAG 调度器管理）</li>
+<li class=""><strong>计算令牌</strong> 哈希 <code>(geometry_revision, wp_size, step_params, assembler_params, per_workpiece_transformers)</code>。对于声明了位置敏感转换器的步骤范围（参见 <code>Step.is_position_sensitive</code>），工件的 <code>transform_revision</code> 和 stock 修订被折叠到令牌中；否则它们被省略，以便纯移动不会使工件计算结果失效。</li>
+<li class=""><strong>步骤聚合令牌</strong> 哈希 <code>(upstream compute tokens, placements, step_params, per_step/per_workpiece transformers, position_sensitive())</code>，加上步骤位置敏感时的 <code>stock_rev</code>。</li>
+<li class=""><strong>作业令牌</strong> 折叠所有按步骤聚合令牌，以便任何上游更改（工件移动、转换器编辑、步骤参数更改）都会传播到作业/编码缓存  。</li>
+<li class=""><strong>机器变换令牌</strong> 折叠作业令牌加上机器标识（<code>supports_curves</code>、<code>reverse_z_axis</code>、WCS 配置、每层旋转模块配置）。</li>
+<li class=""><strong>编码令牌</strong> 折叠机器变换令牌加上编码器标识（<code>driver_name</code>、<code>gcode_precision</code>、轴范围等）。</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="共享内存生命周期">共享内存生命周期<a href="#共享内存生命周期" class="hash-link" aria-label="共享内存生命周期 的直接链接" title="共享内存生命周期 的直接链接" translate="no">​</a></h2>
-<p>工件存储在共享内存（<code>multiprocessing.shared_memory</code>）中，用于工作进程和主进程之间高效的进程间通信。<code>ArtifactStore</code> 管理这些内存块的生命周期。</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="所有权模式">所有权模式<a href="#所有权模式" class="hash-link" aria-label="所有权模式 的直接链接" title="所有权模式 的直接链接" translate="no">​</a></h3>
-<p><strong>本地所有权：</strong> 创建进程拥有句柄并在完成后释放它。这是最简单的模式。</p>
-<p><strong>进程间交接：</strong> 工作进程创建工件，通过 IPC 将其发送到主进程，并转移所有权。工作进程&quot;忘记&quot;句柄（关闭其文件描述符而不取消链接内存），而主进程&quot;收养&quot;它并负责最终释放。</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="引用计数">引用计数<a href="#引用计数" class="hash-link" aria-label="引用计数 的直接链接" title="引用计数 的直接链接" translate="no">​</a></h3>
-<p><code>ArtifactStore</code> 为每个共享内存块维护引用计数。多个调用者可以 <code>retain()</code> 句柄，只有当计数达到零  时才取消链接内存块。这被 <code>ViewManager</code> 用于渐进式渲染，其中多个回调可能访问同一工件。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="流水线阶段">流水线阶段<a href="#流水线阶段" class="hash-link" aria-label="流水线阶段 的直接链接" title="流水线阶段 的直接链接" translate="no">​</a></h2>
-<p>流水线阶段（<code>WorkPiecePipelineStage</code>、<code>StepPipelineStage</code>、<code>JobPipelineStage</code>）现在作为接口而不是任务启动器：</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="阶段构建">阶段构建<a href="#阶段构建" class="hash-link" aria-label="阶段构建 的直接链接" title="阶段构建 的直接链接" translate="no">​</a></h3>
+<p>每个 <code>NodeRequest</code> 携带一个 <code>StageSpec</code>，描述 raygeo 应为该节点执行的工作。构建器生成：</p>
 <ul>
-<li class="">它们处理来自 UI 的失效请求</li>
-<li class="">它们将任务启动委托给 DagScheduler</li>
-<li class="">它们提供对缓存工件的访问</li>
-<li class="">它们将信号从调度器转发到 UI</li>
+<li class="">每个工件/步骤对的 <code>StageSpec.Compute</code>，通过 <code>Step.build_compute_payload(machine_defaults, workpiece)</code>，返回一个 <code>Part</code>（矢量几何或图像源）加上一个 <code>ComputePayload</code>（装配器规范）。按工件转换器（<code>OverscanTransformer</code>、<code>BidirScanOffsetTransformer</code> 等）通过 <code>transformer_registry</code> 解析为类型化的 Rust <code>*Spec</code> pyclass 并附加到有效负载，以便 Rust 计算阶段在装配后应用它们。</li>
+<li class="">每个步骤的 <code>StageSpec.Aggregate</code>：每个上游工件计算节点一个 <code>AggregateGroup</code>，由 <code>WorkpieceStart</code>/<code>WorkpieceEnd</code> 标记包裹，每个输入携带工件的世界放置矩阵和物理大小作为 <code>target_dimensions</code>。按步骤转换器（<code>MultiPassTransformer</code>、<code>Optimize</code> 等）附加到 <code>AggregateSpec.transformers</code>，以便 Rust 聚合阶段在连接后应用它们。<code>MachineParams</code> 从解析的机器填充，以便聚合的时间估计正确。</li>
+<li class=""><code>job</code> 节点的 <code>StageSpec.Aggregate</code>：每层一个 <code>AggregateGroup</code>，由 <code>LayerStart</code>/<code>LayerEnd</code> 标记包裹，每个包含每个可见步骤的一个 <code>AggregateInput</code>；整个聚合由 <code>JobStart</code>/<code>JobEnd</code> 包裹。</li>
+<li class=""><code>job:machinexform</code> 的 <code>MachineTransformSpec</code>：世界→机器 4×4 矩阵、默认和每层 WCS 偏移、每层 <code>RotaryMappingSpec</code> 条目、曲线线性化标志和 Z 反转标志，打包成可序列化的规范，由 Rust <code>MachineTransformCompute</code> 阶段消费。</li>
+<li class=""><code>job:encode</code> 的 <code>EncodeSpec</code>：将 Grbl 机器路由到原生 Rust <code>GcodeSpec</code>（直接在 rayon 线程上编译，无需跨越 GIL）以及所有其他机器到 <code>PythonEncoder</code>，包装驱动程序特定的编码器可调用对象。编码器从上游 <code>job:machinexform</code> 节点读取机器空间 ops。</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="invalidationscope">InvalidationScope<a href="#invalidationscope" class="hash-link" aria-label="InvalidationScope 的直接链接" title="InvalidationScope 的直接链接" translate="no">​</a></h2>
-<p><code>InvalidationScope</code> 枚举定义下游工件的失效范围：</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stock-解析">Stock 解析<a href="#stock-解析" class="hash-link" aria-label="Stock 解析 的直接链接" title="Stock 解析 的直接链接" translate="no">​</a></h3>
+<p><code>_resolve_stock_geometries</code>（每次 <code>build</code> 调用一次，并在构建器上缓存）返回世界空间 stock 边界几何，<code>CropTransformer</code> 等转换器使用这些几何将按工件 ops 裁剪到机器工作区域或显式 <code>StockItem</code>。属于 Doc 的 <code>StockItem</code> 条目优先；仅当没有 Doc stock 时，机器工作区域矩形才用作后备。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="raygeo-管道与-run_intent">raygeo 管道与 <code>run_intent</code><a href="#raygeo-管道与-run_intent" class="hash-link" aria-label="raygeo-管道与-run_intent 的直接链接" title="raygeo-管道与-run_intent 的直接链接" translate="no">​</a></h2>
+<p>raygeo 的 <code>Pipeline</code>（<code>raygeo.pipeline.execute.Pipeline</code>）拥有 <code>Intent.update</code> 使其失效的缓存。<code>run_intent</code> 将意图的节点 调度到 GIL 下的 rayon 工作线程上，并为每个节点调用 <code>on_completed</code> 回调，为聚合进度调用 <code>on_batch_progress</code>。繁重的工作（计算、光栅、聚合、机器变换、编码）在 raygeo 线程中运行，而不是在子进程中，这是 CHANGELOG 1.9.0 中提到的头版更改。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="artifactstore-与工件句柄">ArtifactStore 与工件句柄<a href="#artifactstore-与工件句柄" class="hash-link" aria-label="ArtifactStore 与工件句柄 的直接链接" title="ArtifactStore 与工件句柄 的直接链接" translate="no">​</a></h2>
+<p>旧的共享内存 <code>ArtifactStore</code> 已被进程内引用计数存储替换（<code>rayforge/pipeline/artifact/store.py:29</code>）。所有工件作为普通 Python 对象存在于由 UUID 键控的字典中；句柄在 <code>key</code> 字段中携带 UUID 以及工件类型所需的任何元数据。生命周期通过 <code>ArtifactStore.retain</code>/<code>release</code> 的引用计数进行管理。</p>
+<p><code>Pipeline</code> 外观在主线程上将 raygeo 输出转换为工件句柄：</p>
 
 
 
@@ -137,99 +161,143 @@
 
 
 
-<table><thead><tr><th>范围</th><th>描述</th></tr></thead><tbody><tr><td><code>FULL_REPRODUCTION</code></td><td>使工件失效，级联到步骤再到作业。用于需要工件重新生成的更改（几何、参数、大小更改）。</td></tr><tr><td><code>STEP_ONLY</code></td><td>直接使步骤失效，级联到作业。用于仅位置/旋转变换更改，其中工件几何保持不变。</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+<table><thead><tr><th>输出（raygeo）</th><th>工件</th><th>存储标签</th></tr></thead><tbody><tr><td>每工件-步骤 ops</td><td><code>WorkPieceArtifact</code></td><td><code>wp</code></td></tr><tr><td>每步骤聚合 ops</td><td><code>StepOpsArtifact</code></td><td><code>step</code></td></tr><tr><td>作业聚合 + 编码</td><td><code>JobArtifact</code></td><td><code>job</code></td></tr></tbody></table>
+<p><code>JobArtifact</code> 携带世界空间 <code>Ops</code>、总距离、时间估计、<code>EncodedOutput</code>（文本加上 op→机器代码映射）以及——当配置了旋转模块时——用于 3D 预览的运动学映射 ops。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="世代-id-与-epoch-过滤">世代 ID 与 Epoch 过滤<a href="#世代-id-与-epoch-过滤" class="hash-link" aria-label="世代 ID 与 Epoch 过滤 的直接链接" title="世代 ID 与 Epoch 过滤 的直接链接" translate="no">​</a></h2>
+<p>每次重建都会递增 <code>IntentController.generation_id</code>。每个完成的节点都携带其产生的世代。<code>on_completed</code> 回调将节点的 <code>generation_id</code> 与控制器的当前世代进行比较，并静默丢弃过时的结果，因此来自先前重建的陈旧输出永远不会重新附加到 DOM。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="暂停恢复与手动模式">暂停、恢复与手动模式<a href="#暂停恢复与手动模式" class="hash-link" aria-label="暂停、恢复与手动模式 的直接链接" title="暂停、恢复与手动模式 的直接链接" translate="no">​</a></h2>
+<ul>
+<li class=""><code>Pipeline.pause()</code>/<code>resume()</code> 递增/递减控制器上的暂停计数器。暂停期间，文档更改设置 <code>data_stale</code> 标志（并发出 <code>data_stale</code>），而不是调度重建；恢复时，清除该标志，如果启用了 <code>auto_rebuild</code>，则调度重建。</li>
+<li class=""><code>Pipeline.auto_pipeline=False</code>（手动模式）：通过 <code>Pipeline.recalculate()</code> 显式触发重新计算，而不是在每次文档更改时自动触发。</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="失效策略">失效策略<a href="#失效策略" class="hash-link" aria-label="失效策略 的直接链接" title="失效策略 的直接链接" translate="no">​</a></h2>
+<p>失效是隐式的且由令牌驱动：任何影响节点输入的更改都会导致构建器为该节点的键生成不同的 <code>version_token</code>。<code>Intent.update</code> 驱逐过时的缓存条目，raygeo 仅重新执行该节点（及其下游消费者）。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>更改类型</th><th>对令牌的影响</th></tr></thead><tbody><tr><td>几何/参数</td><td>新的工件计算令牌级联到步骤、作业、机器变换、 编码</td></tr><tr><td>位置/旋转</td><td>工件计算令牌不变，除非步骤对位置敏感；步骤聚合令牌始终因折叠的放置而更改，这级联到作业/编码</td></tr><tr><td>大小更改</td><td>与几何相同：令牌从工件-步骤对向上级联</td></tr><tr><td>Stock 项目可见/移动/添加</td><td>影响 <code>stock_rev</code>（折叠到位置敏感步骤的计算和聚合令牌中）</td></tr><tr><td>机器配置</td><td>所有 <code>job:machinexform</code> 和 <code>job:encode</code> 令牌更改；如果 <code>kerf_mm</code>/<code>cut_speed</code>/激光头/弧公差/<code>supports_curves</code>/<code>supports_arcs</code> 更改，则步骤计算/聚合令牌更改</td></tr></tbody></table>
 <h1>详细分解</h1>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="输入">输入<a href="#输入" class="hash-link" aria-label="输入 的直接链接" title="输入 的直接链接" translate="no">​</a></h2>
-<p>过程从 <strong>Doc 模型</strong>开始，它包含：</p>
+<p>该过程从 <strong>Doc 模型</strong> 开始，包含：</p>
 <ul>
 <li class=""><strong>WorkPieces：</strong> 放置在画布上的单个设计元素（SVG、图像）</li>
-<li class=""><strong>Steps：</strong> 带有设置的处理指令（Contour、Raster）</li>
+<li class=""><strong>Steps：</strong> 带有设置的处理指令（轮廓、光栅等），组织成每层 <code>Workflow</code></li>
+<li class=""><strong>Layers：</strong> 工件的分组，每个都有自己的 workflow、WCS 和旋转配置</li>
+<li class=""><strong>StockItems：</strong> 可选的显式 stock 边界，由位置敏感的转换器（如 CropTransformer）使用</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="流水线核心">流水线核心<a href="#流水线核心" class="hash-link" aria-label="流水线核心 的直接链接" title="流水线核心 的直接链接" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pipeline编排器">Pipeline（编排器）<a href="#pipeline编排器" class="hash-link" aria-label="Pipeline（编排器） 的直接链接" title="Pipeline（编排器） 的直接链接" translate="no">​</a></h3>
-<p><code>Pipeline</code> 类是高层指挥者，它：</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="python-编排">Python 编排<a href="#python-编排" class="hash-link" aria-label="Python 编排 的直接链接" title="Python 编排 的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pipeline外观">Pipeline（外观）<a href="#pipeline外观" class="hash-link" aria-label="Pipeline（外观） 的直接链接" title="Pipeline（外观） 的直接链接" translate="no">​</a></h3>
+<p><code>Pipeline</code> 类：</p>
 <ul>
-<li class="">监听 Doc 模型的更改</li>
-<li class="">与 DagScheduler 协调触发重新生成</li>
-<li class="">管理整体处理状态</li>
-<li class="">连接组件之间的信号</li>
+<li class="">通过信号监听 Doc 模型的更改（通过 <code>IntentController</code> 中继）</li>
+<li class="">对更改进行<strong>防抖</strong>（200 毫秒协调延迟）</li>
+<li class="">与 <code>IntentController</code> 协调以触发重新生成</li>
+<li class="">管理整体处理状态和忙检测</li>
+<li class="">支持批量操作的<strong>暂停/恢复</strong></li>
+<li class="">支持<strong>手动模式</strong>（<code>auto_pipeline=False</code>），其中重新计算显式触发</li>
+<li class="">连接组件之间的信号并将其中继给消费者</li>
+<li class="">将引用计数的工件句柄发布到 <code>ArtifactStore</code></li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dagscheduler-1">DagScheduler<a href="#dagscheduler-1" class="hash-link" aria-label="DagScheduler 的直接链接" title="DagScheduler 的直接链接" translate="no">​</a></h3>
-<p><code>DagScheduler</code>：</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="intentcontroller-1">IntentController<a href="#intentcontroller-1" class="hash-link" aria-label="IntentController 的直接链接" title="IntentController 的直接链接" translate="no">​</a></h3>
+<p><code>IntentController</code>：</p>
 <ul>
-<li class="">构建和维护 <code>PipelineGraph</code></li>
-<li class="">识别准备好处理的节点</li>
-<li class="">通过 TaskManager 启动任务</li>
-<li class="">跟踪节点状态转换</li>
-<li class="">当工件就绪时发出信号</li>
+<li class="">拥有一个 raygeo <code>Intent</code> 及周围的重建生命周期</li>
+<li class="">在每次防抖的文档更改时重建全新的意图</li>
+<li class="">当 <code>dispatch=True</code> 时通过 <code>run_intent</code> 执行意图</li>
+<li class="">按 <code>generation_id</code> 过滤过时的结果（epoch 过滤器）</li>
+<li class="">通过共享的任务管理器将 DOM 重新附加编组到主线程</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="artifactmanager-1">ArtifactManager<a href="#artifactmanager-1" class="hash-link" aria-label="ArtifactManager 的直接链接" title="ArtifactManager 的直接链接" translate="no">​</a></h3>
-<p><code>ArtifactManager</code>：</p>
-<ul>
-<li class="">在共享内存中缓存工件句柄</li>
-<li class="">管理引用计数以进行清理</li>
-<li class="">通过 ArtifactKey 和生成 ID 提供查找</li>
-</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="intentbuilder-1">IntentBuilder<a href="#intentbuilder-1" class="hash-link" aria-label="IntentBuilder 的直接链接" title="IntentBuilder 的直接链接" translate="no">​</a></h3>
+<p><code>IntentBuilder</code> 是无状态的；每次调用 <code>build</code> 都会遍历 <code>Doc</code>，并为每个工件/步骤对生成一个 <code>NodeRequest</code>，每个步骤一个聚合，以及 <code>job</code>、<code>job:machinexform</code> 和 <code>job:encode</code> 节点。请参见上面的<a href="#%E7%A8%B3%E5%AE%9A%E9%94%AE" class="">  稳定键</a>、<a href="#%E7%89%88%E6%9C%AC%E4%BB%A4%E7%89%8C" class="">版本令牌</a>和<a href="#%E9%98%B6%E6%AE%B5%E6%9E%84%E5%BB%BA" class="">阶段构建</a>。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="raygeo-管道">raygeo 管道<a href="#raygeo-管道" class="hash-link" aria-label="raygeo 管道 的直接链接" title="raygeo 管道 的直接链接" translate="no">​</a></h2>
+<p><code>run_intent</code> 在 GIL 下的 rayon 工作线程上调度节点执行。共享的 <code>RaygeoPipeline</code> 实例持有按节点键索引的节点缓存；<code>Intent.update</code> 是唯一的失效入口点。计算、光栅、收缩包装、波前、轮廓、视图渲染和机器变换/编码都在 raygeo 线程中运行。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="工件生成">工件生成<a href="#工件生成" class="hash-link" aria-label="工件生成 的直接链接" title="工件生成 的直接链接" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="workpieceartifacts">WorkPieceArtifacts<a href="#workpieceartifacts" class="hash-link" aria-label="WorkPieceArtifacts 的直接链接" title="WorkPieceArtifacts 的直接链接" translate="no">​</a></h3>
-<p>为每个 <code>(WorkPiece, Step)</code> 组合生成，包含：</p>
+<p>为每个 <code>(WorkPiece, Step)</code> 组合生成。包含：</p>
 <ul>
-<li class="">本地坐标系中的刀具路径（<code>Ops</code>）</li>
-<li class="">线条的顶点数据</li>
-<li class="">光栅填充的纹理数据</li>
+<li class="">工件本地坐标系中的刀具路径（<code>Ops</code>）</li>
+<li class="">用于分辨率无关 ops 的可伸缩性标志和源尺寸</li>
+<li class="">世代 ID</li>
 </ul>
-<p>处理序列：</p>
-<ol>
-<li class=""><strong>修改器：</strong>（可选）图像处理（灰度等）</li>
-<li class=""><strong>生产者：</strong> 创建原始刀具路径（<code>Ops</code>）</li>
-<li class=""><strong>转换器：</strong> 每工件修改（Tabs、Smooth）</li>
-<li class=""><strong>顶点编码器：</strong> 创建 GPU 友好的数据</li>
-</ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stepartifacts">StepArtifacts<a href="#stepartifacts" class="hash-link" aria-label="StepArtifacts 的直接链接" title="StepArtifacts 的直接链接" translate="no">​</a></h3>
-<p>为每个 Step 生成，消耗所有相关的 WorkPieceArtifacts：</p>
-<p><strong>StepRenderArtifact：</strong></p>
+<p>大型光栅工件以增量块处理（通过 <code>visual_chunk_available</code> 中继），从而在生成期间实现渐进式视觉反馈。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stepopsartifacts">StepOpsArtifacts<a href="#stepopsartifacts" class="hash-link" aria-label="StepOpsArtifacts 的直接链接" title="StepOpsArtifacts 的直接链接" translate="no">​</a></h3>
+<p>为每个步骤生成，消费所有相关的 WorkPieceArtifacts：</p>
 <ul>
-<li class="">所有工件的组合顶点和纹理数据</li>
-<li class="">转换为世界空间坐标</li>
-<li class="">针对 3D 画布渲染优化</li>
-</ul>
-<p><strong>StepOpsArtifact：</strong></p>
-<ul>
-<li class="">所有工件的组合 Ops</li>
-<li class="">转换为世界空间坐标</li>
-<li class="">包括每步转换器（Optimize、Multi-Pass）</li>
+<li class="">世界坐标中所有工件的组合 <code>Ops</code></li>
+<li class="">应用的按步骤转换器（<code>Optimize</code>、<code>MultiPass</code> 等）</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="jobartifact">JobArtifact<a href="#jobartifact" class="hash-link" aria-label="JobArtifact 的直接链接" title="JobArtifact 的直接链接" translate="no">​</a></h3>
-<p>在需要 G-code 时按需生成，消耗所有 StepOpsArtifacts：</p>
+<p>在需要 G-code 时生成，消费 <code>job</code> 聚合和 <code>job:encode</code> 节点：</p>
 <ul>
-<li class="">整个作业的最终 G-code</li>
-<li class="">模拟的完整顶点数据</li>
-<li class="">高保真时间估计</li>
+<li class="">通过 <code>EncodedOutput</code>（文本 + op→机器代码映射）的最终机器代码（G-code 或特定于驱动程序的格式）</li>
+<li class="">用于模拟和回放的世界空间 <code>Ops</code></li>
+<li class="">高保真时间估计和总距离</li>
+<li class="">当配置了旋转模块时，用于 3D 预览的旋转映射 ops</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="viewmanager分离">ViewManager（分离）<a href="#viewmanager分离" class="hash-link" aria-label="ViewManager（分离） 的直接链接" title="ViewManager（分离） 的直接链接" translate="no">​</a></h2>
-<p><code>ViewManager</code> 与数据流水线 <strong>解耦</strong>。它根据 UI 状态处理 2D 画布的渲染：</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2d-视图层解耦">2D 视图层（解耦）<a href="#2d-视图层解耦" class="hash-link" aria-label="2D 视图层（解耦） 的直接链接" title="2D 视图层（解耦） 的直接链接" translate="no">​</a></h2>
+<p><code>ViewManager</code> 与数据管道解耦。它基于 UI 状态处理 2D 画布的渲染。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rendercontext">RenderContext<a href="#rendercontext" class="hash-link" aria-label="RenderContext 的直接链接" title="RenderContext 的直接链接" translate="no">​</a></h3>
-<p>包含当前视图参数：</p>
-<ul>
-<li class="">每毫米像素数（缩放级别）</li>
-<li class="">视口偏移（平移）</li>
-<li class="">显示选项（显示空行程等）</li>
-</ul>
+<p>包含当前视图参数（每毫米像素数、视口偏移、显示选项）。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="workpieceviewartifacts">WorkPieceViewArtifacts<a href="#workpieceviewartifacts" class="hash-link" aria-label="WorkPieceViewArtifacts 的直接链接" title="WorkPieceViewArtifacts 的直接链接" translate="no">​</a></h3>
-<p>ViewManager 创建 <code>WorkPieceViewArtifacts</code>，它：</p>
+<p><code>ViewManager</code> 创建 <code>WorkPieceViewArtifacts</code>，将 <code>WorkPieceArtifacts</code> 光栅化到屏幕空间，应用当前 <code>RenderContext</code>，并在上下文或源更改时缓存和更新。重新渲染受到限制（33 毫秒间隔）和并发限制；渐进式块拼接提供增量视觉更新。<code>ViewManager</code> 按 <code>(workpiece_uid, step_uid)</code> 索引视图，以支持可视化工件在多个步骤中的中间状态。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3d--模拟器层解耦">3D / 模拟器层（解耦）<a href="#3d--模拟器层解耦" class="hash-link" aria-label="3D / 模拟器层（解耦） 的直接链接" title="3D / 模拟器层（解耦） 的直接链接" translate="no">​</a></h2>
+<p>3D 可视化和模拟系统与数据管道解耦，遵循与 <code>ViewManager</code> 类似的模式。它包括：</p>
 <ul>
-<li class="">将 WorkPieceArtifacts 光栅化到屏幕空间</li>
-<li class="">应用当前 RenderContext</li>
-<li class="">被缓存并在上下文或源更改时更新</li>
+<li class="">一个在子进程中运行的 <strong>Scene Compiler</strong>，用于将 <code>JobArtifact</code> ops 转换为 GPU 就绪的顶点数据</li>
+<li class="">一个 <strong>OpPlayer</strong>，用于重放作业的 ops，进行带有播放控制的实时机器模拟</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="生命周期">生命周期<a href="#生命周期" class="hash-link" aria-label="生命周期 的直接链接" title="生命周期 的直接链接" translate="no">​</a></h3>
+<p>两者都消费管道生成的 <code>JobArtifact</code>。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="compiledsceneartifact">CompiledSceneArtifact<a href="#compiledsceneartifact" class="hash-link" aria-label="CompiledSceneArtifact 的直接链接" title="CompiledSceneArtifact 的直接链接" translate="no">​</a></h3>
+<p>Scene Compiler 生成包含以下内容的 <code>CompiledSceneArtifact</code>：</p>
+<ul>
+<li class=""><strong>顶点层：</strong> 带有每命令偏移的 powered/travel/zero-power 顶点缓冲区，用于渐进式显示</li>
+<li class=""><strong>纹理层：</strong> 用于雕刻预览的光栅化扫描线功率图</li>
+<li class=""><strong>覆盖层：</strong> 用于实时高亮的扫描线功率段</li>
+<li class="">支持旋转（圆柱包裹）几何</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="编译管道">编译管道<a href="#编译管道" class="hash-link" aria-label="编译管道 的直接链接" title="编译管道 的直接链接" translate="no">​</a></h3>
 <ol>
-<li class="">ViewManager 跟踪源 <code>WorkPieceArtifact</code> 句柄</li>
-<li class="">当渲染上下文更改时，ViewManager 触发重新渲染</li>
-<li class="">当源工件更改时，ViewManager 触发重新渲染</li>
-<li class="">节流防止在连续更改期间过度更新</li>
+<li class="">Canvas3D 监听 <code>job_generation_finished</code> 信号</li>
+<li class="">当新作业就绪时，它在子进程中调度场景编译</li>
+<li class="">子进程从存储中读取 <code>JobArtifact</code> 并将 ops 编译为 GPU 顶点数据</li>
+<li class="">编译后的场景被回收并上传到 GPU 渲染器</li>
 </ol>
-<p>ViewManager 按 <code>(workpiece_uid, step_uid)</code> 索引视图，以支持在多个步骤中可视化工件的中间状态。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="opplayer模拟器后端">OpPlayer（模拟器后端）<a href="#opplayer模拟器后端" class="hash-link" aria-label="OpPlayer（模拟器后端） 的直接链接" title="OpPlayer（模拟器后端） 的直接链接" translate="no">​</a></h3>
+<p><code>OpPlayer</code> 逐命令遍历作业的 ops，维护跟踪位置、激光状态和辅助轴的 <code>MachineState</code>。这驱动 3D 画布播放（刀具路径的渐进式显示）、机器头位置和激光束可视化以及播放滑块的逐命令步进。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="消费者">消费者<a href="#消费者" class="hash-link" aria-label="消费者 的直接链接" title="消费者 的直接链接" translate="no">​</a></h2>
 
 
@@ -256,38 +324,33 @@
 
 
 
-
-
-
-
-
-<table><thead><tr><th>消费者</th><th>使用</th><th>目的</th></tr></thead><tbody><tr><td>2D 画布</td><td>WorkPieceViewArtifacts</td><td>在屏幕空间中渲染工件</td></tr><tr><td>3D 画布</td><td>StepRenderArtifacts</td><td>在世界空间中渲染完整步骤</td></tr><tr><td>模拟器</td><td>JobArtifact</td><td>机器路径的精确模拟</td></tr><tr><td>机器</td><td>JobArtifact G-code</td><td>制造输出</td></tr></tbody></table>
-<h1>与之前架构的主要区别</h1>
+<table><thead><tr><th>消费者</th><th>使用</th><th>目的</th></tr></thead><tbody><tr><td>2D 画布</td><td>WorkPieceViewArtifacts</td><td>在屏幕空间中渲染工件</td></tr><tr><td>3D 画布</td><td>CompiledSceneArtifact</td><td>在 3D 中渲染完整作业并播放</td></tr><tr><td>机器</td><td>JobArtifact（机器代码）</td><td>制造输出</td></tr></tbody></table>
+<h1>关键架构决策</h1>
 <ol>
 <li class="">
-<p><strong>基于 DAG 的调度：</strong> 不是顺序阶段，工件在其依赖项可用时生成。</p>
+<p><strong>基于意图的调度：</strong> 代替显式的 Python DAG 和 Python 驻留的调度器，管道声明<em>要计算什么</em>（具有稳定键和版本令牌的 <code>NodeRequest</code> 的 <code>Intent</code>），并让 raygeo 的 <code>run_intent</code> 在 rayon 线程上调度工作。缓存失效完全是通过 <code>Intent.update</code> 进行令牌驱动的。</p>
 </li>
 <li class="">
-<p><strong>状态管理：</strong> 节点状态在 DAG 图中跟踪，而不是在单个组件中。</p>
+<p><strong>外观 + 内部控制器：</strong> <code>Pipeline</code> 是唯一的公共表面；<code>IntentController</code> 和 <code>IntentBuilder</code> 是实现细节。这使得公共信号/属性契约保持稳定，同时允许编排内部细节不断发展。</p>
 </li>
 <li class="">
-<p><strong>ViewManager 分离：</strong> 2D 画布的渲染现在由单独的 ViewManager 处理，而不是作为数据流水线的一部分。</p>
+<p><strong>进程内工件存储：</strong> 用引用计数的进程内字典替换多进程共享内存存储，消除了 IPC 和所有权移交的复杂性，同时保留了 UI 和导出路径所依赖的句柄/生命周期契约。</p>
 </li>
 <li class="">
-<p><strong>生成 ID：</strong> 工件用生成 ID 跟踪，允许跨文档版本高效重用。</p>
+<p><strong>世代 ID：</strong> 每次重建都会递增一个世代 ID；每个完成的节点都携带其产生世代。<code>on_completed</code> 的 epoch 过滤器会静默丢弃过时的结果，因此陈旧输出永远不会重新附加到 DOM。</p>
 </li>
 <li class="">
-<p><strong>集中编排：</strong> DagScheduler 是任务启动和状态跟踪的单一控制点。</p>
+<p><strong>主线程重新附加：</strong> raygeo 回调（<code>on_completed</code>、<code>on_batch_progress</code>）在 GIL 下的 rayon 工作线程上触发；控制器通过共享的任务管理器将每个接触 DOM 的回调编组到应用程序主线程，因此信号处理程序永远不会在工作线程上运行。</p>
 </li>
 <li class="">
-<p><strong>纯缓存管理器：</strong> ArtifactManager 现在是简单的缓存，将所有状态管理委托给 DAG 调度器。</p>
+<p><strong>视图层分离：</strong> 2D 画布（<code>ViewManager</code>）和 3D 画布（Scene Compiler / OpPlayer）都与数据管道解耦。每个都由管道信号驱动，而不是作为意图的一部分。</p>
 </li>
 <li class="">
-<p><strong>失效跟踪：</strong> 在图重建之前标记为脏的键被保留并在重建后重新应用。</p>
+<p><strong>令牌驱动的失效：</strong> 没有显式的失效表。构建器生成规范的 SHA-1 版本令牌；任何输入更改都会产生不同的令牌，<code>Intent.update</code> 使用该令牌精确地删除受影响的缓存条目。</p>
 </li>
 <li class="">
-<p><strong>待处理工作检测：</strong> 只有 <code>PROCESSING</code> 节点算作待处理工作；<code>DIRTY</code> 节点可能有未满足的依赖项（例如无视图上下文）。</p>
+<p><strong>防抖协调：</strong> 文档更改以 200 毫秒的防抖（<code>REBUILD_DEBOUNCE_MS</code>）进行批处理，以避免在快速编辑期间出现过多的管道周期。</p>
 </li>
-</ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/developer/pipeline.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>编辑此页</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文档页面导航"><a class="pagination-nav__link pagination-nav__link--prev" href="/zh-CN/docs/developer/importer"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">导入器架构</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/zh-CN/docs/developer/tasker"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">Tasker：后台任务管理</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#工件节点和依赖图" class="table-of-contents__link toc-highlight">工件节点和依赖图</a><ul><li><a href="#artifactnode" class="table-of-contents__link toc-highlight">ArtifactNode</a></li><li><a href="#节点状态" class="table-of-contents__link toc-highlight">节点状态</a></li><li><a href="#pipelinegraph" class="table-of-contents__link toc-highlight">PipelineGraph</a></li></ul></li><li><a href="#dagscheduler" class="table-of-contents__link toc-highlight">DagScheduler</a></li><li><a href="#artifactmanager" class="table-of-contents__link toc-highlight">ArtifactManager</a></li><li><a href="#共享内存生命周期" class="table-of-contents__link toc-highlight">共享内存生命周期</a><ul><li><a href="#所有权模式" class="table-of-contents__link toc-highlight">所有权模式</a></li><li><a href="#引用计数" class="table-of-contents__link toc-highlight">引用计数</a></li></ul></li><li><a href="#流水线阶段" class="table-of-contents__link toc-highlight">流水线阶段</a></li><li><a href="#invalidationscope" class="table-of-contents__link toc-highlight">InvalidationScope</a></li><li><a href="#输入" class="table-of-contents__link toc-highlight">输入</a></li><li><a href="#流水线核心" class="table-of-contents__link toc-highlight">流水线核心</a><ul><li><a href="#pipeline编排器" class="table-of-contents__link toc-highlight">Pipeline（编排器）</a></li><li><a href="#dagscheduler-1" class="table-of-contents__link toc-highlight">DagScheduler</a></li><li><a href="#artifactmanager-1" class="table-of-contents__link toc-highlight">ArtifactManager</a></li></ul></li><li><a href="#工件生成" class="table-of-contents__link toc-highlight">工件生成</a><ul><li><a href="#workpieceartifacts" class="table-of-contents__link toc-highlight">WorkPieceArtifacts</a></li><li><a href="#stepartifacts" class="table-of-contents__link toc-highlight">StepArtifacts</a></li><li><a href="#jobartifact" class="table-of-contents__link toc-highlight">JobArtifact</a></li></ul></li><li><a href="#viewmanager分离" class="table-of-contents__link toc-highlight">ViewManager（分离）</a><ul><li><a href="#rendercontext" class="table-of-contents__link toc-highlight">RenderContext</a></li><li><a href="#workpieceviewartifacts" class="table-of-contents__link toc-highlight">WorkPieceViewArtifacts</a></li><li><a href="#生命周期" class="table-of-contents__link toc-highlight">生命周期</a></li></ul></li><li><a href="#消费者" class="table-of-contents__link toc-highlight">消费者</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/developer/pipeline.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>编辑此页</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文档页面导航"><a class="pagination-nav__link pagination-nav__link--prev" href="/zh-CN/docs/developer/importer"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">导入器架构</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/zh-CN/docs/developer/tasker"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">Tasker：后台任务管理</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#pipeline公共外观" class="table-of-contents__link toc-highlight">Pipeline（公共外观）</a></li><li><a href="#intentcontroller" class="table-of-contents__link toc-highlight">IntentController</a></li><li><a href="#intentbuilder" class="table-of-contents__link toc-highlight">IntentBuilder</a><ul><li><a href="#稳定键" class="table-of-contents__link toc-highlight">稳定键</a></li><li><a href="#版本令牌" class="table-of-contents__link toc-highlight">版本令牌</a></li><li><a href="#阶段构建" class="table-of-contents__link toc-highlight">阶段构建</a></li><li><a href="#stock-解析" class="table-of-contents__link toc-highlight">Stock 解析</a></li></ul></li><li><a href="#raygeo-管道与-run_intent" class="table-of-contents__link toc-highlight">raygeo 管道与 <code>run_intent</code></a></li><li><a href="#artifactstore-与工件句柄" class="table-of-contents__link toc-highlight">ArtifactStore 与工件句柄</a></li><li><a href="#世代-id-与-epoch-过滤" class="table-of-contents__link toc-highlight">世代 ID 与 Epoch 过滤</a></li><li><a href="#暂停恢复与手动模式" class="table-of-contents__link toc-highlight">暂停、恢复与手动模式</a></li><li><a href="#失效策略" class="table-of-contents__link toc-highlight">失效策略</a></li><li><a href="#输入" class="table-of-contents__link toc-highlight">输入</a></li><li><a href="#python-编排" class="table-of-contents__link toc-highlight">Python 编排</a><ul><li><a href="#pipeline外观" class="table-of-contents__link toc-highlight">Pipeline（外观）</a></li><li><a href="#intentcontroller-1" class="table-of-contents__link toc-highlight">IntentController</a></li><li><a href="#intentbuilder-1" class="table-of-contents__link toc-highlight">IntentBuilder</a></li></ul></li><li><a href="#raygeo-管道" class="table-of-contents__link toc-highlight">raygeo 管道</a></li><li><a href="#工件生成" class="table-of-contents__link toc-highlight">工件生成</a><ul><li><a href="#workpieceartifacts" class="table-of-contents__link toc-highlight">WorkPieceArtifacts</a></li><li><a href="#stepopsartifacts" class="table-of-contents__link toc-highlight">StepOpsArtifacts</a></li><li><a href="#jobartifact" class="table-of-contents__link toc-highlight">JobArtifact</a></li></ul></li><li><a href="#2d-视图层解耦" class="table-of-contents__link toc-highlight">2D 视图层（解耦）</a><ul><li><a href="#rendercontext" class="table-of-contents__link toc-highlight">RenderContext</a></li><li><a href="#workpieceviewartifacts" class="table-of-contents__link toc-highlight">WorkPieceViewArtifacts</a></li></ul></li><li><a href="#3d--模拟器层解耦" class="table-of-contents__link toc-highlight">3D / 模拟器层（解耦）</a><ul><li><a href="#compiledsceneartifact" class="table-of-contents__link toc-highlight">CompiledSceneArtifact</a></li><li><a href="#编译管道" class="table-of-contents__link toc-highlight">编译管道</a></li><li><a href="#opplayer模拟器后端" class="table-of-contents__link toc-highlight">OpPlayer（模拟器后端）</a></li></ul></li><li><a href="#消费者" class="table-of-contents__link toc-highlight">消费者</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>
