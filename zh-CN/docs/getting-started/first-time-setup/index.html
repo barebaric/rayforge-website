@@ -15,9 +15,9 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rayforge","description":"Free open-source laser cutter software for GRBL-based machines. Design, simulate, and control your laser cutter or engraver with AI-powered tools, 3D preview, and a built-in sketcher.","url":"https://rayforge.org","applicationCategory":"DesignApplication","operatingSystem":"Linux, Windows, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"barebaric","url":"https://github.com/barebaric"},"screenshot":"https://rayforge.org/screenshots/main-standard.png","featureList":"AI-powered design generation, 3D simulation and preview, Parametric 2D sketcher, GRBL and Smoothieware support, Rotary axis support, Material and recipe management, Path optimization, Multi-layer support, Camera calibration","license":"https://github.com/barebaric/rayforge/blob/main/LICENSE","programmingLanguage":"Python","installUrl":"https://rayforge.org/docs/getting-started/installation"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
-<script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.a82eb417.css">
-<script src="/zh-CN/assets/js/runtime~main.4a705da8.js" defer="defer"></script>
-<script src="/zh-CN/assets/js/main.b9ffd673.js" defer="defer"></script>
+<script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.a5847c8f.css">
+<script src="/zh-CN/assets/js/runtime~main.59426045.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.57713252.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -29,7 +29,7 @@
 <p>从应用程序菜单启动 Rayforge，或在终端中运行 <code>rayforge</code>。您应该看到带有空白画布的主界面。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="第-2-步使用向导创建机器">第 2 步：使用向导创建机器<a href="#第-2-步使用向导创建机器" class="hash-link" aria-label="第 2 步：使用向导创建机器 的直接链接" title="第 2 步：使用向导创建机器 的直接链接" translate="no">​</a></h2>
 <p>导航到 <strong>设置 → 机器</strong> 或按 <kbd>ctrl+comma</kbd> 打开设置对话框，然后选择 <strong>机器</strong> 页面。</p>
-<p><img decoding="async" loading="lazy" alt="机器设置" src="/zh-CN/assets/images/application-machines-49299ca051a5b892beb176ab7ba1706d.png" width="850" height="850" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="机器设置" src="/zh-CN/assets/images/app-settings-machines-668e149889f3252999f63b281ea62022.png" width="850" height="850" class="img_ev3q"></p>
 <p>点击 <strong>Add Machine</strong> 打开机器选择器。</p>
 <p><img decoding="async" loading="lazy" alt="添加机器" src="/zh-CN/assets/images/app-settings-machines-add-becd1f5c33f9553b1709ca3ed2b6d1cc.png" width="810" height="690" class="img_ev3q"></p>
 <p>配置向导将打开，并根据您的选择调整其显示的步骤：</p>
@@ -40,10 +40,10 @@
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="选择起点">选择起点<a href="#选择起点" class="hash-link" aria-label="选择起点 的直接链接" title="选择起点 的直接链接" translate="no">​</a></h3>
 <p>选择一个内置设备配置文件以预填控制器、工作区域和机头设置，或点击 <strong>Device Not Listed</strong> 手动配置所有内容。您也可以 <strong>Import from File…</strong> 导入之前导出的配置文件或带有相机校准和激光设置的 LightBurn 设备配置文件 (.lbdev)。</p>
-<p><img decoding="async" loading="lazy" alt="向导 — 选择起点" src="/zh-CN/assets/images/app-settings-machines-wizard-profile-43e30220fc63726ebb02fe0e04e0af07.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="向导 — 选择起点" src="/zh-CN/assets/images/config-wizard-profile-43e30220fc63726ebb02fe0e04e0af07.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="选择控制器">选择控制器<a href="#选择控制器" class="hash-link" aria-label="选择控制器 的直接链接" title="选择控制器 的直接链接" translate="no">​</a></h3>
 <p>选择与您机器控制器板匹配的固件或协议系列（GRBL、Marlin、Smoothie、Ruida、OctoPrint、…）。如果您只想将 G-code 导出到文件而不驱动物理机器，请选择 <strong>None — G-code export only</strong>。当您从内置配置文件或导入开始时，此步骤会被跳过。</p>
-<p><img decoding="async" loading="lazy" alt="向导 — 选择控制器" src="/zh-CN/assets/images/app-settings-machines-wizard-controller-6f1b3484b9f5e1f37d573b470a80ed28.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="向导 — 选择控制器" src="/zh-CN/assets/images/config-wizard-controller-6f1b3484b9f5e1f37d573b470a80ed28.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="连接">连接<a href="#连接" class="hash-link" aria-label="连接 的直接链接" title="连接 的直接链接" translate="no">​</a></h3>
 <p>输入您的机器所需的连接参数。具体字段取决于您选择的控制器：</p>
 <ul>
@@ -51,16 +51,16 @@
 <li class=""><strong>网络驱动程序</strong> — 主机地址和端口（例如 <code>192.168.1.100</code>）</li>
 <li class=""><strong>OctoPrint</strong> — 服务器 URL 和 API 密钥</li>
 </ul>
-<p><img decoding="async" loading="lazy" alt="向导 — 连接" src="/zh-CN/assets/images/app-settings-machines-wizard-connect-14717c33bbb4f4a2654a3b7d9da930af.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="向导 — 连接" src="/zh-CN/assets/images/config-wizard-connect-2d96071a1b1645d02ba2b54897c385fb.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="发现设备">发现设备<a href="#发现设备" class="hash-link" aria-label="发现设备 的直接链接" title="发现设备 的直接链接" translate="no">​</a></h3>
 <p>当您的控制器支持时，向导会提供连接设备并自动读取其配置的选项——工作区域、速度、加速度和固件功能。点击 <strong>Probe Now</strong> 自动检测这些值，或使用 <strong>Next</strong> 在后续步骤中手动输入。</p>
-<p><img decoding="async" loading="lazy" alt="向导 — 发现设备" src="/zh-CN/assets/images/app-settings-machines-wizard-probe-72f59d35a929417628b19da6f708fef6.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="向导 — 发现设备" src="/zh-CN/assets/images/config-wizard-probe-72f59d35a929417628b19da6f708fef6.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ai-提供方">AI 提供方<a href="#ai-提供方" class="hash-link" aria-label="AI 提供方 的直接链接" title="AI 提供方 的直接链接" translate="no">​</a></h3>
-<p>仅当尚未配置 AI 提供方时显示。输入兼容 OpenAI 的端点（基础 URL 和 API 密钥），以便下一步可以查询已知 商业机器的规格。跳过此步骤可手动输入这些值。</p>
-<p><img decoding="async" loading="lazy" alt="向导 — AI 提供方" src="/zh-CN/assets/images/app-settings-machines-wizard-ai-provider-2d09e403d39502eba9410ca75dcd21fb.png" width="810" height="690" class="img_ev3q"></p>
+<p>仅当尚未配置 AI 提供方时显示。输入兼容 OpenAI 的端点（基础 URL 和 API 密钥），以便下一步可以查询已知商业机器的规格。跳过此步骤可手动输入这些值。</p>
+<p><img decoding="async" loading="lazy" alt="向导 — AI 提供方" src="/zh-CN/assets/images/config-wizard-ai-provider-2d09e403d39502eba9410ca75dcd21fb.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ai-规格查询">AI 规格查询<a href="#ai-规格查询" class="hash-link" aria-label="AI 规格查询 的直接链接" title="AI 规格查询 的直接链接" translate="no">​</a></h3>
 <p>如果您的机器是已知的商业型号，AI 可以从制造商的文档中预填其规格。输入供应商和型号，然后点击 <strong>Look Up Specs</strong>。建议的值以开关行形式出现并默认接受——关闭您不想应用的任何内容。</p>
-<p><img decoding="async" loading="lazy" alt="向导 — AI 规格查询" src="/zh-CN/assets/images/app-settings-machines-wizard-ai-lookup-686329bf4688c529b6a832a947e21f91.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="向导 — AI 规格查询" src="/zh-CN/assets/images/config-wizard-ai-lookup-686329bf4688c529b6a832a947e21f91.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="硬件">硬件<a href="#硬件" class="hash-link" aria-label="硬件 的直接链接" title="硬件 的直接链接" translate="no">​</a></h3>
 <p>配置机器的物理设置：</p>
 <ul>
@@ -71,19 +71,19 @@
 <li class=""><strong>速度</strong> — 最大空移速度、最大切割速度和加速度</li>
 <li class=""><strong>行为</strong> — 启动时归零和单轴归零</li>
 </ul>
-<p><img decoding="async" loading="lazy" alt="向导 — 硬件" src="/zh-CN/assets/images/app-settings-machines-wizard-hardware-1342de19ee1775001d6ed0cc2b906b55.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="向导 — 硬件" src="/zh-CN/assets/images/config-wizard-hardware-0a47c11986d32fc55bb62ba5654a5856.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="机头">机头<a href="#机头" class="hash-link" aria-label="机头 的直接链接" title="机头 的直接链接" translate="no">​</a></h3>
 <p>声明安装在龙门架上的部件——Laser Head 或 Spindle Head——并设置其参数。对于激光：最大功率（S 值）、光斑大小、PWM 频率和焦距。对于主轴：最大和最小 RPM。</p>
-<p><img decoding="async" loading="lazy" alt="向导 — 机头" src="/zh-CN/assets/images/app-settings-machines-wizard-head-ac37926de95beaadc3bc893806d6e675.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="向导 — 机头" src="/zh-CN/assets/images/config-wizard-head-4887d50e43ff32ec93d56a53497e567c.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="旋转模块">旋转模块<a href="#旋转模块" class="hash-link" aria-label="旋转模块 的直接链接" title="旋转模块 的直接链接" translate="no">​</a></h3>
 <p>可选地设置旋转附件：类型（卡爪或滚轮）、轴（A/B/C）、模式（真正的第 4 轴 vs. 轴替换）、几何形状和反向方向标志。跳过此步骤可稍后从机器设置中添加旋转模块。</p>
-<p><img decoding="async" loading="lazy" alt="向导 — 旋转模块" src="/zh-CN/assets/images/app-settings-machines-wizard-rotary-0820cddbb5faa2f480db76101079b00f.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="向导 — 旋转模块" src="/zh-CN/assets/images/config-wizard-rotary-339fb8d904b43e6614403912576eb3cb.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="相机">相机<a href="#相机" class="hash-link" aria-label="相机 的直接链接" title="相机 的直接链接" translate="no">​</a></h3>
 <p>可选地启用您想用于预览和对齐的任何相机。当您启用相机并继续时，<a class="" href="/zh-CN/docs/machine/camera#%E7%AC%AC-2-%E6%AD%A5%E7%9B%B8%E6%9C%BA%E5%90%91%E5%AF%BC">相机向导</a> 将打开，引导您完成图像设置、镜头校准和图像对齐。您可以跳过此步骤，稍后从机器的相机设置中设置相机。</p>
-<p><img decoding="async" loading="lazy" alt="向导 — 相机" src="/zh-CN/assets/images/app-settings-machines-wizard-camera-b1aee13ef89029af034146bd4c78f6f2.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="向导 — 相机" src="/zh-CN/assets/images/config-wizard-camera-b1aee13ef89029af034146bd4c78f6f2.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="审核与命名">审核与命名<a href="#审核与命名" class="hash-link" aria-label="审核与命名 的直接链接" title="审核与命名 的直接链接" translate="no">​</a></h3>
 <p>为机器命名并审核您已配置的所有内容的摘要——驱动程序、连接、工作区域、速度、机头、旋转模块和相机。向导还会提示任何警告，例如缺少驱动程序或未设置工作区域。</p>
-<p><img decoding="async" loading="lazy" alt="向导 — 审核与命名" src="/zh-CN/assets/images/app-settings-machines-wizard-review-5c1a1c35f596eccdc0ac6958a0d9e9f8.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="向导 — 审核与命名" src="/zh-CN/assets/images/config-wizard-review-7389eda8103d9529994d8225ae5922bf.png" width="810" height="690" class="img_ev3q"></p>
 <p>点击 <strong>Create Machine</strong> 完成。机器设置对话框将为您的机器打开，您可以在其中调整向导预填的任何设置。有关详细信息，请参阅<a class="" href="/zh-CN/docs/machine/general">机器设置</a>页面。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="第-3-步自动连接">第 3 步：自动连接<a href="#第-3-步自动连接" class="hash-link" aria-label="第 3 步：自动连接 的直接链接" title="第 3 步：自动连接 的直接链接" translate="no">​</a></h2>
 <p>Rayforge 在应用程序启动时自动连接到您的机器（如果机器已开机并连接）。您不需要手动点击连接按钮。</p>

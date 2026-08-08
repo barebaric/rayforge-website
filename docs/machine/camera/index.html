@@ -15,9 +15,9 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rayforge","description":"Free open-source laser cutter software for GRBL-based machines. Design, simulate, and control your laser cutter or engraver with AI-powered tools, 3D preview, and a built-in sketcher.","url":"https://rayforge.org","applicationCategory":"DesignApplication","operatingSystem":"Linux, Windows, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"barebaric","url":"https://github.com/barebaric"},"screenshot":"https://rayforge.org/screenshots/main-standard.png","featureList":"AI-powered design generation, 3D simulation and preview, Parametric 2D sketcher, GRBL and Smoothieware support, Rotary axis support, Material and recipe management, Path optimization, Multi-layer support, Camera calibration","license":"https://github.com/barebaric/rayforge/blob/main/LICENSE","programmingLanguage":"Python","installUrl":"https://rayforge.org/docs/getting-started/installation"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
-<script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.f02514bd.css">
-<script src="/assets/js/runtime~main.29d1a5e2.js" defer="defer"></script>
-<script src="/assets/js/main.d68ba9b4.js" defer="defer"></script>
+<script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.83567c0a.css">
+<script src="/assets/js/runtime~main.6a93f230.js" defer="defer"></script>
+<script src="/assets/js/main.013274b5.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -28,7 +28,7 @@
 positioning. The camera overlay feature allows you to see exactly where your
 laser will cut or engrave on the material, eliminating guesswork and reducing
 material waste.</p>
-<p><img decoding="async" loading="lazy" alt="Camera Settings" src="/assets/images/machine-camera-db42c11202c5c2155e2884c15399bce9.png" width="850" height="850" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Camera Settings" src="/assets/images/machine-settings-camera-707fd606aacd6f34215903712cb5e913.png" width="850" height="850" class="img_ev3q"></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="setup-workflow">Setup Workflow<a href="#setup-workflow" class="hash-link" aria-label="Direct link to Setup Workflow" title="Direct link to Setup Workflow" translate="no">​</a></h2>
 <p>Setting up a camera can be done either through the guided
 <a href="#step-2-camera-wizard" class="">Camera Wizard</a> — a single flow covering image
@@ -114,7 +114,7 @@ wizard</a> when you enable a camera on
 its camera step and continue</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-21-adjust-image-settings">Step 2.1: Adjust Image Settings<a href="#step-21-adjust-image-settings" class="hash-link" aria-label="Direct link to Step 2.1: Adjust Image Settings" title="Direct link to Step 2.1: Adjust Image Settings" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" alt="Image Settings Dialog" src="/assets/images/camera-image-settings-9790b1d8cb2f163d16bd283a6ff788a9.png" width="1262" height="800" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Image Settings Dialog" src="/assets/images/machine-settings-camera-image-settings-5572f4707d12a135d642145ab9451466.png" width="1282" height="800" class="img_ev3q"></p>
 <p>Image settings is the camera wizard&#x27;s first stage — it opens there and lets
 you set the resolution, white balance, brightness, contrast, and noise
 reduction. If you didn&#x27;t run the wizard, or want to tweak the values it set,
@@ -176,14 +176,14 @@ by hand</li>
 <p>For <strong>Automatic</strong> calibration, the wizard walks you through capturing
 several images of a printed calibration card from different positions on the
 bed, then computes a distortion model automatically.</p>
-<p><img decoding="async" loading="lazy" alt="Wizard — Card Settings" src="/assets/images/camera-lens-calibration-wizard-card-dc886a2662e7061354156be71ea170c8.png" width="1378" height="800" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Wizard — Card Settings" src="/assets/images/machine-settings-camera-lens-calibration-wizard-card-8de14771ac925ed2de381228ac9926b5.png" width="1406" height="800" class="img_ev3q"></p>
 <ol>
 <li class="">Set the <strong>Width</strong> and <strong>Height</strong> of your printed card. The preview updates
 in real-time — the card should cover about 70% of the camera view.</li>
 <li class="">Click <strong>Save to PDF</strong> to export the card for printing, then print it and
 place it on the laser bed.</li>
 </ol>
-<p><img decoding="async" loading="lazy" alt="Wizard — Capture" src="/assets/images/camera-lens-calibration-wizard-capture-dc275e4b32d7b7dba1ed3fe833d3a2e3.png" width="1378" height="800" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Wizard — Capture" src="/assets/images/machine-settings-camera-lens-calibration-wizard-capture-7556608dfbf10f42dedfcfc580f8aa22.png" width="1406" height="800" class="img_ev3q"></p>
 <ol start="3">
 <li class="">Move the card to different positions and angles within the camera view and
 click <strong>Capture Frame</strong> for each position. Aim for at least 8 captures
@@ -194,14 +194,14 @@ and applies it — the camera overlay now shows a corrected, straight
 image.</li>
 </ol>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="manual-calibration">Manual Calibration<a href="#manual-calibration" class="hash-link" aria-label="Direct link to Manual Calibration" title="Direct link to Manual Calibration" translate="no">​</a></h4>
-<p><img decoding="async" loading="lazy" alt="Lens Calibration Dialog" src="/assets/images/camera-lens-calibration-e1f0a0d1c2b343af35913eec93306645.png" width="1262" height="800" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Lens Calibration Dialog" src="/assets/images/machine-settings-camera-lens-calibration-648663170a2d503005ad8b2cafaf0bc0.png" width="1282" height="800" class="img_ev3q"></p>
 <p>For manual coefficients or to fine-tune the result after an automatic
 calibration, open the lens calibration dialog by clicking <strong>Configure</strong> next
 to <strong>Lens Calibration</strong> in the camera properties. From here you can adjust
 the distortion coefficients manually — fine-tune the radial (k1–k3) and
 tangential (p1–p2) parameters.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-23-image-alignment">Step 2.3: Image Alignment<a href="#step-23-image-alignment" class="hash-link" aria-label="Direct link to Step 2.3: Image Alignment" title="Direct link to Step 2.3: Image Alignment" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" alt="Image Alignment Dialog" src="/assets/images/camera-image-alignment-c5774bb4be8b739f625746fd47ef3784.png" width="1330" height="1010" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Image Alignment Dialog" src="/assets/images/machine-settings-camera-image-alignment-28de69f0580b410aea70333cd26b91b3.png" width="1330" height="1010" class="img_ev3q"></p>
 <p>Image alignment is the camera wizard&#x27;s final stage. Camera alignment
 calibrates the relationship between camera pixels and real-world
 coordinates, enabling accurate positioning. The wizard uses the same

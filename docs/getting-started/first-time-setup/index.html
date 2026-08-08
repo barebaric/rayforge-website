@@ -15,9 +15,9 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rayforge","description":"Free open-source laser cutter software for GRBL-based machines. Design, simulate, and control your laser cutter or engraver with AI-powered tools, 3D preview, and a built-in sketcher.","url":"https://rayforge.org","applicationCategory":"DesignApplication","operatingSystem":"Linux, Windows, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"barebaric","url":"https://github.com/barebaric"},"screenshot":"https://rayforge.org/screenshots/main-standard.png","featureList":"AI-powered design generation, 3D simulation and preview, Parametric 2D sketcher, GRBL and Smoothieware support, Rotary axis support, Material and recipe management, Path optimization, Multi-layer support, Camera calibration","license":"https://github.com/barebaric/rayforge/blob/main/LICENSE","programmingLanguage":"Python","installUrl":"https://rayforge.org/docs/getting-started/installation"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
-<script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.f02514bd.css">
-<script src="/assets/js/runtime~main.29d1a5e2.js" defer="defer"></script>
-<script src="/assets/js/main.d68ba9b4.js" defer="defer"></script>
+<script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.83567c0a.css">
+<script src="/assets/js/runtime~main.6a93f230.js" defer="defer"></script>
+<script src="/assets/js/main.013274b5.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -33,7 +33,7 @@ terminal. You should see the main interface with an empty canvas.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-2-create-a-machine-with-the-wizard">Step 2: Create a Machine with the Wizard<a href="#step-2-create-a-machine-with-the-wizard" class="hash-link" aria-label="Direct link to Step 2: Create a Machine with the Wizard" title="Direct link to Step 2: Create a Machine with the Wizard" translate="no">​</a></h2>
 <p>Navigate to <strong>Settings → Machines</strong> or press <kbd>ctrl+comma</kbd> to open
 the settings dialog, then select the <strong>Machines</strong> page.</p>
-<p><img decoding="async" loading="lazy" alt="Machine Settings" src="/assets/images/application-machines-49299ca051a5b892beb176ab7ba1706d.png" width="850" height="850" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Machine Settings" src="/assets/images/app-settings-machines-668e149889f3252999f63b281ea62022.png" width="850" height="850" class="img_ev3q"></p>
 <p>Click <strong>Add Machine</strong> to open the machine picker.</p>
 <p><img decoding="async" loading="lazy" alt="Add Machine Dialog" src="/assets/images/app-settings-machines-add-becd1f5c33f9553b1709ca3ed2b6d1cc.png" width="810" height="690" class="img_ev3q"></p>
 <p>The configuration wizard opens and adapts which steps it shows to your
@@ -52,14 +52,14 @@ head settings, or click <strong>Device Not Listed</strong> to configure everythi
 manually. You can also <strong>Import from File…</strong> a previously exported profile
 or a LightBurn device profile (.lbdev) with camera calibration and laser
 settings.</p>
-<p><img decoding="async" loading="lazy" alt="Wizard — Pick a Starting Point" src="/assets/images/app-settings-machines-wizard-profile-43e30220fc63726ebb02fe0e04e0af07.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Wizard — Pick a Starting Point" src="/assets/images/config-wizard-profile-43e30220fc63726ebb02fe0e04e0af07.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="choose-a-controller">Choose a Controller<a href="#choose-a-controller" class="hash-link" aria-label="Direct link to Choose a Controller" title="Direct link to Choose a Controller" translate="no">​</a></h3>
 <p>Pick the firmware or protocol family that matches your machine&#x27;s controller
 board (GRBL, Marlin, Smoothie, Ruida, OctoPrint, …). Choose
 <strong>None — G-code export only</strong> if you only want to export G-code to files and
 never drive a physical machine. This step is skipped when you start from a
 built-in profile or an import.</p>
-<p><img decoding="async" loading="lazy" alt="Wizard — Choose a Controller" src="/assets/images/app-settings-machines-wizard-controller-6f1b3484b9f5e1f37d573b470a80ed28.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Wizard — Choose a Controller" src="/assets/images/config-wizard-controller-6f1b3484b9f5e1f37d573b470a80ed28.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="connection">Connection<a href="#connection" class="hash-link" aria-label="Direct link to Connection" title="Direct link to Connection" translate="no">​</a></h3>
 <p>Enter the connection parameters your machine requires. The exact fields
 depend on the controller you chose:</p>
@@ -69,24 +69,24 @@ depend on the controller you chose:</p>
 <li class=""><strong>Network drivers</strong> — host address and port (e.g. <code>192.168.1.100</code>)</li>
 <li class=""><strong>OctoPrint</strong> — server URL and API key</li>
 </ul>
-<p><img decoding="async" loading="lazy" alt="Wizard — Connection" src="/assets/images/app-settings-machines-wizard-connect-14717c33bbb4f4a2654a3b7d9da930af.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Wizard — Connection" src="/assets/images/config-wizard-connect-2d96071a1b1645d02ba2b54897c385fb.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="discover-the-device">Discover the Device<a href="#discover-the-device" class="hash-link" aria-label="Direct link to Discover the Device" title="Direct link to Discover the Device" translate="no">​</a></h3>
 <p>When your controller supports it, the wizard offers to connect to the device
 and read its configuration automatically — work area, speeds, acceleration,
 and firmware capabilities. Click <strong>Probe Now</strong> to auto-detect these values,
 or use <strong>Next</strong> to enter them by hand in the following steps.</p>
-<p><img decoding="async" loading="lazy" alt="Wizard — Discover the Device" src="/assets/images/app-settings-machines-wizard-probe-72f59d35a929417628b19da6f708fef6.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Wizard — Discover the Device" src="/assets/images/config-wizard-probe-72f59d35a929417628b19da6f708fef6.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ai-provider">AI Provider<a href="#ai-provider" class="hash-link" aria-label="Direct link to AI Provider" title="Direct link to AI Provider" translate="no">​</a></h3>
 <p>Shown only when no AI provider is configured yet. Enter an OpenAI-compatible
 endpoint (base URL and API key) so the next step can look up specifications
 for known commercial machines. Skip this step to enter the values by hand.</p>
-<p><img decoding="async" loading="lazy" alt="Wizard — AI Provider" src="/assets/images/app-settings-machines-wizard-ai-provider-2d09e403d39502eba9410ca75dcd21fb.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Wizard — AI Provider" src="/assets/images/config-wizard-ai-provider-2d09e403d39502eba9410ca75dcd21fb.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ai-spec-lookup">AI Spec Lookup<a href="#ai-spec-lookup" class="hash-link" aria-label="Direct link to AI Spec Lookup" title="Direct link to AI Spec Lookup" translate="no">​</a></h3>
 <p>If your machine is a known commercial model, the AI can pre-fill its
 specifications from the manufacturer&#x27;s documentation. Enter the vendor and
 model, then click <strong>Look Up Specs</strong>. Suggested values appear as switch rows
 and start accepted — turn off anything you don&#x27;t want applied.</p>
-<p><img decoding="async" loading="lazy" alt="Wizard — AI Spec Lookup" src="/assets/images/app-settings-machines-wizard-ai-lookup-686329bf4688c529b6a832a947e21f91.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Wizard — AI Spec Lookup" src="/assets/images/config-wizard-ai-lookup-686329bf4688c529b6a832a947e21f91.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hardware">Hardware<a href="#hardware" class="hash-link" aria-label="Direct link to Hardware" title="Direct link to Hardware" translate="no">​</a></h3>
 <p>Configure the machine&#x27;s physical setup:</p>
 <ul>
@@ -97,30 +97,30 @@ and start accepted — turn off anything you don&#x27;t want applied.</p>
 <li class=""><strong>Speeds</strong> — max travel speed, max cut speed, and acceleration</li>
 <li class=""><strong>Behavior</strong> — home on start and single-axis homing</li>
 </ul>
-<p><img decoding="async" loading="lazy" alt="Wizard — Hardware" src="/assets/images/app-settings-machines-wizard-hardware-1342de19ee1775001d6ed0cc2b906b55.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Wizard — Hardware" src="/assets/images/config-wizard-hardware-0a47c11986d32fc55bb62ba5654a5856.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="head">Head<a href="#head" class="hash-link" aria-label="Direct link to Head" title="Direct link to Head" translate="no">​</a></h3>
 <p>Declare what&#x27;s attached to the gantry — a laser or a spindle head — and set
 its parameters. For a laser: max power (S-value), spot size, PWM frequency,
 and focal distance. For a spindle: max and min RPM.</p>
-<p><img decoding="async" loading="lazy" alt="Wizard — Head" src="/assets/images/app-settings-machines-wizard-head-ac37926de95beaadc3bc893806d6e675.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Wizard — Head" src="/assets/images/config-wizard-head-4887d50e43ff32ec93d56a53497e567c.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rotary-module">Rotary Module<a href="#rotary-module" class="hash-link" aria-label="Direct link to Rotary Module" title="Direct link to Rotary Module" translate="no">​</a></h3>
 <p>Optionally set up a rotary attachment: type (jaws or rollers), axis (A/B/C),
 mode (true 4th axis vs. axis replacement), geometry, and reverse-direction
 flag. Skip this step to add a rotary module later from machine settings.</p>
-<p><img decoding="async" loading="lazy" alt="Wizard — Rotary Module" src="/assets/images/app-settings-machines-wizard-rotary-0820cddbb5faa2f480db76101079b00f.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Wizard — Rotary Module" src="/assets/images/config-wizard-rotary-339fb8d904b43e6614403912576eb3cb.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cameras">Cameras<a href="#cameras" class="hash-link" aria-label="Direct link to Cameras" title="Direct link to Cameras" translate="no">​</a></h3>
 <p>Optionally enable any cameras you want to use for preview and alignment.
 When you enable a camera and continue, the <a class="" href="/docs/machine/camera#step-2-camera-wizard">camera
 wizard</a> opens to guide you
 through image settings, lens calibration, and image alignment. You can skip
 this and set up cameras later from the machine&#x27;s camera settings.</p>
-<p><img decoding="async" loading="lazy" alt="Wizard — Cameras" src="/assets/images/app-settings-machines-wizard-camera-b1aee13ef89029af034146bd4c78f6f2.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Wizard — Cameras" src="/assets/images/config-wizard-camera-b1aee13ef89029af034146bd4c78f6f2.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="review--name">Review &amp; Name<a href="#review--name" class="hash-link" aria-label="Direct link to Review &amp; Name" title="Direct link to Review &amp; Name" translate="no">​</a></h3>
 <p>Give the machine a name and review a summary of everything you&#x27;ve configured
 — driver, connection, work area, speeds, heads, rotary modules, and cameras.
 The wizard also surfaces any warnings, such as a missing driver or an unset
 work area.</p>
-<p><img decoding="async" loading="lazy" alt="Wizard — Review &amp;amp; Name" src="/assets/images/app-settings-machines-wizard-review-5c1a1c35f596eccdc0ac6958a0d9e9f8.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Wizard — Review &amp;amp; Name" src="/assets/images/config-wizard-review-7389eda8103d9529994d8225ae5922bf.png" width="810" height="690" class="img_ev3q"></p>
 <p>Click <strong>Create Machine</strong> to finalize. The Machine Settings dialog opens for
 your new machine, where you can adjust any of the settings the wizard
 pre-filled. See the <a class="" href="/docs/machine/general">Machine Setup</a> pages for details.</p>

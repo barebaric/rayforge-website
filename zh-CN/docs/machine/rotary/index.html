@@ -15,9 +15,9 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rayforge","description":"Free open-source laser cutter software for GRBL-based machines. Design, simulate, and control your laser cutter or engraver with AI-powered tools, 3D preview, and a built-in sketcher.","url":"https://rayforge.org","applicationCategory":"DesignApplication","operatingSystem":"Linux, Windows, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"barebaric","url":"https://github.com/barebaric"},"screenshot":"https://rayforge.org/screenshots/main-standard.png","featureList":"AI-powered design generation, 3D simulation and preview, Parametric 2D sketcher, GRBL and Smoothieware support, Rotary axis support, Material and recipe management, Path optimization, Multi-layer support, Camera calibration","license":"https://github.com/barebaric/rayforge/blob/main/LICENSE","programmingLanguage":"Python","installUrl":"https://rayforge.org/docs/getting-started/installation"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
-<script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.a82eb417.css">
-<script src="/zh-CN/assets/js/runtime~main.4a705da8.js" defer="defer"></script>
-<script src="/zh-CN/assets/js/main.b9ffd673.js" defer="defer"></script>
+<script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.a5847c8f.css">
+<script src="/zh-CN/assets/js/runtime~main.59426045.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.57713252.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -27,7 +27,7 @@
 <p>Rayforge 支持旋转附件，用于雕刻和切割圆柱形物体，如杯子、玻璃杯、笔和圆
 形材料。连接旋转模块后，Rayforge 会将作业包裹在圆柱体上，并显示结果的 3D
 预览。</p>
-<p><img decoding="async" loading="lazy" alt="旋转模块设置" src="/zh-CN/assets/images/machine-rotary-module-a1a45f513d4b5ed128231bd7f9352d6c.png" width="850" height="850" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="旋转模块设置" src="/zh-CN/assets/images/machine-settings-rotary-module-5503d2e16c9605eeda24c9d417592fd7.png" width="850" height="850" class="img_ev3q"></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="何时需要旋转模式">何时需要旋转模式<a href="#何时需要旋转模式" class="hash-link" aria-label="何时需要旋转模式 的直接链接" title="何时需要旋转模式 的直接链接" translate="no">​</a></h2>
 <p>当工件为圆柱形时，请使用旋转模式。常见示例包括：</p>
 <ul>
@@ -36,7 +36,7 @@
 <li class="">在圆柱形物体上标记，如笔或工具手柄</li>
 </ul>
 <p>没有旋转模式时，Y轴在平坦工作台上前后移动激光头。启用旋转模式后，Y轴改为
-控制圆柱体的旋转，使设计包裹在表面上。</p>
+控制圆柱体的旋转，使设计包裹在表 面上。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="设置旋转模块">设置旋转模块<a href="#设置旋转模块" class="hash-link" aria-label="设置旋转模块 的直接链接" title="设置旋转模块 的直接链接" translate="no">​</a></h2>
 <p>开始之前，请按照制造商的说明将旋转模块物理连接到机器上。通常这意味着将其
 连接到Y轴步进驱动器端口，代替正常的Y轴电机。</p>
@@ -56,7 +56,7 @@
 </ul>
 <p>您可以在旋转设置页面选择模式。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="滚轮式旋转附件">滚轮式旋转附件<a href="#滚轮式旋转附件" class="hash-link" aria-label="滚轮式旋转附件 的直接链接" title="滚轮式旋转附件 的直接链接" translate="no">​</a></h3>
-<p>滚轮式旋转附件（物体放置在滚轮上而不是夹在卡盘中）有自己的设置页面。如果您的旋 转使用滚轮而不是卡盘，请在旋转配置中选择滚轮类型并输入滚轮参数。</p>
+<p>滚轮式旋转附件（物体放置在滚轮上而不是夹在卡盘中）有自己的设置页面。如果您的旋转使用滚轮而不是卡盘，请在旋转配置中选择滚轮类型并输入滚轮参数。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="按图层设置旋转模式">按图层设置旋转模式<a href="#按图层设置旋转模式" class="hash-link" aria-label="按图层设置旋转模式 的直接链接" title="按图层设置旋转模式 的直接链接" translate="no">​</a></h2>
 <p>如果您的文档有多个图层，可以独立地启用或禁用每个图层的旋转模式。当您想
 在单个项目中组合平面和圆柱形加工，或者作业的不同部分需要不同的旋转设置时，
@@ -66,7 +66,7 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="旋转模式下的-3d-预览">旋转模式下的 3D 预览<a href="#旋转模式下的-3d-预览" class="hash-link" aria-label="旋转模式下的 3D 预览 的直接链接" title="旋转模式下的 3D 预览 的直接链接" translate="no">​</a></h2>
 <p>当旋转模式激活时，<a class="" href="/zh-CN/docs/ui/3d-preview">3D 视图</a> 会显示您的刀具路径包裹在
 圆柱体上，而不是平坦表面上。2D 画布也会自动适应旋转模式，3D 画布在每种配置中都能准确渲染旋转刀具路径——包括在仿真回放期间。</p>
-<p><img decoding="async" loading="lazy" alt="旋转模式下的 3D 预览" src="/zh-CN/assets/images/main-3d-rotary-af3e41bfe07fe0f7354fd2c0f9819b09.png" width="2450" height="1700" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="旋转模式下的 3D 预览" src="/zh-CN/assets/images/main-3d-rotary-7d8849db3f746ff05e842895fdbe99ab.png" width="2450" height="1700" class="img_ev3q"></p>
 <p>这为您提供了设计在实际物体上外观的真实预览，使您更容易在开始切割之前
 发现尺寸或放置问题。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="旋转模块-3d-模型">旋转模块 3D 模型<a href="#旋转模块-3d-模型" class="hash-link" aria-label="旋转模块 3D 模型 的直接链接" title="旋转模块 3D 模型 的直接链接" translate="no">​</a></h3>
@@ -88,6 +88,6 @@
 <li class=""><a class="" href="/zh-CN/docs/features/multi-layer">多图层工作流程</a> - 按图层设置，包括旋转</li>
 <li class=""><a class="" href="/zh-CN/docs/ui/3d-preview">3D 视图</a> - 在 3D 中预览刀具路径</li>
 <li class=""><a class="" href="/zh-CN/docs/machine/general">机器设置</a> - 常规机器配置</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/machine/rotary.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>编辑此页</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文档页面导航"><a class="pagination-nav__link pagination-nav__link--prev" href="/zh-CN/docs/machine/laser"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">激光设置</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/zh-CN/docs/machine/nogo-zones"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">禁区</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#何时需要旋转模式" class="table-of-contents__link toc-highlight">何时需要旋转模式</a></li><li><a href="#设置旋转模块" class="table-of-contents__link toc-highlight">设置旋转模块</a><ul><li><a href="#旋转模式" class="table-of-contents__link toc-highlight">旋转模式</a></li><li><a href="#滚轮式旋转附件" class="table-of-contents__link toc-highlight">滚轮式旋转附件</a></li></ul></li><li><a href="#按图层设置旋转模式" class="table-of-contents__link toc-highlight">按图层设置旋转模式</a></li><li><a href="#旋转模式下的-3d-预览" class="table-of-contents__link toc-highlight">旋 转模式下的 3D 预览</a><ul><li><a href="#旋转模块-3d-模型" class="table-of-contents__link toc-highlight">旋转模块 3D 模型</a></li><li><a href="#z-轴步进下切" class="table-of-contents__link toc-highlight">Z 轴步进下切</a></li></ul></li><li><a href="#获得良好效果的建议" class="table-of-contents__link toc-highlight">获得良好效果的建议</a></li><li><a href="#相关页面" class="table-of-contents__link toc-highlight">相关页面</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/machine/rotary.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>编辑此页</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文档页面导航"><a class="pagination-nav__link pagination-nav__link--prev" href="/zh-CN/docs/machine/laser"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">激光设置</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/zh-CN/docs/machine/nogo-zones"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">禁区</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#何时需要旋转模式" class="table-of-contents__link toc-highlight">何时需要旋转模式</a></li><li><a href="#设置旋转模块" class="table-of-contents__link toc-highlight">设置旋转模块</a><ul><li><a href="#旋转模式" class="table-of-contents__link toc-highlight">旋转模式</a></li><li><a href="#滚轮式旋转附件" class="table-of-contents__link toc-highlight">滚轮式旋转附件</a></li></ul></li><li><a href="#按图层设置旋转模式" class="table-of-contents__link toc-highlight">按图层设置旋转模式</a></li><li><a href="#旋转模式下的-3d-预览" class="table-of-contents__link toc-highlight">旋转模式下的 3D 预览</a><ul><li><a href="#旋转模块-3d-模型" class="table-of-contents__link toc-highlight">旋转模块 3D 模型</a></li><li><a href="#z-轴步进下切" class="table-of-contents__link toc-highlight">Z 轴步进下切</a></li></ul></li><li><a href="#获得良好效果的建议" class="table-of-contents__link toc-highlight">获得良好效果的建议</a></li><li><a href="#相关页面" class="table-of-contents__link toc-highlight">相关页面</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>
