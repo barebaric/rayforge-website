@@ -314,7 +314,7 @@ especially for gradients and fine detail.</p>
 <p>The path tool now automatically creates horizontal and vertical constraints
 when the snap engine shows alignment guides during drawing. Your geometry
 comes out more precise with less manual constraint management.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#other-improvements" class="hash-link" aria-label="Other Improvements 的直�接链接" title="Other Improvements 的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements">Other Improvements<a href="https://rayforge.org/zh-CN/blog/rayforge-1.7-co2-lasers-ruida-octoprint-config-wizard#other-improvements" class="hash-link" aria-label="Other Improvements 的直接链接" title="Other Improvements 的直接链接" translate="no">​</a></h2>
 <ul>
 <li class=""><strong>Job time estimate</strong> shown in the 3D canvas</li>
 <li class=""><strong>Search field</strong> in the machine profile selector</li>
@@ -565,7 +565,7 @@ packages that bundle your work area, axis setup, laser settings, and G-code
 dialect into a single file. Pick your device and everything is pre-configured.
 You can export and import profiles to share setups between machines or back up
 your configuration.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="rotary-axis-overhaul">Rotary Axis Overhaul<a href="https://rayforge.org/zh-CN/blog/rayforge-1.6-device-profiles-rotary-print-cut#rotary-axis-overhaul" class="hash-link" aria-label="Rotary Axis Overhaul 的直接链接" title="Rotary Axis Overhaul 的直接�链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="rotary-axis-overhaul">Rotary Axis Overhaul<a href="https://rayforge.org/zh-CN/blog/rayforge-1.6-device-profiles-rotary-print-cut#rotary-axis-overhaul" class="hash-link" aria-label="Rotary Axis Overhaul 的直接链接" title="Rotary Axis Overhaul 的直接链接" translate="no">​</a></h2>
 <p>Rotary support was rewritten from the ground up with proper kinematics. The new
 system supports a <strong>true 4th axis</strong> alongside your existing X, Y, and Z axes,
 as well as <strong>axis replacement mode</strong> for setups where the rotary takes over X
@@ -690,7 +690,7 @@ buttons to add stock or a sketch.</p>
 create new layers from the file, or map imported layers onto existing ones.
 After import, Rayforge adds sensible default workflow steps -- a Contour step
 for vector layers and an Engrave step for layers with fills.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="lead-in--lead-out">Lead-In / Lead-Out<a href="https://rayforge.org/zh-CN/blog/rayforge-1.5-3d-simulator-bezier-nogozones#lead-in--lead-out" class="hash-link" aria-label="Lead-In / Lead-Out 的直接链接" title="Lead-In / Lead-Out 的直�接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="lead-in--lead-out">Lead-In / Lead-Out<a href="https://rayforge.org/zh-CN/blog/rayforge-1.5-3d-simulator-bezier-nogozones#lead-in--lead-out" class="hash-link" aria-label="Lead-In / Lead-Out 的直接链接" title="Lead-In / Lead-Out 的直接链接" translate="no">​</a></h2>
 <p>A new lead-in/lead-out postprocessor adds zero-power approach and exit moves
 at the start and end of each contour. This helps the laser reach constant
 velocity before the actual cut begins, improving cut quality at entry and exit
@@ -1094,7 +1094,7 @@ you more control:</p>
 <li class=""><strong>Histogram</strong> in the raster engraver for visual threshold setting</li>
 <li class=""><strong>Symbolic visualization</strong> of raster direction in the rasterizer</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="g-code-console">G-code Console<a href="https://rayforge.org/zh-CN/blog/rayforge-1.1-pipeline-rewrite#g-code-console" class="hash-link" aria-label="G-code Console 的�直接链接" title="G-code Console 的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="g-code-console">G-code Console<a href="https://rayforge.org/zh-CN/blog/rayforge-1.1-pipeline-rewrite#g-code-console" class="hash-link" aria-label="G-code Console 的直接链接" title="G-code Console 的直接链接" translate="no">​</a></h2>
 <p>The log view has been replaced with a fully-featured G-code terminal. You can
 now send commands directly to your machine, view responses in real-time, and
 interact with your laser cutter more directly than ever before.</p>
@@ -1141,7 +1141,7 @@ keyboard shortcuts</li>
 <li class="">Amsel</li>
 </ul>
 <p>Thank you for supporting Rayforge development!</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-11">Download Rayforge 1.1<a href="https://rayforge.org/zh-CN/blog/rayforge-1.1-pipeline-rewrite#download-rayforge-11" class="hash-link" aria-label="Download Rayforge 1.1 的直接链接" title="Download Rayforge 1.1 �的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-11">Download Rayforge 1.1<a href="https://rayforge.org/zh-CN/blog/rayforge-1.1-pipeline-rewrite#download-rayforge-11" class="hash-link" aria-label="Download Rayforge 1.1 的直接链接" title="Download Rayforge 1.1 的直接链接" translate="no">​</a></h2>
 <ul>
 <li class=""><a href="https://github.com/barebaric/rayforge/releases" target="_blank" rel="noopener noreferrer" class="">GitHub Releases</a></li>
 <li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
@@ -1313,7 +1313,7 @@ keyboard shortcuts</li>
 </ul>
 <p>要打开 3D 预览，在生成 G-code 后点击主工具栏中的 <strong>3D 预览</strong> 按钮。</p>
 <p>在我们的 <a class="" href="https://rayforge.org/zh-CN/docs/ui/3d-preview">UI 文档</a>中了解更多关于 3D 预览的信息。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-使用自定义-g-code-钩子实现一致的工作流程">5. 使用自定义 G-code 钩子实现一致的工作流程<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#5-%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89-g-code-%E9%92%A9%E5%AD%90%E5%AE%9E%E7%8E%B0%E4%B8%80%E8%87%B4%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B" class="hash-link" aria-label="5. 使用自定义 G-code 钩子实现一致的工作流程 的直接链接" title="5. 使用自定义 G-code 钩子实现�一致的工作流程 的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-使用自定义-g-code-钩子实现一致的工作流程">5. 使用自定义 G-code 钩子实现一致的工作流程<a href="https://rayforge.org/zh-CN/blog/5-tips-better-engraving#5-%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89-g-code-%E9%92%A9%E5%AD%90%E5%AE%9E%E7%8E%B0%E4%B8%80%E8%87%B4%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B" class="hash-link" aria-label="5. 使用自定义 G-code 钩子实现一致的工作流程 的直接链接" title="5. 使用自定义 G-code 钩子实现一致的工作流程 的直接链接" translate="no">​</a></h2>
 <p>如果您发现自己在每个作业前后都运行相同的 G-code 命令——比如归零、打开气辅或运行对焦程序——您可以使用 <strong>G-code 宏和钩子</strong> 来自动化这些操作。</p>
 <p><strong>常见用例</strong>：</p>
 <ul>
@@ -1371,7 +1371,7 @@ keyboard shortcuts</li>
 </ul>
 <p>如果您在龙门系统上有多种激光类型，Rayforge 的多激光支持让您可以为项目的每个部分使用最佳工具。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="如何设置">如何设置<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE" class="hash-link" aria-label="如何设置 的直接链接" title="如何设置 的直接链接" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-在机器配置文件中��配置多个激光器">1. 在机器配置文件中配置多个激光器<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#1-%E5%9C%A8%E6%9C%BA%E5%99%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AA%E6%BF%80%E5%85%89%E5%99%A8" class="hash-link" aria-label="1. 在机器配置文件中配置多个激光器 的直接链接" title="1. 在机器配置文件中配置多个激光器 的直接链接" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-在机器配置文件中配置多个激光器">1. 在机器配置文件中配置多个激光器<a href="https://rayforge.org/zh-CN/blog/multi-laser-support#1-%E5%9C%A8%E6%9C%BA%E5%99%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AA%E6%BF%80%E5%85%89%E5%99%A8" class="hash-link" aria-label="1. 在机器配置文件中配置多个激光器 的直接链接" title="1. 在机器配置文件中配置多个激光器 的直接链接" translate="no">​</a></h3>
 <p>转到 <strong>机器设置 → 多激光器</strong> 并定义系统中的每个激光模块。您可以指定：</p>
 <ul>
 <li class="">激光类型和功率范围</li>
