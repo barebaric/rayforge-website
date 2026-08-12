@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.6387e87c.css">
-<script src="/zh-CN/assets/js/runtime~main.0021f93c.js" defer="defer"></script>
-<script src="/zh-CN/assets/js/main.060b95f1.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.7560a417.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.2dc77858.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -49,7 +49,7 @@
 </ul>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-定义适用性条件">3. 定义适用性条件<a href="#3-定义适用性条件" class="hash-link" aria-label="3. 定义适用性条件 的直接链接" title="3. 定义适用性条件 的直接链接" translate="no">​</a></h4>
 <p><strong>适用性选项卡</strong> - 定义何时应建议此配方：</p>
-<p><img decoding="async" loading="lazy" alt="配方编辑器 - 适用性选项卡" src="/zh-CN/assets/images/recipe-editor-applicability-cce13c97595764dedb50de34e3be856b.png" width="750" height="850" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="配方编辑器 - 适用性选项卡" src="/zh-CN/assets/images/recipe-editor-applicability-17c212a09d2f6022417673a4f8bf53ed.png" width="750" height="850" class="img_ev3q"></p>
 <p>所有条件都是可选的 - 将任何字段保留为其&quot;任意&quot;值以匹配所有内容：</p>
 <ul>
 <li class=""><strong>机器</strong>：选择特定机器或保留为&quot;任意&quot;</li>
@@ -59,17 +59,22 @@
 <li class=""><strong>厚度范围</strong>：设置最小和最大厚度值</li>
 </ul>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-配置设置">4. 配置设置<a href="#4-配置设置" class="hash-link" aria-label="4. 配置设置 的直接链接" title="4. 配置设置 的直接链接" translate="no">​</a></h4>
-<p><strong>设置选项卡</strong> - 调整功率、速度和其他参数：</p>
-<p><img decoding="async" loading="lazy" alt="配方编辑器 - 设置选项卡" src="/zh-CN/assets/images/recipe-editor-settings-ecb1827417b94deb845323f0767bd1d6.png" width="750" height="850" class="img_ev3q"></p>
-<p>设置选项卡会根据适用性选项卡上的选择进行调整：</p>
-<ul>
-<li class="">当配方针对特定<strong>步骤类型</strong>时，编辑器会显示两个设置页面：&quot;激光&quot;页面包含共享的工艺设置（功率、气助等），&quot;步骤设置&quot;页面包含该步骤类型特有的属性（例如切割侧、切割顺序）</li>
-</ul>
-<p><img decoding="async" loading="lazy" alt="配方编辑器 - 步骤设置选项卡" src="/zh-CN/assets/images/recipe-editor-step-settings-f227617cf61c7ec0339e262658821063.png" width="750" height="850" class="img_ev3q"></p>
+<p><strong>设置选项卡</strong> - 调整功率、速度和其他参数。当配方针对特定<strong>步骤类型</strong>时，编辑器会显示两个设置页面：&quot;激光&quot;页面包含共享的工艺设置（功率、气助等），&quot;步骤设置&quot;页面包含该步骤类型特有的属性（例如切割侧、切割顺序）：</p>
+<p><img decoding="async" loading="lazy" alt="配方编辑器 - 激光选项卡" src="/zh-CN/assets/images/recipe-editor-laser-991ef729dd7ed2046ab7d2ead1977690.png" width="849" height="850" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="配方编辑器 - 步骤设置选项卡" src="/zh-CN/assets/images/recipe-editor-step-settings-86475948d5064ab7eafe4e4eabe3f8c6.png" width="849" height="850" class="img_ev3q"></p>
 <ul>
 <li class="">仅选择<strong>任务类型</strong>（步骤类型为&quot;任意类型&quot;）时，只显示单个&quot;设置&quot;页面，其中包含该任务的工艺设置</li>
 <li class="">两者均保留为&quot;任意&quot;时，只显示所有步骤共享的基本运动设置（切割速度和运行速度）</li>
 </ul>
+<p><strong>后处理选项卡</strong> - 将后处理设置（引入/引出、多遍、过切量及其他变换器）存储在配方中，以便应用到其所针对的步骤：</p>
+<p><img decoding="async" loading="lazy" alt="配方编辑器 - 后处理选项卡" src="/zh-CN/assets/images/recipe-editor-post-processing-fb0a2b3fc1322fecea6951d35e749af7.png" width="849" height="850" class="img_ev3q"></p>
+<p>每个变换器都带有一个三态按钮：</p>
+<ul>
+<li class=""><strong>保持不变</strong>：应用配方时不更改此变换器</li>
+<li class=""><strong>启用</strong>：配方启用该变换器并将其参数应用到步骤</li>
+<li class=""><strong>禁用</strong>：配方明确关闭该变换器</li>
+</ul>
+<p>当配方针对多个步骤类型时，仅显示所有步骤类型共有的变换器。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="配方匹配系统">配方匹配系统<a href="#配方匹配系统" class="hash-link" aria-label="配方匹配系统 的直接链接" title="配方匹配系统 的直接链接" translate="no">​</a></h3>
 <p>Rayforge 根据以下内容自动建议并应用最合适的配方：</p>
 <ul>

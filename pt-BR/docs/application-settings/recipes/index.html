@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/pt-BR/assets/css/styles.65932843.css">
-<script src="/pt-BR/assets/js/runtime~main.9d5242d0.js" defer="defer"></script>
-<script src="/pt-BR/assets/js/main.b24a8c19.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/runtime~main.924869f2.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/main.21edac1a.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -54,7 +54,7 @@ Você pode criar receitas através da interface principal de configurações:</p
 </ul>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-defina-critérios-de-aplicabilidade">3. Defina Critérios de Aplicabilidade<a href="#3-defina-critérios-de-aplicabilidade" class="hash-link" aria-label="Link direto para 3. Defina Critérios de Aplicabilidade" title="Link direto para 3. Defina Critérios de Aplicabilidade" translate="no">​</a></h4>
 <p><strong>Aba Aplicabilidade</strong> - Defina quando esta receita deve ser sugerida:</p>
-<p><img decoding="async" loading="lazy" alt="Editor de Receitas - Aba Aplicabilidade" src="/pt-BR/assets/images/recipe-editor-applicability-cce13c97595764dedb50de34e3be856b.png" width="750" height="850" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Editor de Receitas - Aba Aplicabilidade" src="/pt-BR/assets/images/recipe-editor-applicability-17c212a09d2f6022417673a4f8bf53ed.png" width="750" height="850" class="img_ev3q"></p>
 <p>Todos os critérios são opcionais - deixe qualquer campo em seu valor &quot;Qualquer&quot;
 para corresponder a tudo:</p>
 <ul>
@@ -70,17 +70,14 @@ corresponder a cada tipo de etapa dentro da tarefa</li>
 <li class=""><strong>Espessura Mín/Máx</strong>: Defina valores mínimo e máximo de espessura do material base</li>
 </ul>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-configure-as-definições">4. Configure as Definições<a href="#4-configure-as-definições" class="hash-link" aria-label="Link direto para 4. Configure as Definições" title="Link direto para 4. Configure as Definições" translate="no">​</a></h4>
-<p><strong>Aba Configurações</strong> - Ajuste potência, velocidade e outros parâmetros:</p>
-<p><img decoding="async" loading="lazy" alt="Editor de Receitas - Aba Configurações" src="/pt-BR/assets/images/recipe-editor-settings-ecb1827417b94deb845323f0767bd1d6.png" width="750" height="850" class="img_ev3q"></p>
-<p>As abas de configurações se adaptam à seleção feita na aba Aplicabilidade:</p>
-<ul>
-<li class="">Quando a receita tem como alvo um <strong>tipo de etapa</strong> específico, o editor
+<p><strong>Aba Configurações</strong> - Ajuste potência, velocidade e outros parâmetros.
+Quando a receita tem como alvo um <strong>tipo de etapa</strong> específico, o editor
 mostra duas páginas de configurações: uma página &quot;Laser&quot; com as
 configurações de processo compartilhadas (potência, assistência de ar, etc.)
 e uma página &quot;Configurações de Etapa&quot; com os atributos específicos daquele
-tipo de etapa (ex. lado de corte, ordem de corte)</li>
-</ul>
-<p><img decoding="async" loading="lazy" alt="Editor de Receitas - Aba Configurações de Etapa" src="/pt-BR/assets/images/recipe-editor-step-settings-f227617cf61c7ec0339e262658821063.png" width="750" height="850" class="img_ev3q"></p>
+tipo de etapa (ex. lado de corte, ordem de corte):</p>
+<p><img decoding="async" loading="lazy" alt="Editor de Receitas - Aba Laser" src="/pt-BR/assets/images/recipe-editor-laser-991ef729dd7ed2046ab7d2ead1977690.png" width="849" height="850" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Editor de Receitas - Aba Configurações de Etapa" src="/pt-BR/assets/images/recipe-editor-step-settings-86475948d5064ab7eafe4e4eabe3f8c6.png" width="849" height="850" class="img_ev3q"></p>
 <ul>
 <li class="">Selecionar apenas um <strong>tipo de tarefa</strong> (com &quot;Qualquer Tipo&quot; como tipo de
 etapa) mostra uma única página &quot;Configurações&quot; com as configurações de
@@ -89,6 +86,20 @@ processo para aquela tarefa</li>
 movimento (velocidade de corte e velocidade de deslocamento) que são
 compartilhadas por todas as etapas</li>
 </ul>
+<p><strong>Aba Pós-Processamento</strong> - Armazene configurações de pós-processamento
+(entrada/saída, multipasse, overscan e outros transformadores) na receita
+para que sejam aplicadas às etapas que ela tem como alvo:</p>
+<p><img decoding="async" loading="lazy" alt="Editor de Receitas - Aba Pós-Processamento" src="/pt-BR/assets/images/recipe-editor-post-processing-fb0a2b3fc1322fecea6951d35e749af7.png" width="849" height="850" class="img_ev3q"></p>
+<p>Cada transformador é mostrado com um botão de três estados:</p>
+<ul>
+<li class=""><strong>Deixar inalterado</strong>: a receita não toca neste transformador ao ser
+aplicada</li>
+<li class=""><strong>Habilitado</strong>: a receita ativa o transformador e aplica seus parâmetros
+à etapa</li>
+<li class=""><strong>Desabilitado</strong>: a receita desativa explicitamente o transformador</li>
+</ul>
+<p>Quando a receita tem como alvo vários tipos de etapa, apenas os
+transformadores comuns a todos são mostrados.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sistema-de-correspondência-de-receitas">Sistema de Correspondência de Receitas<a href="#sistema-de-correspondência-de-receitas" class="hash-link" aria-label="Link direto para Sistema de Correspondência de Receitas" title="Link direto para Sistema de Correspondência de Receitas" translate="no">​</a></h3>
 <p>O Rayforge sugere e aplica automaticamente as receitas mais apropriadas com
 base em:</p>

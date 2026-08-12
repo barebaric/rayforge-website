@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/es/assets/css/styles.5eda0c6b.css">
-<script src="/es/assets/js/runtime~main.3587dd34.js" defer="defer"></script>
-<script src="/es/assets/js/main.5197891c.js" defer="defer"></script>
+<script src="/es/assets/js/runtime~main.7a6e41a4.js" defer="defer"></script>
+<script src="/es/assets/js/main.7c559768.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -54,7 +54,7 @@ Puedes crear recetas a través de la interfaz de ajustes principales:</p>
 </ul>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-definir-criterios-de-aplicabilidad">3. Definir Criterios de Aplicabilidad<a href="#3-definir-criterios-de-aplicabilidad" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h4>
 <p><strong>Pestaña de Aplicabilidad</strong> - Define cuándo se debe sugerir esta receta:</p>
-<p><img decoding="async" loading="lazy" alt="Editor de Recetas - Pestaña Aplicabilidad" src="/es/assets/images/recipe-editor-applicability-cce13c97595764dedb50de34e3be856b.png" width="750" height="850" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Editor de Recetas - Pestaña Aplicabilidad" src="/es/assets/images/recipe-editor-applicability-17c212a09d2f6022417673a4f8bf53ed.png" width="750" height="850" class="img_ev3q"></p>
 <p>Todos los criterios son opcionales - deja cualquier campo en su valor
 &quot;Any&quot; para coincidir con todo:</p>
 <ul>
@@ -70,18 +70,14 @@ tipos de paso que soportan el tipo de tarea seleccionado. Déjalo como
 <li class=""><strong>Grosor Mín/Máx</strong>: Establece valores de grosor de stock mínimo y máximo</li>
 </ul>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-configurar-ajustes">4. Configurar Ajustes<a href="#4-configurar-ajustes" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h4>
-<p><strong>Pestaña de Ajustes</strong> - Ajusta potencia, velocidad y otros parámetros:</p>
-<p><img decoding="async" loading="lazy" alt="Editor de Recetas - Pestaña Ajustes" src="/es/assets/images/recipe-editor-settings-ecb1827417b94deb845323f0767bd1d6.png" width="750" height="850" class="img_ev3q"></p>
-<p>Las pestañas de ajustes se adaptan a la selección realizada en la pestaña
-de Aplicabilidad:</p>
-<ul>
-<li class="">Cuando la receta se dirige a un <strong>tipo de paso</strong> específico, el editor
+<p><strong>Pestaña de Ajustes</strong> - Ajusta potencia, velocidad y otros parámetros.
+Cuando la receta se dirige a un <strong>tipo de paso</strong> específico, el editor
 muestra dos páginas de ajustes: una página &quot;Laser&quot; con los ajustes de
 proceso compartidos (potencia, asistencia de aire, etc.) y una página
 &quot;Ajustes de Paso&quot; con los atributos específicos de ese tipo de paso
-(ej., lado de corte, orden de corte)</li>
-</ul>
-<p><img decoding="async" loading="lazy" alt="Editor de Recetas - Pestaña Ajustes de Paso" src="/es/assets/images/recipe-editor-step-settings-f227617cf61c7ec0339e262658821063.png" width="750" height="850" class="img_ev3q"></p>
+(ej., lado de corte, orden de corte):</p>
+<p><img decoding="async" loading="lazy" alt="Editor de Recetas - Pestaña Laser" src="/es/assets/images/recipe-editor-laser-991ef729dd7ed2046ab7d2ead1977690.png" width="849" height="850" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Editor de Recetas - Pestaña Ajustes de Paso" src="/es/assets/images/recipe-editor-step-settings-86475948d5064ab7eafe4e4eabe3f8c6.png" width="849" height="850" class="img_ev3q"></p>
 <ul>
 <li class="">Seleccionar solo un <strong>tipo de tarea</strong> (con &quot;Any Type&quot; como tipo de
 paso) muestra una única página &quot;Ajustes&quot; con los ajustes de proceso
@@ -89,6 +85,19 @@ para esa tarea</li>
 <li class="">Dejar ambos en &quot;Any&quot; muestra solo los ajustes de movimiento base
 (velocidad de corte y velocidad de viaje) que comparten todos los pasos</li>
 </ul>
+<p><strong>Pestaña de Post-Procesamiento</strong> - Almacena ajustes de post-procesamiento
+(entrada/salida, multipase, overscan y otros transformadores) en la
+receta para que se apliquen a los pasos que esta tiene como objetivo:</p>
+<p><img decoding="async" loading="lazy" alt="Editor de Recetas - Pestaña Post-Procesamiento" src="/es/assets/images/recipe-editor-post-processing-fb0a2b3fc1322fecea6951d35e749af7.png" width="849" height="850" class="img_ev3q"></p>
+<p>Cada transformador se muestra con un botón de tres estados:</p>
+<ul>
+<li class=""><strong>Dejar sin cambios</strong>: la receta no toca este transformador al aplicarse</li>
+<li class=""><strong>Habilitado</strong>: la receta activa el transformador y aplica sus
+parámetros al paso</li>
+<li class=""><strong>Deshabilitado</strong>: la receta desactiva explícitamente el transformador</li>
+</ul>
+<p>Cuando la receta tiene como objetivo varios tipos de paso, solo se
+muestran los transformadores comunes a todos ellos.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sistema-de-coincidencia-de-recetas">Sistema de Coincidencia de Recetas<a href="#sistema-de-coincidencia-de-recetas" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p>Rayforge sugiere automáticamente y aplica las recetas más apropiadas
 basándose en:</p>

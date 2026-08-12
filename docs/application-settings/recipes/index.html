@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.a8ec93fc.css">
-<script src="/assets/js/runtime~main.064ab9af.js" defer="defer"></script>
-<script src="/assets/js/main.01bce903.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.8bc6d06e.js" defer="defer"></script>
+<script src="/assets/js/main.ff6bde86.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -54,7 +54,7 @@ You can create recipes through the main settings interface:</p>
 </ul>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-define-applicability-criteria">3. Define Applicability Criteria<a href="#3-define-applicability-criteria" class="hash-link" aria-label="Direct link to 3. Define Applicability Criteria" title="Direct link to 3. Define Applicability Criteria" translate="no">​</a></h4>
 <p><strong>Applicability Tab</strong> - Define when this recipe should be suggested:</p>
-<p><img decoding="async" loading="lazy" alt="Recipe Editor - Applicability Tab" src="/assets/images/recipe-editor-applicability-cce13c97595764dedb50de34e3be856b.png" width="750" height="850" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Recipe Editor - Applicability Tab" src="/assets/images/recipe-editor-applicability-17c212a09d2f6022417673a4f8bf53ed.png" width="750" height="850" class="img_ev3q"></p>
 <p>All criteria are optional - leave any field at its &quot;Any&quot; value to match
 everything:</p>
 <ul>
@@ -69,22 +69,33 @@ every step type within the task</li>
 <li class=""><strong>Min/Max Thickness</strong>: Set minimum and maximum stock thickness values</li>
 </ul>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-configure-settings">4. Configure Settings<a href="#4-configure-settings" class="hash-link" aria-label="Direct link to 4. Configure Settings" title="Direct link to 4. Configure Settings" translate="no">​</a></h4>
-<p><strong>Settings Tab</strong> - Adjust power, speed, and other parameters:</p>
-<p><img decoding="async" loading="lazy" alt="Recipe Editor - Settings Tab" src="/assets/images/recipe-editor-settings-ecb1827417b94deb845323f0767bd1d6.png" width="750" height="850" class="img_ev3q"></p>
-<p>The settings tabs adapt to the selection made on the Applicability tab:</p>
-<ul>
-<li class="">When the recipe targets a specific <strong>step type</strong>, the editor shows
-two settings pages: a &quot;Laser&quot; page with the shared process settings
-(power, air assist, etc.) and a &quot;Step Settings&quot; page with the
-attributes specific to that step type (e.g. cut side, cut order)</li>
-</ul>
-<p><img decoding="async" loading="lazy" alt="Recipe Editor - Step Settings Tab" src="/assets/images/recipe-editor-step-settings-f227617cf61c7ec0339e262658821063.png" width="750" height="850" class="img_ev3q"></p>
+<p><strong>Settings Tab</strong> - Adjust power, speed, and other parameters. When the
+recipe targets a specific <strong>step type</strong>, the editor shows two settings
+pages: a &quot;Laser&quot; page with the shared process settings (power, air
+assist, etc.) and a &quot;Step Settings&quot; page with the attributes specific to
+that step type (e.g. cut side, cut order):</p>
+<p><img decoding="async" loading="lazy" alt="Recipe Editor - Laser Tab" src="/assets/images/recipe-editor-laser-991ef729dd7ed2046ab7d2ead1977690.png" width="849" height="850" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Recipe Editor - Step Settings Tab" src="/assets/images/recipe-editor-step-settings-86475948d5064ab7eafe4e4eabe3f8c6.png" width="849" height="850" class="img_ev3q"></p>
 <ul>
 <li class="">Selecting only a <strong>task type</strong> (with &quot;Any Type&quot; as the step type)
 shows a single &quot;Settings&quot; page with the process settings for that task</li>
 <li class="">Leaving both at &quot;Any&quot; shows only the base motion settings (cut speed
 and travel speed) that are shared by all steps</li>
 </ul>
+<p><strong>Post Processing Tab</strong> - Store post-processor settings (lead-in/out,
+multipass, overscan, and other transformers) on the recipe so they are
+applied to the steps it targets:</p>
+<p><img decoding="async" loading="lazy" alt="Recipe Editor - Post Processing Tab" src="/assets/images/recipe-editor-post-processing-fb0a2b3fc1322fecea6951d35e749af7.png" width="849" height="850" class="img_ev3q"></p>
+<p>Each transformer is shown with a tri-state button:</p>
+<ul>
+<li class=""><strong>Leave Unchanged</strong>: the recipe does not touch this transformer when
+applied</li>
+<li class=""><strong>Enabled</strong>: the recipe turns the transformer on and stamps its
+parameters onto the step</li>
+<li class=""><strong>Disabled</strong>: the recipe explicitly turns the transformer off</li>
+</ul>
+<p>When the recipe targets multiple step types, only the transformers
+common to all of them are shown.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="recipe-matching-system">Recipe Matching System<a href="#recipe-matching-system" class="hash-link" aria-label="Direct link to Recipe Matching System" title="Direct link to Recipe Matching System" translate="no">​</a></h3>
 <p>Rayforge automatically suggests and applies the most appropriate recipes
 based on:</p>

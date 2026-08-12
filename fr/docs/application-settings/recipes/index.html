@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/fr/assets/css/styles.d8e483c4.css">
-<script src="/fr/assets/js/runtime~main.5765a0f6.js" defer="defer"></script>
-<script src="/fr/assets/js/main.be0a5e93.js" defer="defer"></script>
+<script src="/fr/assets/js/runtime~main.1eec868d.js" defer="defer"></script>
+<script src="/fr/assets/js/main.fda2e639.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -50,7 +50,7 @@ Vous pouvez créer des recettes via l&#x27;interface des paramètres principaux 
 </ul>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-définir-les-critères-dapplicabilité">3. Définir les Critères d&#x27;Applicabilité<a href="#3-définir-les-critères-dapplicabilité" class="hash-link" aria-label="Lien direct vers 3. Définir les Critères d&#x27;Applicabilité" title="Lien direct vers 3. Définir les Critères d&#x27;Applicabilité" translate="no">​</a></h4>
 <p><strong>Onglet Applicabilité</strong> - Définir quand cette recette devrait être suggérée :</p>
-<p><img decoding="async" loading="lazy" alt="Éditeur de Recettes - Onglet Applicabilité" src="/fr/assets/images/recipe-editor-applicability-cce13c97595764dedb50de34e3be856b.png" width="750" height="850" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Éditeur de Recettes - Onglet Applicabilité" src="/fr/assets/images/recipe-editor-applicability-17c212a09d2f6022417673a4f8bf53ed.png" width="750" height="850" class="img_ev3q"></p>
 <p>Tous les critères sont optionnels - laissez n&#x27;importe quel champ à sa valeur &quot;Tout&quot; pour tout faire correspondre :</p>
 <ul>
 <li class=""><strong>Machine</strong> : Choisissez une machine spécifique ou laissez &quot;Toute Machine&quot;</li>
@@ -60,17 +60,27 @@ Vous pouvez créer des recettes via l&#x27;interface des paramètres principaux 
 <li class=""><strong>Épaisseur Min/Max</strong> : Définissez les valeurs d&#x27;épaisseur minimum et maximum du matériau de stock</li>
 </ul>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-configurer-les-paramètres">4. Configurer les Paramètres<a href="#4-configurer-les-paramètres" class="hash-link" aria-label="Lien direct vers 4. Configurer les Paramètres" title="Lien direct vers 4. Configurer les Paramètres" translate="no">​</a></h4>
-<p><strong>Onglet Paramètres</strong> - Ajuster la puissance, vitesse et autres paramètres :</p>
-<p><img decoding="async" loading="lazy" alt="Éditeur de Recettes - Onglet Paramètres" src="/fr/assets/images/recipe-editor-settings-ecb1827417b94deb845323f0767bd1d6.png" width="750" height="850" class="img_ev3q"></p>
-<p>Les onglets de paramètres s&#x27;adaptent à la sélection effectuée sur l&#x27;onglet Applicabilité :</p>
-<ul>
-<li class="">Lorsque la recette cible un <strong>type d&#x27;étape</strong> spécifique, l&#x27;éditeur affiche deux pages de paramètres : une page &quot;Laser&quot; avec les paramètres de processus partagés (puissance, assistance d&#x27;air, etc.) et une page &quot;Paramètres d&#x27;Étape&quot; avec les attributs spécifiques à ce type d&#x27;étape (ex : côté de coupe, ordre de coupe)</li>
-</ul>
-<p><img decoding="async" loading="lazy" alt="Éditeur de Recettes - Onglet Paramètres d&amp;#39;Étape" src="/fr/assets/images/recipe-editor-step-settings-f227617cf61c7ec0339e262658821063.png" width="750" height="850" class="img_ev3q"></p>
+<p><strong>Onglet Paramètres</strong> - Ajuster la puissance, vitesse et autres paramètres. Lorsque la recette cible un <strong>type d&#x27;étape</strong> spécifique, l&#x27;éditeur affiche deux pages de paramètres : une page &quot;Laser&quot; avec les paramètres de processus partagés (puissance, assistance d&#x27;air, etc.) et une page &quot;Paramètres d&#x27;Étape&quot; avec les attributs spécifiques à ce type d&#x27;étape (ex : côté de coupe, ordre de coupe) :</p>
+<p><img decoding="async" loading="lazy" alt="Éditeur de Recettes - Onglet Laser" src="/fr/assets/images/recipe-editor-laser-991ef729dd7ed2046ab7d2ead1977690.png" width="849" height="850" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Éditeur de Recettes - Onglet Paramètres d&amp;#39;Étape" src="/fr/assets/images/recipe-editor-step-settings-86475948d5064ab7eafe4e4eabe3f8c6.png" width="849" height="850" class="img_ev3q"></p>
 <ul>
 <li class="">Sélectionner uniquement un <strong>type de tâche</strong> (avec &quot;Tout Type&quot; comme type d&#x27;étape) affiche une seule page &quot;Paramètres&quot; avec les paramètres de processus pour cette tâche</li>
 <li class="">Laisser les deux à &quot;Tout&quot; affiche uniquement les paramètres de mouvement de base (vitesse de coupe et vitesse de déplacement) partagés par toutes les étapes</li>
 </ul>
+<p><strong>Onglet Post-Traitement</strong> - Stockez les paramètres de post-traitement
+(entrée/sortie, passes multiples, overscan et autres transformateurs) sur
+la recette afin qu&#x27;ils soient appliqués aux étapes ciblées :</p>
+<p><img decoding="async" loading="lazy" alt="Éditeur de Recettes - Onglet Post-Traitement" src="/fr/assets/images/recipe-editor-post-processing-fb0a2b3fc1322fecea6951d35e749af7.png" width="849" height="850" class="img_ev3q"></p>
+<p>Chaque transformateur est affiché avec un bouton à trois états :</p>
+<ul>
+<li class=""><strong>Laisser inchangé</strong> : la recette ne touche pas à ce transformateur
+lorsqu&#x27;elle est appliquée</li>
+<li class=""><strong>Activé</strong> : la recette active le transformateur et applique ses
+paramètres à l&#x27;étape</li>
+<li class=""><strong>Désactivé</strong> : la recette désactive explicitement le transformateur</li>
+</ul>
+<p>Lorsque la recette cible plusieurs types d&#x27;étape, seuls les transformateurs
+communs à tous sont affichés.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="système-de-correspondance-des-recettes">Système de Correspondance des Recettes<a href="#système-de-correspondance-des-recettes" class="hash-link" aria-label="Lien direct vers Système de Correspondance des Recettes" title="Lien direct vers Système de Correspondance des Recettes" translate="no">​</a></h3>
 <p>Rayforge suggère et applique automatiquement les recettes les plus appropriées selon :</p>
 <ul>

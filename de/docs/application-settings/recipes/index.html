@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/de/assets/css/styles.6387e87c.css">
-<script src="/de/assets/js/runtime~main.5ab1b246.js" defer="defer"></script>
-<script src="/de/assets/js/main.1807af3c.js" defer="defer"></script>
+<script src="/de/assets/js/runtime~main.65e1cfa8.js" defer="defer"></script>
+<script src="/de/assets/js/main.65f8e442.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -49,7 +49,7 @@
 </ul>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-anwendbarkeits-kriterien-definieren">3. Anwendbarkeits-Kriterien definieren<a href="#3-anwendbarkeits-kriterien-definieren" class="hash-link" aria-label="Direkter Link zur 3. Anwendbarkeits-Kriterien definieren" title="Direkter Link zur 3. Anwendbarkeits-Kriterien definieren" translate="no">​</a></h4>
 <p><strong>Register &quot;Anwendbarkeit&quot;</strong> - Definieren, wann dieses Rezept vorgeschlagen werden soll:</p>
-<p><img decoding="async" loading="lazy" alt="Rezept-Editor - Register Anwendbarkeit" src="/de/assets/images/recipe-editor-applicability-cce13c97595764dedb50de34e3be856b.png" width="750" height="850" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Rezept-Editor - Register Anwendbarkeit" src="/de/assets/images/recipe-editor-applicability-17c212a09d2f6022417673a4f8bf53ed.png" width="750" height="850" class="img_ev3q"></p>
 <p>Alle Kriterien sind optional - lasse jedes Feld auf seinem Wert &quot;Beliebig&quot;, um auf alles zu passen:</p>
 <ul>
 <li class=""><strong>Maschine</strong>: Spezifische Maschine wählen oder auf &quot;Beliebig&quot; lassen</li>
@@ -63,22 +63,35 @@ jeden Schritt-Typ innerhalb der Aufgabe abzudecken</li>
 <li class=""><strong>Min./Max. Dicke</strong>: Minimale und maximale Dickenwerte festlegen</li>
 </ul>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-einstellungen-konfigurieren">4. Einstellungen konfigurieren<a href="#4-einstellungen-konfigurieren" class="hash-link" aria-label="Direkter Link zur 4. Einstellungen konfigurieren" title="Direkter Link zur 4. Einstellungen konfigurieren" translate="no">​</a></h4>
-<p><strong>Register &quot;Einstellungen&quot;</strong> - Leistung, Geschwindigkeit und andere Parameter anpassen:</p>
-<p><img decoding="async" loading="lazy" alt="Rezept-Editor - Register Einstellungen" src="/de/assets/images/recipe-editor-settings-ecb1827417b94deb845323f0767bd1d6.png" width="750" height="850" class="img_ev3q"></p>
-<p>Die Einstellungs-Register passen sich der Auswahl auf dem Register &quot;Anwendbarkeit&quot; an:</p>
-<ul>
-<li class="">Wenn das Rezept auf einen bestimmten <strong>Schritt-Typ</strong> abzielt, zeigt der Editor
-zwei Einstellungsseiten: eine Seite &quot;Laser&quot; mit den gemeinsamen Prozesseinstellungen
-(Leistung, Air-Assist, usw.) und eine Seite &quot;Schritt-Einstellungen&quot; mit den
-Attributen, die für diesen Schritt-Typ spezifisch sind (z.B. Schnittseite, Schnittreihenfolge)</li>
-</ul>
-<p><img decoding="async" loading="lazy" alt="Rezept-Editor - Register Schritt-Einstellungen" src="/de/assets/images/recipe-editor-step-settings-f227617cf61c7ec0339e262658821063.png" width="750" height="850" class="img_ev3q"></p>
+<p><strong>Register &quot;Einstellungen&quot;</strong> - Leistung, Geschwindigkeit und andere
+Parameter anpassen. Wenn das Rezept auf einen bestimmten <strong>Schritt-Typ</strong>
+abzielt, zeigt der Editor zwei Einstellungsseiten: eine Seite &quot;Laser&quot;
+mit den gemeinsamen Prozesseinstellungen (Leistung, Air-Assist, usw.)
+und eine Seite &quot;Schritt-Einstellungen&quot; mit den Attributen, die für
+diesen Schritt-Typ spezifisch sind (z.B. Schnittseite, Schnittreihenfolge):</p>
+<p><img decoding="async" loading="lazy" alt="Rezept-Editor - Register Laser" src="/de/assets/images/recipe-editor-laser-991ef729dd7ed2046ab7d2ead1977690.png" width="849" height="850" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Rezept-Editor - Register Schritt-Einstellungen" src="/de/assets/images/recipe-editor-step-settings-86475948d5064ab7eafe4e4eabe3f8c6.png" width="849" height="850" class="img_ev3q"></p>
 <ul>
 <li class="">Bei Auswahl nur eines <strong>Aufgabentyps</strong> (mit &quot;Beliebiger Typ&quot; als Schritt-Typ)
 wird eine einzelne Seite &quot;Einstellungen&quot; mit den Prozesseinstellungen für diese Aufgabe angezeigt</li>
 <li class="">Bei &quot;Beliebig&quot; für beide werden nur die Basis-Bewegungseinstellungen (Schnittgeschwindigkeit
 und Fahrgeschwindigkeit) angezeigt, die allen Schritten gemeinsam sind</li>
 </ul>
+<p><strong>Register &quot;Nachbearbeitung&quot;</strong> - Speichern Sie
+Nachbearbeitungseinstellungen (Ein-/Ausfahrwege, Mehrfachdurchgänge,
+Overscan und andere Transformationen) im Rezept, damit sie auf die
+Schritte angewendet werden, die das Rezept anvisiert:</p>
+<p><img decoding="async" loading="lazy" alt="Rezept-Editor - Register Nachbearbeitung" src="/de/assets/images/recipe-editor-post-processing-fb0a2b3fc1322fecea6951d35e749af7.png" width="849" height="850" class="img_ev3q"></p>
+<p>Jede Transformation wird mit einer Drei-Zustands-Schaltfläche angezeigt:</p>
+<ul>
+<li class=""><strong>Unverändert lassen</strong>: Das Rezept berührt diese Transformation bei
+der Anwendung nicht</li>
+<li class=""><strong>Aktiviert</strong>: Das Rezept aktiviert die Transformation und überträgt
+ihre Parameter auf den Schritt</li>
+<li class=""><strong>Deaktiviert</strong>: Das Rezept schaltet die Transformation explizit aus</li>
+</ul>
+<p>Wenn das Rezept mehrere Schritt-Typen anvisiert, werden nur die
+Transformationen angezeigt, die allen gemeinsam sind.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rezept-matching-system">Rezept-Matching-System<a href="#rezept-matching-system" class="hash-link" aria-label="Direkter Link zur Rezept-Matching-System" title="Direkter Link zur Rezept-Matching-System" translate="no">​</a></h3>
 <p>Rayforge schlägt automatisch die am besten geeigneten Rezepte vor und wendet sie an basierend auf:</p>
 <ul>
