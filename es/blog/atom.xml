@@ -1274,7 +1274,7 @@ keyboard shortcuts</li>
         <link href="https://rayforge.org/es/blog/5-tips-better-engraving"/>
         <updated>2025-02-20T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[3D Preview]]></summary>
-        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="3D Preview" src="https://rayforge.org/es/assets/images/main-3d-de70aa1510cf7efe3c42c04b12b8b0b4.png" width="2450" height="1700" class="img_ev3q"></p>
+        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="3D Preview" src="https://rayforge.org/es/assets/images/main-3d-4a2c3a6c4e0661c530314e004b7b832d.png" width="2450" height="1700" class="img_ev3q"></p>
 <p>Obtener resultados de grabado láser de calidad profesional requiere más que solo buen hardware—tu configuración de software y flujo de trabajo también importan. Aquí hay cinco consejos para ayudarte a aprovechar al máximo Rayforge.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-usa-overscan-para-un-grabado-raster-más-suave">1. Usa Overscan para un Grabado Raster Más Suave<a href="https://rayforge.org/es/blog/5-tips-better-engraving#1-usa-overscan-para-un-grabado-raster-m%C3%A1s-suave" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
 <p>Al hacer grabado raster, un problema común es ver líneas visibles o inconsistencias en los bordes donde el láser cambia de dirección. Esto sucede porque la cabeza del láser necesita desacelerar y acelerar, lo que puede afectar la calidad del grabado.</p>
