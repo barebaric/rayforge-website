@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.a8ec93fc.css">
-<script src="/assets/js/runtime~main.6007b3dc.js" defer="defer"></script>
-<script src="/assets/js/main.609e5711.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.d081455c.js" defer="defer"></script>
+<script src="/assets/js/main.1ae2a14b.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -77,12 +77,21 @@ change WCS, you&#x27;ll see the toolpaths appear to move because the reference
 point (the grid) has changed, not because the toolpaths themselves moved.</p></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="display-options">Display Options<a href="#display-options" class="hash-link" aria-label="Direct link to Display Options" title="Direct link to Display Options" translate="no">​</a></h2>
 <p>Visibility toggles are located as overlay buttons at the top-right of the
-3D canvas:</p>
+3D canvas. Each button remembers its state between sessions:</p>
 <ul>
+<li class=""><strong>Workpiece image</strong>: Toggle the workpiece&#x27;s base image on the stock
+surface — the same image shown on the 2D canvas</li>
+<li class=""><strong>Stock</strong>: Toggle the stock material blocks</li>
 <li class=""><strong>Model</strong>: Toggle the 3D machine model visibility</li>
+<li class=""><strong>Grid</strong>: Toggle the coordinate grid visibility</li>
+<li class=""><strong>Ops underlay</strong>: Toggle the semi-transparent raster engraving preview
+on the workpiece surface</li>
 <li class=""><strong>Travel moves</strong>: Toggle rapid travel move visibility</li>
-<li class=""><strong>No-go zones</strong>: Toggle no-go zone visibility</li>
+<li class=""><strong>No-go zones</strong>: Toggle no-go zone visibility. This button only appears
+when your machine has at least one no-go zone configured.</li>
 </ul>
+<p>Perspective and orthographic projection are toggled with <kbd>P</kbd> or
+<strong>View → Toggle Perspective</strong>.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="toolpath-visualization">Toolpath Visualization<a href="#toolpath-visualization" class="hash-link" aria-label="Direct link to Toolpath Visualization" title="Direct link to Toolpath Visualization" translate="no">​</a></h3>
 <p>Customize what you see:</p>
 <ul>

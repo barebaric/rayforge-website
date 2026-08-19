@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/fr/assets/css/styles.d8e483c4.css">
-<script src="/fr/assets/js/runtime~main.9ae3cc83.js" defer="defer"></script>
-<script src="/fr/assets/js/main.9d327d9a.js" defer="defer"></script>
+<script src="/fr/assets/js/runtime~main.38116d64.js" defer="defer"></script>
+<script src="/fr/assets/js/main.2f727270.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -102,6 +102,12 @@ suggérées apparaissent sous forme de lignes à bascule et démarrent acceptée
 coordonnées (0,0)</li>
 <li class=""><strong>Direction des axes</strong> — inversez un axe si les coordonnées deviennent
 négatives</li>
+<li class=""><strong>Axe Z</strong> — si la machine a un axe Z (moteur de mise au point, lit
+mobile) ; lorsqu&#x27;il est absent, aucun mouvement Z n&#x27;est généré et le
+canevas 3D dispose le contenu sur le plan de gravure</li>
+<li class=""><strong>Orientation du panneau</strong> — fait pivoter l&#x27;espace de travail plat tel
+qu&#x27;il est présenté à l&#x27;écran (Natif, Pivoter à gauche, Pivoter à
+droite) ; les couches rotatives nécessitent Natif</li>
 <li class=""><strong>Zone de Travail</strong> — marges autour de l&#x27;espace inutilisable de la surface
 de travail</li>
 <li class=""><strong>Limites Logicielles</strong> — limites de sécurité facultatives pour le
@@ -110,7 +116,7 @@ déplacement</li>
 accélération</li>
 <li class=""><strong>Comportement</strong> — retour à l&#x27;origine au démarrage et homing mono-axe</li>
 </ul>
-<p><img decoding="async" loading="lazy" alt="Assistant — Matériel" src="/fr/assets/images/config-wizard-hardware-0a47c11986d32fc55bb62ba5654a5856.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Assistant — Matériel" src="/fr/assets/images/config-wizard-hardware-f456eb1f582e8bd19859a80eac25a24e.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tête">Tête<a href="#tête" class="hash-link" aria-label="Lien direct vers Tête" title="Lien direct vers Tête" translate="no">​</a></h3>
 <p>Déclarez ce qui est fixé au portique — une tête laser ou une tête de broche —
 et définissez ses paramètres. Pour un laser : puissance max (valeur S), taille
@@ -121,7 +127,7 @@ du spot, fréquence PWM et distance focale. Pour une broche : RPM max et min.</p
 axe (A/B/C), mode (vrai 4e axe vs. remplacement d&#x27;axe), géométrie et indicateur
 d&#x27;inversion de direction. Ignorez cette étape pour ajouter un module rotatif
 plus tard depuis les paramètres de la machine.</p>
-<p><img decoding="async" loading="lazy" alt="Assistant — Module Rotatif" src="/fr/assets/images/config-wizard-rotary-339fb8d904b43e6614403912576eb3cb.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Assistant — Module Rotatif" src="/fr/assets/images/config-wizard-rotary-721025097d7144f5146fd057181f85c1.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="caméras">Caméras<a href="#caméras" class="hash-link" aria-label="Lien direct vers Caméras" title="Lien direct vers Caméras" translate="no">​</a></h3>
 <p>Activez facultativement les caméras que vous souhaitez utiliser pour la
 prévisualisation et l&#x27;alignement. Lorsque vous activez une caméra et
@@ -136,7 +142,7 @@ caméras plus tard depuis les paramètres caméra de la machine.</p>
 avez configuré — pilote, connexion, zone de travail, vitesses, têtes, modules
 rotatifs et caméras. L&#x27;assistant fait également remonter tout avertissement,
 comme un pilote manquant ou une zone de travail non définie.</p>
-<p><img decoding="async" loading="lazy" alt="Assistant — Récapitulatif et Nom" src="/fr/assets/images/config-wizard-review-7389eda8103d9529994d8225ae5922bf.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Assistant — Récapitulatif et Nom" src="/fr/assets/images/config-wizard-review-391fc3c7491a526ab256385829d59145.png" width="810" height="690" class="img_ev3q"></p>
 <p>Cliquez sur <strong>Create Machine</strong> pour finaliser. La boîte de dialogue Paramètres
 Machine s&#x27;ouvre pour votre nouvelle machine, où vous pouvez ajuster tous les
 paramètres préremplis par l&#x27;assistant. Consultez les pages <a class="" href="/fr/docs/machine/general">Configuration

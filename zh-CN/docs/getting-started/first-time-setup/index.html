@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.6387e87c.css">
-<script src="/zh-CN/assets/js/runtime~main.9c18446c.js" defer="defer"></script>
-<script src="/zh-CN/assets/js/main.e38936fe.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.52c411ed.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.6a7aeb25.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -66,24 +66,28 @@
 <ul>
 <li class=""><strong>轴</strong> — X/Y 工作区域范围和坐标原点 (0,0) 角</li>
 <li class=""><strong>轴方向</strong> — 如果坐标出现负值，则反转某个轴</li>
+<li class=""><strong>Z 轴</strong> — 机器是否有 Z 轴（对焦电机、可移动床台）；如果不存在，
+则不生成 Z 移动，3D 画布将内容分层放置在雕刻平面上</li>
+<li class=""><strong>面板方向</strong> — 旋转平面工作区在屏幕上的呈现方式（原生、向左旋转、
+向右旋转）；旋转层需要原生</li>
 <li class=""><strong>工作区域</strong> — 工作表面不可使用空间周围的边距</li>
 <li class=""><strong>软限位</strong> — 点动的可选安全边界</li>
 <li class=""><strong>速度</strong> — 最大空移速度、最大切割速度和加速度</li>
 <li class=""><strong>行为</strong> — 启动时归零和单轴归零</li>
 </ul>
-<p><img decoding="async" loading="lazy" alt="向导 — 硬件" src="/zh-CN/assets/images/config-wizard-hardware-0a47c11986d32fc55bb62ba5654a5856.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="向导 — 硬件" src="/zh-CN/assets/images/config-wizard-hardware-f456eb1f582e8bd19859a80eac25a24e.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="机头">机头<a href="#机头" class="hash-link" aria-label="机头 的直接链接" title="机头 的直接链接" translate="no">​</a></h3>
 <p>声明安装在龙门架上的部件——Laser Head 或 Spindle Head——并设置其参数。对于激光：最大功率（S 值）、光斑大小、PWM 频率和焦距。对于主轴：最大和最小 RPM。</p>
 <p><img decoding="async" loading="lazy" alt="向导 — 机头" src="/zh-CN/assets/images/config-wizard-head-4887d50e43ff32ec93d56a53497e567c.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="旋转模块">旋转模块<a href="#旋转模块" class="hash-link" aria-label="旋转模块 的直接链接" title="旋转模块 的直接链接" translate="no">​</a></h3>
 <p>可选地设置旋转附件：类型（卡爪或滚轮）、轴（A/B/C）、模式（真正的第 4 轴 vs. 轴替换）、几何形状和反向方向标志。跳过此步骤可稍后从机器设置中添加旋转模块。</p>
-<p><img decoding="async" loading="lazy" alt="向导 — 旋转模块" src="/zh-CN/assets/images/config-wizard-rotary-339fb8d904b43e6614403912576eb3cb.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="向导 — 旋转模块" src="/zh-CN/assets/images/config-wizard-rotary-721025097d7144f5146fd057181f85c1.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="相机">相机<a href="#相机" class="hash-link" aria-label="相机 的直接链接" title="相机 的直接链接" translate="no">​</a></h3>
 <p>可选地启用您想用于预览和对齐的任何相机。当您启用相机并继续时，<a class="" href="/zh-CN/docs/machine/camera#%E7%AC%AC-2-%E6%AD%A5%E7%9B%B8%E6%9C%BA%E5%90%91%E5%AF%BC">相机向导</a> 将打开，引导您完成图像设置、镜头校准和图像对齐。您可以跳过此步骤，稍后从机器的相机设置中设置相机。</p>
 <p><img decoding="async" loading="lazy" alt="向导 — 相机" src="/zh-CN/assets/images/config-wizard-camera-b1aee13ef89029af034146bd4c78f6f2.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="审核与命名">审核与命名<a href="#审核与命名" class="hash-link" aria-label="审核与命名 的直接链接" title="审核与命名 的直接链接" translate="no">​</a></h3>
 <p>为机器命名并审核您已配置的所有内容的摘要——驱动程序、连接、工作区域、速度、机头、旋转模块和相机。向导还会提示任何警告，例如缺少驱动程序或未设置工作区域。</p>
-<p><img decoding="async" loading="lazy" alt="向导 — 审核与命名" src="/zh-CN/assets/images/config-wizard-review-7389eda8103d9529994d8225ae5922bf.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="向导 — 审核与命名" src="/zh-CN/assets/images/config-wizard-review-391fc3c7491a526ab256385829d59145.png" width="810" height="690" class="img_ev3q"></p>
 <p>点击 <strong>Create Machine</strong> 完成。机器设置对话框将为您的机器打开，您可以在其中调整向导预填的任何设置。有关详细信息，请参阅<a class="" href="/zh-CN/docs/machine/general">机器设置</a>页面。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="第-3-步自动连接">第 3 步：自动连接<a href="#第-3-步自动连接" class="hash-link" aria-label="第 3 步：自动连接 的直接链接" title="第 3 步：自动连接 的直接链接" translate="no">​</a></h2>
 <p>Rayforge 在应用程序启动时自动连接到您的机器（如果机器已开机并连接）。您不需要手动点击连接按钮。</p>

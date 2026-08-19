@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/es/assets/css/styles.5eda0c6b.css">
-<script src="/es/assets/js/runtime~main.5e1ec3c3.js" defer="defer"></script>
-<script src="/es/assets/js/main.d6e567ed.js" defer="defer"></script>
+<script src="/es/assets/js/runtime~main.f40ac90f.js" defer="defer"></script>
+<script src="/es/assets/js/main.a4323c92.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -77,12 +77,23 @@ cambias WCS, verás las trayectorias parecer moverse porque el punto de referenc
 (la cuadrícula) ha cambiado, no porque las trayectorias mismas se movieron.</p></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="opciones-de-pantalla">Opciones de Pantalla<a href="#opciones-de-pantalla" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h2>
 <p>Los controles de visibilidad están ubicados como botones superpuestos en la esquina
-superior derecha del lienzo 3D:</p>
+superior derecha del lienzo 3D. Cada botón recuerda su estado entre sesiones:</p>
 <ul>
+<li class=""><strong>Imagen de la pieza de trabajo</strong>: Alternar la imagen base de la pieza de
+trabajo sobre la superficie del material — la misma imagen que se muestra
+en el lienzo 2D</li>
+<li class=""><strong>Material de base</strong>: Alternar la visibilidad de los bloques de material</li>
 <li class=""><strong>Modelo</strong>: Alternar la visibilidad del modelo 3D de la máquina</li>
+<li class=""><strong>Cuadrícula</strong>: Alternar la visibilidad de la cuadrícula de coordenadas</li>
+<li class=""><strong>Subcapa de operaciones</strong>: Alternar la vista previa semitransparente de
+grabado rasterizado sobre la superficie de la pieza de trabajo</li>
 <li class=""><strong>Movimientos de desplazamiento</strong>: Alternar la visibilidad de los movimientos rápidos</li>
-<li class=""><strong>Zonas prohibidas</strong>: Alternar la visibilidad de las zonas prohibidas</li>
+<li class=""><strong>Zonas prohibidas</strong>: Alternar la visibilidad de las zonas prohibidas.
+Este botón solo aparece cuando tu máquina tiene al menos una zona
+prohibida configurada.</li>
 </ul>
+<p>La proyección en perspectiva y ortográfica se alterna con <kbd>P</kbd> o con
+<strong>Ver → Alternar perspectiva</strong>.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="visualización-de-trayectoria">Visualización de Trayectoria<a href="#visualización-de-trayectoria" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p>Personaliza lo que ves:</p>
 <ul>

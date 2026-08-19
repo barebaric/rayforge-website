@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.6387e87c.css">
-<script src="/uk/assets/js/runtime~main.09346a40.js" defer="defer"></script>
-<script src="/uk/assets/js/main.f0ea72be.js" defer="defer"></script>
+<script src="/uk/assets/js/runtime~main.0efce03d.js" defer="defer"></script>
+<script src="/uk/assets/js/main.72151981.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -96,13 +96,19 @@
 <ul>
 <li class=""><strong>Осі</strong> — діапазони X/Y робочої області та кут початку координат (0,0)</li>
 <li class=""><strong>Напрямок осі</strong> — інвертуйте вісь, якщо координати виходять від&#x27;ємними</li>
+<li class=""><strong>Вісь Z</strong> — чи має машина вісь Z (мотор фокусування, рухомий стіл);
+якщо вісь відсутня, рухи по Z не генеруються, а 3D-полотно розміщує
+вміст на площині гравіювання</li>
+<li class=""><strong>Орієнтація панелі</strong> — повертає плоску робочу область, як вона
+відображається на екрані (Рідний, Повернути ліворуч, Повернути
+праворуч); ротаційні шари потребують Рідний</li>
 <li class=""><strong>Робоча область</strong> — поля навколо непридатного простору робочої поверхні</li>
 <li class=""><strong>Програмні обмеження</strong> — необов&#x27;язкові межі безпеки для переміщення</li>
 <li class=""><strong>Швидкості</strong> — максимальна швидкість переміщення, максимальна швидкість
 різання та прискорення</li>
 <li class=""><strong>Поведінка</strong> — home при запуску та одноосьовий homing</li>
 </ul>
-<p><img decoding="async" loading="lazy" alt="Майстер — Обладнання" src="/uk/assets/images/config-wizard-hardware-0a47c11986d32fc55bb62ba5654a5856.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Майстер — Обладнання" src="/uk/assets/images/config-wizard-hardware-f456eb1f582e8bd19859a80eac25a24e.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="головка">Головка<a href="#головка" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>Вкажіть, що закріплено на порталі — лазерну або шпиндельну головку — та
 задайте її параметри. Для лазера: максимальна потужність (S-значення), розмір
@@ -114,7 +120,7 @@
 (A/B/C), режим (справжня 4-та вісь проти заміщення осі), геометрія та
 прапорець зворотного напрямку. Пропустіть цей крок, щоб додати поворотний
 модуль пізніше з налаштувань машини.</p>
-<p><img decoding="async" loading="lazy" alt="Майстер — Поворотний модуль" src="/uk/assets/images/config-wizard-rotary-339fb8d904b43e6614403912576eb3cb.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Майстер — Поворотний модуль" src="/uk/assets/images/config-wizard-rotary-721025097d7144f5146fd057181f85c1.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="камери">Камери<a href="#камери" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>За бажанням увімкніть будь-які камери, які ви хочете використовувати для
 попереднього перегляду та вирівнювання. Коли ви вмикаєте камеру та
@@ -128,7 +134,7 @@
 драйвер, з&#x27;єднання, робочу область, швидкості, головки, поворотні модулі та
 камери. Майстер також показує будь-які попередження, такі як відсутній
 драйвер або невстановлена робоча область.</p>
-<p><img decoding="async" loading="lazy" alt="Майстер — Підсумок та назва" src="/uk/assets/images/config-wizard-review-7389eda8103d9529994d8225ae5922bf.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Майстер — Підсумок та назва" src="/uk/assets/images/config-wizard-review-391fc3c7491a526ab256385829d59145.png" width="810" height="690" class="img_ev3q"></p>
 <p>Натисніть <strong>Create Machine</strong>, щоб завершити. Відкриється діалог Налаштування
 машини для вашої нової машини, де ви можете скоригувати будь-які параметри,
 які майстер заповнив попередньо. Детальніше дивіться на сторінках

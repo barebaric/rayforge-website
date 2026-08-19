@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/fr/assets/css/styles.d8e483c4.css">
-<script src="/fr/assets/js/runtime~main.9ae3cc83.js" defer="defer"></script>
-<script src="/fr/assets/js/main.9d327d9a.js" defer="defer"></script>
+<script src="/fr/assets/js/runtime~main.38116d64.js" defer="defer"></script>
+<script src="/fr/assets/js/main.2f727270.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -77,12 +77,22 @@ changes de WCS, tu verras les trajets d&#x27;outil sembler bouger parce que le p
 (la grille) a changé, non pas parce que les trajets d&#x27;outil eux-mêmes ont bougé.</p></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="options-daffichage">Options d&#x27;affichage<a href="#options-daffichage" class="hash-link" aria-label="Lien direct vers Options d&#x27;affichage" title="Lien direct vers Options d&#x27;affichage" translate="no">​</a></h2>
 <p>Les bascules de visibilité se trouvent sous forme de boutons superposés en haut à droite
-du canevas 3D :</p>
+du canevas 3D. Chaque bouton mémorise son état entre les sessions :</p>
 <ul>
+<li class=""><strong>Image de la pièce</strong> : Basculer l&#x27;image de base de la pièce sur la surface
+du brut — la même image que celle affichée sur le canevas 2D</li>
+<li class=""><strong>Brut</strong> : Basculer la visibilité des blocs de brut</li>
 <li class=""><strong>Modèle</strong> : Basculer la visibilité du modèle 3D de la machine</li>
+<li class=""><strong>Grille</strong> : Basculer la visibilité de la grille de coordonnées</li>
+<li class=""><strong>Sous-couche d&#x27;opérations</strong> : Basculer l&#x27;aperçu semi-transparent de la
+gravure raster sur la surface de la pièce</li>
 <li class=""><strong>Déplacements rapides</strong> : Basculer la visibilité des déplacements rapides</li>
-<li class=""><strong>Zones interdites</strong> : Basculer la visibilité des zones interdites</li>
+<li class=""><strong>Zones interdites</strong> : Basculer la visibilité des zones interdites. Ce
+bouton n&#x27;apparaît que lorsque ta machine a au moins une zone interdite
+configurée.</li>
 </ul>
+<p>La projection en perspective et orthographique se bascule avec <kbd>P</kbd> ou
+<strong>Affichage → Basculer la perspective</strong>.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="visualisation-du-trajet-doutil">Visualisation du trajet d&#x27;outil<a href="#visualisation-du-trajet-doutil" class="hash-link" aria-label="Lien direct vers Visualisation du trajet d&#x27;outil" title="Lien direct vers Visualisation du trajet d&#x27;outil" translate="no">​</a></h3>
 <p>Personnalise ce que tu vois :</p>
 <ul>

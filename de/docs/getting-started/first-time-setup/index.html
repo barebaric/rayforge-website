@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/de/assets/css/styles.6387e87c.css">
-<script src="/de/assets/js/runtime~main.b4f0a409.js" defer="defer"></script>
-<script src="/de/assets/js/main.6537331f.js" defer="defer"></script>
+<script src="/de/assets/js/runtime~main.8db13a56.js" defer="defer"></script>
+<script src="/de/assets/js/main.79a0b31c.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -99,13 +99,19 @@ alles, was du nicht angewendet haben möchtest.</p>
 <ul>
 <li class=""><strong>Achsen</strong> — X/Y-Achsenbereiche und die Ecke des Koordinatenursprungs (0,0)</li>
 <li class=""><strong>Achsenrichtung</strong> — kehre eine Achse um, wenn Koordinaten negativ ausfallen</li>
+<li class=""><strong>Z-Achse</strong> — ob die Maschine eine Z-Achse hat (Fokusmotor,
+verfahrbarer Tisch); wenn nicht vorhanden, werden keine Z-Bewegungen
+generiert und die 3D-Ansicht schichtet den Inhalt auf der Gravurebene</li>
+<li class=""><strong>Panel-Ausrichtung</strong> — drehe die flache Arbeitsfläche, wie sie auf dem
+Bildschirm dargestellt wird (Native, Nach links drehen, Nach rechts
+drehen); Rotationsschichten erfordern Native</li>
 <li class=""><strong>Arbeitsbereich</strong> — Ränder um den unbenutzbaren Raum der Arbeitsfläche</li>
 <li class=""><strong>Software-Limits</strong> — optionale Sicherheitsgrenzen für das Verfahren</li>
 <li class=""><strong>Geschwindigkeiten</strong> — maximale Eilganggeschwindigkeit, maximale
 Schnittgeschwindigkeit und Beschleunigung</li>
 <li class=""><strong>Verhalten</strong> — Referenzfahrt beim Start und Einzelachsen-Homing</li>
 </ul>
-<p><img decoding="async" loading="lazy" alt="Assistent — Hardware" src="/de/assets/images/config-wizard-hardware-0a47c11986d32fc55bb62ba5654a5856.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Assistent — Hardware" src="/de/assets/images/config-wizard-hardware-f456eb1f582e8bd19859a80eac25a24e.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="kopf">Kopf<a href="#kopf" class="hash-link" aria-label="Direkter Link zur Kopf" title="Direkter Link zur Kopf" translate="no">​</a></h3>
 <p>Lege fest, was am Portal befestigt ist — ein Laser- oder ein Spindelkopf — und
 stelle seine Parameter ein. Für einen Laser: maximale Leistung (S-Wert),
@@ -117,7 +123,7 @@ Drehzahl.</p>
 (A/B/C), Modus (echte 4. Achse vs. Achsenersetzung), Geometrie und das Flag
 für die umgekehrte Richtung. Überspringe diesen Schritt, um ein Rotationsmodul
 später aus den Maschineneinstellungen hinzuzufügen.</p>
-<p><img decoding="async" loading="lazy" alt="Assistent — Rotationsmodul" src="/de/assets/images/config-wizard-rotary-339fb8d904b43e6614403912576eb3cb.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Assistent — Rotationsmodul" src="/de/assets/images/config-wizard-rotary-721025097d7144f5146fd057181f85c1.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="kameras">Kameras<a href="#kameras" class="hash-link" aria-label="Direkter Link zur Kameras" title="Direkter Link zur Kameras" translate="no">​</a></h3>
 <p>Aktiviere optional alle Kameras, die du für Vorschau und Ausrichtung
 verwenden möchtest. Wenn du eine Kamera aktivierst und fortfährst, öffnet sich
@@ -131,7 +137,7 @@ der Maschine einrichten.</p>
 du konfiguriert hast — Treiber, Verbindung, Arbeitsbereich, Geschwindigkeiten,
 Köpfe, Rotationsmodule und Kameras. Der Assistent zeigt auch Warnungen an, z.B.
 einen fehlenden Treiber oder einen nicht gesetzten Arbeitsbereich.</p>
-<p><img decoding="async" loading="lazy" alt="Assistent — Überprüfen &amp;amp; Benennen" src="/de/assets/images/config-wizard-review-7389eda8103d9529994d8225ae5922bf.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Assistent — Überprüfen &amp;amp; Benennen" src="/de/assets/images/config-wizard-review-391fc3c7491a526ab256385829d59145.png" width="810" height="690" class="img_ev3q"></p>
 <p>Klicke auf <strong>Create Machine</strong>, um abzuschließen. Der
 Maschineneinstellungen-Dialog öffnet sich für deine neue Maschine, wo du alle
 Einstellungen anpassen kannst, die der Assistent vorausgefüllt hat. Details

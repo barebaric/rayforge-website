@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/de/assets/css/styles.6387e87c.css">
-<script src="/de/assets/js/runtime~main.b4f0a409.js" defer="defer"></script>
-<script src="/de/assets/js/main.6537331f.js" defer="defer"></script>
+<script src="/de/assets/js/runtime~main.8db13a56.js" defer="defer"></script>
+<script src="/de/assets/js/main.79a0b31c.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -55,9 +55,15 @@ Zeit angezeigt.</p>
 <p>Das WCS-Dropdown ermöglicht dir, schnell zwischen Koordinatensystemen zu
 wechseln. Siehe <a class="" href="/de/docs/general-info/coordinate-systems">Werkstückkoordinatensysteme</a>
 für weitere Informationen.</p>
-<p>Sichtbarkeits-Umschaltungen für Werkstücke, Halterungen, Kamera-Feed,
-Eilgänge und andere Elemente sind als Overlay-Schaltflächen direkt auf der
-Canvas verfügbar, sodass sie immer griffbereit sind, während du arbeitest.</p>
+<p>Sichtbarkeits-Umschaltungen sind als Overlay-Schaltflächen direkt auf der
+Canvas verfügbar, sodass sie immer griffbereit sind, während du arbeitest.
+Auf der 2D-Canvas schalten diese Werkstück-Grundbilder, Halterungen, den
+Kamera-Feed (sofern eine Kamera aktiviert ist), Material-Blöcke, Eilgänge
+und No-Go-Zonen um. Die <a class="" href="/de/docs/ui/3d-preview">3D-Ansicht</a> hat ihre eigenen
+Umschaltungen für das Werkstückbild, das Maschinenmodell, das Raster, die
+Ops-Unterlage, das Material, Eilgänge und No-Go-Zonen.
+Die No-Go-Zonen-Umschaltung erscheint nur, wenn für deine Maschine
+mindestens eine No-Go-Zone konfiguriert ist.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-canvas">3. Canvas<a href="#3-canvas" class="hash-link" aria-label="Direkter Link zur 3. Canvas" title="Direkter Link zur 3. Canvas" translate="no">​</a></h3>
 <p>Der Hauptarbeitsbereich, in dem du:</p>
 <ul>

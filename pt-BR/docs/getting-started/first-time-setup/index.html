@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/pt-BR/assets/css/styles.65932843.css">
-<script src="/pt-BR/assets/js/runtime~main.cf3e0b1b.js" defer="defer"></script>
-<script src="/pt-BR/assets/js/main.c78c8be4.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/runtime~main.1c7a87b0.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/main.588d093f.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -93,6 +93,12 @@ não queira aplicar.</p>
 <li class=""><strong>Eixos</strong> — extensões X/Y da área de trabalho e o canto da origem das
 coordenadas (0,0)</li>
 <li class=""><strong>Direção do eixo</strong> — inverta um eixo se as coordenadas saírem negativas</li>
+<li class=""><strong>Eixo Z</strong> — se a máquina tem um eixo Z (motor de foco, mesa móvel);
+quando ausente, nenhum movimento Z é gerado e o canvas 3D distribui o
+conteúdo no plano de gravação</li>
+<li class=""><strong>Orientação do painel</strong> — gira a área de trabalho plana como apresentada
+na tela (Nativo, Girar para a esquerda, Girar para a direita); camadas
+rotativas exigem Nativo</li>
 <li class=""><strong>Área de Trabalho</strong> — margens ao redor do espaço inutilizável da
 superfície de trabalho</li>
 <li class=""><strong>Limites de Software</strong> — limites de segurança opcionais para jog</li>
@@ -100,7 +106,7 @@ superfície de trabalho</li>
 corte e aceleração</li>
 <li class=""><strong>Comportamento</strong> — origem (home) na inicialização e homing de eixo único</li>
 </ul>
-<p><img decoding="async" loading="lazy" alt="Assistente — Hardware" src="/pt-BR/assets/images/config-wizard-hardware-0a47c11986d32fc55bb62ba5654a5856.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Assistente — Hardware" src="/pt-BR/assets/images/config-wizard-hardware-f456eb1f582e8bd19859a80eac25a24e.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cabeça">Cabeça<a href="#cabeça" class="hash-link" aria-label="Link direto para Cabeça" title="Link direto para Cabeça" translate="no">​</a></h3>
 <p>Declare o que está acoplado ao pórtico — uma cabeça de laser ou de spindle —
 e defina seus parâmetros. Para um laser: potência máxima (valor S), tamanho
@@ -112,7 +118,7 @@ mínimo.</p>
 eixo (A/B/C), modo (4º eixo verdadeiro vs. substituição de eixo), geometria
 e sinalizador de direção reversa. Pule esta etapa para adicionar um módulo
 rotativo mais tarde nas configurações da máquina.</p>
-<p><img decoding="async" loading="lazy" alt="Assistente — Módulo Rotativo" src="/pt-BR/assets/images/config-wizard-rotary-339fb8d904b43e6614403912576eb3cb.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Assistente — Módulo Rotativo" src="/pt-BR/assets/images/config-wizard-rotary-721025097d7144f5146fd057181f85c1.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="câmeras">Câmeras<a href="#câmeras" class="hash-link" aria-label="Link direto para Câmeras" title="Link direto para Câmeras" translate="no">​</a></h3>
 <p>Opcionalmente, habilite qualquer câmera que você queira usar para
 visualização e alinhamento. Quando você habilita uma câmera e continua, o
@@ -126,7 +132,7 @@ nas configurações de câmera da máquina.</p>
 driver, conexão, área de trabalho, velocidades, cabeças, módulos rotativos e
 câmeras. O assistente também exibe quaisquer avisos, como um driver ausente
 ou uma área de trabalho não definida.</p>
-<p><img decoding="async" loading="lazy" alt="Assistente — Revisar e Nomear" src="/pt-BR/assets/images/config-wizard-review-7389eda8103d9529994d8225ae5922bf.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Assistente — Revisar e Nomear" src="/pt-BR/assets/images/config-wizard-review-391fc3c7491a526ab256385829d59145.png" width="810" height="690" class="img_ev3q"></p>
 <p>Clique em <strong>Create Machine</strong> para finalizar. O diálogo de Configurações da
 Máquina abre para sua nova máquina, onde você pode ajustar qualquer uma das
 definições pré-preenchidas pelo assistente. Veja as páginas de

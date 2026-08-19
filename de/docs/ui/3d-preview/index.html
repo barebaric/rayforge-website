@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/de/assets/css/styles.6387e87c.css">
-<script src="/de/assets/js/runtime~main.b4f0a409.js" defer="defer"></script>
-<script src="/de/assets/js/main.6537331f.js" defer="defer"></script>
+<script src="/de/assets/js/runtime~main.8db13a56.js" defer="defer"></script>
+<script src="/de/assets/js/main.79a0b31c.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -80,12 +80,23 @@ Referenzpunkt (das Raster) geändert hat, nicht weil sich die Werkzeugwege
 selbst bewegt haben.</p></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="anzeigeoptionen">Anzeigeoptionen<a href="#anzeigeoptionen" class="hash-link" aria-label="Direkter Link zur Anzeigeoptionen" title="Direkter Link zur Anzeigeoptionen" translate="no">​</a></h2>
 <p>Sichtbarkeits-Umschaltungen befinden sich als Overlay-Schaltflächen oben rechts
-auf der 3D-Canvas:</p>
+auf der 3D-Canvas. Jede Schaltfläche merkt sich ihren Zustand zwischen den
+Sitzungen:</p>
 <ul>
+<li class=""><strong>Werkstückbild</strong>: Sichtbarkeit des Werkstück-Grundbilds auf der
+Werkstückoberfläche umschalten — dasselbe Bild wie auf der 2D-Canvas</li>
+<li class=""><strong>Material</strong>: Sichtbarkeit der Material-Blöcke umschalten</li>
 <li class=""><strong>Modell</strong>: 3D-Maschinenmodell-Sichtbarkeit umschalten</li>
+<li class=""><strong>Raster</strong>: Sichtbarkeit des Koordinatenrasters umschalten</li>
+<li class=""><strong>Ops-Unterlage</strong>: Sichtbarkeit der halbtransparenten Raster-Gravurvorschau
+auf der Werkstückoberfläche umschalten</li>
 <li class=""><strong>Eilgänge</strong>: Eilgang-Sichtbarkeit umschalten</li>
-<li class=""><strong>No-Go-Zonen</strong>: No-Go-Zonen-Sichtbarkeit umschalten</li>
+<li class=""><strong>No-Go-Zonen</strong>: No-Go-Zonen-Sichtbarkeit umschalten. Diese Schaltfläche
+erscheint nur, wenn für deine Maschine mindestens eine No-Go-Zone
+konfiguriert ist.</li>
 </ul>
+<p>Die perspektivische und orthografische Projektion wird mit <kbd>P</kbd> oder
+<strong>Ansicht → Perspektive umschalten</strong> umgeschaltet.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="werkzeugweg-visualisierung">Werkzeugweg-Visualisierung<a href="#werkzeugweg-visualisierung" class="hash-link" aria-label="Direkter Link zur Werkzeugweg-Visualisierung" title="Direkter Link zur Werkzeugweg-Visualisierung" translate="no">​</a></h3>
 <p>Passe an, was du siehst:</p>
 <ul>

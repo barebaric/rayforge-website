@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.a8ec93fc.css">
-<script src="/assets/js/runtime~main.6007b3dc.js" defer="defer"></script>
-<script src="/assets/js/main.609e5711.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.d081455c.js" defer="defer"></script>
+<script src="/assets/js/main.1ae2a14b.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -92,12 +92,18 @@ and start accepted — turn off anything you don&#x27;t want applied.</p>
 <ul>
 <li class=""><strong>Axes</strong> — X/Y work-area extents and the coordinate origin (0,0) corner</li>
 <li class=""><strong>Axis direction</strong> — reverse an axis if coordinates come out negative</li>
+<li class=""><strong>Z-Axis</strong> — whether the machine has a Z axis (focus motor, movable
+bed); when absent, no Z moves are generated and the 3D canvas layers
+content at the engrave plane</li>
+<li class=""><strong>Panel orientation</strong> — rotate the flat workspace as it is presented
+on screen (Native, Rotate Left, Rotate Right); rotary layers require
+Native</li>
 <li class=""><strong>Work Area</strong> — margins around the unusable space of the work surface</li>
 <li class=""><strong>Soft Limits</strong> — optional safety bounds for jogging</li>
 <li class=""><strong>Speeds</strong> — max travel speed, max cut speed, and acceleration</li>
 <li class=""><strong>Behavior</strong> — home on start and single-axis homing</li>
 </ul>
-<p><img decoding="async" loading="lazy" alt="Wizard — Hardware" src="/assets/images/config-wizard-hardware-0a47c11986d32fc55bb62ba5654a5856.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Wizard — Hardware" src="/assets/images/config-wizard-hardware-f456eb1f582e8bd19859a80eac25a24e.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="head">Head<a href="#head" class="hash-link" aria-label="Direct link to Head" title="Direct link to Head" translate="no">​</a></h3>
 <p>Declare what&#x27;s attached to the gantry — a laser or a spindle head — and set
 its parameters. For a laser: max power (S-value), spot size, PWM frequency,
@@ -107,7 +113,7 @@ and focal distance. For a spindle: max and min RPM.</p>
 <p>Optionally set up a rotary attachment: type (jaws or rollers), axis (A/B/C),
 mode (true 4th axis vs. axis replacement), geometry, and reverse-direction
 flag. Skip this step to add a rotary module later from machine settings.</p>
-<p><img decoding="async" loading="lazy" alt="Wizard — Rotary Module" src="/assets/images/config-wizard-rotary-339fb8d904b43e6614403912576eb3cb.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Wizard — Rotary Module" src="/assets/images/config-wizard-rotary-721025097d7144f5146fd057181f85c1.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cameras">Cameras<a href="#cameras" class="hash-link" aria-label="Direct link to Cameras" title="Direct link to Cameras" translate="no">​</a></h3>
 <p>Optionally enable any cameras you want to use for preview and alignment.
 When you enable a camera and continue, the <a class="" href="/docs/machine/camera#step-2-camera-wizard">camera
@@ -120,7 +126,7 @@ this and set up cameras later from the machine&#x27;s camera settings.</p>
 — driver, connection, work area, speeds, heads, rotary modules, and cameras.
 The wizard also surfaces any warnings, such as a missing driver or an unset
 work area.</p>
-<p><img decoding="async" loading="lazy" alt="Wizard — Review &amp;amp; Name" src="/assets/images/config-wizard-review-7389eda8103d9529994d8225ae5922bf.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Wizard — Review &amp;amp; Name" src="/assets/images/config-wizard-review-391fc3c7491a526ab256385829d59145.png" width="810" height="690" class="img_ev3q"></p>
 <p>Click <strong>Create Machine</strong> to finalize. The Machine Settings dialog opens for
 your new machine, where you can adjust any of the settings the wizard
 pre-filled. See the <a class="" href="/docs/machine/general">Machine Setup</a> pages for details.</p>

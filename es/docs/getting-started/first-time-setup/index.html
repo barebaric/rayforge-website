@@ -16,8 +16,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/es/assets/css/styles.5eda0c6b.css">
-<script src="/es/assets/js/runtime~main.5e1ec3c3.js" defer="defer"></script>
-<script src="/es/assets/js/main.d6e567ed.js" defer="defer"></script>
+<script src="/es/assets/js/runtime~main.f40ac90f.js" defer="defer"></script>
+<script src="/es/assets/js/main.a4323c92.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -98,6 +98,12 @@ desactiva cualquier cosa que no quieras aplicar.</p>
 <li class=""><strong>Ejes</strong> — extensiones del área de trabajo X/Y y la esquina de origen de
 coordenadas (0,0)</li>
 <li class=""><strong>Dirección del eje</strong> — invierte un eje si las coordenadas salen negativas</li>
+<li class=""><strong>Eje Z</strong> — si la máquina tiene un eje Z (motor de enfoque, cama móvil);
+cuando está ausente, no se generan movimientos Z y el lienzo 3D coloca
+el contenido en el plano de grabado</li>
+<li class=""><strong>Orientación del panel</strong> — rota el espacio de trabajo plano tal como se
+presenta en pantalla (Nativo, Girar a la izquierda, Girar a la
+derecha); las capas rotativas requieren Nativo</li>
 <li class=""><strong>Área de trabajo</strong> — márgenes alrededor del espacio inutilizable de la
 superficie de trabajo</li>
 <li class=""><strong>Límites suaves</strong> — límites de seguridad opcionales para el desplazamiento</li>
@@ -105,7 +111,7 @@ superficie de trabajo</li>
 corte y aceleración</li>
 <li class=""><strong>Comportamiento</strong> — ir al origen al inicio y homing de un solo eje</li>
 </ul>
-<p><img decoding="async" loading="lazy" alt="Asistente — Hardware" src="/es/assets/images/config-wizard-hardware-0a47c11986d32fc55bb62ba5654a5856.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Asistente — Hardware" src="/es/assets/images/config-wizard-hardware-f456eb1f582e8bd19859a80eac25a24e.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cabezal">Cabezal<a href="#cabezal" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p>Declara qué está montado en el pórtico — un cabezal láser o un cabezal de
 husillo — y establece sus parámetros. Para un láser: potencia máxima (valor S),
@@ -117,7 +123,7 @@ máximas y mínimas.</p>
 (A/B/C), modo (eje real vs. reemplazo de eje), geometría y el indicador de
 dirección invertida. Omite este paso para añadir un módulo rotativo más tarde
 desde la configuración de la máquina.</p>
-<p><img decoding="async" loading="lazy" alt="Asistente — Módulo Rotativo" src="/es/assets/images/config-wizard-rotary-339fb8d904b43e6614403912576eb3cb.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Asistente — Módulo Rotativo" src="/es/assets/images/config-wizard-rotary-721025097d7144f5146fd057181f85c1.png" width="810" height="690" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cámaras">Cámaras<a href="#cámaras" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
 <p>Activa opcionalmente cualquier cámara que quieras usar para previsualización y
 alineación. Cuando activas una cámara y continúas, se abre el <a class="" href="/es/docs/machine/camera#paso-2-asistente-de-c%C3%A1mara">asistente de
@@ -131,7 +137,7 @@ cámara de la máquina.</p>
 — controlador, conexión, área de trabajo, velocidades, cabezales, módulos
 rotativos y cámaras. El asistente también muestra advertencias, como un
 controlador faltante o un área de trabajo sin establecer.</p>
-<p><img decoding="async" loading="lazy" alt="Asistente — Revisión y Nombre" src="/es/assets/images/config-wizard-review-7389eda8103d9529994d8225ae5922bf.png" width="810" height="690" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Asistente — Revisión y Nombre" src="/es/assets/images/config-wizard-review-391fc3c7491a526ab256385829d59145.png" width="810" height="690" class="img_ev3q"></p>
 <p>Haz clic en <strong>Create Machine</strong> para finalizar. Se abre el diálogo de
 Configuración de Máquina para tu nueva máquina, donde puedes ajustar
 cualquiera de los ajustes que el asistente rellenó previamente. Consulta las
