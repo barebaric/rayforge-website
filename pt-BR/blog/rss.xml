@@ -1024,7 +1024,7 @@ macOS updates, and <strong>fllmn</strong> for Flatpak updates!</p>
             <guid>https://rayforge.org/pt-BR/blog/rayforge-1.1-pipeline-rewrite</guid>
             <pubDate>Fri, 27 Feb 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[Rayforge 1.1 brings macOS support, a new G-code console, unified raster operations, and a rewritten pipeline for better laser cutting performance.]]></description>
-            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 1.1" src="https://rayforge.org/pt-BR/assets/images/rayforge-1.1-7e0d0638da78baa86b6281fa7f32df3b.png" width="1344" height="768" class="img_ev3q"></p>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 1.1" src="https://rayforge.org/pt-BR/assets/images/rayforge-1.1-6de2ea3be78dec0f5e777d23ef102a60.webp" width="1344" height="768" class="img_ev3q"></p>
 <p>Rayforge 1.1 brings a powerful new G-code console, unified raster operations,
 and a completely rebuilt data pipeline for improved performance and stability.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="macos-support">MacOS Support<a href="https://rayforge.org/pt-BR/blog/rayforge-1.1-pipeline-rewrite#macos-support" class="hash-link" aria-label="Link direto para MacOS Support" title="Link direto para MacOS Support" translate="no">​</a></h2>
@@ -1124,7 +1124,7 @@ keyboard shortcuts</li>
             <guid>https://rayforge.org/pt-BR/blog/rayforge-1.0-first-birthday</guid>
             <pubDate>Thu, 29 Jan 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[Rayforge 1.0]]></description>
-            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 1.0" src="https://rayforge.org/pt-BR/assets/images/rayforge-1.0-95669e0bab418ed91ad92eb5532ec092.png" width="1920" height="1024" class="img_ev3q"></p>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 1.0" src="https://rayforge.org/pt-BR/assets/images/rayforge-1.0-74891c5b29dedb41b1b42f7872e42941.webp" width="1920" height="1024" class="img_ev3q"></p>
 <p>Hoje marca um marco especial para o Rayforge - estamos lançando a versão
 1.0 exatamente no primeiro aniversário do projeto! O que começou como um
 único commit em 1º de fevereiro de 2025 cresceu para uma plataforma completa
