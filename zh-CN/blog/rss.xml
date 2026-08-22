@@ -1024,7 +1024,7 @@ macOS updates, and <strong>fllmn</strong> for Flatpak updates!</p>
             <guid>https://rayforge.org/zh-CN/blog/rayforge-1.1-pipeline-rewrite</guid>
             <pubDate>Fri, 27 Feb 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[Rayforge 1.1 brings macOS support, a new G-code console, unified raster operations, and a rewritten pipeline for better laser cutting performance.]]></description>
-            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 1.1" src="https://rayforge.org/zh-CN/assets/images/rayforge-1.1-7e0d0638da78baa86b6281fa7f32df3b.png" width="1344" height="768" class="img_ev3q"></p>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 1.1" src="https://rayforge.org/zh-CN/assets/images/rayforge-1.1-6de2ea3be78dec0f5e777d23ef102a60.webp" width="1344" height="768" class="img_ev3q"></p>
 <p>Rayforge 1.1 brings a powerful new G-code console, unified raster operations,
 and a completely rebuilt data pipeline for improved performance and stability.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="macos-support">MacOS Support<a href="https://rayforge.org/zh-CN/blog/rayforge-1.1-pipeline-rewrite#macos-support" class="hash-link" aria-label="MacOS Support 的直接链接" title="MacOS Support 的直接链接" translate="no">​</a></h2>
@@ -1124,7 +1124,7 @@ keyboard shortcuts</li>
             <guid>https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday</guid>
             <pubDate>Thu, 29 Jan 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[Rayforge 1.0]]></description>
-            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 1.0" src="https://rayforge.org/zh-CN/assets/images/rayforge-1.0-95669e0bab418ed91ad92eb5532ec092.png" width="1920" height="1024" class="img_ev3q"></p>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Rayforge 1.0" src="https://rayforge.org/zh-CN/assets/images/rayforge-1.0-74891c5b29dedb41b1b42f7872e42941.webp" width="1920" height="1024" class="img_ev3q"></p>
 <p>今天标志着 Rayforge 的一个特殊里程碑——我们在项目的一周岁生日当天发布 1.0 版本！从 2025 年 2 月 1 日的第一次提交开始，这已经发展成为一个功能齐全的激光切割和雕刻平台。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="迄今为止的旅程">迄今为止的旅程<a href="https://rayforge.org/zh-CN/blog/rayforge-1.0-first-birthday#%E8%BF%84%E4%BB%8A%E4%B8%BA%E6%AD%A2%E7%9A%84%E6%97%85%E7%A8%8B" class="hash-link" aria-label="迄今为止的旅程 的直接链接" title="迄今为止的旅程 的直接链接" translate="no">​</a></h2>
 <p>在过去的一年里，Rayforge 已从一个基本的激光控制工具演变为一个综合性的设计和制造平台。我们从零开始构建了一切：参数化 2D CAD 系统、3D G-code 预览、多图层支持、多激光支持、相机对齐、工作坐标系等等。</p>
