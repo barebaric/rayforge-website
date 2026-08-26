@@ -4,10 +4,115 @@
         <title>Rayforge Blog</title>
         <link>https://rayforge.org/pt-BR/blog</link>
         <description>Rayforge Blog</description>
-        <lastBuildDate>Tue, 16 Jun 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 26 Aug 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>pt-BR</language>
+        <item>
+            <title><![CDATA[Rayforge 1.11.0-beta1 - Sketcher Tools, Physical Burn Model, Auto-Configuration]]></title>
+            <link>https://rayforge.org/pt-BR/blog/rayforge-1-11-beta1-sketcher-physical-burn-auto-config</link>
+            <guid>https://rayforge.org/pt-BR/blog/rayforge-1-11-beta1-sketcher-physical-burn-auto-config</guid>
+            <pubDate>Wed, 26 Aug 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Rayforge 1.11.0-beta1 brings new sketcher mirror/duplicate/circular-array tools, a physical burn model in the 3D preview, and automatic machine configuration with device discovery.]]></description>
+            <content:encoded><![CDATA[<p>A while back I ran a vote asking where I should focus next. You spoke
+clearly: sketcher improvements came out on top, CNC second, and a
+better 3D preview third.</p>
+<p>This cycle delivered the sketcher work you asked for -- and I went
+ahead and built the better preview too, even though it wasn't the
+runner-up. (CNC folks: you're on deck.)</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-mirror-duplicate-and-circular-arrays">Sketcher: Mirror, Duplicate, and Circular Arrays<a href="https://rayforge.org/pt-BR/blog/rayforge-1-11-beta1-sketcher-physical-burn-auto-config#sketcher-mirror-duplicate-and-circular-arrays" class="hash-link" aria-label="Link direto para Sketcher: Mirror, Duplicate, and Circular Arrays" title="Link direto para Sketcher: Mirror, Duplicate, and Circular Arrays" translate="no">​</a></h2>
+<p>The sketcher picked up several new tools this cycle.</p>
+<ul>
+<li class="">You can now <strong>mirror</strong> the selection vertically or horizontally across
+its center.</li>
+<li class=""><strong>Ctrl+D</strong> duplicates the selection in-place, and the <strong>arrow keys</strong>
+nudge selected entities around.</li>
+<li class="">The headline tool is the new <strong>circular array</strong> (polar pattern). Drop a
+guide circle, set the count and angle, and copies are generated
+parametrically. The dialog is non-modal with a live preview, the guide
+circle's radius resizes the whole array, and double-clicking it
+reopens the editor.</li>
+<li class="">Rectangles got a small upgrade: they now auto-create a center point,
+and <strong>Shift</strong>-click draws the rectangle symmetrically around the start
+point -- matching the ellipse tool.</li>
+</ul>
+<p>A bunch of undo/redo and text-editing bugs were fixed, and Ctrl+S now
+saves the document instead of accidentally triggering the symmetry
+tool.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3d-preview-a-physical-burn-model">3D Preview: A Physical Burn Model<a href="https://rayforge.org/pt-BR/blog/rayforge-1-11-beta1-sketcher-physical-burn-auto-config#3d-preview-a-physical-burn-model" class="hash-link" aria-label="Link direto para 3D Preview: A Physical Burn Model" title="Link direto para 3D Preview: A Physical Burn Model" translate="no">​</a></h2>
+<p>The 3D preview no longer floats engraving as a flat overlay on top of
+the stock. Laser raster and vector ops now <strong>char the stock itself</strong> --
+the preview actually shows burning, using a physically motivated model
+that accounts for your laser's wavelength, optical wattage, and spot
+size, and the material's absorption at that wavelength.</p>
+<ul>
+<li class="">It works for rotary too -- engraving bakes into the rotary stock.</li>
+<li class="">Stock also got smarter: the material manager now guarantees a default
+stock material, and new stock assets and layers pick it up
+automatically.</li>
+</ul>
+<p>A caveat: the burn model is physically motivated, but it's not yet well
+calibrated. To get the charring to match real materials across
+different lasers, I need your help. If you can run a material test grid
+and <strong>send me a photo of the result along with your machine data</strong>
+(laser wavelength, optical wattage, spot size, speed, and the
+powers/depths you tested), that data lets me tune the model to
+reality. More samples = a more accurate preview for everyone.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="auto-configuration-plug-it-in-and-go">Auto-Configuration: Plug It In and Go<a href="https://rayforge.org/pt-BR/blog/rayforge-1-11-beta1-sketcher-physical-burn-auto-config#auto-configuration-plug-it-in-and-go" class="hash-link" aria-label="Link direto para Auto-Configuration: Plug It In and Go" title="Link direto para Auto-Configuration: Plug It In and Go" translate="no">​</a></h2>
+<p>I've been chipping away at the setup friction. The wizard now does a
+lot more of the work for you.</p>
+<ul>
+<li class="">On first launch, the machine configuration wizard opens automatically
+and <strong>discovers nearby devices</strong> -- over USB and over the network.
+OctoPrint servers and ESP3D boards now appear in the wizard alongside
+USB serial devices.</li>
+<li class="">Discovered devices are <strong>matched to built-in profiles</strong> when possible,
+so you often just pick your machine from the list instead of filling
+everything in by hand. GRBL dialects and OctoPrint/Smoothieware
+settings are detected automatically.</li>
+<li class="">The wizard also checks <strong>serial-port and camera permissions</strong> before
+discovery starts. If something is missing, a new first page explains
+how to fix it on your platform, with commands you can copy with one
+click.</li>
+</ul>
+<p>One more detail: USB serial ports now sort ahead of hardware ports in
+the port selector, which gained a two-line row showing the device path
+plus a short description. A configured but unplugged port stays pinned
+to the top so it doesn't fall off the list.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="fixes-and-minor-improvements">Fixes and Minor Improvements<a href="https://rayforge.org/pt-BR/blog/rayforge-1-11-beta1-sketcher-physical-burn-auto-config#fixes-and-minor-improvements" class="hash-link" aria-label="Link direto para Fixes and Minor Improvements" title="Link direto para Fixes and Minor Improvements" translate="no">​</a></h2>
+<ul>
+<li class="">The laser and aux outputs are now turned off when a job is stopped or
+aborted, so a stuck "laser on" command no longer lingers after an
+interrupted cut</li>
+<li class="">Slow GRBL serial handshakes with grblHAL fixed</li>
+<li class="">New <code>--script</code> CLI flag runs Python at startup so scripts can register
+plugins and template functions; built-in text-box template functions
+(date, time, uuid, etc.) are available out of the box</li>
+<li class=""><code>.rfs</code> sketch files now record a schema version for forward
+compatibility</li>
+<li class="">New right panel display mode setting</li>
+<li class="">Refined app icon</li>
+<li class="">Updated translations (de, es, fr, pt, uk, zh_CN)</li>
+<li class="">raygeo upgraded to 1.47.0</li>
+</ul>
+<p>This beta was 70 commits, 460 files, and around 20k net lines of code.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-1110-beta1">Download Rayforge 1.11.0-beta1<a href="https://rayforge.org/pt-BR/blog/rayforge-1-11-beta1-sketcher-physical-burn-auto-config#download-rayforge-1110-beta1" class="hash-link" aria-label="Link direto para Download Rayforge 1.11.0-beta1" title="Link direto para Download Rayforge 1.11.0-beta1" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="https://rayforge.org/pt-BR/docs/getting-started/installation">GitHub Releases</a></li>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/pt-BR/blog/rayforge-1-11-beta1-sketcher-physical-burn-auto-config#join-the-community" class="hash-link" aria-label="Link direto para Join the Community" title="Link direto para Join the Community" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content:encoded>
+            <category>release</category>
+            <category>1.11</category>
+            <category>beta</category>
+            <category>sketcher</category>
+            <category>3d-preview</category>
+            <category>discovery</category>
+        </item>
         <item>
             <title><![CDATA[Rayforge 1.8 - Rust Pipeline Complete, LightBurn Import, New Device Profiles]]></title>
             <link>https://rayforge.org/pt-BR/blog/rayforge-1.8-rust-pipeline-lightburn-import</link>
