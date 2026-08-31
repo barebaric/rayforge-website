@@ -12,13 +12,13 @@
 
 
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rayforge","description":"Free open-source laser cutter software for GRBL-based machines. Design, simulate, and control your laser cutter or engraver with AI-powered tools, 3D preview, and a built-in sketcher.","url":"https://rayforge.org","applicationCategory":"DesignApplication","operatingSystem":"Linux, Windows, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"barebaric","url":"https://github.com/barebaric"},"screenshot":"https://rayforge.org/screenshots/main-standard.png","featureList":"AI-powered design generation, 3D simulation and preview, Parametric 2D sketcher, GRBL and Smoothieware support, Rotary axis support, Material and recipe management, Path optimization, Multi-layer support, Camera calibration","license":"https://github.com/barebaric/rayforge/blob/main/LICENSE","programmingLanguage":"Python","installUrl":"https://rayforge.org/docs/getting-started/installation"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rayforge","description":"Free open-source laser cutter software for GRBL-based machines. Design, simulate, and control your laser cutter or engraver with AI-powered tools, 3D preview, and a built-in sketcher.","url":"https://rayforge.org","applicationCategory":"DesignApplication","operatingSystem":"Linux, Windows, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"barebaric","url":"https://github.com/barebaric"},"screenshot":"https://rayforge.org/screenshots/main-standard.webp","featureList":"AI-powered design generation, 3D simulation and preview, Parametric 2D sketcher, GRBL and Smoothieware support, Rotary axis support, Material and recipe management, Path optimization, Multi-layer support, Camera calibration","license":"https://github.com/barebaric/rayforge/blob/main/LICENSE","programmingLanguage":"Python","installUrl":"https://rayforge.org/docs/getting-started/installation"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.c49990ef.css">
-<script src="/zh-CN/assets/js/runtime~main.5ef8c8bf.js" defer="defer"></script>
-<script src="/zh-CN/assets/js/main.4f6c2eec.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.4925f308.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.08e7a660.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -49,8 +49,8 @@
 </ol>
 <p><strong>解决方案：</strong></p>
 <p><strong>Linux：</strong></p>
-<p>首先，将您的用户添加到 <code>dialout</code> 组（在大多数基于 Debian 的发行版上，
-Snap 和非 Snap 安装都需要此操作）：</p>
+<p>首先，将您的用户添加到 <code>dialout</code>
+组（在大多数基于 Debian 的发行版上，Snap 和非 Snap 安装都需要此操作）：</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">sudo usermod -a -G dialout $USER</span><br></div></code></pre></div></div>
 <p>然后注销并重新登录以使更改生效。</p>
 <p>如果您使用 Snap 版本，还需要授予串口权限：</p>
@@ -73,9 +73,9 @@ Snap 和非 Snap 安装都需要此操作）：</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="权限被拒绝错误">权限被拒绝错误<a href="#权限被拒绝错误" class="hash-link" aria-label="权限被拒绝错误 的直接链接" title="权限被拒绝错误 的直接链接" translate="no">​</a></h3>
 <p><strong>问题：</strong> 尝试连接时出现&quot;Permission denied&quot;或类似错误。</p>
 <p><strong>在 Linux 上：</strong></p>
-<p>您的用户需要在 <code>dialout</code> 组（或某些发行版上的 <code>uucp</code>）中。
-对于<strong>基于 Debian 的发行版上的 Snap 和非 Snap 安装</strong>，都需要此操作
-以避免 AppArmor DENIED 消息：</p>
+<p>您的用户需要在 <code>dialout</code> 组（或某些发行版上的
+<code>uucp</code>）中。对于<strong>基于 Debian 的发行版上的 Snap 和非 Snap 安装</strong>，都需要此操作以避免 AppArmor
+DENIED 消息：</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain"># 将自己添加到 dialout 组</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">sudo usermod -a -G dialout $USER</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"># 验证您在组中（注销/登录后）</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">groups | grep dialout</span><br></div></code></pre></div></div>
 <p><strong>重要：</strong> 您必须注销并重新登录（或重启）才能使组更改生效。</p>
 <p><strong>对于 Snap 安装</strong>，还需要授予 snap 串口访问权限：</p>
@@ -108,7 +108,9 @@ Snap 和非 Snap 安装都需要此操作）：</p>
 <li class="">在 Windows 上，记下设备管理器中的 COM 端口</li>
 <li class="">避免在 Linux 上选择名为 <code>/dev/ttyS*</code> 的端口 - 这些是硬件串口，不是 USB</li>
 </ol>
-<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>硬件串口</div><div class="admonitionContent_BuS1"><p>如果您在 Linux 上选择 <code>/dev/ttyS*</code> 端口，Rayforge 会警告您，因为这些通常不是基于 USB 的 GRBL 设备。USB 串口使用 <code>/dev/ttyUSB*</code> 或 <code>/dev/ttyACM*</code>。</p></div></div>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>硬件串口</div><div class="admonitionContent_BuS1"><p>如果您在 Linux 上选择 <code>/dev/ttyS*</code>
+端口，Rayforge 会警告您，因为这些通常不是基于 USB 的 GRBL 设备。USB 串口使用 <code>/dev/ttyUSB*</code> 或
+<code>/dev/ttyACM*</code>。</p></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="波特率不正确">波特率不正确<a href="#波特率不正确" class="hash-link" aria-label="波特率不正确 的直接链接" title="波特率不正确 的直接链接" translate="no">​</a></h3>
 <p><strong>问题：</strong> 连接建立但命令不起作用或产生乱码响应。</p>
 <p><strong>解决方案：</strong></p>

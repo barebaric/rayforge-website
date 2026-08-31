@@ -12,13 +12,13 @@
 
 
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rayforge","description":"Free open-source laser cutter software for GRBL-based machines. Design, simulate, and control your laser cutter or engraver with AI-powered tools, 3D preview, and a built-in sketcher.","url":"https://rayforge.org","applicationCategory":"DesignApplication","operatingSystem":"Linux, Windows, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"barebaric","url":"https://github.com/barebaric"},"screenshot":"https://rayforge.org/screenshots/main-standard.png","featureList":"AI-powered design generation, 3D simulation and preview, Parametric 2D sketcher, GRBL and Smoothieware support, Rotary axis support, Material and recipe management, Path optimization, Multi-layer support, Camera calibration","license":"https://github.com/barebaric/rayforge/blob/main/LICENSE","programmingLanguage":"Python","installUrl":"https://rayforge.org/docs/getting-started/installation"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rayforge","description":"Free open-source laser cutter software for GRBL-based machines. Design, simulate, and control your laser cutter or engraver with AI-powered tools, 3D preview, and a built-in sketcher.","url":"https://rayforge.org","applicationCategory":"DesignApplication","operatingSystem":"Linux, Windows, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"barebaric","url":"https://github.com/barebaric"},"screenshot":"https://rayforge.org/screenshots/main-standard.webp","featureList":"AI-powered design generation, 3D simulation and preview, Parametric 2D sketcher, GRBL and Smoothieware support, Rotary axis support, Material and recipe management, Path optimization, Multi-layer support, Camera calibration","license":"https://github.com/barebaric/rayforge/blob/main/LICENSE","programmingLanguage":"Python","installUrl":"https://rayforge.org/docs/getting-started/installation"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.c49990ef.css">
-<script src="/zh-CN/assets/js/runtime~main.5ef8c8bf.js" defer="defer"></script>
-<script src="/zh-CN/assets/js/main.4f6c2eec.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.4925f308.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.08e7a660.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -65,9 +65,8 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="授予串口访问权限">授予串口访问权限<a href="#授予串口访问权限" class="hash-link" aria-label="授予串口访问权限 的直接链接" title="授予串口访问权限 的直接链接" translate="no">​</a></h2>
 <p><strong>这是 Rayforge 最重要的权限。</strong></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="前提条件dialout-组成员资格">前提条件：dialout 组成员资格<a href="#前提条件dialout-组成员资格" class="hash-link" aria-label="前提条件：dialout 组成员资格 的直接链接" title="前提条件：dialout 组成员资格 的直接链接" translate="no">​</a></h3>
-<p>在基于 Debian 的发行版上，即使使用 Snap 软件包，您的用户也必须是
-<code>dialout</code> 组的成员。如果没有此组成员资格，您在尝试访问串口时可能
-会收到 AppArmor DENIED 消息。</p>
+<p>在基于 Debian 的发行版上，即使使用 Snap 软件包，您的用户也必须是 <code>dialout</code>
+组的成员。如果没有此组成员资格，您在尝试访问串口时可能会收到 AppArmor DENIED 消息。</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain"># 将您的用户添加到 dialout 组</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">sudo usermod -a -G dialout $USER</span><br></div></code></pre></div></div>
 <p><strong>重要：</strong> 您必须注销并重新登录（或重启）才能使组更改生效。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="检查当前权限">检查当前权限<a href="#检查当前权限" class="hash-link" aria-label="检查当前权限 的直接链接" title="检查当前权限 的直接链接" translate="no">​</a></h3>

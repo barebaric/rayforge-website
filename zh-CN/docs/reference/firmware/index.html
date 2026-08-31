@@ -12,13 +12,13 @@
 
 
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rayforge","description":"Free open-source laser cutter software for GRBL-based machines. Design, simulate, and control your laser cutter or engraver with AI-powered tools, 3D preview, and a built-in sketcher.","url":"https://rayforge.org","applicationCategory":"DesignApplication","operatingSystem":"Linux, Windows, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"barebaric","url":"https://github.com/barebaric"},"screenshot":"https://rayforge.org/screenshots/main-standard.png","featureList":"AI-powered design generation, 3D simulation and preview, Parametric 2D sketcher, GRBL and Smoothieware support, Rotary axis support, Material and recipe management, Path optimization, Multi-layer support, Camera calibration","license":"https://github.com/barebaric/rayforge/blob/main/LICENSE","programmingLanguage":"Python","installUrl":"https://rayforge.org/docs/getting-started/installation"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rayforge","description":"Free open-source laser cutter software for GRBL-based machines. Design, simulate, and control your laser cutter or engraver with AI-powered tools, 3D preview, and a built-in sketcher.","url":"https://rayforge.org","applicationCategory":"DesignApplication","operatingSystem":"Linux, Windows, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"barebaric","url":"https://github.com/barebaric"},"screenshot":"https://rayforge.org/screenshots/main-standard.webp","featureList":"AI-powered design generation, 3D simulation and preview, Parametric 2D sketcher, GRBL and Smoothieware support, Rotary axis support, Material and recipe management, Path optimization, Multi-layer support, Camera calibration","license":"https://github.com/barebaric/rayforge/blob/main/LICENSE","programmingLanguage":"Python","installUrl":"https://rayforge.org/docs/getting-started/installation"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.c49990ef.css">
-<script src="/zh-CN/assets/js/runtime~main.5ef8c8bf.js" defer="defer"></script>
-<script src="/zh-CN/assets/js/main.4f6c2eec.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.4925f308.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.08e7a660.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -100,9 +100,7 @@
 <table><thead><tr><th>固件</th><th>版本</th><th>状态</th><th>驱动程序</th><th>备注</th></tr></thead><tbody><tr><td><strong>GRBL</strong></td><td>1.1+</td><td>完全支持</td><td>GRBL 串口 / GRBL Serial Simple</td><td>推荐</td></tr><tr><td><strong>grblHAL</strong></td><td>2023+</td><td>兼容</td><td>GRBL 串口 / GRBL Telnet</td><td>现代 GRBL 分支</td></tr><tr><td><strong>GRBL</strong></td><td>0.9</td><td>有限</td><td>GRBL 串口</td><td>较旧，可能有问题</td></tr><tr><td><strong>Smoothieware</strong></td><td>全部</td><td>兼容</td><td>SmoothieDriver (Telnet)</td><td>基于网络</td></tr><tr><td><strong>Marlin</strong></td><td>2.0+</td><td>兼容</td><td>Marlin 串口</td><td>需要激光模式</td></tr><tr><td><strong>ESP3D</strong></td><td>全部</td><td>兼容</td><td>GRBL Telnet</td><td>基于网络</td></tr><tr><td><strong>OctoPrint</strong></td><td>全部</td><td>实验性</td><td>OctoPrint</td><td>见下方说明</td></tr><tr><td><strong>其他</strong></td><td>-</td><td>不支持</td><td>-</td><td>请求支持</td></tr></tbody></table>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="grbl-固件">GRBL 固件<a href="#grbl-固件" class="hash-link" aria-label="GRBL 固件 的直接链接" title="GRBL 固件 的直接链接" translate="no">​</a></h2>
-<p><strong>状态：</strong> 完全支持
-<strong>版本：</strong> 1.1+
-<strong>驱动程序：</strong> GRBL 串口, GRBL Serial Simple</p>
+<p><strong>状态：</strong> 完全支持 <strong>版本：</strong> 1.1+ <strong>驱动程序：</strong> GRBL 串口, GRBL Serial Simple</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="grbl-11推荐">GRBL 1.1（推荐）<a href="#grbl-11推荐" class="hash-link" aria-label="GRBL 1.1（推荐） 的直接链接" title="GRBL 1.1（推荐） 的直接链接" translate="no">​</a></h3>
 <p><strong>什么是 GRBL 1.1？</strong></p>
 <p>GRBL 1.1 是业余 CNC 和激光机器最常见的固件。2017 年发布，它稳定、文档齐全且广泛支持。</p>
@@ -153,8 +151,7 @@
 </ol>
 <p><strong>升级说明：</strong> 参见 <a href="https://github.com/gnea/grbl/wiki" target="_blank" rel="noopener noreferrer" class="">GRBL Wiki</a></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="grbl-serial-simple-驱动程序">GRBL Serial Simple 驱动程序<a href="#grbl-serial-simple-驱动程序" class="hash-link" aria-label="GRBL Serial Simple 驱动程序 的直接链接" title="GRBL Serial Simple 驱动程序 的直接链接" translate="no">​</a></h3>
-<p>Rayforge 包含第二个串行 GRBL 驱动程序，适用于标准缓冲计数驱动程序
-导致误报或通信错误的设备。</p>
+<p>Rayforge 包含第二个串行 GRBL 驱动程序，适用于标准缓冲计数驱动程序导致误报或通信错误的设备。</p>
 <p><strong>工作原理：</strong></p>
 <ul>
 <li class="">使用乒乓协议：发送一行，等待 &quot;ok&quot;，发送下一行</li>
@@ -171,14 +168,11 @@
 <p><strong>何时不使用：</strong></p>
 <ul>
 <li class="">标准 GRBL Serial 驱动程序在大多数设备上可靠工作</li>
-<li class="">Simple 驱动程序缺乏死锁恢复，因此作业可能在丢失 &quot;ok&quot; 响应时
-停止而无法自动恢复</li>
+<li class="">Simple 驱动程序缺乏死锁恢复，因此作业可能在丢失 &quot;ok&quot; 响应时停止而无法自动恢复</li>
 </ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="grblhal">grblHAL<a href="#grblhal" class="hash-link" aria-label="grblHAL 的直接链接" title="grblHAL 的直接链接" translate="no">​</a></h2>
-<p><strong>状态：</strong> 兼容
-<strong>版本：</strong> 2023+
-<strong>驱动程序：</strong> GRBL 串口</p>
+<p><strong>状态：</strong> 兼容 <strong>版本：</strong> 2023+ <strong>驱动程序：</strong> GRBL 串口</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="什么是-grblhal">什么是 grblHAL？<a href="#什么是-grblhal" class="hash-link" aria-label="什么是 grblHAL？ 的直接链接" title="什么是 grblHAL？ 的直接链接" translate="no">​</a></h3>
 <p>grblHAL 是 GRBL 的现代分支，具有增强功能：</p>
 <ul>
@@ -204,11 +198,10 @@
 <p><strong>未来：</strong> Rayforge 可能会添加对 grblHAL 特定功能的支持（网络等）</p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="grbl-telnet-驱动">GRBL Telnet 驱动<a href="#grbl-telnet-驱动" class="hash-link" aria-label="GRBL Telnet 驱动 的直接链接" title="GRBL Telnet 驱动 的直接链接" translate="no">​</a></h2>
-<p><strong>状态：</strong> 支持
-<strong>固件：</strong> grblHAL、ESP3D 和其他网络化 GRBL 控制器
-<strong>驱动程序：</strong> GRBL Telnet</p>
+<p><strong>状态：</strong> 支持 <strong>固件：</strong> grblHAL、ESP3D 和其他网络化 GRBL 控制器 <strong>驱动程序：</strong> GRBL Telnet</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="关于-grbl-telnet-驱动">关于 GRBL Telnet 驱动<a href="#关于-grbl-telnet-驱动" class="hash-link" aria-label="关于 GRBL Telnet 驱动 的直接链接" title="关于 GRBL Telnet 驱动 的直接链接" translate="no">​</a></h3>
-<p>GRBL Telnet 驱动通过网络 Telnet 接口连接基于 GRBL 的控制器。适用于内置 WiFi 或以太网的板子——无需 USB 电缆。</p>
+<p>GRBL
+Telnet 驱动通过网络 Telnet 接口连接基于 GRBL 的控制器。适用于内置 WiFi 或以太网的板子——无需 USB 电缆。</p>
 <p><strong>功能：</strong></p>
 <ul>
 <li class="">网络连接（以太网/WiFi）</li>
@@ -277,11 +270,10 @@
 <p><strong>建议：</strong> 如果可能，改用 GRBL 兼容固件。</p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="marlin">Marlin<a href="#marlin" class="hash-link" aria-label="Marlin 的直接链接" title="Marlin 的直接链接" translate="no">​</a></h2>
-<p><strong>版本：</strong> 2.0+ 带激光支持
-<strong>驱动程序：</strong> Marlin 串口</p>
+<p><strong>版本：</strong> 2.0+ 带激光支持 <strong>驱动程序：</strong> Marlin 串口</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="marlin-串口驱动程序">Marlin 串口驱动程序<a href="#marlin-串口驱动程序" class="hash-link" aria-label="Marlin 串口驱动程序 的直接链接" title="Marlin 串口驱动程序 的直接链接" translate="no">​</a></h3>
-<p>Rayforge 包含一个专用的 MarlinSerialDriver，通过串口 (USB) 连接到 Marlin 固件。
-Marlin 2.0+ 在正确配置时可以控制激光。</p>
+<p>Rayforge 包含一个专用的 MarlinSerialDriver，通过串口 (USB) 连接到 Marlin 固件。Marlin
+2.0+ 在正确配置时可以控制激光。</p>
 <p><strong>功能：</strong></p>
 <ul>
 <li class="">串口通信 (USB)</li>
@@ -548,7 +540,8 @@ Marlin 2.0+ 在正确配置时可以控制激光。</p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="未来的固件支持">未来的固件支持<a href="#未来的固件支持" class="hash-link" aria-label="未来的固件支持 的直接链接" title="未来的固件支持 的直接链接" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ruida-控制器">Ruida 控制器<a href="#ruida-控制器" class="hash-link" aria-label="Ruida 控制器 的直接链接" title="Ruida 控制器 的直接链接" translate="no">​</a></h3>
-<p>Rayforge 包含对基于 Ruida 的控制器的实验性支持（例如 RDC6442、RDC6445、Ruida R5）。Ruida 驱动程序通过网络连接，支持点动、位置报告、气辅控制、图层选择、自动连接和状态轮询。</p>
+<p>Rayforge 包含对基于 Ruida 的控制器的实验性支持（例如 RDC6442、RDC6445、Ruida
+R5）。Ruida 驱动程序通过网络连接，支持点动、位置报告、气辅控制、图层选择、自动连接和状态轮询。</p>
 <p><strong>功能：</strong></p>
 <ul>
 <li class="">网络连接（以太网/WiFi）</li>
@@ -565,9 +558,8 @@ Marlin 2.0+ 在正确配置时可以控制激光。</p>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="octoprint">OctoPrint<a href="#octoprint" class="hash-link" aria-label="OctoPrint 的直接链接" title="OctoPrint 的直接链接" translate="no">​</a></h3>
-<p>Rayforge 包含一个实验性的 OctoPrint 驱动程序，可通过网络直接向 OctoPrint
-服务器提交 G 代码。如果您的激光器连接到运行 OctoPrint 的 Raspberry Pi 或其他
-计算机上，这将非常有用。</p>
+<p>Rayforge 包含一个实验性的 OctoPrint 驱动程序，可通过网络直接向 OctoPrint 服务器提交 G 代码。如果您的激光器连接到运行 OctoPrint 的 Raspberry
+Pi 或其他计算机上，这将非常有用。</p>
 <p><strong>功能：</strong></p>
 <ul>
 <li class="">WebSocket 连接用于实时状态更新</li>

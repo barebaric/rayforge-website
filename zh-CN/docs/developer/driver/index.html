@@ -12,13 +12,13 @@
 
 
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rayforge","description":"Free open-source laser cutter software for GRBL-based machines. Design, simulate, and control your laser cutter or engraver with AI-powered tools, 3D preview, and a built-in sketcher.","url":"https://rayforge.org","applicationCategory":"DesignApplication","operatingSystem":"Linux, Windows, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"barebaric","url":"https://github.com/barebaric"},"screenshot":"https://rayforge.org/screenshots/main-standard.png","featureList":"AI-powered design generation, 3D simulation and preview, Parametric 2D sketcher, GRBL and Smoothieware support, Rotary axis support, Material and recipe management, Path optimization, Multi-layer support, Camera calibration","license":"https://github.com/barebaric/rayforge/blob/main/LICENSE","programmingLanguage":"Python","installUrl":"https://rayforge.org/docs/getting-started/installation"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rayforge","description":"Free open-source laser cutter software for GRBL-based machines. Design, simulate, and control your laser cutter or engraver with AI-powered tools, 3D preview, and a built-in sketcher.","url":"https://rayforge.org","applicationCategory":"DesignApplication","operatingSystem":"Linux, Windows, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"barebaric","url":"https://github.com/barebaric"},"screenshot":"https://rayforge.org/screenshots/main-standard.webp","featureList":"AI-powered design generation, 3D simulation and preview, Parametric 2D sketcher, GRBL and Smoothieware support, Rotary axis support, Material and recipe management, Path optimization, Multi-layer support, Camera calibration","license":"https://github.com/barebaric/rayforge/blob/main/LICENSE","programmingLanguage":"Python","installUrl":"https://rayforge.org/docs/getting-started/installation"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.c49990ef.css">
-<script src="/zh-CN/assets/js/runtime~main.5ef8c8bf.js" defer="defer"></script>
-<script src="/zh-CN/assets/js/main.4f6c2eec.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.4925f308.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.08e7a660.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -36,14 +36,16 @@
 <p>为了简化这一点，Rayforge 提供了基于可组合部分的架构：</p>
 <!-- -->
 <ul>
-<li class=""><strong><code>OpsEncoder</code>：</strong> 将 <code>Ops</code> 翻译为特定的命令语言（例如 G-code）。被流水线（用于作业编码）和驱动程序（用于 move_to、home 等单个命令）使用。</li>
+<li class=""><strong><code>OpsEncoder</code>：</strong> 将 <code>Ops</code>
+翻译为特定的命令语言（例如 G-code）。被流水线（用于作业编码）和驱动程序（用于 move_to、home 等单个命令）使用。</li>
 <li class=""><strong><code>Pipeline</code>：</strong> 编排编码并生成最终机器代码。</li>
 <li class=""><strong><code>Transport</code>：</strong> 管理连接和数据传输。</li>
 <li class=""><strong><code>Driver</code>：</strong> 执行机器代码、处理设备状态并与 UI 通信。</li>
 </ul>
 <p>所有驱动程序操作都是 <strong>异步的</strong>，以确保用户界面保持响应。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ops-语言"><code>Ops</code> 语言<a href="#ops-语言" class="hash-link" aria-label="ops-语言 的直接链接" title="ops-语言 的直接链接" translate="no">​</a></h2>
-<p>Rayforge 将激光作业描述为存储在 <code>Ops</code> 对象中的高级操作序列。这是 Rayforge 内用于描述机器运动的通用语言，独立于任何特定硬件。</p>
+<p>Rayforge 将激光作业描述为存储在 <code>Ops</code>
+对象中的高级操作序列。这是 Rayforge 内用于描述机器运动的通用语言，独立于任何特定硬件。</p>
 
 
 
@@ -95,7 +97,8 @@
 
 
 <table><thead><tr><th style="text-align:left"><code>Ops</code> 方法</th><th style="text-align:left">签名</th><th style="text-align:left">描述</th></tr></thead><tbody><tr><td style="text-align:left"><code>move_to</code></td><td style="text-align:left"><code>(x, y, z=0.0)</code></td><td style="text-align:left">快速移动（不切割）</td></tr><tr><td style="text-align:left"><code>line_to</code></td><td style="text-align:left"><code>(x, y, z=0.0)</code></td><td style="text-align:left">切割/雕刻移动</td></tr><tr><td style="text-align:left"><code>arc_to</code></td><td style="text-align:left"><code>(x, y, i, j, cw=True, z=0.0)</code></td><td style="text-align:left">切割/雕刻弧形移动</td></tr><tr><td style="text-align:left"><code>set_power</code></td><td style="text-align:left"><code>(power)</code></td><td style="text-align:left">设置激光功率（0-100%）</td></tr><tr><td style="text-align:left"><code>set_cut_speed</code></td><td style="text-align:left"><code>(speed)</code></td><td style="text-align:left">设置切割移动速度（mm/min）</td></tr><tr><td style="text-align:left"><code>set_travel_speed</code></td><td style="text-align:left"><code>(speed)</code></td><td style="text-align:left">设置快速移动速度（mm/min）</td></tr><tr><td style="text-align:left"><code>enable_air_assist</code></td><td style="text-align:left"><code>()</code></td><td style="text-align:left">开启气助</td></tr><tr><td style="text-align:left"><code>disable_air_assist</code></td><td style="text-align:left"><code>()</code></td><td style="text-align:left">关闭气助</td></tr></tbody></table>
-<p>您的驱动程序接收预编码的机器代码（例如 G-code 字符串）和一个跟踪哪些机器代码命令对应哪些操作的操作映射。流水线在调用驱动程序的 <code>run()</code> 方法之前处理将 <code>Ops</code> 编码为机器代码。</p>
+<p>您的驱动程序接收预编码的机器代码（例如 G-code 字符串）和一个跟踪哪些机器代码命令对应哪些操作的操作映射。流水线在调用驱动程序的
+<code>run()</code> 方法之前处理将 <code>Ops</code> 编码为机器代码。</p>
 <div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token comment" style="color:rgb(105, 112, 152);font-style:italic"># Rayforge 如何构建 Ops 对象的示例</span><span class="token plain"></span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">ops </span><span class="token operator" style="color:rgb(137, 221, 255)">=</span><span class="token plain"> Ops</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain"></span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">ops</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">set_travel_speed</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token number" style="color:rgb(247, 140, 108)">3000</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain"></span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">ops</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">set_cut_speed</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token number" style="color:rgb(247, 140, 108)">800</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain"></span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">ops</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">set_power</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token number" style="color:rgb(247, 140, 108)">80</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain"></span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">ops</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">move_to</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token number" style="color:rgb(247, 140, 108)">10</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"> </span><span class="token number" style="color:rgb(247, 140, 108)">10</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain">       </span><span class="token comment" style="color:rgb(105, 112, 152);font-style:italic"># 快速移动到起点</span><span class="token plain"></span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">ops</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">enable_air_assist</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain"></span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">ops</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">line_to</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token number" style="color:rgb(247, 140, 108)">50</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"> </span><span class="token number" style="color:rgb(247, 140, 108)">10</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain">       </span><span class="token comment" style="color:rgb(105, 112, 152);font-style:italic"># 用气助切割一条线</span><span class="token plain"></span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">ops</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">disable_air_assist</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain"></span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">ops</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">line_to</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token number" style="color:rgb(247, 140, 108)">50</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"> </span><span class="token number" style="color:rgb(247, 140, 108)">50</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain">       </span><span class="token comment" style="color:rgb(105, 112, 152);font-style:italic"># 不用气助切割一条线</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="驱动程序实现">驱动程序实现<a href="#驱动程序实现" class="hash-link" aria-label="驱动程序实现 的直接链接" title="驱动程序实现 的直接链接" translate="no">​</a></h2>
 <p>所有驱动程序必须继承自 <code>rayforge.machine.driver.driver.Driver</code>。</p>
@@ -110,15 +113,18 @@
 <p>您的驱动程序类 <strong>必须</strong> 实现以下方法。请注意，大多数是 <strong>异步的</strong>，必须用 <code>async def</code> 定义。</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="配置和生命周期">配置和生命周期<a href="#配置和生命周期" class="hash-link" aria-label="配置和生命周期 的直接链接" title="配置和生命周期 的直接链接" translate="no">​</a></h4>
 <ul>
-<li class=""><code>get_setup_vars() -&gt; VarSet</code>：<strong>(类方法)</strong> 返回定义连接所需参数（例如 IP 地址、串口）的 <code>VarSet</code> 对象。Rayforge 使用此对象自动生成 UI 中的设置表单。</li>
-<li class=""><code>precheck(**kwargs)</code>：<strong>(类方法)</strong> 配置的非阻塞静态检查，可在驱动程序实例化之前运行。失败时应引发 <code>DriverPrecheckError</code>。</li>
+<li class=""><code>get_setup_vars() -&gt; VarSet</code>：<strong>(类方法)</strong> 返回定义连接所需参数（例如 IP 地址、串口）的 <code>VarSet</code>
+对象。Rayforge 使用此对象自动生成 UI 中的设置表单。</li>
+<li class=""><code>precheck(**kwargs)</code>：<strong>(类方法)</strong> 配置的非阻塞静态检查，可在驱动程序实例化之前运行。失败时应引发
+<code>DriverPrecheckError</code>。</li>
 <li class=""><code>setup(**kwargs)</code>：使用设置表单中的值调用一次。用于初始化您的传输和内部状态。</li>
 <li class=""><code>async def connect()</code>：建立并维护与设备的持久连接。此方法应包含自动重连逻辑。</li>
 <li class=""><code>async def cleanup()</code>：断开连接时调用。应关闭所有连接并释放资源。</li>
 </ul>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="设备控制">设备控制<a href="#设备控制" class="hash-link" aria-label="设备控制 的直接链接" title="设备控制 的直接链接" translate="no">​</a></h4>
 <ul>
-<li class=""><code>async def run(machine_code: Any, op_map: MachineCodeOpMap, doc: Doc, on_command_done: Optional[Callable[[int], Union[None, Awaitable[None]]]] = None)</code>：执行作业的核心方法。接收预编码的机器代码（例如 G-code 字符串）和操作索引与机器代码之间的映射。当每个命令完成时，使用 op_index 调用 <code>on_command_done</code> 回调。</li>
+<li class=""><code>async def run(machine_code: Any, op_map: MachineCodeOpMap, doc: Doc, on_command_done: Optional[Callable[[int], Union[None, Awaitable[None]]]] = None)</code>：执行作业的核心方法。接收预编码的机器代码（例如 G-code 字符串）和操作索引与机器代码之间的映射。当每个命令完成时，使用 op_index 调用
+<code>on_command_done</code> 回调。</li>
 <li class=""><code>async def home(axes: Optional[Axis] = None)</code>：归位机器。可以归位特定轴或所有轴。</li>
 <li class=""><code>async def move_to(pos_x: float, pos_y: float)</code>：手动将激光头移动到特定 XY 坐标。</li>
 <li class=""><code>async def set_hold(hold: bool = True)</code>：暂停或恢复当前作业。</li>
@@ -134,11 +140,13 @@
 <li class=""><code>async def write_setting(key: str, value: Any)</code>：将单个设置写入设备。</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="发出信号">发出信号<a href="#发出信号" class="hash-link" aria-label="发出信号 的直接链接" title="发出信号 的直接链接" translate="no">​</a></h3>
-<p>要与 UI 通信，您的驱动程序必须发出信号。为确保正确的日志记录和线程安全，<strong>您不能直接发出信号。</strong> 相反，从基 <code>Driver</code> 类调用受保护的帮助方法。</p>
+<p>要与 UI 通信，您的驱动程序必须发出信号。为确保正确的日志记录和线程安全，<strong>您不能直接发出信号。</strong>
+相反，从基 <code>Driver</code> 类调用受保护的帮助方法。</p>
 <ul>
 <li class=""><code>self._log(message)</code>：向控制台发送日志消息。</li>
 <li class=""><code>self._on_state_changed()</code>：每当您更新 <code>self.state</code> 时调用此方法以通知 UI 状态或位置更改。</li>
-<li class=""><code>self._on_connection_status_changed(status, message)</code>：通知 UI 连接状态（<code>CONNECTING</code>、<code>CONNECTED</code>、<code>ERROR</code> 等）。</li>
+<li class=""><code>self._on_connection_status_changed(status, message)</code>：通知 UI 连接状态（<code>CONNECTING</code>、<code>CONNECTED</code>、<code>ERROR</code>
+等）。</li>
 <li class=""><code>self._on_command_status_changed(status, message)</code>：报告已发送命令的状态。</li>
 <li class=""><code>self._on_settings_read(settings)</code>：将您读取的设备设置发送回 UI。</li>
 </ul>

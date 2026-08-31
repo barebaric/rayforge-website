@@ -12,13 +12,13 @@
 
 
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rayforge","description":"Free open-source laser cutter software for GRBL-based machines. Design, simulate, and control your laser cutter or engraver with AI-powered tools, 3D preview, and a built-in sketcher.","url":"https://rayforge.org","applicationCategory":"DesignApplication","operatingSystem":"Linux, Windows, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"barebaric","url":"https://github.com/barebaric"},"screenshot":"https://rayforge.org/screenshots/main-standard.png","featureList":"AI-powered design generation, 3D simulation and preview, Parametric 2D sketcher, GRBL and Smoothieware support, Rotary axis support, Material and recipe management, Path optimization, Multi-layer support, Camera calibration","license":"https://github.com/barebaric/rayforge/blob/main/LICENSE","programmingLanguage":"Python","installUrl":"https://rayforge.org/docs/getting-started/installation"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rayforge","description":"Free open-source laser cutter software for GRBL-based machines. Design, simulate, and control your laser cutter or engraver with AI-powered tools, 3D preview, and a built-in sketcher.","url":"https://rayforge.org","applicationCategory":"DesignApplication","operatingSystem":"Linux, Windows, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"barebaric","url":"https://github.com/barebaric"},"screenshot":"https://rayforge.org/screenshots/main-standard.webp","featureList":"AI-powered design generation, 3D simulation and preview, Parametric 2D sketcher, GRBL and Smoothieware support, Rotary axis support, Material and recipe management, Path optimization, Multi-layer support, Camera calibration","license":"https://github.com/barebaric/rayforge/blob/main/LICENSE","programmingLanguage":"Python","installUrl":"https://rayforge.org/docs/getting-started/installation"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/de/assets/css/styles.83bbfbd2.css">
-<script src="/de/assets/js/runtime~main.ec391397.js" defer="defer"></script>
-<script src="/de/assets/js/main.1412421a.js" defer="defer"></script>
+<script src="/de/assets/js/runtime~main.5d53410d.js" defer="defer"></script>
+<script src="/de/assets/js/main.81931f98.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -28,9 +28,11 @@
 <p>Dieser Leitfaden behandelt die Einrichtung deiner Entwicklungsumgebung für Rayforge.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="linux">Linux<a href="#linux" class="hash-link" aria-label="Direkter Link zur Linux" title="Direkter Link zur Linux" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="voraussetzungen">Voraussetzungen<a href="#voraussetzungen" class="hash-link" aria-label="Direkter Link zur Voraussetzungen" title="Direkter Link zur Voraussetzungen" translate="no">​</a></h3>
-<p>Siehe den <a class="" href="/de/docs/getting-started/installation#linux-pixi">Installationsleitfaden</a> für Pixi-Installationsanweisungen.</p>
+<p>Siehe den <a class="" href="/de/docs/getting-started/installation#linux-pixi">Installationsleitfaden</a> für
+Pixi-Installationsanweisungen.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pre-commit-hooks-optional">Pre-commit-Hooks (Optional)<a href="#pre-commit-hooks-optional" class="hash-link" aria-label="Direkter Link zur Pre-commit-Hooks (Optional)" title="Direkter Link zur Pre-commit-Hooks (Optional)" translate="no">​</a></h3>
-<p>Um deinen Code vor jedem Commit automatisch zu formatieren und zu linten, kannst du Pre-commit-Hooks installieren:</p>
+<p>Um deinen Code vor jedem Commit automatisch zu formatieren und zu linten, kannst du Pre-commit-Hooks
+installieren:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">pixi run pre-commit-install</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="nützliche-befehle">Nützliche Befehle<a href="#nützliche-befehle" class="hash-link" aria-label="Direkter Link zur Nützliche Befehle" title="Direkter Link zur Nützliche Befehle" translate="no">​</a></h3>
 <p>Alle Befehle werden über <code>pixi run</code> ausgeführt:</p>
@@ -46,16 +48,22 @@
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="windows">Windows<a href="#windows" class="hash-link" aria-label="Direkter Link zur Windows" title="Direkter Link zur Windows" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="voraussetzungen-1">Voraussetzungen<a href="#voraussetzungen-1" class="hash-link" aria-label="Direkter Link zur Voraussetzungen" title="Direkter Link zur Voraussetzungen" translate="no">​</a></h3>
-<p>Siehe den <a class="" href="/de/docs/getting-started/installation#windows-developer">Installationsleitfaden</a> für detaillierte MSYS2-Entwickler-Installationsanweisungen.</p>
+<p>Siehe den <a class="" href="/de/docs/getting-started/installation#windows-developer">Installationsleitfaden</a> für
+detaillierte MSYS2-Entwickler-Installationsanweisungen.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="schnellstart">Schnellstart<a href="#schnellstart" class="hash-link" aria-label="Direkter Link zur Schnellstart" title="Direkter Link zur Schnellstart" translate="no">​</a></h3>
-<p>Entwicklungsaufgaben unter Windows werden über das <code>run.bat</code>-Skript verwaltet, das ein Wrapper für die MSYS2-Shell ist.</p>
-<p>Nach dem Klonen des Repositorys und Abschluss der MSYS2-Einrichtung kannst du diese Befehle von einer Standard-Windows-Eingabeaufforderung oder PowerShell verwenden:</p>
+<p>Entwicklungsaufgaben unter Windows werden über das <code>run.bat</code>-Skript verwaltet, das ein Wrapper für
+die MSYS2-Shell ist.</p>
+<p>Nach dem Klonen des Repositorys und Abschluss der MSYS2-Einrichtung kannst du diese Befehle von
+einer Standard-Windows-Eingabeaufforderung oder PowerShell verwenden:</p>
 <div class="language-batch codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-batch codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">.\run.bat setup</span><br></div></code></pre></div></div>
-<p>Dies führt <code>scripts/win/win_setup.sh</code> aus, um alle notwendigen System- und Python-Pakete in deine MSYS2/MinGW64-Umgebung zu installieren.</p>
+<p>Dies führt <code>scripts/win/win_setup.sh</code> aus, um alle notwendigen System- und Python-Pakete in deine
+MSYS2/MinGW64-Umgebung zu installieren.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pre-commit-hooks-optional-1">Pre-commit-Hooks (Optional)<a href="#pre-commit-hooks-optional-1" class="hash-link" aria-label="Direkter Link zur Pre-commit-Hooks (Optional)" title="Direkter Link zur Pre-commit-Hooks (Optional)" translate="no">​</a></h3>
-<p>Um deinen Code vor jedem Commit automatisch zu formatieren und zu linten, führe dies aus der MSYS2 MINGW64-Shell aus:</p>
+<p>Um deinen Code vor jedem Commit automatisch zu formatieren und zu linten, führe dies aus der MSYS2
+MINGW64-Shell aus:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">bash scripts/win/win_setup_dev.sh</span><br></div></code></pre></div></div>
-<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>hinweis</div><div class="admonitionContent_BuS1"><p>Pre-commit-Hooks erfordern die Ausführung von Git-Befehlen innerhalb der MSYS2 MINGW64-Shell, nicht aus PowerShell oder Eingabeaufforderung.</p></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>hinweis</div><div class="admonitionContent_BuS1"><p>Pre-commit-Hooks erfordern die Ausführung von Git-Befehlen innerhalb der MSYS2 MINGW64-Shell, nicht
+aus PowerShell oder Eingabeaufforderung.</p></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="nützliche-befehle-1">Nützliche Befehle<a href="#nützliche-befehle-1" class="hash-link" aria-label="Direkter Link zur Nützliche Befehle" title="Direkter Link zur Nützliche Befehle" translate="no">​</a></h3>
 <p>Alle Befehle werden über das <code>run.bat</code>-Skript ausgeführt:</p>
 <ul>
