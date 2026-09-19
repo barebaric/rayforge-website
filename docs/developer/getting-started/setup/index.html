@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.c9eaf888.css">
-<script src="/assets/js/runtime~main.ba442633.js" defer="defer"></script>
-<script src="/assets/js/main.ae8e5040.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.71ade64a.js" defer="defer"></script>
+<script src="/assets/js/main.8e428831.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -72,12 +72,11 @@ shell.</p>
 standard Windows Command Prompt or PowerShell:</p>
 <div class="language-batch codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-batch codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">.\run.bat setup</span><br></div></code></pre></div></div>
 <p>This executes <code>scripts/win/win_setup.sh</code> to install all necessary system and Python packages into
-your MSYS2/MinGW64 environment.</p>
+your MSYS2/UCRT64 environment.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pre-commit-hooks-optional-1">Pre-commit Hooks (Optional)<a href="#pre-commit-hooks-optional-1" class="hash-link" aria-label="Direct link to Pre-commit Hooks (Optional)" title="Direct link to Pre-commit Hooks (Optional)" translate="no">​</a></h3>
-<p>To automatically format and lint your code before each commit, run this from the MSYS2 MINGW64
-shell:</p>
+<p>To automatically format and lint your code before each commit, run this from the MSYS2 UCRT64 shell:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">bash scripts/win/win_setup_dev.sh</span><br></div></code></pre></div></div>
-<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>Pre-commit hooks require running git commands from within the MSYS2 MINGW64 shell, not from
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>Pre-commit hooks require running git commands from within the MSYS2 UCRT64 shell, not from
 PowerShell or Command Prompt.</p></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="useful-commands-2">Useful Commands<a href="#useful-commands-2" class="hash-link" aria-label="Direct link to Useful Commands" title="Direct link to Useful Commands" translate="no">​</a></h3>
 <p>All commands are run via the <code>run.bat</code> script:</p>
@@ -92,7 +91,7 @@ PowerShell or Command Prompt.</p></div></div>
 <li class=""><code>run format</code>: Format and auto-fix code using <code>ruff</code>.</li>
 <li class=""><code>run build</code>: Build the final Windows executable (<code>.exe</code>).</li>
 </ul>
-<p>Alternatively, you can run the scripts directly from the MSYS2 MINGW64 shell:</p>
+<p>Alternatively, you can run the scripts directly from the MSYS2 UCRT64 shell:</p>
 <ul>
 <li class=""><code>bash scripts/win/win_run.sh</code>: Run the application.</li>
 <li class=""><code>bash scripts/win/win_test.sh</code>: Run the test suite.</li>

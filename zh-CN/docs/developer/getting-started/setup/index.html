@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.7b80e4fb.css">
-<script src="/zh-CN/assets/js/runtime~main.fc25a78f.js" defer="defer"></script>
-<script src="/zh-CN/assets/js/main.ea3be27c.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.a67f1609.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.a64adfea.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -52,11 +52,11 @@
 <p>Windows 上的开发任务通过 <code>run.bat</code> 脚本管理，它是 MSYS2 shell 的包装器。</p>
 <p>克隆仓库并完成 MSYS2 设置后，您可以从标准 Windows 命令提示符或 PowerShell 使用以下命令：</p>
 <div class="language-batch codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-batch codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">.\run.bat setup</span><br></div></code></pre></div></div>
-<p>这将执行 <code>scripts/win/win_setup.sh</code> 以将所有必要的系统和 Python 包安装到您的 MSYS2/MinGW64 环境中。</p>
+<p>这将执行 <code>scripts/win/win_setup.sh</code> 以将所有必要的系统和 Python 包安装到您的 MSYS2/UCRT64 环境中。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="预提交钩子可选-1">预提交钩子（可选）<a href="#预提交钩子可选-1" class="hash-link" aria-label="预提交钩子（可选） 的直接链接" title="预提交钩子（可选） 的直接链接" translate="no">​</a></h3>
-<p>要在每次提交前自动格式化和检查代码，请从 MSYS2 MINGW64 shell 运行：</p>
+<p>要在每次提交前自动格式化和检查代码，请从 MSYS2 UCRT64 shell 运行：</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">bash scripts/win/win_setup_dev.sh</span><br></div></code></pre></div></div>
-<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>备注</div><div class="admonitionContent_BuS1"><p>预提交钩子需要在 MSYS2 MINGW64 shell 中运行 git 命令，而不是在 PowerShell 或命令提示符中。</p></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>备注</div><div class="admonitionContent_BuS1"><p>预提交钩子需要在 MSYS2 UCRT64 shell 中运行 git 命令，而不是在 PowerShell 或命令提示符中。</p></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="常用命令-1">常用命令<a href="#常用命令-1" class="hash-link" aria-label="常用命令 的直接链接" title="常用命令 的直接链接" translate="no">​</a></h3>
 <p>所有命令通过 <code>run.bat</code> 脚本运行：</p>
 <ul>
@@ -70,7 +70,7 @@
 <li class=""><code>run format</code>：使用 <code>ruff</code> 格式化并自动修复代码。</li>
 <li class=""><code>run build</code>：构建最终的 Windows 可执行文件（<code>.exe</code>）。</li>
 </ul>
-<p>或者，您可以直接从 MSYS2 MINGW64 shell 运行脚本：</p>
+<p>或者，您可以直接从 MSYS2 UCRT64 shell 运行脚本：</p>
 <ul>
 <li class=""><code>bash scripts/win/win_run.sh</code>：运行应用程序。</li>
 <li class=""><code>bash scripts/win/win_test.sh</code>：运行测试套件。</li>
