@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.c9eaf888.css">
-<script src="/assets/js/runtime~main.71ade64a.js" defer="defer"></script>
-<script src="/assets/js/main.8e428831.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.2a9400d8.js" defer="defer"></script>
+<script src="/assets/js/main.882ddabf.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -135,6 +135,58 @@ during a cycle.</li>
 </ul>
 <p>These defaults carry through to your operation steps, where they can be overridden per step if
 needed.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pointer-offset">Pointer Offset<a href="#pointer-offset" class="hash-link" aria-label="Direct link to Pointer Offset" title="Direct link to Pointer Offset" translate="no">​</a></h4>
+<p>If your machine has a separate pointer laser (a small red dot laser) mounted at a fixed distance
+from the cutting beam, you can tell Rayforge about that distance so it can compensate for it.</p>
+<ul>
+<li class=""><strong>Use Pointer Offset</strong>: Enables the compensation. Off by default.</li>
+<li class=""><strong>Pointer Offset X / Y</strong>: The distance from the cutting beam spot to the pointer dot, in
+millimeters, along the machine X and Y axes.</li>
+</ul>
+<p>When enabled, three things change:</p>
+<ol>
+<li class=""><strong>Set Work Zero at Current Position</strong> (and the Zero X / Zero Y buttons) places the work origin
+where the <em>pointer dot</em> marks the stock, not where the (invisible) cutting beam is.</li>
+<li class="">The canvas shows a yellow pointer dot next to the red beam dot, marking where the pointer dot is
+on your material.</li>
+<li class="">A <strong>Pointer Alignment</strong> switch becomes available in the move-to popover (see below).</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pointer-alignment">Pointer Alignment<a href="#pointer-alignment" class="hash-link" aria-label="Direct link to Pointer Alignment" title="Direct link to Pointer Alignment" translate="no">​</a></h4>
+<p>Pointer alignment is a runtime switch in the move-to popover (the compass icon next to the position
+readout). While it is on, all absolute aiming operations — Move-To, the corner shortcuts, moving to
+the WCS origin, Click-to-Move, Move-Head-Here, and framing — are shifted so the <em>pointer dot</em> lands
+on the aimed position. Exactly one canvas dot is ever filled: the pointer dot is filled while
+alignment is on (the beam dot is a hollow ring then), and hollow while it is off (the beam dot is
+filled).</p>
+<p>The typical workflow:</p>
+<ol>
+<li class="">Jog the machine until the pointer dot marks your reference point on the stock.</li>
+<li class=""><strong>Set Work Zero</strong> there — with the pointer offset enabled, the origin lands exactly where the
+pointer pointed.</li>
+<li class="">Turn on <strong>Pointer Alignment</strong> in the move-to popover.</li>
+<li class="">Frame and move with the pointer dot: everything you aim at is marked by the pointer.</li>
+<li class="">When you press <strong>Send</strong>, a warning appears: a regular job burns with the beam at the WCS
+positions. You can run a <strong>Dry-Run with Pointer</strong> (the job runs with the pointer offset applied,
+so the pointer dot traces the toolpath while the beam is displaced — it still fires at job
+power), turn alignment off and burn, or cancel.</li>
+</ol>
+<p>Two things are never shifted by an ordinary send: <strong>jog</strong> (a relative move needs no compensation)
+and <strong>jobs</strong> — cutting always happens with the beam at the WCS positions, so your G-code output is
+identical whether alignment is on or off. Only the explicit Dry-Run with Pointer applies the offset
+to a job. Together with zeroing by the pointer dot this stays consistent: the origin sits at
+<code>beam + offset</code>, aiming shifts every target by <code>-offset</code>, and the burn is unshifted.</p>
+<p>Pointer alignment is a session-only setting: it is not saved to the machine profile and resets when
+you switch machines.</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>Measuring the Offset</div><div class="admonitionContent_BuS1"><ol>
+<li class="">Jog the machine until the pointer dot marks a visible point on the stock.</li>
+<li class="">Turn on <a href="#focus-power" class="">focus mode</a> and jog until the <em>cutting beam</em> burns a mark on exactly the
+same point (or carefully move the beam there at focus power).</li>
+<li class="">The offset is the pointer position minus the beam position. For example, if the pointer marked
+X=100 and you had to jog the beam to X=88 to hit the same spot, enter X = 12.0 — the pointer dot
+sits 12 mm ahead of the beam.</li>
+</ol><p>If a test cut comes out shifted, flip the sign of the corresponding axis.</p></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>Rotary Mode</div><div class="admonitionContent_BuS1"><p>When the rotary attachment is active, the Y axis is replaced by the rotary roller, so the Y
+component of the pointer offset does not apply meaningfully. Set it to 0 for rotary jobs.</p></div></div>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="3d-model">3D Model<a href="#3d-model" class="hash-link" aria-label="Direct link to 3D Model" title="Direct link to 3D Model" translate="no">​</a></h4>
 <p>Each laser head can have a 3D model assigned to it. This model is rendered in the
 <a class="" href="/docs/ui/3d-preview">3D view</a> and follows the toolpath during simulation.</p>

@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.c9eaf888.css">
-<script src="/assets/js/runtime~main.71ade64a.js" defer="defer"></script>
-<script src="/assets/js/main.8e428831.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.2a9400d8.js" defer="defer"></script>
+<script src="/assets/js/main.882ddabf.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -378,6 +378,50 @@ format as a decimal with no fractional digits).</p>
 
 
 <table><thead><tr><th>Placeholder</th><th>Description</th></tr></thead><tbody><tr><td><code>seconds</code></td><td>Dwell duration in seconds as a float (e.g., <code>1.5</code>)</td></tr><tr><td><code>milliseconds</code></td><td>Dwell duration in milliseconds as an integer (e.g., <code>1500</code>)</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="preamble-and-postscript">Preamble and Postscript<a href="#preamble-and-postscript" class="hash-link" aria-label="Direct link to Preamble and Postscript" title="Direct link to Preamble and Postscript" translate="no">​</a></h4>
+<p>The <strong>Preamble</strong> and <strong>Postscript</strong> scripts support a separate set of placeholders describing the
+machine and the current job:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Placeholder</th><th>Description</th></tr></thead><tbody><tr><td><code>machine.name</code></td><td>Name of the machine</td></tr><tr><td><code>machine.active_wcs</code></td><td>Currently active work coordinate system (e.g., <code>G54</code>)</td></tr><tr><td><code>machine.axis_extents[0]</code></td><td>Work area width (mm)</td></tr><tr><td><code>machine.axis_extents[1]</code></td><td>Work area height (mm)</td></tr><tr><td><code>wcs_offset[0]</code> … <code>wcs_offset[2]</code></td><td>X/Y/Z offset of the active work coordinate system</td></tr><tr><td><code>doc.name</code></td><td>Name of the document being exported</td></tr><tr><td><code>job.extents[0]</code> … <code>job.extents[3]</code></td><td>Job bounding box: minimum X, minimum Y, maximum X, maximum Y</td></tr></tbody></table>
+<p>For example, some machines frame the job on their own — even when running a G-code file offline — by
+reading the job bounds from a preamble comment:</p>
+<div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">; Bounds: X{job.extents[0]} Y{job.extents[1]} to X{job.extents[2]} Y{job.extents[3]}</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tips">Tips<a href="#tips" class="hash-link" aria-label="Direct link to Tips" title="Direct link to Tips" translate="no">​</a></h3>
 <ul>
 <li class=""><strong>Format specifiers</strong> are supported: <code>{power:.0f}</code> formats power as an integer, <code>{power:.2f}</code> as

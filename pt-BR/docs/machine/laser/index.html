@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/pt-BR/assets/css/styles.f5998078.css">
-<script src="/pt-BR/assets/js/runtime~main.ab2c389c.js" defer="defer"></script>
-<script src="/pt-BR/assets/js/main.b0b732d0.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/runtime~main.ef20135b.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/main.119f02be.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -138,6 +138,65 @@ pulso fica ligado durante um ciclo.</li>
 </ul>
 <p>Esses padrões são repassados para suas etapas de operação, onde podem ser substituídos por etapa, se
 necessário.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="deslocamento-do-ponteiro">Deslocamento do Ponteiro<a href="#deslocamento-do-ponteiro" class="hash-link" aria-label="Link direto para Deslocamento do Ponteiro" title="Link direto para Deslocamento do Ponteiro" translate="no">​</a></h4>
+<p>Se a sua máquina tem um ponteiro laser separado (um pequeno laser de ponto vermelho) montado a uma
+distância fixa do feixe de corte, você pode informar essa distância ao Rayforge para que ele a
+compense.</p>
+<ul>
+<li class=""><strong>Usar deslocamento do ponteiro</strong>: ativa a compensação. Desativado por padrão.</li>
+<li class=""><strong>Deslocamento do ponteiro X / Y</strong>: a distância em milímetros do ponto do feixe de corte ao ponto
+do ponteiro, ao longo dos eixos X e Y da máquina.</li>
+</ul>
+<p>Ao ativá-lo, três coisas mudam:</p>
+<ol>
+<li class=""><strong>Definir zero na posição atual</strong> (e os botões Zerar X / Zerar Y) coloca a origem de trabalho
+onde o <em>ponto do ponteiro</em> marca o material, não onde está o feixe de corte (invisível).</li>
+<li class="">A tela mostra um ponto amarelo do ponteiro ao lado do ponto vermelho do feixe, marcando onde o
+ponto do ponteiro está no seu material.</li>
+<li class="">Uma chave de <strong>alinhamento do ponteiro</strong> fica disponível no popover de movimentação (veja
+abaixo).</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="alinhamento-do-ponteiro">Alinhamento do Ponteiro<a href="#alinhamento-do-ponteiro" class="hash-link" aria-label="Link direto para Alinhamento do Ponteiro" title="Link direto para Alinhamento do Ponteiro" translate="no">​</a></h4>
+<p>O alinhamento do ponteiro é uma chave de sessão no popover de movimentação (o ícone de bússola ao
+lado da leitura de posição). Enquanto ativado, todas as operações absolutas de mira — Mover para, os
+atalhos de canto, ir à origem do SCT, Clicar para mover, Mover cabeça para cá e enquadrar — são
+deslocadas para que o <em>ponto do ponteiro</em> fique na posição mirada. Na tela, sempre há exatamente um
+ponto preenchido: o ponto do ponteiro é desenhado preenchido enquanto o alinhamento está ativado (o
+ponto do feixe é então um anel oco), e oco enquanto desativado (o ponto do feixe é preenchido).</p>
+<p>O fluxo de trabalho típico:</p>
+<ol>
+<li class="">Movimente a máquina até o ponto do ponteiro marcar seu ponto de referência no material.</li>
+<li class=""><strong>Defina o zero de trabalho</strong> ali — com o deslocamento do ponteiro ativado, a origem fica
+exatamente onde o ponteiro apontou.</li>
+<li class="">Ative o <strong>alinhamento do ponteiro</strong> no popover de movimentação.</li>
+<li class="">Enquadre e mova com o ponto do ponteiro: tudo o que você mirar é marcado pelo ponteiro.</li>
+<li class="">Ao pressionar <strong>Enviar</strong>, aparece um aviso: um trabalho normal grava com o feixe nas posições do
+SCT. Você pode executar uma <strong>Simulação com ponteiro</strong> (o trabalho é executado com o deslocamento
+do ponteiro aplicado, de modo que o ponto do ponteiro traga o trajeto enquanto o feixe corre
+deslocado — ele continua disparando na potência do trabalho), desativar o alinhamento e gravar,
+ou cancelar.</li>
+</ol>
+<p>Duas coisas nunca são deslocadas: o <strong>jog</strong> (um movimento relativo não precisa de compensação) e os
+<strong>trabalhos</strong> — o corte sempre acontece com o feixe nas posições do SCT, então sua saída G-code é
+idêntica com o alinhamento ativado ou não. Junto com o zeramento pelo ponto do ponteiro, tudo fica
+consistente: a origem fica em <code>feixe + deslocamento</code>, a mira desloca cada alvo em <code>-deslocamento</code> e
+a gravação não é deslocada.</p>
+<p>O alinhamento do ponteiro é uma configuração de sessão: não é salvo no perfil da máquina e é
+redefinido ao trocar de máquina.</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>Medir o Deslocamento</div><div class="admonitionContent_BuS1"><ol>
+<li class="">Movimente a máquina até o ponto do ponteiro marcar um ponto visível no
+material.</li>
+<li class="">Ative o modo foco e movimente até o <em>feixe de corte</em> queimar uma marca
+exatamente no mesmo ponto (ou mova cuidadosamente o feixe até lá com a
+potência de foco).</li>
+<li class="">O deslocamento é a posição do ponteiro menos a do feixe. Por exemplo, se o
+ponteiro marcou X=100 e você precisou movimentar o feixe até X=88 para
+acertar o mesmo ponto, informe X = 12.0 — o ponto do ponteiro fica 12 mm à
+frente do feixe.</li>
+</ol><p>Se um corte de teste sair deslocado, inverta o sinal do eixo correspondente.</p></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>Modo Rotativo</div><div class="admonitionContent_BuS1"><p>Quando o acessório rotativo está ativo, o eixo Y é substituído pelo rolo
+rotativo, de modo que a componente Y do deslocamento do ponteiro não se aplica
+de forma significativa. Defina-a como 0 para trabalhos rotativos.</p></div></div>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="modelo-3d">Modelo 3D<a href="#modelo-3d" class="hash-link" aria-label="Link direto para Modelo 3D" title="Link direto para Modelo 3D" translate="no">​</a></h4>
 <p>Cada cabeça de laser pode ter um modelo 3D atribuído a ela. Este modelo é renderizado na
 <a class="" href="/pt-BR/docs/ui/3d-preview">visualização 3D</a> e segue o caminho da ferramenta durante a simulação.</p>

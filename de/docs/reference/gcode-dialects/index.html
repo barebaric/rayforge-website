@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/de/assets/css/styles.b6f71b45.css">
-<script src="/de/assets/js/runtime~main.fda9f6ee.js" defer="defer"></script>
-<script src="/de/assets/js/main.a653b645.js" defer="defer"></script>
+<script src="/de/assets/js/runtime~main.4436f66d.js" defer="defer"></script>
+<script src="/de/assets/js/main.a5a9b809.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -381,6 +381,50 @@ mit Platzhaltern, um dynamische Werte einzufügen. Verwende die Syntax <code>{na
 
 
 <table><thead><tr><th>Platzhalter</th><th>Beschreibung</th></tr></thead><tbody><tr><td><code>seconds</code></td><td>Verweildauer in Sekunden als Float (z.B. <code>1.5</code>)</td></tr><tr><td><code>milliseconds</code></td><td>Verweildauer in Millisekunden als Ganzzahl (z.B. <code>1500</code>)</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="präambel-und-postscript">Präambel und Postscript<a href="#präambel-und-postscript" class="hash-link" aria-label="Direkter Link zur Präambel und Postscript" title="Direkter Link zur Präambel und Postscript" translate="no">​</a></h4>
+<p>Die Skripte <strong>Präambel</strong> und <strong>Postscript</strong> unterstützen einen eigenen Satz von Platzhaltern, die
+die Maschine und den aktuellen Job beschreiben:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Platzhalter</th><th>Beschreibung</th></tr></thead><tbody><tr><td><code>machine.name</code></td><td>Name der Maschine</td></tr><tr><td><code>machine.active_wcs</code></td><td>Aktuell aktives Arbeitskoordinatensystem (z. B. <code>G54</code>)</td></tr><tr><td><code>machine.axis_extents[0]</code></td><td>Breite des Arbeitsbereichs (mm)</td></tr><tr><td><code>machine.axis_extents[1]</code></td><td>Höhe des Arbeitsbereichs (mm)</td></tr><tr><td><code>wcs_offset[0]</code> … <code>wcs_offset[2]</code></td><td>X/Y/Z-Versatz des aktiven Arbeitskoordinatensystems</td></tr><tr><td><code>doc.name</code></td><td>Name des exportierten Dokuments</td></tr><tr><td><code>job.extents[0]</code> … <code>job.extents[3]</code></td><td>Job-Begrenzungsrahmen: minimales X, minimales Y, maximales X, maximales Y</td></tr></tbody></table>
+<p>Beispielsweise rahmen manche Maschinen den Job selbst ein — sogar bei offline ausgeführten
+G-code-Dateien —, indem sie die Job-Grenzen aus einem Präambel-Kommentar lesen:</p>
+<div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">; Bounds: X{job.extents[0]} Y{job.extents[1]} to X{job.extents[2]} Y{job.extents[3]}</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tipps">Tipps<a href="#tipps" class="hash-link" aria-label="Direkter Link zur Tipps" title="Direkter Link zur Tipps" translate="no">​</a></h3>
 <ul>
 <li class=""><strong>Formatierungsspezifikationen</strong> werden unterstützt: <code>{power:.0f}</code> formatiert Leistung als

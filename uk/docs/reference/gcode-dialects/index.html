@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.612c8717.css">
-<script src="/uk/assets/js/runtime~main.24aba504.js" defer="defer"></script>
-<script src="/uk/assets/js/main.c51da0ef.js" defer="defer"></script>
+<script src="/uk/assets/js/runtime~main.c3f1c83b.js" defer="defer"></script>
+<script src="/uk/assets/js/main.0ac7ea4c.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -341,7 +341,46 @@ S-команд</li>
 
 
 
-<table><thead><tr><th>Заповнювач</th><th>Опис</th></tr></thead><tbody><tr><td><code>seconds</code></td><td>Тривалість затримки в секундах як float (наприклад, <code>1.5</code>)</td></tr><tr><td><code>milliseconds</code></td><td>Тривалість затримки в мілісекундах як ціле число (наприклад, <code>1500</code>)</td></tr></tbody></table><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="поради">Поради<a href="#поради" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3><ul>
+<table><thead><tr><th>Заповнювач</th><th>Опис</th></tr></thead><tbody><tr><td><code>seconds</code></td><td>Тривалість затримки в секундах як float (наприклад, <code>1.5</code>)</td></tr><tr><td><code>milliseconds</code></td><td>Тривалість затримки в мілісекундах як ціле число (наприклад, <code>1500</code>)</td></tr></tbody></table><h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="преамбула-і-постскриптум">Преамбула і постскриптум<a href="#преамбула-і-постскриптум" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h4><p>Скрипти <strong>Преамбула</strong> та <strong>Постскриптум</strong> підтримують окремий набір заповнювачів, що описують
+верстат і поточне завдання:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Заповнювач</th><th>Опис</th></tr></thead><tbody><tr><td><code>machine.name</code></td><td>Назва верстата</td></tr><tr><td><code>machine.active_wcs</code></td><td>Поточна активна система координат (наприклад, <code>G54</code>)</td></tr><tr><td><code>machine.axis_extents[0]</code></td><td>Ширина робочої області (мм)</td></tr><tr><td><code>machine.axis_extents[1]</code></td><td>Висота робочої області (мм)</td></tr><tr><td><code>wcs_offset[0]</code> … <code>wcs_offset[2]</code></td><td>Зміщення X/Y/Z активної системи координат</td></tr><tr><td><code>doc.name</code></td><td>Назва документа, що експортується</td></tr><tr><td><code>job.extents[0]</code> … <code>job.extents[3]</code></td><td>Межі завдання: мінімальний X, мінімальний Y, максимальний X, максимальний Y</td></tr></tbody></table><p>Наприклад, деякі верстати самі обводять завдання — навіть під час автономного виконання файла G-code
+— зчитуючи межі завдання з коментаря в преамбулі:</p><div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">; Bounds: X{job.extents[0]} Y{job.extents[1]} to X{job.extents[2]} Y{job.extents[3]}</span><br></div></code></pre></div></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="поради">Поради<a href="#поради" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3><ul>
 <li class=""><strong>Специфікації форматування</strong> підтримуються: <code>{power:.0f}</code> формує потужність як ціле число,
 <code>{power:.2f}</code> з двома десятковими знаками.</li>
 <li class="">Налаштування <strong>«Пропускати незмінні координати»</strong> контролює, чи <code>x_cmd</code>, <code>y_cmd</code> та <code>z_cmd</code>

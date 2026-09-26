@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/de/assets/css/styles.b6f71b45.css">
-<script src="/de/assets/js/runtime~main.fda9f6ee.js" defer="defer"></script>
-<script src="/de/assets/js/main.a653b645.js" defer="defer"></script>
+<script src="/de/assets/js/runtime~main.4436f66d.js" defer="defer"></script>
+<script src="/de/assets/js/main.a5a9b809.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -140,6 +140,68 @@ eines Zyklus eingeschaltet ist.</li>
 </ul>
 <p>Diese Standardwerte werden an deine Operationsschritte übergeben, wo sie bei Bedarf pro Schritt
 überschrieben werden können.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="zeiger-offset">Zeiger-Offset<a href="#zeiger-offset" class="hash-link" aria-label="Direkter Link zur Zeiger-Offset" title="Direkter Link zur Zeiger-Offset" translate="no">​</a></h4>
+<p>Wenn deine Maschine einen separaten Zeigerlaser (einen kleinen Laser mit rotem Punkt) in festem
+Abstand zum Schneidstrahl hat, kannst du Rayforge diesen Abstand mitteilen, damit er ihn
+kompensiert.</p>
+<ul>
+<li class=""><strong>Zeiger-Offset verwenden</strong>: Aktiviert die Kompensation. Standardmäßig aus.</li>
+<li class=""><strong>Zeiger-Offset X / Y</strong>: Der Abstand in Millimetern von der Position des Schneidstrahls zum
+Zeigerpunkt entlang der X- bzw. Y-Achse der Maschine.</li>
+</ul>
+<p>Bei aktiviertem Offset ändert sich dreierlei:</p>
+<ol>
+<li class=""><strong>Arbeitsnullpunkt an aktueller Position setzen</strong> (und die Tasten Nullen X / Nullen Y) legt den
+Arbeitsursprung dorthin, wo der <em>Zeigerpunkt</em> das Werkstück markiert — nicht dorthin, wo der
+(unsichtbare) Schneidstrahl ist.</li>
+<li class="">Die Leinwand zeigt einen gelben Zeigerpunkt neben dem roten Strahlpunkt, der markiert, wo sich
+der Zeigerpunkt auf deinem Material befindet.</li>
+<li class="">Ein <strong>Zeigerausrichtung</strong>-Schalter wird im Verschieben-Popover verfügbar (siehe unten).</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="zeigerausrichtung">Zeigerausrichtung<a href="#zeigerausrichtung" class="hash-link" aria-label="Direkter Link zur Zeigerausrichtung" title="Direkter Link zur Zeigerausrichtung" translate="no">​</a></h4>
+<p>Die Zeigerausrichtung ist ein Laufzeit-Schalter im Verschieben-Popover (das Kompass-Symbol neben der
+Positionsanzeige). Ist er aktiv, werden alle absoluten Positionierungsoperationen — Verschieben
+nach, die Ecken-Kürzel, das Anfahren des WKS-Ursprungs, Klicken zum Verschieben, Kopf hierher
+bewegen und Einrahmen — verschoben, sodass der <em>Zeigerpunkt</em> auf der anvisierten Position landet.
+Auf der Leinwand ist stets genau ein Punkt gefüllt: Der Zeigerpunkt wird gefüllt gezeichnet, während
+die Ausrichtung aktiv ist (der Strahlpunkt ist dann ein hollower Ring), und hohl, während sie aus
+ist (der Strahlpunkt ist gefüllt).</p>
+<p>Der typische Arbeitsablauf:</p>
+<ol>
+<li class="">Verfahre die Maschine, bis der Zeigerpunkt deinen Referenzpunkt auf dem Werkstück markiert.</li>
+<li class=""><strong>Setze dort den Arbeitsnullpunkt</strong> — bei aktiviertem Zeiger-Offset landet der Ursprung genau
+dort, wo der Zeiger gezeigt hat.</li>
+<li class="">Aktiviere <strong>Zeigerausrichtung</strong> im Verschieben-Popover.</li>
+<li class="">Rahmen und verschiebe mit dem Zeigerpunkt: Alles, was du anvisierst, wird vom Zeiger markiert.</li>
+<li class="">Wenn du auf <strong>Senden</strong> drückst, erscheint eine Warnung: Ein normaler Job brennt mit dem Strahl an
+den WKS-Positionen. Du kannst einen <strong>Probelauf mit Zeiger</strong> ausführen (der Job läuft mit
+angewendetem Zeiger-Offset, sodass der Zeigerpunkt den Werkzeugpfad nachzeichnet, während der
+Strahl verschoben läuft — er brennt weiterhin mit Job-Leistung), die Ausrichtung ausschalten und
+brennen oder abbrechen.</li>
+</ol>
+<p>Zwei Dinge werden bei einem normalen Senden nie verschoben: <strong>Jog</strong> (eine relative Bewegung braucht
+keine Kompensation) und <strong>Jobs</strong> — Schneiden passiert immer mit dem Strahl an den WKS-Positionen,
+daher ist deine G-Code-Ausgabe identisch, ob die Ausrichtung ein- oder ausgeschaltet ist. Nur der
+ausdrückliche Probelauf mit Zeiger wendet den Offset auf einen Job an. Zusammen mit dem Nullen per
+Zeigerpunkt bleibt alles konsistent: Der Ursprung liegt bei <code>Strahl + Offset</code>, das Anvisieren
+verschiebt jedes Ziel um <code>-Offset</code>, und der Brennvorgang bleibt unverschoben.</p>
+<p>Die Zeigerausrichtung ist eine sitzungsbezogene Einstellung: Sie wird nicht im Maschinenprofil
+gespeichert und zurückgesetzt, wenn du die Maschine wechselst.</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>Offset messen</div><div class="admonitionContent_BuS1"><ol>
+<li class="">Verfahre die Maschine, bis der Zeigerpunkt eine sichtbare Stelle auf dem
+Werkstück markiert.</li>
+<li class="">Aktiviere den Fokusmodus und verfahre, bis der <em>Schneidstrahl</em> an genau
+derselben Stelle eine Markierung brennt (oder bewege den Strahl vorsichtig
+bei Fokusleistung dorthin).</li>
+<li class="">Der Offset ist die Zeigerposition minus der Strahlposition. Wenn der Zeiger
+zum Beispiel X=100 markierte und du den Strahl zu X=88 verfahren musstest,
+um dieselbe Stelle zu treffen, gib X = 12.0 ein — der Zeigerpunkt sitzt
+12 mm vor dem Strahl.</li>
+</ol><p>Wenn ein Testschnitt versetzt herauskommt, drehe das Vorzeichen der
+betreffenden Achse um.</p></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>Rotationsmodus</div><div class="admonitionContent_BuS1"><p>Wenn der Rotationsaufsatz aktiv ist, wird die Y-Achse durch die
+Rotationswalze ersetzt, sodass die Y-Komponente des Zeiger-Offsets nicht
+sinnvoll anwendbar ist. Setze sie bei Rotationsjobs auf 0.</p></div></div>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="3d-modell">3D-Modell<a href="#3d-modell" class="hash-link" aria-label="Direkter Link zur 3D-Modell" title="Direkter Link zur 3D-Modell" translate="no">​</a></h4>
 <p>Jedem Laserkopf kann ein 3D-Modell zugewiesen werden. Dieses Modell wird in der
 <a class="" href="/de/docs/ui/3d-preview">3D-Ansicht</a> gerendert und folgt dem Werkzeugweg während der Simulation.</p>

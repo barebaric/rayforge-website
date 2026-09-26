@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/pt-BR/assets/css/styles.f5998078.css">
-<script src="/pt-BR/assets/js/runtime~main.ab2c389c.js" defer="defer"></script>
-<script src="/pt-BR/assets/js/main.b0b732d0.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/runtime~main.ef20135b.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/main.119f02be.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -380,6 +380,50 @@ com espaços reservados para injetar valores dinâmicos. Use a sintaxe <code>{no
 
 
 <table><thead><tr><th>Espaço Reservado</th><th>Descrição</th></tr></thead><tbody><tr><td><code>seconds</code></td><td>Duração da espera em segundos como float (ex., <code>1.5</code>)</td></tr><tr><td><code>milliseconds</code></td><td>Duração da espera em milissegundos como inteiro (ex., <code>1500</code>)</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="preâmbulo-e-postscript">Preâmbulo e Postscript<a href="#preâmbulo-e-postscript" class="hash-link" aria-label="Link direto para Preâmbulo e Postscript" title="Link direto para Preâmbulo e Postscript" translate="no">​</a></h4>
+<p>Os scripts de <strong>Preâmbulo</strong> e <strong>Postscript</strong> suportam um conjunto separado de espaços reservados que
+descrevem a máquina e o trabalho atual:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Espaço Reservado</th><th>Descrição</th></tr></thead><tbody><tr><td><code>machine.name</code></td><td>Nome da máquina</td></tr><tr><td><code>machine.active_wcs</code></td><td>Sistema de coordenadas de trabalho ativo (ex., <code>G54</code>)</td></tr><tr><td><code>machine.axis_extents[0]</code></td><td>Largura da área de trabalho (mm)</td></tr><tr><td><code>machine.axis_extents[1]</code></td><td>Altura da área de trabalho (mm)</td></tr><tr><td><code>wcs_offset[0]</code> … <code>wcs_offset[2]</code></td><td>Deslocamento X/Y/Z do sistema de coordenadas de trabalho ativo</td></tr><tr><td><code>doc.name</code></td><td>Nome do documento sendo exportado</td></tr><tr><td><code>job.extents[0]</code> … <code>job.extents[3]</code></td><td>Retângulo delimitador do trabalho: X mínimo, Y mínimo, X máximo, Y máximo</td></tr></tbody></table>
+<p>Por exemplo, algumas máquinas enquadram o trabalho por si mesmas — mesmo ao executar um arquivo
+G-code offline — lendo os limites do trabalho a partir de um comentário do preâmbulo:</p>
+<div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">; Bounds: X{job.extents[0]} Y{job.extents[1]} to X{job.extents[2]} Y{job.extents[3]}</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dicas">Dicas<a href="#dicas" class="hash-link" aria-label="Link direto para Dicas" title="Link direto para Dicas" translate="no">​</a></h3>
 <ul>
 <li class=""><strong>Especificações de formatação</strong> são suportadas: <code>{power:.0f}</code> formata a potência como inteiro,

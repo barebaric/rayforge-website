@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.c9eaf888.css">
-<script src="/assets/js/runtime~main.71ade64a.js" defer="defer"></script>
-<script src="/assets/js/main.8e428831.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.2a9400d8.js" defer="defer"></script>
+<script src="/assets/js/main.882ddabf.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -102,6 +102,46 @@ not leave any mark on your material. Darker materials may need higher power to s
 <li class=""><strong>Setting WCS origin</strong>: Position laser at desired zero point before setting WCS</li>
 <li class=""><strong>Verifying home position</strong>: Check that homing worked correctly</li>
 </ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pointer-laser-offset">Pointer Laser Offset<a href="#pointer-laser-offset" class="hash-link" aria-label="Direct link to Pointer Laser Offset" title="Direct link to Pointer Laser Offset" translate="no">​</a></h2>
+<p>Some machines have a dedicated pointer laser (a small red dot laser) mounted at a fixed distance
+from the cutting beam. When you align the stock using the pointer dot, the cutting beam would
+actually land offset from that point — unless Rayforge compensates.</p>
+<p>The <a class="" href="/docs/machine/laser#pointer-offset">Pointer Offset</a> laser setting lets you enter that distance
+and toggle the compensation on or off. With it enabled:</p>
+<ul>
+<li class=""><strong>Set Work Zero at Current Position</strong> (and Zero X / Zero Y) places the work origin at the pointer
+dot&#x27;s position.</li>
+<li class="">The canvas shows a yellow pointer dot next to the red beam dot, marking where the pointer dot is
+on your material.</li>
+<li class="">A <strong>Pointer Alignment</strong> switch appears in the move-to popover (the compass icon next to the
+position readout).</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pointer-alignment">Pointer Alignment<a href="#pointer-alignment" class="hash-link" aria-label="Direct link to Pointer Alignment" title="Direct link to Pointer Alignment" translate="no">​</a></h3>
+<p>While <strong>Pointer Alignment</strong> is on, every absolute aiming operation — Move-To, the corner shortcuts,
+moving to the WCS origin, Click-to-Move, Move-Head-Here, and framing — lands the <em>pointer dot</em> on
+the aimed position, so you can position the stock entirely by the visible dot. The coordinate entry
+in the popover pre-fills with the pointer dot&#x27;s position. On the canvas, exactly one dot is ever
+filled: the pointer dot is filled while alignment is on (the beam dot is a hollow ring then), and
+hollow while it is off (the beam dot is filled).</p>
+<p>The workflow composes cleanly with zeroing by the pointer dot: the origin sits where the pointer
+marked, aiming shifts every target by the offset, and the burn is unshifted — so aligning with the
+dot and cutting with the beam end up consistent.</p>
+<p>When you press <strong>Send</strong> while alignment is on, a warning appears on every send (there is no &quot;don&#x27;t
+ask again&quot;). You can choose:</p>
+<ul>
+<li class=""><strong>Dry-Run with Pointer</strong>: the job runs with the pointer offset applied, so the pointer dot traces
+the toolpath while the beam runs displaced by the offset. The laser still fires at job power —
+make sure the displaced beam cannot hit anything it should not.</li>
+<li class=""><strong>Turn Off and Burn</strong>: alignment is switched off and the job burns normally with the beam at the
+WCS positions.</li>
+<li class=""><strong>Cancel</strong>.</li>
+</ul>
+<p>Jog moves and jobs are never shifted by the toggle: jog is relative, and regular G-code output is
+identical whether alignment is on or off. The switch is session-only — it is not saved to the
+machine profile and resets when you switch machines.</p>
+<p>The pointer offset is especially useful for stock that is larger than the laser bed (pass-through
+work), where you repeatedly align the design to a reference mark on the moving stock.</p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="framing">Framing<a href="#framing" class="hash-link" aria-label="Direct link to Framing" title="Direct link to Framing" translate="no">​</a></h2>
 <p>Framing traces the bounding rectangle of your job at low (or zero) power, showing exactly where your
@@ -247,6 +287,20 @@ precise visual alignment.</p>
 <li class=""><strong>Disable camera</strong> and frame to verify</li>
 <li class=""><strong>Run the job</strong></li>
 </ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pass-through-workflow">Pass-Through Workflow<a href="#pass-through-workflow" class="hash-link" aria-label="Direct link to Pass-Through Workflow" title="Direct link to Pass-Through Workflow" translate="no">​</a></h3>
+<p>For stock longer than the laser bed (fed through the machine in segments), a
+<a href="#pointer-laser-offset" class="">pointer laser offset</a> removes the manual guesswork:</p>
+<ol>
+<li class=""><strong>Cut segment 1</strong> of your design normally.</li>
+<li class=""><strong>Feed the stock forward</strong> through the pass-through so the next segment is on the bed.</li>
+<li class=""><strong>Jog the machine</strong> until the pointer dot marks a reference point on the stock (e.g. a corner of
+an already-cut feature).</li>
+<li class=""><strong>Set WCS zero</strong> (or Zero X / Zero Y) — with the pointer offset enabled, the origin lands exactly
+where the pointer pointed.</li>
+<li class=""><strong>Position the next segment</strong> of the design relative to that origin in the canvas.</li>
+<li class=""><strong>Frame to verify</strong>, then <strong>run the job</strong>.</li>
+<li class="">Repeat from step 2 for each remaining segment.</li>
+</ol>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="production-workflow">Production Workflow<a href="#production-workflow" class="hash-link" aria-label="Direct link to Production Workflow" title="Direct link to Production Workflow" translate="no">​</a></h3>
 <p>For running multiple identical jobs:</p>
 <ol>
@@ -296,6 +350,6 @@ precise visual alignment.</p>
 <li class=""><a class="" href="/docs/machine/camera">Camera Integration</a> - Camera setup and alignment</li>
 <li class=""><a class="" href="/docs/ui/bottom-panel">Control Panel</a> - Jog controls and WCS management</li>
 <li class=""><a class="" href="/docs/getting-started/quick-start">Quick Start Guide</a> - Basic workflow</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/features/workpiece-positioning.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/features/sanity-checks"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Job Sanity Checks</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/features/kerf"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Kerf Compensation</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#focus-mode-laser-pointer" class="table-of-contents__link toc-highlight">Focus Mode (Laser Pointer)</a><ul><li><a href="#enabling-focus-mode" class="table-of-contents__link toc-highlight">Enabling Focus Mode</a></li><li><a href="#configuring-focus-power" class="table-of-contents__link toc-highlight">Configuring Focus Power</a></li><li><a href="#when-to-use-focus-mode" class="table-of-contents__link toc-highlight">When to Use Focus Mode</a></li></ul></li><li><a href="#framing" class="table-of-contents__link toc-highlight">Framing</a><ul><li><a href="#how-to-frame" class="table-of-contents__link toc-highlight">How to Frame</a></li><li><a href="#frame-settings" class="table-of-contents__link toc-highlight">Frame Settings</a></li><li><a href="#when-to-frame" class="table-of-contents__link toc-highlight">When to Frame</a></li></ul></li><li><a href="#setting-wcs-zero-work-coordinate-system" class="table-of-contents__link toc-highlight">Setting WCS Zero (Work Coordinate System)</a><ul><li><a href="#quick-wcs-setup" class="table-of-contents__link toc-highlight">Quick WCS Setup</a></li><li><a href="#understanding-coordinate-systems" class="table-of-contents__link toc-highlight">Understanding Coordinate Systems</a></li><li><a href="#when-to-set-wcs-zero" class="table-of-contents__link toc-highlight">When to Set WCS Zero</a></li></ul></li><li><a href="#camera-based-positioning" class="table-of-contents__link toc-highlight">Camera-Based Positioning</a><ul><li><a href="#setting-up-the-camera" class="table-of-contents__link toc-highlight">Setting Up the Camera</a></li><li><a href="#camera-alignment" class="table-of-contents__link toc-highlight">Camera Alignment</a></li><li><a href="#positioning-with-camera-overlay" class="table-of-contents__link toc-highlight">Positioning with Camera Overlay</a></li><li><a href="#when-to-use-camera-positioning" class="table-of-contents__link toc-highlight">When to Use Camera Positioning</a></li></ul></li><li><a href="#recommended-workflows" class="table-of-contents__link toc-highlight">Recommended Workflows</a><ul><li><a href="#basic-positioning-workflow" class="table-of-contents__link toc-highlight">Basic Positioning Workflow</a></li><li><a href="#precision-alignment-workflow" class="table-of-contents__link toc-highlight">Precision Alignment Workflow</a></li><li><a href="#production-workflow" class="table-of-contents__link toc-highlight">Production Workflow</a></li><li><a href="#multi-position-workflow" class="table-of-contents__link toc-highlight">Multi-Position Workflow</a></li></ul></li><li><a href="#troubleshooting" class="table-of-contents__link toc-highlight">Troubleshooting</a><ul><li><a href="#laser-dot-not-visible-in-focus-mode" class="table-of-contents__link toc-highlight">Laser dot not visible in focus mode</a></li><li><a href="#camera-overlay-misaligned" class="table-of-contents__link toc-highlight">Camera overlay misaligned</a></li></ul></li><li><a href="#related-topics" class="table-of-contents__link toc-highlight">Related Topics</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/features/workpiece-positioning.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/features/sanity-checks"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Job Sanity Checks</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/features/kerf"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Kerf Compensation</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#focus-mode-laser-pointer" class="table-of-contents__link toc-highlight">Focus Mode (Laser Pointer)</a><ul><li><a href="#enabling-focus-mode" class="table-of-contents__link toc-highlight">Enabling Focus Mode</a></li><li><a href="#configuring-focus-power" class="table-of-contents__link toc-highlight">Configuring Focus Power</a></li><li><a href="#when-to-use-focus-mode" class="table-of-contents__link toc-highlight">When to Use Focus Mode</a></li></ul></li><li><a href="#pointer-laser-offset" class="table-of-contents__link toc-highlight">Pointer Laser Offset</a><ul><li><a href="#pointer-alignment" class="table-of-contents__link toc-highlight">Pointer Alignment</a></li></ul></li><li><a href="#framing" class="table-of-contents__link toc-highlight">Framing</a><ul><li><a href="#how-to-frame" class="table-of-contents__link toc-highlight">How to Frame</a></li><li><a href="#frame-settings" class="table-of-contents__link toc-highlight">Frame Settings</a></li><li><a href="#when-to-frame" class="table-of-contents__link toc-highlight">When to Frame</a></li></ul></li><li><a href="#setting-wcs-zero-work-coordinate-system" class="table-of-contents__link toc-highlight">Setting WCS Zero (Work Coordinate System)</a><ul><li><a href="#quick-wcs-setup" class="table-of-contents__link toc-highlight">Quick WCS Setup</a></li><li><a href="#understanding-coordinate-systems" class="table-of-contents__link toc-highlight">Understanding Coordinate Systems</a></li><li><a href="#when-to-set-wcs-zero" class="table-of-contents__link toc-highlight">When to Set WCS Zero</a></li></ul></li><li><a href="#camera-based-positioning" class="table-of-contents__link toc-highlight">Camera-Based Positioning</a><ul><li><a href="#setting-up-the-camera" class="table-of-contents__link toc-highlight">Setting Up the Camera</a></li><li><a href="#camera-alignment" class="table-of-contents__link toc-highlight">Camera Alignment</a></li><li><a href="#positioning-with-camera-overlay" class="table-of-contents__link toc-highlight">Positioning with Camera Overlay</a></li><li><a href="#when-to-use-camera-positioning" class="table-of-contents__link toc-highlight">When to Use Camera Positioning</a></li></ul></li><li><a href="#recommended-workflows" class="table-of-contents__link toc-highlight">Recommended Workflows</a><ul><li><a href="#basic-positioning-workflow" class="table-of-contents__link toc-highlight">Basic Positioning Workflow</a></li><li><a href="#precision-alignment-workflow" class="table-of-contents__link toc-highlight">Precision Alignment Workflow</a></li><li><a href="#pass-through-workflow" class="table-of-contents__link toc-highlight">Pass-Through Workflow</a></li><li><a href="#production-workflow" class="table-of-contents__link toc-highlight">Production Workflow</a></li><li><a href="#multi-position-workflow" class="table-of-contents__link toc-highlight">Multi-Position Workflow</a></li></ul></li><li><a href="#troubleshooting" class="table-of-contents__link toc-highlight">Troubleshooting</a><ul><li><a href="#laser-dot-not-visible-in-focus-mode" class="table-of-contents__link toc-highlight">Laser dot not visible in focus mode</a></li><li><a href="#camera-overlay-misaligned" class="table-of-contents__link toc-highlight">Camera overlay misaligned</a></li></ul></li><li><a href="#related-topics" class="table-of-contents__link toc-highlight">Related Topics</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

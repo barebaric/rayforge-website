@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.7b80e4fb.css">
-<script src="/zh-CN/assets/js/runtime~main.a67f1609.js" defer="defer"></script>
-<script src="/zh-CN/assets/js/main.a64adfea.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.e295bcc4.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.9446280f.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -161,6 +161,50 @@
 <li class="">使用中等距离（5-20 mm）进行一般定位</li>
 <li class="">使用大距离（50-100 mm）进行快速重新定位</li>
 </ul></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="移动激光头">移动激光头<a href="#移动激光头" class="hash-link" aria-label="移动激光头 的直接链接" title="移动激光头 的直接链接" translate="no">​</a></h2>
+<p>除点动外，还可以将激光头移动到精确位置。所有这些移动都使用上文所述的<strong>点动速度</strong>设置。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="移动到位置弹出面板">移动到位置弹出面板<a href="#移动到位置弹出面板" class="hash-link" aria-label="移动到位置弹出面板 的直接链接" title="移动到位置弹出面板 的直接链接" translate="no">​</a></h3>
+<p>点击当前坐标行中的指南针图标，打开&quot;移动到位置&quot;弹出面板。面板会预填当前位置，坐标在当前工作坐标系中输入，与位置读数一致：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>控件</th><th>功能</th></tr></thead><tbody><tr><td>X / Y / Z</td><td>目标坐标（仅带 Z 轴的机器提供 Z）</td></tr><tr><td>移动</td><td>将激光头移动到输入的坐标</td></tr><tr><td>左下角</td><td>移动到所选内容（无选择时为工作区域）的左下角</td></tr><tr><td>中心</td><td>移动到所选内容（无选择时为工作区域）的中心</td></tr><tr><td>右上角</td><td>移动到所选内容（无选择时为工作区域）的右上角</td></tr><tr><td>移动到 WCS 原点</td><td>移动到当前 WCS 的 X0 Y0</td></tr></tbody></table>
+<p>机器离线时，弹出面板及其快捷方式均被禁用。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="点击画布移动激光头">点击画布移动激光头<a href="#点击画布移动激光头" class="hash-link" aria-label="点击画布移动激光头 的直接链接" title="点击画布移动激光头 的直接链接" translate="no">​</a></h3>
+<p>点击当前坐标行中的移动图标（或按
+<kbd>Ctrl+M</kbd>）启动该模式。下一次在画布空白处左键点击会将激光头移动到该点，随后模式自动退出。右键点击会取消模式而不移动激光头。启动此模式会停用&quot;点击归零&quot;，反之亦然。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="移动激光头到此处">移动激光头到此处<a href="#移动激光头到此处" class="hash-link" aria-label="移动激光头到此处 的直接链接" title="移动激光头到此处 的直接链接" translate="no">​</a></h3>
+<p>在画布空白处右键点击，会提供&quot;移动激光头到此处&quot;选项，将激光头直接移动到所点击的位置。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="机器状态显示">机器状态显示<a href="#机器状态显示" class="hash-link" aria-label="机器状态显示 的直接链接" title="机器状态显示 的直接链接" translate="no">​</a></h2>
 <p>控制面板显示有关机器的实时信息：</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="当前位置">当前位置<a href="#当前位置" class="hash-link" aria-label="当前位置 的直接链接" title="当前位置 的直接链接" translate="no">​</a></h3>
@@ -414,6 +458,6 @@
 <li class=""><a class="" href="/zh-CN/docs/reference/shortcuts">键盘快捷键</a> - 完整的快捷键参考</li>
 <li class=""><a class="" href="/zh-CN/docs/ui/main-window">主窗口</a> - 主界面概述</li>
 <li class=""><a class="" href="/zh-CN/docs/machine/general">常规设置</a> - 设备配置</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/ui/bottom-panel.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>编辑此页</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文档页面导航"><a class="pagination-nav__link pagination-nav__link--prev" href="/zh-CN/docs/ui/3d-preview"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">3D 视图</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/zh-CN/docs/features/operations/contour"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">轮廓切割</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#概述" class="table-of-contents__link toc-highlight">概述</a></li><li><a href="#访问底部面板" class="table-of-contents__link toc-highlight">访问底部面板</a></li><li><a href="#点动控制" class="table-of-contents__link toc-highlight">点动控制</a><ul><li><a href="#归零控制" class="table-of-contents__link toc-highlight">归零控制</a></li><li><a href="#方向移动" class="table-of-contents__link toc-highlight">方向移动</a></li><li><a href="#视觉反馈" class="table-of-contents__link toc-highlight">视觉反馈</a></li><li><a href="#点动设置" class="table-of-contents__link toc-highlight">点动设置</a></li></ul></li><li><a href="#机器状态显示" class="table-of-contents__link toc-highlight">机器状态显示</a><ul><li><a href="#当前位置" class="table-of-contents__link toc-highlight">当前位置</a></li><li><a href="#连接状态" class="table-of-contents__link toc-highlight">连接状态</a></li><li><a href="#机器状态" class="table-of-contents__link toc-highlight">机器状态</a></li></ul></li><li><a href="#工作坐标系wcs" class="table-of-contents__link toc-highlight">工作坐标系（WCS）</a><ul><li><a href="#活动系统选择" class="table-of-contents__link toc-highlight">活动系统选择</a></li><li><a href="#设置-wcs-零点" class="table-of-contents__link toc-highlight">设置 WCS 零点</a></li></ul></li><li><a href="#控制台标签" class="table-of-contents__link toc-highlight">控制台标签</a><ul><li><a href="#命令输入" class="table-of-contents__link toc-highlight">命令输入</a></li><li><a href="#日志显示" class="table-of-contents__link toc-highlight">日志显示</a></li><li><a href="#详细模式" class="table-of-contents__link toc-highlight">详细模式</a></li><li><a href="#自动滚动行为" class="table-of-contents__link toc-highlight">自动滚动行为</a></li><li><a href="#使用控制台进行故障排除" class="table-of-contents__link toc-highlight">使用控制台进行故障排除</a></li></ul></li><li><a href="#g-代码查看器标签" class="table-of-contents__link toc-highlight">G 代码查看器标签</a><ul><li><a href="#功能" class="table-of-contents__link toc-highlight">功能</a></li></ul></li><li><a href="#资产标签" class="table-of-contents__link toc-highlight">资产标签</a></li><li><a href="#激光控制" class="table-of-contents__link toc-highlight">激光控制</a><ul><li><a href="#激光头选择器" class="table-of-contents__link toc-highlight">激光头选择器</a></li><li><a href="#切换按钮" class="table-of-contents__link toc-highlight">切换按钮</a></li><li><a href="#功率" class="table-of-contents__link toc-highlight">功率</a></li><li><a href="#频率和脉冲宽度" class="table-of-contents__link toc-highlight">频率和脉冲宽度</a></li><li><a href="#持续时间自动关闭定时器" class="table-of-contents__link toc-highlight">持续时间（自动关闭定时器）</a></li><li><a href="#安全" class="table-of-contents__link toc-highlight">安全</a></li></ul></li><li><a href="#机器兼容性" class="table-of-contents__link toc-highlight">机器兼容性</a><ul><li><a href="#轴支持" class="table-of-contents__link toc-highlight">轴支持</a></li><li><a href="#机器类型" class="table-of-contents__link toc-highlight">机器类型</a></li></ul></li><li><a href="#安全功能" class="table-of-contents__link toc-highlight">安全功能</a><ul><li><a href="#软限位" class="table-of-contents__link toc-highlight">软限位</a></li><li><a href="#连接状态-1" class="table-of-contents__link toc-highlight">连接状态</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/ui/bottom-panel.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>编辑此页</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文档页面导航"><a class="pagination-nav__link pagination-nav__link--prev" href="/zh-CN/docs/ui/3d-preview"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">3D 视图</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/zh-CN/docs/features/operations/contour"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">轮廓切割</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#概述" class="table-of-contents__link toc-highlight">概述</a></li><li><a href="#访问底部面板" class="table-of-contents__link toc-highlight">访问底部面板</a></li><li><a href="#点动控制" class="table-of-contents__link toc-highlight">点动控制</a><ul><li><a href="#归零控制" class="table-of-contents__link toc-highlight">归零控制</a></li><li><a href="#方向移动" class="table-of-contents__link toc-highlight">方向移动</a></li><li><a href="#视觉反馈" class="table-of-contents__link toc-highlight">视觉反馈</a></li><li><a href="#点动设置" class="table-of-contents__link toc-highlight">点动设置</a></li></ul></li><li><a href="#移动激光头" class="table-of-contents__link toc-highlight">移动激光头</a><ul><li><a href="#移动到位置弹出面板" class="table-of-contents__link toc-highlight">移动到位置弹出面板</a></li><li><a href="#点击画布移动激光头" class="table-of-contents__link toc-highlight">点击画布移动激光头</a></li><li><a href="#移动激光头到此处" class="table-of-contents__link toc-highlight">移动激光头到此处</a></li></ul></li><li><a href="#机器状态显示" class="table-of-contents__link toc-highlight">机器状态显示</a><ul><li><a href="#当前位置" class="table-of-contents__link toc-highlight">当前位置</a></li><li><a href="#连接状态" class="table-of-contents__link toc-highlight">连接状态</a></li><li><a href="#机器状态" class="table-of-contents__link toc-highlight">机器状态</a></li></ul></li><li><a href="#工作坐标系wcs" class="table-of-contents__link toc-highlight">工作坐标系（WCS）</a><ul><li><a href="#活动系统选择" class="table-of-contents__link toc-highlight">活动系统选择</a></li><li><a href="#设置-wcs-零点" class="table-of-contents__link toc-highlight">设置 WCS 零点</a></li></ul></li><li><a href="#控制台标签" class="table-of-contents__link toc-highlight">控制台标签</a><ul><li><a href="#命令输入" class="table-of-contents__link toc-highlight">命令输入</a></li><li><a href="#日志显示" class="table-of-contents__link toc-highlight">日志显示</a></li><li><a href="#详细模式" class="table-of-contents__link toc-highlight">详细模式</a></li><li><a href="#自动滚动行为" class="table-of-contents__link toc-highlight">自动滚动行为</a></li><li><a href="#使用控制台进行故障排除" class="table-of-contents__link toc-highlight">使用控制台进行故障排除</a></li></ul></li><li><a href="#g-代码查看器标签" class="table-of-contents__link toc-highlight">G 代码查看器标签</a><ul><li><a href="#功能" class="table-of-contents__link toc-highlight">功能</a></li></ul></li><li><a href="#资产标签" class="table-of-contents__link toc-highlight">资产标签</a></li><li><a href="#激光控制" class="table-of-contents__link toc-highlight">激光控制</a><ul><li><a href="#激光头选择器" class="table-of-contents__link toc-highlight">激光头选择器</a></li><li><a href="#切换按钮" class="table-of-contents__link toc-highlight">切换按钮</a></li><li><a href="#功率" class="table-of-contents__link toc-highlight">功率</a></li><li><a href="#频率和脉冲宽度" class="table-of-contents__link toc-highlight">频率和脉冲宽度</a></li><li><a href="#持续时间自动关闭定时器" class="table-of-contents__link toc-highlight">持续时间（自动关闭定时器）</a></li><li><a href="#安全" class="table-of-contents__link toc-highlight">安全</a></li></ul></li><li><a href="#机器兼容性" class="table-of-contents__link toc-highlight">机器兼容性</a><ul><li><a href="#轴支持" class="table-of-contents__link toc-highlight">轴支持</a></li><li><a href="#机器类型" class="table-of-contents__link toc-highlight">机器类型</a></li></ul></li><li><a href="#安全功能" class="table-of-contents__link toc-highlight">安全功能</a><ul><li><a href="#软限位" class="table-of-contents__link toc-highlight">软限位</a></li><li><a href="#连接状态-1" class="table-of-contents__link toc-highlight">连接状态</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>
