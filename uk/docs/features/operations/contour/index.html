@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.612c8717.css">
-<script src="/uk/assets/js/runtime~main.24aba504.js" defer="defer"></script>
-<script src="/uk/assets/js/main.c51da0ef.js" defer="defer"></script>
+<script src="/uk/assets/js/runtime~main.4feaac24.js" defer="defer"></script>
+<script src="/uk/assets/js/main.a5c9bb2c.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -158,7 +158,7 @@
 <li class="">Вищі значення включають світліші області</li>
 </ul>
 </li>
-</ul><p>Це корисно, коли трасування за замовчуванням не захоплює потрібний рівень деталей.</p><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="налаштування-лазера">Налаштування лазера<a href="#налаштування-лазера" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3><p><img decoding="async" loading="lazy" alt="Налаштування лазера" src="/uk/assets/images/step-settings-contour-laser-1f775236e064ab0784fb4033e7c52cfa.webp" width="648" height="948" class="img_ev3q"></p><p>Потужність, швидкість та вибір лазерної головки розташовані на сторінці <strong>Лазер</strong> діалогового вікна
+</ul><p>Це корисно, коли трасування за замовчуванням не захоплює потрібний рівень деталей.</p><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="налаштування-лазера">Налаштування лазера<a href="#налаштування-лазера" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3><p><img decoding="async" loading="lazy" alt="Налаштування лазера" src="/uk/assets/images/step-settings-contour-laser-b68d7ae9718e441f6057bdd0f73afc76.webp" width="648" height="948" class="img_ev3q"></p><p>Потужність, швидкість та вибір лазерної головки розташовані на сторінці <strong>Лазер</strong> діалогового вікна
 налаштувань кроку.</p><h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="потужність-та-швидкість">Потужність та швидкість<a href="#потужність-та-швидкість" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h4><p><strong>Потужність (%):</strong></p><ul>
 <li class="">Інтенсивність лазера від 0-100%</li>
 <li class="">Вища потужність для товстих матеріалів</li>
@@ -167,7 +167,29 @@
 <li class="">Як швидко рухається лазер</li>
 <li class="">Повільніше = більше енергії = глибший різ</li>
 <li class="">Швидше = менше енергії = легший різ</li>
-</ul><h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="компенсація-керфа">Компенсація керфа<a href="#компенсація-керфа" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h4><p>Керф — це ширина матеріалу, видаленого лазерним променем:</p><p><strong>Чому це важливо:</strong></p><ul>
+</ul><h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="режим-потужності">Режим потужності<a href="#режим-потужності" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h4><p>Налаштування режиму потужності керує тим, як лазерна потужність подається під час рухів:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Режим</th><th>G-code</th><th>Поведінка</th></tr></thead><tbody><tr><td><strong>Динамічний (M4)</strong></td><td><code>M4</code></td><td>Масштабує потужність залежно від швидкості (за замовчуванням)</td></tr><tr><td><strong>Постійний (M3)</strong></td><td><code>M3</code></td><td>Утримує потужність фіксованою незалежно від швидкості</td></tr></tbody></table><p>Динамічна потужність зменшує потужність, коли головка сповільнюється в куті, що захищає матеріал,
+але на деяких машинах це призводить до помітно слабкого прожару кутів і крутих кривих. Перейдіть на
+<strong>Постійний (M3)</strong>, якщо кути та криві пропалюються занадто слабко.</p><h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="компенсація-керфа">Компенсація керфа<a href="#компенсація-керфа" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h4><p>Керф — це ширина матеріалу, видаленого лазерним променем:</p><p><strong>Чому це важливо:</strong></p><ul>
 <li class="">Коло, вирізане &quot;по лінії&quot;, буде трохи меншим за проектне</li>
 <li class="">Лазер видаляє ~0.2-0.4мм матеріалу (залежно від ширини променя)</li>
 </ul><p><strong>Як компенсувати:</strong></p><ol>

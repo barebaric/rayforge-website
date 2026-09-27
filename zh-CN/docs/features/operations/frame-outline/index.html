@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.7b80e4fb.css">
-<script src="/zh-CN/assets/js/runtime~main.a67f1609.js" defer="defer"></script>
-<script src="/zh-CN/assets/js/main.a64adfea.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.d260bc66.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.645ca35a.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -70,7 +70,7 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="关键设置">关键设置<a href="#关键设置" class="hash-link" aria-label="关键设置 的直接链接" title="关键设置 的直接链接" translate="no">​</a></h2>
 <p>步骤设置对话框包含三个选项卡：<strong>步骤设置</strong>、<strong>激光</strong>和<strong>后处理</strong>。设置按选项卡顺序说明如下。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="几何形状">几何形状<a href="#几何形状" class="hash-link" aria-label="几何形状 的直接链接" title="几何形状 的直接链接" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" alt="框架轮廓步骤设置" src="/zh-CN/assets/images/step-settings-frame-outline-general-99ff2d6f5206ea60a4c35e76888d2c0e.webp" width="648" height="948" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="框架轮廓步骤设置" src="/zh-CN/assets/images/step-settings-frame-outline-general-d8cb33b4c136438a2a3186fd0b9b0f96.webp" width="648" height="948" class="img_ev3q"></p>
 <p><em>步骤设置</em>选项卡上的<strong>几何形状</strong>组控制框架的形状。</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="切割侧">切割侧<a href="#切割侧" class="hash-link" aria-label="切割侧 的直接链接" title="切割侧 的直接链接" translate="no">​</a></h4>
 <p>控制激光相对于框架路径的切割位置：</p>
@@ -112,8 +112,16 @@
 <li class=""><strong>2-5mm：</strong> 小边距，外观干净</li>
 <li class=""><strong>10mm+：</strong> 用于安装或处理的大边框</li>
 </ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="圆角">圆角<a href="#圆角" class="hash-link" aria-label="圆角 的直接链接" title="圆角 的直接链接" translate="no">​</a></h4>
+<p>启用<strong>圆角</strong>可将框架尖锐的 90° 角替换为圆弧，然后以毫米为单位设置<strong>圆角半径</strong>。当半径过大而无法放入框架时，会自动减小。</p>
+<ul>
+<li class=""><strong>0mm：</strong> 尖角（默认）</li>
+<li class=""><strong>3-10mm：</strong> 更柔和的角，更易于处理</li>
+<li class=""><strong>更大：</strong> 高度圆角的框架，限制为框架较短边的一半</li>
+</ul>
+<p>圆角适用于在尖角处容易崩裂或开裂的材料，并可避免对框架进行后处理或手绘圆角轮廓。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="激光设置">激光设置<a href="#激光设置" class="hash-link" aria-label="激光设置 的直接链接" title="激光设置 的直接链接" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" alt="激光设置" src="/zh-CN/assets/images/step-settings-frame-outline-laser-6e01ef6163e133a9e48619f8f9407db9.webp" width="648" height="948" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="激光设置" src="/zh-CN/assets/images/step-settings-frame-outline-laser-322d4f7b8509065f244621bbc1944f94.webp" width="648" height="948" class="img_ev3q"></p>
 <p>功率、速度和激光头选择位于步骤设置对话框的<strong>激光</strong>页面。</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="功率和速度">功率和速度<a href="#功率和速度" class="hash-link" aria-label="功率和速度 的直接链接" title="功率和速度 的直接链接" translate="no">​</a></h4>
 <p><strong>功率（%）：</strong></p>
@@ -126,6 +134,13 @@
 <li class="">激光移动的速度</li>
 <li class="">较厚的材料使用较慢的速度</li>
 </ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="功率模式">功率模式<a href="#功率模式" class="hash-link" aria-label="功率模式 的直接链接" title="功率模式 的直接链接" translate="no">​</a></h4>
+<p>功率模式设置控制移动过程中激光功率的输出方式：</p>
+<ul>
+<li class=""><strong>动态 (M4)</strong> 功率随移动速度缩放（默认）</li>
+<li class=""><strong>恒定 (M3)</strong> 无论速度如何都保持功率恒定</li>
+</ul>
+<p>动态功率会在激光头减速进入转角时降低功率，在某些机器上可能导致转角烧蚀不足。如果框架的转角烧蚀得太浅，请切换为<strong>恒定 (M3)</strong>。</p>
 <p>要多次切割框架，请添加<a class="" href="/zh-CN/docs/features/multi-pass">多次遍</a>后处理器。</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="缝隙补偿">缝隙补偿<a href="#缝隙补偿" class="hash-link" aria-label="缝隙补偿 的直接链接" title="缝隙补偿 的直接链接" translate="no">​</a></h4>
 <p>框架轮廓支持缝隙补偿：</p>

@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/fr/assets/css/styles.d9c4cf45.css">
-<script src="/fr/assets/js/runtime~main.e1e1e13b.js" defer="defer"></script>
-<script src="/fr/assets/js/main.6ee7f6ba.js" defer="defer"></script>
+<script src="/fr/assets/js/runtime~main.79a956bf.js" defer="defer"></script>
+<script src="/fr/assets/js/main.de7f4593.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -170,7 +170,7 @@ parties sont tracées :</p>
 <p>Ceci est utile lorsque le traçage par défaut ne capture pas le niveau de détail dont vous avez
 besoin.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="paramètres-laser">Paramètres Laser<a href="#paramètres-laser" class="hash-link" aria-label="Lien direct vers Paramètres Laser" title="Lien direct vers Paramètres Laser" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" alt="Paramètres laser" src="/fr/assets/images/step-settings-contour-laser-1f775236e064ab0784fb4033e7c52cfa.webp" width="648" height="948" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Paramètres laser" src="/fr/assets/images/step-settings-contour-laser-b68d7ae9718e441f6057bdd0f73afc76.webp" width="648" height="948" class="img_ev3q"></p>
 <p>La puissance, la vitesse et la sélection de la tête laser se trouvent sur la page <strong>Laser</strong> de la
 boîte de dialogue des paramètres d&#x27;étape.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="puissance--vitesse">Puissance &amp; Vitesse<a href="#puissance--vitesse" class="hash-link" aria-label="Lien direct vers Puissance &amp; Vitesse" title="Lien direct vers Puissance &amp; Vitesse" translate="no">​</a></h4>
@@ -186,6 +186,33 @@ boîte de dialogue des paramètres d&#x27;étape.</p>
 <li class="">Plus lent = plus d&#x27;énergie = coupe plus profonde</li>
 <li class="">Plus rapide = moins d&#x27;énergie = coupe plus légère</li>
 </ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mode-de-puissance">Mode de Puissance<a href="#mode-de-puissance" class="hash-link" aria-label="Lien direct vers Mode de Puissance" title="Lien direct vers Mode de Puissance" translate="no">​</a></h4>
+<p>Le réglage du Mode de Puissance contrôle comment la puissance laser est émise pendant les mouvements
+:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Mode</th><th>G-code</th><th>Comportement</th></tr></thead><tbody><tr><td><strong>Dynamique (M4)</strong></td><td><code>M4</code></td><td>Ajuste la puissance à la vitesse de déplacement (défaut)</td></tr><tr><td><strong>Constant (M3)</strong></td><td><code>M3</code></td><td>Maintient la puissance fixe quelle que soit la vitesse</td></tr></tbody></table>
+<p>La puissance dynamique réduit la puissance lorsque la tête ralentit dans un virage, ce qui protège
+le matériau, mais sur certaines machines elle laisse les coins et les courbes serrées visiblement
+sous-brûlés. Passe en <strong>Constant (M3)</strong> si les coins et les courves brûlent trop faiblement.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="compensation-de-kerf">Compensation de Kerf<a href="#compensation-de-kerf" class="hash-link" aria-label="Lien direct vers Compensation de Kerf" title="Lien direct vers Compensation de Kerf" translate="no">​</a></h4>
 <p>Le kerf est la largeur du matériau retiré par le faisceau laser :</p>
 <p><strong>Pourquoi c&#x27;est important :</strong></p>

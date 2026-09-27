@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.c9eaf888.css">
-<script src="/assets/js/runtime~main.71ade64a.js" defer="defer"></script>
-<script src="/assets/js/main.8e428831.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.1ee1c288.js" defer="defer"></script>
+<script src="/assets/js/main.e8860e3a.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -164,7 +164,7 @@ traced:</p>
 </ul>
 <p>This is useful when the default tracing doesn&#x27;t capture the detail level you need.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="laser-settings">Laser settings<a href="#laser-settings" class="hash-link" aria-label="Direct link to Laser settings" title="Direct link to Laser settings" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" alt="Laser settings" src="/assets/images/step-settings-contour-laser-1f775236e064ab0784fb4033e7c52cfa.webp" width="648" height="948" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Laser settings" src="/assets/images/step-settings-contour-laser-b68d7ae9718e441f6057bdd0f73afc76.webp" width="648" height="948" class="img_ev3q"></p>
 <p>Power, speed, and laser head selection live on the <strong>Laser</strong> page of the step settings dialog.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="power--speed">Power &amp; Speed<a href="#power--speed" class="hash-link" aria-label="Direct link to Power &amp; Speed" title="Direct link to Power &amp; Speed" translate="no">​</a></h4>
 <p><strong>Power (%):</strong></p>
@@ -179,6 +179,32 @@ traced:</p>
 <li class="">Slower = more energy = deeper cut</li>
 <li class="">Faster = less energy = lighter cut</li>
 </ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="power-mode">Power Mode<a href="#power-mode" class="hash-link" aria-label="Direct link to Power Mode" title="Direct link to Power Mode" translate="no">​</a></h4>
+<p>The Power Mode setting controls how laser power is emitted during moves:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Mode</th><th>G-code</th><th>Behavior</th></tr></thead><tbody><tr><td><strong>Dynamic (M4)</strong></td><td><code>M4</code></td><td>Scales power with head speed (default)</td></tr><tr><td><strong>Constant (M3)</strong></td><td><code>M3</code></td><td>Keeps power fixed regardless of speed</td></tr></tbody></table>
+<p>Dynamic power ramps power down whenever the head slows down, which protects the material at corners
+— but on some machines it leaves corners and tight curves visibly under-burned. Switch to <strong>Constant
+(M3)</strong> if corners and curves burn too lightly.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="kerf-compensation">Kerf Compensation<a href="#kerf-compensation" class="hash-link" aria-label="Direct link to Kerf Compensation" title="Direct link to Kerf Compensation" translate="no">​</a></h4>
 <p>Kerf is the width of material removed by the laser beam:</p>
 <p><strong>Why it matters:</strong></p>

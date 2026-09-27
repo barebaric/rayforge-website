@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.612c8717.css">
-<script src="/uk/assets/js/runtime~main.24aba504.js" defer="defer"></script>
-<script src="/uk/assets/js/main.c51da0ef.js" defer="defer"></script>
+<script src="/uk/assets/js/runtime~main.4feaac24.js" defer="defer"></script>
+<script src="/uk/assets/js/main.a5c9bb2c.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -113,6 +113,12 @@
 <p>:::увага Апаратні послідовні порти Rayforge попередить вас, якщо ви виберете порти <code>/dev/ttyS*</code> на
 Linux, оскільки вони зазвичай не є USB-пристроями GRBL. USB послідовні порти використовують
 <code>/dev/ttyUSB*</code> або <code>/dev/ttyACM*</code>. :::</p>
+<p>:::порада Машина змінює порт після повторного під&#x27;єднання Якщо порт вашої машини змінюється
+(наприклад з <code>/dev/ttyUSB0</code> на <code>/dev/ttyUSB1</code>) після перезавантаження або повторного під&#x27;єднання,
+прив&#x27;яжіть її за ідентичністю USB: введіть VID:PID пристрою (наприклад <code>0403:6001</code>) у поле
+послідовного порту замість шляху до порту. Автоматичне повторне з&#x27;єднання тоді слідуватиме за
+машиною до її нового порту. Дивіться
+<a class="" href="/uk/docs/machine/general#%D0%BF%D1%80%D0%B8%D0%B2%D1%8F%D0%B7%D0%BA%D0%B0-%D0%BF%D0%BE%D1%81%D0%BB%D1%96%D0%B4%D0%BE%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE-%D0%BF%D0%BE%D1%80%D1%82%D1%83">Прив&#x27;язка послідовного порту</a>. :::</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="неправильна-швидкість-передачі">Неправильна швидкість передачі<a href="#неправильна-швидкість-передачі" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p><strong>Проблема:</strong> Підключення встановлюється, але команди не працюють або дають спотворені відповіді.</p>
 <p><strong>Рішення:</strong></p>

@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/de/assets/css/styles.b6f71b45.css">
-<script src="/de/assets/js/runtime~main.fda9f6ee.js" defer="defer"></script>
-<script src="/de/assets/js/main.a653b645.js" defer="defer"></script>
+<script src="/de/assets/js/runtime~main.ef35dd46.js" defer="defer"></script>
+<script src="/de/assets/js/main.ea2c6caa.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -73,7 +73,7 @@ schneiden.</p>
 <p>Der Schritt-Einstellungen-Dialog hat drei Registerkarten: <strong>Schritt-Einstellungen</strong>, <strong>Laser</strong> und
 <strong>Nachbearbeitung</strong>. Die Einstellungen werden unten in Registerkarten-Reihenfolge beschrieben.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="geometrie">Geometrie<a href="#geometrie" class="hash-link" aria-label="Direkter Link zur Geometrie" title="Direkter Link zur Geometrie" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" alt="Rahmen-Umriss Schritt-Einstellungen" src="/de/assets/images/step-settings-frame-outline-general-99ff2d6f5206ea60a4c35e76888d2c0e.webp" width="648" height="948" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Rahmen-Umriss Schritt-Einstellungen" src="/de/assets/images/step-settings-frame-outline-general-d8cb33b4c136438a2a3186fd0b9b0f96.webp" width="648" height="948" class="img_ev3q"></p>
 <p>Die Gruppe <strong>Geometrie</strong> auf der Registerkarte <em>Schritt-Einstellungen</em> steuert die Form des Rahmens.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="schnitt-seite">Schnitt-Seite<a href="#schnitt-seite" class="hash-link" aria-label="Direkter Link zur Schnitt-Seite" title="Direkter Link zur Schnitt-Seite" translate="no">​</a></h4>
 <p>Steuert, wo der Laser relativ zum Rahmenpfad schneidet:</p>
@@ -115,8 +115,19 @@ schneiden.</p>
 <li class=""><strong>2-5mm:</strong> Kleiner Rand für ein sauberes Aussehen</li>
 <li class=""><strong>10mm+:</strong> Großer Rand für Montage oder Handhabung</li>
 </ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="abgerundete-ecken">Abgerundete Ecken<a href="#abgerundete-ecken" class="hash-link" aria-label="Direkter Link zur Abgerundete Ecken" title="Direkter Link zur Abgerundete Ecken" translate="no">​</a></h4>
+<p>Aktiviere <strong>Abgerundete Ecken</strong>, um die scharfen 90°-Ecken des Rahmens durch abgerundete Bögen zu
+ersetzen, und lege den <strong>Eckenradius</strong> in mm fest. Der Radius wird automatisch verringert, wenn er
+zu groß ist, um in den Rahmen zu passen.</p>
+<ul>
+<li class=""><strong>0mm:</strong> Scharfe Ecken (Standard)</li>
+<li class=""><strong>3-10mm:</strong> Weichere Ecken, die leichter zu handhaben sind</li>
+<li class=""><strong>Größer:</strong> Stark abgerundeter Rahmen, begrenzt auf die Hälfte der kürzeren Rahmenseite</li>
+</ul>
+<p>Abgerundete Ecken sind nützlich für Materialien, die bei scharfen Winkeln splittern oder ausbrechen,
+und ersparen das Nachbearbeiten des Rahmens oder das manuelle Zeichnen eines abgerundeten Umrisses.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="laser-einstellungen">Laser-Einstellungen<a href="#laser-einstellungen" class="hash-link" aria-label="Direkter Link zur Laser-Einstellungen" title="Direkter Link zur Laser-Einstellungen" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" alt="Laser-Einstellungen" src="/de/assets/images/step-settings-frame-outline-laser-6e01ef6163e133a9e48619f8f9407db9.webp" width="648" height="948" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Laser-Einstellungen" src="/de/assets/images/step-settings-frame-outline-laser-322d4f7b8509065f244621bbc1944f94.webp" width="648" height="948" class="img_ev3q"></p>
 <p>Leistung, Geschwindigkeit und Laserkopf-Auswahl befinden sich auf der Seite <strong>Laser</strong> des
 Schritt-Einstellungen-Dialogs.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="leistung--geschwindigkeit">Leistung &amp; Geschwindigkeit<a href="#leistung--geschwindigkeit" class="hash-link" aria-label="Direkter Link zur Leistung &amp; Geschwindigkeit" title="Direkter Link zur Leistung &amp; Geschwindigkeit" translate="no">​</a></h4>
@@ -130,6 +141,16 @@ Schritt-Einstellungen-Dialogs.</p>
 <li class="">Wie schnell sich der Laser bewegt</li>
 <li class="">Langsamer für dickere Materialien</li>
 </ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="leistungsmodus">Leistungsmodus<a href="#leistungsmodus" class="hash-link" aria-label="Direkter Link zur Leistungsmodus" title="Direkter Link zur Leistungsmodus" translate="no">​</a></h4>
+<p>Die Einstellung Leistungsmodus steuert, wie die Laserleistung während der Bewegungen ausgegeben
+wird:</p>
+<ul>
+<li class=""><strong>Dynamisch (M4)</strong> skaliert die Leistung mit der Bewegungsgeschwindigkeit (Standard)</li>
+<li class=""><strong>Konstant (M3)</strong> hält die Leistung unabhängig von der Geschwindigkeit fest</li>
+</ul>
+<p>Der dynamische Modus reduziert die Leistung, wenn der Kopf in eine Ecke abbremst, was auf manchen
+Maschinen dazu führt, dass Ecken zu schwach gebrannt werden. Wechsle zu <strong>Konstant (M3)</strong>, wenn die
+Ecken des Rahmens zu schwach brennen.</p>
 <p>Um den Rahmen mehr als einmal zu schneiden, füge einen
 <a class="" href="/de/docs/features/multi-pass">Mehrfach-Durchgang</a>-Nachbearbeitungsprozessor hinzu.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="schnittbreiten-kompensation">Schnittbreiten-Kompensation<a href="#schnittbreiten-kompensation" class="hash-link" aria-label="Direkter Link zur Schnittbreiten-Kompensation" title="Direkter Link zur Schnittbreiten-Kompensation" translate="no">​</a></h4>

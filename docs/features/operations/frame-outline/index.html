@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.c9eaf888.css">
-<script src="/assets/js/runtime~main.71ade64a.js" defer="defer"></script>
-<script src="/assets/js/main.8e428831.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.1ee1c288.js" defer="defer"></script>
+<script src="/assets/js/main.e8860e3a.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -72,7 +72,7 @@ way to add a clean border or cut your work free from the material sheet.</p>
 <p>The step settings dialog has three tabs: <strong>Step Settings</strong>, <strong>Laser</strong>, and <strong>Post Processing</strong>.
 Settings are described in tab order below.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="geometry">Geometry<a href="#geometry" class="hash-link" aria-label="Direct link to Geometry" title="Direct link to Geometry" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" alt="Frame Outline step settings" src="/assets/images/step-settings-frame-outline-general-99ff2d6f5206ea60a4c35e76888d2c0e.webp" width="648" height="948" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Frame Outline step settings" src="/assets/images/step-settings-frame-outline-general-d8cb33b4c136438a2a3186fd0b9b0f96.webp" width="648" height="948" class="img_ev3q"></p>
 <p>The <strong>Geometry</strong> group on the <em>Step Settings</em> tab controls the frame&#x27;s shape.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="cut-side">Cut Side<a href="#cut-side" class="hash-link" aria-label="Direct link to Cut Side" title="Direct link to Cut Side" translate="no">​</a></h4>
 <p>Controls where the laser cuts relative to the frame path:</p>
@@ -114,8 +114,18 @@ Settings are described in tab order below.</p>
 <li class=""><strong>2-5mm:</strong> Small margin for clean appearance</li>
 <li class=""><strong>10mm+:</strong> Large border for mounting or handling</li>
 </ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="round-corners">Round Corners<a href="#round-corners" class="hash-link" aria-label="Direct link to Round Corners" title="Direct link to Round Corners" translate="no">​</a></h4>
+<p>Enable <strong>Round Corners</strong> to replace the frame&#x27;s sharp 90° corners with rounded arcs, then set the
+<strong>Corner Radius</strong> in mm. The radius is automatically reduced when it is too large to fit the frame.</p>
+<ul>
+<li class=""><strong>0mm:</strong> Sharp corners (default)</li>
+<li class=""><strong>3-10mm:</strong> Softer corners that are easier to handle</li>
+<li class=""><strong>Larger:</strong> Heavily rounded frame, clamped to half the frame&#x27;s shorter side</li>
+</ul>
+<p>Rounded corners are useful for materials that chip or splinter at sharp angles, and avoid the need
+to post-process the frame or hand-draw a rounded outline.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="laser-settings">Laser settings<a href="#laser-settings" class="hash-link" aria-label="Direct link to Laser settings" title="Direct link to Laser settings" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" alt="Laser settings" src="/assets/images/step-settings-frame-outline-laser-6e01ef6163e133a9e48619f8f9407db9.webp" width="648" height="948" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Laser settings" src="/assets/images/step-settings-frame-outline-laser-322d4f7b8509065f244621bbc1944f94.webp" width="648" height="948" class="img_ev3q"></p>
 <p>Power, speed, and laser head selection live on the <strong>Laser</strong> page of the step settings dialog.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="power--speed">Power &amp; Speed<a href="#power--speed" class="hash-link" aria-label="Direct link to Power &amp; Speed" title="Direct link to Power &amp; Speed" translate="no">​</a></h4>
 <p><strong>Power (%):</strong></p>
@@ -128,6 +138,14 @@ Settings are described in tab order below.</p>
 <li class="">How fast the laser moves</li>
 <li class="">Slower for thicker materials</li>
 </ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="power-mode">Power Mode<a href="#power-mode" class="hash-link" aria-label="Direct link to Power Mode" title="Direct link to Power Mode" translate="no">​</a></h4>
+<p>The Power Mode setting controls how laser power is emitted during moves:</p>
+<ul>
+<li class=""><strong>Dynamic (M4)</strong> scales power with head speed (default)</li>
+<li class=""><strong>Constant (M3)</strong> keeps power fixed regardless of speed</li>
+</ul>
+<p>Dynamic power ramps power down when the head slows into a corner, which can leave corners
+under-burned on some machines. Switch to <strong>Constant (M3)</strong> if the frame&#x27;s corners burn too lightly.</p>
 <p>To cut the frame more than once, add a <a class="" href="/docs/features/multi-pass">Multi-Pass</a> post-processor.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="kerf-compensation">Kerf Compensation<a href="#kerf-compensation" class="hash-link" aria-label="Direct link to Kerf Compensation" title="Direct link to Kerf Compensation" translate="no">​</a></h4>
 <p>Frame outline supports kerf compensation:</p>

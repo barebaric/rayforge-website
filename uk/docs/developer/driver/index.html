@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.612c8717.css">
-<script src="/uk/assets/js/runtime~main.24aba504.js" defer="defer"></script>
-<script src="/uk/assets/js/main.c51da0ef.js" defer="defer"></script>
+<script src="/uk/assets/js/runtime~main.4feaac24.js" defer="defer"></script>
+<script src="/uk/assets/js/main.a5c9bb2c.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -130,6 +130,12 @@ HTTP тощо.).</li>
 виконана перед інстанціюванням драйвера. Має піднімати <code>DriverPrecheckError</code> при невдачі.</li>
 <li class=""><code>setup(**kwargs)</code>: Викликається один раз зі значеннями з форми налаштування. Використовуйте це для
 ініціалізації ваших транспортів та внутрішнього стану.</li>
+<li class=""><code>update_settings(**kwargs) -&gt; bool</code>: Необов&#x27;язково. Викликається замість демонтажу/перестворення,
+коли аргументи налаштування драйвера машини редагуються, але клас драйвера не змінюється.
+Поверніть <code>True</code>, якщо драйвер може поглинути зміну, не розриваючи активне з&#x27;єднання (збережіть
+нові аргументи в екземплярі; вони набувають чинності для наступних операцій або наступної спроби
+з&#x27;єднання). Поверніть <code>False</code> (за замовчуванням), щоб запросити перестворення, яке демонтує та
+знову створює драйвер з новими аргументами.</li>
 <li class=""><code>async def connect()</code>: Встановлює та підтримує постійне з&#x27;єднання з пристроєм. Цей метод має
 містити логіку автовідновлення з&#x27;єднання.</li>
 <li class=""><code>async def cleanup()</code>: Викликається при відключенні. Має закрити всі з&#x27;єднання та звільнити
@@ -143,8 +149,10 @@ HTTP тощо.).</li>
 <code>on_command_done</code> викликається з op_index коли кожна команда завершується.</li>
 <li class=""><code>async def home(axes: Optional[Axis] = None)</code>: Виконує homing машини. Може робити homing конкретні
 осі або всі осі.</li>
-<li class=""><code>async def move_to(pos_x: float, pos_y: float)</code>: Вручну переміщує лазерну головку у конкретну XY
-координату.</li>
+<li class=""><code>async def move_to(pos_x: float, pos_y: float, pos_z: Optional[float] = None, speed: Optional[float] = None)</code>:
+Вручну переміщує лазерну головку у конкретну XY координату. Якщо <code>pos_z</code> задано, вона
+використовується як абсолютна Z-позиція в тому самому русі. <code>speed</code> задається в мм/хв і за
+замовчуванням використовує значення драйвера, якщо <code>None</code>.</li>
 <li class=""><code>async def set_hold(hold: bool = True)</code>: Призупиняє або відновлює поточне завдання.</li>
 <li class=""><code>async def cancel()</code>: Зупиняє поточне завдання.</li>
 <li class=""><code>async def jog(axis: Axis, distance: float, speed: int)</code>: Виконує jog машини вздовж конкретної
@@ -176,9 +184,11 @@ HTTP тощо.).</li>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="є-питання">Є питання?<a href="#є-питання" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Найкращий спосіб навчитися - подивитися на існуючі драйвери в <code>rayforge/machine/driver/</code>, такі як:</p>
 <ul>
-<li class=""><code>grbl/</code> - Машини на базі GRBL (serial, telnet, мережа)</li>
+<li class=""><code>grbl/</code> - Машини на базі GRBL (serial, serial simple, serial на Rust, telnet, мережа)</li>
 <li class=""><code>marlin/</code> - Машини на базі прошивки Marlin (serial)</li>
-<li class=""><code>smoothie.py</code> - Машини на базі Smoothieboard</li>
+<li class=""><code>ruidarpa/</code> - Контролери Ruida через Ruida Protocol Analyzer (USB, UDP або TUI RPC)</li>
+<li class=""><code>octoprint/</code> - Машини, керовані через сервер OctoPrint</li>
+<li class=""><code>smoothie/</code> - Машини на базі Smoothieboard</li>
 <li class=""><code>dummy.py</code> - Тестовий драйвер для розробки</li>
 </ul>
 <p>Якщо застрягли, будь ласка, не соромтеся відкрити issue на GitHub! Ми з радістю допоможемо.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/developer/driver.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Редагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Навігація по документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/developer/tasker"><div class="pagination-nav__sublabel">Назад</div><div class="pagination-nav__label">Tasker: Керування фоновими завданнями</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/uk/docs/developer/addon-overview"><div class="pagination-nav__sublabel">Далі</div><div class="pagination-nav__label">Огляд розробки аддонів</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#огляд-драйвера" class="table-of-contents__link toc-highlight">Огляд драйвера</a></li><li><a href="#мова-ops" class="table-of-contents__link toc-highlight">Мова <code>Ops</code></a></li><li><a href="#реалізація-драйвера" class="table-of-contents__link toc-highlight">Реалізація драйвера</a><ul><li><a href="#обовязкові-властивості" class="table-of-contents__link toc-highlight">Обов&#39;язкові властивості</a></li><li><a href="#обовязкові-методи" class="table-of-contents__link toc-highlight">Обов&#39;язкові методи</a></li><li><a href="#емісія-сигналів" class="table-of-contents__link toc-highlight">Емісія сигналів</a></li></ul></li><li><a href="#є-питання" class="table-of-contents__link toc-highlight">Є питання?</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>

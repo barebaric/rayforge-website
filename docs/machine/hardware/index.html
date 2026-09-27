@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.c9eaf888.css">
-<script src="/assets/js/runtime~main.71ade64a.js" defer="defer"></script>
-<script src="/assets/js/main.8e428831.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.1ee1c288.js" defer="defer"></script>
+<script src="/assets/js/main.e8860e3a.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -70,6 +70,9 @@ move vertically). When disabled, the Z axis is treated as absent: no Z moves are
 the 3D canvas layers content at the engrave plane instead of showing a moving head along Z.</li>
 <li class=""><strong>Reverse Z-Axis Direction</strong>: Only shown when <strong>Has Z-Axis</strong> is enabled. Enable if a positive Z
 command (e.g., G0 Z10) moves the head down.</li>
+<li class=""><strong>Z Min / Z Max</strong>: Only shown when <strong>Has Z-Axis</strong> is enabled. The lowest and highest Z coordinate
+in the machine frame. Z jog moves are clamped to this range, and the Move to Position popover
+accepts the full Z range between the two values.</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="panel-orientation">Panel Orientation<a href="#panel-orientation" class="hash-link" aria-label="Direct link to Panel Orientation" title="Direct link to Panel Orientation" translate="no">​</a></h3>
 <p>The panel orientation rotates the flat workspace as it is presented on screen and remaps output back

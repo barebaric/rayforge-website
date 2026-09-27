@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.c9eaf888.css">
-<script src="/assets/js/runtime~main.71ade64a.js" defer="defer"></script>
-<script src="/assets/js/main.8e428831.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.1ee1c288.js" defer="defer"></script>
+<script src="/assets/js/main.e8860e3a.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -130,6 +130,12 @@ generate the setup form in the UI.</li>
 can be run before driver instantiation. Should raise <code>DriverPrecheckError</code> on failure.</li>
 <li class=""><code>setup(**kwargs)</code>: Called once with the values from the setup form. Use this to initialize your
 transports and internal state.</li>
+<li class=""><code>update_settings(**kwargs) -&gt; bool</code>: Optional. Called in place of a teardown/rebuild when the
+machine&#x27;s driver setup arguments are edited but the driver class is unchanged. Return <code>True</code> if
+the driver can absorb the change without dropping a running connection (store the new arguments on
+the instance; they take effect for subsequent operations or the next connection attempt). Return
+<code>False</code> (the default) to request a rebuild, which tears down and re-creates the driver with the
+new arguments.</li>
 <li class=""><code>async def connect()</code>: Establishes and maintains a persistent connection to the device. This
 method should contain auto-reconnection logic.</li>
 <li class=""><code>async def cleanup()</code>: Called when disconnecting. Should close all connections and release
@@ -143,8 +149,10 @@ mapping between operation indices and machine code. The <code>on_command_done</c
 the op_index when each command completes.</li>
 <li class=""><code>async def home(axes: Optional[Axis] = None)</code>: Homes the machine. Can home specific axes or all
 axes.</li>
-<li class=""><code>async def move_to(pos_x: float, pos_y: float)</code>: Manually moves the laser head to a specific XY
-coordinate.</li>
+<li class=""><code>async def move_to(pos_x: float, pos_y: float, pos_z: Optional[float] = None, speed: Optional[float] = None)</code>:
+Manually moves the laser head to a specific XY coordinate. When <code>pos_z</code> is given, it is targeted
+as an absolute Z position in the same move. <code>speed</code> is in mm/min and falls back to a driver
+default when <code>None</code>.</li>
 <li class=""><code>async def set_hold(hold: bool = True)</code>: Pauses or resumes current job.</li>
 <li class=""><code>async def cancel()</code>: Stops the current job.</li>
 <li class=""><code>async def jog(axis: Axis, distance: float, speed: int)</code>: Jogs the machine along a specific axis.</li>
@@ -198,9 +206,11 @@ by another machine instance.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="have-questions">Have Questions?<a href="#have-questions" class="hash-link" aria-label="Direct link to Have Questions?" title="Direct link to Have Questions?" translate="no">​</a></h2>
 <p>The best way to learn is to look at the existing drivers in <code>rayforge/machine/driver/</code>, such as:</p>
 <ul>
-<li class=""><code>grbl/</code> - GRBL-based machines (serial, telnet, network)</li>
+<li class=""><code>grbl/</code> - GRBL-based machines (serial, serial simple, Rust-backed serial, telnet, network)</li>
 <li class=""><code>marlin/</code> - Marlin firmware-based machines (serial)</li>
-<li class=""><code>smoothie.py</code> - Smoothieboard-based machines</li>
+<li class=""><code>ruidarpa/</code> - Ruida controllers via the Ruida Protocol Analyzer (USB, UDP, or TUI RPC)</li>
+<li class=""><code>octoprint/</code> - Machines driven through an OctoPrint server</li>
+<li class=""><code>smoothie/</code> - Smoothieboard-based machines</li>
 <li class=""><code>dummy.py</code> - A test driver for development</li>
 </ul>
 <p>If you get stuck, please don&#x27;t hesitate to open an issue on GitHub! We&#x27;re happy to help.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/developer/driver.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/developer/tasker"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Tasker: Background Task Management</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/developer/addon-overview"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Addon Development Overview</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#driver-overview" class="table-of-contents__link toc-highlight">Driver Overview</a></li><li><a href="#the-ops-language" class="table-of-contents__link toc-highlight">The <code>Ops</code> Language</a></li><li><a href="#driver-implementation" class="table-of-contents__link toc-highlight">Driver Implementation</a><ul><li><a href="#required-properties" class="table-of-contents__link toc-highlight">Required Properties</a></li><li><a href="#required-methods" class="table-of-contents__link toc-highlight">Required Methods</a></li><li><a href="#emitting-signals" class="table-of-contents__link toc-highlight">Emitting Signals</a></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a></li><li><a href="#exceptions" class="table-of-contents__link toc-highlight">Exceptions</a></li></ul></li><li><a href="#have-questions" class="table-of-contents__link toc-highlight">Have Questions?</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>

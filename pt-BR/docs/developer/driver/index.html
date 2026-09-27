@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/pt-BR/assets/css/styles.f5998078.css">
-<script src="/pt-BR/assets/js/runtime~main.ab2c389c.js" defer="defer"></script>
-<script src="/pt-BR/assets/js/main.b0b732d0.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/runtime~main.3fda1959.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/main.5009f511.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -133,6 +133,12 @@ configuração que pode ser executada antes da instanciação do driver. Deve la
 <code>DriverPrecheckError</code> em caso de falha.</li>
 <li class=""><code>setup(**kwargs)</code>: Chamado uma vez com os valores do formulário de configuração. Use isso para
 inicializar seus transportes e estado interno.</li>
+<li class=""><code>update_settings(**kwargs) -&gt; bool</code>: Opcional. Chamado em vez de uma desmontagem/reconstrução
+quando os argumentos de configuração do driver de uma máquina são editados, mas a classe do driver
+permanece a mesma. Retorne <code>True</code> se o driver puder absorver a mudança sem interromper uma conexão
+ativa (armazene os novos argumentos na instância; eles entram em vigor nas operações seguintes ou
+na próxima tentativa de conexão). Retorne <code>False</code> (o padrão) para solicitar uma reconstrução, que
+desmonta e recria o driver com os novos argumentos.</li>
 <li class=""><code>async def connect()</code>: Estabelece e mantém uma conexão persistente com o dispositivo. Este método
 deve conter lógica de reconexão automática.</li>
 <li class=""><code>async def cleanup()</code>: Chamado ao desconectar. Deve fechar todas as conexões e liberar recursos.</li>
@@ -147,8 +153,10 @@ G-code) e um mapeamento entre índices de operação e código de máquina. O ca
 <li class=""><code>async def run_raw(gcode: str)</code>: Executa uma string G-code crua diretamente.</li>
 <li class=""><code>async def home(axes: Optional[Axis] = None)</code>: Faz home da máquina. Pode fazer home de eixos
 específicos ou todos os eixos.</li>
-<li class=""><code>async def move_to(pos_x: float, pos_y: float)</code>: Move manualmente a cabeça do laser para uma
-coordenada XY específica.</li>
+<li class=""><code>async def move_to(pos_x: float, pos_y: float, pos_z: Optional[float] = None, speed: Optional[float] = None)</code>:
+Move manualmente a cabeça do laser para uma coordenada XY específica. Quando <code>pos_z</code> é fornecido,
+ele é alvo como uma posição Z absoluta no mesmo movimento. <code>speed</code> está em mm/min e recorre a um
+padrão do driver quando <code>None</code>.</li>
 <li class=""><code>async def set_hold(hold: bool = True)</code>: Pausa ou retoma o trabalho atual.</li>
 <li class=""><code>async def cancel()</code>: Para o trabalho atual.</li>
 <li class=""><code>async def jog(axis: Axis, distance: float, speed: int)</code>: Move a máquina ao longo de um eixo
@@ -212,9 +220,11 @@ para a UI.</li>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tem-perguntas">Tem Perguntas?<a href="#tem-perguntas" class="hash-link" aria-label="Link direto para Tem Perguntas?" title="Link direto para Tem Perguntas?" translate="no">​</a></h2>
 <p>A melhor forma de aprender é olhar os drivers existentes em <code>rayforge/machine/driver/</code>, como:</p>
 <ul>
-<li class=""><code>grbl/</code> - Máquinas baseadas em GRBL (serial, telnet, rede)</li>
+<li class=""><code>grbl/</code> - Máquinas baseadas em GRBL (serial, serial simple, serial Rust, telnet, rede)</li>
 <li class=""><code>marlin/</code> - Máquinas baseadas em firmware Marlin (serial)</li>
-<li class=""><code>smoothie.py</code> - Máquinas baseadas em Smoothieboard</li>
+<li class=""><code>ruidarpa/</code> - Controladores Ruida via Ruida Protocol Analyzer (USB, UDP ou TUI RPC)</li>
+<li class=""><code>octoprint/</code> - Máquinas controladas por meio de um servidor OctoPrint</li>
+<li class=""><code>smoothie/</code> - Máquinas baseadas em Smoothieboard</li>
 <li class=""><code>dummy.py</code> - Um driver de teste para desenvolvimento</li>
 </ul>
 <p>Se você travar, por favor não hesite em abrir uma issue no GitHub! Ficaremos felizes em ajudar.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/developer/driver.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Páginas de documentação"><a class="pagination-nav__link pagination-nav__link--prev" href="/pt-BR/docs/developer/tasker"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Tasker: Gerenciamento de Tarefas em Segundo Plano</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/pt-BR/docs/developer/addon-overview"><div class="pagination-nav__sublabel">Próximo</div><div class="pagination-nav__label">Visão Geral do Desenvolvimento de Addons</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#visão-geral-do-driver" class="table-of-contents__link toc-highlight">Visão Geral do Driver</a></li><li><a href="#a-linguagem-ops" class="table-of-contents__link toc-highlight">A Linguagem <code>Ops</code></a></li><li><a href="#implementação-do-driver" class="table-of-contents__link toc-highlight">Implementação do Driver</a><ul><li><a href="#propriedades-obrigatórias" class="table-of-contents__link toc-highlight">Propriedades Obrigatórias</a></li><li><a href="#métodos-obrigatórios" class="table-of-contents__link toc-highlight">Métodos Obrigatórios</a></li><li><a href="#emitindo-sinais" class="table-of-contents__link toc-highlight">Emitindo Sinais</a></li></ul></li><li><a href="#tem-perguntas" class="table-of-contents__link toc-highlight">Tem Perguntas?</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>

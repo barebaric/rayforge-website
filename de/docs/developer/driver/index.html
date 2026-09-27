@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/de/assets/css/styles.b6f71b45.css">
-<script src="/de/assets/js/runtime~main.fda9f6ee.js" defer="defer"></script>
-<script src="/de/assets/js/main.a653b645.js" defer="defer"></script>
+<script src="/de/assets/js/runtime~main.ef35dd46.js" defer="defer"></script>
+<script src="/de/assets/js/main.ea2c6caa.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -135,6 +135,13 @@ Konfiguration, der vor Treiber-Instanziierung ausgeführt werden kann. Sollte be
 <code>DriverPrecheckError</code> werfen.</li>
 <li class=""><code>setup(**kwargs)</code>: Wird einmal mit den Werten aus dem Einrichtungsformular aufgerufen. Verwende
 dies um deine Transports und internen Zustände zu initialisieren.</li>
+<li class=""><code>update_settings(**kwargs) -&gt; bool</code>: Optional. Wird anstelle eines Ab- und Wiederaufbaus
+aufgerufen, wenn die Setup-Argumente des Treibers einer Maschine bearbeitet werden, ohne dass sich
+die Treiberklasse ändert. Gib <code>True</code> zurück, wenn der Treiber die Änderung absorbieren kann, ohne
+eine laufende Verbindung zu trennen (speichere die neuen Argumente auf der Instanz; sie wirken auf
+nachfolgende Operationen oder den nächsten Verbindungsversuch). Gib <code>False</code> (der Standard) zurück,
+um einen Neuaufbau anzufordern, bei dem der Treiber mit den neuen Argumenten ab- und wieder
+aufgebaut wird.</li>
 <li class=""><code>async def connect()</code>: Stellt eine persistente Verbindung zum Gerät her und hält sie aufrecht.
 Diese Methode sollte Auto-Wiederverbindungs-Logik enthalten.</li>
 <li class=""><code>async def cleanup()</code>: Wird beim Trennen aufgerufen. Sollte alle Verbindungen schließen und
@@ -150,8 +157,10 @@ G-Code-String) und ein Mapping zwischen Operationsindizes und Maschinencode. Der
 <li class=""><code>async def run_raw(gcode: str)</code>: Führt einen rohen G-Code-String direkt aus.</li>
 <li class=""><code>async def home(axes: Optional[Axis] = None)</code>: Referenziert die Maschine. Kann spezifische Achsen
 oder alle Achsen referenzieren.</li>
-<li class=""><code>async def move_to(pos_x: float, pos_y: float)</code>: Bewegt manuell den Laserkopf zu einer
-spezifischen XY-Koordinate.</li>
+<li class=""><code>async def move_to(pos_x: float, pos_y: float, pos_z: Optional[float] = None, speed: Optional[float] = None)</code>:
+Bewegt manuell den Laserkopf zu einer spezifischen XY-Koordinate. Wenn <code>pos_z</code> angegeben ist, wird
+es als absolute Z-Position in derselben Bewegung angefahren. <code>speed</code> ist in mm/min und fällt auf
+einen Treiber-Standardwert zurück, wenn <code>None</code>.</li>
 <li class=""><code>async def set_hold(hold: bool = True)</code>: Pausiert oder setzt den aktuellen Job fort.</li>
 <li class=""><code>async def cancel()</code>: Stoppt den aktuellen Job.</li>
 <li class=""><code>async def jog(axis: Axis, distance: float, speed: int)</code>: Joggt die Maschine entlang einer
@@ -214,9 +223,11 @@ Verbindungsstatus (<code>CONNECTING</code>, <code>CONNECTED</code>, <code>ERROR<
 <p>Der beste Weg zu lernen ist, sich die bestehenden Treiber in <code>rayforge/machine/driver/</code> anzusehen,
 wie:</p>
 <ul>
-<li class=""><code>grbl/</code> - GRBL-basierte Maschinen (seriell, Telnet, Netzwerk)</li>
+<li class=""><code>grbl/</code> - GRBL-basierte Maschinen (seriell, seriell simple, Rust-seriell, Telnet, Netzwerk)</li>
 <li class=""><code>marlin/</code> - Marlin-Firmware-basierte Maschinen (seriell)</li>
-<li class=""><code>smoothie.py</code> - Smoothieboard-basierte Maschinen</li>
+<li class=""><code>ruidarpa/</code> - Ruida-Controller über den Ruida Protocol Analyzer (USB, UDP oder TUI-RPC)</li>
+<li class=""><code>octoprint/</code> - Maschinen, die über einen OctoPrint-Server gesteuert werden</li>
+<li class=""><code>smoothie/</code> - Smoothieboard-basierte Maschinen</li>
 <li class=""><code>dummy.py</code> - Ein Test-Treiber für die Entwicklung</li>
 </ul>
 <p>Wenn du steckenbleibst, zögere bitte nicht, ein Issue auf GitHub zu eröffnen! Wir helfen gerne.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/developer/driver.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Diese Seite bearbeiten</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Dokumentation Seiten"><a class="pagination-nav__link pagination-nav__link--prev" href="/de/docs/developer/tasker"><div class="pagination-nav__sublabel">Zurück</div><div class="pagination-nav__label">Tasker: Hintergrund-Task-Verwaltung</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/de/docs/developer/addon-overview"><div class="pagination-nav__sublabel">Weiter</div><div class="pagination-nav__label">Addon-Entwicklung Übersicht</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#treiber-übersicht" class="table-of-contents__link toc-highlight">Treiber-Übersicht</a></li><li><a href="#die-ops-sprache" class="table-of-contents__link toc-highlight">Die <code>Ops</code>-Sprache</a></li><li><a href="#treiber-implementierung" class="table-of-contents__link toc-highlight">Treiber-Implementierung</a><ul><li><a href="#erforderliche-eigenschaften" class="table-of-contents__link toc-highlight">Erforderliche Eigenschaften</a></li><li><a href="#erforderliche-methoden" class="table-of-contents__link toc-highlight">Erforderliche Methoden</a></li><li><a href="#signale-emittieren" class="table-of-contents__link toc-highlight">Signale emittieren</a></li></ul></li><li><a href="#hast-du-fragen" class="table-of-contents__link toc-highlight">Hast du Fragen?</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
