@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="hi" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-developer/pipeline" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">पाइपलाइन संरचना | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" property="og:url" content="https://rayforge.org/hi/docs/developer/pipeline"><meta data-rh="true" property="og:locale" content="hi"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="pt_BR"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="de"><meta data-rh="true" property="og:locale:alternate" content="zh_CN"><meta data-rh="true" property="og:locale:alternate" content="uk"><meta data-rh="true" name="docusaurus_locale" content="hi"><meta data-rh="true" name="docsearch:language" content="hi"><meta data-rh="true" name="keywords" content="laser cutter software, laser engraving software, LightBurn alternative, free laser software, open source laser software, GRBL, laser cutting software, laser control software, G-code sender, Rayforge"><meta data-rh="true" name="author" content="Rayforge Contributors"><meta data-rh="true" name="robots" content="index, follow"><meta data-rh="true" property="og:type" content="website"><meta data-rh="true" property="og:site_name" content="Rayforge"><meta data-rh="true" property="og:image" content="https://rayforge.org/images/social.webp"><meta data-rh="true" property="og:image:width" content="1280"><meta data-rh="true" property="og:image:height" content="640"><meta data-rh="true" property="og:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" name="twitter:title" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:description" content="The complete creative studio for your laser cutter. Design, simulate, and control — with AI-powered tools, 3D preview, and a built-in sketcher."><meta data-rh="true" name="twitter:image" content="https://rayforge.org/images/social.webp"><meta data-rh="true" name="twitter:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="पाइपलाइन संरचना | Rayforge"><meta data-rh="true" name="description" content="Rayforge इरादा पाइपलाइन - डिज़ाइन Doc मॉडल से raygeo इरादों के माध्यम से G-code जनरेशन तक कैसे चलते हैं."><meta data-rh="true" property="og:description" content="Rayforge इरादा पाइपलाइन - डिज़ाइन Doc मॉडल से raygeo इरादों के माध्यम से G-code जनरेशन तक कैसे चलते हैं."><link data-rh="true" rel="icon" href="/hi/images/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/hi/docs/developer/pipeline"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/developer/pipeline" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/pt-BR/docs/developer/pipeline" hreflang="pt-BR"><link data-rh="true" rel="alternate" href="https://rayforge.org/es/docs/developer/pipeline" hreflang="es"><link data-rh="true" rel="alternate" href="https://rayforge.org/fr/docs/developer/pipeline" hreflang="fr"><link data-rh="true" rel="alternate" href="https://rayforge.org/hi/docs/developer/pipeline" hreflang="hi"><link data-rh="true" rel="alternate" href="https://rayforge.org/de/docs/developer/pipeline" hreflang="de"><link data-rh="true" rel="alternate" href="https://rayforge.org/zh-CN/docs/developer/pipeline" hreflang="zh-CN"><link data-rh="true" rel="alternate" href="https://rayforge.org/uk/docs/developer/pipeline" hreflang="uk"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/developer/pipeline" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"पाइपलाइन संरचना","item":"https://rayforge.org/hi/docs/developer/pipeline"}]}</script><link rel="alternate" type="application/rss+xml" href="/hi/blog/rss.xml" title="Rayforge RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/hi/blog/atom.xml" title="Rayforge Atom Feed">
+
+
+
+
+
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rayforge","description":"Free open-source laser cutter software for GRBL-based machines. Design, simulate, and control your laser cutter or engraver with AI-powered tools, 3D preview, and a built-in sketcher.","url":"https://rayforge.org","applicationCategory":"DesignApplication","operatingSystem":"Linux, Windows, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"barebaric","url":"https://github.com/barebaric"},"screenshot":"https://rayforge.org/screenshots/main-standard.webp","featureList":"AI-powered design generation, 3D simulation and preview, Parametric 2D sketcher, GRBL and Smoothieware support, Rotary axis support, Material and recipe management, Path optimization, Multi-layer support, Camera calibration","license":"https://github.com/barebaric/rayforge/blob/main/LICENSE","programmingLanguage":"Python","installUrl":"https://rayforge.org/docs/getting-started/installation"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
+<script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/hi/assets/css/styles.e1bebf49.css">
+<script src="/hi/assets/js/runtime~main.0f1696ec.js" defer="defer"></script>
+<script src="/hi/assets/js/main.418cbbb8.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/hi/images/icon.svg"><link rel="preload" as="image" href="https://c5.patreon.com/external/logo/become_a_patron_button.png"><div role="region" aria-label="मुख्य सामग्री पर जाएँ"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">मुख्य सामग्री पर जाएँ</a></div><nav aria-label="मुख्य नेविगेशन" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="नेविगेशन बार टॉगल करें" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/hi/"><div class="navbar__logo"><img src="/hi/images/icon.svg" alt="Rayforge लोगो" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/hi/images/icon.svg" alt="Rayforge लोगो" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Rayforge</b></a><a class="navbar__item navbar__link" href="/hi/docs/getting-started/installation">दस्तावेज़ीकरण</a><a class="navbar__item navbar__link" href="/hi/resources/devices">डिवाइस</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/hi/docs/developer/getting-started/">डेवलपर</a><a class="navbar__item navbar__link" href="/hi/contributing">योगदान</a><a class="navbar__item navbar__link" href="/hi/sponsor">प्रायोजक</a><a class="navbar__item navbar__link" href="/hi/blog">ब्लॉग</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>हिन्दी</a><ul class="dropdown__menu"><li><a href="/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="en">English</a></li><li><a href="/pt-BR/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="pt-BR">Português (Brasil)</a></li><li><a href="/es/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="es">Español</a></li><li><a href="/fr/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="fr">Français</a></li><li><a href="/hi/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="hi">हिन्दी</a></li><li><a href="/de/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="de">Deutsch</a></li><li><a href="/zh-CN/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="zh-CN">中文（中国）</a></li><li><a href="/uk/docs/developer/pipeline" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="uk">Українська</a></li></ul></div><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="patreonLink_HbXT"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" class="patreonImg_dUDi"></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="सिस्टम मोड" aria-label="लाइट और डार्क मोड के बीच बदलें (वर्तमान में सिस्टम मोड)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div class="floatingLinks_ekMW"><a class="floatingLink_seiz" href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" aria-label="Rayforge on GitHub" title="GitHub"><img class="floatingIcon_OM1j" src="https://cdn.simpleicons.org/github/000000" alt="" width="20" height="20" loading="lazy"></a><a class="floatingLink_seiz" href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" aria-label="Join Rayforge on Discord" title="Discord"><img class="floatingIcon_OM1j" src="https://cdn.simpleicons.org/discord/000000" alt="" width="20" height="20" loading="lazy"></a><a class="floatingLink_seiz" href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" aria-label="Support Rayforge on Patreon" title="Patreon"><img class="floatingIcon_OM1j floatingIconPatreon_HIKb" src="https://cdn.simpleicons.org/patreon/FF424D" alt="" width="20" height="20" loading="lazy"></a></div><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="ऊपर वापस जाएँ" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><div class="sidebarSearch_pOTk"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><svg aria-hidden="true" class="searchIcon_T3tP" focusable="false" viewBox="0 0 16 16"><path fill="currentColor" d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"></path></svg><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div><nav aria-label="दस्तावेज़ साइडबार" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/hi/docs/developer/getting-started/"><span class="categoryLinkLabel_W154">शुरुआत</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/hi/docs/developer/getting-started/"><span class="linkLabel_WmDU">कोड प्राप्त करें</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/hi/docs/developer/getting-started/setup"><span class="linkLabel_WmDU">सेटअप</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/hi/docs/developer/getting-started/submitting-changes"><span class="linkLabel_WmDU">बदलाव सबमिट करना</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/hi/docs/developer/architecture"><span class="categoryLinkLabel_W154">संरचना</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/hi/docs/developer/architecture"><span class="linkLabel_WmDU">Rayforge संरचना</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/hi/docs/developer/docmodel"><span class="linkLabel_WmDU">दस्तावेज़ मॉडल संरचना</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/hi/docs/developer/importer"><span class="linkLabel_WmDU">आयातक संरचना</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/hi/docs/developer/pipeline"><span class="linkLabel_WmDU">पाइपलाइन संरचना</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/hi/docs/developer/tasker"><span class="linkLabel_WmDU">टास्कर: पृष्ठभूमि कार्य प्रबंधन</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/hi/docs/developer/driver"><span class="linkLabel_WmDU">ड्राइवर विकास गाइड</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/hi/docs/developer/addon-overview"><span class="categoryLinkLabel_W154">Addon Development</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/hi/docs/developer/raygeo-api/raygeo"><span class="categoryLinkLabel_W154">RayGeo API Reference</span></a><button aria-label="साइडबार श्रेणी &#x27;RayGeo API Reference&#x27; विस्तृत करें" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="ब्रेडक्रंब"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="मुख्य पृष्ठ" class="breadcrumbs__link" href="/hi/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">संरचना</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">पाइपलाइन संरचना</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">इस पृष्ठ पर</button></div><div class="theme-doc-markdown markdown"><header><h1>पाइपलाइन संरचना</h1></header>
+<p>यह दस्तावेज़ उस पाइपलाइन का वर्णन करता है जो एक <code>Doc</code> मॉडल को मशीन-निष्पादन योग्य G-code में बदलती
+है. 1.9.0 पुनर्लेखन के बाद से पाइपलाइन <strong>raygeo इरादों</strong> पर बनी है: उस कार्य का एक घोषणात्मक विवरण
+जो Rust पक्ष को करना चाहिए, एक पतले Python समन्वयन स्तर और एक संदर्भ-गणित प्रक्रिया-भीतरी
+आर्टिफ़ैक्ट भंडार के साथ जुड़ा.</p>
+<p>पिछली मल्टीप्रोसेसिंग DAG (<code>DagScheduler</code>, <code>PipelineGraph</code>, <code>ArtifactManager</code>, <code>GenerationContext</code>,
+<code>WorkPiecePipelineStage</code>) हटा दी गई है. यह दस्तावेज़ केवल लाइव संरचना वर्णित करता है.</p>
+<!-- -->
+<h1>कोर अवधारणाएँ</h1>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pipeline-सार्वजनिक-मुखौटा">Pipeline (सार्वजनिक मुखौटा)<a href="#pipeline-सार्वजनिक-मुखौटा" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h2>
+<p><code>rayforge/pipeline/pipeline.py:40</code> — वह वर्ग जिससे एप्लिकेशन का बाकी हिस्सा बात करता है.
+<code>DocEditor</code>, <code>ViewManager</code>, UI विजेट, और परीक्षण कोड केवल <code>Pipeline</code> पर निर्भर होने चाहिए.
+<code>IntentController</code> और <code>IntentBuilder</code> मुखौटे के कार्यान्वयन विवरण हैं और बिना सूचना बदल सकते हैं.</p>
+<p><code>Pipeline</code> <code>ArtifactStore</code> एकीकरण का स्वामी है: वह अपने भीतरी <code>IntentController</code> द्वारा जारी किए गए
+कच्चे raygeo आउटपुटों को संदर्भ-गणित आर्टिफ़ैक्ट हैंडलों में अनुवादित करता है जिनका उपभोग UI और
+निर्यात पथ करते हैं, और वह सिग्नल/गुण सतह उजागर करता है जिसकी एप्लिकेशन का बाकी हिस्सा अपेक्षा करता
+है (व्यस्त अवस्था, रोकें/जारी रखें, पुनर्गणना, मशीन बदलाव).</p>
+<p>मुखौटे द्वारा अग्रेषित मुख्य सिग्नल:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>सिग्नल</th><th>अर्थ</th></tr></thead><tbody><tr><td><code>processing_state_changed</code></td><td>व्यस्त/निष्क्रिय संक्रमण</td></tr><tr><td><code>workpiece_artifact_ready</code></td><td>एक <code>WorkPieceArtifact</code> हैंडल प्रकाशित हुआ</td></tr><tr><td><code>job_generation_finished</code></td><td>एक <code>JobArtifact</code> हैंडल (G-code + ops + अनुमान) तैयार</td></tr><tr><td><code>job_time_updated</code></td><td>पुनर्निर्माण के दौरान संकुलित समय अनुमान बदला</td></tr><tr><td><code>data_stale</code></td><td>पुनर्निर्माण का अनुरोध हुआ लेकिन वर्तमान में रुका या मैन्युअल मोड</td></tr><tr><td><code>visual_chunk_available</code></td><td>वृद्धिशील UI अपडेट के लिए क्रमिक रास्टर खंड</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="intentcontroller">IntentController<a href="#intentcontroller" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h2>
+<p><code>rayforge/pipeline/intent_controller.py:108</code> — एक raygeo <code>Intent</code> और उसके चारों ओर के पुनर्निर्माण
+जीवनचक्र का स्वामी. वह उन्हीं बुलबुले वाले Doc सिग्नल सुनता है जिनका उपयोग विरासत पाइपलाइन करती थी
+(<code>descendant_updated</code>, <code>descendant_transform_changed</code>, <code>descendant_added</code>, <code>descendant_removed</code>,
+<code>job_assembly_invalidated</code>) और दस्तावेज़ बदलने पर हर बार एक raygeo <code>Intent</code> पुनर्निर्मित करता है.</p>
+<p>प्रत्येक डिबाउंस किए गए पुनर्निर्माण पर (200 ms <code>REBUILD_DEBOUNCE_MS</code>):</p>
+<ol>
+<li class=""><code>IntentBuilder</code> को वर्तमान <code>Doc</code> से <code>NodeRequest</code> ऑब्जेक्टों की एक ताज़ा सूची उत्पन्न करने के लिए
+कॉल किया जाता है.</li>
+<li class="">नई सूची <code>create_intent_from_nodes</code> द्वारा एक raygeo <code>Intent</code> में लिपटी जाती है.</li>
+<li class=""><code>Intent.update</code> <code>version_token</code> प्रति नोड का उपयोग करके पिछले इरादे को नए से भेद करता है और साझा
+raygeo <code>Pipeline</code> पर किसी भी पुराने कैश प्रविष्टि निष्कासित करता है.</li>
+<li class=""><code>dispatch=True</code> होने पर नया इरादा <code>run_intent</code> द्वारा भी निष्पादित होता है; <code>on_completed</code> कॉलबैक
+युग फ़िल्टर करता है (उन परिणामों को छोड़ते हुए जिनका <code>generation_id</code> नियंत्रक की वर्तमान पीढ़ी से
+पुराना है) और फिर साझा कार्य मैनेजर के माध्यम से एप्लिकेशन मुख्य थ्रेड पर एक DOM पुनः बाँधने का
+प्रबंधन करता है.</li>
+<li class=""><code>on_batch_progress</code> कॉलबैक <code>progress_changed</code> द्वारा श्रोताओं को संकुलित प्रगति अग्रेषित करता है
+(मुख्य थ्रेड पर प्रबंधित, ताकि सिग्नल हैंडलर कभी rayon कार्यकर्ता पर न चलें).</li>
+</ol>
+<p>नियंत्रक का <code>\_key_to_item</code> मैप (हर सफल <code>IntentBuilder.build</code> कॉल पर पुनर्निर्मित) <code>on_completed</code>
+युग-फ़िल्टर किए गए कॉलबैक को Doc दोबारा चलाए बिना आउटपुट उत्पत्ति <code>WorkPiece</code> या <code>Step</code> पर पुनः
+बाँधने देता है. नोड कुंजियाँ आकार द्वारा प्रेषित होती हैं:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>नोड कुंजी</th><th>पुनः बाँधा जाता है</th><th>जारी होने वाला सिग्नल</th></tr></thead><tbody><tr><td><code>workpiece:{wp_uid}:{step_uid}</code></td><td>स्वामी <code>WorkPiece</code></td><td><code>workpiece_artifact_ready</code></td></tr><tr><td><code>step:{step_uid}</code></td><td>स्वामी <code>Step</code></td><td><code>step_artifact_ready</code></td></tr><tr><td><code>job</code></td><td><code>Doc</code></td><td><code>job_aggregate_ready</code></td></tr><tr><td><code>job:encode</code></td><td><code>Doc</code></td><td><code>job_generation_finished</code></td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="intentbuilder">IntentBuilder<a href="#intentbuilder" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h2>
+<p><code>rayforge/pipeline/intent_builder.py:133</code> — एक <code>Doc</code> पर चलकर <strong>स्थिर कुंजियों</strong> और <strong>नियतात्मक
+संस्करण टोकनों</strong> वाली <code>NodeRequest</code> ऑब्जेक्टों की एक सपाट सूची उत्पन्न करता है. बिल्डर राज्यहीन है:
+<code>build</code> का प्रत्येक कॉल एक ताज़ा, स्वयं-पूर्ण सूची उत्पन्न करता है जिसे raygeo <code>Intent</code> में लपेटने
+के लिए उपयुक्त है.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stable-keys">स्थिर कुंजियाँ<a href="#stable-keys" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
+<ul>
+<li class=""><code>workpiece:{wp_uid}:{step_uid}</code> — प्रति वर्कपीस/स्टेप जोड़ी एक गणना नोड.</li>
+<li class=""><code>step:{step_uid}</code> — प्रति स्टेप एक संकुलित नोड जो वर्कपीस गणना आउटपुट जोड़ता है और प्रति-स्टेप
+ट्रांसफ़ॉर्मर लागू करता है.</li>
+<li class=""><code>job</code> — एक अंतिम संकुलित नोड जो सभी स्टेप आउटपुट को जॉब-स्तरीय मार्करों और मशीन पैरामीटरों के साथ
+जोड़ता है.</li>
+<li class=""><code>job:machinexform</code> — मशीन-रूपांतरण गणना नोड जो जॉब संकुल के विश्व-स्थान ops का उपभोग करके
+मशीन-स्थान ops उत्पन्न करता है (वक्र रैखिकीकरण, रोटरी अक्ष मैपिंग, विश्व→मशीन, WCS ऑफ़सेट,
+Z-फ़्लिप, AXIS_REPLACEMENT).</li>
+<li class=""><code>job:encode</code> — एन्कोडर गणना नोड जो मशीन-रूपांतरण नोड के ops का उपभोग करके मशीन कोड उत्पन्न करता है
+(G-code / vertex / टेक्स्चर).</li>
+</ul>
+<p>कुंजी फ़ॉर्मेट <code>intent_builder.py</code> में केंद्रीकृत हैं ताकि उत्पादक और <code>IntentController</code> पुनः बाँधने
+का मैप हमेशा सहमत रहें.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="version-tokens">संस्करण टोकन<a href="#version-tokens" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
+<p>raygeo का कैश केवल नोड कुंजी द्वारा कुंजीबद्ध है; <code>version_token</code> एकमात्र अमान्यीकरण सिग्नल है. टोकन
+उन इनपुटों के एक कैनोनिकल प्रतिनिधित्व के SHA-1 डाइजेस्ट हैं जो किसी नोड के आउटपुट को प्रभावित करते
+हैं (<code>_hash_int</code>, <code>intent_builder.py:1066</code> देखें):</p>
+<ul>
+<li class=""><strong>गणना टोकन</strong> हैश करते हैं
+<code>(geometry_revision, wp_size, step_params, assembler_params, per_workpiece_transformers)</code>. स्थिति-
+संवेदी ट्रांसफ़ॉर्मर घोषित करने वाले स्टेप स्कोपों के लिए (<code>Step.is_position_sensitive</code> देखें),
+वर्कपीस का <code>transform_revision</code> और स्टॉक संशोधन टोकन में जुड़ते हैं; अन्यथा उन्हें छोड़ दिया जाता
+है ताकि शुद्ध गतियाँ वर्कपीस गणना परिणाम अमान्य न करें.</li>
+<li class=""><strong>स्टेप संकुल टोकन</strong> हैश करते हैं
+<code>(अपस्ट्रीम गणना टोकन, स्थापनाएँ, step_params, प्रति-स्टेप/प्रति-वर्कपीस ट्रांसफ़ॉर्मर, position_sensitive())</code>,
+साथ में <code>stock_rev</code> जब स्टेप स्थिति-संवेदी हो.</li>
+<li class=""><strong>जॉब टोकन</strong> सभी प्रति-स्टेप संकुल टोकन जोड़ता है ताकि कोई भी अपस्ट्रीम बदलाव (वर्कपीस गति,
+ट्रांसफ़ॉर्मर संपादन, स्टेप पैरामीटर बदलाव) जॉब/एन्कोड कैश तक फैले.</li>
+<li class=""><strong>मशीन-रूपांतरण टोकन</strong> जॉब टोकन और मशीन पहचान जोड़ता है (<code>supports_curves</code>, <code>reverse_z_axis</code>, WCS
+कॉन्फ़िग, प्रति लेयर रोटरी मॉड्यूल कॉन्फ़िग).</li>
+<li class=""><strong>एन्कोड टोकन</strong> मशीन-रूपांतरण टोकन और एन्कोडर पहचान जोड़ता है (<code>driver_name</code>, <code>gcode_precision</code>,
+अक्ष विस्तार, ...).</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stage-construction">चरण निर्माण<a href="#stage-construction" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
+<p>प्रत्येक <code>NodeRequest</code> एक <code>StageSpec</code> ले जाता है जो वर्णित करता है कि raygeo उस नोड के लिए कौन सा
+काम करे. बिल्डर उत्पन्न करता है:</p>
+<ul>
+<li class="">प्रत्येक वर्कपीस/स्टेप जोड़ी के लिए <code>StageSpec.Compute</code>
+<code>Step.build_compute_payload(machine_defaults, workpiece)</code> के माध्यम से, जो एक <code>Part</code> (वेक्टर
+ज्यामिति या छवि स्रोत) और एक <code>ComputePayload</code> (एसेंबलर विनिर्देश) लौटाता है. प्रति-वर्कपीस
+ट्रांसफ़ॉर्मर (<code>OverscanTransformer</code>, <code>BidirScanOffsetTransformer</code>, ...) <code>transformer_registry</code>
+द्वारा टाइप किए गए Rust <code>*Spec</code> pyclass में हल किए जाते हैं और पेलोड से जुड़ते हैं ताकि Rust गणना
+चरण उन्हें असेंबली के बाद लागू करे.</li>
+<li class="">प्रत्येक स्टेप के लिए <code>StageSpec.Aggregate</code>: प्रत्येक अपस्ट्रीम वर्कपीस गणना नोड के लिए एक
+<code>AggregateGroup</code>, <code>WorkpieceStart</code> / <code>WorkpieceEnd</code> मार्करों से लिपटा, जिसमें प्रत्येक इनपुट
+वर्कपीस की विश्व स्थापना मैट्रिक्स और भौतिक आकार को <code>target_dimensions</code> के रूप में ले जाता है.
+प्रति-स्टेप ट्रांसफ़ॉर्मर (<code>MultiPassTransformer</code>, <code>Optimize</code>, ...) <code>AggregateSpec.transformers</code>
+से जुड़ते हैं ताकि Rust संकुल चरण उन्हें संयोजन के बाद लागू करे. संकुल का समय अनुमान सही हो, इसके
+लिए <code>MachineParams</code> हल की गई मशीन से भरा जाता है.</li>
+<li class=""><code>job</code> नोड के लिए <code>StageSpec.Aggregate</code>: <code>LayerStart</code> / <code>LayerEnd</code> मार्करों से लिपटी प्रति लेयर एक
+<code>AggregateGroup</code>, जिसमें प्रति दिखाई देने वाला स्टेप एक <code>AggregateInput</code> हो; पूरा संकुल <code>JobStart</code>
+/ <code>JobEnd</code> से लिपटा होता है.</li>
+<li class=""><code>job:machinexform</code> के लिए <code>MachineTransformSpec</code>: विश्व→मशीन 4×4 मैट्रिक्स, डिफ़ॉल्ट और प्रति-लेयर
+WCS ऑफ़सेट, प्रति-लेयर <code>RotaryMappingSpec</code> प्रविष्टियाँ, वक्र-रैखिकीकरण ध्वज, और Z-उलट ध्वज, एक
+क्रमबद्ध योग्य विनिर्देश में पैक किए गए जिसका उपभोग Rust <code>MachineTransformCompute</code> चरण करता है.</li>
+<li class=""><code>job:encode</code> के लिए <code>EncodeSpec</code>: Grbl मशीनों को नेटिव Rust <code>GcodeSpec</code> की ओर मार्गदर्शित करता है
+(GIL को पार किए बिना सीधे rayon थ्रेड पर कंपाइल) और हर अन्य मशीन को ड्राइवर-विशिष्ट एन्कोडर
+callable लपेटने वाले एक <code>PythonEncoder</code> की ओर. एन्कोडर अपस्ट्रीम <code>job:machinexform</code> नोड से
+मशीन-स्थान ops पढ़ता है.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="स्टॉक-हल">स्टॉक हल<a href="#स्टॉक-हल" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
+<p><code>_resolve_stock_geometries</code> (प्रति <code>build</code> एक बार कॉल और बिल्डर पर कैश) वे विश्व-स्थान स्टॉक सीमा
+ज्यामिति लौटाता है जिनका उपयोग <code>CropTransformer</code> जैसे ट्रांसफ़ॉर्मर प्रति-वर्कपीस ops को मशीन के
+कार्य क्षेत्र या स्पष्ट <code>StockItem</code> तक काटने के लिए करते हैं. Doc-स्वामित्व <code>StockItem</code> प्रविष्टियाँ
+प्राथमिकता लेती हैं; मशीन कार्यक्षेत्र आयत केवल तब फ़ॉलबैक के रूप में उपयोग होता है जब कोई doc स्टॉक
+मौजूद न हो.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="raygeo-पाइपलाइन-और-run_intent">raygeo पाइपलाइन और <code>run_intent</code><a href="#raygeo-पाइपलाइन-और-run_intent" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h2>
+<p>raygeo की <code>Pipeline</code> (<code>raygeo.pipeline.execute.Pipeline</code>) उस कैश का स्वामी है जिसे <code>Intent.update</code>
+निष्कासित करता है. <code>run_intent</code> इरादे के नोड GIL के अंतर्गत rayon कार्यकर्ता थ्रेडों पर निर्धारित
+करता है और प्रति नोड <code>on_completed</code> कॉलबैक और संकुल प्रगति के लिए <code>on_batch_progress</code> लागू करता है.
+भारी कार्य (गणना, रास्टर, संकुलन, मशीन रूपांतरण, एन्कोडिंग) सबप्रोसेस के बजाय raygeo थ्रेडों में
+चलता है, जो CHANGELOG 1.9.0 में उल्लिखित मुख्य बदलाव है.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="artifactstore-और-आर्टिफ़ैक्ट-हैंडल">ArtifactStore और आर्टिफ़ैक्ट हैंडल<a href="#artifactstore-और-आर्टिफ़ैक्ट-हैंडल" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h2>
+<p>विरासत साझा-मेमोरी <code>ArtifactStore</code> को एक प्रक्रिया-भीतरी, संदर्भ-गणित भंडार
+(<code>rayforge/pipeline/artifact/store.py:29</code>) द्वारा बदल दिया गया है. सभी आर्टिफ़ैक्ट एक UUID द्वारा
+कुंजीबद्ध शब्दकोश में सादे Python ऑब्जेक्टों के रूप में रहते हैं; हैंडल अपने <code>key</code> फ़ील्ड में UUID
+रखते हैं साथ में कोई भी मेटाडेटा जिसकी आर्टिफ़ैक्ट प्रकार को आवश्यकता है. जीवनचक्र संदर्भ गणना के
+माध्यम से <code>ArtifactStore.retain</code> / <code>release</code> द्वारा प्रबंधित होता है.</p>
+<p><code>Pipeline</code> मुखौटा raygeo आउटपुटों को मुख्य थ्रेड पर आर्टिफ़ैक्ट हैंडलों में अनुवादित करता है:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>आउटपुट (raygeo)</th><th>आर्टिफ़ैक्ट</th><th>टैग के अंतर्गत संग्रहीत</th></tr></thead><tbody><tr><td>प्रति वर्कपीस-स्टेप ops</td><td><code>WorkPieceArtifact</code></td><td><code>wp</code></td></tr><tr><td>प्रति स्टेप संकुलित ops</td><td><code>StepOpsArtifact</code></td><td><code>step</code></td></tr><tr><td>जॉब संकुल + एन्कोड</td><td><code>JobArtifact</code></td><td><code>job</code></td></tr></tbody></table>
+<p><code>JobArtifact</code> विश्व-स्थान <code>Ops</code>, कुल दूरी, समय अनुमान, <code>EncodedOutput</code> (टेक्स्ट और op→मशीन-कोड मैप),
+और — जब रोटरी मॉड्यूल कॉन्फ़िगर हों — 3D पूर्वावलोकन के लिए गतिकीय रूप से मैप किए गए ops ले जाता है.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="जनरेशन-id-और-युग-फ़िल्टरिंग">जनरेशन ID और युग फ़िल्टरिंग<a href="#जनरेशन-id-और-युग-फ़िल्टरिंग" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h2>
+<p>प्रत्येक पुनर्निर्माण <code>IntentController.generation_id</code> बढ़ाता है. प्रत्येक पूर्ण नोड वह पीढ़ी ले
+जाता है जिससे वह उत्पन्न हुआ. <code>on_completed</code> कॉलबैक नोड के <code>generation_id</code> की तुलना नियंत्रक की
+वर्तमान पीढ़ी से करता है और अधिगृहीत परिणाम चुपचाप छोड़ देता है, इसलिए किसी पिछले पुनर्निर्माण के
+पुराने आउटपुट कभी DOM से फिर नहीं जुड़ते.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="रोकें-जारी-रखें-और-मैन्युअल-मोड">रोकें, जारी रखें और मैन्युअल मोड<a href="#रोकें-जारी-रखें-और-मैन्युअल-मोड" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h2>
+<ul>
+<li class=""><code>Pipeline.pause()</code> / <code>resume()</code> नियंत्रक पर एक रोक काउंटर बढ़ाते/घटाते हैं. रुके होने पर, doc
+बदलाव <code>data_stale</code> ध्वज सेट करते हैं (और <code>data_stale</code> जारी करते हैं) पुनर्निर्माण निर्धारित करने
+के बजाय; जारी रखने पर ध्वज साफ़ होता है और <code>auto_rebuild</code> सक्षम होने पर एक पुनर्निर्माण निर्धारित
+होता है.</li>
+<li class=""><code>Pipeline.auto_pipeline=False</code> (मैन्युअल मोड): पुनर्गणना हर doc बदलाव पर स्वतः होने के बजाय स्पष्ट
+रूप से <code>Pipeline.recalculate()</code> द्वारा ट्रिगर होती है.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="अमान्यीकरण-रणनीति">अमान्यीकरण रणनीति<a href="#अमान्यीकरण-रणनीति" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h2>
+<p>अमान्यीकरण अंतर्निहित और टोकन-संचालित है: कोई भी बदलाव जो किसी नोड के इनपुटों को प्रभावित करता है,
+बिल्डर को उस नोड की कुंजी के लिए एक भिन्न <code>version_token</code> उत्पन्न करने का कारण बनता है.
+<code>Intent.update</code> पुरानी कैश प्रविष्टि निष्कासित करता है और raygeo केवल उसी नोड (और उसके डाउनस्ट्रीम
+उपभोक्ताओं) को फिर से निष्पादित करता है.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>बदलाव प्रकार</th><th>टोकन पर प्रभाव</th></tr></thead><tbody><tr><td>ज्यामिति / पैरामीटर</td><td>नए वर्कपीस गणना टोकन स्टेप, जॉब, machinexform, एन्कोड तक कैस्केड होते हैं</td></tr><tr><td>स्थिति / घूर्णन</td><td>वर्कपीस गणना टोकन अपरिवर्तित जब तक स्टेप स्थिति-संवेदी न हो; स्टेप संकुल टोकन जुड़ी स्थापनाओं के कारण हमेशा बदलते हैं, जो जॉब/एन्कोड तक कैस्केड होता है</td></tr><tr><td>आकार बदलाव</td><td>ज्यामिति जैसा ही: टोकन वर्कपीस-स्टेप जोड़ियों से ऊपर कैस्केड होते हैं</td></tr><tr><td>स्टॉक आइटम दिखाई दें/खिसकें/जुड़ें</td><td><code>stock_rev</code> को प्रभावित करता है (स्थिति-संवेदी स्टेपों के गणना और संकुल टोकन में जुड़ा)</td></tr><tr><td>मशीन कॉन्फ़िग</td><td><code>job:machinexform</code> और <code>job:encode</code> टोकन सभी बदलते हैं; स्टेप गणना/संकुल टोकन बदलते हैं यदि <code>kerf_mm</code> / <code>cut_speed</code> / लेज़र हेड / चाप सहनशीलता / supports_curves / supports_arcs बदलते हैं</td></tr></tbody></table>
+<h1>विस्तृत विभाजन</h1>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="इनपुट">इनपुट<a href="#इनपुट" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h2>
+<p>प्रक्रिया <strong>Doc मॉडल</strong> से शुरू होती है, जिसमें है:</p>
+<ul>
+<li class=""><strong>वर्कपीस:</strong> कैनवस पर रखे व्यक्तिगत डिज़ाइन तत्व (SVG, छवियाँ)</li>
+<li class=""><strong>स्टेप:</strong> सेटिंग्स के साथ प्रोसेसिंग निर्देश (Contour, Raster आदि), एक प्रति-लेयर <code>Workflow</code> में
+व्यवस्थित</li>
+<li class=""><strong>लेयरें:</strong> वर्कपीस का समूहन, प्रत्येक का अपना वर्कफ़्लो, WCS और रोटरी कॉन्फ़िग</li>
+<li class=""><strong>StockItem:</strong> वैकल्पिक स्पष्ट स्टॉक सीमाएँ जिनका उपयोग स्थिति-संवेदी ट्रांसफ़ॉर्मर करते हैं (जैसे
+CropTransformer)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="python-समन्वयक">Python समन्वयक<a href="#python-समन्वयक" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pipeline-मुखौटा">Pipeline (मुखौटा)<a href="#pipeline-मुखौटा" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
+<p><code>Pipeline</code> वर्ग:</p>
+<ul>
+<li class="">सिग्नल द्वारा Doc मॉडल को बदलावों के लिए सुनता है (<code>IntentController</code> के माध्यम से अग्रेषित)</li>
+<li class="">बदलावों को <strong>डिबाउंस</strong> करता है (200 ms समाधान विलंब)</li>
+<li class="">पुनर्जनन ट्रिगर करने के लिए <code>IntentController</code> के साथ समन्वय करता है</li>
+<li class="">समग्र प्रोसेसिंग अवस्था और व्यस्तता पहचान प्रबंधित करता है</li>
+<li class="">बैच ऑपरेशनों के लिए <strong>रोकें/जारी रखें</strong> का समर्थन करता है</li>
+<li class=""><strong>मैन्युअल मोड</strong> (<code>auto_pipeline=False</code>) का समर्थन करता है जहाँ पुनर्गणना स्पष्ट रूप से ट्रिगर
+होती है</li>
+<li class="">घटकों के बीच सिग्नल जोड़ता और उपभोक्ताओं को अग्रेषित करता है</li>
+<li class="">संदर्भ-गणित आर्टिफ़ैक्ट हैंडल <code>ArtifactStore</code> में प्रकाशित करता है</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="intentcontroller-1">IntentController<a href="#intentcontroller-1" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
+<p><code>IntentController</code>:</p>
+<ul>
+<li class="">एक raygeo <code>Intent</code> और उसके चारों ओर के पुनर्निर्माण जीवनचक्र का स्वामी है</li>
+<li class="">हर डिबाउंस किए गए doc बदलाव पर एक ताज़ा इरादा पुनर्निर्मित करता है</li>
+<li class=""><code>dispatch=True</code> होने पर इरादे को <code>run_intent</code> द्वारा निष्पादित करता है</li>
+<li class="">अधिगृहीत परिणाम <code>generation_id</code> द्वारा फ़िल्टर करता है (युग फ़िल्टर)</li>
+<li class="">साझा कार्य मैनेजर के माध्यम से DOM पुनः बाँधने को मुख्य थ्रेड पर प्रबंधित करता है</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="intentbuilder-1">IntentBuilder<a href="#intentbuilder-1" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
+<p><code>IntentBuilder</code> राज्यहीन है; प्रत्येक <code>build</code> कॉल <code>Doc</code> पर चलकर प्रति वर्कपीस/स्टेप जोड़ी एक
+<code>NodeRequest</code>, प्रति स्टेप एक संकुल, और <code>job</code>, <code>job:machinexform</code>, और <code>job:encode</code> नोड उत्पन्न करती
+है. ऊपर <a href="#stable-keys" class="">स्थिर कुंजियाँ</a>, <a href="#version-tokens" class="">संस्करण टोकन</a>, और
+<a href="#stage-construction" class="">चरण निर्माण</a> देखें.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="raygeo-पाइपलाइन">raygeo पाइपलाइन<a href="#raygeo-पाइपलाइन" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h2>
+<p><code>run_intent</code> नोड निष्पादन GIL के अंतर्गत rayon कार्यकर्ता थ्रेडों पर निर्धारित करता है. साझा
+<code>RaygeoPipeline</code> इंस्टेंस नोड कुंजी द्वारा कुंजीबद्ध नोड कैश रखता है; <code>Intent.update</code> एकमात्र
+अमान्यीकरण प्रवेश बिंदु है. गणना, रास्टर, श्रिंकरैप, वेवफ़्रंट, कॉन्टूर, दृश्य रेंडरिंग, और
+मशीन-रूपांतरण/एन्कोडिंग सभी raygeo थ्रेडों में चलते हैं.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="आर्टिफ़ैक्ट-जनरेशन">आर्टिफ़ैक्ट जनरेशन<a href="#आर्टिफ़ैक्ट-जनरेशन" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="workpieceartifacts">WorkPieceArtifacts<a href="#workpieceartifacts" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
+<p>प्रत्येक <code>(WorkPiece, Step)</code> संयोजन के लिए जनरेट होते हैं. इनमें है:</p>
+<ul>
+<li class="">वर्कपीस की स्थानीय निर्देशांक प्रणाली में टूलपाथ (<code>Ops</code>)</li>
+<li class="">रेज़ोल्यूशन-स्वतंत्र ops के लिए स्केल योग्यता ध्वज और स्रोत विमाएँ</li>
+<li class="">जनरेशन ID</li>
+</ul>
+<p>बड़े रास्टर वर्कपीस खंडों में क्रमिक रूप से प्रोसेस होते हैं (<code>visual_chunk_available</code> द्वारा
+अग्रेषित), जिससे जनरेशन के दौरान क्रमिक दृश्य प्रतिक्रिया संभव होती है.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stepopsartifacts">StepOpsArtifacts<a href="#stepopsartifacts" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
+<p>प्रत्येक स्टेप के लिए जनरेट होते हैं, सभी संबंधित WorkPieceArtifacts का उपभोग करते हुए:</p>
+<ul>
+<li class="">विश्व-स्थान निर्देशांकों में सभी वर्कपीस के लिए संयुक्त <code>Ops</code></li>
+<li class="">लागू प्रति-स्टेप ट्रांसफ़ॉर्मर (<code>Optimize</code>, <code>MultiPass</code>, ...)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="jobartifact">JobArtifact<a href="#jobartifact" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
+<p>जब G-code चाहिए तब जनरेट होता है, <code>job</code> संकुल और <code>job:encode</code> नोड का उपभोग करते हुए:</p>
+<ul>
+<li class="">अंतिम मशीन कोड (G-code या ड्राइवर-विशिष्ट फ़ॉर्मेट) <code>EncodedOutput</code> द्वारा (टेक्स्ट + op→मशीन-कोड
+मैप)</li>
+<li class="">सिमुलेशन और प्लेबैक के लिए विश्व-स्थान <code>Ops</code></li>
+<li class="">उच्च-निष्ठा समय अनुमान और कुल दूरी</li>
+<li class="">रोटरी मॉड्यूल कॉन्फ़िगर होने पर 3D पूर्वावलोकन के लिए रोटरी-मैप किए गए ops</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2d-दृश्य-स्तर-पृथक">2D दृश्य स्तर (पृथक)<a href="#2d-दृश्य-स्तर-पृथक" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h2>
+<p><code>ViewManager</code> डेटा पाइपलाइन से पृथक है. वह UI अवस्था के आधार पर 2D कैनवस के लिए रेंडरिंग संभालता है.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rendercontext">RenderContext<a href="#rendercontext" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
+<p>वर्तमान दृश्य पैरामीटर रखता है (प्रति मिलीमीटर पिक्सेल, व्यूपोर्ट ऑफ़सेट, प्रदर्शन विकल्प).</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="workpieceviewartifacts">WorkPieceViewArtifacts<a href="#workpieceviewartifacts" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
+<p><code>ViewManager</code> <code>WorkPieceViewArtifacts</code> बनाता है जो <code>WorkPieceArtifacts</code> को स्क्रीन स्थान में
+रास्टराइज़ करते हैं, वर्तमान <code>RenderContext</code> लागू करते हैं, और संदर्भ या स्रोत बदलने पर कैश और अपडेट
+होते हैं. पुनः रेंडरिंग थ्रॉटल की जाती है (33 ms अंतराल) और समवर्तिता-सीमित है; क्रमिक खंड सिलाई
+वृद्धिशील दृश्य अपडेट देती है. <code>ViewManager</code> दृश्यों को <code>(workpiece_uid, step_uid)</code> द्वारा अनुक्रमित
+करता है ताकि कई स्टेपों में वर्कपीस की मध्यवर्ती अवस्थाएँ विज़ुअलाइज़ की जा सकें.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3d--सिमुलेटर-स्तर-पृथक">3D / सिमुलेटर स्तर (पृथक)<a href="#3d--सिमुलेटर-स्तर-पृथक" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h2>
+<p>3D विज़ुअलाइज़ेशन और सिमुलेशन प्रणाली डेटा पाइपलाइन से पृथक है, <code>ViewManager</code> जैसे समान पैटर्न का
+पालन करते हुए. इसमें शामिल है:</p>
+<ul>
+<li class="">एक <strong>दृश्य कंपाइलर</strong> जो <code>JobArtifact</code> ops को GPU-तैयार वर्टेक्स डेटा में बदलने के लिए सबप्रोसेस
+में चलता है</li>
+<li class="">एक <strong>OpPlayer</strong> जो प्लेबैक नियंत्रणों के साथ वास्तविक समय की मशीन सिमुलेशन के लिए जॉब के ops पुनः
+चलाता है</li>
+</ul>
+<p>दोनों पाइपलाइन द्वारा उत्पन्न <code>JobArtifact</code> का उपभोग करते हैं.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="compiledsceneartifact">CompiledSceneArtifact<a href="#compiledsceneartifact" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
+<p>दृश्य कंपाइलर एक <code>CompiledSceneArtifact</code> उत्पन्न करता है जिसमें है:</p>
+<ul>
+<li class=""><strong>वर्टेक्स स्तर:</strong> क्रमिक प्रकट के लिए प्रति-कमांड ऑफ़सेट के साथ शक्ति/ट्रैवल/शून्य-शक्ति वर्टेक्स
+बफ़र</li>
+<li class=""><strong>टेक्स्चर स्तर:</strong> उत्कीर्णन पूर्वावलोकन के लिए रास्टराइज़्ड स्कैनलाइन शक्ति मैप</li>
+<li class=""><strong>ओवरले स्तर:</strong> वास्तविक समय हाइलाइट के लिए स्कैनलाइन शक्ति खंड</li>
+<li class="">रोटरी (बेलन-लिपटी) ज्यामिति के लिए समर्थन</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="कंपाइलेशन-पाइपलाइन">कंपाइलेशन पाइपलाइन<a href="#कंपाइलेशन-पाइपलाइन" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
+<ol>
+<li class="">Canvas3D <code>job_generation_finished</code> सिग्नल के लिए सुनता है</li>
+<li class="">नया जॉब तैयार होने पर, वह दृश्य कंपाइलेशन सबप्रोसेस में निर्धारित करता है</li>
+<li class="">सबप्रोसेस भंडार से <code>JobArtifact</code> पढ़ता है और ops को GPU वर्टेक्स डेटा में कंपाइल करता है</li>
+<li class="">कंपाइल किया गया दृश्य वापस अपनाया जाता है और GPU रेंडररों पर अपलोड होता है</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="opplayer-सिमुलेटर-बैकएंड">OpPlayer (सिमुलेटर बैकएंड)<a href="#opplayer-सिमुलेटर-बैकएंड" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
+<p><code>OpPlayer</code> जॉब के ops को कमांड-दर-कमांड पार करता है, एक <code>MachineState</code> बनाए रखते हुए जो स्थिति,
+लेज़र अवस्था, और सहायक अक्ष ट्रैक करता है. यह 3D कैनवस प्लेबैक (टूलपाथ का क्रमिक प्रकट), मशीन हेड
+स्थिति और लेज़र बीम विज़ुअलाइज़ेशन, और प्लेबैक स्लाइडर के लिए प्रति-कमांड स्टेपिंग संचालित करता है.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="उपभोक्ता">उपभोक्ता<a href="#उपभोक्ता" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>उपभोक्ता</th><th>उपयोग करता है</th><th>उद्देश्य</th></tr></thead><tbody><tr><td>2D कैनवस</td><td>WorkPieceViewArtifacts</td><td>वर्कपीस स्क्रीन स्थान में रेंडर करता है</td></tr><tr><td>3D कैनवस</td><td>CompiledSceneArtifact</td><td>पूर्ण जॉब प्लेबैक के साथ 3D में रेंडर करता है</td></tr><tr><td>मशीन</td><td>JobArtifact (मशीन कोड)</td><td>विनिर्माण आउटपुट</td></tr></tbody></table>
+<h1>मुख्य संरचनात्मक निर्णय</h1>
+<ol>
+<li class="">
+<p><strong>इरादा-आधारित निर्धारण:</strong> Python-निवासी निर्धारकों वाली स्पष्ट Python DAG के बजाय, पाइपलाइन
+घोषणा करती है कि <em>क्या</em> गणना करनी है (स्थिर कुंजियों और संस्करण टोकनों वाले <code>NodeRequest</code> का एक
+<code>Intent</code>) और raygeo के <code>run_intent</code> को rayon थ्रेडों पर कार्य निर्धारित करने देती है. कैश
+अमान्यीकरण पूरी तरह <code>Intent.update</code> द्वारा टोकन-संचालित है.</p>
+</li>
+<li class="">
+<p><strong>मुखौटा + भीतरी नियंत्रक:</strong> <code>Pipeline</code> एकमात्र सार्वजनिक सतह है; <code>IntentController</code> और
+<code>IntentBuilder</code> कार्यान्वयन विवरण हैं. इससे सार्वजनिक सिग्नल/गुण अनुबंध स्थिर रहता है जबकि
+समन्वयन भीतरी भाग विकसित हो सकते हैं.</p>
+</li>
+<li class="">
+<p><strong>प्रक्रिया-भीतरी आर्टिफ़ैक्ट भंडार:</strong> मल्टीप्रोसेसिंग साझा-मेमोरी भंडार को एक संदर्भ-गणित
+प्रक्रिया-भीतरी शब्दकोश से बदलने से IPC और स्वामित्व-हस्तांतरण जटिलता हट जाती है जबकि
+हैंडल/जीवनचक्र अनुबंध बना रहता है जिस पर UI और निर्यात पथ निर्भर करते हैं.</p>
+</li>
+<li class="">
+<p><strong>जनरेशन ID:</strong> प्रत्येक पुनर्निर्माण एक जनरेशन ID बढ़ाता है; प्रत्येक पूर्ण नोड अपनी उत्पत्ति
+पीढ़ी ले जाता है. <code>on_completed</code> युग फ़िल्टर अधिगृहीत परिणाम चुपचाप छोड़ देता है, इसलिए पुराने
+आउटपुट कभी DOM से फिर नहीं जुड़ते.</p>
+</li>
+<li class="">
+<p><strong>मुख्य-थ्रेड पुनः बाँधना:</strong> raygeo कॉलबैक (<code>on_completed</code>, <code>on_batch_progress</code>) GIL के अंतर्गत
+rayon कार्यकर्ता थ्रेडों पर चलते हैं; नियंत्रक हर DOM-छूने वाले कॉलबैक को साझा कार्य मैनेजर के
+माध्यम से एप्लिकेशन मुख्य थ्रेड पर प्रबंधित करता है, इसलिए सिग्नल हैंडलर कभी कार्यकर्ता पर नहीं
+चलते.</p>
+</li>
+<li class="">
+<p><strong>दृश्य स्तर पृथक्करण:</strong> 2D कैनवस (<code>ViewManager</code>) और 3D कैनवस (दृश्य कंपाइलर / OpPlayer) दोनों
+डेटा पाइपलाइन से पृथक हैं. प्रत्येक पाइपलाइन सिग्नलों द्वारा संचालित होता है, इरादे का भाग होने
+के बजाय.</p>
+</li>
+<li class="">
+<p><strong>टोकन-संचालित अमान्यीकरण:</strong> कोई स्पष्ट अमान्यीकरण तालिका नहीं है. बिल्डर कैनोनिकल SHA-1 संस्करण
+टोकन उत्पन्न करता है; कोई भी इनपुट बदलाव एक भिन्न टोकन उत्पन्न करता है, जिसका उपयोग
+<code>Intent.update</code> ठीक प्रभावित कैश प्रविष्टियाँ निष्कासित करने के लिए करता है.</p>
+</li>
+<li class="">
+<p><strong>डिबाउंस किया गया समाधान:</strong> तीव्र संपादनों के दौरान अत्यधिक पाइपलाइन चक्रों से बचने के लिए doc
+बदलावों को 200 ms डिबाउंस (<code>REBUILD_DEBOUNCE_MS</code>) के साथ बैच किया जाता है.</p>
+</li>
+</ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/developer/pipeline.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>यह पृष्ठ संपादित करें</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="दस्तावेज़ नेविगेशन"><a class="pagination-nav__link pagination-nav__link--prev" href="/hi/docs/developer/importer"><div class="pagination-nav__sublabel">पिछला</div><div class="pagination-nav__label">आयातक संरचना</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/hi/docs/developer/tasker"><div class="pagination-nav__sublabel">अगला</div><div class="pagination-nav__label">टास्कर: पृष्ठभूमि कार्य प्रबंधन</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#pipeline-सार्वजनिक-मुखौटा" class="table-of-contents__link toc-highlight">Pipeline (सार्वजनिक मुखौटा)</a></li><li><a href="#intentcontroller" class="table-of-contents__link toc-highlight">IntentController</a></li><li><a href="#intentbuilder" class="table-of-contents__link toc-highlight">IntentBuilder</a><ul><li><a href="#stable-keys" class="table-of-contents__link toc-highlight">स्थिर कुंजियाँ</a></li><li><a href="#version-tokens" class="table-of-contents__link toc-highlight">संस्करण टोकन</a></li><li><a href="#stage-construction" class="table-of-contents__link toc-highlight">चरण निर्माण</a></li><li><a href="#स्टॉक-हल" class="table-of-contents__link toc-highlight">स्टॉक हल</a></li></ul></li><li><a href="#raygeo-पाइपलाइन-और-run_intent" class="table-of-contents__link toc-highlight">raygeo पाइपलाइन और <code>run_intent</code></a></li><li><a href="#artifactstore-और-आर्टिफ़ैक्ट-हैंडल" class="table-of-contents__link toc-highlight">ArtifactStore और आर्टिफ़ैक्ट हैंडल</a></li><li><a href="#जनरेशन-id-और-युग-फ़िल्टरिंग" class="table-of-contents__link toc-highlight">जनरेशन ID और युग फ़िल्टरिंग</a></li><li><a href="#रोकें-जारी-रखें-और-मैन्युअल-मोड" class="table-of-contents__link toc-highlight">रोकें, जारी रखें और मैन्युअल मोड</a></li><li><a href="#अमान्यीकरण-रणनीति" class="table-of-contents__link toc-highlight">अमान्यीकरण रणनीति</a></li><li><a href="#इनपुट" class="table-of-contents__link toc-highlight">इनपुट</a></li><li><a href="#python-समन्वयक" class="table-of-contents__link toc-highlight">Python समन्वयक</a><ul><li><a href="#pipeline-मुखौटा" class="table-of-contents__link toc-highlight">Pipeline (मुखौटा)</a></li><li><a href="#intentcontroller-1" class="table-of-contents__link toc-highlight">IntentController</a></li><li><a href="#intentbuilder-1" class="table-of-contents__link toc-highlight">IntentBuilder</a></li></ul></li><li><a href="#raygeo-पाइपलाइन" class="table-of-contents__link toc-highlight">raygeo पाइपलाइन</a></li><li><a href="#आर्टिफ़ैक्ट-जनरेशन" class="table-of-contents__link toc-highlight">आर्टिफ़ैक्ट जनरेशन</a><ul><li><a href="#workpieceartifacts" class="table-of-contents__link toc-highlight">WorkPieceArtifacts</a></li><li><a href="#stepopsartifacts" class="table-of-contents__link toc-highlight">StepOpsArtifacts</a></li><li><a href="#jobartifact" class="table-of-contents__link toc-highlight">JobArtifact</a></li></ul></li><li><a href="#2d-दृश्य-स्तर-पृथक" class="table-of-contents__link toc-highlight">2D दृश्य स्तर (पृथक)</a><ul><li><a href="#rendercontext" class="table-of-contents__link toc-highlight">RenderContext</a></li><li><a href="#workpieceviewartifacts" class="table-of-contents__link toc-highlight">WorkPieceViewArtifacts</a></li></ul></li><li><a href="#3d--सिमुलेटर-स्तर-पृथक" class="table-of-contents__link toc-highlight">3D / सिमुलेटर स्तर (पृथक)</a><ul><li><a href="#compiledsceneartifact" class="table-of-contents__link toc-highlight">CompiledSceneArtifact</a></li><li><a href="#कंपाइलेशन-पाइपलाइन" class="table-of-contents__link toc-highlight">कंपाइलेशन पाइपलाइन</a></li><li><a href="#opplayer-सिमुलेटर-बैकएंड" class="table-of-contents__link toc-highlight">OpPlayer (सिमुलेटर बैकएंड)</a></li></ul></li><li><a href="#उपभोक्ता" class="table-of-contents__link toc-highlight">उपभोक्ता</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</body>
+</html>

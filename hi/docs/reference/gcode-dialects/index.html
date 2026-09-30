@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="hi" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-reference/gcode-dialects" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">G-code डायलेक्ट समर्थन | Rayforge</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" property="og:url" content="https://rayforge.org/hi/docs/reference/gcode-dialects"><meta data-rh="true" property="og:locale" content="hi"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="pt_BR"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="de"><meta data-rh="true" property="og:locale:alternate" content="zh_CN"><meta data-rh="true" property="og:locale:alternate" content="uk"><meta data-rh="true" name="docusaurus_locale" content="hi"><meta data-rh="true" name="docsearch:language" content="hi"><meta data-rh="true" name="keywords" content="laser cutter software, laser engraving software, LightBurn alternative, free laser software, open source laser software, GRBL, laser cutting software, laser control software, G-code sender, Rayforge"><meta data-rh="true" name="author" content="Rayforge Contributors"><meta data-rh="true" name="robots" content="index, follow"><meta data-rh="true" property="og:type" content="website"><meta data-rh="true" property="og:site_name" content="Rayforge"><meta data-rh="true" property="og:image" content="https://rayforge.org/images/social.webp"><meta data-rh="true" property="og:image:width" content="1280"><meta data-rh="true" property="og:image:height" content="640"><meta data-rh="true" property="og:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" name="twitter:title" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="twitter:description" content="The complete creative studio for your laser cutter. Design, simulate, and control — with AI-powered tools, 3D preview, and a built-in sketcher."><meta data-rh="true" name="twitter:image" content="https://rayforge.org/images/social.webp"><meta data-rh="true" name="twitter:image:alt" content="Rayforge - Free Open Source Laser Cutter Software"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="G-code डायलेक्ट समर्थन | Rayforge"><meta data-rh="true" name="description" content="Rayforge द्वारा समर्थित G-code डायलेक्ट. भिन्न GRBL संस्करणों और Smoothieware-संगत लेज़र नियंत्रकों के लिए आउटपुट कॉन्फ़िगर करें."><meta data-rh="true" property="og:description" content="Rayforge द्वारा समर्थित G-code डायलेक्ट. भिन्न GRBL संस्करणों और Smoothieware-संगत लेज़र नियंत्रकों के लिए आउटपुट कॉन्फ़िगर करें."><link data-rh="true" rel="icon" href="/hi/images/favicon.png"><link data-rh="true" rel="canonical" href="https://rayforge.org/hi/docs/reference/gcode-dialects"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/reference/gcode-dialects" hreflang="en"><link data-rh="true" rel="alternate" href="https://rayforge.org/pt-BR/docs/reference/gcode-dialects" hreflang="pt-BR"><link data-rh="true" rel="alternate" href="https://rayforge.org/es/docs/reference/gcode-dialects" hreflang="es"><link data-rh="true" rel="alternate" href="https://rayforge.org/fr/docs/reference/gcode-dialects" hreflang="fr"><link data-rh="true" rel="alternate" href="https://rayforge.org/hi/docs/reference/gcode-dialects" hreflang="hi"><link data-rh="true" rel="alternate" href="https://rayforge.org/de/docs/reference/gcode-dialects" hreflang="de"><link data-rh="true" rel="alternate" href="https://rayforge.org/zh-CN/docs/reference/gcode-dialects" hreflang="zh-CN"><link data-rh="true" rel="alternate" href="https://rayforge.org/uk/docs/reference/gcode-dialects" hreflang="uk"><link data-rh="true" rel="alternate" href="https://rayforge.org/docs/reference/gcode-dialects" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"G-code डायलेक्ट समर्थन","item":"https://rayforge.org/hi/docs/reference/gcode-dialects"}]}</script><link rel="alternate" type="application/rss+xml" href="/hi/blog/rss.xml" title="Rayforge RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/hi/blog/atom.xml" title="Rayforge Atom Feed">
+
+
+
+
+
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rayforge","description":"Free open-source laser cutter software for GRBL-based machines. Design, simulate, and control your laser cutter or engraver with AI-powered tools, 3D preview, and a built-in sketcher.","url":"https://rayforge.org","applicationCategory":"DesignApplication","operatingSystem":"Linux, Windows, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"barebaric","url":"https://github.com/barebaric"},"screenshot":"https://rayforge.org/screenshots/main-standard.webp","featureList":"AI-powered design generation, 3D simulation and preview, Parametric 2D sketcher, GRBL and Smoothieware support, Rotary axis support, Material and recipe management, Path optimization, Multi-layer support, Camera calibration","license":"https://github.com/barebaric/rayforge/blob/main/LICENSE","programmingLanguage":"Python","installUrl":"https://rayforge.org/docs/getting-started/installation"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rayforge","url":"https://rayforge.org","logo":"https://rayforge.org/images/icon.svg","sameAs":["https://github.com/barebaric/rayforge","https://discord.gg/sTHNdTtpQJ"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
+<script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/hi/assets/css/styles.e1bebf49.css">
+<script src="/hi/assets/js/runtime~main.0f1696ec.js" defer="defer"></script>
+<script src="/hi/assets/js/main.418cbbb8.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/hi/images/icon.svg"><link rel="preload" as="image" href="https://c5.patreon.com/external/logo/become_a_patron_button.png"><div role="region" aria-label="मुख्य सामग्री पर जाएँ"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">मुख्य सामग्री पर जाएँ</a></div><nav aria-label="मुख्य नेविगेशन" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="नेविगेशन बार टॉगल करें" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/hi/"><div class="navbar__logo"><img src="/hi/images/icon.svg" alt="Rayforge लोगो" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/hi/images/icon.svg" alt="Rayforge लोगो" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Rayforge</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/hi/docs/getting-started/installation">दस्तावेज़ीकरण</a><a class="navbar__item navbar__link" href="/hi/resources/devices">डिवाइस</a><a class="navbar__item navbar__link" href="/hi/docs/developer/getting-started/">डेवलपर</a><a class="navbar__item navbar__link" href="/hi/contributing">योगदान</a><a class="navbar__item navbar__link" href="/hi/sponsor">प्रायोजक</a><a class="navbar__item navbar__link" href="/hi/blog">ब्लॉग</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>हिन्दी</a><ul class="dropdown__menu"><li><a href="/docs/reference/gcode-dialects" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="en">English</a></li><li><a href="/pt-BR/docs/reference/gcode-dialects" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="pt-BR">Português (Brasil)</a></li><li><a href="/es/docs/reference/gcode-dialects" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="es">Español</a></li><li><a href="/fr/docs/reference/gcode-dialects" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="fr">Français</a></li><li><a href="/hi/docs/reference/gcode-dialects" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="hi">हिन्दी</a></li><li><a href="/de/docs/reference/gcode-dialects" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="de">Deutsch</a></li><li><a href="/zh-CN/docs/reference/gcode-dialects" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="zh-CN">中文（中国）</a></li><li><a href="/uk/docs/reference/gcode-dialects" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="uk">Українська</a></li></ul></div><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="patreonLink_HbXT"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" class="patreonImg_dUDi"></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="सिस्टम मोड" aria-label="लाइट और डार्क मोड के बीच बदलें (वर्तमान में सिस्टम मोड)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div class="floatingLinks_ekMW"><a class="floatingLink_seiz" href="https://github.com/barebaric/rayforge" target="_blank" rel="noopener noreferrer" aria-label="Rayforge on GitHub" title="GitHub"><img class="floatingIcon_OM1j" src="https://cdn.simpleicons.org/github/000000" alt="" width="20" height="20" loading="lazy"></a><a class="floatingLink_seiz" href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" aria-label="Join Rayforge on Discord" title="Discord"><img class="floatingIcon_OM1j" src="https://cdn.simpleicons.org/discord/000000" alt="" width="20" height="20" loading="lazy"></a><a class="floatingLink_seiz" href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" aria-label="Support Rayforge on Patreon" title="Patreon"><img class="floatingIcon_OM1j floatingIconPatreon_HIKb" src="https://cdn.simpleicons.org/patreon/FF424D" alt="" width="20" height="20" loading="lazy"></a></div><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="ऊपर वापस जाएँ" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><div class="sidebarSearch_pOTk"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><svg aria-hidden="true" class="searchIcon_T3tP" focusable="false" viewBox="0 0 16 16"><path fill="currentColor" d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"></path></svg><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div><nav aria-label="दस्तावेज़ साइडबार" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/hi/docs/getting-started/installation"><span class="categoryLinkLabel_W154">शुरुआत</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/hi/docs/getting-started/installation"><span class="linkLabel_WmDU">इंस्टॉलेशन</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/hi/docs/getting-started/first-time-setup"><span class="linkLabel_WmDU">पहली बार का सेटअप</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/hi/docs/getting-started/quick-start"><span class="linkLabel_WmDU">क्विक स्टार्ट गाइड</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/hi/docs/ui/settings"><span class="categoryLinkLabel_W154">एप्लिकेशन सेटिंग्स</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/hi/docs/machine/general"><span class="categoryLinkLabel_W154">मशीन कॉन्फ़िगरेशन</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/hi/docs/ui/main-window"><span class="categoryLinkLabel_W154">उपयोगकर्ता इंटरफ़ेस</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/hi/docs/features/operations/contour"><span class="categoryLinkLabel_W154">सुविधाएँ</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/hi/docs/addons/ai-workpiece-generator"><span class="categoryLinkLabel_W154">Addons</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/hi/docs/files/importing"><span class="categoryLinkLabel_W154">फ़ाइलें</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/hi/docs/general-info/laser-safety"><span class="categoryLinkLabel_W154">सामान्य जानकारी</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/hi/docs/troubleshooting/connection"><span class="categoryLinkLabel_W154">समस्या निवारण</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/hi/docs/reference/shortcuts"><span class="categoryLinkLabel_W154">संदर्भ</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/hi/docs/reference/shortcuts"><span class="linkLabel_WmDU">कीबोर्ड शॉर्टकट</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/hi/docs/reference/cli"><span class="linkLabel_WmDU">कमांड लाइन</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/hi/docs/reference/gcode-dialects"><span class="linkLabel_WmDU">G-code डायलेक्ट समर्थन</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/hi/docs/reference/firmware"><span class="linkLabel_WmDU">फ़र्मवेयर संगतता</span></a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="ब्रेडक्रंब"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="मुख्य पृष्ठ" class="breadcrumbs__link" href="/hi/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">संदर्भ</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">G-code डायलेक्ट समर्थन</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">इस पृष्ठ पर</button></div><div class="theme-doc-markdown markdown"><header><h1>G-code डायलेक्ट समर्थन</h1></header>
+<p>Rayforge भिन्न नियंत्रक फ़र्मवेयरों के साथ काम करने के लिए कई G-code डायलेक्ट समर्थन करता है.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="स्वतः-डायलेक्ट-चयन">स्वतः डायलेक्ट चयन<a href="#स्वतः-डायलेक्ट-चयन" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h2>
+<p>जब कोई GRBL डिवाइस खोजा जाता है (<a class="" href="/hi/docs/getting-started/first-time-setup">सेटअप विज़ार्ड</a> या डिवाइस
+खोज द्वारा), Rayforge फ़र्मवेयर के <code>$I</code> कंपाइल ध्वज पढ़ता है और सर्वोत्तम मेल खाता G-code डायलेक्ट
+स्वतः चुनता है — प्रायः आपको मैन्युअल रूप से एक चुनने की आवश्यकता नहीं होती. आप बाद में मशीन की
+G-code डायलेक्ट सेटिंग्स में चयन अध्यारोहित कर सकते हैं.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="समर्थित-डायलेक्ट">समर्थित डायलेक्ट<a href="#समर्थित-डायलेक्ट" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h2>
+<p>Rayforge वर्तमान में ये G-code डायलेक्ट समर्थन करता है:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>डायलेक्ट</th><th>फ़र्मवेयर</th><th>सामान्य उपयोग</th></tr></thead><tbody><tr><td><strong>Grbl (Compat)</strong></td><td>GRBL 1.1+</td><td>डायोड लेज़र, हॉबी CNC</td></tr><tr><td><strong>Grbl (Compat, no Z axis)</strong></td><td>GRBL 1.1+</td><td>Z रहित 2D लेज़र कटर</td></tr><tr><td><strong>Grbl Raster</strong></td><td>GRBL 1.1+</td><td>रास्टर कार्य के लिए अनुकूलित</td></tr><tr><td><strong>GRBL Dynamic (Depth-Aware)</strong></td><td>GRBL 1.1+</td><td>Depth-Aware लेज़र उत्कीर्णन</td></tr><tr><td><strong>GRBL Dynamic (no Z axis)</strong></td><td>GRBL 1.1+</td><td>Depth-Aware लेज़र उत्कीर्णन</td></tr><tr><td><strong>LinuxCNC</strong></td><td>LinuxCNC</td><td>नेटिव Bézier (G5) समर्थन</td></tr><tr><td><strong>Mach4 (M67 Analog)</strong></td><td>Mach4</td><td>तेज़-गति रास्टर उत्कीर्णन</td></tr><tr><td><strong>Smoothieware</strong></td><td>Smoothieware</td><td>लेज़र कटर, CNC</td></tr><tr><td><strong>Marlin</strong></td><td>Marlin 2.0+</td><td>लेज़र युक्त 3D प्रिंटर</td></tr></tbody></table>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>अनुशंसित डायलेक्ट</div><div class="admonitionContent_BuS1"><p><strong>Grbl (Compat)</strong> मानक लेज़र अनुप्रयोगों के लिए सबसे परीक्षित और अनुशंसित डायलेक्ट है.</p><p><strong>Grbl Raster</strong> GRBL नियंत्रकों पर रास्टर उत्कीर्णन के लिए अनुकूलित है. वह लेज़र को डायनामिक
+पावर मोड (M4) में लगातार रखता है और अनावश्यक फ़ीडरेट कमांड छोड़ देता है, जिससे अधिक चिकना और
+संक्षिप्त G-code आउटपुट बनता है.</p><p><strong>GRBL Dynamic (Depth-Aware)</strong> Depth-Aware लेज़र उत्कीर्णन के लिए अनुशंसित है जहाँ कटों के
+दौरान शक्ति बदलती है (जैसे, परिवर्ती गहराई उत्कीर्णन).</p><p><strong>LinuxCNC</strong> G5 कमांड के माध्यम से नेटिव क्यूबिक Bézier वक्रों का समर्थन करता है, जो वक्र पाथों
+के लिए बहुत चिकना और संक्षिप्त G-code देता है. इस डायलेक्ट का उपयोग करते समय, G5 आउटपुट का
+लाभ उठाने के लिए उन्नत मशीन सेटिंग्स में &quot;Bézier वक्र समर्थन&quot; विकल्प सक्षम करें.</p></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="mach4-m67-analog">Mach4 (M67 Analog)<a href="#mach4-m67-analog" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h2>
+<p><strong>Mach4 (M67 Analog)</strong> डायलेक्ट Mach4 नियंत्रकों के साथ तेज़-गति रास्टर उत्कीर्णन के लिए डिज़ाइन
+किया गया है. वह सटीक लेज़र शक्ति नियंत्रण के लिए एनालॉग आउटपुट के साथ M67 कमांड उपयोग करता है.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="मुख्य-सुविधाएँ">मुख्य सुविधाएँ<a href="#मुख्य-सुविधाएँ" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>M67 एनालॉग आउटपुट</strong>: इनलाइन S कमांडों के बजाय लेज़र शक्ति के लिए <code>M67 E0 Q&lt;0-255&gt;</code> उपयोग करता है</li>
+<li class=""><strong>घटा हुआ बफ़र दबाव</strong>: शक्ति कमांडों को मोशन कमांडों से अलग करके, तेज़-गति ऑपरेशनों के दौरान
+नियंत्रक बफ़र पर कम दबाव पड़ता है</li>
+<li class=""><strong>तेज़-गति रास्टर</strong>: तेज़ रास्टर उत्कीर्णन ऑपरेशनों के लिए अनुकूलित</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="कब-उपयोग-करें">कब उपयोग करें<a href="#कब-उपयोग-करें" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
+<p>यह डायलेक्ट तब उपयोग करें जब:</p>
+<ul>
+<li class="">आपके पास एनालॉग आउटपुट क्षमता वाला Mach4 नियंत्रक हो</li>
+<li class="">आपको तेज़-गति रास्टर उत्कीर्णन चाहिए</li>
+<li class="">मानक इनलाइन S कमांडों से आपके नियंत्रक में बफ़र ओवरफ़्लो होता हो</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="कमांड-फ़ॉर्मेट">कमांड फ़ॉर्मेट<a href="#कमांड-फ़ॉर्मेट" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
+<p>डायलेक्ट ऐसा G-code जनरेट करता है:</p>
+<div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">M67 E0 Q127  ; Set laser power to 50% (127/255)</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">G1 X100 Y200 F1000  ; Move to position</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">M67 E0 Q0    ; Turn laser off</span><br></div></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="कस्टम-डायलेक्ट-बनाना">कस्टम डायलेक्ट बनाना<a href="#कस्टम-डायलेक्ट-बनाना" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h2>
+<p>किसी अंतर्निहित डायलेक्ट पर आधारित कस्टम G-code डायलेक्ट बनाने के लिए:</p>
+<ol>
+<li class=""><strong>Machine Settings</strong> → <strong>G-code Dialect</strong> खोलें</li>
+<li class="">नया कस्टम डायलेक्ट बनाने के लिए किसी अंतर्निहित डायलेक्ट पर <strong>Copy</strong> आइकन पर क्लिक करें</li>
+<li class="">आवश्यकता अनुसार डायलेक्ट सेटिंग्स संपादित करें</li>
+<li class="">अपना कस्टम डायलेक्ट सहेजें</li>
+</ol>
+<p>प्रत्येक कस्टम डायलेक्ट एक स्वतंत्र प्रतिलिपि है: एक डायलेक्ट बदलने से अन्य डायलेक्ट या अन्य मशीनें
+कभी प्रभावित नहीं होतीं, इसलिए आप मौजूदा सेटअप तोड़ने की चिंता किए बिना स्वतंत्र रूप से प्रयोग कर
+सकते हैं. अंतर्निहित डायलेक्ट से बनी प्रतिलिपि उस अंतर्निहित से एक लिंक रखती है: जिन टेम्पलेट फ़ील्ड
+को आपने स्पष्ट रूप से नहीं बदला वे अंतर्निहित का पालन करते रहते हैं, इसलिए अंतर्निहित डायलेक्टों में
+सुधार आपकी मशीनों तक स्वतः पहुँचते हैं, जबकि आपके अपने संपादन सुरक्षित रहते हैं और कभी अध्यारोपित
+नहीं होते. कस्टम डायलेक्ट आपकी कॉन्फ़िगरेशन निर्देशिका में संग्रहीत होते हैं और साझा किए जा सकते
+हैं.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="डायलेक्ट-सेटिंग्स">डायलेक्ट सेटिंग्स<a href="#डायलेक्ट-सेटिंग्स" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
+<p>कस्टम डायलेक्ट संपादित करते समय, Settings पृष्ठ ये विकल्प देता है:</p>
+<p><strong>सतत लेज़र मोड</strong> M4/M5 को खंडों के बीच टॉगल करने के बजाय पूरे जॉब के दौरान लेज़र को डायनामिक पावर
+मोड (M4) में सक्रिय रखता है. यह रास्टर उत्कीर्णन के लिए उपयोगी है जहाँ लेज़र को स्कैन रेखाओं के
+दौरान लगातार चालू रहना होता है.</p>
+<p><strong>मोडल फ़ीडरेट</strong> पिछली कमांड के बाद से फ़ीडरेट न बदलने पर मोशन कमांडों से फ़ीडरेट पैरामीटर (F) छोड़
+देता है. इससे अधिक संक्षिप्त G-code बनता है और नियंत्रक को भेजे गए डेटा की मात्रा घटती है.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="फ़ोकसिंग-के-लिए-अलग-लेज़र-ऑन-कमांड">फ़ोकसिंग के लिए अलग लेज़र-ऑन कमांड<a href="#फ़ोकसिंग-के-लिए-अलग-लेज़र-ऑन-कमांड" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
+<p>कुछ डायलेक्ट कम शक्ति पर लेज़र चालू करने के लिए एक अलग कमांड कॉन्फ़िगर करने का समर्थन करते हैं, जो
+फ़ोकस मोड के लिए उपयोगी है. इससे आप वास्तविक कटिंग या उत्कीर्णन के दौरान उपयोग होने वाली कमांड से
+भिन्न कमांड दृश्य &quot;लेज़र पॉइंटर&quot; व्यवहार के लिए उपयोग कर सकते हैं. इस विकल्प के लिए अपने डायलेक्ट का
+सेटिंग्स पृष्ठ जाँचें.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="टेम्पलेट-प्लेसहोल्डर">टेम्पलेट प्लेसहोल्डर<a href="#टेम्पलेट-प्लेसहोल्डर" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h2>
+<p>कस्टम डायलेक्ट बनाते या संपादित करते समय, प्रत्येक कमांड टेम्पलेट गतिशील मान जोड़ने के लिए
+<a href="https://docs.python.org/3/library/string.html#format-string-syntax" target="_blank" rel="noopener noreferrer" class="">Python फ़ॉर्मेट स्ट्रिंग</a>
+प्लेसहोल्डर उपयोग करता है. <code>{name}</code> या <code>{name:.0f}</code> सिंटैक्स उपयोग करें (जैसे, बिना दशमलव अंकों के
+फ़ॉर्मेट करने के लिए <code>{power:.0f}</code>).</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="टेम्पलेट-द्वारा-उपलब्ध-प्लेसहोल्डर">टेम्पलेट द्वारा उपलब्ध प्लेसहोल्डर<a href="#टेम्पलेट-द्वारा-उपलब्ध-प्लेसहोल्डर" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>टेम्पलेट</th><th>प्लेसहोल्डर</th></tr></thead><tbody><tr><td><strong>Laser On</strong></td><td><code>power</code></td></tr><tr><td><strong>Focus Laser On</strong></td><td><code>power</code></td></tr><tr><td><strong>Laser Off</strong></td><td><em>(कोई नहीं)</em></td></tr><tr><td><strong>Tool Change</strong></td><td><code>tool_number</code></td></tr><tr><td><strong>Set Speed</strong></td><td><code>speed</code></td></tr><tr><td><strong>Travel Move</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code></td></tr><tr><td><strong>Linear Move</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code>, <code>i</code>, <code>j</code>, <code>power</code></td></tr><tr><td><strong>Arc (CW)</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code>, <code>i</code>, <code>j</code>, <code>power</code></td></tr><tr><td><strong>Arc (CCW)</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code>, <code>i</code>, <code>j</code>, <code>power</code></td></tr><tr><td><strong>Bezier Cubic</strong></td><td><code>x</code>, <code>y</code>, <code>z</code>, <code>x_cmd</code>, <code>y_cmd</code>, <code>z_cmd</code>, <code>extra_cmd</code>, <code>f_command</code>, <code>s_command</code>, <code>i</code>, <code>j</code>, <code>p</code>, <code>q</code>, <code>power</code></td></tr><tr><td><strong>Air On/Off</strong></td><td><em>(कोई नहीं)</em></td></tr><tr><td><strong>Home All</strong></td><td><em>(कोई नहीं)</em></td></tr><tr><td><strong>Home Axis</strong></td><td><code>axis_letter</code></td></tr><tr><td><strong>Move To</strong></td><td><code>speed</code>, <code>x</code>, <code>y</code>, <code>z</code></td></tr><tr><td><strong>Jog</strong></td><td><code>speed</code></td></tr><tr><td><strong>Clear Alarm</strong></td><td><em>(कोई नहीं)</em></td></tr><tr><td><strong>Set WCS Offset</strong></td><td><code>p_num</code>, <code>x</code>, <code>y</code>, <code>z</code></td></tr><tr><td><strong>Probe Cycle</strong></td><td><code>axis_letter</code>, <code>max_travel</code>, <code>feed_rate</code></td></tr><tr><td><strong>Dwell</strong></td><td><code>seconds</code>, <code>milliseconds</code></td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="प्लेसहोल्डर-संदर्भ">प्लेसहोल्डर संदर्भ<a href="#प्लेसहोल्डर-संदर्भ" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="निर्देशांक">निर्देशांक<a href="#निर्देशांक" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>प्लेसहोल्डर</th><th>विवरण</th></tr></thead><tbody><tr><td><code>x</code></td><td>फ़्लोट के रूप में लक्ष्य X निर्देशांक (जैसे, <code>100.0</code>)</td></tr><tr><td><code>y</code></td><td>फ़्लोट के रूप में लक्ष्य Y निर्देशांक (जैसे, <code>200.0</code>)</td></tr><tr><td><code>z</code></td><td>फ़्लोट के रूप में लक्ष्य Z निर्देशांक (जैसे, <code>5.0</code>)</td></tr><tr><td><code>x_cmd</code></td><td>X-अक्ष कमांड स्ट्रिंग, जैसे, <code>&quot; X100.0&quot;</code>. अपरिवर्तित होने पर छोड़ा जाता है (यदि &quot;अपरिवर्तित निर्देशांक छोड़ें&quot; सक्षम हो)</td></tr><tr><td><code>y_cmd</code></td><td>Y-अक्ष कमांड स्ट्रिंग, जैसे, <code>&quot; Y200.0&quot;</code>. अपरिवर्तित होने पर छोड़ा जाता है</td></tr><tr><td><code>z_cmd</code></td><td>Z-अक्ष कमांड स्ट्रिंग, जैसे, <code>&quot; Z5.0&quot;</code>. अपरिवर्तित होने पर छोड़ा जाता है</td></tr><tr><td><code>extra_cmd</code></td><td>A, B, C अक्षों के लिए अतिरिक्त अक्ष कमांड स्ट्रिंग (जैसे, <code>&quot; A90.0&quot;</code>). कोई अतिरिक्त अक्ष कॉन्फ़िगर न होने पर रिक्त</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="गति">गति<a href="#गति" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>प्लेसहोल्डर</th><th>विवरण</th></tr></thead><tbody><tr><td><code>f_command</code></td><td>फ़ीडरेट कमांड स्ट्रिंग, जैसे, <code>&quot; F3000&quot;</code>. मोडल और अपरिवर्तित होने पर छोड़ा जाता है</td></tr><tr><td><code>s_command</code></td><td>स्पिंडल/शक्ति कमांड स्ट्रिंग, जैसे, <code>&quot; S500&quot;</code>. डायनामिक/रास्टर मोडों और सतत लेज़र मोड में उपयोग</td></tr><tr><td><code>i</code></td><td>प्रारंभ स्थिति से चाप या Bézier नियंत्रण बिंदु X ऑफ़सेट</td></tr><tr><td><code>j</code></td><td>प्रारंभ स्थिति से चाप या Bézier नियंत्रण बिंदु Y ऑफ़सेट</td></tr><tr><td><code>p</code></td><td>अंत स्थिति से दूसरे Bézier नियंत्रण बिंदु X ऑफ़सेट (केवल Bezier Cubic)</td></tr><tr><td><code>q</code></td><td>अंत स्थिति से दूसरे Bézier नियंत्रण बिंदु Y ऑफ़सेट (केवल Bezier Cubic)</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="शक्ति-और-गति">शक्ति और गति<a href="#शक्ति-और-गति" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>प्लेसहोल्डर</th><th>विवरण</th></tr></thead><tbody><tr><td><code>power</code></td><td>पूर्ण लेज़र शक्ति मान (फ़्लोट). फ़ॉर्मेट स्पेसिफ़ायर समर्थन करता है, जैसे, बिना दशमलव के <code>{power:.0f}</code></td></tr><tr><td><code>speed</code></td><td>गति मान (Move To और Jog कमांडों के लिए)</td></tr><tr><td><code>tool_number</code></td><td>टूल/लेज़र हेड नंबर</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="मशीन-और-प्रोबिंग">मशीन और प्रोबिंग<a href="#मशीन-और-प्रोबिंग" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>प्लेसहोल्डर</th><th>विवरण</th></tr></thead><tbody><tr><td><code>axis_letter</code></td><td>एकल अक्ष अक्षर, जैसे, <code>&quot;X&quot;</code>, <code>&quot;Y&quot;</code>, <code>&quot;Z&quot;</code> (Home Axis और Probe के लिए)</td></tr><tr><td><code>p_num</code></td><td>WCS P-संख्या (जैसे, G54 के लिए <code>1</code>)</td></tr><tr><td><code>max_travel</code></td><td>अधिकतम प्रोब चालन दूरी (केवल Probe Cycle)</td></tr><tr><td><code>feed_rate</code></td><td>प्रोब फ़ीडरेट (केवल Probe Cycle)</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="dwell">Dwell<a href="#dwell" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>प्लेसहोल्डर</th><th>विवरण</th></tr></thead><tbody><tr><td><code>seconds</code></td><td>फ़्लोट के रूप में सेकंड में ड्वेल अवधि (जैसे, <code>1.5</code>)</td></tr><tr><td><code>milliseconds</code></td><td>पूर्णांक के रूप में मिलीसेकंड में ड्वेल अवधि (जैसे, <code>1500</code>)</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="प्रीएम्बल-और-पोस्टस्क्रिप्ट">प्रीएम्बल और पोस्टस्क्रिप्ट<a href="#प्रीएम्बल-और-पोस्टस्क्रिप्ट" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h4>
+<p><strong>प्रीएम्बल</strong> और <strong>पोस्टस्क्रिप्ट</strong> स्क्रिप्ट मशीन और वर्तमान जॉब वर्णित करने वाले प्लेसहोल्डरों का
+एक अलग सेट समर्थन करते हैं:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>प्लेसहोल्डर</th><th>विवरण</th></tr></thead><tbody><tr><td><code>machine.name</code></td><td>मशीन का नाम</td></tr><tr><td><code>machine.active_wcs</code></td><td>वर्तमान में सक्रिय वर्क निर्देशांक प्रणाली (जैसे, <code>G54</code>)</td></tr><tr><td><code>machine.axis_extents[0]</code></td><td>कार्य क्षेत्र चौड़ाई (mm)</td></tr><tr><td><code>machine.axis_extents[1]</code></td><td>कार्य क्षेत्र ऊँचाई (mm)</td></tr><tr><td><code>wcs_offset[0]</code> … <code>wcs_offset[2]</code></td><td>सक्रिय वर्क निर्देशांक प्रणाली का X/Y/Z ऑफ़सेट</td></tr><tr><td><code>doc.name</code></td><td>निर्यात हो रहे दस्तावेज़ का नाम</td></tr><tr><td><code>job.extents[0]</code> … <code>job.extents[3]</code></td><td>जॉब बाउंडिंग बॉक्स: न्यूनतम X, न्यूनतम Y, अधिकतम X, अधिकतम Y</td></tr></tbody></table>
+<p>उदाहरण के लिए, कुछ मशीनें स्वयं जॉब फ़्रेम करती हैं — G-code फ़ाइल ऑफ़लाइन चलाते समय भी — प्रीएम्बल
+टिप्पणी से जॉब सीमाएँ पढ़कर:</p>
+<div class="language-gcode codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gcode codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">; Bounds: X{job.extents[0]} Y{job.extents[1]} to X{job.extents[2]} Y{job.extents[3]}</span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="सुझाव">सुझाव<a href="#सुझाव" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>फ़ॉर्मेट स्पेसिफ़ायर</strong> समर्थित हैं: <code>{power:.0f}</code> शक्ति को पूर्णांक के रूप में फ़ॉर्मेट करता है,
+<code>{power:.2f}</code> दो दशमलव स्थानों के रूप में.</li>
+<li class=""><strong>&quot;अपरिवर्तित निर्देशांक छोड़ें&quot;</strong> सेटिंग नियंत्रित करती है कि अंतिम कमांड के बाद से अक्ष स्थिति न
+बदलने पर <code>x_cmd</code>, <code>y_cmd</code>, और <code>z_cmd</code> रिक्त छोड़े जाएँ या नहीं. इससे G-code आकार घटता है.</li>
+<li class=""><strong>&quot;मोडल फ़ीडरेट&quot;</strong> सेटिंग नियंत्रित करती है कि फ़ीडरेट न बदलने पर <code>f_command</code> छोड़ा जाए या नहीं.</li>
+<li class="">किसी कमांड को पूरी तरह छोड़ने के लिए टेम्पलेट फ़ील्ड <strong>रिक्त</strong> छोड़ें (जैसे, <code>bezier_cubic</code> को
+<code>&quot;&quot;</code> सेट करने से नेटिव Bézier आउटपुट अक्षित हो जाता है और रैखिकीकरण पर लौट आता है).</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="संबंधित-पृष्ठ">संबंधित पृष्ठ<a href="#संबंधित-पृष्ठ" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/hi/docs/files/exporting">G-code निर्यात</a> - निर्यात सेटिंग्स</li>
+<li class=""><a class="" href="/hi/docs/reference/firmware">फ़र्मवेयर संगतता</a> - फ़र्मवेयर संस्करण</li>
+<li class=""><a class="" href="/hi/docs/machine/device">डिवाइस सेटिंग्स</a> - GRBL कॉन्फ़िगरेशन</li>
+<li class=""><a class="" href="/hi/docs/machine/hooks-macros">मैक्रो और हुक</a> - कस्टम G-code इंजेक्शन</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/reference/gcode-dialects.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>यह पृष्ठ संपादित करें</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="दस्तावेज़ नेविगेशन"><a class="pagination-nav__link pagination-nav__link--prev" href="/hi/docs/reference/cli"><div class="pagination-nav__sublabel">पिछला</div><div class="pagination-nav__label">कमांड लाइन</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/hi/docs/reference/firmware"><div class="pagination-nav__sublabel">अगला</div><div class="pagination-nav__label">फ़र्मवेयर संगतता</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#स्वतः-डायलेक्ट-चयन" class="table-of-contents__link toc-highlight">स्वतः डायलेक्ट चयन</a></li><li><a href="#समर्थित-डायलेक्ट" class="table-of-contents__link toc-highlight">समर्थित डायलेक्ट</a></li><li><a href="#mach4-m67-analog" class="table-of-contents__link toc-highlight">Mach4 (M67 Analog)</a><ul><li><a href="#मुख्य-सुविधाएँ" class="table-of-contents__link toc-highlight">मुख्य सुविधाएँ</a></li><li><a href="#कब-उपयोग-करें" class="table-of-contents__link toc-highlight">कब उपयोग करें</a></li><li><a href="#कमांड-फ़ॉर्मेट" class="table-of-contents__link toc-highlight">कमांड फ़ॉर्मेट</a></li></ul></li><li><a href="#कस्टम-डायलेक्ट-बनाना" class="table-of-contents__link toc-highlight">कस्टम डायलेक्ट बनाना</a><ul><li><a href="#डायलेक्ट-सेटिंग्स" class="table-of-contents__link toc-highlight">डायलेक्ट सेटिंग्स</a></li><li><a href="#फ़ोकसिंग-के-लिए-अलग-लेज़र-ऑन-कमांड" class="table-of-contents__link toc-highlight">फ़ोकसिंग के लिए अलग लेज़र-ऑन कमांड</a></li></ul></li><li><a href="#टेम्पलेट-प्लेसहोल्डर" class="table-of-contents__link toc-highlight">टेम्पलेट प्लेसहोल्डर</a><ul><li><a href="#टेम्पलेट-द्वारा-उपलब्ध-प्लेसहोल्डर" class="table-of-contents__link toc-highlight">टेम्पलेट द्वारा उपलब्ध प्लेसहोल्डर</a></li><li><a href="#प्लेसहोल्डर-संदर्भ" class="table-of-contents__link toc-highlight">प्लेसहोल्डर संदर्भ</a></li><li><a href="#सुझाव" class="table-of-contents__link toc-highlight">सुझाव</a></li></ul></li><li><a href="#संबंधित-पृष्ठ" class="table-of-contents__link toc-highlight">संबंधित पृष्ठ</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</body>
+</html>
