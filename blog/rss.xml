@@ -4,10 +4,140 @@
         <title>Rayforge Blog</title>
         <link>https://rayforge.org/blog</link>
         <description>Rayforge Blog</description>
-        <lastBuildDate>Wed, 26 Aug 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 02 Oct 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Rayforge 1.12 - Native Ruida Support, Machine Control, Command Step]]></title>
+            <link>https://rayforge.org/blog/rayforge-1-12-native-ruida-machine-control-command-step</link>
+            <guid>https://rayforge.org/blog/rayforge-1-12-native-ruida-machine-control-command-step</guid>
+            <pubDate>Fri, 02 Oct 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Rayforge 1.12 brings native Ruida support, arbitrary laser head positioning with pointer alignment, machine notes, network cameras, per-step power modes, and a new Command step for custom machine code.]]></description>
+            <content:encoded><![CDATA[<p>Rayforge 1.12 is here, and it is a big one: 277 commits across 736 files. The headline is native
+Ruida support, but this cycle also reworked how you move and aim the laser head, added machine
+notes, network cameras, per-step power modes, and a new way to inject custom machine code.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ruida-machines-natively-supported">Ruida Machines, Natively Supported<a href="https://rayforge.org/blog/rayforge-1-12-native-ruida-machine-control-command-step#ruida-machines-natively-supported" class="hash-link" aria-label="Direct link to Ruida Machines, Natively Supported" title="Direct link to Ruida Machines, Natively Supported" translate="no">​</a></h2>
+<p>Rayforge can now talk to Ruida-based controllers directly. The new <strong>Ruida RPA</strong> driver connects
+over USB or UDP, or via TUI RPC through the Ruida Protocol Analyzer, and ships with all installs. It
+honors the per-step Power Mode and the controller's power scaling, and framing became a driver
+capability, so Ruida machines can trace the job outline with the beam off. New <strong>Generic Ruida RPA</strong>
+and <strong>Monport MP-570 60W CO2</strong> device profiles are included, and the old prototype Ruida (UDP)
+driver was removed.</p>
+<p>This feature is almost entirely the work of @StevenIsaacs, who spent months reverse-engineering the
+protocol and testing it against real hardware. Thank you!</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="move-the-head-wherever-you-want">Move the Head Wherever You Want<a href="https://rayforge.org/blog/rayforge-1-12-native-ruida-machine-control-command-step#move-the-head-wherever-you-want" class="hash-link" aria-label="Direct link to Move the Head Wherever You Want" title="Direct link to Move the Head Wherever You Want" translate="no">​</a></h2>
+<p>Machine moves are no longer limited to predefined targets. A new <strong>Move to Position</strong> popover in the
+Current Position area sends the head to any X/Y coordinate (and Z, when your machine has one) at
+your configured jog speed. It also hosts the workarea corner and WCS origin shortcuts.</p>
+<p>Two conveniences round it out: <strong>Click Canvas to Move Head</strong> works just like Click to Zero, the
+canvas context menu gains a <strong>Move Head Here</strong> action, and <strong>Ctrl+M</strong> arms click-to-move from the
+keyboard.</p>
+<p>If your machine has a red-dot alignment laser, <strong>Pointer Alignment</strong> turns its dot into a
+first-class aiming reference: with a per-head pointer offset set, every aiming move shifts so the
+<em>pointer dot</em> lands exactly on the aimed position. The canvas draws the pointer dot next to the beam
+dot, and starting a job asks whether to turn alignment off first, since jobs always burn with the
+unshifted beam.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="machine-notes">Machine Notes<a href="https://rayforge.org/blog/rayforge-1-12-native-ruida-machine-control-command-step#machine-notes" class="hash-link" aria-label="Direct link to Machine Notes" title="Direct link to Machine Notes" translate="no">​</a></h2>
+<p>A new <strong>Notes</strong> category in Machine Settings combines the guidance shipped with the device profile
+with your own notes for the machine. Device notes are read-only; My Notes are edited with a built-in
+Markdown editor (headings, emphasis, lists, links, code blocks, and expandable details sections).
+Profile setup guidance also appears on the setup wizard's review page, and personal notes survive
+profile updates (thanks to @atkaper, #471).</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="command-step">Command Step<a href="https://rayforge.org/blog/rayforge-1-12-native-ruida-machine-control-command-step#command-step" class="hash-link" aria-label="Direct link to Command Step" title="Direct link to Command Step" translate="no">​</a></h2>
+<p>The new <strong>Command</strong> step injects custom machine code at any position in a layer's workflow:
+pre-positioning the head, toggling air assist between operations, or sending controller-specific
+codes. Each line is emitted verbatim exactly where the step sits, supports the same path variables
+as macros (<code>machine.*</code>, <code>layer.*</code>, <code>job.*</code>), and travels unexpanded with your project. A step
+warning appears when the active machine's driver does not consume G-code, such as Ruida (#449).</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="camera-upgrades">Camera Upgrades<a href="https://rayforge.org/blog/rayforge-1-12-native-ruida-machine-control-command-step#camera-upgrades" class="hash-link" aria-label="Direct link to Camera Upgrades" title="Direct link to Camera Upgrades" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Network cameras</strong> work as stream sources alongside USB cameras, with automatic reconnection
+after read failures (thanks to @atkaper, #438)</li>
+<li class="">Lens calibration now supports <strong>ArUco/AprilTag marker grids</strong> and printable <strong>dot grids</strong>
+alongside ChArUco boards. Marker grids tolerate partial views, and their dictionary, ID offset,
+origin corner and numbering order are all editable, so factory-printed patterns can be calibrated
+against directly instead of printing a new card (thanks to @TOverbye, #466)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher">Sketcher<a href="https://rayforge.org/blog/rayforge-1-12-native-ruida-machine-control-command-step#sketcher" class="hash-link" aria-label="Direct link to Sketcher" title="Direct link to Sketcher" translate="no">​</a></h2>
+<p>The sketcher keeps improving: array tools now also lay out text boxes (#399), helper geometry moves
+together with the array members it belongs to, and dragging elements no longer resizes the main
+window (#385).</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="power-modes-and-framing">Power Modes and Framing<a href="https://rayforge.org/blog/rayforge-1-12-native-ruida-machine-control-command-step#power-modes-and-framing" class="hash-link" aria-label="Direct link to Power Modes and Framing" title="Direct link to Power Modes and Framing" translate="no">​</a></h2>
+<p>Each step now has a <strong>Power Mode</strong>: Dynamic (M4) or Constant (M3). Constant power avoids power sags
+at corners during vector cuts, while raster engraving keeps dynamic power (#437). The <strong>Frame</strong>
+operation gains a <strong>Round Corners</strong> toggle and a corner radius setting, and framing at <strong>0% power</strong>
+traces the outline with the beam off -- ideal for machines with an auxiliary alignment laser.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="an-experimental-rust-grbl-driver">An Experimental Rust GRBL Driver<a href="https://rayforge.org/blog/rayforge-1-12-native-ruida-machine-control-command-step#an-experimental-rust-grbl-driver" class="hash-link" aria-label="Direct link to An Experimental Rust GRBL Driver" title="Direct link to An Experimental Rust GRBL Driver" translate="no">​</a></h2>
+<p>The complete GRBL serial protocol stack -- character-counting flow control, job streaming, stall
+detection, deadlock recovery, cancel, and probing -- now runs in Rust through the new <code>raydriver</code>
+package. The <strong>GRBL (Rust)</strong> driver is experimental and can be selected per machine as a drop-in
+alternative to GRBL (Serial). Dialects and settings remain plain Rayforge data.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-device-profiles">New Device Profiles<a href="https://rayforge.org/blog/rayforge-1-12-native-ruida-machine-control-command-step#new-device-profiles" class="hash-link" aria-label="Direct link to New Device Profiles" title="Direct link to New Device Profiles" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Creality Falcon A1 Pro</strong> (thanks to @atkaper, #461)</li>
+<li class=""><strong>Creality Falcon 2 Pro 22W</strong>, shipping camera lens calibration and image settings as a starting
+default; the 40W profile's work area is corrected to the official 400 x 415 mm spec (#463)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="fixes-and-minor-improvements">Fixes and Minor Improvements<a href="https://rayforge.org/blog/rayforge-1-12-native-ruida-machine-control-command-step#fixes-and-minor-improvements" class="hash-link" aria-label="Direct link to Fixes and Minor Improvements" title="Direct link to Fixes and Minor Improvements" translate="no">​</a></h2>
+<ul>
+<li class="">Selecting a driver that requires connection details no longer crashes the app with a GTK assertion
+and a crash loop at startup (#415)</li>
+<li class="">Importing DXF or LBRN2 files on macOS no longer produces a garbled, wrongly scaled result caused
+by the generic binary MIME type routing files to the Ruida importer (#384)</li>
+<li class="">Material textures are included again in wheel-based installs, repairing blank material thumbnails
+on flatpak and deb installs (#419)</li>
+<li class="">The Machine Settings dialog is now a single instance per main window instead of opening duplicates
+(#416 -- thank you @StevenIsaacs)</li>
+<li class="">Print and cut: the wizard now launches on machines whose position reports include an extra rotary
+axis (#394), and capturing an alignment point accounts for Pointer Alignment (#478)</li>
+<li class="">GRBL: reading device settings no longer aborts on grblHAL bitmask values (#401), and the material
+test grid is repaired for fractional row and column counts (#405 -- thank you @atkaper)</li>
+<li class="">macOS: the full-screen main window stays visible when a dialog closes on top of it (#453)</li>
+<li class="">The ChArUco calibration card is detected again on blurry, unevenly lit frames by falling back
+through progressively more tolerant detection passes (#443, #465)</li>
+<li class="">G-code no longer contains zero-length travel moves (raygeo)</li>
+<li class="">Serial ports can be bound by USB VID:PID instead of a device path, so auto-reconnect follows the
+machine after the OS re-enumerates USB devices (#459)</li>
+<li class="">Configs, machine profiles, and recipes are persisted atomically with backups, so an interrupted
+save can no longer destroy them (#455)</li>
+<li class="">Cancelling a GRBL job now stops the machine immediately instead of draining the buffer, and a
+firmware that stays silent after a cancel (e.g. the Sculpfun iCube over Bluetooth) no longer
+leaves the machine controls dead (#428)</li>
+<li class="">SVGs import again when they contain a DOCTYPE declaration (such as Affinity Studio exports), and
+viewBox-only files import at the correct scale (#484, #434 -- thank you @MausRundung)</li>
+<li class="">The time estimate in the machine dropdown counts down again while a job runs, Z jogs are clamped
+to the configured extents, and the hardware settings page gains Z Min/Z Max rows</li>
+<li class="">Material test speeds are capped at the machine's live speed limit, and the raster default
+threshold is now 254, so only pure white stays unengraved</li>
+<li class="">raygeo and raydriver now ship aarch64 (ARM64) Linux wheels, so ARM64 installs use prebuilt
+binaries instead of compiling from source</li>
+<li class="">Hindi is now available</li>
+<li class="">Usage tracking (strictly opt-in) now reports the host OS and anonymous machine types (driver,
+laser type, optical power, bed size, rotary), so the project knows what hardware to prioritize.
+Machine names and identifiers are never sent</li>
+<li class="">GitHub Discussions are now linked in the About dialog and on the website</li>
+</ul>
+<p>This release was made possible with the support of our Patreon supporters: DaveSys, froqstar,
+old-man-and-the-seam, pghpete, Derek McTavish, starlynx.dev, and six anonymous supporters.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-112">Download Rayforge 1.12<a href="https://rayforge.org/blog/rayforge-1-12-native-ruida-machine-control-command-step#download-rayforge-112" class="hash-link" aria-label="Direct link to Download Rayforge 1.12" title="Direct link to Download Rayforge 1.12" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+<li class=""><a href="https://github.com/barebaric/rayforge/releases" target="_blank" rel="noopener noreferrer" class="">GitHub Releases</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/blog/rayforge-1-12-native-ruida-machine-control-command-step#join-the-community" class="hash-link" aria-label="Direct link to Join the Community" title="Direct link to Join the Community" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://github.com/barebaric/rayforge/discussions" target="_blank" rel="noopener noreferrer" class="">GitHub Discussions</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content:encoded>
+            <category>release</category>
+            <category>1.12</category>
+            <category>ruida</category>
+            <category>machine-control</category>
+            <category>camera</category>
+            <category>command-step</category>
+        </item>
         <item>
             <title><![CDATA[Rayforge 1.11.0-beta1 - Sketcher Tools, Physical Burn Model, Auto-Configuration]]></title>
             <link>https://rayforge.org/blog/rayforge-1-11-beta1-sketcher-physical-burn-auto-config</link>
