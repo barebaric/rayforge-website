@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/es/assets/css/styles.4787af86.css">
-<script src="/es/assets/js/runtime~main.d44f60ea.js" defer="defer"></script>
-<script src="/es/assets/js/main.67d13bbe.js" defer="defer"></script>
+<script src="/es/assets/js/runtime~main.4361080e.js" defer="defer"></script>
+<script src="/es/assets/js/main.b2c3440f.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -273,12 +273,63 @@ arrastrando los marcadores en el histograma.</li>
 
 
 
-<table><thead><tr><th>Algoritmo</th><th>Calidad</th><th>Velocidad</th><th>Mejor Para</th></tr></thead><tbody><tr><td>Floyd-Steinberg</td><td>Máxima</td><td>Más lento</td><td>Fotos, retratos, degradados suaves</td></tr><tr><td>Bayer 2x2</td><td>Baja</td><td>Más rápido</td><td>Efecto de media tinta grueso</td></tr><tr><td>Bayer 4x4</td><td>Media</td><td>Rápido</td><td>Media tinta equilibrada</td></tr><tr><td>Bayer 8x8</td><td>Alta</td><td>Media</td><td>Detalle fino, patrones sutiles</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Algoritmo</th><th>Calidad</th><th>Velocidad</th><th>Mejor Para</th></tr></thead><tbody><tr><td>Floyd-Steinberg</td><td>Máxima</td><td>Más lento</td><td>Fotos, retratos, degradados suaves</td></tr><tr><td>Bayer 2x2</td><td>Baja</td><td>Más rápido</td><td>Efecto de media tinta grueso</td></tr><tr><td>Bayer 4x4</td><td>Media</td><td>Rápido</td><td>Media tinta equilibrada</td></tr><tr><td>Bayer 8x8</td><td>Alta</td><td>Media</td><td>Detalle fino, patrones sutiles</td></tr><tr><td>Atkinson</td><td>Media</td><td>Media</td><td>Imágenes de alto contraste, madera</td></tr><tr><td>Stucki</td><td>Máxima</td><td>Lento</td><td>Retratos, tonos de piel suaves</td></tr><tr><td>Jarvis, Judice y Ninke</td><td>Máxima</td><td>Lento</td><td>Degradados suaves, grano fino</td></tr><tr><td>Sierra (3 filas, 2 filas, Lite)</td><td>Alta</td><td>Media</td><td>Alternativas más ligeras a Stucki</td></tr><tr><td>Burkes</td><td>Alta</td><td>Media</td><td>Fotos, más rápido que Stucki</td></tr><tr><td>Papel prensa</td><td>Media</td><td>Más rápido</td><td>Puntos agrupados al estilo periódico</td></tr><tr><td>Semitono</td><td>Media</td><td>Rápido</td><td>Puntos redondos, tamaño y ángulo ajustables</td></tr></tbody></table>
 <p><strong>Floyd-Steinberg</strong> es el predeterminado y el recomendado para la mayoría de los grabados de fotos.
 Usa difusión de error para distribuir los errores de cuantización a los píxeles vecinos, creando
 resultados de aspecto natural.</p>
 <p><strong>El tramado Bayer</strong> crea patrones regulares que pueden producir efectos artísticos que asemejan la
 impresión tradicional de media tinta.</p>
+<p><strong>Stucki, Jarvis, Sierra, Burkes y Atkinson</strong> son algoritmos de difusión de error como
+Floyd-Steinberg que reparten el error en un entorno más amplio, lo que da un grano más uniforme en
+zonas planas como los tonos de piel. Atkinson solo difunde parte del error, lo que aumenta el
+contraste. Activa <strong>Serpentina</strong> para alternar la dirección de barrido en cada fila y evitar rayas
+direccionales.</p>
+<p><strong>Papel prensa</strong> y <strong>Semitono</strong> agrupan los píxeles en puntos. Semitono dibuja puntos redondos sobre
+una cuadrícula definida por <strong>Tamaño de celda del semitono</strong> (la distancia entre los centros de los
+puntos) y <strong>Ángulo del semitono</strong>; usa un tamaño de celda de al menos varias veces el ancho del
+punto láser.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="ajustes-del-modo-múltiples-profundidades">Ajustes del Modo Múltiples Profundidades<a href="#ajustes-del-modo-múltiples-profundidades" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h4>
 <p><img decoding="async" loading="lazy" alt="Ajustes del modo Múltiples Profundidades" src="/es/assets/images/step-settings-engrave-general-multi_pass-a95493377dde8a16d80b5d806095e309.webp" width="648" height="948" class="img_ev3q"></p>
 <p><strong>Número de Niveles de Profundidad:</strong></p>

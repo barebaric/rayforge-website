@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/de/assets/css/styles.fead6243.css">
-<script src="/de/assets/js/runtime~main.7017cee3.js" defer="defer"></script>
-<script src="/de/assets/js/main.f66e1b82.js" defer="defer"></script>
+<script src="/de/assets/js/runtime~main.514e7f18.js" defer="defer"></script>
+<script src="/de/assets/js/main.616da911.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -274,12 +274,62 @@ Markierungen auf dem Histogramm einzustellen.</li>
 
 
 
-<table><thead><tr><th>Algorithmus</th><th>Qualität</th><th>Geschwindigkeit</th><th>Am besten für</th></tr></thead><tbody><tr><td>Floyd-Steinberg</td><td>Höchste</td><td>Langsamste</td><td>Fotos, Porträts, sanfte Verläufe</td></tr><tr><td>Bayer 2x2</td><td>Niedrig</td><td>Schnellste</td><td>Grober Halbton-Effekt</td></tr><tr><td>Bayer 4x4</td><td>Mittel</td><td>Schnell</td><td>Ausgewogener Halbton</td></tr><tr><td>Bayer 8x8</td><td>Hoch</td><td>Mittel</td><td>Feine Details, subtile Muster</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Algorithmus</th><th>Qualität</th><th>Geschwindigkeit</th><th>Am besten für</th></tr></thead><tbody><tr><td>Floyd-Steinberg</td><td>Höchste</td><td>Langsamste</td><td>Fotos, Porträts, sanfte Verläufe</td></tr><tr><td>Bayer 2x2</td><td>Niedrig</td><td>Schnellste</td><td>Grober Halbton-Effekt</td></tr><tr><td>Bayer 4x4</td><td>Mittel</td><td>Schnell</td><td>Ausgewogener Halbton</td></tr><tr><td>Bayer 8x8</td><td>Hoch</td><td>Mittel</td><td>Feine Details, subtile Muster</td></tr><tr><td>Atkinson</td><td>Mittel</td><td>Mittel</td><td>Kontrastreiche Bilder, Holz</td></tr><tr><td>Stucki</td><td>Höchste</td><td>Langsam</td><td>Porträts, weiche Hauttöne</td></tr><tr><td>Jarvis, Judice &amp; Ninke</td><td>Höchste</td><td>Langsam</td><td>Sanfte Verläufe, feine Körnung</td></tr><tr><td>Sierra (3-zeilig, 2-zeilig, Lite)</td><td>Hoch</td><td>Mittel</td><td>Leichtere Alternativen zu Stucki</td></tr><tr><td>Burkes</td><td>Hoch</td><td>Mittel</td><td>Fotos, schneller als Stucki</td></tr><tr><td>Zeitungsdruck</td><td>Mittel</td><td>Schnellste</td><td>Gruppierte Punkte wie im Zeitungsdruck</td></tr><tr><td>Halbton</td><td>Mittel</td><td>Schnell</td><td>Runde Punkte, Größe und Winkel einstellbar</td></tr></tbody></table>
 <p><strong>Floyd-Steinberg</strong> ist Standard und empfohlen für die meisten Fotogravuren. Es verwendet
 Fehler-Diffusion, um Quantisierungsfehler auf benachbarte Pixel zu verteilen, was natürlich
 aussehende Ergebnisse erzeugt.</p>
 <p><strong>Bayer-Dithering</strong> erzeugt regelmäßige Muster, die künstlerische Effekte erzeugen können, die
 traditionellem Halbton-Druck ähneln.</p>
+<p><strong>Stucki, Jarvis, Sierra, Burkes und Atkinson</strong> sind wie Floyd-Steinberg Fehler-Diffusionsverfahren,
+verteilen den Fehler aber über eine größere Umgebung. Das ergibt eine ruhigere Körnung in
+gleichmäßigen Flächen wie Hauttönen. Atkinson verteilt nur einen Teil des Fehlers und erhöht so den
+Kontrast. Schalte <strong>Serpentinenmodus</strong> ein, um die Abtastrichtung in jeder Zeile zu wechseln und
+richtungsabhängige Streifen zu vermeiden.</p>
+<p><strong>Zeitungsdruck</strong> und <strong>Halbton</strong> fassen Pixel zu Punkten zusammen. Halbton setzt runde Punkte auf
+ein Raster, das du mit <strong>Halbton-Zellgröße</strong> (Abstand zwischen den Punktmittelpunkten) und
+<strong>Halbton-Winkel</strong> einstellst. Wähle eine Zellgröße von mindestens einigen Laserpunktbreiten.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mehrfach-tiefen-modus-einstellungen">Mehrfach-Tiefen-Modus-Einstellungen<a href="#mehrfach-tiefen-modus-einstellungen" class="hash-link" aria-label="Direkter Link zur Mehrfach-Tiefen-Modus-Einstellungen" title="Direkter Link zur Mehrfach-Tiefen-Modus-Einstellungen" translate="no">​</a></h4>
 <p><img decoding="async" loading="lazy" alt="Einstellungen für Mehrfach-Tiefen-Modus" src="/de/assets/images/step-settings-engrave-general-multi_pass-a95493377dde8a16d80b5d806095e309.webp" width="648" height="948" class="img_ev3q"></p>
 <p><strong>Anzahl der Tiefenstufen:</strong></p>

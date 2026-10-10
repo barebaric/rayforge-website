@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/pt-BR/assets/css/styles.95ce9ec7.css">
-<script src="/pt-BR/assets/js/runtime~main.9cf7bdf7.js" defer="defer"></script>
-<script src="/pt-BR/assets/js/main.28ff494d.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/runtime~main.a61c15dc.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/main.a9bb5bc7.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -273,12 +273,62 @@ arrastando os marcadores no histograma.</li>
 
 
 
-<table><thead><tr><th>Algoritmo</th><th>Qualidade</th><th>Velocidade</th><th>Melhor Para</th></tr></thead><tbody><tr><td>Floyd-Steinberg</td><td>Mais Alta</td><td>Mais Lento</td><td>Fotos, retratos, gradientes suaves</td></tr><tr><td>Bayer 2x2</td><td>Baixa</td><td>Mais Rápido</td><td>Efeito meio-tom grosseiro</td></tr><tr><td>Bayer 4x4</td><td>Média</td><td>Rápido</td><td>Meio-tom balanceado</td></tr><tr><td>Bayer 8x8</td><td>Alta</td><td>Médio</td><td>Detalhe fino, padrões sutis</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Algoritmo</th><th>Qualidade</th><th>Velocidade</th><th>Melhor Para</th></tr></thead><tbody><tr><td>Floyd-Steinberg</td><td>Mais Alta</td><td>Mais Lento</td><td>Fotos, retratos, gradientes suaves</td></tr><tr><td>Bayer 2x2</td><td>Baixa</td><td>Mais Rápido</td><td>Efeito meio-tom grosseiro</td></tr><tr><td>Bayer 4x4</td><td>Média</td><td>Rápido</td><td>Meio-tom balanceado</td></tr><tr><td>Bayer 8x8</td><td>Alta</td><td>Médio</td><td>Detalhe fino, padrões sutis</td></tr><tr><td>Atkinson</td><td>Média</td><td>Médio</td><td>Imagens de alto contraste, madeira</td></tr><tr><td>Stucki</td><td>Mais Alta</td><td>Lento</td><td>Retratos, tons de pele suaves</td></tr><tr><td>Jarvis, Judice e Ninke</td><td>Mais Alta</td><td>Lento</td><td>Gradientes suaves, grão fino</td></tr><tr><td>Sierra (3 linhas, 2 linhas, Lite)</td><td>Alta</td><td>Médio</td><td>Alternativas mais leves ao Stucki</td></tr><tr><td>Burkes</td><td>Alta</td><td>Médio</td><td>Fotos, mais rápido que Stucki</td></tr><tr><td>Papel de jornal</td><td>Média</td><td>Mais Rápido</td><td>Pontos agrupados no estilo jornal</td></tr><tr><td>Meio-tom</td><td>Média</td><td>Rápido</td><td>Pontos redondos, tamanho e ângulo ajustáveis</td></tr></tbody></table>
 <p><strong>Floyd-Steinberg</strong> é padrão e recomendado para a maioria das gravações de fotos. Usa difusão de
 erro para distribuir erros de quantização para pixels vizinhos, criando resultados de aparência
 natural.</p>
 <p><strong>Pontilhamento Bayer</strong> cria padrões regulares que podem produzir efeitos artísticos lembrando
 impressão tradicional de meio-tom.</p>
+<p><strong>Stucki, Jarvis, Sierra, Burkes e Atkinson</strong> são algoritmos de difusão de erro como o
+Floyd-Steinberg que espalham o erro por uma vizinhança maior, o que dá um grão mais uniforme em
+áreas planas como tons de pele. O Atkinson difunde só parte do erro, o que aumenta o contraste.
+Ative <strong>Serpentina</strong> para alternar a direção de varredura em cada linha e evitar listras
+direcionais.</p>
+<p><strong>Papel de jornal</strong> e <strong>Meio-tom</strong> agrupam os pixels em pontos. O meio-tom desenha pontos redondos
+numa grade definida por <strong>Tamanho da célula de meio-tom</strong> (a distância entre os centros dos pontos)
+e <strong>Ângulo do meio-tom</strong>; use um tamanho de célula de pelo menos algumas larguras do ponto do laser.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="configurações-do-modo-múltiplas-profundidades">Configurações do Modo Múltiplas Profundidades<a href="#configurações-do-modo-múltiplas-profundidades" class="hash-link" aria-label="Link direto para Configurações do Modo Múltiplas Profundidades" title="Link direto para Configurações do Modo Múltiplas Profundidades" translate="no">​</a></h4>
 <p><img decoding="async" loading="lazy" alt="Configurações do modo Múltiplas Profundidades" src="/pt-BR/assets/images/step-settings-engrave-general-multi_pass-a95493377dde8a16d80b5d806095e309.webp" width="648" height="948" class="img_ev3q"></p>
 <p><strong>Número de Níveis de Profundidade:</strong></p>

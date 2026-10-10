@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.f89e1316.css">
-<script src="/zh-CN/assets/js/runtime~main.24f92227.js" defer="defer"></script>
-<script src="/zh-CN/assets/js/main.348c2c9e.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.79d494ac.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.7a6f4218.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -258,10 +258,54 @@
 
 
 
-<table><thead><tr><th>算法</th><th>质量</th><th>速度</th><th>最适用于</th></tr></thead><tbody><tr><td>Floyd-Steinberg</td><td>最高</td><td>最慢</td><td>照片、人像、平滑渐变</td></tr><tr><td>Bayer 2x2</td><td>低</td><td>最快</td><td>粗糙的半色调效果</td></tr><tr><td>Bayer 4x4</td><td>中等</td><td>快</td><td>平衡的半色调</td></tr><tr><td>Bayer 8x8</td><td>高</td><td>中等</td><td>精细细节、微妙的图案</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>算法</th><th>质量</th><th>速度</th><th>最适用于</th></tr></thead><tbody><tr><td>Floyd-Steinberg</td><td>最高</td><td>最慢</td><td>照片、人像、平滑渐变</td></tr><tr><td>Bayer 2x2</td><td>低</td><td>最快</td><td>粗糙的半色调效果</td></tr><tr><td>Bayer 4x4</td><td>中等</td><td>快</td><td>平衡的半色调</td></tr><tr><td>Bayer 8x8</td><td>高</td><td>中等</td><td>精细细节、微妙的图案</td></tr><tr><td>Atkinson</td><td>中等</td><td>中等</td><td>高对比度图像、木材</td></tr><tr><td>Stucki</td><td>最高</td><td>慢</td><td>人像、平滑肤色</td></tr><tr><td>Jarvis, Judice &amp; Ninke</td><td>最高</td><td>慢</td><td>柔和渐变、细腻颗粒</td></tr><tr><td>Sierra（三行、两行、Lite）</td><td>高</td><td>中等</td><td>比 Stucki 更轻量的替代</td></tr><tr><td>Burkes</td><td>高</td><td>中等</td><td>照片，比 Stucki 快</td></tr><tr><td>报纸印刷</td><td>中等</td><td>最快</td><td>报纸风格的聚集网点</td></tr><tr><td>半色调</td><td>中等</td><td>快</td><td>圆形网点，尺寸和角度可调</td></tr></tbody></table>
 <p><strong>Floyd-Steinberg</strong>
 是默认选择，推荐用于大多数照片雕刻。它使用误差扩散将量化误差分配到相邻像素，从而产生自然的效果。</p>
 <p><strong>Bayer 抖动</strong>会创建规则的图案，可产生类似传统半色调印刷的艺术效果。</p>
+<p><strong>Stucki、Jarvis、Sierra、Burkes 和 Atkinson</strong> 与 Floyd-Steinberg 一样属于误差扩散算法，但会把误差分散到更大的邻域，在肤色等平坦区域中颗粒更平滑。Atkinson 只扩散部分误差，因此对比度更高。启用<strong>蛇形扫描</strong>可在每一行交替扫描方向，避免方向性条纹。</p>
+<p><strong>报纸印刷</strong>和<strong>半色调</strong>会把像素聚集成网点。半色调在网格上绘制圆形网点，网格由<strong>半色调网格尺寸</strong>（网点中心之间的距离）和<strong>半色调角度</strong>决定；网格尺寸应至少为激光光斑宽度的几倍。</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="多深度模式设置">多深度模式设置<a href="#多深度模式设置" class="hash-link" aria-label="多深度模式设置 的直接链接" title="多深度模式设置 的直接链接" translate="no">​</a></h4>
 <p><img decoding="async" loading="lazy" alt="多深度模式设置" src="/zh-CN/assets/images/step-settings-engrave-general-multi_pass-a95493377dde8a16d80b5d806095e309.webp" width="648" height="948" class="img_ev3q"></p>
 <p><strong>深度级别数：</strong></p>

@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/fr/assets/css/styles.91e4bc1d.css">
-<script src="/fr/assets/js/runtime~main.3b4c7389.js" defer="defer"></script>
-<script src="/fr/assets/js/main.3a2e005e.js" defer="defer"></script>
+<script src="/fr/assets/js/runtime~main.ca70943e.js" defer="defer"></script>
+<script src="/fr/assets/js/main.ada9d281.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -274,12 +274,63 @@ glissant les marqueurs sur l&#x27;histogramme.</li>
 
 
 
-<table><thead><tr><th>Algorithme</th><th>Qualité</th><th>Vitesse</th><th>Idéal Pour</th></tr></thead><tbody><tr><td>Floyd-Steinberg</td><td>La plus élevée</td><td>La plus lente</td><td>Photos, portraits, dégradés lisses</td></tr><tr><td>Bayer 2x2</td><td>Basse</td><td>La plus rapide</td><td>Effet demi-teinte grossier</td></tr><tr><td>Bayer 4x4</td><td>Moyenne</td><td>Rapide</td><td>Demi-teinte équilibrée</td></tr><tr><td>Bayer 8x8</td><td>Élevée</td><td>Moyenne</td><td>Détails fins, motifs subtils</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Algorithme</th><th>Qualité</th><th>Vitesse</th><th>Idéal Pour</th></tr></thead><tbody><tr><td>Floyd-Steinberg</td><td>La plus élevée</td><td>La plus lente</td><td>Photos, portraits, dégradés lisses</td></tr><tr><td>Bayer 2x2</td><td>Basse</td><td>La plus rapide</td><td>Effet demi-teinte grossier</td></tr><tr><td>Bayer 4x4</td><td>Moyenne</td><td>Rapide</td><td>Demi-teinte équilibrée</td></tr><tr><td>Bayer 8x8</td><td>Élevée</td><td>Moyenne</td><td>Détails fins, motifs subtils</td></tr><tr><td>Atkinson</td><td>Moyenne</td><td>Moyenne</td><td>Images contrastées, bois</td></tr><tr><td>Stucki</td><td>La plus élevée</td><td>Lente</td><td>Portraits, tons chair doux</td></tr><tr><td>Jarvis, Judice et Ninke</td><td>La plus élevée</td><td>Lente</td><td>Dégradés doux, grain fin</td></tr><tr><td>Sierra (3 lignes, 2 lignes, Lite)</td><td>Élevée</td><td>Moyenne</td><td>Alternatives plus légères à Stucki</td></tr><tr><td>Burkes</td><td>Élevée</td><td>Moyenne</td><td>Photos, plus rapide que Stucki</td></tr><tr><td>Papier journal</td><td>Moyenne</td><td>La plus rapide</td><td>Points groupés façon journal</td></tr><tr><td>Demi-teinte</td><td>Moyenne</td><td>Rapide</td><td>Points ronds, taille et angle réglables</td></tr></tbody></table>
 <p><strong>Floyd-Steinberg</strong> est le défaut et recommandé pour la plupart des gravures photo. Il utilise la
 diffusion d&#x27;erreur pour distribuer les erreurs de quantification aux pixels voisins, créant des
 résultats d&#x27;apparence naturelle.</p>
 <p><strong>Le tramage Bayer</strong> crée des motifs réguliers qui peuvent produire des effets artistiques
 ressemblant à l&#x27;impression demi-teinte traditionnelle.</p>
+<p><strong>Stucki, Jarvis, Sierra, Burkes et Atkinson</strong> sont des algorithmes de diffusion d&#x27;erreur comme
+Floyd-Steinberg qui répartissent l&#x27;erreur sur un voisinage plus large, ce qui donne un grain plus
+régulier dans les zones uniformes comme les tons chair. Atkinson ne diffuse qu&#x27;une partie de
+l&#x27;erreur, ce qui augmente le contraste. Active <strong>Serpentin</strong> pour alterner le sens de balayage à
+chaque ligne et éviter les stries directionnelles.</p>
+<p><strong>Papier journal</strong> et <strong>Demi-teinte</strong> regroupent les pixels en points. Demi-teinte trace des points
+ronds sur une grille définie par <strong>Taille de cellule de demi-teinte</strong> (la distance entre les centres
+des points) et <strong>Angle de demi-teinte</strong> ; choisis une taille de cellule d&#x27;au moins quelques largeurs
+de point laser.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="paramètres-du-mode-profondeurs-multiples">Paramètres du Mode Profondeurs Multiples<a href="#paramètres-du-mode-profondeurs-multiples" class="hash-link" aria-label="Lien direct vers Paramètres du Mode Profondeurs Multiples" title="Lien direct vers Paramètres du Mode Profondeurs Multiples" translate="no">​</a></h4>
 <p><img decoding="async" loading="lazy" alt="Paramètres du mode Profondeurs Multiples" src="/fr/assets/images/step-settings-engrave-general-multi_pass-a95493377dde8a16d80b5d806095e309.webp" width="648" height="948" class="img_ev3q"></p>
 <p><strong>Nombre de Niveaux de Profondeur :</strong></p>

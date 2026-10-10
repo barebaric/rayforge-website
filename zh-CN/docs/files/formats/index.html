@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.f89e1316.css">
-<script src="/zh-CN/assets/js/runtime~main.24f92227.js" defer="defer"></script>
-<script src="/zh-CN/assets/js/main.348c2c9e.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.79d494ac.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.7a6f4218.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -117,7 +117,49 @@
 
 
 
-<table><thead><tr><th>格式</th><th>类型</th><th>导入</th><th>导出</th><th>推荐用途</th></tr></thead><tbody><tr><td><strong>SVG</strong></td><td>矢量</td><td>✓ 直接/描摹</td><td>✓ 对象导出</td><td>主要设计格式</td></tr><tr><td><strong>DXF</strong></td><td>矢量</td><td>✓ 直接</td><td>✓ 对象导出</td><td>CAD 数据交换</td></tr><tr><td><strong>PDF</strong></td><td>混合</td><td>✓ 直接/描摹</td><td>–</td><td>包含矢量内容的文档</td></tr><tr><td><strong>LightBurn</strong></td><td>矢量</td><td>✓ 直接</td><td>–</td><td>LightBurn 项目文件</td></tr><tr><td><strong>Ruida</strong></td><td>矢量</td><td>✓ 直接</td><td>–</td><td>Ruida 控制器作业文件</td></tr><tr><td><strong>PNG</strong></td><td>栅格</td><td>✓ 描摹</td><td>–</td><td>照片、图像</td></tr><tr><td><strong>JPEG</strong></td><td>栅格</td><td>✓ 描摹</td><td>–</td><td>照片</td></tr><tr><td><strong>BMP</strong></td><td>栅格</td><td>✓ 描摹</td><td>–</td><td>简单图形</td></tr><tr><td><strong>RFS</strong></td><td>草图</td><td>✓ 直接</td><td>✓ 对象导出</td><td>参数化草图</td></tr><tr><td><strong>G-code</strong></td><td>控制</td><td>–</td><td>✓ 主要</td><td>机器输出</td></tr><tr><td><strong>Rayforge 项目</strong></td><td>项目</td><td>✓</td><td>✓</td><td>保存/加载项目</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>格式</th><th>类型</th><th>导入</th><th>导出</th><th>推荐用途</th></tr></thead><tbody><tr><td><strong>SVG</strong></td><td>矢量</td><td>✓ 直接/描摹</td><td>✓ 对象导出</td><td>主要设计格式</td></tr><tr><td><strong>DXF</strong></td><td>矢量</td><td>✓ 直接</td><td>✓ 对象导出</td><td>CAD 数据交换</td></tr><tr><td><strong>PDF</strong></td><td>混合</td><td>✓ 直接/描摹</td><td>–</td><td>包含矢量内容的文档</td></tr><tr><td><strong>Illustrator</strong></td><td>矢量</td><td>✓ 直接/描摹</td><td>–</td><td>来自 Illustrator 的标志</td></tr><tr><td><strong>EPS</strong></td><td>矢量</td><td>✓ 直接/描摹</td><td>–</td><td>标志、印刷稿</td></tr><tr><td><strong>LightBurn</strong></td><td>矢量</td><td>✓ 直接</td><td>–</td><td>LightBurn 项目文件</td></tr><tr><td><strong>Ruida</strong></td><td>矢量</td><td>✓ 直接</td><td>–</td><td>Ruida 控制器作业文件</td></tr><tr><td><strong>HPGL</strong></td><td>矢量</td><td>✓ 直接</td><td>–</td><td>绘图仪和刻字机文件</td></tr><tr><td><strong>PNG</strong></td><td>栅格</td><td>✓ 描摹</td><td>–</td><td>照片、图像</td></tr><tr><td><strong>JPEG</strong></td><td>栅格</td><td>✓ 描摹</td><td>–</td><td>照片</td></tr><tr><td><strong>BMP</strong></td><td>栅格</td><td>✓ 描摹</td><td>–</td><td>简单图形</td></tr><tr><td><strong>GIF</strong></td><td>栅格</td><td>✓ 描摹</td><td>–</td><td>简单图形、动画</td></tr><tr><td><strong>TIFF</strong></td><td>栅格</td><td>✓ 描摹</td><td>–</td><td>扫描件、印刷稿</td></tr><tr><td><strong>WebP</strong></td><td>栅格</td><td>✓ 描摹</td><td>–</td><td>网页图片</td></tr><tr><td><strong>RFS</strong></td><td>草图</td><td>✓ 直接</td><td>✓ 对象导出</td><td>参数化草图</td></tr><tr><td><strong>G-code</strong></td><td>控制</td><td>–</td><td>✓ 主要</td><td>机器输出</td></tr><tr><td><strong>Rayforge 项目</strong></td><td>项目</td><td>✓</td><td>✓</td><td>保存/加载项目</td></tr></tbody></table>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="矢量格式">矢量格式<a href="#矢量格式" class="hash-link" aria-label="矢量格式 的直接链接" title="矢量格式 的直接链接" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="svg可缩放矢量图形">SVG（可缩放矢量图形）<a href="#svg可缩放矢量图形" class="hash-link" aria-label="SVG（可缩放矢量图形） 的直接链接" title="SVG（可缩放矢量图形） 的直接链接" translate="no">​</a></h3>
@@ -275,6 +317,30 @@
 <li class="">源文件无法提供 SVG 或 DXF 时</li>
 </ul>
 <hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="adobe-illustratorai">Adobe Illustrator（.ai）<a href="#adobe-illustratorai" class="hash-link" aria-label="Adobe Illustrator（.ai） 的直接链接" title="Adobe Illustrator（.ai） 的直接链接" translate="no">​</a></h3>
+<p><strong>扩展名：</strong> <code>.ai</code> <strong>MIME 类型：</strong> <code>application/illustrator</code> <strong>导入：</strong> 直接矢量或渲染后描摹
+<strong>导出：</strong> 不支持</p>
+<p>从版本 9 起，Illustrator 默认在文件中嵌入一个 PDF（<strong>创建 PDF 兼容文件</strong>选项）。Rayforge 读取这个 PDF，因此这类文件的导入方式与 PDF 完全相同，包括图层。</p>
+<p>较旧的 Illustrator 文件以及未启用 PDF 兼容保存的文件是 PostScript 格式。如果已安装 Ghostscript，Rayforge 会用它进行转换；否则导入对话框会说明如何重新保存文件。</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="eps-和-postscripteps--ps">EPS 和 PostScript（.eps / .ps）<a href="#eps-和-postscripteps--ps" class="hash-link" aria-label="EPS 和 PostScript（.eps / .ps） 的直接链接" title="EPS 和 PostScript（.eps / .ps） 的直接链接" translate="no">​</a></h3>
+<p><strong>扩展名：</strong> <code>.eps</code>、<code>.epsf</code>、<code>.ps</code> <strong>MIME 类型：</strong> <code>image/x-eps</code>、<code>application/postscript</code>
+<strong>导入：</strong> 通过 Ghostscript 直接导入矢量或渲染后描摹 <strong>导出：</strong> 不支持</p>
+<p>Rayforge 使用 Ghostscript 将 EPS 和 PostScript 文件转换为 PDF，然后像 PDF 一样导入。EPS 的边界框会成为页面尺寸，文字会转换为轮廓。</p>
+<p><strong>Ghostscript</strong> 是可选依赖。在 Linux 上，请安装发行版的 <code>ghostscript</code>
+软件包；在 Windows 和 macOS 上，请从 Ghostscript 官网安装。没有 Ghostscript 时，导入对话框会显示提示信息而不是预览。项目会保存转换后的 PDF，因此已保存的项目在没有 Ghostscript 的电脑上也能打开。</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hpglplt--hpgl">HPGL（.plt / .hpgl）<a href="#hpglplt--hpgl" class="hash-link" aria-label="HPGL（.plt / .hpgl） 的直接链接" title="HPGL（.plt / .hpgl） 的直接链接" translate="no">​</a></h3>
+<p><strong>扩展名：</strong> <code>.plt</code>、<code>.hpgl</code>、<code>.hpg</code>、<code>.hgl</code> <strong>MIME 类型：</strong> <code>application/vnd.hp-hpgl</code> <strong>导入：</strong>
+直接矢量解析 <strong>导出：</strong> 不支持</p>
+<p>HPGL 是切割绘图仪、刻字机和较旧 CAD 软件使用的绘图语言。Rayforge 可读取常用的绘图指令：笔的移动（PU、PD、PA、PR）、圆和圆弧（CI、AA、AR）以及矩形（EA、ER、RA、RR）。每支笔都会成为一个图层，您可以在导入对话框中选择。</p>
+<p><strong>限制：</strong></p>
+<ul>
+<li class="">✗ 文字标签（LB）会被跳过；请在绘图前将文字转换为路径</li>
+<li class="">✗ 缩放（SC）和旋转（RO）会被忽略；导入对话框会列出被跳过的指令</li>
+<li class="">坐标采用标准的每毫米 40 个绘图仪单位</li>
+</ul>
+<hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="栅格格式">栅格格式<a href="#栅格格式" class="hash-link" aria-label="栅格格式 的直接链接" title="栅格格式 的直接链接" translate="no">​</a></h2>
 <p>所有栅格格式均<strong>通过描摹导入</strong> — 自动转换为矢量路径。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="png便携式网络图形">PNG（便携式网络图形）<a href="#png便携式网络图形" class="hash-link" aria-label="PNG（便携式网络图形） 的直接链接" title="PNG（便携式网络图形） 的直接链接" translate="no">​</a></h3>
@@ -325,10 +391,20 @@
 <li class="">仅在源软件无法导出 PNG/SVG 时使用</li>
 </ul>
 <hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="giftiff-和-webp">GIF、TIFF 和 WebP<a href="#giftiff-和-webp" class="hash-link" aria-label="GIF、TIFF 和 WebP 的直接链接" title="GIF、TIFF 和 WebP 的直接链接" translate="no">​</a></h3>
+<p><strong>扩展名：</strong> <code>.gif</code>、<code>.tif</code>、<code>.tiff</code>、<code>.webp</code> <strong>MIME 类型：</strong>
+<code>image/gif</code>、<code>image/tiff</code>、<code>image/webp</code> <strong>导入：</strong> 描摹为矢量 <strong>导出：</strong> 不支持</p>
+<p>这些格式的描摹方式与 PNG 相同。</p>
+<ul>
+<li class=""><strong>动画 GIF</strong> 和<strong>多页 TIFF</strong> 只导入第一帧或第一页</li>
+<li class=""><strong>TIFF</strong> 文件通常保存打印分辨率，用于确定物理尺寸</li>
+<li class="">没有分辨率信息的图像按 96 DPI 导入</li>
+</ul>
+<hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="相关页面">相关页面<a href="#相关页面" class="hash-link" aria-label="相关页面 的直接链接" title="相关页面 的直接链接" translate="no">​</a></h2>
 <ul>
 <li class=""><a class="" href="/zh-CN/docs/files/importing">导入文件</a> - 如何导入每种格式</li>
 <li class=""><a class="" href="/zh-CN/docs/files/exporting">导出</a> - G-code 导出选项</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/files/formats.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>编辑此页</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文档页面导航"><a class="pagination-nav__link pagination-nav__link--prev" href="/zh-CN/docs/files/importing"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">导入文件</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/zh-CN/docs/files/exporting"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">从 Rayforge 导出</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#格式概览" class="table-of-contents__link toc-highlight">格式概览</a><ul><li><a href="#快速参考" class="table-of-contents__link toc-highlight">快速参考</a></li></ul></li><li><a href="#矢量格式" class="table-of-contents__link toc-highlight">矢量格式</a><ul><li><a href="#svg可缩放矢量图形" class="table-of-contents__link toc-highlight">SVG（可缩放矢量图形）</a></li><li><a href="#dxfdrawing-exchange-format" class="table-of-contents__link toc-highlight">DXF（Drawing Exchange Format）</a></li><li><a href="#rfsrayforge-草图" class="table-of-contents__link toc-highlight">RFS（Rayforge 草图）</a></li><li><a href="#lightburn-lbrn--lbrn2" class="table-of-contents__link toc-highlight">LightBurn (.lbrn / .lbrn2)</a></li><li><a href="#pdf便携式文档格式" class="table-of-contents__link toc-highlight">PDF（便携式文档格式）</a></li></ul></li><li><a href="#栅格格式" class="table-of-contents__link toc-highlight">栅格格式</a><ul><li><a href="#png便携式网络图形" class="table-of-contents__link toc-highlight">PNG（便携式网络图形）</a></li><li><a href="#jpeg联合图像专家组" class="table-of-contents__link toc-highlight">JPEG（联合图像专家组）</a></li><li><a href="#bmp位图" class="table-of-contents__link toc-highlight">BMP（位图）</a></li></ul></li><li><a href="#相关页面" class="table-of-contents__link toc-highlight">相关页面</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/files/formats.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>编辑此页</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文档页面导航"><a class="pagination-nav__link pagination-nav__link--prev" href="/zh-CN/docs/files/importing"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">导入文件</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/zh-CN/docs/files/exporting"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">从 Rayforge 导出</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#格式概览" class="table-of-contents__link toc-highlight">格式概览</a><ul><li><a href="#快速参考" class="table-of-contents__link toc-highlight">快速参考</a></li></ul></li><li><a href="#矢量格式" class="table-of-contents__link toc-highlight">矢量格式</a><ul><li><a href="#svg可缩放矢量图形" class="table-of-contents__link toc-highlight">SVG（可缩放矢量图形）</a></li><li><a href="#dxfdrawing-exchange-format" class="table-of-contents__link toc-highlight">DXF（Drawing Exchange Format）</a></li><li><a href="#rfsrayforge-草图" class="table-of-contents__link toc-highlight">RFS（Rayforge 草图）</a></li><li><a href="#lightburn-lbrn--lbrn2" class="table-of-contents__link toc-highlight">LightBurn (.lbrn / .lbrn2)</a></li><li><a href="#pdf便携式文档格式" class="table-of-contents__link toc-highlight">PDF（便携式文档格式）</a></li><li><a href="#adobe-illustratorai" class="table-of-contents__link toc-highlight">Adobe Illustrator（.ai）</a></li><li><a href="#eps-和-postscripteps--ps" class="table-of-contents__link toc-highlight">EPS 和 PostScript（.eps / .ps）</a></li><li><a href="#hpglplt--hpgl" class="table-of-contents__link toc-highlight">HPGL（.plt / .hpgl）</a></li></ul></li><li><a href="#栅格格式" class="table-of-contents__link toc-highlight">栅格格式</a><ul><li><a href="#png便携式网络图形" class="table-of-contents__link toc-highlight">PNG（便携式网络图形）</a></li><li><a href="#jpeg联合图像专家组" class="table-of-contents__link toc-highlight">JPEG（联合图像专家组）</a></li><li><a href="#bmp位图" class="table-of-contents__link toc-highlight">BMP（位图）</a></li><li><a href="#giftiff-和-webp" class="table-of-contents__link toc-highlight">GIF、TIFF 和 WebP</a></li></ul></li><li><a href="#相关页面" class="table-of-contents__link toc-highlight">相关页面</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>

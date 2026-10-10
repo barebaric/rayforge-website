@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.5c29851c.css">
-<script src="/assets/js/runtime~main.f6109436.js" defer="defer"></script>
-<script src="/assets/js/main.a7140a6a.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.41485c78.js" defer="defer"></script>
+<script src="/assets/js/main.1dc41895.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -270,11 +270,60 @@ markers on the histogram.</li>
 
 
 
-<table><thead><tr><th>Algorithm</th><th>Quality</th><th>Speed</th><th>Best For</th></tr></thead><tbody><tr><td>Floyd-Steinberg</td><td>Highest</td><td>Slowest</td><td>Photos, portraits, smooth gradients</td></tr><tr><td>Bayer 2x2</td><td>Low</td><td>Fastest</td><td>Coarse halftone effect</td></tr><tr><td>Bayer 4x4</td><td>Medium</td><td>Fast</td><td>Balanced halftone</td></tr><tr><td>Bayer 8x8</td><td>High</td><td>Medium</td><td>Fine detail, subtle patterns</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Algorithm</th><th>Quality</th><th>Speed</th><th>Best For</th></tr></thead><tbody><tr><td>Floyd-Steinberg</td><td>Highest</td><td>Slowest</td><td>Photos, portraits, smooth gradients</td></tr><tr><td>Bayer 2x2</td><td>Low</td><td>Fastest</td><td>Coarse halftone effect</td></tr><tr><td>Bayer 4x4</td><td>Medium</td><td>Fast</td><td>Balanced halftone</td></tr><tr><td>Bayer 8x8</td><td>High</td><td>Medium</td><td>Fine detail, subtle patterns</td></tr><tr><td>Atkinson</td><td>Medium</td><td>Medium</td><td>High-contrast images, wood</td></tr><tr><td>Stucki</td><td>Highest</td><td>Slow</td><td>Portraits, smooth skin tones</td></tr><tr><td>Jarvis, Judice &amp; Ninke</td><td>Highest</td><td>Slow</td><td>Soft gradients, fine grain</td></tr><tr><td>Sierra (3-row, 2-row, Lite)</td><td>High</td><td>Medium</td><td>Lighter alternatives to Stucki</td></tr><tr><td>Burkes</td><td>High</td><td>Medium</td><td>Photos, faster than Stucki</td></tr><tr><td>Newsprint</td><td>Medium</td><td>Fastest</td><td>Clustered newspaper-style dots</td></tr><tr><td>Halftone</td><td>Medium</td><td>Fast</td><td>Round dots, adjustable size and angle</td></tr></tbody></table>
 <p><strong>Floyd-Steinberg</strong> is default and recommended for most photo engravings. It uses error diffusion to
 distribute quantization errors to neighboring pixels, creating natural-looking results.</p>
 <p><strong>Bayer dithering</strong> creates regular patterns that can produce artistic effects resembling
 traditional halftone printing.</p>
+<p><strong>Stucki, Jarvis, Sierra, Burkes and Atkinson</strong> are error-diffusion algorithms like Floyd-Steinberg
+that spread the error over a wider neighborhood, which gives a smoother grain in flat areas such as
+skin tones. Atkinson diffuses only part of the error, which raises contrast. Turn on <strong>Serpentine</strong>
+to alternate the scan direction on every row and avoid directional streaks.</p>
+<p><strong>Newsprint</strong> and <strong>Halftone</strong> group pixels into dots. Halftone draws round dots on a grid set by
+<strong>Halftone Cell Size</strong> (the distance between dot centers) and <strong>Halftone Angle</strong>; use a cell size of
+at least a few laser spot widths.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="multiple-depths-mode-settings">Multiple Depths Mode Settings<a href="#multiple-depths-mode-settings" class="hash-link" aria-label="Direct link to Multiple Depths Mode Settings" title="Direct link to Multiple Depths Mode Settings" translate="no">​</a></h4>
 <p><img decoding="async" loading="lazy" alt="Multiple Depths mode settings" src="/assets/images/step-settings-engrave-general-multi_pass-a95493377dde8a16d80b5d806095e309.webp" width="648" height="948" class="img_ev3q"></p>
 <p><strong>Number of Depth Levels:</strong></p>
