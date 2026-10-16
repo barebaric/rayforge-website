@@ -2,11 +2,150 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rayforge.org/fr/blog</id>
     <title>Rayforge Blog</title>
-    <updated>2026-10-02T00:00:00.000Z</updated>
+    <updated>2026-10-16T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rayforge.org/fr/blog"/>
     <subtitle>Rayforge Blog</subtitle>
     <icon>https://rayforge.org/fr/images/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Rayforge 1.13.0-beta1 - More Import Formats, a Dithering Engine, Rust GRBL by Default]]></title>
+        <id>https://rayforge.org/fr/blog/rayforge-1-13-beta1-import-formats-dithering-rust-grbl</id>
+        <link href="https://rayforge.org/fr/blog/rayforge-1-13-beta1-import-formats-dithering-rust-grbl"/>
+        <updated>2026-10-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Rayforge 1.13.0-beta1 opens many more file formats, adds a full dithering engine for photos, makes the Rust GRBL driver the default, and brings reloadable sources, sketcher booleans, and configurable mouse gestures.]]></summary>
+        <content type="html"><![CDATA[<p>The first beta of Rayforge 1.13 is here. This cycle is all about the moment your work enters and
+leaves Rayforge: opening almost any file your laser software might hand you, engraving it with a lot
+more control, and finishing the Rust GRBL migration. A lot of it came from the community.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="many-more-file-formats">Many More File Formats<a href="https://rayforge.org/fr/blog/rayforge-1-13-beta1-import-formats-dithering-rust-grbl#many-more-file-formats" class="hash-link" aria-label="Lien direct vers Many More File Formats" title="Lien direct vers Many More File Formats" translate="no">​</a></h2>
+<p>Rayforge now opens <strong>Adobe Illustrator (<code>.ai</code>), EPS and PostScript</strong> files, <strong>HPGL</strong> plot files from
+cutting plotters and CAD programs, <strong>GIF, TIFF and WebP</strong> bitmaps, and <strong>compressed SVG</strong> (<code>.svgz</code>,
+Inkscape's "Compressed SVG"). AI files saved with PDF compatibility import like PDFs; EPS,
+PostScript and older AI files are converted with Ghostscript, an optional dependency, with a clear
+message when it is missing. Text becomes outlines and the EPS bounding box sets the page size.</p>
+<p>This is the work of <strong>@switch87</strong> (Gert Pellin) -- more on him below.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="reload-and-relink-imported-sources">Reload and Relink Imported Sources<a href="https://rayforge.org/fr/blog/rayforge-1-13-beta1-import-formats-dithering-rust-grbl#reload-and-relink-imported-sources" class="hash-link" aria-label="Lien direct vers Reload and Relink Imported Sources" title="Lien direct vers Reload and Relink Imported Sources" translate="no">​</a></h2>
+<p>When an imported file changes on disk, Rayforge now notices. The File menu, the canvas and layer
+list context menus, and the asset browser gained <strong>Reload from Disk</strong> and <strong>Relink Source File</strong>.
+Reloading replaces a source's data in place and updates every workpiece made from it as one undo
+step, so your placement, layers, tabs and settings survive. Files can be marked for <strong>Auto-reload</strong>,
+and a General preference turns watching off entirely.</p>
+<p>This pairs nicely with the new imports: EPS, PostScript and converted AI sources now remember the
+original file they came from, so "did this change?" still works after a conversion.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-real-dithering-engine">A Real Dithering Engine<a href="https://rayforge.org/fr/blog/rayforge-1-13-beta1-import-formats-dithering-rust-grbl#a-real-dithering-engine" class="hash-link" aria-label="Lien direct vers A Real Dithering Engine" title="Lien direct vers A Real Dithering Engine" translate="no">​</a></h2>
+<p>Engraved photos got a serious upgrade. Rayforge ships <strong>eight error-diffusion kernels</strong> -- Atkinson,
+Stucki, Jarvis-Judice-Ninke, three Sierra variants and Burkes -- alongside the classic
+Floyd-Steinberg, plus an optional <strong>serpentine scan</strong>. For a different look there are two halftone
+screens: a round-dot <strong>Halftone</strong> and a clustered-dot <strong>Newsprint</strong>, each with an adjustable cell
+size and angle. If you import files from LightBurn, your dither mode now comes along for the ride.</p>
+<p>The heavy lifting lives in raygeo, our Rust geometry library, so it stays fast even on large images.
+Also by @switch87.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-rust-grbl-driver-is-now-the-default">The Rust GRBL Driver Is Now the Default<a href="https://rayforge.org/fr/blog/rayforge-1-13-beta1-import-formats-dithering-rust-grbl#the-rust-grbl-driver-is-now-the-default" class="hash-link" aria-label="Lien direct vers The Rust GRBL Driver Is Now the Default" title="Lien direct vers The Rust GRBL Driver Is Now the Default" translate="no">​</a></h2>
+<p>Rayforge 1.12 introduced the experimental "GRBL (Rust)" driver. Since then it has fully replaced the
+old Python implementation: the <strong>GRBL Serial</strong> driver runs its entire protocol stack -- handshake,
+character-counting flow control, job streaming, stall detection and deadlock recovery -- in Rust
+through the raydriver library, under the familiar name. Existing machine configurations keep working
+unchanged, and machines saved while the driver still carried its experimental name keep working too.
+The network driver also gained a proper <strong>FluidNC</strong> protocol variant.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ruida-improvements">Ruida Improvements<a href="https://rayforge.org/fr/blog/rayforge-1-13-beta1-import-formats-dithering-rust-grbl#ruida-improvements" class="hash-link" aria-label="Lien direct vers Ruida Improvements" title="Lien direct vers Ruida Improvements" translate="no">​</a></h2>
+<p><strong>ruida-pa</strong> was updated to 0.22, adding <strong>TCP</strong> support for network connections alongside UDP. The
+setup wizard gained a <strong>connection mode selector</strong> (Auto, Network, USB) that shows only the fields
+that matter for the transport you pick, and there is a new <strong>Z homing mode</strong> to choose between a
+real Z home switch and the controller's <strong>auto-focus probe</strong> routine. <strong>@medoix</strong> fixed homing X and
+Y individually, and <strong>Sculpfun S30</strong> owners will be glad the focus laser now works while the head is
+stationary -- with a new dedicated <strong>Sculpfun S9</strong> profile alongside it.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sketcher-booleans-and-path-clean-up">Sketcher Booleans and Path Clean-Up<a href="https://rayforge.org/fr/blog/rayforge-1-13-beta1-import-formats-dithering-rust-grbl#sketcher-booleans-and-path-clean-up" class="hash-link" aria-label="Lien direct vers Sketcher Booleans and Path Clean-Up" title="Lien direct vers Sketcher Booleans and Path Clean-Up" translate="no">​</a></h2>
+<p>The sketcher gained <strong>boolean operations</strong>: Union, Difference, Intersection and Exclude bake the
+selected closed regions into proper multi-ring polygons (outer contours counter-clockwise, holes
+clockwise), so difference results cut correctly. The Sketch menu has a new Boolean section with
+shortcuts, and undo/redo brings the original entities and fills back (#398).</p>
+<p>The Object menu and canvas context menu also gained <strong>path clean-up</strong> tools: <strong>Close Paths</strong>, <strong>Join
+Open Paths</strong> with a tolerance in mm, <strong>Delete Duplicates</strong>, and <strong>Break Apart</strong>, each a single undo
+step (#516).</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="dashed-cuts-with-perforation">Dashed Cuts with Perforation<a href="https://rayforge.org/fr/blog/rayforge-1-13-beta1-import-formats-dithering-rust-grbl#dashed-cuts-with-perforation" class="hash-link" aria-label="Lien direct vers Dashed Cuts with Perforation" title="Lien direct vers Dashed Cuts with Perforation" translate="no">​</a></h2>
+<p>Not every cut is meant to free a part. A fold line, a tear-off ticket, or a stitch guide is often
+better <em>weakened</em> than cut through, and the new <strong>Perforation</strong> post-processor on Contour steps does
+exactly that: the laser fires for a <strong>Cut Length</strong>, travels a <strong>Skip Length</strong> with the laser off,
+and repeats the rhythm along every contour, restarting with a full cut at the start of each one. It
+is off by default, so it stays out of the way until you need it (#525, thanks to @switch87).</p>
+<p><img decoding="async" loading="lazy" alt="The Perforation settings on the post-processing page of a Contour step" src="https://rayforge.org/fr/assets/images/step-settings-contour-post-perforation-49cfb4d5129031d00c79e7aa6d6a633b.webp" width="648" height="948" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="cleaner-framing-better-offsets-sharper-estimates">Cleaner Framing, Better Offsets, Sharper Estimates<a href="https://rayforge.org/fr/blog/rayforge-1-13-beta1-import-formats-dithering-rust-grbl#cleaner-framing-better-offsets-sharper-estimates" class="hash-link" aria-label="Lien direct vers Cleaner Framing, Better Offsets, Sharper Estimates" title="Lien direct vers Cleaner Framing, Better Offsets, Sharper Estimates" translate="no">​</a></h2>
+<ul>
+<li class="">The <strong>Frame</strong> button now opens a popover with an <strong>Include Overscan Margin</strong> switch. Turn it off
+and the frame traces only the envelope the laser actually burns, so it no longer overshoots your
+artwork by the raster overscan margin (#563).</li>
+<li class="">A <strong>speed-dependent bidirectional scan offset table</strong> in the Advanced settings interpolates the
+raster offset for each step's speed, for lasers whose left-to-right/right-to-left skew grows with
+speed. A per-step offset still overrides the table (#307).</li>
+<li class=""><strong>Crop to Stock</strong> is now offered on Engrave steps, so raster content can be clipped to the stock
+boundary (#508).</li>
+<li class="">The running job <strong>ETA</strong> is derived from the modeled time remaining instead of the recent command
+speed, so it no longer collapses during buffered bursts or swings on jobs that mix fast and slow
+phases (#496).</li>
+<li class="">Full-sweep raster passes are limited to each scan line's own content extent (raygeo 1.66.0), so a
+shape that narrows in X -- an hourglass, say -- no longer sweeps the widest extent on every row
+(#565).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="camera-and-convenience">Camera and Convenience<a href="https://rayforge.org/fr/blog/rayforge-1-13-beta1-import-formats-dithering-rust-grbl#camera-and-convenience" class="hash-link" aria-label="Lien direct vers Camera and Convenience" title="Lien direct vers Camera and Convenience" translate="no">​</a></h2>
+<ul>
+<li class="">The camera view can now extend <strong>beyond the work area</strong>, with adjustable margins and border
+transparency (#543, thanks to @atkaper).</li>
+<li class=""><strong>macOS</strong>: adding a camera no longer crashes Rayforge. The app bundle declares its camera usage,
+and the first frame waits for the capture session to settle (#510).</li>
+<li class="">A new <strong>Mouse Gestures</strong> settings page rebinds 2D and 3D canvas and sketch-editor navigation
+gestures (#390).</li>
+<li class=""><strong>Image editing</strong> arrives as an addon: non-destructive edits stored per workpiece, with <strong>Invert
+Image</strong> and <strong>Adjust Image</strong> (brightness, contrast, gamma, and an unsharp mask). Addons can
+provide their own edits through the new <code>register_image_edits</code> hook (#515).</li>
+<li class="">Step settings gained a <strong>Workpieces</strong> tab that shows exactly which workpieces a step processes,
+including the selection that generated content like the Material Test Grid used to hide.</li>
+<li class=""><strong>AppImage</strong> builds are attached to GitHub releases, and Rayforge is now on <strong>WinGet</strong>
+(<code>winget install rayforge</code>).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bug-fixes-and-polish">Bug Fixes and Polish<a href="https://rayforge.org/fr/blog/rayforge-1-13-beta1-import-formats-dithering-rust-grbl#bug-fixes-and-polish" class="hash-link" aria-label="Lien direct vers Bug Fixes and Polish" title="Lien direct vers Bug Fixes and Polish" translate="no">​</a></h2>
+<ul>
+<li class="">On-canvas text is drawn through Pango instead of Cairo's toy font API, fixing garbled text and
+wrong sizes, especially for non-Latin languages (#507 -- thank you @atkaper)</li>
+<li class="">Disabling an addon now reliably removes its <code>action_extension_registry</code> handlers, even when
+several addons registered same-named handlers</li>
+<li class="">The Engrave step's Bidirectional Scan Offset had no effect since the pipeline moved to raygeo
+intents; changing it now also refreshes the cached toolpath (#307)</li>
+<li class="">Choice rows backed by an enum (like the dithering algorithm) show the step's actual value when the
+dialog opens and after undo</li>
+<li class="">The Ruida setup wizard no longer requires the optional USB device and Magic fields (#501, #504)</li>
+<li class="">GRBL (Network): a new FluidNC protocol variant replaces the confusing "did not receive a valid
+HTTP response" error on ESP3D-style handshakes (#490)</li>
+<li class="">Zipping a device export no longer fails on 3D models that carry timestamps before 1980 (#500)</li>
+<li class="">The Sculpfun S30 focus laser uses constant power (M3), so it lights while the head is stationary
+(#512)</li>
+<li class="">Material test: resizing the workpiece no longer leaves the grid's cells and labels misaligned with
+the workpiece image until the next rebuild (#568)</li>
+</ul>
+<p>This release was made possible with the support of our Patreon supporters: Build a CubeSat, DaveSys,
+froqstar, old-man-and-the-seam, pghpete, Derek McTavish, starlynx.dev, and six anonymous supporters.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="download-rayforge-113">Download Rayforge 1.13<a href="https://rayforge.org/fr/blog/rayforge-1-13-beta1-import-formats-dithering-rust-grbl#download-rayforge-113" class="hash-link" aria-label="Lien direct vers Download Rayforge 1.13" title="Lien direct vers Download Rayforge 1.13" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://rayforge.org/" target="_blank" rel="noopener noreferrer" class="">Website</a></li>
+<li class=""><a href="https://github.com/barebaric/rayforge/releases" target="_blank" rel="noopener noreferrer" class="">GitHub Releases</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="join-the-community">Join the Community<a href="https://rayforge.org/fr/blog/rayforge-1-13-beta1-import-formats-dithering-rust-grbl#join-the-community" class="hash-link" aria-label="Lien direct vers Join the Community" title="Lien direct vers Join the Community" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://discord.gg/sTHNdTtpQJ" target="_blank" rel="noopener noreferrer" class="">Discord</a></li>
+<li class=""><a href="https://github.com/barebaric/rayforge/discussions" target="_blank" rel="noopener noreferrer" class="">GitHub Discussions</a></li>
+<li class=""><a href="https://www.patreon.com/c/knipknap" target="_blank" rel="noopener noreferrer" class="">Patreon</a></li>
+</ul>]]></content>
+        <author>
+            <name>Rayforge Team</name>
+            <uri>https://github.com/barebaric/rayforge</uri>
+        </author>
+        <category label="release" term="release"/>
+        <category label="1.13" term="1.13"/>
+        <category label="beta" term="beta"/>
+        <category label="import" term="import"/>
+        <category label="dithering" term="dithering"/>
+        <category label="grbl" term="grbl"/>
+        <category label="ruida" term="ruida"/>
+        <category label="sketcher" term="sketcher"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Rayforge 1.12 - Native Ruida Support, Machine Control, Command Step]]></title>
         <id>https://rayforge.org/fr/blog/rayforge-1-12-native-ruida-machine-control-command-step</id>
@@ -1425,7 +1564,7 @@ open-source !</p>
         <link href="https://rayforge.org/fr/blog/5-tips-better-engraving"/>
         <updated>2025-02-20T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Aperçu 3D]]></summary>
-        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="Aperçu 3D" src="https://rayforge.org/fr/assets/images/main-3d-a186414a71b1cc64899d1095cfb34cd2.webp" width="2448" height="1698" class="img_ev3q"></p>
+        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="Aperçu 3D" src="https://rayforge.org/fr/assets/images/main-3d-c8affd508604ce50f6ebe574f9179e73.webp" width="2448" height="1698" class="img_ev3q"></p>
 <p>Obtenir des résultats de gravure laser de qualité professionnelle nécessite plus que du bon matériel
 — vos paramètres logiciels et votre flux de travail comptent aussi. Voici cinq conseils pour vous
 aider à tirer le meilleur parti de Rayforge.</p>
@@ -1617,7 +1756,7 @@ démarrer :</p>
         <link href="https://rayforge.org/fr/blog/welcome-to-rayforge"/>
         <updated>2024-12-15T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Fenêtre principale de Rayforge]]></summary>
-        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="Fenêtre principale de Rayforge" src="https://rayforge.org/fr/assets/images/main-standard-1359c2aa3c3a97356397a15b306466fe.webp" width="2448" height="1698" class="img_ev3q"></p>
+        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="Fenêtre principale de Rayforge" src="https://rayforge.org/fr/assets/images/main-standard-ace7614147e781829e3af796416abcc2.webp" width="2448" height="1698" class="img_ev3q"></p>
 <p>Nous sommes ravis de vous présenter Rayforge, un émetteur de G-code moderne et open-source, ainsi
 qu'un logiciel de contrôle conçu spécifiquement pour les découpeuses et graveuses laser basées sur
 GRBL.</p>

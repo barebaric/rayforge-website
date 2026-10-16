@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.f8cd542b.css">
-<script src="/uk/assets/js/runtime~main.9c5cdf1b.js" defer="defer"></script>
-<script src="/uk/assets/js/main.c38ead4a.js" defer="defer"></script>
+<script src="/uk/assets/js/runtime~main.e218f54b.js" defer="defer"></script>
+<script src="/uk/assets/js/main.b8a36626.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -49,15 +49,20 @@
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">git push origin feature/your-feature-name</span><br></div></code></pre></div></div>
 </li>
 <li class="">
-<p>Створіть pull request на GitHub з:</p>
+<p>Створіть pull request на GitHub і заповніть шаблон pull request:</p>
 <ul>
-<li class="">Чіткою назвою, що описує зміну</li>
-<li class="">Детальним описом того, що ви змінили і чому</li>
-<li class="">Посиланням на будь-які пов&#x27;язані issues</li>
-<li class="">Скріншотами якщо зміна впливає на UI</li>
+<li class="">Чітку назву та опис зміни і проблеми, яку вона вирішує</li>
+<li class="">Чому ви обрали саме такий архітектурний підхід і які альтернативи відхилили</li>
+<li class="">Точні кроки, якими ви тестували зміну локально</li>
+<li class="">Посилання на будь-які пов&#x27;язані issues</li>
+<li class="">Скріншоти якщо зміна впливає на UI</li>
+<li class="">Усі прапорці чекліста шаблона відмічені</li>
 </ul>
 </li>
 </ol>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Шаблон є обов&#x27;язковим</div><div class="admonitionContent_BuS1"><p>Pull requests, які не заповнюють шаблон, автоматично закриваються ботом. Відредагуйте опис pull
+request так, щоб кожен розділ був заповнений і кожен прапорець відмічений — після цього pull
+request автоматично відкривається знову.</p></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="процес-код-ревю">Процес код-рев&#x27;ю<a href="#процес-код-ревю" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <ul>
 <li class="">Всі pull requests потребують рев&#x27;ю перед злиттям</li>
@@ -73,6 +78,13 @@
 <li class="task-list-item"><input type="checkbox" disabled=""> Мають оновлення документації за потреби</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> Затверджені принаймні одним мейнтейнером</li>
 </ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="код-за-допомогою-ші">Код за допомогою ШІ<a href="#код-за-допомогою-ші" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<p>Ми вітаємо використання інструментів ШІ для написання коду. Однак ви несете повну відповідальність
+за код, який надсилаєте. Ви ПОВИННІ повністю його розуміти і бути спроможними пояснити архітектурні
+рішення.</p>
+<p>Код, згенерований ШІ, часто містить тонкі помилки, архітектурні невідповідності та вразливості
+безпеки. Pull requests, що виглядають як сирі неперевірені відповіді ШІ, буде закрито, щоб заощадити
+час мейнтейнерів.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="додаткові-вказівки">Додаткові вказівки<a href="#додаткові-вказівки" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="повідомлення-комітів">Повідомлення комітів<a href="#повідомлення-комітів" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
 <p>Використовуйте чіткі, описові повідомлення комітів:</p>
@@ -89,6 +101,6 @@
 <a href="https://github.com/barebaric/rayforge/issues" target="_blank" rel="noopener noreferrer" class="">issue</a> щоб обговорити ваш підхід перед інвестуванням
 значного часу. :::</p>
 <p>:::примітка Потрібна допомога? Якщо ви не впевнені щодо будь-якої частини процесу внесення внеску,
-не соромтеся просити допомоги в issue або дискусії. :::</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/developer/getting-started/submitting-changes.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Редагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Навігація по документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/developer/getting-started/setup"><div class="pagination-nav__sublabel">Назад</div><div class="pagination-nav__label">Налаштування</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/uk/docs/developer/architecture"><div class="pagination-nav__sublabel">Далі</div><div class="pagination-nav__label">Архітектура Rayforge</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#створіть-гілку-функціональності" class="table-of-contents__link toc-highlight">Створіть гілку функціональності</a></li><li><a href="#внесіть-ваші-зміни" class="table-of-contents__link toc-highlight">Внесіть ваші зміни</a></li><li><a href="#протестуйте-ваші-зміни" class="table-of-contents__link toc-highlight">Протестуйте ваші зміни</a></li><li><a href="#синхронізуйте-з-upstream" class="table-of-contents__link toc-highlight">Синхронізуйте з upstream</a></li><li><a href="#надішліть-pull-request" class="table-of-contents__link toc-highlight">Надішліть Pull Request</a></li><li><a href="#процес-код-ревю" class="table-of-contents__link toc-highlight">Процес код-рев&#39;ю</a></li><li><a href="#вимоги-до-злиття" class="table-of-contents__link toc-highlight">Вимоги до злиття</a></li><li><a href="#додаткові-вказівки" class="table-of-contents__link toc-highlight">Додаткові вказівки</a><ul><li><a href="#повідомлення-комітів" class="table-of-contents__link toc-highlight">Повідомлення комітів</a></li><li><a href="#малі-сфокусовані-зміни" class="table-of-contents__link toc-highlight">Малі, сфокусовані зміни</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+не соромтеся просити допомоги в issue або дискусії. :::</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/developer/getting-started/submitting-changes.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Редагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Навігація по документації"><a class="pagination-nav__link pagination-nav__link--prev" href="/uk/docs/developer/getting-started/setup"><div class="pagination-nav__sublabel">Назад</div><div class="pagination-nav__label">Налаштування</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/uk/docs/developer/architecture"><div class="pagination-nav__sublabel">Далі</div><div class="pagination-nav__label">Архітектура Rayforge</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#створіть-гілку-функціональності" class="table-of-contents__link toc-highlight">Створіть гілку функціональності</a></li><li><a href="#внесіть-ваші-зміни" class="table-of-contents__link toc-highlight">Внесіть ваші зміни</a></li><li><a href="#протестуйте-ваші-зміни" class="table-of-contents__link toc-highlight">Протестуйте ваші зміни</a></li><li><a href="#синхронізуйте-з-upstream" class="table-of-contents__link toc-highlight">Синхронізуйте з upstream</a></li><li><a href="#надішліть-pull-request" class="table-of-contents__link toc-highlight">Надішліть Pull Request</a></li><li><a href="#процес-код-ревю" class="table-of-contents__link toc-highlight">Процес код-рев&#39;ю</a></li><li><a href="#вимоги-до-злиття" class="table-of-contents__link toc-highlight">Вимоги до злиття</a></li><li><a href="#код-за-допомогою-ші" class="table-of-contents__link toc-highlight">Код за допомогою ШІ</a></li><li><a href="#додаткові-вказівки" class="table-of-contents__link toc-highlight">Додаткові вказівки</a><ul><li><a href="#повідомлення-комітів" class="table-of-contents__link toc-highlight">Повідомлення комітів</a></li><li><a href="#малі-сфокусовані-зміни" class="table-of-contents__link toc-highlight">Малі, сфокусовані зміни</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>
