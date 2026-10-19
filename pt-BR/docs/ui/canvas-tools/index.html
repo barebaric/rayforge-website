@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/pt-BR/assets/css/styles.95ce9ec7.css">
-<script src="/pt-BR/assets/js/runtime~main.2748454e.js" defer="defer"></script>
-<script src="/pt-BR/assets/js/main.29870dd6.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/runtime~main.30a42982.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/main.f52c8c5c.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -166,8 +166,23 @@ depois arraste para rotacionar ao redor do ponto central</li>
 <li class=""><strong>Agrupe objetos relacionados</strong>: Mais fácil de mover e organizar (<kbd>ctrl+g</kbd> para agrupar)</li>
 </ol>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="edição-de-vetores">Edição de Vetores<a href="#edição-de-vetores" class="hash-link" aria-label="Link direto para Edição de Vetores" title="Link direto para Edição de Vetores" translate="no">​</a></h2>
-<p>Clique duas vezes em uma peça de trabalho na tela para entrar no modo de edição de vetores. Neste
-modo, você pode selecionar e excluir segmentos de vetor individuais da peça de trabalho.</p>
+<p>Clique duas vezes em uma peça de trabalho importada na tela para entrar no modo de edição de
+vetores. Neste modo, você pode selecionar e excluir segmentos de vetor individuais da peça de
+trabalho, e editar seus nós.</p>
+<p>Clique em um segmento para selecioná-lo, ou arraste um quadro ao redor de vários. Os nós do contorno
+selecionado aparecem como pequenos quadrados, e as alças das curvas selecionadas como pontos
+redondos:</p>
+<ul>
+<li class=""><strong>Arraste um nó</strong> para movê-lo; as alças de curva vizinhas acompanham. Em um caminho fechado, o nó
+inicial e o final são um só nó.</li>
+<li class=""><strong>Arraste uma alça</strong> para mudar a forma de uma curva.</li>
+<li class="">Clique em um nó e pressione <kbd>Delete</kbd> para removê-lo; os segmentos dos dois lados se unem
+em um. Sem nenhum nó selecionado, <kbd>Delete</kbd> remove os segmentos selecionados.</li>
+<li class="">Aponte para um segmento e pressione <kbd>I</kbd> para inserir um nó ali.</li>
+<li class="">Pressione <kbd>C</kbd> para transformar os segmentos selecionados em curvas, ou de volta em linhas
+retas quando todos já forem curvas.</li>
+</ul>
+<p>Toda alteração pode ser desfeita. Esboços são editados no esboçador.</p>
 <p>Para sair do modo de edição de vetores, clique fora da peça de trabalho ou pressione
 <kbd>Escape</kbd>.</p>
 <p>Para fechar lacunas, unir partes abertas, excluir caminhos duplicados ou separar uma peça de

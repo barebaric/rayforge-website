@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.f89e1316.css">
-<script src="/zh-CN/assets/js/runtime~main.504ad7ac.js" defer="defer"></script>
-<script src="/zh-CN/assets/js/main.ac8040c9.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.087ddde0.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.a2162936.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -81,13 +81,13 @@ Max</strong>：仅在启用<strong>有 Z 轴</strong>时显示。机器坐标系
 </ul>
 <p>设置边距后，工作区域（可用空间）计算为轴范围减去边距。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="软限位">软限位<a href="#软限位" class="hash-link" aria-label="软限位 的直接链接" title="软限位 的直接链接" translate="no">​</a></h2>
-<p>可配置的点动机器头的安全边界。启用后，点动控制将阻止超出这些限制的移动。</p>
+<p>可配置的点动机器头的安全边界。启用后，点动控制将阻止超出这些限制的移动。禁用后，点动不受限制。</p>
 <ul>
-<li class=""><strong>启用自定义软限位</strong>：切换以使用自定义限制而不是工作表面边界</li>
+<li class=""><strong>启用软限位</strong>：开启或关闭点动限制检查</li>
 <li class=""><strong>X/Y 最小值</strong>：每个轴的最小坐标</li>
 <li class=""><strong>X/Y 最大值</strong>：每个轴的最大坐标</li>
 </ul>
-<p>软限位自动限制在轴范围内（0 到范围值）。</p>
+<p>软限位在位置显示中所示的工作坐标系中计算，因此当工作原点移动时它们保持不变。启用但没有自定义边界时，将使用工作表面边界。限位自动限制在轴范围内（0 到范围值）。</p>
 <div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>提示</div><div class="admonitionContent_BuS1"><p>使用软限位保护工作表面上永远不应到达的区域，例如有夹具或敏感设备的区域。</p></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="另请参阅">另请参阅<a href="#另请参阅" class="hash-link" aria-label="另请参阅 的直接链接" title="另请参阅 的直接链接" translate="no">​</a></h2>
 <ul>

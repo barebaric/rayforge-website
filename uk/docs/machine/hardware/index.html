@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.f8cd542b.css">
-<script src="/uk/assets/js/runtime~main.e218f54b.js" defer="defer"></script>
-<script src="/uk/assets/js/main.b8a36626.js" defer="defer"></script>
+<script src="/uk/assets/js/runtime~main.56c00acd.js" defer="defer"></script>
+<script src="/uk/assets/js/main.c3c34506.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -98,15 +98,16 @@
 поля.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="програмні-обмеження">Програмні обмеження<a href="#програмні-обмеження" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Налаштовані межі безпеки для переміщення головки машини. Коли увімкнено, елементи керування
-переміщенням запобігатимуть руху за межами цих обмежень.</p>
+переміщенням запобігатимуть руху за межами цих обмежень. Коли вимкнено, переміщення не обмежується.</p>
 <ul>
-<li class=""><strong>Увімкнути власні програмні обмеження</strong>: Перемикач для використання власних обмежень замість меж
-робочої поверхні</li>
+<li class=""><strong>Увімкнути програмні обмеження</strong>: Вмикає або вимикає перевірку обмежень переміщення</li>
 <li class=""><strong>X/Y Мін</strong>: Мінімальна координата для кожної осі</li>
 <li class=""><strong>X/Y Макс</strong>: Максимальна координата для кожної осі</li>
 </ul>
-<p>Програмні обмеження автоматично обмежуються, щоб залишатися в межах діапазонів осей (від 0 до
-значення діапазону).</p>
+<p>Програмні обмеження оцінюються в системі робочих координат, показаній на дисплеї позиції, тому вони
+залишаються на місці під час переміщення робочого початку. Без власних обмежень під час увімкнення
+використовуються межі робочої поверхні. Обмеження автоматично обмежуються, щоб залишатися в межах
+діапазонів осей (від 0 до значення діапазону).</p>
 <p>:::порада Використовуйте програмні обмеження для захисту ділянок вашої робочої поверхні, які ніколи
 не повинні досягатися під час переміщення, наприклад, ділянок з оснащенням або чутливим обладнанням.
 :::</p>

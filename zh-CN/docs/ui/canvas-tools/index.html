@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.f89e1316.css">
-<script src="/zh-CN/assets/js/runtime~main.504ad7ac.js" defer="defer"></script>
-<script src="/zh-CN/assets/js/main.ac8040c9.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.087ddde0.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.a2162936.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -161,7 +161,17 @@
 <li class=""><strong>组合相关对象</strong>：更容易移动和组织（<kbd>ctrl+g</kbd> 组合）</li>
 </ol>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="矢量编辑">矢量编辑<a href="#矢量编辑" class="hash-link" aria-label="矢量编辑 的直接链接" title="矢量编辑 的直接链接" translate="no">​</a></h2>
-<p>在画布上双击工件进入矢量编辑模式。在此模式下，您可以选择和删除工件的各个矢量段。</p>
+<p>在画布上双击导入的工件进入矢量编辑模式。在此模式下，您可以选择和删除工件的各个矢量段，并编辑其节点。</p>
+<p>点击一个段将其选中，或拖出一个框选中多个段。所选轮廓的节点显示为小方块，所选曲线的控制柄显示为圆点：</p>
+<ul>
+<li class=""><strong>拖动节点</strong>可移动它；相邻的曲线控制柄随之移动。在闭合路径中，起点和终点是同一个节点。</li>
+<li class=""><strong>拖动控制柄</strong>可改变曲线的形状。</li>
+<li class="">点击一个节点并按 <kbd>Delete</kbd> 将其删除；两侧的段合并为一段。未选中节点时，<kbd>Delete</kbd>
+删除所选的段。</li>
+<li class="">将指针指向一个段并按 <kbd>I</kbd>，在该处插入一个节点。</li>
+<li class="">按 <kbd>C</kbd> 将所选段转换为曲线；如果它们已全部是曲线，则转换回直线。</li>
+</ul>
+<p>每次更改都可以撤销。草图则在草图绘制器中编辑。</p>
 <p>要退出矢量编辑模式，请点击工件外部或按 <kbd>Escape</kbd>。</p>
 <p>要闭合缺口、连接开放的片段、删除重复路径或将工件打散，请使用<a class="" href="/zh-CN/docs/features/path-cleanup">清理路径</a>工具。</p>
 <hr>
