@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.f8cd542b.css">
-<script src="/uk/assets/js/runtime~main.56c00acd.js" defer="defer"></script>
-<script src="/uk/assets/js/main.c3c34506.js" defer="defer"></script>
+<script src="/uk/assets/js/runtime~main.1418b82b.js" defer="defer"></script>
+<script src="/uk/assets/js/main.9435ced4.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -37,8 +37,21 @@
 можуть потребувати небагато більше встановленого обсягу, тоді як складні проекти можуть
 легко спожити 10 ГБ оперативної пам&#x27;яті або більше та вимагати значного додаткового
 дискового простору.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="вимога-до-процесора-в-linux-x86-64-v2">Вимога до процесора в Linux (x86-64-v2)<a href="#вимога-до-процесора-в-linux-x86-64-v2" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
+<p>Пакети для Linux містять власний NumPy, який вимагає рівня набору інструкцій
+x86-64-v2 (SSE4.2 та POPCNT). Це стосується пакетів Snap, Flatpak та
+AppImage, а також встановлення через pip з PyPI. На старіших процесорах
+x86-64 (Intel Core 2 та старіші, AMD Phenom та старіші) Rayforge не
+запускається, зазвичай без повідомлення про помилку. Процесори Intel
+починаючи з Nehalem (2008) та AMD починаючи з Bulldozer (2011)
+підтримують x86-64-v2.</p>
+<p>Перевірити, чи відповідає ваш процесор цій вимозі, можна командою:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">grep -m1 flags /proc/cpuinfo | grep -o -w -E &#x27;sse4_2|popcnt&#x27; | sort -u</span><br></div></code></pre></div></div>
+<p>Якщо команда не виводить обидва прапорці, встановіть Rayforge з PPA Ubuntu
+або зі сховища пакетів вашого дистрибутива. Ці версії використовують NumPy,
+що постачається з вашим дистрибутивом, і працюють на старіших процесорах.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="наступні-кроки">Наступні кроки<a href="#наступні-кроки" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h2>
 <p>Тепер, коли Rayforge встановлено, перейдіть до
-<a class="" href="/uk/docs/getting-started/first-time-setup">Першого налаштування</a>, щоб налаштувати вашу машину.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/getting-started/installation.mdx" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Редагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Навігація по документації"><a class="pagination-nav__link pagination-nav__link--next" href="/uk/docs/getting-started/first-time-setup"><div class="pagination-nav__sublabel">Далі</div><div class="pagination-nav__label">Перше налаштування</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#системні-вимоги" class="table-of-contents__link toc-highlight">Системні вимоги</a></li><li><a href="#наступні-кроки" class="table-of-contents__link toc-highlight">Наступні кроки</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
+<a class="" href="/uk/docs/getting-started/first-time-setup">Першого налаштування</a>, щоб налаштувати вашу машину.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/barebaric/rayforge/tree/main/website/docs/getting-started/installation.mdx" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Редагувати цю сторінку</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Навігація по документації"><a class="pagination-nav__link pagination-nav__link--next" href="/uk/docs/getting-started/first-time-setup"><div class="pagination-nav__sublabel">Далі</div><div class="pagination-nav__label">Перше налаштування</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#системні-вимоги" class="table-of-contents__link toc-highlight">Системні вимоги</a></li><li><a href="#вимога-до-процесора-в-linux-x86-64-v2" class="table-of-contents__link toc-highlight">Вимога до процесора в Linux (x86-64-v2)</a></li><li><a href="#наступні-кроки" class="table-of-contents__link toc-highlight">Наступні кроки</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Rayforge Contributors</div></div></div></footer></div>
 </body>
 </html>
