@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/pt-BR/assets/css/styles.95ce9ec7.css">
-<script src="/pt-BR/assets/js/runtime~main.22c9c9e0.js" defer="defer"></script>
-<script src="/pt-BR/assets/js/main.3b48a99d.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/runtime~main.df28cd6f.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/main.3f336789.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -103,13 +103,14 @@ dos eixos menos as margens.</p>
 de jog impedirão movimento fora desses limites. Quando desabilitados, o jog não é limitado.</p>
 <ul>
 <li class=""><strong>Habilitar Limites de Software</strong>: Ativa ou desativa a verificação dos limites de jog</li>
-<li class=""><strong>X/Y Mín</strong>: Coordenada mínima para cada eixo</li>
-<li class=""><strong>X/Y Máx</strong>: Coordenada máxima para cada eixo</li>
+<li class=""><strong>X/Y Distância Mín da Origem</strong>: Distância mínima permitida do canto da origem em cada eixo</li>
+<li class=""><strong>X/Y Distância Máx da Origem</strong>: Distância máxima permitida do canto da origem em cada eixo</li>
 </ul>
-<p>Os limites de software são avaliados no sistema de coordenadas de trabalho mostrado no indicador de
-posição, por isso permanecem no lugar quando a origem de trabalho se move. Sem limites
-personalizados, ao habilitar são usados os limites da superfície de trabalho. Os limites são
-automaticamente restringidos para ficar dentro da extensão dos eixos (0 ao valor de extensão).</p>
+<p>Os limites de software são avaliados em coordenadas de máquina e permanecem ancorados à mesa física,
+por isso não se movem quando a origem de trabalho é redefinida. Os valores são inseridos como
+distâncias do canto da origem de coordenadas para dentro da mesa. Sem limites personalizados, ao
+habilitar são usadas as extensões dos eixos. Os limites são automaticamente restringidos para ficar
+dentro da extensão dos eixos (0 ao valor de extensão).</p>
 <div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>dica</div><div class="admonitionContent_BuS1"><p>Use limites de software para proteger áreas da sua superfície de trabalho que nunca devem ser
 alcançadas durante o jog, como áreas com fixadores ou equipamentos sensíveis.</p></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="veja-também">Veja Também<a href="#veja-também" class="hash-link" aria-label="Link direto para Veja Também" title="Link direto para Veja Também" translate="no">​</a></h2>
