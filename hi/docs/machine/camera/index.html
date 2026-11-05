@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/hi/assets/css/styles.e1d8e4fd.css">
-<script src="/hi/assets/js/runtime~main.1fa3e859.js" defer="defer"></script>
-<script src="/hi/assets/js/main.83958b78.js" defer="defer"></script>
+<script src="/hi/assets/js/runtime~main.6311df03.js" defer="defer"></script>
+<script src="/hi/assets/js/main.8f012094.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -258,8 +258,9 @@ URL लागू करने के बाद, कैमरा फिर से
 <li class="">कार्ड को कैमरा दृश्य के भीतर भिन्न स्थितियों और कोणों पर खिसकाएँ और प्रत्येक स्थिति के लिए
 <strong>Capture Frame</strong> पर क्लिक करें. कोनों और किनारों सहित पूरे फ़्रेम को कवर करने वाले कम से कम 8
 कैप्चर लक्षित करें. प्रगति पट्टी और स्थिति सूचक कैप्चर गुणवत्ता दिखाते हैं.</li>
-<li class="">पर्याप्त फ़्रेम कैप्चर होने पर, विज़ार्ड डिस्टॉर्शन मॉडल गणना करके लागू करता है — कैमरा ओवरले अब
-सुधारी, सीधी छवि दिखाता है.</li>
+<li class="">पर्याप्त फ़्रेम कैप्चर होने पर, <strong>Calibrate</strong> पर क्लिक करें. विज़ार्ड परिणाम दिखाता है — इसे लागू
+करने के लिए <strong>Save Calibration</strong> से पुष्टि करें (केवल <strong>Discard</strong> परिणाम छोड़ता है) — कैमरा ओवरले
+अब सुधारी, सीधी छवि दिखाता है.</li>
 </ol>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="मैन्युअल-कैलिब्रेशन">मैन्युअल कैलिब्रेशन<a href="#मैन्युअल-कैलिब्रेशन" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h4>
 <p><img decoding="async" loading="lazy" alt="लेंस कैलिब्रेशन संवाद" src="/hi/assets/images/machine-settings-camera-lens-calibration-05f75bbc03b6d7a7b18081caacce2e7b.webp" width="1280" height="798" class="img_ev3q"></p>
@@ -268,10 +269,12 @@ URL लागू करने के बाद, कैमरा फिर से
 डिस्टॉर्शन गुणांक मैन्युअल रूप से समायोजित कर सकते हैं — रेडियल (k1–k3) और टैंजेंशियल (p1–p2)
 पैरामीटर सूक्ष्म-ट्यून करें.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="चरण-23-छवि-संरेखण">चरण 2.3: छवि संरेखण<a href="#चरण-23-छवि-संरेखण" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" alt="छवि संरेखण संवाद" src="/hi/assets/images/machine-settings-camera-image-alignment-bee3892734f1d38464c8d28067c36f7b.webp" width="1328" height="1008" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="छवि संरेखण संवाद" src="/hi/assets/images/machine-settings-camera-image-alignment-1d169e02d6f1ac015dad3edb8d45dc3e.webp" width="1328" height="1008" class="img_ev3q"></p>
 <p>छवि संरेखण कैमरा विज़ार्ड का अंतिम चरण है. कैमरा संरेखण कैमरा पिक्सेल और वास्तविक दुनिया के
 निर्देशांकों के बीच संबंध कैलिब्रेट करता है, सटीक स्थापना सक्षम करता है. विज़ार्ड यहीं वर्णित
-प्रक्रिया उपयोग करता है, और संरेखण लागू करने से विज़ार्ड पूरा हो जाता है.</p>
+प्रक्रिया उपयोग करता है, और संरेखण लागू करने से विज़ार्ड पूरा हो जाता है. बिना लागू संरेखण के समाप्त
+करने पर पहले चेतावनी दी जाती है, क्योंकि तब कैमरा दृश्य को वर्क एरिया पर सटीक रूप से मैप नहीं किया
+जा सकता.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="संरेखण-क्यों-आवश्यक-है">संरेखण क्यों आवश्यक है<a href="#संरेखण-क्यों-आवश्यक-है" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h4>
 <p>कैमरा कार्य क्षेत्र को ऊपर से देखता है, लेकिन छवि हो सकती है:</p>
 <ul>
@@ -315,8 +318,10 @@ URL लागू करने के बाद, कैमरा फिर से
 <li class="">
 <p><strong>विश्व निर्देशांक दर्ज करें:</strong></p>
 <ul>
-<li class="">प्रत्येक छवि बिंदु के लिए, वास्तविक दुनिया के X/Y निर्देशांक mm में दर्ज करें</li>
-<li class="">ये वास्तविक मशीन निर्देशांक हैं जहाँ प्रत्येक बिंदु स्थित है</li>
+<li class="">प्रत्येक छवि बिंदु के लिए, वास्तविक दुनिया के X/Y निर्देशांक अपनी प्रदर्शन इकाई में दर्ज करें
+(एप्लिकेशन सेटिंग्स में सेट)</li>
+<li class="">ये वास्तविक मशीन निर्देशांक हैं जहाँ प्रत्येक बिंदु स्थित है, जो वर्क एरिया के मूल बिंदु से
+मापे जाते हैं</li>
 <li class="">पैमाने से सटीक रूप से मापें या ज्ञात मशीन स्थितियाँ उपयोग करें</li>
 </ul>
 </li>

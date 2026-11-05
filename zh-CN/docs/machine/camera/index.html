@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.f89e1316.css">
-<script src="/zh-CN/assets/js/runtime~main.76c0162b.js" defer="defer"></script>
-<script src="/zh-CN/assets/js/main.b5804728.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.a9521a14.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.5ddc345b.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -175,7 +175,8 @@
 <ol start="3">
 <li class="">在相机视图内将图案移动到不同的位置和角度，并为每个位置点击 <strong>Capture
 Frame</strong>。争取至少 8 次捕获，覆盖整个画面，包括角落和边缘。进度条和状态指示器显示捕获质量。</li>
-<li class="">当捕获足够的画面时，向导会计算畸变模型并应用它——相机叠加现在显示校正后的直线图像。</li>
+<li class="">当捕获足够的画面时，点击 <strong>Calibrate</strong>。向导会显示结果——确认 <strong>Save Calibration</strong> 以应用它（只有
+<strong>Discard</strong> 会丢弃结果）——相机叠加现在显示校正后的直线图像。</li>
 </ol>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="使用已打印好的图案">使用已打印好的图案<a href="#使用已打印好的图案" class="hash-link" aria-label="使用已打印好的图案 的直接链接" title="使用已打印好的图案 的直接链接" translate="no">​</a></h4>
 <p><strong>Pattern Geometry</strong>
@@ -202,8 +203,8 @@ Spacing</strong>，将横向偏移填入 <strong>Row Offset</strong>。</li>
 <p>如需手动系数或在自动校准后微调结果，请点击相机属性中<strong>镜头校准</strong>旁边的 <strong>Configure</strong>
 打开镜头校准对话框。在这里您可以手动调整畸变系数——微调径向（k1–k3）和切向（p1–p2）参数。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="第-23-步图像对齐">第 2.3 步：图像对齐<a href="#第-23-步图像对齐" class="hash-link" aria-label="第 2.3 步：图像对齐 的直接链接" title="第 2.3 步：图像对齐 的直接链接" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" alt="图像对齐对话框" src="/zh-CN/assets/images/machine-settings-camera-image-alignment-bee3892734f1d38464c8d28067c36f7b.webp" width="1328" height="1008" class="img_ev3q"></p>
-<p>图像对齐是相机向导的最后阶段。相机对齐校准相机像素与现实世界坐标之间的关系，实现精确定位。向导使用此处描述的相同过程，应用对齐后向导即完成。</p>
+<p><img decoding="async" loading="lazy" alt="图像对齐对话框" src="/zh-CN/assets/images/machine-settings-camera-image-alignment-1d169e02d6f1ac015dad3edb8d45dc3e.webp" width="1328" height="1008" class="img_ev3q"></p>
+<p>图像对齐是相机向导的最后阶段。相机对齐校准相机像素与现实世界坐标之间的关系，实现精确定位。向导使用此处描述的相同过程，应用对齐后向导即完成。在没有应用对齐的情况下完成向导会先弹出警告，因为此时相机画面无法准确地映射到工作区上。</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="为什么需要对齐">为什么需要对齐<a href="#为什么需要对齐" class="hash-link" aria-label="为什么需要对齐 的直接链接" title="为什么需要对齐 的直接链接" translate="no">​</a></h4>
 <p>相机从上方看到工作区域，但图像可能是：</p>
 <ul>
@@ -247,8 +248,8 @@ Spacing</strong>，将横向偏移填入 <strong>Row Offset</strong>。</li>
 <li class="">
 <p><strong>输入世界坐标：</strong></p>
 <ul>
-<li class="">对于每个图像点，输入真实的 X/Y 坐标（mm）</li>
-<li class="">这些是每个点所在的实际机器坐标</li>
+<li class="">对于每个图像点，以您的显示单位（在应用程序设置中设置）输入真实的 X/Y 坐标</li>
+<li class="">这些是每个点所在的实际机器坐标，从工作区原点开始测量</li>
 <li class="">用尺子准确测量或使用已知的机器位置</li>
 </ul>
 </li>

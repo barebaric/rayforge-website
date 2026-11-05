@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/pt-BR/assets/css/styles.95ce9ec7.css">
-<script src="/pt-BR/assets/js/runtime~main.52955456.js" defer="defer"></script>
-<script src="/pt-BR/assets/js/main.a77a79a5.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/runtime~main.e4a7d85b.js" defer="defer"></script>
+<script src="/pt-BR/assets/js/main.4d75d6b8.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -201,8 +201,9 @@ mesa do laser.</li>
 <li class="">Mova o padrão para diferentes posições e ângulos dentro da vista da câmera e clique em <strong>Capture
 Frame</strong> para cada posição. Procure fazer pelo menos 8 capturas cobrindo todo o quadro, incluindo
 cantos e bordas. A barra de progresso e os indicadores de status mostram a qualidade da captura.</li>
-<li class="">Quando quadros suficientes forem capturados, o assistente calcula o modelo de distorção e o
-aplica — a sobreposição da câmera agora mostra uma imagem corrigida e reta.</li>
+<li class="">Quando quadros suficientes forem capturados, clique em <strong>Calibrate</strong>. O assistente mostra o
+resultado — confirme com <strong>Save Calibration</strong> para aplicá-lo (apenas <strong>Discard</strong> descarta o
+resultado) — e a sobreposição da câmera agora mostra uma imagem corrigida e reta.</li>
 </ol>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="usando-um-padrão-já-impresso">Usando um padrão já impresso<a href="#usando-um-padrão-já-impresso" class="hash-link" aria-label="Link direto para Usando um padrão já impresso" title="Link direto para Usando um padrão já impresso" translate="no">​</a></h4>
 <p>Os campos de <strong>Pattern Geometry</strong> descrevem a folha em unidades físicas — contagens da grade,
@@ -244,10 +245,12 @@ diálogo de calibração de lente clicando em <strong>Configure</strong> ao lado
 propriedades da câmera. A partir daqui você pode ajustar os coeficientes de distorção manualmente —
 ajuste fino dos parâmetros radial (k1–k3) e tangencial (p1–p2).</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="etapa-23-alinhamento-de-imagem">Etapa 2.3: Alinhamento de Imagem<a href="#etapa-23-alinhamento-de-imagem" class="hash-link" aria-label="Link direto para Etapa 2.3: Alinhamento de Imagem" title="Link direto para Etapa 2.3: Alinhamento de Imagem" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" alt="Diálogo de Alinhamento de Imagem" src="/pt-BR/assets/images/machine-settings-camera-image-alignment-bee3892734f1d38464c8d28067c36f7b.webp" width="1328" height="1008" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Diálogo de Alinhamento de Imagem" src="/pt-BR/assets/images/machine-settings-camera-image-alignment-1d169e02d6f1ac015dad3edb8d45dc3e.webp" width="1328" height="1008" class="img_ev3q"></p>
 <p>O alinhamento de imagem é o estágio final do assistente de câmera. O alinhamento da câmera calibra a
 relação entre pixels da câmera e coordenadas do mundo real, permitindo posicionamento preciso. O
-assistente usa o mesmo procedimento descrito aqui, e aplicar o alinhamento conclui o assistente.</p>
+assistente usa o mesmo procedimento descrito aqui, e aplicar o alinhamento conclui o assistente.
+Finalizar sem um alinhamento aplicado exibe primeiro um aviso, porque a visão da câmera então não
+pode ser mapeada com precisão sobre a área de trabalho.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="por-que-o-alinhamento-é-necessário">Por Que o Alinhamento é Necessário<a href="#por-que-o-alinhamento-é-necessário" class="hash-link" aria-label="Link direto para Por Que o Alinhamento é Necessário" title="Link direto para Por Que o Alinhamento é Necessário" translate="no">​</a></h4>
 <p>A câmera vê a área de trabalho de cima, mas a imagem pode estar:</p>
 <ul>
@@ -292,8 +295,10 @@ máquina.</p>
 <li class="">
 <p><strong>Insira coordenadas do mundo real:</strong></p>
 <ul>
-<li class="">Para cada ponto na imagem, insira as coordenadas X/Y reais em mm</li>
-<li class="">Estas são as coordenadas reais da máquina onde cada ponto está localizado</li>
+<li class="">Para cada ponto na imagem, insira as coordenadas X/Y reais na sua unidade de exibição (definida
+nas configurações do aplicativo)</li>
+<li class="">Estas são as coordenadas reais da máquina onde cada ponto está localizado, medidas a partir da
+origem da área de trabalho</li>
 <li class="">Meça com precisão com uma régua ou use posições conhecidas da máquina</li>
 </ul>
 </li>

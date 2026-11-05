@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.f8cd542b.css">
-<script src="/uk/assets/js/runtime~main.412330d5.js" defer="defer"></script>
-<script src="/uk/assets/js/main.cf7ad646.js" defer="defer"></script>
+<script src="/uk/assets/js/runtime~main.a8e907fa.js" defer="defer"></script>
+<script src="/uk/assets/js/main.ba66f181.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -199,8 +199,9 @@ Settings</strong> у властивостях камери, щоб відкри�
 <strong>Capture Frame</strong> для кожної позиції. Прагніть щонайменше до 8 захоплень, що покривають весь
 кадр, включаючи кути та краї. Індикатор прогресу та індикатори статусу показують якість
 захоплення.</li>
-<li class="">Коли достатньо кадрів захоплено, майстер обчислює модель дисторсії та застосовує її — накладання
-камери тепер показує виправлене, пряме зображення.</li>
+<li class="">Коли достатньо кадрів захоплено, натисніть <strong>Calibrate</strong>. Майстер показує результат — підтвердьте
+його кнопкою <strong>Save Calibration</strong>, щоб застосувати (лише <strong>Discard</strong> відкидає результат) —
+накладання камери тепер показує виправлене, пряме зображення.</li>
 </ol>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="використання-вже-надрукованого-шаблону">Використання вже надрукованого шаблону<a href="#використання-вже-надрукованого-шаблону" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h4>
 <p>Поля <strong>Pattern Geometry</strong> описують аркуш у фізичних одиницях — кількість комірок сітки, розміри
@@ -240,11 +241,12 @@ Offset</strong> на 0.</p>
 властивостях камери. Звідси ви можете вручну регулювати коефіцієнти дисторсії — точно налаштовувати
 радіальні (k1–k3) та тангенціальні (p1–p2) параметри.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="крок-23-вирівнювання-зображення">Крок 2.3: Вирівнювання зображення<a href="#крок-23-вирівнювання-зображення" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" alt="Діалог вирівнювання зображення" src="/uk/assets/images/machine-settings-camera-image-alignment-bee3892734f1d38464c8d28067c36f7b.webp" width="1328" height="1008" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Діалог вирівнювання зображення" src="/uk/assets/images/machine-settings-camera-image-alignment-1d169e02d6f1ac015dad3edb8d45dc3e.webp" width="1328" height="1008" class="img_ev3q"></p>
 <p>Вирівнювання зображення — це фінальний етап майстра камери. Вирівнювання камери калібрує
 співвідношення між пікселями камери та реальними координатами, забезпечуючи точне позиціонування.
 Майстер використовує ту саму процедуру, що описана тут, а застосування вирівнювання завершує
-майстра.</p>
+майстра. Завершення без застосованого вирівнювання спочатку попереджає, адже тоді зображення камери
+неможливо точно спроєктувати на робочу область.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="чому-необхідне-вирівнювання">Чому необхідне вирівнювання<a href="#чому-необхідне-вирівнювання" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h4>
 <p>Камера бачить робочу область зверху, але зображення може бути:</p>
 <ul>
@@ -288,8 +290,10 @@ Offset</strong> на 0.</p>
 <li class="">
 <p><strong>Введіть світові координати:</strong></p>
 <ul>
-<li class="">Для кожної точки зображення введіть реальні координати X/Y в мм</li>
-<li class="">Це фактичні координати машини, де знаходиться кожна точка</li>
+<li class="">Для кожної точки зображення введіть реальні координати X/Y у одиницях відображення (задаються в
+налаштуваннях програми)</li>
+<li class="">Це фактичні координати машини, де знаходиться кожна точка, відміряні від початку робочої
+області</li>
 <li class="">Виміряйте точно лінійкою або використовуйте відомі позиції машини</li>
 </ul>
 </li>

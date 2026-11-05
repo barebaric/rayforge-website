@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/de/assets/css/styles.fead6243.css">
-<script src="/de/assets/js/runtime~main.7ba905c3.js" defer="defer"></script>
-<script src="/de/assets/js/main.2c084919.js" defer="defer"></script>
+<script src="/de/assets/js/runtime~main.f3c42ea1.js" defer="defer"></script>
+<script src="/de/assets/js/main.80a2a52a.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -203,8 +203,9 @@ es auf das Laserbett.</li>
 jede Position auf <strong>Capture Frame</strong>. Strebe mindestens 8 Aufnahmen an, die das gesamte Bild
 abdecken, einschließlich Ecken und Kanten. Die Fortschrittsanzeige und Statusanzeigen zeigen die
 Aufnahmequalität.</li>
-<li class="">Sobald genügend Aufnahmen gemacht wurden, berechnet der Assistent das Verzerrungsmodell und
-wendet es an — das Kamera-Overlay zeigt nun ein korrigiertes, gerades Bild.</li>
+<li class="">Sobald genügend Aufnahmen gemacht wurden, klicke auf <strong>Calibrate</strong>. Der Assistent zeigt das
+Ergebnis — bestätige mit <strong>Save Calibration</strong>, um es anzuwenden (nur <strong>Discard</strong> verwirft das
+Ergebnis) — und das Kamera-Overlay zeigt nun ein korrigiertes, gerades Bild.</li>
 </ol>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="ein-bereits-gedrucktes-muster-verwenden">Ein bereits gedrucktes Muster verwenden<a href="#ein-bereits-gedrucktes-muster-verwenden" class="hash-link" aria-label="Direkter Link zur Ein bereits gedrucktes Muster verwenden" title="Direkter Link zur Ein bereits gedrucktes Muster verwenden" translate="no">​</a></h4>
 <p>Die Felder unter <strong>Pattern Geometry</strong> beschreiben den Bogen in physikalischen Einheiten —
@@ -247,11 +248,12 @@ Kalibrierung öffne den Linsenkalibrierung-Dialog, indem du in den Kameraeigensc
 <strong>Linsenkalibrierung</strong> auf <strong>Configure</strong> klickst. Hier kannst du die Verzerrungskoeffizienten
 manuell anpassen — die radialen (k1–k3) und tangentialen (p1–p2) Parameter feinabstimmen.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="schritt-23-bildausrichtung">Schritt 2.3: Bildausrichtung<a href="#schritt-23-bildausrichtung" class="hash-link" aria-label="Direkter Link zur Schritt 2.3: Bildausrichtung" title="Direkter Link zur Schritt 2.3: Bildausrichtung" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" alt="Bildausrichtung Dialog" src="/de/assets/images/machine-settings-camera-image-alignment-bee3892734f1d38464c8d28067c36f7b.webp" width="1328" height="1008" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Bildausrichtung Dialog" src="/de/assets/images/machine-settings-camera-image-alignment-1d169e02d6f1ac015dad3edb8d45dc3e.webp" width="1328" height="1008" class="img_ev3q"></p>
 <p>Die Bildausrichtung ist die letzte Stufe des Kamera-Assistenten. Die Kameraausrichtung kalibriert
 die Beziehung zwischen Kamerapixeln und realen Koordinaten und ermöglicht so präzises Positionieren.
 Der Assistent verwendet dasselbe hier beschriebene Verfahren, und das Anwenden der Ausrichtung
-schließt den Assistenten ab.</p>
+schließt den Assistenten ab. Ein Beenden ohne angewendete Ausrichtung fragt zuerst nach, da die
+Kameraansicht dann nicht genau auf den Arbeitsbereich abgebildet werden kann.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="warum-ausrichtung-notwendig-ist">Warum Ausrichtung notwendig ist<a href="#warum-ausrichtung-notwendig-ist" class="hash-link" aria-label="Direkter Link zur Warum Ausrichtung notwendig ist" title="Direkter Link zur Warum Ausrichtung notwendig ist" translate="no">​</a></h4>
 <p>Die Kamera sieht den Arbeitsbereich von oben, aber das Bild kann:</p>
 <ul>
@@ -295,8 +297,10 @@ schließt den Assistenten ab.</p>
 <li class="">
 <p><strong>Weltkoordinaten eingeben:</strong></p>
 <ul>
-<li class="">Gib für jeden Bildpunkt die realen X/Y-Koordinaten in mm ein</li>
-<li class="">Dies sind die tatsächlichen Maschinenkoordinaten, an denen sich jeder Punkt befindet</li>
+<li class="">Gib für jeden Bildpunkt die realen X/Y-Koordinaten in deiner Anzeigeeinheit ein (in den
+Anwendungseinstellungen festgelegt)</li>
+<li class="">Dies sind die tatsächlichen Maschinenkoordinaten, an denen sich jeder Punkt befindet, gemessen
+vom Ursprung des Arbeitsbereichs</li>
 <li class="">Miss genau mit einem Lineal oder verwende bekannte Maschinenpositionen</li>
 </ul>
 </li>

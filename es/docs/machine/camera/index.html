@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/es/assets/css/styles.4787af86.css">
-<script src="/es/assets/js/runtime~main.e3330e77.js" defer="defer"></script>
-<script src="/es/assets/js/main.2881eaa4.js" defer="defer"></script>
+<script src="/es/assets/js/runtime~main.2f041ba2.js" defer="defer"></script>
+<script src="/es/assets/js/main.b72edee2.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -204,8 +204,9 @@ la cama láser.</li>
 <strong>Capture Frame</strong> para cada posición. Apunta a al menos 8 capturas que cubran todo el encuadre,
 incluyendo esquinas y bordes. La barra de progreso y los indicadores de estado muestran la
 calidad de captura.</li>
-<li class="">Cuando se hayan capturado suficientes fotogramas, el asistente calcula el modelo de distorsión y
-lo aplica — la superposición de la cámara ahora muestra una imagen corregida y recta.</li>
+<li class="">Cuando se hayan capturado suficientes fotogramas, haz clic en <strong>Calibrate</strong>. El asistente muestra
+el resultado — confírmalo con <strong>Save Calibration</strong> para aplicarlo (solo <strong>Discard</strong> descarta el
+resultado) — y la superposición de la cámara ahora muestra una imagen corregida y recta.</li>
 </ol>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="uso-de-un-patrón-ya-impreso">Uso de un patrón ya impreso<a href="#uso-de-un-patrón-ya-impreso" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h4>
 <p>Los campos de <strong>Pattern Geometry</strong> describen la hoja en unidades físicas — recuentos de cuadrícula,
@@ -249,11 +250,13 @@ automática, abre el diálogo de calibración de lente haciendo clic en <strong>
 Calibration</strong> en las propiedades de la cámara. Desde aquí puedes ajustar los coeficientes de
 distorsión manualmente — ajusta finamente los parámetros radiales (k1–k3) y tangenciales (p1–p2).</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="paso-23-alineación-de-imagen">Paso 2.3: Alineación de imagen<a href="#paso-23-alineación-de-imagen" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" alt="Diálogo de Alineación de Imagen" src="/es/assets/images/machine-settings-camera-image-alignment-bee3892734f1d38464c8d28067c36f7b.webp" width="1328" height="1008" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Diálogo de Alineación de Imagen" src="/es/assets/images/machine-settings-camera-image-alignment-1d169e02d6f1ac015dad3edb8d45dc3e.webp" width="1328" height="1008" class="img_ev3q"></p>
 <p>La alineación de imagen es la etapa final del asistente de cámara. La alineación de cámara calibra
 la relación entre los píxeles de la cámara y las coordenadas del mundo real, permitiendo el
 posicionamiento preciso. El asistente usa el mismo procedimiento descrito aquí, y aplicar la
-alineación finaliza el asistente.</p>
+alineación finaliza el asistente. Finalizar sin una alineación aplicada muestra primero una
+advertencia, porque entonces la vista de la cámara no puede mapearse con precisión sobre el área de
+trabajo.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="por-qué-es-necesaria-la-alineación">Por Qué es Necesaria la Alineación<a href="#por-qué-es-necesaria-la-alineación" class="hash-link" aria-label="Enlace directo al título" title="Enlace directo al título" translate="no">​</a></h4>
 <p>La cámara ve el área de trabajo desde arriba, pero la imagen puede estar:</p>
 <ul>
@@ -299,8 +302,10 @@ cámara</li>
 <li class="">
 <p><strong>Ingresa coordenadas del mundo:</strong></p>
 <ul>
-<li class="">Para cada punto de imagen, ingresa las coordenadas X/Y del mundo real en mm</li>
-<li class="">Estas son las coordenadas reales de la máquina donde está ubicado cada punto</li>
+<li class="">Para cada punto de imagen, ingresa las coordenadas X/Y del mundo real en tu unidad de
+visualización (configurada en los ajustes de la aplicación)</li>
+<li class="">Estas son las coordenadas reales de la máquina donde está ubicado cada punto, medidas desde el
+origen del área de trabajo</li>
 <li class="">Mide con precisión con una regla o usa posiciones conocidas de la máquina</li>
 </ul>
 </li>

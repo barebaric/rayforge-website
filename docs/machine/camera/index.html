@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.5c29851c.css">
-<script src="/assets/js/runtime~main.c1d0bb2f.js" defer="defer"></script>
-<script src="/assets/js/main.0aa2f115.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.6f33f43d.js" defer="defer"></script>
+<script src="/assets/js/main.625ce7d7.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -284,8 +284,9 @@ bed.</li>
 <li class="">Move the pattern to different positions and angles within the camera view and click <strong>Capture
 Frame</strong> for each position. Aim for at least 8 captures covering the entire frame, including
 corners and edges. The progress bar and status indicators show capture quality.</li>
-<li class="">When enough frames are captured, the wizard computes the distortion model and applies it — the
-camera overlay now shows a corrected, straight image.</li>
+<li class="">When enough frames are captured, click <strong>Calibrate</strong>. The wizard shows the result — confirm with
+<strong>Save Calibration</strong> to apply it (only <strong>Discard</strong> throws the result away) — and the camera
+overlay now shows a corrected, straight image.</li>
 </ol>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="using-a-pattern-you-already-printed">Using a Pattern You Already Printed<a href="#using-a-pattern-you-already-printed" class="hash-link" aria-label="Direct link to Using a Pattern You Already Printed" title="Direct link to Using a Pattern You Already Printed" translate="no">​</a></h4>
 <p>The <strong>Pattern Geometry</strong> fields describe the sheet in physical units — grid counts, feature sizes,
@@ -328,10 +329,12 @@ calibration dialog by clicking <strong>Configure</strong> next to <strong>Lens C
 From here you can adjust the distortion coefficients manually — fine-tune the radial (k1–k3) and
 tangential (p1–p2) parameters.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-23-image-alignment">Step 2.3: Image Alignment<a href="#step-23-image-alignment" class="hash-link" aria-label="Direct link to Step 2.3: Image Alignment" title="Direct link to Step 2.3: Image Alignment" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" alt="Image Alignment Dialog" src="/assets/images/machine-settings-camera-image-alignment-bee3892734f1d38464c8d28067c36f7b.webp" width="1328" height="1008" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Image Alignment Dialog" src="/assets/images/machine-settings-camera-image-alignment-1d169e02d6f1ac015dad3edb8d45dc3e.webp" width="1328" height="1008" class="img_ev3q"></p>
 <p>Image alignment is the camera wizard&#x27;s final stage. Camera alignment calibrates the relationship
 between camera pixels and real-world coordinates, enabling accurate positioning. The wizard uses the
-same procedure described here, and applying the alignment finishes the wizard.</p>
+same procedure described here, and applying the alignment finishes the wizard. Finishing without an
+applied alignment warns first, because the camera view then cannot be mapped onto the work area
+accurately.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-alignment-is-necessary">Why Alignment is Necessary<a href="#why-alignment-is-necessary" class="hash-link" aria-label="Direct link to Why Alignment is Necessary" title="Direct link to Why Alignment is Necessary" translate="no">​</a></h4>
 <p>The camera sees the work area from above, but the image may be:</p>
 <ul>
@@ -375,8 +378,10 @@ same procedure described here, and applying the alignment finishes the wizard.</
 <li class="">
 <p><strong>Enter world coordinates:</strong></p>
 <ul>
-<li class="">For each image point, enter the real-world X/Y coordinates in mm</li>
-<li class="">These are the actual machine coordinates where each point is located</li>
+<li class="">For each image point, enter the real-world X/Y coordinates in your display unit (set in the
+application settings)</li>
+<li class="">These are the actual machine coordinates where each point is located, measured from the work
+area origin</li>
 <li class="">Measure accurately with a ruler or use known machine positions</li>
 </ul>
 </li>

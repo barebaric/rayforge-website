@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/fr/assets/css/styles.91e4bc1d.css">
-<script src="/fr/assets/js/runtime~main.3c674c18.js" defer="defer"></script>
-<script src="/fr/assets/js/main.e155e4d8.js" defer="defer"></script>
+<script src="/fr/assets/js/runtime~main.8043bfd3.js" defer="defer"></script>
+<script src="/fr/assets/js/main.7310f943.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -206,8 +206,9 @@ lit laser.</li>
 Frame</strong> pour chaque position. Vise au moins 8 captures couvrant tout le cadre, y compris les
 coins et les bords. La barre de progression et les indicateurs d&#x27;état montrent la qualité de la
 capture.</li>
-<li class="">Une fois suffisamment d&#x27;images capturées, l&#x27;assistant calcule le modèle de distorsion et
-l&#x27;applique — la superposition caméra affiche maintenant une image corrigée et droite.</li>
+<li class="">Une fois suffisamment d&#x27;images capturées, clique sur <strong>Calibrate</strong>. L&#x27;assistant affiche le
+résultat — confirme avec <strong>Save Calibration</strong> pour l&#x27;appliquer (seul <strong>Discard</strong> jette le
+résultat) — et la superposition caméra affiche maintenant une image corrigée et droite.</li>
 </ol>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="utiliser-un-motif-déjà-imprimé">Utiliser un motif déjà imprimé<a href="#utiliser-un-motif-déjà-imprimé" class="hash-link" aria-label="Lien direct vers Utiliser un motif déjà imprimé" title="Lien direct vers Utiliser un motif déjà imprimé" translate="no">​</a></h4>
 <p>Les champs <strong>Pattern Geometry</strong> décrivent la feuille en unités physiques — nombres d&#x27;éléments de la
@@ -251,11 +252,12 @@ côté de <strong>Calibration d&#x27;objectif</strong> dans les propriétés de 
 manuellement les coefficients de distorsion — ajuste finement les paramètres de distorsion radiale
 (k1–k3) et tangentielle (p1–p2).</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="étape-23--alignement-dimage">Étape 2.3 : Alignement d&#x27;image<a href="#étape-23--alignement-dimage" class="hash-link" aria-label="Lien direct vers Étape 2.3 : Alignement d&#x27;image" title="Lien direct vers Étape 2.3 : Alignement d&#x27;image" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" alt="Boîte de dialogue Alignement d&amp;#39;image" src="/fr/assets/images/machine-settings-camera-image-alignment-bee3892734f1d38464c8d28067c36f7b.webp" width="1328" height="1008" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Boîte de dialogue Alignement d&amp;#39;image" src="/fr/assets/images/machine-settings-camera-image-alignment-1d169e02d6f1ac015dad3edb8d45dc3e.webp" width="1328" height="1008" class="img_ev3q"></p>
 <p>L&#x27;alignement d&#x27;image est l&#x27;étape finale de l&#x27;assistant de caméra. L&#x27;alignement de la caméra calibre
 la relation entre les pixels de la caméra et les coordonnées du monde réel, permettant un
 positionnement précis. L&#x27;assistant utilise la même procédure décrite ici, et appliquer l&#x27;alignement
-termine l&#x27;assistant.</p>
+termine l&#x27;assistant. Terminer sans alignement appliqué déclenche d&#x27;abord un avertissement, car la
+vue caméra ne peut alors pas être projetée avec précision sur la zone de travail.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pourquoi-lalignement-est-nécessaire">Pourquoi l&#x27;Alignement est Nécessaire<a href="#pourquoi-lalignement-est-nécessaire" class="hash-link" aria-label="Lien direct vers Pourquoi l&#x27;Alignement est Nécessaire" title="Lien direct vers Pourquoi l&#x27;Alignement est Nécessaire" translate="no">​</a></h4>
 <p>La caméra voit la zone de travail d&#x27;en haut, mais l&#x27;image peut être :</p>
 <ul>
@@ -301,8 +303,10 @@ caméra</li>
 <li class="">
 <p><strong>Entre les coordonnées monde :</strong></p>
 <ul>
-<li class="">Pour chaque point d&#x27;image, entre les coordonnées X/Y réelles en mm</li>
-<li class="">Ce sont les coordonnées machine réelles où chaque point est situé</li>
+<li class="">Pour chaque point d&#x27;image, entre les coordonnées X/Y réelles dans ton unité d&#x27;affichage
+(définie dans les réglages de l&#x27;application)</li>
+<li class="">Ce sont les coordonnées machine réelles où chaque point est situé, mesurées depuis l&#x27;origine de
+la zone de travail</li>
 <li class="">Mesure avec précision avec une règle ou utilise des positions machine connues</li>
 </ul>
 </li>
