@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/fr/assets/css/styles.91e4bc1d.css">
-<script src="/fr/assets/js/runtime~main.8043bfd3.js" defer="defer"></script>
-<script src="/fr/assets/js/main.7310f943.js" defer="defer"></script>
+<script src="/fr/assets/js/runtime~main.0f75b6f1.js" defer="defer"></script>
+<script src="/fr/assets/js/main.4aca64b5.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -233,7 +233,7 @@ glissant les marqueurs sur l&#x27;histogramme.</li>
 <li class="">Ajustez selon le contraste de l&#x27;image</li>
 </ul>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="paramètres-du-mode-tramage">Paramètres du Mode Tramage<a href="#paramètres-du-mode-tramage" class="hash-link" aria-label="Lien direct vers Paramètres du Mode Tramage" title="Lien direct vers Paramètres du Mode Tramage" translate="no">​</a></h4>
-<p><img decoding="async" loading="lazy" alt="Paramètres du mode Tramage" src="/fr/assets/images/step-settings-engrave-general-dither-118bbfce361af79dbee8a47e1e3fdcb7.webp" width="648" height="948" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Paramètres du mode Tramage" src="/fr/assets/images/step-settings-engrave-general-dither-65b5be7b69b04e64361c7090e4150276.webp" width="648" height="948" class="img_ev3q"></p>
 <p><strong>Algorithme de Tramage :</strong></p>
 <p>Choisissez l&#x27;algorithme qui convient le mieux à votre image et à votre matériau :</p>
 
@@ -322,8 +322,15 @@ ressemblant à l&#x27;impression demi-teinte traditionnelle.</p>
 <p><strong>Stucki, Jarvis, Sierra, Burkes et Atkinson</strong> sont des algorithmes de diffusion d&#x27;erreur comme
 Floyd-Steinberg qui répartissent l&#x27;erreur sur un voisinage plus large, ce qui donne un grain plus
 régulier dans les zones uniformes comme les tons chair. Atkinson ne diffuse qu&#x27;une partie de
-l&#x27;erreur, ce qui augmente le contraste. Active <strong>Serpentin</strong> pour alterner le sens de balayage à
-chaque ligne et éviter les stries directionnelles.</p>
+l&#x27;erreur, ce qui augmente le contraste. <strong>Serpentin</strong> (activé par défaut) alterne le sens de
+balayage à chaque ligne et évite les stries directionnelles.</p>
+<p><strong>Taille de feature minimale</strong> regroupe chaque ligne de balayage en cellules avant la diffusion,
+afin qu&#x27;aucun point ne soit plus petit que le nombre de pixels indiqué. La valeur automatique
+correspond à la taille du spot laser, ce qui garde chaque point à pleine intensité ; des valeurs
+plus petites permettent des points plus fins mais plus faibles.</p>
+<p><strong>Lumière linéaire</strong> diffuse en lumière linéaire plutôt que sur les valeurs sRGB brutes. Diffuser
+sur les valeurs sRGB conserve une couverture de points fidèle au ton que l&#x27;image montre à l&#x27;écran ;
+la lumière linéaire grave les tons moyens nettement plus sombres.</p>
 <p><strong>Papier journal</strong> et <strong>Demi-teinte</strong> regroupent les pixels en points. Demi-teinte trace des points
 ronds sur une grille définie par <strong>Taille de cellule de demi-teinte</strong> (la distance entre les centres
 des points) et <strong>Angle de demi-teinte</strong> ; choisis une taille de cellule d&#x27;au moins quelques largeurs

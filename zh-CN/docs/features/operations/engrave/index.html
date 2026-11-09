@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.f89e1316.css">
-<script src="/zh-CN/assets/js/runtime~main.a9521a14.js" defer="defer"></script>
-<script src="/zh-CN/assets/js/main.5ddc345b.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.eab2e4b5.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.bc364609.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -217,7 +217,7 @@
 <li class="">根据图像对比度进行调整</li>
 </ul>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="抖动模式设置">抖动模式设置<a href="#抖动模式设置" class="hash-link" aria-label="抖动模式设置 的直接链接" title="抖动模式设置 的直接链接" translate="no">​</a></h4>
-<p><img decoding="async" loading="lazy" alt="抖动模式设置" src="/zh-CN/assets/images/step-settings-engrave-general-dither-118bbfce361af79dbee8a47e1e3fdcb7.webp" width="648" height="948" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="抖动模式设置" src="/zh-CN/assets/images/step-settings-engrave-general-dither-65b5be7b69b04e64361c7090e4150276.webp" width="648" height="948" class="img_ev3q"></p>
 <p><strong>抖动算法：</strong></p>
 <p>选择最适合您的图像和材料的算法：</p>
 
@@ -302,7 +302,9 @@
 是默认选择，推荐用于大多数照片雕刻。它使用误差扩散将量化误差分配到相邻像素，从而产生自然的效果。</p>
 <p><strong>Bayer 抖动</strong>会创建规则的图案，可产生类似传统半色调印刷的艺术效果。</p>
 <p><strong>Stucki、Jarvis、Sierra、Burkes 和 Atkinson</strong>
-与 Floyd-Steinberg 一样属于误差扩散算法，但会把误差分散到更大的邻域，在肤色等平坦区域中颗粒更平滑。Atkinson 只扩散部分误差，因此对比度更高。启用<strong>蛇形扫描</strong>可在每一行交替扫描方向，避免方向性条纹。</p>
+与 Floyd-Steinberg 一样属于误差扩散算法，但会把误差分散到更大的邻域，在肤色等平坦区域中颗粒更平滑。Atkinson 只扩散部分误差，因此对比度更高。<strong>蛇形扫描</strong>（默认启用）在每一行交替扫描方向，避免方向性条纹。</p>
+<p><strong>最小特征尺寸</strong>在扩散前把每条扫描线分组为单元，使任何网点都不会小于指定像素数。自动值与激光光斑大小一致，保证每个网点全强度；更小的值可得到更细但更淡的网点。</p>
+<p><strong>线性光</strong>在线性光而非原始 sRGB 值上进行扩散。对 sRGB 值扩散可让网点覆盖率与图像在屏幕上显示的色调一致；线性光会把中间调刻得明显更深。</p>
 <p><strong>报纸印刷</strong>和<strong>半色调</strong>会把像素聚集成网点。半色调在网格上绘制圆形网点，网格由<strong>半色调网格尺寸</strong>（网点中心之间的距离）和<strong>半色调角度</strong>决定；网格尺寸应至少为激光光斑宽度的几倍。</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="多深度模式设置">多深度模式设置<a href="#多深度模式设置" class="hash-link" aria-label="多深度模式设置 的直接链接" title="多深度模式设置 的直接链接" translate="no">​</a></h4>
 <p><img decoding="async" loading="lazy" alt="多深度模式设置" src="/zh-CN/assets/images/step-settings-engrave-general-multi_pass-474c9bca37075bc738c493b459bed25b.webp" width="648" height="948" class="img_ev3q"></p>

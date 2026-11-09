@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/hi/assets/css/styles.e1d8e4fd.css">
-<script src="/hi/assets/js/runtime~main.6311df03.js" defer="defer"></script>
-<script src="/hi/assets/js/main.8f012094.js" defer="defer"></script>
+<script src="/hi/assets/js/runtime~main.4c492102.js" defer="defer"></script>
+<script src="/hi/assets/js/main.3fec9504.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -231,7 +231,7 @@
 <li class="">छवि कंट्रास्ट के आधार पर समायोजित करें</li>
 </ul>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="डाइदर-मोड-सेटिंग्स">डाइदर मोड सेटिंग्स<a href="#डाइदर-मोड-सेटिंग्स" class="hash-link" aria-label="शीर्षक का सीधा लिंक" title="शीर्षक का सीधा लिंक" translate="no">​</a></h4>
-<p><img decoding="async" loading="lazy" alt="डाइदर मोड सेटिंग्स" src="/hi/assets/images/step-settings-engrave-general-dither-118bbfce361af79dbee8a47e1e3fdcb7.webp" width="648" height="948" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="डाइदर मोड सेटिंग्स" src="/hi/assets/images/step-settings-engrave-general-dither-65b5be7b69b04e64361c7090e4150276.webp" width="648" height="948" class="img_ev3q"></p>
 <p><strong>डाइदरिंग एल्गोरिदम:</strong></p>
 <p>वह एल्गोरिदम चुनें जो आपकी छवि और सामग्री के लिए सर्वोत्तम हो:</p>
 
@@ -318,8 +318,14 @@
 <p><strong>Bayer डाइदरिंग</strong> नियमित पैटर्न बनाती है जो पारंपरिक हाफ़टोन छपाई जैसे कलात्मक प्रभाव दे सकते हैं.</p>
 <p><strong>Stucki, Jarvis, Sierra, Burkes और Atkinson</strong> Floyd-Steinberg की तरह त्रुटि-प्रसार एल्गोरिदम हैं,
 जो त्रुटि को अधिक बड़े पड़ोस में फैलाते हैं. इससे त्वचा टोन जैसे समतल क्षेत्रों में दाना अधिक चिकना
-होता है. Atkinson त्रुटि का केवल एक भाग फैलाता है, जिससे कंट्रास्ट बढ़ता है. हर पंक्ति में स्कैन
-दिशा बदलने और दिशात्मक धारियों से बचने के लिए <strong>सर्पाकार</strong> चालू करें.</p>
+होता है. Atkinson त्रुटि का केवल एक भाग फैलाता है, जिससे कंट्रास्ट बढ़ता है. <strong>सर्पाकार</strong> (डिफ़ॉल्ट
+रूप से चालू) हर पंक्ति में स्कैन दिशा बदलता है और दिशात्मक धारियों से बचाता है.</p>
+<p><strong>न्यूनतम फ़ीचर आकार</strong> प्रसार से पहले हर स्कैन पंक्ति को कोशिकाओं में समूहित करता है, ताकि कोई बिंदु
+दी गई पिक्सेल संख्या से छोटा न हो. स्वतः मान लेज़र स्पॉट आकार से मेल खाता है, जिससे हर बिंदु पूरी
+ताक़त में रहता है; छोटे मान बारीक पर कमज़ोर बिंदु देते हैं.</p>
+<p><strong>रैखिक प्रकाश</strong> कच्चे sRGB मानों के बजाय रैखिक प्रकाश में फैलाता है. sRGB मानों पर फैलाने से बिंदु
+कवरेज वही टोन रखता है जो छवि स्क्रीन पर दिखाती है; रैखिक प्रकाश मध्य टोन को काफ़ी गहरा उत्कीर्ण करता
+है.</p>
 <p><strong>अख़बारी छपाई</strong> और <strong>हाफ़टोन</strong> पिक्सेल को बिंदुओं में समूहित करते हैं. हाफ़टोन एक ग्रिड पर गोल
 बिंदु बनाता है, जिसे <strong>हाफ़टोन सेल आकार</strong> (बिंदु केंद्रों के बीच की दूरी) और <strong>हाफ़टोन कोण</strong> से तय
 किया जाता है; सेल आकार कम से कम कुछ लेज़र बिंदु चौड़ाई जितना रखें.</p>

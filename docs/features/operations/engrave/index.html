@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.5c29851c.css">
-<script src="/assets/js/runtime~main.6f33f43d.js" defer="defer"></script>
-<script src="/assets/js/main.625ce7d7.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.0cf14cec.js" defer="defer"></script>
+<script src="/assets/js/main.d344b236.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -230,7 +230,7 @@ markers on the histogram.</li>
 <li class="">Adjust based on image contrast</li>
 </ul>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="dither-mode-settings">Dither Mode Settings<a href="#dither-mode-settings" class="hash-link" aria-label="Direct link to Dither Mode Settings" title="Direct link to Dither Mode Settings" translate="no">​</a></h4>
-<p><img decoding="async" loading="lazy" alt="Dither mode settings" src="/assets/images/step-settings-engrave-general-dither-118bbfce361af79dbee8a47e1e3fdcb7.webp" width="648" height="948" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Dither mode settings" src="/assets/images/step-settings-engrave-general-dither-65b5be7b69b04e64361c7090e4150276.webp" width="648" height="948" class="img_ev3q"></p>
 <p><strong>Dithering Algorithm:</strong></p>
 <p>Choose the algorithm that best suits your image and material:</p>
 
@@ -317,8 +317,14 @@ distribute quantization errors to neighboring pixels, creating natural-looking r
 traditional halftone printing.</p>
 <p><strong>Stucki, Jarvis, Sierra, Burkes and Atkinson</strong> are error-diffusion algorithms like Floyd-Steinberg
 that spread the error over a wider neighborhood, which gives a smoother grain in flat areas such as
-skin tones. Atkinson diffuses only part of the error, which raises contrast. Turn on <strong>Serpentine</strong>
-to alternate the scan direction on every row and avoid directional streaks.</p>
+skin tones. Atkinson diffuses only part of the error, which raises contrast. <strong>Serpentine</strong> (on by
+default) alternates the scan direction on every row and avoids directional streaks.</p>
+<p><strong>Min Feature Size</strong> groups each scan line into cells before diffusing, so no dot is smaller than
+the given number of pixels. The auto value matches the laser spot size, which keeps every dot at
+full strength; smaller values allow finer but fainter dots.</p>
+<p><strong>Linear Light</strong> diffuses in linear light instead of on the raw sRGB values. Dithering the sRGB
+values keeps the dot coverage at the tone the image shows on screen; linear light engraves mid-tones
+noticeably darker.</p>
 <p><strong>Newsprint</strong> and <strong>Halftone</strong> group pixels into dots. Halftone draws round dots on a grid set by
 <strong>Halftone Cell Size</strong> (the distance between dot centers) and <strong>Halftone Angle</strong>; use a cell size of
 at least a few laser spot widths.</p>
