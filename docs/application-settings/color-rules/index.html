@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.5c29851c.css">
-<script src="/assets/js/runtime~main.0cf14cec.js" defer="defer"></script>
-<script src="/assets/js/main.d344b236.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.ba21822d.js" defer="defer"></script>
+<script src="/assets/js/main.d3ac1a85.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -70,9 +70,10 @@ layers matching a rule with an unavailable step type fall back to the default be
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="import-behavior">Import Behavior<a href="#import-behavior" class="hash-link" aria-label="Direct link to Import Behavior" title="Direct link to Import Behavior" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="automatic-color-grouping">Automatic Color Grouping<a href="#automatic-color-grouping" class="hash-link" aria-label="Direct link to Automatic Color Grouping" title="Direct link to Automatic Color Grouping" translate="no">​</a></h3>
-<p>When color rules exist, the import dialog automatically switches to <strong>Colors</strong> as the layer source
-for files that contain distinct colors. This ensures each color becomes its own layer so the rules
-can apply. You can still switch back to <strong>SVG Layers</strong> or other sources in the dialog if you prefer.</p>
+<p>Until you pick a layer source yourself, the import dialog automatically selects <strong>Colors</strong> for files
+that contain distinct colors but no useful layer structure, or when color rules exist. This ensures
+each color becomes its own layer so the rules can apply. Once you switch the layer source in the
+dialog, your choice is remembered and used as the starting point for future imports.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-triggers-a-rule">What Triggers a Rule<a href="#what-triggers-a-rule" class="hash-link" aria-label="Direct link to What Triggers a Rule" title="Direct link to What Triggers a Rule" translate="no">​</a></h3>
 <p>A color rule applies when:</p>
 <ol>
@@ -102,8 +103,8 @@ because those sources do not group by color.</p>
 </ul>
 </li>
 <li class="">
-<p><strong>Import the SVG.</strong> The import dialog auto-selects Colors, and each color group gets its step
-type automatically.</p>
+<p><strong>Import the SVG.</strong> If you have not changed the layer source before, the import dialog
+auto-selects Colors, and each color group gets its step type automatically.</p>
 </li>
 <li class="">
 <p><strong>Fine-tune</strong> with <a class="" href="/docs/application-settings/recipes">recipes</a> to set power, speed, and other parameters per step type.</p>

@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rayforge","url":"https://rayforge.org"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@600;700&amp;display=swap">
 <script src="https://analytics.barebaric.com/script.js" data-website-id="4493e023-327b-427c-980f-54a49129c732" defer="defer"></script><link rel="stylesheet" href="/uk/assets/css/styles.f8cd542b.css">
-<script src="/uk/assets/js/runtime~main.8208e046.js" defer="defer"></script>
-<script src="/uk/assets/js/main.d75efedb.js" defer="defer"></script>
+<script src="/uk/assets/js/runtime~main.8d57c937.js" defer="defer"></script>
+<script src="/uk/assets/js/main.9f27f10f.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -401,7 +401,15 @@
 <table><thead><tr><th>Інтервал</th><th>Якість</th><th>Швидкість</th><th>Використовувати для</th></tr></thead><tbody><tr><td>0.05мм</td><td>Найвища</td><td>Найповільніша</td><td>Фото, тонкі деталі</td></tr><tr><td>0.1мм</td><td>Висока</td><td>Середня</td><td>Текст, логотипи, графіка</td></tr><tr><td>0.2мм</td><td>Середня</td><td>Швидка</td><td>Суцільні заливки, текстури</td></tr><tr><td>0.3мм+</td><td>Низька</td><td>Найшвидша</td><td>Чорновик, тестування</td></tr></tbody></table>
 <p><strong>Рекомендовано:</strong> 0.1мм для загального використання</p>
 <div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>Відповідність роздільної здатності :::</div><div class="admonitionContent_BuS1"><p>Для зображень інтервал ліній має відповідати або перевищувати роздільну здатність зображення. Якщо
-ваше зображення 10 пікселів/мм (254 DPI), використовуйте інтервал ліній 0.1мм або менший.</p><h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="напрямок-сканування">Напрямок сканування<a href="#напрямок-сканування" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h4><p><strong>Кут сканування (градуси):</strong></p><ul>
+ваше зображення 10 пікселів/мм (254 DPI), використовуйте інтервал ліній 0.1мм або менший.</p><h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="інтервал-семплювання">Інтервал семплювання<a href="#інтервал-семплювання" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h4><p><strong>Інтервал семплювання (мм):</strong></p><ul>
+<li class="">Відстань між семплами вздовж кожного рядка сканування, у всіх растрових режимах</li>
+<li class="">У дизерингу він задає довжину кожної точки; у гравіюванні з модуляцією потужності — частоту зміни
+потужності вздовж лінії</li>
+<li class="">Менший = дрібніші деталі, більші вихідні файли</li>
+<li class="">Автоматичне значення дає квадратні точки в дизерингу (воно слідує інтервалу ліній) і половину
+ширини лазерної плями в режимах з модуляцією потужності</li>
+</ul><p><strong>Рекомендовано:</strong> залишайте автоматичне значення. Інтервал семплювання, значно більший за інтервал
+ліній, перетворює кожну точку на довгу риску, що видно як текстуру на градієнтах.</p><h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="напрямок-сканування">Напрямок сканування<a href="#напрямок-сканування" class="hash-link" aria-label="Пряме посилання на заголовок" title="Пряме посилання на заголовок" translate="no">​</a></h4><p><strong>Кут сканування (градуси):</strong></p><ul>
 <li class="">Напрямок ліній сканування</li>
 <li class="">0 = горизонтальний (зліва направо)</li>
 <li class="">90 = вертикальний (зверху вниз)</li>
